@@ -3,7 +3,7 @@ Research Paper Agent for Ru Gunawardane
 ----------------------------------------
 Searches Semantic Scholar, bioRxiv, and PubMed for new biology papers,
 scores them for relevance to Ru's interests using Claude, and adds
-qualifying papers to the Smartsheet repository.
+qualifying papers to papers.json (the GitHub Pages source of truth).
 
 Usage:
     python agent.py                          # default: last 14 days, score ≥7
@@ -12,6 +12,7 @@ Usage:
 """
 import os
 import argparse
+from datetime import date
 
 from dotenv import load_dotenv
 
@@ -20,7 +21,7 @@ from src.sources.semantic_scholar import search_papers as ss_search, get_author_
 from src.sources.biorxiv import fetch_recent as biorxiv_fetch
 from src.sources.pubmed import search_pubmed
 from src.relevance import score_and_summarize
-from src.smartsheet_client import SmartsheetClient
+from src import storage
 
 
 # ── Deduplication ──────────────────────────────────────────────────────────────
@@ -52,17 +53,12 @@ def deduplicate(candidates: list[dict], existing: set[str]) -> list[dict]:
 def run_agent(days_back: int = 14, min_score: int = 7, dry_run: bool = False):
     load_dotenv()
 
-    smartsheet_key = os.environ.get("SMARTSHEET_API_KEY")
-    if not smartsheet_key:
-        raise ValueError("SMARTSHEET_API_KEY environment variable not set")
     if not os.environ.get("ANTHROPIC_API_KEY"):
         print("Note: ANTHROPIC_API_KEY not set — using keyword-based relevance scoring")
 
-    ss_client = SmartsheetClient(api_key=smartsheet_key)
-
-    print(f"Fetching existing papers from Smartsheet...")
-    existing = ss_client.get_existing_papers()
-    print(f"  {len(existing)} existing entries found")
+    print("Fetching existing papers from papers.json...")
+    existing = storage.get_existing_papers()
+    print(f"  {len(existing)//2} existing entries found")
 
     candidates: list[dict] = []
 
@@ -105,12 +101,14 @@ def run_agent(days_back: int = 14, min_score: int = 7, dry_run: bool = False):
         return
 
     # ── Relevance scoring ─────────────────────────────────────────────────────
-    print(f"Scoring relevance with Claude (threshold: {min_score}/10)...")
+    print(f"Scoring relevance (threshold: {min_score}/10)...")
     scored = []
+    today = date.today().isoformat()
     for i, paper in enumerate(unique):
         title_short = (paper.get("title") or "")[:65]
         print(f"  [{i+1:3d}/{len(unique)}] {title_short}...")
         result = score_and_summarize(paper)
+        result["added"] = today
         score = result.get("score", 0)
         reasoning = result.get("reasoning", "")
         if score >= min_score:
@@ -131,24 +129,16 @@ def run_agent(days_back: int = 14, min_score: int = 7, dry_run: bool = False):
         return
 
     if dry_run:
-        print("\n[DRY RUN] Would add the following to Smartsheet:")
+        print("\n[DRY RUN] Would add the following to papers.json:")
         for p in selected:
             print(f"  [{p['score']}/10] {p.get('title', '')[:80]}")
             print(f"          {p.get('journal', '')} | {p.get('year', '')}")
         return
 
-    # ── Write to Smartsheet ───────────────────────────────────────────────────
-    print(f"\nAdding to Smartsheet...")
-    added = 0
-    for paper in selected:
-        title_short = (paper.get("title") or "")[:70]
-        if ss_client.add_paper(paper):
-            added += 1
-            print(f"  ✓ [{paper['score']}/10] {title_short}")
-        else:
-            print(f"  ✗ Failed: {title_short}")
-
-    print(f"\nDone. Added {added}/{len(selected)} papers to Smartsheet.")
+    # ── Write to papers.json ──────────────────────────────────────────────────
+    print(f"\nAdding to papers.json...")
+    added = storage.add_papers(selected)
+    print(f"\nDone. Added {added}/{len(selected)} papers to papers.json.")
 
 
 # ── CLI ────────────────────────────────────────────────────────────────────────
@@ -163,11 +153,11 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--min-score", type=int, default=7,
-        help="Minimum Claude relevance score 0-10 (default: 7)"
+        help="Minimum relevance score 0-10 (default: 7)"
     )
     parser.add_argument(
         "--dry-run", action="store_true",
-        help="Score papers but don't write to Smartsheet"
+        help="Score papers but don't write to papers.json"
     )
     args = parser.parse_args()
 
