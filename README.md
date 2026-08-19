@@ -1,4 +1,4 @@
-# Literature Agent for Ru Gunawardane
+# Literature Agent
 
 Automated agent that discovers new biology research papers aligned with Ru's interests,
 scores their relevance using Claude, and adds qualifying papers to the
