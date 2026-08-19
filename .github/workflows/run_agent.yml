@@ -1,0 +1,53 @@
+name: Literature Agent
+
+on:
+  schedule:
+    # Every Monday at 9 AM UTC
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+    inputs:
+      days:
+        description: 'Days back to search'
+        required: false
+        default: '14'
+      min_score:
+        description: 'Minimum relevance score (0-10)'
+        required: false
+        default: '7'
+      dry_run:
+        description: 'Dry run — score but do not write to Smartsheet (true/false)'
+        required: false
+        default: 'false'
+
+jobs:
+  run-literature-agent:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run literature agent
+        env:
+          SMARTSHEET_API_KEY: ${{ secrets.SMARTSHEET_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          DAYS="${{ github.event.inputs.days || '14' }}"
+          MIN_SCORE="${{ github.event.inputs.min_score || '7' }}"
+          DRY_RUN="${{ github.event.inputs.dry_run || 'false' }}"
+
+          ARGS="--days $DAYS --min-score $MIN_SCORE"
+          if [ "$DRY_RUN" = "true" ]; then
+            ARGS="$ARGS --dry-run"
+          fi
+
+          python agent.py $ARGS
