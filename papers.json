@@ -13,7 +13,8 @@
     ],
     "doi": "",
     "link": "https://www.nature.com/articles/s41556-025-01831-6",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "A systems view of cellular heterogeneity: Unlocking the \"wheel of fate\"",
@@ -24,12 +25,12 @@
     "summary": "Frames cell fate as a stochastic 'wheel' that each cell spins in response to molecular inputs, with the outcome depending on both the signal and the cell's internal state. The paper argues that single-cell heterogeneity isn't noise to be averaged away but meaningful variation encoding information about cell identity and trajectory. Connects well to AICS's work on cell state and how cells within the same population make distinct decisions.",
     "tags": [
       "cell fate",
-      "cell state",
-      "perspectives"
+      "cell state"
     ],
     "doi": "",
     "link": "https://www.cell.com/cell-systems/abstract/S2405-4712(25)00133-4",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Adherens junctions as molecular regulators of emergent tissue mechanics",
@@ -44,7 +45,8 @@
     ],
     "doi": "",
     "link": "https://www.nature.com/articles/s41580-023-00688-7",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Advancing mechanobiology from single molecules to complex cellular systems",
@@ -56,13 +58,12 @@
     "tags": [
       "mechanobiology",
       "tissue mechanics",
-      "morphogenesis",
-      "Prisca Liberali",
-      "perspectives"
+      "morphogenesis"
     ],
     "doi": "10.1038/s41565-026-02179-0",
     "link": "https://www.nature.com/articles/s41565-026-02179-0",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Bioelectricity in Morphogenesis",
@@ -80,7 +81,8 @@
     ],
     "doi": "10.1146/annurev-cellbio-101323-032747",
     "link": "https://www.annualreviews.org/content/journals/10.1146/annurev-cellbio-101323-032747",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Break to build: fracture as a unifying morphogenetic strategy",
@@ -95,7 +97,8 @@
     ],
     "doi": "",
     "link": "https://journals.biologists.com/dev/article/153/16/dev205136/370625/Break-to-build-fracture-as-a-unifying",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Building a Synthetic Cell Together",
@@ -107,12 +110,12 @@
     "tags": [
       "synthetic biology",
       "self-organization",
-      "cell state",
-      "perspectives"
+      "cell state"
     ],
     "doi": "10.1038/s41467-025-62778-8",
     "link": "https://www.nature.com/articles/s41467-025-62778-8",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Challenges and potential applications of AI in systems biology",
@@ -124,12 +127,12 @@
     "tags": [
       "AI / ML",
       "cell state",
-      "single-cell",
-      "perspectives"
+      "single-cell"
     ],
     "doi": "10.1038/s41580-025-00934-0",
     "link": "https://www.nature.com/articles/s41580-025-00934-0",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Computational blueprints for cell fate programming",
@@ -142,12 +145,12 @@
       "cell fate",
       "AI / ML",
       "single-cell",
-      "cell state",
-      "perspectives"
+      "cell state"
     ],
     "doi": "",
     "link": "https://www.cell.com/stem-cell-reports/fulltext/S2213-6711(26)00140-2",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Control of spatio-temporal patterning via cell growth in a multicellular synthetic gene circuit",
@@ -164,7 +167,8 @@
     ],
     "doi": "",
     "link": "https://www.nature.com/articles/s41467-024-53078-8",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Coping with uncertainty: Challenges for robust pattern formation in dynamical tissues",
@@ -180,7 +184,8 @@
     ],
     "doi": "",
     "link": "https://www.sciencedirect.com/science/article/pii/S1084952125000394",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Coupling of cell shape, matrix and tissue dynamics ensures embryonic patterning robustness",
@@ -196,7 +201,8 @@
     ],
     "doi": "",
     "link": "https://www.nature.com/articles/s41556-025-01618-9",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Curvature feedback for repetitive tissue morphogenesis – Bridging algorithmic principles and self-regulatory systems",
@@ -212,7 +218,8 @@
     ],
     "doi": "",
     "link": "https://www.sciencedirect.com/science/article/pii/S1084952125000436",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Data modeling the interplay between single-cell shape, single-cell protein expression, and tissue state",
@@ -229,7 +236,8 @@
     ],
     "doi": "",
     "link": "https://www.cell.com/cell-reports-methods/fulltext/S2667-2375(26)00163-3",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Deciphering mechanical determinants of morphological evolution",
@@ -245,7 +253,8 @@
     ],
     "doi": "",
     "link": "https://www.sciencedirect.com/science/article/pii/S0092867426001753",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Decoding the origins of cellular self-organization for engineered biology",
@@ -258,12 +267,12 @@
       "synthetic biology",
       "self-organization",
       "multicellular",
-      "morphogenesis",
-      "perspectives"
+      "morphogenesis"
     ],
     "doi": "",
     "link": "https://www.nature.com/articles/s41587-026-03161-w",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Designing soft materials through synthetic morphogenesis",
@@ -280,7 +289,8 @@
     ],
     "doi": "10.1038/s41467-026-71999-4",
     "link": "https://www.nature.com/articles/s41467-026-71999-4",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Discovering what is possible: How synthetic biology illuminates development",
@@ -292,13 +302,13 @@
     "tags": [
       "synthetic biology",
       "development",
-      "perspectives",
       "multicellular",
       "cell fate"
     ],
     "doi": "",
     "link": "https://www.sciencedirect.com/science/article/abs/pii/S2405471226001018",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Engineering development: From the repressilator and toggle switch to synthetic developmental biology",
@@ -309,14 +319,13 @@
     "summary": "Traces how the Elowitz repressilator and Collins toggle switch introduced a 'build to understand' philosophy that has since transformed how the field studies signaling, cell fate, and patterning. Uses these landmark papers as the origin story of synthetic developmental biology and maps where the field is headed. Directly engages with Elowitz's intellectual legacy and connects to AICS's interest in gene circuits and cell state transitions.",
     "tags": [
       "synthetic biology",
-      "Elowitz lab",
       "gene circuits",
-      "cell fate",
-      "perspectives"
+      "cell fate"
     ],
     "doi": "",
     "link": "https://www.sciencedirect.com/science/article/pii/S0012160625001800",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Engineering morphogenesis of cell clusters with differentiable programming",
@@ -332,7 +341,8 @@
     ],
     "doi": "",
     "link": "https://www.nature.com/articles/s43588-025-00851-4",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "From modality-specific to compositional foundation models for cell biology",
@@ -344,12 +354,12 @@
     "tags": [
       "AI / ML",
       "cell state",
-      "multimodal",
-      "perspectives"
+      "multimodal"
     ],
     "doi": "",
     "link": "https://www.cell.com/cell-systems/fulltext/S2405-4712(26)00016-5",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Generic comparison of lumen nucleation and fusion in epithelial organoids with and without hydrostatic pressure",
@@ -365,7 +375,8 @@
     ],
     "doi": "",
     "link": "https://www.nature.com/articles/s41467-025-60780-8",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Large-scale control over collective cell migration using light-activated epidermal growth factor receptors",
@@ -381,7 +392,8 @@
     ],
     "doi": "",
     "link": "https://www.cell.com/cell-systems/abstract/S2405-4712(25)00036-5",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Lumens as active balloons: a biological physics review",
@@ -397,7 +409,8 @@
     ],
     "doi": "",
     "link": "https://arxiv.org/pdf/2605.01649",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Mapping, Modeling, and Reprogramming Cell-Fate Decision-Making Systems",
@@ -410,12 +423,12 @@
       "cell fate",
       "cell state",
       "AI / ML",
-      "development",
-      "perspectives"
+      "development"
     ],
     "doi": "10.1146/annurev-biodatasci-101424-121439",
     "link": "https://www.annualreviews.org/content/journals/10.1146/annurev-biodatasci-101424-121439",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Measuring and manipulating mechanical forces during development",
@@ -431,7 +444,8 @@
     ],
     "doi": "",
     "link": "https://www.nature.com/articles/s41556-025-01632-x",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Mechanical control of cell fate decisions in the skin epidermis",
@@ -447,7 +461,8 @@
     ],
     "doi": "",
     "link": "https://www.nature.com/articles/s41467-025-62882-9",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Mechanical forces across compartments coordinate cell shape and fate transitions to generate tissue architecture",
@@ -464,7 +479,8 @@
     ],
     "doi": "",
     "link": "https://www.nature.com/articles/s41556-023-01332-4",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "New developments and applications of human organoids",
@@ -481,7 +497,8 @@
     ],
     "doi": "10.1038/s41580-026-00974-0",
     "link": "https://www.nature.com/articles/s41580-026-00974-0",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Open problems in synthetic multicellularity",
@@ -492,12 +509,12 @@
     "summary": "A panoramic perspective from Garcia-Ojalvo and colleagues — including Levin — that catalogues the fundamental unsolved problems in engineering multicellular systems from scratch: how to generate stable cell-type diversity, how emergent properties arise, and what the evolutionary logic of multicellularity can teach us about synthetic design. Elowitz lab work on synthetic cell fate is a key reference. An essential map of the field's frontier for anyone working on synthetic morphogenesis or cell fate engineering.",
     "tags": [
       "synthetic biology",
-      "multicellular",
-      "perspectives"
+      "multicellular"
     ],
     "doi": "",
     "link": "https://www.nature.com/articles/s41540-024-00477-8",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Patterning in motion: Cell interfaces guide mesenchymal collective migration and morphogenesis",
@@ -508,12 +525,12 @@
     "summary": "Argues that cell-cell interfaces — the boundaries between mesenchymal cells of different identities — are not passive but actively guide the direction and organization of collective migration during morphogenesis. The 'patterning in motion' framing captures how spatial organization and movement are coupled rather than sequential. Relevant to AICS's interest in how cell identity and spatial organization emerge together during tissue formation.",
     "tags": [
       "morphogenesis",
-      "cell fate",
-      "perspectives"
+      "cell fate"
     ],
     "doi": "",
     "link": "https://rupress.org/jcb/article/224/11/e202505198/278333/",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Permeability-driven pressure and cell proliferation control lumen morphogenesis in pancreatic organoids",
@@ -529,7 +546,8 @@
     ],
     "doi": "",
     "link": "https://www.nature.com/articles/s41556-025-01832-5",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Present and future of synthetic cell development",
@@ -541,12 +559,12 @@
     "tags": [
       "synthetic biology",
       "self-organization",
-      "cell state",
-      "perspectives"
+      "cell state"
     ],
     "doi": "10.1038/s41580-023-00686-9",
     "link": "https://www.nature.com/articles/s41580-023-00686-9",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Programmed and self-organized flow of information during morphogenesis",
@@ -562,7 +580,8 @@
     ],
     "doi": "",
     "link": "https://www.nature.com/articles/s41580-020-00318-6",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Programming the elongation of mammalian cell aggregates with synthetic gene circuits",
@@ -578,7 +597,8 @@
     ],
     "doi": "",
     "link": "https://www.biorxiv.org/content/10.1101/2024.12.11.627621v1",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": "https://www.biorxiv.org/content/10.1101/2024.12.11.627621v1.full.pdf"
   },
   {
     "title": "Scaling up complexity in synthetic developmental biology",
@@ -593,7 +613,8 @@
     ],
     "doi": "",
     "link": "https://www.science.org/doi/10.1126/science.add9666",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Searching for physical principles of morphogenesis",
@@ -604,12 +625,12 @@
     "summary": "Streichan and colleagues make a case for a physics-driven approach to morphogenesis — one that seeks general, abstract principles governing how tissues change shape, independent of the specific molecules involved. They argue that the field needs theoretical frameworks that can predict morphogenetic outcomes from first principles, not just describe them. A perspective that resonates deeply with the multi-scale, quantitative approach to cell and tissue biology that AICS champions.",
     "tags": [
       "morphogenesis",
-      "development",
-      "perspectives"
+      "development"
     ],
     "doi": "",
     "link": "https://journals.biologists.com/dev/article/152/21/dev204894/369751/Searching-for-physical-principles-of-morphogenesis",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Single-cell morphodynamical trajectories enable prediction of gene expression accompanying cell state change",
@@ -626,7 +647,8 @@
     ],
     "doi": "",
     "link": "https://www.cell.com/cell-systems/fulltext/S2405-4712(26)00049-9",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Spatial architecture of development and disease",
@@ -644,7 +666,8 @@
     ],
     "doi": "10.1038/s41576-025-00892-5",
     "link": "https://www.nature.com/articles/s41576-025-00892-5",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Strategies and applications of synthetic cell communication",
@@ -661,7 +684,8 @@
     ],
     "doi": "10.1038/s41589-025-02002-2",
     "link": "https://www.nature.com/articles/s41589-025-02002-2",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Synthetic circuits for cell ratio control",
@@ -677,7 +701,8 @@
     ],
     "doi": "",
     "link": "https://www.nature.com/articles/s41586-026-10259-3",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Synthetic Developmental Biology: Understanding Through Reconstitution",
@@ -694,7 +719,8 @@
     ],
     "doi": "10.1146/annurev-cellbio-020620-090650",
     "link": "https://www.annualreviews.org/content/journals/10.1146/annurev-cellbio-020620-090650",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Synthetic morphology with agential materials",
@@ -707,12 +733,12 @@
       "synthetic morphogenesis",
       "self-organization",
       "development",
-      "perspectives",
       "bioelectricity"
     ],
     "doi": "10.1038/s44222-022-00001-9",
     "link": "https://www.nature.com/articles/s44222-022-00001-9",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "The Polymers of Life: Exploring Cellular Function Through Polymer Concepts",
@@ -728,7 +754,8 @@
     ],
     "doi": "",
     "link": "https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.75240",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Tissue fluidity mediates a trade-off between the speed and accuracy of multicellular patterning by cell sorting",
@@ -746,7 +773,8 @@
     ],
     "doi": "",
     "link": "https://www.sciencedirect.com/science/article/pii/S0006349525006526",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Tissue rigidity phase transition shapes morphogen gradients",
@@ -763,7 +791,8 @@
     ],
     "doi": "10.1038/s41556-026-01954-4",
     "link": "https://www.nature.com/articles/s41556-026-01954-4",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Towards multimodal foundation models in molecular cell biology",
@@ -781,7 +810,8 @@
     ],
     "doi": "10.1038/s41586-025-08710-y",
     "link": "https://www.nature.com/articles/s41586-025-08710-y",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Turing's next steps: the mechanochemical basis of morphogenesis",
@@ -793,12 +823,12 @@
     "tags": [
       "morphogenesis",
       "Turing patterning",
-      "mechanobiology",
-      "perspectives"
+      "mechanobiology"
     ],
     "doi": "",
     "link": "https://www.nature.com/articles/nrm3120",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Virtual cells need context, not just scale",
@@ -811,12 +841,12 @@
       "AI / ML",
       "virtual cell",
       "cell state",
-      "single-cell",
-      "perspectives"
+      "single-cell"
     ],
     "doi": "",
     "link": "https://www.biorxiv.org/content/10.64898/2026.02.04.703804v1.full",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": "https://www.biorxiv.org/content/10.64898/2026.02.04.703804v1.full.pdf"
   },
   {
     "title": "Visions of the future of molecular cell biology",
@@ -826,13 +856,13 @@
     "type": "perspective",
     "summary": "To mark its 25th anniversary, Nature Reviews Molecular Cell Biology asked 13 leading researchers to imagine the field in 2050. Contributors span mechanobiology, AI-powered virtual cells, organelle biology, RNA biology, imaging, and more. The result is a curated panorama of where the field's most forward-thinking scientists believe it is heading — covering both technological and conceptual revolutions. An essential read for any cell biology director thinking about the field's trajectory.",
     "tags": [
-      "perspectives",
       "cell state",
       "development"
     ],
     "doi": "",
     "link": "https://www.nature.com/articles/s41580-025-00892-7",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "What do you most hope we will achieve with mammalian synthetic biology within the next decade?",
@@ -843,12 +873,12 @@
     "summary": "A multi-author perspectives piece in Cell Systems where field leaders — including Morsut and Bintu — each answer the same question: what would constitute real progress in mammalian synthetic biology over the next decade? Answers range from building tissues with programmable architecture to engineering immune responses to understanding the logic of cell fate from first principles. A collective vision piece that maps where the synthetic biology community's ambitions and hopes are focused.",
     "tags": [
       "synthetic biology",
-      "perspectives",
       "multicellular"
     ],
     "doi": "",
     "link": "https://www.cell.com/cell-systems/fulltext/S2405-4712(25)00318-7",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Why the temporal dimension matters in cellular signalling",
@@ -860,13 +890,12 @@
     "tags": [
       "cell state",
       "cell fate",
-      "development",
-      "Elowitz lab",
-      "perspectives"
+      "development"
     ],
     "doi": "10.1038/s41556-026-02006-7",
     "link": "https://www.nature.com/articles/s41556-026-02006-7",
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Mechanotransduction and cell fate: from molecular sensors to multicellular self-organization",
@@ -886,7 +915,8 @@
     "doi": "10.3389/fcell.2026.1871354",
     "link": "https://www.semanticscholar.org/paper/32fe6b588cf0457a27bf8ee60d1b8b8d9a232218",
     "score": 10,
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Spatial Control of Light-Responsive Proteins and Optogenetics Within Hydrogels via Volumetric Bioprinting.",
@@ -902,7 +932,8 @@
     "doi": "10.1002/adma.74563",
     "link": "https://doi.org/10.1002/adma.74563",
     "score": 8,
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   },
   {
     "title": "Bioelectrical regionalization of multicellular aggregates by microRNAs.",
@@ -920,6 +951,7 @@
     "doi": "10.1063/5.0345058",
     "link": "https://www.semanticscholar.org/paper/df3b59fbf9dcb700e60e973f26663b973f77856e",
     "score": 7,
-    "added": "2026-08-19"
+    "added": "2026-08-19",
+    "pdf_link": ""
   }
 ]

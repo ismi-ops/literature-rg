@@ -4,7 +4,7 @@ import requests
 from datetime import datetime, timedelta
 
 BASE_URL = "https://api.semanticscholar.org/graph/v1"
-FIELDS = "title,authors,year,publicationDate,venue,externalIds,abstract,url,publicationTypes"
+FIELDS = "title,authors,year,publicationDate,venue,externalIds,abstract,url,publicationTypes,s2FieldsOfStudy"
 
 
 def search_papers(query: str, days_back: int = 14, limit: int = 10) -> list[dict]:
@@ -81,6 +81,9 @@ def _normalize(paper: dict) -> dict:
     elif any(t in pub_types for t in ("Comment", "Editorial", "LettersAndComments")):
         pub_type = "perspective"
 
+    fos = paper.get("s2FieldsOfStudy") or []
+    publisher_keywords = list({f["category"] for f in fos if f.get("category")})
+
     return {
         "title": paper.get("title", ""),
         "authors": [a.get("name", "") for a in (paper.get("authors") or [])],
@@ -91,5 +94,6 @@ def _normalize(paper: dict) -> dict:
         "abstract": paper.get("abstract", ""),
         "pub_type": pub_type,
         "pub_date": paper.get("publicationDate", "") or "",
+        "publisher_keywords": publisher_keywords,
         "source": "semantic_scholar",
     }

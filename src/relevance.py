@@ -135,6 +135,8 @@ def score_and_summarize(paper: dict) -> dict:
     if len(authors) > 6:
         author_str += " et al."
 
+    publisher_keywords = paper.get("publisher_keywords") or []
+    pub_kw_str = ", ".join(publisher_keywords[:10]) if publisher_keywords else "none"
     tags_list = ", ".join(KNOWN_TAGS)
 
     prompt = f"""You are helping curate a research paper reading list for Ru Gunawardane at the Allen Institute for Cell Science (AICS).
@@ -147,13 +149,14 @@ Title: {title}
 Authors: {author_str}
 Year: {year}
 Journal/Venue: {venue}
+Publisher-assigned keywords/categories: {pub_kw_str}
 Abstract: {abstract}
 
 Respond with valid JSON only (no markdown fences):
 {{
   "score": <integer 0-10>,
   "summary": "<3-5 sentences: what this paper does, why it matters scientifically, and specifically how it connects to AICS work or Ru's strategic interests. Write for a science-savvy executive. Empty string if insufficient info.>",
-  "tags": "<comma-separated subset of: {tags_list}>",
+  "tags": "<comma-separated subset of: {tags_list} — topic tags only, NEVER use author names, lab names, or paper types (research/review/perspective)>",
   "type": "<research | review | perspective>",
   "reasoning": "<1 sentence explaining the score>"
 }}

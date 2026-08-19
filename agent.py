@@ -21,6 +21,7 @@ from src.sources.semantic_scholar import search_papers as ss_search, get_author_
 from src.sources.biorxiv import fetch_recent as biorxiv_fetch
 from src.sources.pubmed import search_pubmed
 from src.relevance import score_and_summarize
+from src.sources.pdf_finder import get_pdf_link
 from src import storage
 
 
@@ -109,6 +110,7 @@ def run_agent(days_back: int = 14, min_score: int = 7, dry_run: bool = False):
         print(f"  [{i+1:3d}/{len(unique)}] {title_short}...")
         result = score_and_summarize(paper)
         result["added"] = today
+        result["pdf_link"] = get_pdf_link(paper) or ""
         score = result.get("score", 0)
         reasoning = result.get("reasoning", "")
         if score >= min_score:
