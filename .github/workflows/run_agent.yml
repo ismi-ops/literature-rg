@@ -46,6 +46,10 @@ jobs:
           if [ "$DRY_RUN" = "true" ]; then EXTRA="--dry-run"; fi
           python agent.py --days "$DAYS" --min-score "$MIN_SCORE" $EXTRA
 
+      - name: Backfill PDF links
+        if: ${{ github.event.inputs.dry_run != 'true' }}
+        run: python backfill_pdfs.py
+
       - name: Regenerate site
         if: ${{ github.event.inputs.dry_run != 'true' }}
         run: python generate_site.py

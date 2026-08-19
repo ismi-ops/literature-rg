@@ -60,6 +60,9 @@ def _normalize(p: dict) -> dict:
     raw_authors = p.get("authors", "")
     authors = [a.strip() for a in raw_authors.split(";") if a.strip()]
 
+    category = p.get("category", "").strip()
+    publisher_keywords = [category] if category else []
+
     return {
         "title": p.get("title", ""),
         "authors": authors,
@@ -70,5 +73,6 @@ def _normalize(p: dict) -> dict:
         "abstract": p.get("abstract", ""),
         "pub_type": "research",
         "pub_date": p.get("date", "") or "",
+        "publisher_keywords": publisher_keywords,
         "source": "biorxiv",
     }

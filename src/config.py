@@ -3,24 +3,6 @@ Configuration for the Ru Gunawardane literature agent.
 Edit this file to tune search coverage and relevance criteria.
 """
 
-# Smartsheet identifiers
-SHEET_ID = 4131774517956484
-
-# Column IDs (from the Smartsheet sheet schema)
-COLUMN_IDS = {
-    "title":         4048268732698500,
-    "authors":       8551868360068996,
-    "year":          389094035459972,
-    "journal":       4892693662830468,
-    "type":          2640893849145220,
-    "summary":       7144493476515716,
-    "tags":          1514993942302596,
-    "doi":           6018593569673092,
-    "link":          7226208316329860,
-    "status":        8186017945522052,
-    "shared_with_ru": 3766793755987844,
-}
-
 # Semantic Scholar topic queries — broad first, specific later
 SEARCH_QUERIES = [
     "morphogenesis tissue mechanics multicellular",
@@ -71,7 +53,7 @@ PUBMED_QUERIES = [
     "tissue mechanics patterning development",
 ]
 
-# Tag vocabulary — Claude uses this list when generating tags
+# Tag vocabulary — topic tags only; never use author names, lab names, or paper types.
 KNOWN_TAGS = [
     "stem cells",
     "development",
@@ -79,9 +61,7 @@ KNOWN_TAGS = [
     "cell fate",
     "cell state",
     "self-organization",
-    "perspectives",
     "synthetic biology",
-    "Elowitz lab",
     "gene circuits",
     "mechanobiology",
     "tissue mechanics",
@@ -97,7 +77,6 @@ KNOWN_TAGS = [
     "bioelectricity",
     "synthetic morphogenesis",
     "virtual cell",
-    "Prisca Liberali",
     "iPSC",
     "lumenogenesis",
     "collective migration",

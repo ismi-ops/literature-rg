@@ -111,6 +111,12 @@ def _parse_article(article) -> dict | None:
     if not title or not abstract:
         return None
 
+    mesh_terms = [
+        el.find("DescriptorName").text
+        for el in medline.findall(".//MeshHeading")
+        if el.find("DescriptorName") is not None and el.find("DescriptorName").text
+    ]
+
     return {
         "title": title,
         "authors": authors,
@@ -121,5 +127,6 @@ def _parse_article(article) -> dict | None:
         "abstract": abstract,
         "pub_type": "research",
         "pub_date": "",
+        "publisher_keywords": mesh_terms[:15],
         "source": "pubmed",
     }
