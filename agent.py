@@ -56,7 +56,7 @@ def run_agent(days_back: int = 14, min_score: int = 7, dry_run: bool = False):
     if not smartsheet_key:
         raise ValueError("SMARTSHEET_API_KEY environment variable not set")
     if not os.environ.get("ANTHROPIC_API_KEY"):
-        raise ValueError("ANTHROPIC_API_KEY environment variable not set")
+        print("Note: ANTHROPIC_API_KEY not set — using keyword-based relevance scoring")
 
     ss_client = SmartsheetClient(api_key=smartsheet_key)
 
