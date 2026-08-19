@@ -1,0 +1,64 @@
+name: Literature Agent
+
+on:
+  schedule:
+    - cron: "0 9 * * 1"   # Every Monday at 9am UTC
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "Days back to search"
+        default: "14"
+        type: string
+      min_score:
+        description: "Minimum relevance score (0-10)"
+        default: "7"
+        type: string
+      dry_run:
+        description: "Dry run (don't write to papers.json)"
+        default: "false"
+        type: choice
+        options: ["false", "true"]
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Run agent
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          DAYS="${{ github.event.inputs.days || '14' }}"
+          MIN_SCORE="${{ github.event.inputs.min_score || '7' }}"
+          DRY_RUN="${{ github.event.inputs.dry_run || 'false' }}"
+          EXTRA=""
+          if [ "$DRY_RUN" = "true" ]; then EXTRA="--dry-run"; fi
+          python agent.py --days "$DAYS" --min-score "$MIN_SCORE" $EXTRA
+
+      - name: Regenerate site
+        if: ${{ github.event.inputs.dry_run != 'true' }}
+        run: python generate_site.py
+
+      - name: Commit and push updates
+        if: ${{ github.event.inputs.dry_run != 'true' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add papers.json index.html
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: weekly paper update $(date -u +%Y-%m-%d)"
+            git push
+          fi
