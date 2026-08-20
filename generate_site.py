@@ -16,7 +16,7 @@ HTML_TEMPLATE = """<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ru's Reading List · AICS</title>
+<title>Ru's Reading List · Cell Science</title>
 <style>
   :root {
     --bg: #f8f9fb; --surface: #ffffff; --border: #e2e5ea;
@@ -106,6 +106,7 @@ HTML_TEMPLATE = """<!doctype html>
   .author-link:hover { color: var(--accent); text-decoration: underline; }
   .card-venue { font-size: 12.5px; color: var(--muted); font-style: italic; }
   .card-summary { font-size: 13.5px; color: var(--text); opacity: .88; }
+  .card-relevance { font-size: 13px; color: var(--accent); background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 4px; padding: 6px 10px; margin-top: 8px; font-style: italic; }
   .card-tags { display: flex; flex-wrap: wrap; gap: 5px; }
   .tag { font-size: 11.5px; padding: 2px 8px; border-radius: 10px; background: var(--tag-bg); color: var(--tag-text); cursor: pointer; }
   .tag:hover { opacity: .8; }
@@ -145,7 +146,7 @@ HTML_TEMPLATE = """<!doctype html>
 
 <header>
   <div class="header-inner">
-    <div class="header-title">Ru's Reading List <span>· AICS</span></div>
+    <div class="header-title">Ru's Reading List <span>· Cell Science</span></div>
     <input id="search" type="search" placeholder="Search title, author, journal…" autocomplete="off">
     <div id="result-count"></div>
     <a class="btn-add" href="https://github.com/ismi-ops/literature-rg/actions/workflows/add_paper.yml" target="_blank" rel="noopener">+ Add paper</a>
@@ -334,6 +335,7 @@ function fmt(p) {
     +(authorHtml ? '<div class="card-authors">'+authorHtml+'</div>' : '')
     +(venue ? '<div class="card-venue">'+esc(venue)+'</div>' : '')
     +(p.summary ? '<div class="card-summary">'+esc(p.summary)+'</div>' : '')
+    +(p.relevance ? '<div class="card-relevance">'+esc(p.relevance)+'</div>' : '')
     +(tags ? '<div class="card-tags">'+tags+'</div>' : '')
     +(pdfBtn ? '<div class="card-actions">'+pdfBtn+'</div>' : '')
     +'<div class="notes-section">'

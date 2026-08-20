@@ -23,7 +23,7 @@ def _get_client():
 
 # Each entry: (keywords, points)  — matched against lowercase title+abstract
 _KEYWORD_RULES = [
-    # Core AICS topics — highest value
+    # Core Cell Science topics — highest value
     (["endogenous tag", "mEGFP", "knock-in fluorescent", "CRISPR tag hiPSC"], 3),
     (["intracellular organization", "organelle positioning", "organelle variation"], 3),
     (["holistic cell state", "cell state imaging morphology"], 3),
@@ -64,7 +64,7 @@ _KEYWORD_RULES = [
 
 # Tracked author names — finding any of these adds points
 _TRACKED_AUTHORS = [
-    # AICS core
+    # Cell Science core
     "Gunawardane", "Rafelski", "Gerbin", "Viana", "Johnson",
     # Collaborators
     "Theriot",
@@ -164,9 +164,9 @@ def score_and_summarize(paper: dict) -> dict:
     pub_kw_str = ", ".join(publisher_keywords[:10]) if publisher_keywords else "none"
     tags_list = ", ".join(KNOWN_TAGS)
 
-    prompt = f"""You are helping curate a research paper reading list for Ru Gunawardane at the Allen Institute for Cell Science (AICS).
+    prompt = f"""You are helping curate a research paper reading list for the Allen Institute for Cell Science.
 
-Background on Ru's interests:
+Background on research interests:
 {RELEVANCE_CONTEXT}
 
 Paper to evaluate:
@@ -180,17 +180,18 @@ Abstract: {abstract}
 Respond with valid JSON only (no markdown fences):
 {{
   "score": <integer 0-10>,
-  "summary": "<3-5 sentences: what this paper does, why it matters scientifically, and how it connects to AICS research priorities (quantitative imaging, cell state, stem cell biology, morphogenesis, or synthetic biology). Write for a science-savvy executive. Do not reference any individual by name. Empty string if insufficient info.>",
+  "summary": "<3-5 sentences: what this paper does and why it matters scientifically. Write for a science-savvy executive. Do not reference any individual by name. Empty string if insufficient info.>",
+  "relevance": "<1-2 sentences on why this paper is specifically relevant to Cell Science research priorities (quantitative imaging, cell state, stem cell biology, morphogenesis, synthetic biology, CellScapes/synthoids). Be concrete. Empty string if not clearly relevant.>",
   "tags": "<comma-separated subset of: {tags_list} — topic tags only, NEVER use author names, lab names, or paper types (research/review/perspective)>",
   "type": "<research | review | perspective>",
   "reasoning": "<1 sentence explaining the score>"
 }}
 
 Scoring guide:
-- 9-10: Directly on Ru's core topics, from a high-impact journal, clear AICS relevance
-- 7-8: Relevant to ≥2 of Ru's interest areas, or from a tracked author/lab
+- 9-10: Directly on core topics, from a high-impact journal, clear Cell Science relevance
+- 7-8: Relevant to ≥2 interest areas, or from a tracked author/lab
 - 5-6: Tangentially relevant, interesting but lower priority
-- 0-4: Not relevant to Ru's interests"""
+- 0-4: Not relevant to Cell Science interests"""
 
     try:
         response = _get_client().messages.create(
@@ -213,6 +214,7 @@ Scoring guide:
         "year": str(year) if year else "",
         "score": int(result.get("score", 0)),
         "summary": result.get("summary", ""),
+        "relevance": result.get("relevance", ""),
         "tags": result.get("tags", ""),
         "type": result.get("type", pub_type),
         "reasoning": result.get("reasoning", ""),
