@@ -109,9 +109,18 @@ HTML_TEMPLATE = """<!doctype html>
   .card-tags { display: flex; flex-wrap: wrap; gap: 5px; }
   .tag { font-size: 11.5px; padding: 2px 8px; border-radius: 10px; background: var(--tag-bg); color: var(--tag-text); cursor: pointer; }
   .tag:hover { opacity: .8; }
-  .card-actions { display: flex; gap: 8px; margin-top: 2px; }
+  .card-actions { display: flex; gap: 8px; margin-top: 2px; align-items: center; }
   .btn-pdf { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 7px; background: var(--accent-light); color: var(--accent); text-decoration: none; border: 1px solid currentColor; opacity: .85; transition: opacity .12s; }
   .btn-pdf:hover { opacity: 1; }
+  .notes-section { margin-top: 6px; }
+  .notes-toggle { background: none; border: none; padding: 0; font-size: 12px; color: var(--muted); cursor: pointer; display: flex; align-items: center; gap: 4px; transition: color .12s; }
+  .notes-toggle:hover { color: var(--accent); }
+  .notes-toggle.has-notes { color: var(--accent); font-weight: 600; }
+  .notes-area { display: none; margin-top: 6px; }
+  .notes-area.open { display: block; }
+  .notes-textarea { width: 100%; min-height: 72px; padding: 8px 10px; border: 1px solid var(--border); border-radius: 7px; background: var(--bg); color: var(--text); font-size: 13px; font-family: inherit; line-height: 1.5; resize: vertical; outline: none; transition: border-color .12s; }
+  .notes-textarea:focus { border-color: var(--accent); }
+  .notes-saved { font-size: 11px; color: var(--muted); margin-top: 3px; min-height: 14px; }
   .empty { text-align: center; padding: 64px 0; color: var(--muted); font-size: 15px; grid-column: 1/-1; }
   .btn-add { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 8px; background: var(--accent); color: #fff; text-decoration: none; border: none; cursor: pointer; transition: opacity .12s; white-space: nowrap; }
   .btn-add:hover { opacity: .85; }
@@ -290,6 +299,11 @@ document.getElementById('grid').addEventListener('click', e => {
   render();
 });
 
+/* ── Notes storage (localStorage) ───────────────────────────────────────── */
+function noteKey(p) { return 'note:' + (p.doi || p.title || '').slice(0, 120); }
+function getNote(p) { try { return localStorage.getItem(noteKey(p)) || ''; } catch(e) { return ''; } }
+function setNote(p, v) { try { localStorage.setItem(noteKey(p), v); } catch(e) {} }
+
 /* ── Card rendering ─────────────────────────────────────────────────────── */
 function authorLink(name) { return 'https://scholar.google.com/scholar?q=' + encodeURIComponent(name); }
 function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
@@ -307,6 +321,9 @@ function fmt(p) {
   const added = p.added ? '<span class="card-date">added '+p.added+'</span>' : '';
   const venue = [p.journal, p.year].filter(Boolean).join(' · ');
   const pdfBtn = p.pdf_link ? '<a class="btn-pdf" href="'+esc(p.pdf_link)+'" target="_blank" rel="noopener">&#8595; PDF</a>' : '';
+  const existingNote = getNote(p);
+  const hasNote = existingNote.trim().length > 0;
+  const noteId = 'note-' + Math.random().toString(36).slice(2);
   return '<div class="card">'
     +'<div class="card-meta"><span class="badge '+badgeClass+'">'+esc(type)+'</span>'+added+'</div>'
     +'<div class="card-title">'+titleHtml+'</div>'
@@ -315,8 +332,51 @@ function fmt(p) {
     +(p.summary ? '<div class="card-summary">'+esc(p.summary)+'</div>' : '')
     +(tags ? '<div class="card-tags">'+tags+'</div>' : '')
     +(pdfBtn ? '<div class="card-actions">'+pdfBtn+'</div>' : '')
+    +'<div class="notes-section">'
+      +'<button class="notes-toggle'+(hasNote?' has-notes':'')+'" data-noteid="'+noteId+'">'
+        +(hasNote ? '&#128221; Notes' : '+ Add note')
+      +'</button>'
+      +'<div class="notes-area" id="'+noteId+'">'
+        +'<textarea class="notes-textarea" rows="3" placeholder="Your notes…">'+esc(existingNote)+'</textarea>'
+        +'<div class="notes-saved"></div>'
+      +'</div>'
+    +'</div>'
     +'</div>';
 }
+
+/* ── Notes interaction ──────────────────────────────────────────────────── */
+let _papersByNoteId = {};
+function bindNotes(paper, noteId) {
+  _papersByNoteId[noteId] = paper;
+}
+document.getElementById('grid').addEventListener('click', e => {
+  const btn = e.target.closest('.notes-toggle');
+  if (!btn) return;
+  const id = btn.dataset.noteid;
+  const area = document.getElementById(id);
+  if (!area) return;
+  area.classList.toggle('open');
+  if (area.classList.contains('open')) {
+    area.querySelector('textarea').focus();
+  }
+});
+document.getElementById('grid').addEventListener('input', e => {
+  if (!e.target.classList.contains('notes-textarea')) return;
+  const area = e.target.closest('.notes-area');
+  const noteId = area?.id;
+  const paper = _papersByNoteId[noteId];
+  if (!paper) return;
+  setNote(paper, e.target.value);
+  const saved = area.querySelector('.notes-saved');
+  if (saved) saved.textContent = 'Saved';
+  const toggle = document.querySelector('[data-noteid="'+noteId+'"]');
+  if (toggle) {
+    const hasNote = e.target.value.trim().length > 0;
+    toggle.classList.toggle('has-notes', hasNote);
+    toggle.textContent = hasNote ? '📑 Notes' : '+ Add note';
+    toggle.dataset.noteid = noteId;
+  }
+});
 
 /* ── Render ─────────────────────────────────────────────────────────────── */
 function render() {
@@ -330,8 +390,20 @@ function render() {
     if (q) { const hay = [p.title, p.authors, p.journal, p.summary,...(p.tags||[])].join(' ').toLowerCase(); if (!hay.includes(q)) return false; }
     return true;
   });
+  _papersByNoteId = {};
   const grid = document.getElementById('grid');
-  grid.innerHTML = filtered.length ? filtered.map(fmt).join('') : '<div class="empty">No papers match your filters.</div>';
+  if (filtered.length) {
+    const cards = filtered.map(p => {
+      const html = fmt(p);
+      // extract the noteId we just generated so we can register it
+      const m = html.match(/data-noteid="(note-[^"]+)"/);
+      if (m) _papersByNoteId[m[1]] = p;
+      return html;
+    });
+    grid.innerHTML = cards.join('');
+  } else {
+    grid.innerHTML = '<div class="empty">No papers match your filters.</div>';
+  }
   document.getElementById('result-count').textContent = filtered.length+' paper'+(filtered.length===1?'':'s');
 }
 render();

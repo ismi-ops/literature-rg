@@ -180,7 +180,7 @@ Abstract: {abstract}
 Respond with valid JSON only (no markdown fences):
 {{
   "score": <integer 0-10>,
-  "summary": "<3-5 sentences: what this paper does, why it matters scientifically, and specifically how it connects to AICS work or Ru's strategic interests. Write for a science-savvy executive. Empty string if insufficient info.>",
+  "summary": "<3-5 sentences: what this paper does, why it matters scientifically, and how it connects to AICS research priorities (quantitative imaging, cell state, stem cell biology, morphogenesis, or synthetic biology). Write for a science-savvy executive. Do not reference any individual by name. Empty string if insufficient info.>",
   "tags": "<comma-separated subset of: {tags_list} — topic tags only, NEVER use author names, lab names, or paper types (research/review/perspective)>",
   "type": "<research | review | perspective>",
   "reasoning": "<1 sentence explaining the score>"
