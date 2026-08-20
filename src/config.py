@@ -23,6 +23,11 @@ SEARCH_QUERIES = [
     "multicellular self-organization synthetic biology",
     "cell shape morphology gene expression",
     "tissue architecture single-cell spatial",
+    "live-cell imaging phenotyping organoid morphodynamics",
+    "phenotype genotype coupling imaging high-content screening",
+    "cell morphology quantification machine learning imaging",
+    "organoid live imaging WNT signaling intestinal",
+    "image-based profiling cell painting phenomics",
 ]
 
 # Authors whose new papers should always be caught
@@ -51,6 +56,8 @@ PUBMED_QUERIES = [
     "organoid tissue self-organization epithelial",
     "cell state machine learning omics imaging",
     "tissue mechanics patterning development",
+    "live cell imaging phenotyping morphodynamics organoid",
+    "high-content imaging phenomics genotype phenotype",
 ]
 
 # Tag vocabulary — topic tags only; never use author names, lab names, or paper types.
@@ -81,6 +88,11 @@ KNOWN_TAGS = [
     "lumenogenesis",
     "collective migration",
     "signaling dynamics",
+    "live imaging",
+    "phenomics",
+    "image-based profiling",
+    "morphodynamics",
+    "WNT signaling",
 ]
 
 # Context fed to Claude for relevance scoring and summary generation
@@ -112,6 +124,13 @@ Her research interests include:
 
 8. Spatial Biology — spatial transcriptomics, how cell identity relates to tissue context
    and neighborhood, spatial organization of cell fate.
+
+9. Live-Cell Imaging & Phenomics — morpho-dynamic phenotyping of organoids and cells,
+   image-based profiling (e.g. Cell Painting), phenotype-genotype-function coupling from
+   live imaging, high-content screening, tools that treat imaging data as an image-"transcriptome"
+   (e.g. SPOT/SAM frameworks), label-free live imaging at scale, integration of imaging with
+   scRNA-seq. AICS has deep expertise in quantitative cell imaging; papers that advance the
+   measurement or interpretation of cell/organoid morphodynamics are especially relevant.
 
 Key researchers she tracks: Leonardo Morsut, Michael Elowitz (Elowitz lab), Magda Zernicka-Goetz,
 Prisca Liberali, Michael Levin, Sara Wickstrom, Edouard Hannezo, Miki Ebisuya, Nicoletta Petridou,

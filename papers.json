@@ -953,5 +953,26 @@
     "score": 7,
     "added": "2026-08-19",
     "pdf_link": ""
+  },
+  {
+    "title": "Identifying phenotype-genotype-function coupling in 3D organoid imaging using Shape, Appearance and Motion Phenotype Observation Tool (SPOT)",
+    "authors": "",
+    "year": "2026",
+    "journal": "Nature Communications",
+    "type": "research",
+    "summary": "SAM-SPOT introduces a standardized framework for quantifying 3D morpho-dynamic phenotypes in live organoid imaging — essentially an image-level analogue of the transcriptome — without requiring prior biological knowledge. Applied to over 1.6 million mouse and human organoid instances, it links live imaging readouts to genetic and chemical perturbations and, combined with scRNA-seq, shows that WNT (but not RAS or p53) drives irregular morphogenesis in intestinal organoids. Directly relevant to AICS's core mission of connecting cell shape and dynamics to molecular identity, and a high-value methodological advance for organoid-based phenotyping at scale.",
+    "tags": [
+      "organoid",
+      "morphology",
+      "AI / ML",
+      "single-cell",
+      "signaling dynamics",
+      "cell state",
+      "multimodal"
+    ],
+    "doi": "10.1038/s41467-026-75506-7",
+    "link": "https://www.nature.com/articles/s41467-026-75506-7",
+    "score": 10,
+    "added": "2026-08-20"
   }
 ]
