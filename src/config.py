@@ -5,7 +5,7 @@ Edit this file to tune search coverage and relevance criteria.
 
 # Semantic Scholar topic queries — broad first, specific later
 SEARCH_QUERIES = [
-    # Core AICS themes
+    # Core Cell Science themes
     "hiPSC endogenous tagging organelle 3D live imaging",
     "intracellular organization cell-to-cell variation hiPSC imaging",
     "holistic cell state transcriptomics morphology structure integration",
@@ -50,7 +50,7 @@ SEARCH_QUERIES = [
 
 # Authors whose new papers should always be caught
 TRACKED_AUTHORS = [
-    # AICS core team
+    # Cell Science core team
     "Ruwanthi Gunawardane",
     "Susanne Rafelski",
     "Kaytlyn Gerbin",
@@ -136,14 +136,14 @@ KNOWN_TAGS = [
 # Context fed to Claude for relevance scoring and summary generation
 RELEVANCE_CONTEXT = """
 Ruwanthi (Ru) Gunawardane, Ph.D. is Executive Director of the Allen Institute for Cell Science
-(AICS) in Seattle. She joined at AICS's founding in 2015 and led the creation of the Allen Cell
+in Seattle. She joined at the institute's founding in 2015 and led the creation of the Allen Cell
 Collection. Her background spans hiPSC engineering, quantitative cell imaging, drug discovery
 (Ambit Biosciences: FLT3 inhibitor quizartinib; Amgen: oncology/cardiology), and cell biology.
 
 == Allen Institute for Cell Science — Core Research Programs ==
 
 1. Allen Cell Collection & Endogenous Organelle Tagging
-   AICS's flagship resource: CRISPR/Cas9 mEGFP insertions at 25+ endogenous loci in WTC-11 hiPSCs,
+   Cell Science's flagship resource: CRISPR/Cas9 mEGFP insertions at 25+ endogenous loci in WTC-11 hiPSCs,
    enabling quantitative live imaging of organelle dynamics at scale. Over 200,000 live-cell images
    openly available. Papers that extend or use this type of endogenous-tag/live-imaging approach,
    or that develop new tools for quantitative organelle imaging in stem cells, are very relevant.
@@ -154,13 +154,13 @@ Collection. Her background spans hiPSC engineering, quantitative cell imaging, d
    What is the relationship between structural variation and cell state or function?
 
 3. Holistic Cell State
-   A central AICS thesis: cell state cannot be captured by transcriptomics alone — it requires
+   A central Cell Science thesis: cell state cannot be captured by transcriptomics alone — it requires
    integrating gene expression, structural organization, and cell morphology. Papers that combine
    imaging + omics, or that challenge/support transcriptomics-centric views of cell identity, are
    especially high priority.
 
 4. hiPSC-Derived Cardiomyocytes & Disease Modeling
-   AICS has released six HCM (hypertrophic cardiomyopathy) hiPSC lines with CRISPR-introduced
+   Cell Science has released six HCM (hypertrophic cardiomyopathy) hiPSC lines with CRISPR-introduced
    myosin mutations. Research on hiPSC-CM differentiation, sarcomere maturation, structural
    maturation benchmarks, and cardiac disease modeling (especially using stem cell lines and
    quantitative imaging) is directly relevant.
@@ -189,7 +189,7 @@ Collection. Her background spans hiPSC engineering, quantitative cell imaging, d
 
 9. Synthetic Developmental Biology
    Engineering gene circuits to program cell behavior and identity; building artificial multicellular
-   systems. Key labs: Elowitz, Morsut, Ebisuya, Bintu. The CellScapes synthoid program is AICS's
+   systems. Key labs: Elowitz, Morsut, Ebisuya, Bintu. The CellScapes synthoid program is Cell Science's
    own entry into this space.
 
 10. Cell Fate & Signaling Dynamics
@@ -205,7 +205,7 @@ Collection. Her background spans hiPSC engineering, quantitative cell imaging, d
     Ion gradients, membrane voltage, non-neural bioelectric signaling in development.
 
 == Key Researchers to Track ==
-AICS core: Gunawardane RN, Rafelski SM, Gerbin KA, Viana MP, Johnson GR.
+Cell Science core: Gunawardane RN, Rafelski SM, Gerbin KA, Viana MP, Johnson GR.
 External collaborators: Theriot JA (cell migration, biophysics).
 Synthetic dev bio: Morsut, Elowitz, Ebisuya, Bintu.
 Morphogenesis/mechanics: Zernicka-Goetz, Liberali, Wickstrom, Hannezo, Petridou, Streichan, Priya.
@@ -218,11 +218,11 @@ Nature Reviews Molecular Cell Biology, Cell, Cell Systems, Cell Reports Methods,
 Science, eLife, Developmental Cell, Development,
 Annual Review of Cell and Developmental Biology,
 PLOS Computational Biology, Molecular Biology of the Cell, Biophysical Journal.
-Also: bioRxiv preprints (AICS has a strong preprint-first culture).
+Also: bioRxiv preprints (Cell Science has a strong preprint-first culture).
 
-== AICS Relevance Boost ==
+== Cell Science Relevance Boost ==
 Papers are especially valuable if they:
-- Use or cite AICS data, tools (Allen Cell Structure Segmenter, Simularium), or cell lines
+- Use or cite Cell Science data, tools (Allen Cell Structure Segmenter, Simularium), or cell lines
 - Address how structure determines function in cells or tissues
 - Combine quantitative imaging with omics data
 - Develop tools for live-cell imaging, organelle segmentation, or morphology quantification
