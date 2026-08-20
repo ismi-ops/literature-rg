@@ -20,6 +20,7 @@ from src.config import SEARCH_QUERIES, PUBMED_QUERIES, TRACKED_AUTHORS
 from src.sources.semantic_scholar import search_papers as ss_search, get_author_papers
 from src.sources.biorxiv import fetch_recent as biorxiv_fetch
 from src.sources.pubmed import search_pubmed
+from src.sources.ss_recommendations import fetch_recommendations
 from src.relevance import score_and_summarize
 from src.sources.pdf_finder import get_pdf_link
 from src import storage
@@ -59,7 +60,8 @@ def run_agent(days_back: int = 14, min_score: int = 7, dry_run: bool = False):
 
     print("Fetching existing papers from papers.json...")
     existing = storage.get_existing_papers()
-    print(f"  {len(existing)//2} existing entries found")
+    papers_json = storage.load_papers()
+    print(f"  {len(papers_json)} existing entries found")
 
     candidates: list[dict] = []
 
@@ -92,6 +94,12 @@ def run_agent(days_back: int = 14, min_score: int = 7, dry_run: bool = False):
         if results:
             print(f"  [{len(results)}]  {query}")
         candidates.extend(results)
+
+    # ── Semantic Scholar: recommendations seeded from reading list ────────────
+    print(f"\nFetching Semantic Scholar recommendations...")
+    rec_papers = fetch_recommendations(papers_json)
+    print(f"  {len(rec_papers)} recommendations returned")
+    candidates.extend(rec_papers)
 
     print(f"\n{len(candidates)} total candidates before deduplication")
     unique = deduplicate(candidates, existing)

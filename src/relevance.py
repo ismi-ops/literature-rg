@@ -23,7 +23,15 @@ def _get_client():
 
 # Each entry: (keywords, points)  — matched against lowercase title+abstract
 _KEYWORD_RULES = [
-    # Core topics — high value
+    # Core AICS topics — highest value
+    (["endogenous tag", "mEGFP", "knock-in fluorescent", "CRISPR tag hiPSC"], 3),
+    (["intracellular organization", "organelle positioning", "organelle variation"], 3),
+    (["holistic cell state", "cell state imaging morphology"], 3),
+    (["hiPSC cardiomyocyte", "iPSC-CM", "cardiomyocyte maturation", "sarcomere"], 3),
+    (["synthoid", "synthetic cell community", "CellScapes"], 3),
+    (["morpho-dynamic", "morphodynamic phenotype", "phenotype-genotype coupling"], 3),
+    (["virtual cell", "generative cell model", "VAE cell morphology"], 3),
+    # Core biology topics — high value
     (["morphogenesis", "tissue morphogenesis"], 3),
     (["synthetic biology", "synthetic developmental"], 3),
     (["cell fate", "fate decision", "fate transition"], 3),
@@ -33,7 +41,7 @@ _KEYWORD_RULES = [
     (["foundation model", "virtual cell", "AI cell biology"], 3),
     # Secondary topics — moderate value
     (["organoid", "lumenogenesis", "lumen formation"], 2),
-    (["stem cell", "iPSC", "pluripotent"], 2),
+    (["stem cell", "iPSC", "pluripotent", "hiPSC"], 2),
     (["bioelectricity", "bioelectric", "membrane voltage"], 2),
     (["spatial transcriptomics", "spatial biology", "spatial cell"], 2),
     (["tissue fluidity", "solid-fluid", "fluid-solid"], 2),
@@ -41,25 +49,42 @@ _KEYWORD_RULES = [
     (["phase separation", "condensate", "biomolecular condensate"], 2),
     (["collective migration", "collective cell"], 2),
     (["multicellular", "multi-cellular"], 2),
+    (["live-cell imaging", "live cell imaging", "live imaging", "morphodynamics"], 2),
+    (["image-based profiling", "cell painting", "phenomics", "high-content imaging"], 2),
+    (["disease model", "hypertrophic cardiomyopathy", "HCM", "myosin mutation"], 2),
+    (["cell-to-cell variation", "cell-to-cell variability", "single-cell heterogeneity"], 2),
+    # Lower-weight topics
     (["single-cell", "single cell omics", "scRNA"], 1),
     (["patterning", "tissue patterning", "developmental patterning"], 1),
     (["development", "developmental biology"], 1),
     (["cell state", "cell identity"], 1),
     (["machine learning", "deep learning", "neural network"], 1),
+    (["WNT", "Wnt signaling", "beta-catenin"], 1),
 ]
 
 # Tracked author names — finding any of these adds points
 _TRACKED_AUTHORS = [
-    "Morsut", "Elowitz", "Zernicka-Goetz", "Liberali", "Levin",
-    "Wickstrom", "Hannezo", "Ebisuya", "Petridou", "Streichan",
-    "Priya", "Toettcher", "Bintu", "Garcia-Ojalvo",
+    # AICS core
+    "Gunawardane", "Rafelski", "Gerbin", "Viana", "Johnson",
+    # Collaborators
+    "Theriot",
+    # Synthetic dev bio
+    "Morsut", "Elowitz", "Ebisuya", "Bintu",
+    # Morphogenesis / mechanics
+    "Zernicka-Goetz", "Liberali", "Wickstrom", "Hannezo", "Petridou", "Streichan", "Priya",
+    # Signaling
+    "Toettcher", "Tsai", "Garcia-Ojalvo",
+    # Bioelectricity
+    "Levin",
 ]
 
 # High-impact journals add a point
 _TOP_JOURNALS = [
-    "Nature Cell Biology", "Nature Reviews Molecular Cell Biology",
-    "Cell Systems", "Cell", "Nature Biotechnology", "Nature Communications",
-    "Development", "Developmental Cell", "eLife", "Science", "Nature",
+    "Nature", "Nature Cell Biology", "Nature Methods", "Nature Communications",
+    "Nature Biotechnology", "Nature Reviews Molecular Cell Biology",
+    "Cell", "Cell Systems", "Cell Reports Methods",
+    "Science", "eLife", "Developmental Cell", "Development",
+    "PLOS Computational Biology", "Molecular Biology of the Cell", "Biophysical Journal",
 ]
 
 

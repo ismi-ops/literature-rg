@@ -1,0 +1,57 @@
+name: Add Paper
+
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: "Paper URL (e.g. https://www.nature.com/articles/...)"
+        required: false
+        type: string
+      doi:
+        description: "DOI (e.g. 10.1038/s41467-...) — use instead of URL if you have it"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  add:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Add paper
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          URL="${{ github.event.inputs.url }}"
+          DOI="${{ github.event.inputs.doi }}"
+          ARGS=""
+          if [ -n "$URL" ]; then ARGS="$ARGS --url \"$URL\""; fi
+          if [ -n "$DOI" ]; then ARGS="$ARGS --doi \"$DOI\""; fi
+          eval python add_paper.py $ARGS
+
+      - name: Backfill PDF link
+        run: python backfill_pdfs.py
+
+      - name: Regenerate site
+        run: python generate_site.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add papers.json index.html
+          if git diff --cached --quiet; then
+            echo "No changes to commit (paper may already exist)."
+          else
+            git commit -m "chore: add paper via workflow"
+            git push
