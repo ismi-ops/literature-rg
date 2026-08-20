@@ -100,6 +100,8 @@
   .btn-pdf { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 7px; background: var(--accent-light); color: var(--accent); text-decoration: none; border: 1px solid currentColor; opacity: .85; transition: opacity .12s; }
   .btn-pdf:hover { opacity: 1; }
   .empty { text-align: center; padding: 64px 0; color: var(--muted); font-size: 15px; grid-column: 1/-1; }
+  .btn-add { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 8px; background: var(--accent); color: #fff; text-decoration: none; border: none; cursor: pointer; transition: opacity .12s; white-space: nowrap; }
+  .btn-add:hover { opacity: .85; }
 </style>
 </head>
 <body>
@@ -120,6 +122,7 @@
     <div class="header-title">Ru's Reading List <span>· AICS</span></div>
     <input id="search" type="search" placeholder="Search title, author, journal…" autocomplete="off">
     <div id="result-count"></div>
+    <a class="btn-add" href="https://github.com/ismi-ops/literature-rg/actions/workflows/add_paper.yml" target="_blank" rel="noopener">+ Add paper</a>
   </div>
 </header>
 <div class="filters">
