@@ -1,7 +1,7 @@
 [
   {
     "title": "A human epiblast model reveals dynamic TGFβ-mediated control of epithelial identity during mammalian epiblast development",
-    "authors": "",
+    "authors": "I. Zorzan, Elena Carbognin, Andrea Lauria, V. Proserpio, Davide Benvegnù, Federica Bertelli, Susana De Juambelz Urías, Caterina Dalrio et al.",
     "year": "2026",
     "journal": "Nature Cell Biology",
     "type": "research",
@@ -11,7 +11,7 @@
       "development",
       "morphogenesis"
     ],
-    "doi": "",
+    "doi": "10.1038/s41556-025-01831-6",
     "link": "https://www.nature.com/articles/s41556-025-01831-6",
     "added": "2026-08-19",
     "pdf_link": ""
@@ -294,7 +294,7 @@
   },
   {
     "title": "Discovering what is possible: How synthetic biology illuminates development",
-    "authors": "",
+    "authors": "Nicholas T. Hutchins, Alexandra Cao, Pulin Li",
     "year": "2026",
     "journal": "Cell Systems",
     "type": "perspective",
@@ -305,7 +305,7 @@
       "multicellular",
       "cell fate"
     ],
-    "doi": "",
+    "doi": "10.1016/j.cels.2026.101619",
     "link": "https://www.sciencedirect.com/science/article/abs/pii/S2405471226001018",
     "added": "2026-08-19",
     "pdf_link": ""
