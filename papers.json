@@ -71,7 +71,7 @@
     "year": "2025",
     "journal": "Annual Review of Cell and Developmental Biology",
     "type": "review",
-    "summary": "Reviews how cells generate and perceive bioelectrical inputs — ion gradients and membrane voltages — and how these translate into responses that influence tissue morphogenesis in physiology and pathology. Despite bioelectricity being as old as life itself, its roles in non-neural contexts remain underexplored; this review synthesizes what is known and where the field is headed. Connects to Ru's interest in Levin's ideas on bioelectric signaling as a layer of developmental control operating in parallel to genetic programs.",
+    "summary": "Reviews how cells generate and perceive bioelectrical inputs — ion gradients and membrane voltages — and how these translate into responses that influence tissue morphogenesis in physiology and pathology. Despite bioelectricity being as old as life itself, its roles in non-neural contexts remain underexplored; this review synthesizes what is known and where the field is headed. Particularly valuable for understanding bioelectric signaling as a layer of developmental control operating in parallel to genetic programs.",
     "tags": [
       "morphogenesis",
       "development",
@@ -106,7 +106,7 @@
     "year": "2025",
     "journal": "Nature Communications",
     "type": "perspective",
-    "summary": "A community perspective laying out the major scientific hurdles in building a cell from non-living components, including how to ensure compatibility across diverse synthetic subsystems, and proposing strategies for moving forward. Published just ahead of the Adamala synthetic cell that divides paper, making it a perfect conceptual companion piece. Ties directly into the synthetic biology thread and Ru's interest in what life requires at its most fundamental level.",
+    "summary": "A community perspective laying out the major scientific hurdles in building a cell from non-living components, including how to ensure compatibility across diverse synthetic subsystems, and proposing strategies for moving forward. Published just ahead of the Adamala synthetic cell that divides paper, making it a perfect conceptual companion piece. Directly relevant to understanding what life requires at its most fundamental level and to efforts in bottom-up synthetic biology.",
     "tags": [
       "synthetic biology",
       "self-organization",
@@ -418,7 +418,7 @@
     "year": "2025",
     "journal": "Annual Review of Biomedical Data Science",
     "type": "review",
-    "summary": "Treats cell fate as fundamentally an information processing and decision-making problem, covering mathematical models of cell fate systems across the tree of life and mapping what design principles we can learn from observations to redesign cellular behavior. Coming from Annual Reviews it has the authoritative, field-spanning quality of a proper state-of-the-field piece. Brings a mathematical modeling and systems biology angle that complements the wetlab and imaging perspectives elsewhere in Ru's reading stack.",
+    "summary": "Treats cell fate as fundamentally an information processing and decision-making problem, covering mathematical models of cell fate systems across the tree of life and mapping what design principles we can learn from observations to redesign cellular behavior. Coming from Annual Reviews, it provides the authoritative, field-spanning quality of a proper state-of-the-field piece. Brings a mathematical modeling and systems biology angle that complements wetlab and imaging approaches to cell identity and fate control.",
     "tags": [
       "cell fate",
       "cell state",
@@ -675,7 +675,7 @@
     "year": "2025",
     "journal": "Nature Chemical Biology",
     "type": "review",
-    "summary": "Reviews how engineered synthetic cells communicate with each other and with living cells, classifying approaches by whether they work like autocrine, paracrine, or juxtacrine natural signaling mechanisms. Highlights recent advances in molecular tools for intercellular communication and discusses potential applications of engineering synthetic cellular communities for biosensing, cellular reprogramming, and sustainability. Sits right at the intersection of synthetic biology and multicellularity that Ru cares about, grounded in cell biology concepts rather than engineering jargon.",
+    "summary": "Reviews how engineered synthetic cells communicate with each other and with living cells, classifying approaches by whether they work like autocrine, paracrine, or juxtacrine natural signaling mechanisms. Highlights recent advances in molecular tools for intercellular communication and discusses potential applications of engineering synthetic cellular communities for biosensing, cellular reprogramming, and sustainability. Sits at the intersection of synthetic biology and multicellularity, grounded in cell biology concepts rather than engineering jargon.",
     "tags": [
       "synthetic biology",
       "multicellular",
@@ -710,7 +710,7 @@
     "year": "2020",
     "journal": "Annual Review of Cell and Developmental Biology",
     "type": "review",
-    "summary": "Reviews the emerging field of synthetic developmental biology through the lens of reconstitution — the strategy of recapitulating developmental events outside their natural context with a reduced set of components. Covers how genetic circuits, physical cues, and bioengineering tools are being used to identify the minimal components sufficient for patterning, morphogenesis, and cell fate decisions. A foundational piece for understanding the 'build to understand' philosophy that underpins the synthetic developmental biology work Ru has been engaging with.",
+    "summary": "Reviews the emerging field of synthetic developmental biology through the lens of reconstitution — the strategy of recapitulating developmental events outside their natural context with a reduced set of components. Covers how genetic circuits, physical cues, and bioengineering tools are being used to identify the minimal components sufficient for patterning, morphogenesis, and cell fate decisions. A foundational piece for understanding the 'build to understand' philosophy that underpins modern synthetic developmental biology.",
     "tags": [
       "synthetic biology",
       "development",
@@ -728,7 +728,7 @@
     "year": "2023",
     "journal": "Nature Reviews Bioengineering",
     "type": "review",
-    "summary": "Co-authored by Michael Levin, this review argues that the future of synthetic morphogenesis lies not in bottom-up engineering of parts but in leveraging the goal-seeking, agential behaviors of cells themselves to build structures that couldn't be designed top-down. Covers organoids, xenobots, and bioelectric interfaces as platforms for cracking the morphogenetic code, connecting Levin's 'cognition all the way down' ideas to concrete synthetic biology applications. A richer conceptual complement to the synthetic biology thread running through Ru's reading stack.",
+    "summary": "Co-authored by Michael Levin, this review argues that the future of synthetic morphogenesis lies not in bottom-up engineering of parts but in leveraging the goal-seeking, agential behaviors of cells themselves to build structures that couldn't be designed top-down. Covers organoids, xenobots, and bioelectric interfaces as platforms for cracking the morphogenetic code, connecting 'cognition all the way down' ideas to concrete synthetic biology applications. A conceptual framework for how agential cell behaviors can be harnessed for programmable tissue construction.",
     "tags": [
       "synthetic morphogenesis",
       "self-organization",
@@ -886,7 +886,7 @@
     "year": "2026",
     "journal": "Nature Cell Biology",
     "type": "perspective",
-    "summary": "Argues that cells encode information not just in what signals they receive but when — temporal encoding offers a fundamental information-theoretic advantage over amplitude-based signaling alone, providing a predictive framework linking temporal codes to differential gene regulation. Directly cites Elowitz lab work and connects to how cells make fate decisions. Very current and sits at the intersection of signaling dynamics and cell state that Ru cares about.",
+    "summary": "Argues that cells encode information not just in what signals they receive but when — temporal encoding offers a fundamental information-theoretic advantage over amplitude-based signaling alone, providing a predictive framework linking temporal codes to differential gene regulation. Directly cites Elowitz lab work and connects to how cells make fate decisions. Sits at the intersection of signaling dynamics and cell state, with broad implications for understanding how developmental decisions are made and how they might be engineered.",
     "tags": [
       "cell state",
       "cell fate",
@@ -903,7 +903,7 @@
     "year": "2026",
     "journal": "Frontiers in Cell and Developmental Biology",
     "type": "review",
-    "summary": "",
+    "summary": "Reviews how cells convert mechanical signals — from substrate stiffness, geometry, and neighboring cells — into changes in gene expression and ultimately cell fate decisions. Bridges molecular-level mechanosensing (integrins, YAP/TAZ, cytoskeletal tension) to emergent tissue-level behaviors, including how collective mechanical states pattern developing tissues. A useful synthesis of how physical forces and biochemical identity are coupled across scales in both development and homeostasis.",
     "tags": [
       "development",
       "morphogenesis",
@@ -924,7 +924,7 @@
     "year": "2026",
     "journal": "Advanced materials (Deerfield Beach, Fla.)",
     "type": "research",
-    "summary": "",
+    "summary": "Describes a volumetric bioprinting approach for embedding light-responsive proteins and optogenetic constructs in user-defined 3D geometries within hydrogels. By controlling the spatial distribution of photosensitive machinery at the millimeter scale, the method enables spatially patterned activation of cellular responses — including gene expression and signaling — in engineered tissue constructs. Bridges synthetic biology, bioengineering, and optogenetics in a platform relevant to next-generation organoid and tissue-on-a-chip design.",
     "tags": [
       "cell fate",
       "synthetic biology"
@@ -941,7 +941,7 @@
     "year": "2026",
     "journal": "Journal of Chemical Physics",
     "type": "research",
-    "summary": "",
+    "summary": "Shows that microRNAs can generate and maintain distinct bioelectrical domains within multicellular aggregates by differentially regulating ion channel expression across cell populations. This creates spatially heterogeneous membrane voltage patterns — a form of bioelectric patterning mediated by post-transcriptional gene regulation rather than gap junctions or direct ionic coupling. Connects the miRNA regulatory layer to bioelectricity, expanding the known molecular toolkit for non-neural electric signaling in development.",
     "tags": [
       "development",
       "single-cell",
