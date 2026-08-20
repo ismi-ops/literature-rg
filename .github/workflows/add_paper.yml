@@ -39,6 +39,9 @@ jobs:
           if [ -n "$DOI" ]; then ARGS="$ARGS --doi \"$DOI\""; fi
           eval python add_paper.py $ARGS
 
+      - name: Backfill authors
+        run: python backfill_authors.py
+
       - name: Backfill PDF link
         run: python backfill_pdfs.py
 
