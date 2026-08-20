@@ -119,7 +119,7 @@
   },
   {
     "title": "Challenges and potential applications of AI in systems biology",
-    "authors": "Sun",
+    "authors": "Na Sun",
     "year": "2026",
     "journal": "Nature Reviews Molecular Cell Biology",
     "type": "perspective",
@@ -206,7 +206,7 @@
   },
   {
     "title": "Curvature feedback for repetitive tissue morphogenesis – Bridging algorithmic principles and self-regulatory systems",
-    "authors": "",
+    "authors": "Emmanuel Vikran, Tsuyoshi Hirashima",
     "year": "2025",
     "journal": "Seminars in Cell & Developmental Biology",
     "type": "review",
@@ -216,10 +216,10 @@
       "self-organization",
       "development"
     ],
-    "doi": "",
+    "doi": "10.1016/j.semcdb.2025.103633",
     "link": "https://www.sciencedirect.com/science/article/pii/S1084952125000436",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "https://doi.org/10.1016/j.semcdb.2025.103633"
   },
   {
     "title": "Data modeling the interplay between single-cell shape, single-cell protein expression, and tissue state",
@@ -568,7 +568,7 @@
   },
   {
     "title": "Programmed and self-organized flow of information during morphogenesis",
-    "authors": "",
+    "authors": "C. Collinet, Thomas Lecuit",
     "year": "2021",
     "journal": "Nature Reviews Molecular Cell Biology",
     "type": "review",
@@ -578,7 +578,7 @@
       "self-organization",
       "development"
     ],
-    "doi": "",
+    "doi": "10.1038/s41580-020-00318-6",
     "link": "https://www.nature.com/articles/s41580-020-00318-6",
     "added": "2026-08-19",
     "pdf_link": ""
@@ -956,7 +956,7 @@
   },
   {
     "title": "Identifying phenotype-genotype-function coupling in 3D organoid imaging using Shape, Appearance and Motion Phenotype Observation Tool (SPOT)",
-    "authors": "",
+    "authors": "Felix Y. Zhou, Brittany Jacobs, Adam Norton-Steele, Xiaoyue Han, Linna Zhou, Thomas Carroll, Carlos Ruiz Puig, Joseph Chadwick et al.",
     "year": "2026",
     "journal": "Nature Communications",
     "type": "research",
