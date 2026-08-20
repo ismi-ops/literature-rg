@@ -124,6 +124,10 @@ HTML_TEMPLATE = """<!doctype html>
   .empty { text-align: center; padding: 64px 0; color: var(--muted); font-size: 15px; grid-column: 1/-1; }
   .btn-add { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 8px; background: var(--accent); color: #fff; text-decoration: none; border: none; cursor: pointer; transition: opacity .12s; white-space: nowrap; }
   .btn-add:hover { opacity: .85; }
+  .card-notes { margin-top: 4px; }
+  .notes-textarea { width: 100%; min-height: 52px; padding: 7px 10px; border: 1px dashed var(--border); border-radius: 7px; background: transparent; color: var(--text); font-size: 12.5px; font-family: inherit; line-height: 1.5; resize: vertical; outline: none; transition: border-color .15s, background .15s; }
+  .notes-textarea::placeholder { color: var(--muted); opacity: .7; font-style: italic; }
+  .notes-textarea:focus { border-color: var(--accent); border-style: solid; background: var(--accent-light); }
 </style>
 </head>
 <body>
@@ -164,9 +168,9 @@ const CORRECT_PW = 'RG-literature';
 const overlay = document.getElementById('pw-overlay');
 function unlock() {
   overlay.style.display = 'none';
-  sessionStorage.setItem(PW_KEY, '1');
+  localStorage.setItem(PW_KEY, '1');
 }
-if (sessionStorage.getItem(PW_KEY) === '1') { unlock(); }
+if (localStorage.getItem(PW_KEY) === '1') { unlock(); }
 document.getElementById('pw-btn').addEventListener('click', () => {
   if (document.getElementById('pw-input').value === CORRECT_PW) {
     unlock();

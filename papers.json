@@ -982,7 +982,7 @@
     "year": "2026",
     "journal": "Bio-Design and Manufacturing",
     "type": "review",
-    "summary": "",
+    "summary": "Reviews how machine learning is being applied to decode the physical and electrical signals that govern tissue development, covering biomechanical force inference, bioelectric pattern recognition, and the integration of multi-modal imaging data to predict developmental outcomes.",
     "tags": [
       "development",
       "morphogenesis",
@@ -1001,7 +1001,7 @@
     "year": "2026",
     "journal": "bioRxiv",
     "type": "research",
-    "summary": "",
+    "summary": "Introduces Shield-4i, a tissue-clearing and multiplexed immunofluorescence platform that enables whole-mount imaging of intact organs across cellular and subcellular scales. The approach allows simultaneous quantification of dozens of protein markers in 3D, opening new routes to understanding how cell identity and tissue architecture are spatially coordinated.",
     "tags": [
       "development",
       "self-organization",
@@ -1019,7 +1019,7 @@
     "year": "2026",
     "journal": "Seminars in Cell and Developmental Biology",
     "type": "review",
-    "summary": "",
+    "summary": "Reviews the role of mechanical forces — including tension, compression, and fluid pressure — in driving tissue morphogenesis. Covers how cells sense and respond to physical cues, how force transmission coordinates multicellular behavior, and the interplay between gene expression and mechanical signaling during development.",
     "tags": [
       "development",
       "morphogenesis",
@@ -1039,7 +1039,7 @@
     "year": "2026",
     "journal": "Bioactive Materials",
     "type": "review",
-    "summary": "",
+    "summary": "Surveys organ-on-a-chip systems that combine live organoid culture with embedded biosensors for real-time monitoring of metabolic, electrophysiological, and mechanical parameters. Discusses how continuous readouts from these platforms can accelerate disease modeling, drug screening, and our understanding of tissue homeostasis.",
     "tags": [
       "stem cells",
       "development",
