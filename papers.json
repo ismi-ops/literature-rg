@@ -63,7 +63,7 @@
     "doi": "10.1038/s41565-026-02179-0",
     "link": "https://www.nature.com/articles/s41565-026-02179-0",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "https://eprints.gla.ac.uk/view/journal_volume/Nature_Nanotechnology.html>,"
   },
   {
     "title": "Bioelectricity in Morphogenesis",
@@ -82,7 +82,7 @@
     "doi": "10.1146/annurev-cellbio-101323-032747",
     "link": "https://www.annualreviews.org/content/journals/10.1146/annurev-cellbio-101323-032747",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "https://doi.org/10.1146/annurev-cellbio-101323-032747"
   },
   {
     "title": "Break to build: fracture as a unifying morphogenetic strategy",
@@ -115,7 +115,7 @@
     "doi": "10.1038/s41467-025-62778-8",
     "link": "https://www.nature.com/articles/s41467-025-62778-8",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "https://www.nature.com/articles/s41467-025-62778-8.pdf"
   },
   {
     "title": "Challenges and potential applications of AI in systems biology",
@@ -290,7 +290,7 @@
     "doi": "10.1038/s41467-026-71999-4",
     "link": "https://www.nature.com/articles/s41467-026-71999-4",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "https://www.nature.com/articles/s41467-026-71999-4_reference.pdf"
   },
   {
     "title": "Discovering what is possible: How synthetic biology illuminates development",
@@ -428,7 +428,7 @@
     "doi": "10.1146/annurev-biodatasci-101424-121439",
     "link": "https://www.annualreviews.org/content/journals/10.1146/annurev-biodatasci-101424-121439",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "https://doi.org/10.1146/annurev-biodatasci-101424-121439"
   },
   {
     "title": "Measuring and manipulating mechanical forces during development",
@@ -720,7 +720,7 @@
     "doi": "10.1146/annurev-cellbio-020620-090650",
     "link": "https://www.annualreviews.org/content/journals/10.1146/annurev-cellbio-020620-090650",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "https://www.annualreviews.org/doi/pdf/10.1146/annurev-cellbio-020620-090650"
   },
   {
     "title": "Synthetic morphology with agential materials",
@@ -738,7 +738,7 @@
     "doi": "10.1038/s44222-022-00001-9",
     "link": "https://www.nature.com/articles/s44222-022-00001-9",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "https://www.nature.com/articles/s44222-022-00001-9.pdf"
   },
   {
     "title": "The Polymers of Life: Exploring Cellular Function Through Polymer Concepts",
@@ -755,7 +755,7 @@
     "doi": "",
     "link": "https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.75240",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "https://doi.org/10.1002/advs.75240"
   },
   {
     "title": "Tissue fluidity mediates a trade-off between the speed and accuracy of multicellular patterning by cell sorting",
@@ -792,7 +792,7 @@
     "doi": "10.1038/s41556-026-01954-4",
     "link": "https://www.nature.com/articles/s41556-026-01954-4",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "https://doi.org/10.1038/s41556-026-01954-4"
   },
   {
     "title": "Towards multimodal foundation models in molecular cell biology",
@@ -811,7 +811,7 @@
     "doi": "10.1038/s41586-025-08710-y",
     "link": "https://www.nature.com/articles/s41586-025-08710-y",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "https://dash.harvard.edu/bitstreams/60dc22c5-5b11-4eab-a6d5-6da5bdc5d887/download"
   },
   {
     "title": "Turing's next steps: the mechanochemical basis of morphogenesis",
@@ -916,7 +916,7 @@
     "link": "https://www.semanticscholar.org/paper/32fe6b588cf0457a27bf8ee60d1b8b8d9a232218",
     "score": 10,
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "https://www.frontiersin.org/journals/cell-and-developmental-biology/articles/10.3389/fcell.2026.1871354/pdf"
   },
   {
     "title": "Spatial Control of Light-Responsive Proteins and Optogenetics Within Hydrogels via Volumetric Bioprinting.",
@@ -933,7 +933,7 @@
     "link": "https://doi.org/10.1002/adma.74563",
     "score": 8,
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "https://doi.org/10.1002/adma.74563"
   },
   {
     "title": "Bioelectrical regionalization of multicellular aggregates by microRNAs.",
@@ -973,6 +973,83 @@
     "doi": "10.1038/s41467-026-75506-7",
     "link": "https://www.nature.com/articles/s41467-026-75506-7",
     "score": 10,
+    "added": "2026-08-20",
+    "pdf_link": "https://doi.org/10.1038/s41467-026-75506-7"
+  },
+  {
+    "title": "Machine learning approaches for biomechanical and bioelectrical regulation in developmental tissue engineering",
+    "authors": "Miriam Filippi, Robert K. Katzschmann",
+    "year": "2026",
+    "journal": "Bio-Design and Manufacturing",
+    "type": "review",
+    "summary": "",
+    "tags": [
+      "development",
+      "morphogenesis",
+      "cell fate",
+      "self-organization"
+    ],
+    "doi": "10.1631/bdm.2500560",
+    "link": "https://www.semanticscholar.org/paper/09d07ecff3610a09f647f0d906cab3bac1f13bd9",
+    "score": 10,
+    "added": "2026-08-20",
+    "pdf_link": "https://link.springer.com/content/pdf/10.1631/bdm.2500560.pdf"
+  },
+  {
+    "title": "Shield-4i: A Whole-mount Multiplexed Imaging Platform for Studying Multiscale Information Flow in 3D Multicellular Systems",
+    "authors": "Ruth Hornbachner, Shayan Shamipour, Feyza Nur Arslan, Rui Fan, Max Hess, Florian Curvaia et al.",
+    "year": "2026",
+    "journal": "bioRxiv",
+    "type": "research",
+    "summary": "",
+    "tags": [
+      "development",
+      "self-organization",
+      "multicellular"
+    ],
+    "doi": "10.64898/2026.07.01.735871",
+    "link": "https://www.semanticscholar.org/paper/f9295adb463b542d03d6150b157d0b04206ec80f",
+    "score": 10,
+    "added": "2026-08-20",
+    "pdf_link": "https://doi.org/10.64898/2026.07.01.735871"
+  },
+  {
+    "title": "Biophysical forces in tissue formation.",
+    "authors": "Lei Xia, Anish Ashok Adpaikar, Liling Wen, Y. Rinkevich",
+    "year": "2026",
+    "journal": "Seminars in Cell and Developmental Biology",
+    "type": "review",
+    "summary": "",
+    "tags": [
+      "development",
+      "morphogenesis",
+      "cell fate",
+      "self-organization",
+      "organoid",
+      "collective migration"
+    ],
+    "doi": "10.1016/j.semcdb.2026.103684",
+    "link": "https://www.semanticscholar.org/paper/f14d9603ebc9682cf6435aa7bd652ed51997f72b",
+    "score": 10,
     "added": "2026-08-20"
+  },
+  {
+    "title": "Real-time sensing-integrated organoid-on-a-chip platforms: Technological progress and emerging biomedical applications",
+    "authors": "Chenwei Sun, Guohua Wu, Di Wu, Qijun Du, Q. Lu, Wenqi Hu et al.",
+    "year": "2026",
+    "journal": "Bioactive Materials",
+    "type": "review",
+    "summary": "",
+    "tags": [
+      "stem cells",
+      "development",
+      "organoid",
+      "disease modeling"
+    ],
+    "doi": "10.1016/j.bioactmat.2026.06.041",
+    "link": "https://www.semanticscholar.org/paper/a7254cc7bee45c1bfbfa0856ffee13e8d51d3f59",
+    "score": 8,
+    "added": "2026-08-20",
+    "pdf_link": "https://doi.org/10.1016/j.bioactmat.2026.06.041"
   }
 ]
