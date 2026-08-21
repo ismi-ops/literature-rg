@@ -1051,5 +1051,99 @@
     "score": 8,
     "added": "2026-08-20",
     "pdf_link": "https://doi.org/10.1016/j.bioactmat.2026.06.041"
+  },
+  {
+    "title": "Cardiac EndMT and EpiMT as a developmental continuum: integration of mechanical, metabolic, and epigenetic regulation",
+    "authors": "Diwen Li, Shijun Hu, Tianli Zhao",
+    "year": "2026",
+    "journal": "Frontiers in Cell and Developmental Biology",
+    "type": "review",
+    "summary": "",
+    "tags": [
+      "development",
+      "cell fate",
+      "cell state",
+      "single-cell",
+      "organoid",
+      "live imaging"
+    ],
+    "doi": "10.3389/fcell.2026.1892888",
+    "link": "https://www.semanticscholar.org/paper/b2bd374167d4bfa141d951cc13891d4d679d7768",
+    "score": 10,
+    "added": "2026-08-21",
+    "pdf_link": "https://doi.org/10.3389/fcell.2026.1892888"
+  },
+  {
+    "title": "Engineering Pluripotent Stem Cells-Derived Inner Ear Organoids With Enhanced Maturation and Reproducibility by Micro-Topographical Cues.",
+    "authors": "H. Sharma, Jungeun Lim, W. Kim, Y. Kim, Dream Kim, Shinyull Lee et al.",
+    "year": "2026",
+    "journal": "Advances in Materials",
+    "type": "research",
+    "summary": "",
+    "tags": [
+      "stem cells",
+      "development",
+      "morphogenesis",
+      "organoid",
+      "disease modeling"
+    ],
+    "doi": "10.1002/adma.74560",
+    "link": "https://www.semanticscholar.org/paper/e00e7b28f70f5208563baf404cae873a3c07074c",
+    "score": 8,
+    "added": "2026-08-21",
+    "pdf_link": "https://doi.org/10.1002/adma.74560"
+  },
+  {
+    "title": "Mechanics of compression-driven morphogenesis.",
+    "authors": "Jue Yu Kelly Tan, Chii Jou Chan",
+    "year": "2026",
+    "journal": "Development (Cambridge, England)",
+    "type": "research",
+    "summary": "",
+    "tags": [
+      "development",
+      "morphogenesis",
+      "organoid"
+    ],
+    "doi": "10.1242/dev.205781",
+    "link": "https://doi.org/10.1242/dev.205781",
+    "score": 8,
+    "added": "2026-08-21"
+  },
+  {
+    "title": "Mechanical constraints on cell plasticity: insights from the olfactory epithelium",
+    "authors": "Raphaël Aguillon, P. Dufourcq, Julie Batut",
+    "year": "2026",
+    "journal": "Frontiers in Cell and Developmental Biology",
+    "type": "review",
+    "summary": "",
+    "tags": [
+      "development",
+      "mechanobiology",
+      "single-cell"
+    ],
+    "doi": "10.3389/fcell.2026.1841670",
+    "link": "https://www.semanticscholar.org/paper/3f44c0363b0f7f2a48ca6c9b818fdfbe31627f41",
+    "score": 7,
+    "added": "2026-08-21",
+    "pdf_link": "https://doi.org/10.3389/fcell.2026.1841670"
+  },
+  {
+    "title": "Human iPSC-derived 3D cardiac models for cardiomyopathies: organoids, spheroids, and engineered heart tissues as translational platforms",
+    "authors": "Prabin Upadhyaya",
+    "year": "2026",
+    "journal": "Stem Cells",
+    "type": "review",
+    "summary": "",
+    "tags": [
+      "development",
+      "organoid",
+      "iPSC"
+    ],
+    "doi": "10.1093/stmcls/sxag039",
+    "link": "https://www.semanticscholar.org/paper/7ad12009fd8110049134451ce70983e486696400",
+    "score": 7,
+    "added": "2026-08-21",
+    "pdf_link": "https://doi.org/10.1093/stmcls/sxag039"
   }
 ]
