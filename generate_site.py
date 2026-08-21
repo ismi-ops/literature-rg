@@ -106,7 +106,9 @@ HTML_TEMPLATE = """<!doctype html>
   .author-link:hover { color: var(--accent); text-decoration: underline; }
   .card-venue { font-size: 12.5px; color: var(--muted); font-style: italic; }
   .card-summary { font-size: 13.5px; color: var(--text); opacity: .88; }
-  .card-relevance { font-size: 13px; color: var(--accent); background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 4px; padding: 6px 10px; margin-top: 8px; font-style: italic; }
+  .card-relevance { margin-top: 10px; border-left: 3px solid var(--accent); border-radius: 4px; background: var(--accent-light); padding: 8px 12px; }
+  .card-relevance-label { font-size: 10.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); opacity: .8; margin-bottom: 3px; }
+  .card-relevance-text { font-size: 13px; color: var(--accent); font-style: italic; line-height: 1.45; }
   .card-tags { display: flex; flex-wrap: wrap; gap: 5px; }
   .tag { font-size: 11.5px; padding: 2px 8px; border-radius: 10px; background: var(--tag-bg); color: var(--tag-text); cursor: pointer; }
   .tag:hover { opacity: .8; }
@@ -335,7 +337,7 @@ function fmt(p) {
     +(authorHtml ? '<div class="card-authors">'+authorHtml+'</div>' : '')
     +(venue ? '<div class="card-venue">'+esc(venue)+'</div>' : '')
     +(p.summary ? '<div class="card-summary">'+esc(p.summary)+'</div>' : '')
-    +(p.relevance ? '<div class="card-relevance">'+esc(p.relevance)+'</div>' : '')
+    +(p.relevance ? '<div class="card-relevance"><div class="card-relevance-label">Cell Science relevance</div><div class="card-relevance-text">'+esc(p.relevance)+'</div></div>' : '')
     +(tags ? '<div class="card-tags">'+tags+'</div>' : '')
     +(pdfBtn ? '<div class="card-actions">'+pdfBtn+'</div>' : '')
     +'<div class="notes-section">'
