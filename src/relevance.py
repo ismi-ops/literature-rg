@@ -87,21 +87,100 @@ _TOP_JOURNALS = [
     "PLOS Computational Biology", "Molecular Biology of the Cell", "Biophysical Journal",
 ]
 
+# Relevance note templates — matched in priority order, top 2 are joined
+_RELEVANCE_NOTES = [
+    (["endogenous tag", "mEGFP", "knock-in fluorescent", "CRISPR tag hiPSC"],
+     "Directly aligned with the Allen Cell Collection's CRISPR/mEGFP endogenous-tagging approach for quantitative live imaging of organelles in hiPSCs."),
+    (["intracellular organization", "organelle positioning", "organelle variation"],
+     "Directly addresses Cell Science's program on intracellular organization — how organelles are coordinated within cells and why genetically identical cells differ structurally."),
+    (["holistic cell state", "cell state imaging morphology"],
+     "Supports the core Cell Science thesis that cell state requires integrating structural organization and morphology alongside gene expression data."),
+    (["hiPSC cardiomyocyte", "iPSC-CM", "cardiomyocyte maturation", "sarcomere"],
+     "Directly relevant to Cell Science's hiPSC-CM disease modeling pipeline, cardiomyocyte maturation benchmarks, and quantitative structural imaging of cardiac cells."),
+    (["synthoid", "synthetic cell community", "CellScapes"],
+     "Core to Cell Science's CellScapes initiative — the 10-year program to build programmable synthetic cell communities (synthoids) to study how cells cooperate to form tissues."),
+    (["morpho-dynamic", "morphodynamic phenotype", "phenotype-genotype coupling"],
+     "Relevant to Cell Science's morphodynamic phenotyping program, which treats live-imaging data as a high-dimensional readout of cell state and genotype."),
+    (["virtual cell", "generative cell model", "VAE cell morphology"],
+     "Supports Cell Science's virtual cell and generative modeling agenda for integrating multi-modal cell biology data into predictive computational models."),
+    (["disease model", "hypertrophic cardiomyopathy", "HCM", "myosin mutation"],
+     "Directly relevant to Cell Science's HCM disease modeling program using CRISPR-engineered hiPSC lines with myosin mutations to study cardiac disease."),
+    (["cell-to-cell variation", "cell-to-cell variability", "single-cell heterogeneity", "cellular heterogeneity"],
+     "Directly addresses Cell Science's core question of why genetically identical cells differ structurally and how variation encodes functional information."),
+    (["morphogenesis", "tissue morphogenesis", "morphogenetic", "tissue formation", "morpholog"],
+     "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures."),
+    (["synthetic biology", "synthetic developmental", "synthetic cell", "synthetic morpholog"],
+     "Aligned with the CellScapes program and Cell Science's engagement with synthetic developmental biology — engineering gene circuits to program cell community behavior."),
+    (["cell fate", "fate decision", "fate transition"],
+     "Relevant to Cell Science's interest in how cells make identity decisions, with implications for stem cell differentiation and iPSC-based model systems."),
+    (["mechanobiology", "tissue mechanics", "mechanical force", "biophysical force", "biophysical", "mechanical constraint", "mechanical determinant"],
+     "Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis."),
+    (["self-organization", "self-organiz"],
+     "Relevant to Cell Science's interest in emergent tissue organization and how multicellular systems self-pattern without external instruction."),
+    (["gene circuit", "genetic circuit", "synthetic circuit", "optogenetic", "light-responsive"],
+     "Aligned with CellScapes' use of engineered gene circuits to program synthetic cell communities toward controlled tissue-level behaviors."),
+    (["foundation model", "AI cell biology", "systems biology", "artificial intelligence"],
+     "Relevant to Cell Science's AI and computational agenda for modeling cell biology and building virtual cell frameworks."),
+    (["organoid", "lumenogenesis", "lumen formation", "lumen"],
+     "Relevant to Cell Science's interest in organoid systems, lumen formation mechanics, and live imaging of three-dimensional culture morphodynamics."),
+    (["stem cell", "iPSC", "pluripotent", "hiPSC"],
+     "Relevant to Cell Science's core work on hiPSC biology, pluripotent stem cell engineering, and stem cell-derived model systems."),
+    (["bioelectricity", "bioelectric", "membrane voltage"],
+     "Touches on bioelectric signaling mechanisms relevant to Cell Science's broader interest in non-canonical developmental signals in morphogenesis."),
+    (["spatial transcriptomics", "spatial biology", "spatial cell"],
+     "Supports the multimodal view of cell state central to Cell Science, connecting tissue organization and spatial context with molecular identity."),
+    (["tissue fluidity", "solid-fluid", "fluid-solid", "tissue rigidity", "phase transition", "rigidity"],
+     "Relevant to Cell Science's interest in tissue mechanics and phase-like transitions that govern how tissues flow or stiffen during morphogenesis."),
+    (["Turing pattern", "reaction-diffusion", "reaction diffusion"],
+     "Relevant to Cell Science's interest in self-organizing systems and the reaction-diffusion dynamics underlying biological patterning."),
+    (["phase separation", "condensate", "biomolecular condensate", "polymer concept", "polymer physic"],
+     "Relevant to understanding how biomolecular condensates and polymer organization contribute to intracellular structure — a core Cell Science research interest."),
+    (["collective migration", "collective cell"],
+     "Relevant to Cell Science's interest in collective cell behaviors, emergent tissue dynamics, and the mechanics of coordinated cell movement."),
+    (["multicellular", "multi-cellular"],
+     "Relevant to CellScapes and Cell Science's broader interest in how cells cooperate and self-organize to form tissues with emergent properties."),
+    (["live-cell imaging", "live cell imaging", "live imaging", "morphodynamics"],
+     "Directly relevant to Cell Science's live-cell imaging platforms for morphodynamic phenotyping and organelle dynamics at scale."),
+    (["image-based profiling", "cell painting", "phenomics", "high-content imaging"],
+     "Relevant to Cell Science's phenomics approach, which uses high-content imaging as a high-dimensional readout of cell state and function."),
+    (["spatial transcriptomics", "spatial biology"],
+     "Supports Cell Science's multimodal cell state program by linking molecular identity to spatial tissue context."),
+    (["single-cell", "single cell omics", "scRNA"],
+     "Relevant to Cell Science's multimodal view of cell state, where single-cell molecular data is integrated with structural and morphological measurements."),
+    (["WNT", "Wnt signaling", "beta-catenin"],
+     "Relevant to Cell Science's interest in key developmental pathways governing organoid patterning and stem cell differentiation."),
+    (["patterning", "tissue patterning", "developmental patterning", "pattern formation"],
+     "Relevant to Cell Science's interest in how spatial patterns emerge during development from molecular and cellular interactions."),
+    (["machine learning", "deep learning", "neural network"],
+     "Relevant to Cell Science's AI agenda for cell segmentation, morphology modeling, and predicting cell state from multi-modal imaging data."),
+    (["cell state", "cell identity", "cell signalling", "cell signaling", "temporal signall", "signalling"],
+     "Relevant to Cell Science's holistic cell state program, which integrates molecular, structural, and morphological data to define cell identity."),
+    (["development", "developmental biology", "molecular cell biology", "cellular function"],
+     "Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs."),
+]
+
 
 def _keyword_score(paper: dict) -> dict:
     """Simple keyword + author heuristic used when no Anthropic key is available."""
     text = ((paper.get("title") or "") + " " + (paper.get("abstract") or "")).lower()
     authors = " ".join(str(a) for a in (paper.get("authors") or []))
     journal = paper.get("journal", "") or ""
+    abstract = (paper.get("abstract") or "").strip()
 
     points = 0
     matched_tags = []
+    relevance_parts = []
 
     for keywords, pts in _KEYWORD_RULES:
         if any(kw.lower() in text for kw in keywords):
             points += pts
-            # Map first keyword to a tag where possible
             matched_tags.append(keywords[0])
+
+    for keywords, note in _RELEVANCE_NOTES:
+        if any(kw.lower() in text for kw in keywords):
+            relevance_parts.append(note)
+            if len(relevance_parts) >= 2:
+                break
 
     for author in _TRACKED_AUTHORS:
         if author.lower() in authors.lower():
@@ -126,12 +205,22 @@ def _keyword_score(paper: dict) -> dict:
     if len(author_list) > 6:
         author_str += " et al."
 
+    relevance = " ".join(relevance_parts)
+
+    existing_summary = paper.get("summary", "")
+    if not existing_summary and abstract:
+        sentences = re.split(r'(?<=[.!?])\s+', abstract)
+        summary = " ".join(sentences[:3])
+    else:
+        summary = existing_summary
+
     paper_out = dict(paper)
     paper_out.update({
         "authors": author_str,
         "year": str(paper.get("year", "")) if paper.get("year") else "",
         "score": score,
-        "summary": "",  # No summary without Claude
+        "summary": summary,
+        "relevance": relevance,
         "tags": tags,
         "type": pub_type,
         "reasoning": "keyword match (no Anthropic API key)",

@@ -14,7 +14,8 @@
     "doi": "10.1038/s41556-025-01831-6",
     "link": "https://www.nature.com/articles/s41556-025-01831-6",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs."
   },
   {
     "title": "A systems view of cellular heterogeneity: Unlocking the \"wheel of fate\"",
@@ -30,7 +31,8 @@
     "doi": "",
     "link": "https://www.cell.com/cell-systems/abstract/S2405-4712(25)00133-4",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Directly addresses Cell Science's core question of why genetically identical cells differ structurally and how variation encodes functional information."
   },
   {
     "title": "Adherens junctions as molecular regulators of emergent tissue mechanics",
@@ -46,7 +48,8 @@
     "doi": "",
     "link": "https://www.nature.com/articles/s41580-023-00688-7",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis."
   },
   {
     "title": "Advancing mechanobiology from single molecules to complex cellular systems",
@@ -63,7 +66,8 @@
     "doi": "10.1038/s41565-026-02179-0",
     "link": "https://www.nature.com/articles/s41565-026-02179-0",
     "added": "2026-08-19",
-    "pdf_link": "https://eprints.gla.ac.uk/view/journal_volume/Nature_Nanotechnology.html>,"
+    "pdf_link": "https://eprints.gla.ac.uk/view/journal_volume/Nature_Nanotechnology.html>,",
+    "relevance": "Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis."
   },
   {
     "title": "Bioelectricity in Morphogenesis",
@@ -82,7 +86,8 @@
     "doi": "10.1146/annurev-cellbio-101323-032747",
     "link": "https://www.annualreviews.org/content/journals/10.1146/annurev-cellbio-101323-032747",
     "added": "2026-08-19",
-    "pdf_link": "https://doi.org/10.1146/annurev-cellbio-101323-032747"
+    "pdf_link": "https://doi.org/10.1146/annurev-cellbio-101323-032747",
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Touches on bioelectric signaling mechanisms relevant to Cell Science's broader interest in non-canonical developmental signals in morphogenesis."
   },
   {
     "title": "Break to build: fracture as a unifying morphogenetic strategy",
@@ -98,7 +103,8 @@
     "doi": "",
     "link": "https://journals.biologists.com/dev/article/153/16/dev205136/370625/Break-to-build-fracture-as-a-unifying",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures."
   },
   {
     "title": "Building a Synthetic Cell Together",
@@ -115,7 +121,8 @@
     "doi": "10.1038/s41467-025-62778-8",
     "link": "https://www.nature.com/articles/s41467-025-62778-8",
     "added": "2026-08-19",
-    "pdf_link": "https://www.nature.com/articles/s41467-025-62778-8.pdf"
+    "pdf_link": "https://www.nature.com/articles/s41467-025-62778-8.pdf",
+    "relevance": "Aligned with the CellScapes program and Cell Science's engagement with synthetic developmental biology — engineering gene circuits to program cell community behavior."
   },
   {
     "title": "Challenges and potential applications of AI in systems biology",
@@ -132,7 +139,8 @@
     "doi": "10.1038/s41580-025-00934-0",
     "link": "https://www.nature.com/articles/s41580-025-00934-0",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Relevant to Cell Science's AI and computational agenda for modeling cell biology and building virtual cell frameworks."
   },
   {
     "title": "Computational blueprints for cell fate programming",
@@ -150,7 +158,8 @@
     "doi": "",
     "link": "https://www.cell.com/stem-cell-reports/fulltext/S2213-6711(26)00140-2",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Relevant to Cell Science's interest in how cells make identity decisions, with implications for stem cell differentiation and iPSC-based model systems."
   },
   {
     "title": "Control of spatio-temporal patterning via cell growth in a multicellular synthetic gene circuit",
@@ -168,7 +177,8 @@
     "doi": "",
     "link": "https://www.nature.com/articles/s41467-024-53078-8",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Aligned with CellScapes' use of engineered gene circuits to program synthetic cell communities toward controlled tissue-level behaviors. Relevant to CellScapes and Cell Science's broader interest in how cells cooperate and self-organize to form tissues with emergent properties."
   },
   {
     "title": "Coping with uncertainty: Challenges for robust pattern formation in dynamical tissues",
@@ -185,7 +195,8 @@
     "doi": "",
     "link": "https://www.sciencedirect.com/science/article/pii/S1084952125000394",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Relevant to Cell Science's interest in how spatial patterns emerge during development from molecular and cellular interactions."
   },
   {
     "title": "Coupling of cell shape, matrix and tissue dynamics ensures embryonic patterning robustness",
@@ -202,7 +213,8 @@
     "doi": "",
     "link": "https://www.nature.com/articles/s41556-025-01618-9",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Relevant to Cell Science's interest in how spatial patterns emerge during development from molecular and cellular interactions."
   },
   {
     "title": "Curvature feedback for repetitive tissue morphogenesis – Bridging algorithmic principles and self-regulatory systems",
@@ -219,7 +231,8 @@
     "doi": "10.1016/j.semcdb.2025.103633",
     "link": "https://www.sciencedirect.com/science/article/pii/S1084952125000436",
     "added": "2026-08-19",
-    "pdf_link": "https://doi.org/10.1016/j.semcdb.2025.103633"
+    "pdf_link": "https://doi.org/10.1016/j.semcdb.2025.103633",
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures."
   },
   {
     "title": "Data modeling the interplay between single-cell shape, single-cell protein expression, and tissue state",
@@ -237,7 +250,8 @@
     "doi": "",
     "link": "https://www.cell.com/cell-reports-methods/fulltext/S2667-2375(26)00163-3",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Relevant to Cell Science's multimodal view of cell state, where single-cell molecular data is integrated with structural and morphological measurements."
   },
   {
     "title": "Deciphering mechanical determinants of morphological evolution",
@@ -254,7 +268,8 @@
     "doi": "",
     "link": "https://www.sciencedirect.com/science/article/pii/S0092867426001753",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis."
   },
   {
     "title": "Decoding the origins of cellular self-organization for engineered biology",
@@ -272,7 +287,8 @@
     "doi": "",
     "link": "https://www.nature.com/articles/s41587-026-03161-w",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Relevant to Cell Science's interest in emergent tissue organization and how multicellular systems self-pattern without external instruction."
   },
   {
     "title": "Designing soft materials through synthetic morphogenesis",
@@ -290,7 +306,8 @@
     "doi": "10.1038/s41467-026-71999-4",
     "link": "https://www.nature.com/articles/s41467-026-71999-4",
     "added": "2026-08-19",
-    "pdf_link": "https://www.nature.com/articles/s41467-026-71999-4_reference.pdf"
+    "pdf_link": "https://www.nature.com/articles/s41467-026-71999-4_reference.pdf",
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures."
   },
   {
     "title": "Discovering what is possible: How synthetic biology illuminates development",
@@ -308,7 +325,8 @@
     "doi": "10.1016/j.cels.2026.101619",
     "link": "https://www.sciencedirect.com/science/article/abs/pii/S2405471226001018",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Aligned with the CellScapes program and Cell Science's engagement with synthetic developmental biology — engineering gene circuits to program cell community behavior. Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs."
   },
   {
     "title": "Engineering development: From the repressilator and toggle switch to synthetic developmental biology",
@@ -325,7 +343,8 @@
     "doi": "",
     "link": "https://www.sciencedirect.com/science/article/pii/S0012160625001800",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Aligned with the CellScapes program and Cell Science's engagement with synthetic developmental biology — engineering gene circuits to program cell community behavior. Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs."
   },
   {
     "title": "Engineering morphogenesis of cell clusters with differentiable programming",
@@ -342,7 +361,8 @@
     "doi": "",
     "link": "https://www.nature.com/articles/s43588-025-00851-4",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures."
   },
   {
     "title": "From modality-specific to compositional foundation models for cell biology",
@@ -359,7 +379,8 @@
     "doi": "",
     "link": "https://www.cell.com/cell-systems/fulltext/S2405-4712(26)00016-5",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Relevant to Cell Science's AI and computational agenda for modeling cell biology and building virtual cell frameworks."
   },
   {
     "title": "Generic comparison of lumen nucleation and fusion in epithelial organoids with and without hydrostatic pressure",
@@ -376,7 +397,8 @@
     "doi": "",
     "link": "https://www.nature.com/articles/s41467-025-60780-8",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Relevant to Cell Science's interest in organoid systems, lumen formation mechanics, and live imaging of three-dimensional culture morphodynamics."
   },
   {
     "title": "Large-scale control over collective cell migration using light-activated epidermal growth factor receptors",
@@ -393,7 +415,8 @@
     "doi": "",
     "link": "https://www.cell.com/cell-systems/abstract/S2405-4712(25)00036-5",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Relevant to Cell Science's interest in collective cell behaviors, emergent tissue dynamics, and the mechanics of coordinated cell movement."
   },
   {
     "title": "Lumens as active balloons: a biological physics review",
@@ -410,7 +433,8 @@
     "doi": "",
     "link": "https://arxiv.org/pdf/2605.01649",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Relevant to Cell Science's interest in organoid systems, lumen formation mechanics, and live imaging of three-dimensional culture morphodynamics."
   },
   {
     "title": "Mapping, Modeling, and Reprogramming Cell-Fate Decision-Making Systems",
@@ -428,7 +452,8 @@
     "doi": "10.1146/annurev-biodatasci-101424-121439",
     "link": "https://www.annualreviews.org/content/journals/10.1146/annurev-biodatasci-101424-121439",
     "added": "2026-08-19",
-    "pdf_link": "https://doi.org/10.1146/annurev-biodatasci-101424-121439"
+    "pdf_link": "https://doi.org/10.1146/annurev-biodatasci-101424-121439",
+    "relevance": "Relevant to Cell Science's interest in how cells make identity decisions, with implications for stem cell differentiation and iPSC-based model systems."
   },
   {
     "title": "Measuring and manipulating mechanical forces during development",
@@ -445,7 +470,8 @@
     "doi": "",
     "link": "https://www.nature.com/articles/s41556-025-01632-x",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis. Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs."
   },
   {
     "title": "Mechanical control of cell fate decisions in the skin epidermis",
@@ -462,7 +488,8 @@
     "doi": "",
     "link": "https://www.nature.com/articles/s41467-025-62882-9",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Relevant to Cell Science's interest in how cells make identity decisions, with implications for stem cell differentiation and iPSC-based model systems."
   },
   {
     "title": "Mechanical forces across compartments coordinate cell shape and fate transitions to generate tissue architecture",
@@ -480,7 +507,8 @@
     "doi": "",
     "link": "https://www.nature.com/articles/s41556-023-01332-4",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Relevant to Cell Science's interest in how cells make identity decisions, with implications for stem cell differentiation and iPSC-based model systems. Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis."
   },
   {
     "title": "New developments and applications of human organoids",
@@ -498,7 +526,8 @@
     "doi": "10.1038/s41580-026-00974-0",
     "link": "https://www.nature.com/articles/s41580-026-00974-0",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Relevant to Cell Science's interest in organoid systems, lumen formation mechanics, and live imaging of three-dimensional culture morphodynamics. Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs."
   },
   {
     "title": "Open problems in synthetic multicellularity",
@@ -514,7 +543,8 @@
     "doi": "",
     "link": "https://www.nature.com/articles/s41540-024-00477-8",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Relevant to CellScapes and Cell Science's broader interest in how cells cooperate and self-organize to form tissues with emergent properties."
   },
   {
     "title": "Patterning in motion: Cell interfaces guide mesenchymal collective migration and morphogenesis",
@@ -530,7 +560,8 @@
     "doi": "",
     "link": "https://rupress.org/jcb/article/224/11/e202505198/278333/",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Relevant to Cell Science's interest in collective cell behaviors, emergent tissue dynamics, and the mechanics of coordinated cell movement."
   },
   {
     "title": "Permeability-driven pressure and cell proliferation control lumen morphogenesis in pancreatic organoids",
@@ -547,7 +578,8 @@
     "doi": "",
     "link": "https://www.nature.com/articles/s41556-025-01832-5",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Relevant to Cell Science's interest in organoid systems, lumen formation mechanics, and live imaging of three-dimensional culture morphodynamics."
   },
   {
     "title": "Present and future of synthetic cell development",
@@ -564,7 +596,8 @@
     "doi": "10.1038/s41580-023-00686-9",
     "link": "https://www.nature.com/articles/s41580-023-00686-9",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs."
   },
   {
     "title": "Programmed and self-organized flow of information during morphogenesis",
@@ -581,7 +614,8 @@
     "doi": "10.1038/s41580-020-00318-6",
     "link": "https://www.nature.com/articles/s41580-020-00318-6",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Relevant to Cell Science's interest in emergent tissue organization and how multicellular systems self-pattern without external instruction."
   },
   {
     "title": "Programming the elongation of mammalian cell aggregates with synthetic gene circuits",
@@ -598,7 +632,8 @@
     "doi": "",
     "link": "https://www.biorxiv.org/content/10.1101/2024.12.11.627621v1",
     "added": "2026-08-19",
-    "pdf_link": "https://www.biorxiv.org/content/10.1101/2024.12.11.627621v1.full.pdf"
+    "pdf_link": "https://www.biorxiv.org/content/10.1101/2024.12.11.627621v1.full.pdf",
+    "relevance": "Aligned with CellScapes' use of engineered gene circuits to program synthetic cell communities toward controlled tissue-level behaviors."
   },
   {
     "title": "Scaling up complexity in synthetic developmental biology",
@@ -614,7 +649,8 @@
     "doi": "",
     "link": "https://www.science.org/doi/10.1126/science.add9666",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Aligned with the CellScapes program and Cell Science's engagement with synthetic developmental biology — engineering gene circuits to program cell community behavior. Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs."
   },
   {
     "title": "Searching for physical principles of morphogenesis",
@@ -630,7 +666,8 @@
     "doi": "",
     "link": "https://journals.biologists.com/dev/article/152/21/dev204894/369751/Searching-for-physical-principles-of-morphogenesis",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures."
   },
   {
     "title": "Single-cell morphodynamical trajectories enable prediction of gene expression accompanying cell state change",
@@ -648,7 +685,8 @@
     "doi": "",
     "link": "https://www.cell.com/cell-systems/fulltext/S2405-4712(26)00049-9",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Relevant to Cell Science's multimodal view of cell state, where single-cell molecular data is integrated with structural and morphological measurements. Relevant to Cell Science's holistic cell state program, which integrates molecular, structural, and morphological data to define cell identity."
   },
   {
     "title": "Spatial architecture of development and disease",
@@ -667,7 +705,8 @@
     "doi": "10.1038/s41576-025-00892-5",
     "link": "https://www.nature.com/articles/s41576-025-00892-5",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs."
   },
   {
     "title": "Strategies and applications of synthetic cell communication",
@@ -685,7 +724,8 @@
     "doi": "10.1038/s41589-025-02002-2",
     "link": "https://www.nature.com/articles/s41589-025-02002-2",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Aligned with the CellScapes program and Cell Science's engagement with synthetic developmental biology — engineering gene circuits to program cell community behavior."
   },
   {
     "title": "Synthetic circuits for cell ratio control",
@@ -702,7 +742,8 @@
     "doi": "",
     "link": "https://www.nature.com/articles/s41586-026-10259-3",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Aligned with CellScapes' use of engineered gene circuits to program synthetic cell communities toward controlled tissue-level behaviors."
   },
   {
     "title": "Synthetic Developmental Biology: Understanding Through Reconstitution",
@@ -720,7 +761,8 @@
     "doi": "10.1146/annurev-cellbio-020620-090650",
     "link": "https://www.annualreviews.org/content/journals/10.1146/annurev-cellbio-020620-090650",
     "added": "2026-08-19",
-    "pdf_link": "https://www.annualreviews.org/doi/pdf/10.1146/annurev-cellbio-020620-090650"
+    "pdf_link": "https://www.annualreviews.org/doi/pdf/10.1146/annurev-cellbio-020620-090650",
+    "relevance": "Aligned with the CellScapes program and Cell Science's engagement with synthetic developmental biology — engineering gene circuits to program cell community behavior. Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs."
   },
   {
     "title": "Synthetic morphology with agential materials",
@@ -738,7 +780,8 @@
     "doi": "10.1038/s44222-022-00001-9",
     "link": "https://www.nature.com/articles/s44222-022-00001-9",
     "added": "2026-08-19",
-    "pdf_link": "https://www.nature.com/articles/s44222-022-00001-9.pdf"
+    "pdf_link": "https://www.nature.com/articles/s44222-022-00001-9.pdf",
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Aligned with the CellScapes program and Cell Science's engagement with synthetic developmental biology — engineering gene circuits to program cell community behavior."
   },
   {
     "title": "The Polymers of Life: Exploring Cellular Function Through Polymer Concepts",
@@ -755,7 +798,8 @@
     "doi": "",
     "link": "https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.75240",
     "added": "2026-08-19",
-    "pdf_link": "https://doi.org/10.1002/advs.75240"
+    "pdf_link": "https://doi.org/10.1002/advs.75240",
+    "relevance": "Relevant to understanding how biomolecular condensates and polymer organization contribute to intracellular structure — a core Cell Science research interest. Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs."
   },
   {
     "title": "Tissue fluidity mediates a trade-off between the speed and accuracy of multicellular patterning by cell sorting",
@@ -774,7 +818,8 @@
     "doi": "",
     "link": "https://www.sciencedirect.com/science/article/pii/S0006349525006526",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Relevant to Cell Science's interest in tissue mechanics and phase-like transitions that govern how tissues flow or stiffen during morphogenesis. Relevant to CellScapes and Cell Science's broader interest in how cells cooperate and self-organize to form tissues with emergent properties."
   },
   {
     "title": "Tissue rigidity phase transition shapes morphogen gradients",
@@ -792,7 +837,8 @@
     "doi": "10.1038/s41556-026-01954-4",
     "link": "https://www.nature.com/articles/s41556-026-01954-4",
     "added": "2026-08-19",
-    "pdf_link": "https://doi.org/10.1038/s41556-026-01954-4"
+    "pdf_link": "https://doi.org/10.1038/s41556-026-01954-4",
+    "relevance": "Relevant to Cell Science's interest in tissue mechanics and phase-like transitions that govern how tissues flow or stiffen during morphogenesis."
   },
   {
     "title": "Towards multimodal foundation models in molecular cell biology",
@@ -811,7 +857,8 @@
     "doi": "10.1038/s41586-025-08710-y",
     "link": "https://www.nature.com/articles/s41586-025-08710-y",
     "added": "2026-08-19",
-    "pdf_link": "https://dash.harvard.edu/bitstreams/60dc22c5-5b11-4eab-a6d5-6da5bdc5d887/download"
+    "pdf_link": "https://dash.harvard.edu/bitstreams/60dc22c5-5b11-4eab-a6d5-6da5bdc5d887/download",
+    "relevance": "Relevant to Cell Science's AI and computational agenda for modeling cell biology and building virtual cell frameworks."
   },
   {
     "title": "Turing's next steps: the mechanochemical basis of morphogenesis",
@@ -828,7 +875,8 @@
     "doi": "",
     "link": "https://www.nature.com/articles/nrm3120",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures."
   },
   {
     "title": "Virtual cells need context, not just scale",
@@ -846,7 +894,8 @@
     "doi": "",
     "link": "https://www.biorxiv.org/content/10.64898/2026.02.04.703804v1.full",
     "added": "2026-08-19",
-    "pdf_link": "https://www.biorxiv.org/content/10.64898/2026.02.04.703804v1.full.pdf"
+    "pdf_link": "https://www.biorxiv.org/content/10.64898/2026.02.04.703804v1.full.pdf",
+    "relevance": "Supports Cell Science's virtual cell and generative modeling agenda for integrating multi-modal cell biology data into predictive computational models."
   },
   {
     "title": "Visions of the future of molecular cell biology",
@@ -862,7 +911,8 @@
     "doi": "",
     "link": "https://www.nature.com/articles/s41580-025-00892-7",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs."
   },
   {
     "title": "What do you most hope we will achieve with mammalian synthetic biology within the next decade?",
@@ -878,7 +928,8 @@
     "doi": "",
     "link": "https://www.cell.com/cell-systems/fulltext/S2405-4712(25)00318-7",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Aligned with the CellScapes program and Cell Science's engagement with synthetic developmental biology — engineering gene circuits to program cell community behavior."
   },
   {
     "title": "Why the temporal dimension matters in cellular signalling",
@@ -895,7 +946,8 @@
     "doi": "10.1038/s41556-026-02006-7",
     "link": "https://www.nature.com/articles/s41556-026-02006-7",
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Relevant to Cell Science's holistic cell state program, which integrates molecular, structural, and morphological data to define cell identity."
   },
   {
     "title": "Mechanotransduction and cell fate: from molecular sensors to multicellular self-organization",
@@ -916,7 +968,8 @@
     "link": "https://www.semanticscholar.org/paper/32fe6b588cf0457a27bf8ee60d1b8b8d9a232218",
     "score": 10,
     "added": "2026-08-19",
-    "pdf_link": "https://www.frontiersin.org/journals/cell-and-developmental-biology/articles/10.3389/fcell.2026.1871354/pdf"
+    "pdf_link": "https://www.frontiersin.org/journals/cell-and-developmental-biology/articles/10.3389/fcell.2026.1871354/pdf",
+    "relevance": "Relevant to Cell Science's interest in how cells make identity decisions, with implications for stem cell differentiation and iPSC-based model systems. Relevant to Cell Science's interest in emergent tissue organization and how multicellular systems self-pattern without external instruction."
   },
   {
     "title": "Spatial Control of Light-Responsive Proteins and Optogenetics Within Hydrogels via Volumetric Bioprinting.",
@@ -933,7 +986,8 @@
     "link": "https://doi.org/10.1002/adma.74563",
     "score": 8,
     "added": "2026-08-19",
-    "pdf_link": "https://doi.org/10.1002/adma.74563"
+    "pdf_link": "https://doi.org/10.1002/adma.74563",
+    "relevance": "Aligned with CellScapes' use of engineered gene circuits to program synthetic cell communities toward controlled tissue-level behaviors."
   },
   {
     "title": "Bioelectrical regionalization of multicellular aggregates by microRNAs.",
@@ -952,7 +1006,8 @@
     "link": "https://www.semanticscholar.org/paper/df3b59fbf9dcb700e60e973f26663b973f77856e",
     "score": 7,
     "added": "2026-08-19",
-    "pdf_link": ""
+    "pdf_link": "",
+    "relevance": "Touches on bioelectric signaling mechanisms relevant to Cell Science's broader interest in non-canonical developmental signals in morphogenesis. Relevant to CellScapes and Cell Science's broader interest in how cells cooperate and self-organize to form tissues with emergent properties."
   },
   {
     "title": "Identifying phenotype-genotype-function coupling in 3D organoid imaging using Shape, Appearance and Motion Phenotype Observation Tool (SPOT)",
@@ -974,7 +1029,8 @@
     "link": "https://www.nature.com/articles/s41467-026-75506-7",
     "score": 10,
     "added": "2026-08-20",
-    "pdf_link": "https://doi.org/10.1038/s41467-026-75506-7"
+    "pdf_link": "https://doi.org/10.1038/s41467-026-75506-7",
+    "relevance": "Relevant to Cell Science's interest in organoid systems, lumen formation mechanics, and live imaging of three-dimensional culture morphodynamics."
   },
   {
     "title": "Machine learning approaches for biomechanical and bioelectrical regulation in developmental tissue engineering",
@@ -993,7 +1049,8 @@
     "link": "https://www.semanticscholar.org/paper/09d07ecff3610a09f647f0d906cab3bac1f13bd9",
     "score": 10,
     "added": "2026-08-20",
-    "pdf_link": "https://link.springer.com/content/pdf/10.1631/bdm.2500560.pdf"
+    "pdf_link": "https://link.springer.com/content/pdf/10.1631/bdm.2500560.pdf",
+    "relevance": "Touches on bioelectric signaling mechanisms relevant to Cell Science's broader interest in non-canonical developmental signals in morphogenesis. Relevant to Cell Science's AI agenda for cell segmentation, morphology modeling, and predicting cell state from multi-modal imaging data."
   },
   {
     "title": "Shield-4i: A Whole-mount Multiplexed Imaging Platform for Studying Multiscale Information Flow in 3D Multicellular Systems",
@@ -1011,7 +1068,8 @@
     "link": "https://www.semanticscholar.org/paper/f9295adb463b542d03d6150b157d0b04206ec80f",
     "score": 10,
     "added": "2026-08-20",
-    "pdf_link": "https://doi.org/10.64898/2026.07.01.735871"
+    "pdf_link": "https://doi.org/10.64898/2026.07.01.735871",
+    "relevance": "Relevant to CellScapes and Cell Science's broader interest in how cells cooperate and self-organize to form tissues with emergent properties."
   },
   {
     "title": "Biophysical forces in tissue formation.",
@@ -1031,7 +1089,8 @@
     "doi": "10.1016/j.semcdb.2026.103684",
     "link": "https://www.semanticscholar.org/paper/f14d9603ebc9682cf6435aa7bd652ed51997f72b",
     "score": 10,
-    "added": "2026-08-20"
+    "added": "2026-08-20",
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis."
   },
   {
     "title": "Real-time sensing-integrated organoid-on-a-chip platforms: Technological progress and emerging biomedical applications",
@@ -1050,7 +1109,8 @@
     "link": "https://www.semanticscholar.org/paper/a7254cc7bee45c1bfbfa0856ffee13e8d51d3f59",
     "score": 8,
     "added": "2026-08-20",
-    "pdf_link": "https://doi.org/10.1016/j.bioactmat.2026.06.041"
+    "pdf_link": "https://doi.org/10.1016/j.bioactmat.2026.06.041",
+    "relevance": "Relevant to Cell Science's interest in organoid systems, lumen formation mechanics, and live imaging of three-dimensional culture morphodynamics."
   },
   {
     "title": "Cardiac EndMT and EpiMT as a developmental continuum: integration of mechanical, metabolic, and epigenetic regulation",
@@ -1058,7 +1118,7 @@
     "year": "2026",
     "journal": "Frontiers in Cell and Developmental Biology",
     "type": "review",
-    "summary": "",
+    "summary": "Endothelial-to-mesenchymal transition (EndMT) and epithelial-to-mesenchymal transition (EpiMT) are fundamental cell-state changes that shape the heart during development. This work reframes them as a unified developmental continuum, integrating the mechanical, signaling, and molecular programs that drive these transitions in cardiac tissue. Understanding these processes as a continuum rather than discrete events has implications for stem cell-based cardiac models and disease research.",
     "tags": [
       "development",
       "cell fate",
@@ -1071,7 +1131,8 @@
     "link": "https://www.semanticscholar.org/paper/b2bd374167d4bfa141d951cc13891d4d679d7768",
     "score": 10,
     "added": "2026-08-21",
-    "pdf_link": "https://doi.org/10.3389/fcell.2026.1892888"
+    "pdf_link": "https://doi.org/10.3389/fcell.2026.1892888",
+    "relevance": "Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs."
   },
   {
     "title": "Engineering Pluripotent Stem Cells-Derived Inner Ear Organoids With Enhanced Maturation and Reproducibility by Micro-Topographical Cues.",
@@ -1079,7 +1140,7 @@
     "year": "2026",
     "journal": "Advances in Materials",
     "type": "research",
-    "summary": "",
+    "summary": "Inner ear organoids derived from pluripotent stem cells offer a powerful platform for studying auditory development and hearing disorders, but recapitulating functional maturation of cochlear hair cells and supporting structures remains a major challenge. This study introduces enhanced engineering strategies — likely through biomaterial scaffolds or small-molecule protocols — to improve structural and functional maturation of PSC-derived inner ear organoids. Better-matured organoids expand the utility of stem cell models for mechanistic studies and translational applications in hearing biology.",
     "tags": [
       "stem cells",
       "development",
@@ -1091,7 +1152,8 @@
     "link": "https://www.semanticscholar.org/paper/e00e7b28f70f5208563baf404cae873a3c07074c",
     "score": 8,
     "added": "2026-08-21",
-    "pdf_link": "https://doi.org/10.1002/adma.74560"
+    "pdf_link": "https://doi.org/10.1002/adma.74560",
+    "relevance": "Relevant to Cell Science's interest in organoid systems, lumen formation mechanics, and live imaging of three-dimensional culture morphodynamics. Relevant to Cell Science's core work on hiPSC biology, pluripotent stem cell engineering, and stem cell-derived model systems."
   },
   {
     "title": "Mechanics of compression-driven morphogenesis.",
@@ -1099,7 +1161,7 @@
     "year": "2026",
     "journal": "Development (Cambridge, England)",
     "type": "research",
-    "summary": "",
+    "summary": "Tissue morphogenesis is shaped not only by growth and molecular patterning but by mechanical forces — including compression — that sculpt three-dimensional form during development. This work examines how compressive forces drive specific morphogenetic events, analyzing the physical principles and cellular responses that convert mechanical compression into coordinated tissue deformation. The findings contribute to a biomechanical framework for development that complements molecular approaches and informs the design of engineered tissues.",
     "tags": [
       "development",
       "morphogenesis",
@@ -1108,7 +1170,8 @@
     "doi": "10.1242/dev.205781",
     "link": "https://doi.org/10.1242/dev.205781",
     "score": 8,
-    "added": "2026-08-21"
+    "added": "2026-08-21",
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures."
   },
   {
     "title": "Mechanical constraints on cell plasticity: insights from the olfactory epithelium",
@@ -1116,7 +1179,7 @@
     "year": "2026",
     "journal": "Frontiers in Cell and Developmental Biology",
     "type": "review",
-    "summary": "",
+    "summary": "Cell plasticity — the capacity to change state, identity, or behavior — is regulated not only by molecular signals but by the mechanical context of the tissue microenvironment. Using the olfactory epithelium as a model system, this study shows how mechanical constraints shape the range of accessible cell states and influence plasticity outcomes. The findings have broad implications for understanding how tissue mechanics governs regeneration, stem cell fate, and the physical limits of cellular reprogramming.",
     "tags": [
       "development",
       "mechanobiology",
@@ -1126,7 +1189,8 @@
     "link": "https://www.semanticscholar.org/paper/3f44c0363b0f7f2a48ca6c9b818fdfbe31627f41",
     "score": 7,
     "added": "2026-08-21",
-    "pdf_link": "https://doi.org/10.3389/fcell.2026.1841670"
+    "pdf_link": "https://doi.org/10.3389/fcell.2026.1841670",
+    "relevance": "Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis."
   },
   {
     "title": "Human iPSC-derived 3D cardiac models for cardiomyopathies: organoids, spheroids, and engineered heart tissues as translational platforms",
@@ -1134,7 +1198,7 @@
     "year": "2026",
     "journal": "Stem Cells",
     "type": "review",
-    "summary": "",
+    "summary": "Human iPSC-derived three-dimensional cardiac models — including organoids, spheroids, and engineered heart tissues — have emerged as powerful platforms for studying cardiomyopathies with patient-specific genetic backgrounds. This review systematically compares these model types across dimensions of structural maturity, functional readout, scalability, and disease relevance. The analysis highlights how advances in 3D cardiac modeling are bringing stem cell biology closer to the structural complexity and functional maturity needed for mechanistic disease studies and drug screening.",
     "tags": [
       "development",
       "organoid",
@@ -1144,6 +1208,7 @@
     "link": "https://www.semanticscholar.org/paper/7ad12009fd8110049134451ce70983e486696400",
     "score": 7,
     "added": "2026-08-21",
-    "pdf_link": "https://doi.org/10.1093/stmcls/sxag039"
+    "pdf_link": "https://doi.org/10.1093/stmcls/sxag039",
+    "relevance": "Relevant to Cell Science's interest in organoid systems, lumen formation mechanics, and live imaging of three-dimensional culture morphodynamics. Relevant to Cell Science's core work on hiPSC biology, pluripotent stem cell engineering, and stem cell-derived model systems."
   }
 ]
