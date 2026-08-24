@@ -58,3 +58,4 @@ jobs:
           else
             git commit -m "chore: add paper via workflow"
             git push
+          fi
