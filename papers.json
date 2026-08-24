@@ -548,7 +548,7 @@
   },
   {
     "title": "Patterning in motion: Cell interfaces guide mesenchymal collective migration and morphogenesis",
-    "authors": "",
+    "authors": "Maik C. Bischoff, Roberto Mayor",
     "year": "2026",
     "journal": "Journal of Cell Biology",
     "type": "perspective",
@@ -557,7 +557,7 @@
       "morphogenesis",
       "cell fate"
     ],
-    "doi": "",
+    "doi": "10.1083/jcb.202505198",
     "link": "https://rupress.org/jcb/article/224/11/e202505198/278333/",
     "added": "2026-08-19",
     "pdf_link": "",
@@ -1171,7 +1171,8 @@
     "link": "https://doi.org/10.1242/dev.205781",
     "score": 8,
     "added": "2026-08-21",
-    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures."
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures.",
+    "pdf_link": "https://doi.org/10.1242/dev.205781"
   },
   {
     "title": "Mechanical constraints on cell plasticity: insights from the olfactory epithelium",
@@ -1210,5 +1211,85 @@
     "added": "2026-08-21",
     "pdf_link": "https://doi.org/10.1093/stmcls/sxag039",
     "relevance": "Relevant to Cell Science's interest in organoid systems, lumen formation mechanics, and live imaging of three-dimensional culture morphodynamics. Relevant to Cell Science's core work on hiPSC biology, pluripotent stem cell engineering, and stem cell-derived model systems."
+  },
+  {
+    "title": "Synthetic developmental engineering of human liver organogenesis.",
+    "authors": "M. Taheri, Yuda Xiang, Mohammed Ebrahimkhani",
+    "year": "2026",
+    "journal": "Development",
+    "type": "review",
+    "summary": "In embryos, intrinsic and extrinsic signals cooperatively shape cellular decisions to form tissues and organs. Developmental engineering seeks to harness insights into the molecular mechanisms governing embryonic development and leverage pluripotent stem cells to enable the synthetic reconstitution of organ-like multicellular systems in vitro, including organoids. These cellular systems can partially emulate the complexity of in vivo organs in terms of structure and function, facilitating disease modeling and regenerative medicine applications.",
+    "tags": [
+      "stem cells",
+      "development",
+      "synthetic biology",
+      "organoid",
+      "multicellular",
+      "disease modeling"
+    ],
+    "doi": "10.1242/dev.205040",
+    "link": "https://www.semanticscholar.org/paper/c6f7e3255044de75dbefbaa24b587f58759b1feb",
+    "score": 10,
+    "added": "2026-08-24",
+    "relevance": "Aligned with the CellScapes program and Cell Science's engagement with synthetic developmental biology — engineering gene circuits to program cell community behavior. Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs.",
+    "pdf_link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13405231/"
+  },
+  {
+    "title": "Translational cell fate reprogramming and regenerative medicine enabled by microphysiological systems.",
+    "authors": "Hrithiha Sriramulu, Hyunsung Woo, Anavi Kaul, S. Musah",
+    "year": "2026",
+    "journal": "Current Opinion in Genetics and Development",
+    "type": "review",
+    "summary": "Recent advances in genetic engineering and in vivo reprogramming have opened transformative possibilities for controlling cell fate in tissue repair and regeneration. However, clinical translation remains constrained by the limited predictive value of animal models and traditional in vitro systems, which often fail to fully recapitulate human responses, including the physiological consequences of genetic manipulations. Emerging microphysiological systems, exemplified by three-dimensional organoids and organs-on-chips (OoCs) systems, help bridge this gap by recreating key aspects of human physiology while enabling precise bioengineering of the niche to modulate cell fate decisions and plasticity.",
+    "tags": [
+      "stem cells",
+      "development",
+      "cell fate",
+      "organoid"
+    ],
+    "doi": "10.1016/j.gde.2026.102512",
+    "link": "https://www.semanticscholar.org/paper/44e30aba80e717add4c9df592a4399c80b1b1dd6",
+    "score": 10,
+    "added": "2026-08-24",
+    "relevance": "Relevant to Cell Science's interest in how cells make identity decisions, with implications for stem cell differentiation and iPSC-based model systems."
+  },
+  {
+    "title": "Geometric mechanogenomics: engineering boundary conditions for deterministic cell fate control",
+    "authors": "Mohsen Taghizadeh, Ali Taghizadeh, Hye Sung Kim",
+    "year": "2026",
+    "journal": "Frontiers in Cell and Developmental Biology",
+    "type": "research",
+    "summary": "In tissue development and regeneration, cellular behavior has traditionally been interpreted through biochemical signaling frameworks. However, cells exist within physically defined environments, where geometric boundary conditions – including confinement, curvature, anisotropy, and multicellular architecture – define the mechanical state space in which mechanical forces are generated, transmitted, and interpreted. Here, we introduce geometric mechanogenomics, a conceptual framework that positions geometry as an upstream spatial regulator linking tissue-scale boundary conditions to nuclear mechanics, chromatin organization, and genome regulation.",
+    "tags": [
+      "development",
+      "cell fate",
+      "mechanobiology",
+      "multicellular",
+      "disease modeling"
+    ],
+    "doi": "10.3389/fcell.2026.1922536",
+    "link": "https://www.semanticscholar.org/paper/241363f8161062a88b7be481d65a34553d45f7be",
+    "score": 10,
+    "added": "2026-08-24",
+    "relevance": "Relevant to Cell Science's interest in how cells make identity decisions, with implications for stem cell differentiation and iPSC-based model systems.",
+    "pdf_link": "https://www.frontiersin.org/journals/cell-and-developmental-biology/articles/10.3389/fcell.2026.1922536/pdf"
+  },
+  {
+    "title": "Dissecting Human Organ Development using Spatial Technologies",
+    "authors": "Xi-aosha Zhang, J. Jeya Vandana, Benjamin C. Greenspun, Shuibing Chen",
+    "year": "2026",
+    "journal": "Developmental Cell",
+    "type": "review",
+    "summary": "SUMMARY Spatial technologies have revolutionized the study of human development by enabling molecular profiling within intact tissue architecture. Advances in spatial transcriptomics, epigenomics, proteomics, metabolomics, and multiomics have generated high-resolution atlases of embryonic and fetal organs, revealing how gene regulatory programs, cell–cell interactions, and tissue patterning are organized in space and time during organogenesis. However, limited access to human developmental tissues and ethical constraints restrict experimental validation and mechanistic studies.",
+    "tags": [
+      "development",
+      "organoid"
+    ],
+    "doi": "10.1016/j.devcel.2026.05.004",
+    "link": "https://www.semanticscholar.org/paper/da697d5a2f756fe3112189a16a0fffe9f58d15dc",
+    "score": 8,
+    "added": "2026-08-24",
+    "relevance": "Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs.",
+    "pdf_link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13353200/"
   }
 ]
