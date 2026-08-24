@@ -236,7 +236,7 @@
   },
   {
     "title": "Data modeling the interplay between single-cell shape, single-cell protein expression, and tissue state",
-    "authors": "",
+    "authors": "Yuval Tamir, Yuval Bussi, C. Owczarek, Luciana Luque, G. Torrisi, Leor Ariel Rose, Orit Kliper-Gross, C. Sander et al.",
     "year": "2026",
     "journal": "Cell Reports Methods",
     "type": "research",
@@ -247,10 +247,10 @@
       "AI / ML",
       "single-cell"
     ],
-    "doi": "",
+    "doi": "10.1016/j.crmeth.2026.101463",
     "link": "https://www.cell.com/cell-reports-methods/fulltext/S2667-2375(26)00163-3",
     "added": "2026-08-19",
-    "pdf_link": "",
+    "pdf_link": "https://doi.org/10.1016/j.crmeth.2026.101463",
     "relevance": "Relevant to Cell Science's multimodal view of cell state, where single-cell molecular data is integrated with structural and morphological measurements."
   },
   {
@@ -1304,5 +1304,22 @@
     "link": "https://www.semanticscholar.org/paper/3a797a3c76c12705e52bb47b9efde80a3c97e79e",
     "score": 1,
     "added": "2026-08-24"
+  },
+  {
+    "title": "Robust identification of cell-cell communication heterogeneity in single cells.",
+    "authors": "F. Bocci, Yunlong Y. Jia, Scott Atwood, Qing Nie",
+    "year": "2026",
+    "journal": "Cell Systems",
+    "type": "review",
+    "summary": "Cell-cell communication modulates cell fate decisions by relaying information across tissues and inducing intracellular responses mediated by gene regulatory networks. Although the inference of cell-cell communication from high-throughput data is gaining popularity, studying how communication pathways operate across biological scales and influence cell fate decisions remains challenging. Here, we present scRICH (robust identification of cell-cell communication heterogeneity in single cells), a computational framework that leverages single-cell and spatial transcriptomics data to unravel the heterogeneity of communication behavior within cell types, link cell-cell communication to cell fate decisions by incorporating dynamical information on RNA splicing, and connect cell-cell interactions with intracellular responses by constructing multilayer regulatory networks.",
+    "tags": [
+      "cell fate",
+      "single-cell"
+    ],
+    "doi": "10.1016/j.cels.2026.101703",
+    "link": "https://www.semanticscholar.org/paper/b73d26e0c8516d7c6c6aaa08c0b2a3d85e921e08",
+    "score": 6,
+    "added": "2026-08-24",
+    "pdf_link": "https://doi.org/10.1016/j.cels.2026.101703"
   }
 ]
