@@ -193,10 +193,7 @@ def _keyword_score(paper: dict) -> dict:
     # Normalise to 0-10 (raw points cap at ~15 for a perfect paper)
     score = min(10, round(points * 10 / 12))
 
-    tags = ", ".join(
-        t for t in KNOWN_TAGS
-        if any(t.lower() in text for t in [t])
-    )
+    tags = [t for t in KNOWN_TAGS if t.lower() in text]
 
     pub_type = paper.get("pub_type", "research")
 
