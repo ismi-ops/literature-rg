@@ -36,7 +36,7 @@
   },
   {
     "title": "Adherens junctions as molecular regulators of emergent tissue mechanics",
-    "authors": "",
+    "authors": "O. Campàs, Ivar Noordstra, A. Yap",
     "year": "2024",
     "journal": "Nature Reviews Molecular Cell Biology",
     "type": "review",
@@ -45,7 +45,7 @@
       "tissue mechanics",
       "morphogenesis"
     ],
-    "doi": "",
+    "doi": "10.1038/s41580-023-00688-7",
     "link": "https://www.nature.com/articles/s41580-023-00688-7",
     "added": "2026-08-19",
     "pdf_link": "",
@@ -1291,5 +1291,18 @@
     "added": "2026-08-24",
     "relevance": "Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs.",
     "pdf_link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13353200/"
+  },
+  {
+    "title": "Cell Biology and Reproductive Medicine: Major Trends in Their Interaction",
+    "authors": "D. Bogolyubov, I. Bogolyubova",
+    "year": "2026",
+    "journal": "Cell and Tissue Biology",
+    "type": "review",
+    "summary": "",
+    "tags": [],
+    "doi": "10.1134/S1990519X2660064X",
+    "link": "https://www.semanticscholar.org/paper/3a797a3c76c12705e52bb47b9efde80a3c97e79e",
+    "score": 1,
+    "added": "2026-08-24"
   }
 ]
