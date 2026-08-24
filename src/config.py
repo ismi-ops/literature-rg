@@ -242,9 +242,10 @@ Signaling: Toettcher, Tsai, Garcia-Ojalvo.
 Bioelectricity: Levin.
 
 == High-Value Journals ==
-Cell, Science, Nature, Nature Methods, Developmental Cell, Nature Biotechnology, Nature Cell Biology,
-Cell Stem Cell, Nature Communications, Cell Reports, Molecular Biology of the Cell (MBoC).
-Also: bioRxiv preprints (Cell Science has a strong preprint-first culture).
+The following are checked regularly and are highest priority: Cell, Science, Nature, Nature Methods,
+Developmental Cell, Nature Biotechnology, Nature Cell Biology, Cell Stem Cell, Nature Communications,
+Cell Reports, Molecular Biology of the Cell (MBoC). Papers from other journals are equally welcome —
+cast a broad net. Also: bioRxiv preprints (Cell Science has a strong preprint-first culture).
 
 == Cell Science Relevance Boost ==
 Papers are especially valuable if they:
