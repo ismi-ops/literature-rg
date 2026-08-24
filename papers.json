@@ -1352,6 +1352,81 @@
     "doi": "10.1177/10445498261460199",
     "link": "https://www.semanticscholar.org/paper/17260fd4d03872e8e8e7ca48b5b8431a3d053c7b",
     "score": 2,
-    "added": "2026-08-24"
+    "added": "2026-08-24",
+    "relevance": "Relevant to Cell Science's multimodal view of cell state, where single-cell molecular data is integrated with structural and morphological measurements."
+  },
+  {
+    "title": "Biophysics of lumen morphogenesis.",
+    "authors": "Byung Ho Lee, Markus Mukenhirn, Tristan Guyomar, Yann Maggipinto, Sakurako Tanida, Kana Fuji et al.",
+    "year": "2026",
+    "journal": "Development (Cambridge, England)",
+    "type": "research",
+    "summary": "Although lumen formation is a key feature of organogenesis, luminal compartments - formed through the secretion of fluid, ions and macromolecules by the cells, usually on the apical side - are often viewed as passive by-products of epithelial polarity. Here, we discuss how luminal fluids actively contribute to morphogenesis in metazoans through mechanical, hydraulic and electrochemical interactions with the surrounding epithelia and the extracellular matrix (ECM). We first outline the diversity of lumen architectures and summarize conserved mechanisms of lumen nucleation, fusion, folding and growth across metazoans.",
+    "tags": [
+      "morphogenesis",
+      "tissue mechanics",
+      "lumen morphogenesis"
+    ],
+    "doi": "10.1242/dev.205628",
+    "link": "https://doi.org/10.1242/dev.205628",
+    "score": 10,
+    "added": "2026-08-24",
+    "relevance": "Directly relevant to lumen morphogenesis and lumenoid systems — a top priority covering how pressure, osmotic forces, and shape mechanics drive lumen formation across tissue types. Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures."
+  },
+  {
+    "title": "Mechanical forces and organoid biology: From mechanotransduction mechanisms to translational frontiers",
+    "authors": "Wenbo Qian, Feng Chen, Junle Zhu, Jinmao Gu, Qi Wang",
+    "year": "2026",
+    "journal": "Cell Organoid",
+    "type": "review",
+    "summary": "Organoids have revolutionized the field of biomedical research by allowing the recapitulation of organ architecture in three dimensions. Though biochemical factors have long played an established role in organoid culture, it is presently recognized that mechanical forces are equally indispensable in the self-organization of tissues and the determination of stem cell and disease phenotypes. Here, this review integrates the biophysics of cellular mechanotransduction with the biology of organoid systems, examining how forces encoded in extracellular matrix stiffness, viscoelasticity, fluid shear, cyclic stretch, and geometric confinement are sensed and transduced by a specialized molecular machinery—including integrin–focal adhesion kinase (FAK) complexes, mechanosensitive Piezo1/2 ion channels, and the linker of nucleoskeleton and cytoskeleton (LINC) complex—to ultimately regulate Yes-associated protein/transcriptional coactivator with PDZ-binding motif (YAP/TAZ)-mediated transcriptional programs.",
+    "tags": [
+      "self-organization",
+      "mechanobiology",
+      "organoid"
+    ],
+    "doi": "10.26599/co.2026.9410025",
+    "link": "https://www.semanticscholar.org/paper/72d228ce3cafccca85f953319f1bed1d38706617",
+    "score": 10,
+    "added": "2026-08-24",
+    "relevance": "Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis. Relevant to lumen morphogenesis, lumenoid self-organization, organoid systems, and live imaging of three-dimensional culture morphodynamics.",
+    "pdf_link": "https://www.sciopen.com/local/article_pdf/10.26599/CO.2026.9410025.pdf"
+  },
+  {
+    "title": "Engineering Neural Organoids: Technological Advances and Translational Frontiers.",
+    "authors": "Sungmin Kim, H. Jo, Sunghwan Moon",
+    "year": "2026",
+    "journal": "Stem Cells",
+    "type": "research",
+    "summary": "Neural organoids have transformed experimental neuroscience by enabling human-specific models of brain development, function, and disease. Emerging at the intersection of stem cell biology and tissue engineering, these self-organizing systems recapitulate key aspects of neurogenesis, gliogenesis, and circuit formation within a controllable in vitro context. Advances in guided patterning, vascularization, and electrophysiological monitoring have enhanced structural and functional fidelity, enabling the study of dynamic processes previously inaccessible in human models.",
+    "tags": [
+      "development",
+      "organoid"
+    ],
+    "doi": "10.1093/stmcls/sxag041",
+    "link": "https://www.semanticscholar.org/paper/b34b38e919c7e70367b2d150a6885b6488432b02",
+    "score": 9,
+    "added": "2026-08-24",
+    "relevance": "Relevant to lumen morphogenesis, lumenoid self-organization, organoid systems, and live imaging of three-dimensional culture morphodynamics.",
+    "pdf_link": "https://research-information.bris.ac.uk/en/publications/b71e0600-47a5-43ae-90b1-ef5e465e3d57"
+  },
+  {
+    "title": "Decoding plants cell by cell: opportunities and challenges in single-cell and spatial biology.",
+    "authors": "L. de Veylder, Maite Saura-Sánchez, B. De Rybel, Tatsuya Norobi, Klaas Vandepoele, Lorenzo Caputi et al.",
+    "year": "2026",
+    "journal": "The Plant Cell",
+    "type": "review",
+    "summary": "Recent advances in single-cell and spatial omics technologies are transforming plant research by enabling cell-resolved analyses of gene expression, proteomics, chromatin organization, and metabolism at the level of individual cells and at spatial resolution. These approaches have revealed extensive cellular heterogeneity, rare and transient cell states, and previously unrecognized developmental and physiological programs. However, they also introduce conceptual, technical, and computational challenges related to data quality and integration, and biological interpretation.",
+    "tags": [
+      "development",
+      "cell state",
+      "single-cell",
+      "spatial biology"
+    ],
+    "doi": "10.1093/plcell/koag223",
+    "link": "https://www.semanticscholar.org/paper/c6bf6ff9b1625a1e9a6516659797937878601c98",
+    "score": 7,
+    "added": "2026-08-24",
+    "relevance": "Supports the multimodal view of cell state central to Cell Science, connecting tissue organization and spatial context with molecular identity. Supports Cell Science's multimodal cell state program by linking molecular identity to spatial tissue context."
   }
 ]
