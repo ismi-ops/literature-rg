@@ -72,8 +72,9 @@
   /* ── Cards ────────────────────────────────────────────────────────────── */
   main { max-width: 1100px; margin: 24px auto; padding: 0 24px 48px; }
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
-  .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 10px; transition: box-shadow .15s; }
+  .card { position: relative; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 10px; transition: box-shadow .15s; }
   .card:hover { box-shadow: var(--shadow-hover); }
+  .top-pick-star { position: absolute; bottom: 12px; right: 14px; font-size: 20px; line-height: 1; user-select: none; cursor: default; filter: drop-shadow(0 1px 2px rgba(0,0,0,.15)); }
   .card-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
   .badge { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 12px; text-transform: capitalize; }
   .badge-research { background: #e0f2fe; color: #0369a1; }
@@ -233,6 +234,13 @@ PAPERS.sort((a, b) => {
   return (b.score || 0) - (a.score || 0);
 });
 
+/* ── Top picks (highest-scored 4 from the latest batch) ─────────────────── */
+const _latestDate = PAPERS.reduce((max, p) => (p.added||'') > max ? (p.added||'') : max, '');
+const _latestBatch = PAPERS.filter(p => (p.added||'') === _latestDate)
+  .slice().sort((a, b) => (b.score||0) - (a.score||0));
+const TOP_PICK_IDS = new Set(_latestBatch.slice(0, 4).map(p => p.doi || p.title || ''));
+function isTopPick(p) { return _latestDate && TOP_PICK_IDS.has(p.doi || p.title || ''); }
+
 /* ── Filter state ───────────────────────────────────────────────────────── */
 let activeType = 'all', activeTags = new Set(), activeYear = 'all', activeAdded = 'all', searchText = '';
 
@@ -370,6 +378,7 @@ function fmt(p) {
   const existingNote = getNote(p);
   const hasNote = existingNote.trim().length > 0;
   const noteId = 'note-' + Math.random().toString(36).slice(2);
+  const starHtml = isTopPick(p) ? '<div class="top-pick-star" title="Top pick · recommended for printing">⭐</div>' : '';
   return '<div class="card">'
     +'<div class="card-meta"><span class="badge '+badgeClass+'">'+esc(type)+'</span>'+added+'</div>'
     +'<div class="card-title">'+titleHtml+'</div>'
@@ -388,6 +397,7 @@ function fmt(p) {
         +'<div class="notes-saved"></div>'
       +'</div>'
     +'</div>'
+    +starHtml
     +'</div>';
 }
 
