@@ -50,13 +50,37 @@ jobs:
 
       - name: Commit and push
         run: |
+          cp papers.json /tmp/processed_papers.json
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add papers.json index.html
-          if git diff --cached --quiet; then
-            echo "No changes to commit (paper may already exist)."
-          else
+          PUSHED=0
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            python3 merge_papers.py
+            EC=$?
+            if [ $EC -eq 42 ]; then
+              echo "Paper already in origin/main — nothing to push."
+              PUSHED=1
+              break
+            fi
+            python generate_site.py
+            git reset origin/main
+            git add papers.json index.html
+            if git diff --cached --quiet; then
+              echo "No changes after merge — nothing to push."
+              PUSHED=1
+              break
+            fi
             git commit -m "chore: add paper via workflow"
-            git pull --rebase origin main
-            git push
+            if git push; then
+              echo "Pushed successfully on attempt $attempt."
+              PUSHED=1
+              break
+            fi
+            echo "Push rejected on attempt $attempt — retrying in $((attempt * 5))s..."
+            sleep $((attempt * 5))
+          done
+          if [ $PUSHED -eq 0 ]; then
+            echo "All push attempts failed."
+            exit 1
           fi
