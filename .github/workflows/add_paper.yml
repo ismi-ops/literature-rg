@@ -57,5 +57,6 @@ jobs:
             echo "No changes to commit (paper may already exist)."
           else
             git commit -m "chore: add paper via workflow"
+            git pull --rebase origin main
             git push
           fi
