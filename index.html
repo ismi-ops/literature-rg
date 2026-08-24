@@ -114,6 +114,28 @@
   .empty { text-align: center; padding: 64px 0; color: var(--muted); font-size: 15px; grid-column: 1/-1; }
   .btn-add { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 8px; background: var(--accent); color: #fff; text-decoration: none; border: none; cursor: pointer; transition: opacity .12s; white-space: nowrap; }
   .btn-add:hover { opacity: .85; }
+
+  /* ── Add Paper modal ──────────────────────────────────────────────────── */
+  .modal-backdrop { display: none; position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,.45); align-items: center; justify-content: center; }
+  .modal-backdrop.open { display: flex; }
+  .modal-box { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 32px 28px; width: 440px; max-width: 94vw; box-shadow: 0 8px 32px rgba(0,0,0,.22); display: flex; flex-direction: column; gap: 14px; }
+  .modal-header { display: flex; align-items: center; justify-content: space-between; }
+  .modal-title { font-size: 1.05rem; font-weight: 700; }
+  .modal-close { background: none; border: none; font-size: 22px; cursor: pointer; color: var(--muted); line-height: 1; padding: 0 4px; transition: color .12s; }
+  .modal-close:hover { color: var(--text); }
+  .modal-label { font-size: 13px; font-weight: 600; }
+  .modal-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+  .modal-input { width: 100%; padding: 10px 14px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg); color: var(--text); font-size: 14px; outline: none; }
+  .modal-input:focus { border-color: var(--accent); }
+  .modal-btn { width: 100%; padding: 10px; border-radius: 8px; border: none; background: var(--accent); color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: opacity .12s; }
+  .modal-btn:hover { opacity: .88; }
+  .modal-btn:disabled { opacity: .5; cursor: default; }
+  .modal-feedback { font-size: 13px; min-height: 18px; }
+  .modal-feedback.ok { color: #16a34a; }
+  .modal-feedback.err { color: #dc2626; }
+  .modal-link { color: var(--accent); }
+  .modal-token-row { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }
+  .modal-token-btn { background: none; border: none; color: var(--accent); font-size: 12px; cursor: pointer; padding: 0; text-decoration: underline; }
   .card-notes { margin-top: 4px; }
   .notes-textarea { width: 100%; min-height: 52px; padding: 7px 10px; border: 1px dashed var(--border); border-radius: 7px; background: transparent; color: var(--text); font-size: 12.5px; font-family: inherit; line-height: 1.5; resize: vertical; outline: none; transition: border-color .15s, background .15s; }
   .notes-textarea::placeholder { color: var(--muted); opacity: .7; font-style: italic; }
@@ -138,7 +160,7 @@
     <div class="header-title">Ru's Reading List <span>· Cell Science</span></div>
     <input id="search" type="search" placeholder="Search title, author, journal…" autocomplete="off">
     <div id="result-count"></div>
-    <a class="btn-add" href="https://github.com/ismi-ops/literature-rg/actions/workflows/add_paper.yml" target="_blank" rel="noopener">+ Add paper</a>
+    <button class="btn-add" id="btn-add-paper">+ Add paper</button>
   </div>
 </header>
 <div class="filters">
@@ -150,6 +172,36 @@
   </div>
 </div>
 <main><div class="grid" id="grid"></div></main>
+
+<!-- Add Paper modal -->
+<div class="modal-backdrop" id="add-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title-text">
+  <div class="modal-box">
+    <div class="modal-header">
+      <span class="modal-title" id="modal-title-text">Add Paper</span>
+      <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+    </div>
+
+    <!-- Screen 1: GitHub token setup -->
+    <div id="modal-token-screen">
+      <p class="modal-desc">To add papers you need a GitHub Personal Access Token (PAT) with the <strong>workflow</strong> scope. It's stored only in your browser.</p>
+      <p class="modal-desc"><a class="modal-link" href="https://github.com/settings/tokens/new?scopes=workflow&description=literature-rg" target="_blank" rel="noopener">Create a token on GitHub →</a></p>
+      <div class="modal-label">Personal Access Token</div>
+      <input class="modal-input" id="token-input" type="password" placeholder="ghp_…" autocomplete="off">
+      <button class="modal-btn" id="token-save-btn">Save &amp; continue</button>
+      <div class="modal-feedback" id="token-feedback"></div>
+    </div>
+
+    <!-- Screen 2: Paper URL / DOI input -->
+    <div id="modal-paper-screen" style="display:none">
+      <div class="modal-label">Paper URL or DOI</div>
+      <p class="modal-desc">Paste a link (Nature, bioRxiv, PubMed…) or a DOI like <code>10.1038/…</code>. The paper will be scored and added automatically — check back in ~2 minutes.</p>
+      <input class="modal-input" id="paper-input" type="text" placeholder="https://… or 10.xxxx/…" autocomplete="off">
+      <button class="modal-btn" id="paper-submit-btn">+ Add paper</button>
+      <div class="modal-feedback" id="paper-feedback"></div>
+      <div class="modal-token-row">Token saved. <button class="modal-token-btn" id="change-token-btn">Change token</button></div>
+    </div>
+  </div>
+</div>
 
 <script>
 /* ── Password gate ──────────────────────────────────────────────────────── */
@@ -402,6 +454,109 @@ function render() {
   document.getElementById('result-count').textContent = filtered.length+' paper'+(filtered.length===1?'':'s');
 }
 render();
+
+/* ── Add Paper modal ────────────────────────────────────────────────────── */
+const GH_TOKEN_KEY = 'rg_gh_token';
+const addModal = document.getElementById('add-modal');
+const tokenScreen = document.getElementById('modal-token-screen');
+const paperScreen = document.getElementById('modal-paper-screen');
+
+function getToken() { try { return localStorage.getItem(GH_TOKEN_KEY) || ''; } catch(e) { return ''; } }
+function saveToken(t) { try { localStorage.setItem(GH_TOKEN_KEY, t); return true; } catch(e) { return false; } }
+
+function showTokenScreen() {
+  tokenScreen.style.display = '';
+  paperScreen.style.display = 'none';
+  document.getElementById('token-input').value = '';
+  document.getElementById('token-feedback').textContent = '';
+  document.getElementById('token-feedback').className = 'modal-feedback';
+  setTimeout(() => document.getElementById('token-input').focus(), 60);
+}
+function showPaperScreen() {
+  tokenScreen.style.display = 'none';
+  paperScreen.style.display = '';
+  document.getElementById('paper-input').value = '';
+  document.getElementById('paper-feedback').textContent = '';
+  document.getElementById('paper-feedback').className = 'modal-feedback';
+  setTimeout(() => document.getElementById('paper-input').focus(), 60);
+}
+
+function openAddModal() {
+  addModal.classList.add('open');
+  getToken() ? showPaperScreen() : showTokenScreen();
+}
+function closeAddModal() { addModal.classList.remove('open'); }
+
+document.getElementById('btn-add-paper').addEventListener('click', openAddModal);
+document.getElementById('modal-close').addEventListener('click', closeAddModal);
+addModal.addEventListener('click', e => { if (e.target === addModal) closeAddModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && addModal.classList.contains('open')) closeAddModal(); });
+
+document.getElementById('token-save-btn').addEventListener('click', () => {
+  const val = document.getElementById('token-input').value.trim();
+  const fb = document.getElementById('token-feedback');
+  if (!val) { fb.className = 'modal-feedback err'; fb.textContent = 'Please enter a token.'; return; }
+  if (!saveToken(val)) { fb.className = 'modal-feedback err'; fb.textContent = 'Could not save token (browser storage may be blocked).'; return; }
+  showPaperScreen();
+});
+document.getElementById('token-input').addEventListener('keydown', e => { if (e.key === 'Enter') document.getElementById('token-save-btn').click(); });
+
+document.getElementById('change-token-btn').addEventListener('click', showTokenScreen);
+
+document.getElementById('paper-submit-btn').addEventListener('click', async () => {
+  const raw = document.getElementById('paper-input').value.trim();
+  const fb = document.getElementById('paper-feedback');
+  const btn = document.getElementById('paper-submit-btn');
+  if (!raw) { fb.className = 'modal-feedback err'; fb.textContent = 'Please enter a URL or DOI.'; return; }
+
+  const token = getToken();
+  if (!token) { showTokenScreen(); return; }
+
+  const isDOI = /^10\.\d{4,}\//.test(raw);
+  const inputs = isDOI ? { doi: raw, url: '' } : { url: raw, doi: '' };
+
+  btn.disabled = true;
+  fb.className = 'modal-feedback';
+  fb.textContent = 'Submitting…';
+
+  try {
+    const resp = await fetch(
+      'https://api.github.com/repos/ismi-ops/literature-rg/actions/workflows/add_paper.yml/dispatches',
+      {
+        method: 'POST',
+        headers: {
+          'Authorization': 'Bearer ' + token,
+          'Accept': 'application/vnd.github+json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ ref: 'main', inputs }),
+      }
+    );
+    if (resp.status === 204) {
+      fb.className = 'modal-feedback ok';
+      fb.textContent = '✓ Submitted! The paper will appear in ~2 minutes after the workflow finishes.';
+      document.getElementById('paper-input').value = '';
+    } else if (resp.status === 401) {
+      fb.className = 'modal-feedback err';
+      fb.textContent = 'Invalid token (401). Please update your GitHub PAT.';
+    } else if (resp.status === 403) {
+      fb.className = 'modal-feedback err';
+      fb.textContent = 'Permission denied (403). Make sure the token has "workflow" scope.';
+    } else if (resp.status === 422) {
+      fb.className = 'modal-feedback err';
+      fb.textContent = 'Workflow not found (422). Check that the branch "main" exists.';
+    } else {
+      const body = await resp.text().catch(() => '');
+      fb.className = 'modal-feedback err';
+      fb.textContent = 'GitHub error ' + resp.status + (body ? ': ' + body.slice(0, 120) : '');
+    }
+  } catch(err) {
+    fb.className = 'modal-feedback err';
+    fb.textContent = 'Network error: ' + err.message;
+  }
+  btn.disabled = false;
+});
+document.getElementById('paper-input').addEventListener('keydown', e => { if (e.key === 'Enter') document.getElementById('paper-submit-btn').click(); });
 </script>
 </body>
 </html>
