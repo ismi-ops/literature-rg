@@ -234,12 +234,13 @@ PAPERS.sort((a, b) => {
   return (b.score || 0) - (a.score || 0);
 });
 
-/* ── Top picks (highest-scored 4 from the latest batch) ─────────────────── */
+/* ── Top picks (highest-scored 4 from the past 7 days) ──────────────────── */
 const _latestDate = PAPERS.reduce((max, p) => (p.added||'') > max ? (p.added||'') : max, '');
-const _latestBatch = PAPERS.filter(p => (p.added||'') === _latestDate)
+const _sevenDaysAgo = (() => { const d = new Date(_latestDate || new Date()); d.setDate(d.getDate()-7); return d.toISOString().slice(0,10); })();
+const _recentBatch = PAPERS.filter(p => (p.added||'') >= _sevenDaysAgo)
   .slice().sort((a, b) => (b.score||0) - (a.score||0));
-const TOP_PICK_IDS = new Set(_latestBatch.slice(0, 4).map(p => p.doi || p.title || ''));
-function isTopPick(p) { return _latestDate && TOP_PICK_IDS.has(p.doi || p.title || ''); }
+const TOP_PICK_IDS = new Set(_recentBatch.slice(0, 4).map(p => p.doi || p.title || ''));
+function isTopPick(p) { return TOP_PICK_IDS.size > 0 && TOP_PICK_IDS.has(p.doi || p.title || ''); }
 
 /* ── Filter state ───────────────────────────────────────────────────────── */
 let activeType = 'all', activeTags = new Set(), activeYear = 'all', activeAdded = 'all', searchText = '';
