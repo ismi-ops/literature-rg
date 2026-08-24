@@ -144,7 +144,7 @@
   },
   {
     "title": "Computational blueprints for cell fate programming",
-    "authors": "Yang",
+    "authors": "Pengyi Yang",
     "year": "2026",
     "journal": "Stem Cell Reports",
     "type": "review",
@@ -155,10 +155,10 @@
       "single-cell",
       "cell state"
     ],
-    "doi": "",
+    "doi": "10.1016/j.stemcr.2026.102929",
     "link": "https://www.cell.com/stem-cell-reports/fulltext/S2213-6711(26)00140-2",
     "added": "2026-08-19",
-    "pdf_link": "",
+    "pdf_link": "https://doi.org/10.1016/j.stemcr.2026.102929",
     "relevance": "Relevant to Cell Science's interest in how cells make identity decisions, with implications for stem cell differentiation and iPSC-based model systems."
   },
   {
@@ -785,7 +785,7 @@
   },
   {
     "title": "The Polymers of Life: Exploring Cellular Function Through Polymer Concepts",
-    "authors": "",
+    "authors": "Mark Chen, Ashutosh Chilkoti",
     "year": "2026",
     "journal": "Advanced Science",
     "type": "review",
@@ -795,7 +795,7 @@
       "cell state",
       "development"
     ],
-    "doi": "",
+    "doi": "10.1002/advs.75240",
     "link": "https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.75240",
     "added": "2026-08-19",
     "pdf_link": "https://doi.org/10.1002/advs.75240",
@@ -1337,5 +1337,21 @@
     "score": 2,
     "added": "2026-08-24",
     "pdf_link": "https://www.frontiersin.org/journals/bioengineering-and-biotechnology/articles/10.3389/fbioe.2026.1922947/pdf"
+  },
+  {
+    "title": "The Single-Cell Atlas Revolution: Integrating Lineage, Space, and Evolution to Decode Animal Biology",
+    "authors": "S. U. Rehman, Rahmat Ali, Hosameldeen Mohamed Husien, Mengzhi Wang",
+    "year": "2026",
+    "journal": "DNA and Cell Biology",
+    "type": "review",
+    "summary": "The advent of single-cell RNA sequencing (scRNA-seq) has fundamentally transformed biological research, converting our understanding of cellular diversity from a purely conceptual idea into a quantifiable, applicable, and observable reality. Early efforts successfully created catalogs of cell types across diverse tissues and species, delivering an effective inventory of the components that make up complex animal systems. Yet the field now stands at a crossroads; rather than bringing clarity, the ever-growing number of cellular atlases threatens to flood and overwhelm it.",
+    "tags": [
+      "development",
+      "single-cell"
+    ],
+    "doi": "10.1177/10445498261460199",
+    "link": "https://www.semanticscholar.org/paper/17260fd4d03872e8e8e7ca48b5b8431a3d053c7b",
+    "score": 2,
+    "added": "2026-08-24"
   }
 ]
