@@ -671,7 +671,7 @@
   },
   {
     "title": "Single-cell morphodynamical trajectories enable prediction of gene expression accompanying cell state change",
-    "authors": "",
+    "authors": "J. Copperman, Ian C. Mclean, Sean M. Gross, Jalim Singh, Vaibhav Murthy, Young Hwan Chang, Alexander E. Davies, Daniel M. Zuckerman et al.",
     "year": "2026",
     "journal": "Cell Systems",
     "type": "research",
@@ -682,10 +682,10 @@
       "AI / ML",
       "single-cell"
     ],
-    "doi": "",
+    "doi": "10.1101/2024.01.18.576248",
     "link": "https://www.cell.com/cell-systems/fulltext/S2405-4712(26)00049-9",
     "added": "2026-08-19",
-    "pdf_link": "",
+    "pdf_link": "https://www.biorxiv.org/content/biorxiv/early/2024/01/20/2024.01.18.576248.full.pdf",
     "relevance": "Relevant to Cell Science's multimodal view of cell state, where single-cell molecular data is integrated with structural and morphological measurements. Relevant to Cell Science's holistic cell state program, which integrates molecular, structural, and morphological data to define cell identity."
   },
   {
@@ -1321,5 +1321,21 @@
     "score": 6,
     "added": "2026-08-24",
     "pdf_link": "https://doi.org/10.1016/j.cels.2026.101703"
+  },
+  {
+    "title": "Mechanical memory in cells: mechanisms, effects, and applications in regenerative medicine",
+    "authors": "Antara Bhuyan, M. Ahearne",
+    "year": "2026",
+    "journal": "Frontiers in Bioengineering and Biotechnology",
+    "type": "review",
+    "summary": "Mechanical memory is the ability of cells to retain information from past mechanical environments, which profoundly influences cellular behaviour and fate, particularly in stem cells. This review combines contemporary insights into mechanical memory with specific attention to its underlying processes, which span mechanotransduction to epigenetic alterations. Various approaches to study mechanical memory have been investigated through substrate stiffness modulation, shear stress, and cyclic strain while evaluating the impact of mechanical memory on several cell types.",
+    "tags": [
+      "stem cells"
+    ],
+    "doi": "10.3389/fbioe.2026.1922947",
+    "link": "https://www.semanticscholar.org/paper/a11d2ee24cad92447d53b4992331508603dd900e",
+    "score": 2,
+    "added": "2026-08-24",
+    "pdf_link": "https://www.frontiersin.org/journals/bioengineering-and-biotechnology/articles/10.3389/fbioe.2026.1922947/pdf"
   }
 ]
