@@ -99,7 +99,7 @@ HTML_TEMPLATE = """<!doctype html>
     .badge-perspective { background: #003630; color: #4dd9d3; }
     .card-relevance { border-color: #00A59B; background: transparent; }
     .card-relevance-label { color: #4dd9d3; }
-    .card-relevance-text { color: #4dd9d3; opacity: .85; }
+    .card-relevance-text { color: var(--text); opacity: .88; }
     .tag { background: transparent; color: #a0a0ff; border-color: #a0a0ff; }
     .btn-pdf { background: transparent; color: #ff80aa; border-color: #ff80aa; }
   }
@@ -116,7 +116,7 @@ HTML_TEMPLATE = """<!doctype html>
   .card-summary { font-size: 13.5px; color: var(--text); opacity: .88; }
   .card-relevance { margin-top: 10px; border-left: 3px solid #00A59B; border-radius: 4px; background: transparent; padding: 8px 12px; }
   .card-relevance-label { font-size: 10.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #007d75; opacity: .9; margin-bottom: 3px; }
-  .card-relevance-text { font-size: 13px; color: #005c57; font-style: italic; line-height: 1.45; }
+  .card-relevance-text { font-size: 13px; color: var(--text); font-style: italic; line-height: 1.45; opacity: .88; }
   .card-tags { display: flex; flex-wrap: wrap; gap: 5px; }
   .tag { font-size: 11.5px; padding: 2px 8px; border-radius: 10px; background: transparent; color: #6464FF; border: 1px solid #6464FF; cursor: pointer; }
   .tag:hover { opacity: .8; }
@@ -377,7 +377,7 @@ document.getElementById('grid').addEventListener('click', e => {
 /* ── Notes storage (localStorage) ───────────────────────────────────────── */
 function noteKey(p) { return 'note:' + (p.doi || p.title || '').slice(0, 120); }
 function getNote(p) { try { return localStorage.getItem(noteKey(p)) || ''; } catch(e) { return ''; } }
-function setNote(p, v) { try { localStorage.setItem(noteKey(p), v); } catch(e) {} }
+function saveNoteByKey(k, v) { try { localStorage.setItem(k, v); } catch(e) {} }
 
 /* ── Journal URL map ────────────────────────────────────────────────────── */
 const JOURNAL_URLS = {
@@ -448,6 +448,7 @@ function fmt(p) {
   const pdfBtn = p.pdf_link ? '<a class="btn-pdf" href="'+esc(p.pdf_link)+'" target="_blank" rel="noopener">&#8595; PDF</a>' : '';
   const existingNote = getNote(p);
   const hasNote = existingNote.trim().length > 0;
+  const nk = noteKey(p);
   const noteId = 'note-' + Math.random().toString(36).slice(2);
   const starHtml = isTopPick(p) ? '<div class="top-pick-star" title="Top pick · recommended for printing">⭐</div>' : '';
   return '<div class="card">'
@@ -463,7 +464,7 @@ function fmt(p) {
       +'<button class="notes-toggle'+(hasNote?' has-notes':'')+'" data-noteid="'+noteId+'">'
         +(hasNote ? '&#128221; Notes' : '+ Add note')
       +'</button>'
-      +'<div class="notes-area" id="'+noteId+'">'
+      +'<div class="notes-area" id="'+noteId+'" data-nk="'+esc(nk)+'">'
         +'<textarea class="notes-textarea" rows="3" placeholder="Your notes…">'+esc(existingNote)+'</textarea>'
         +'<div class="notes-saved"></div>'
       +'</div>'
@@ -491,18 +492,18 @@ document.getElementById('grid').addEventListener('click', e => {
 document.getElementById('grid').addEventListener('input', e => {
   if (!e.target.classList.contains('notes-textarea')) return;
   const area = e.target.closest('.notes-area');
-  const noteId = area?.id;
-  const paper = _papersByNoteId[noteId];
-  if (!paper) return;
-  setNote(paper, e.target.value);
+  if (!area) return;
+  const k = area.dataset.nk;
+  if (!k) return;
+  saveNoteByKey(k, e.target.value);
   const saved = area.querySelector('.notes-saved');
   if (saved) saved.textContent = 'Saved';
+  const noteId = area.id;
   const toggle = document.querySelector('[data-noteid="'+noteId+'"]');
   if (toggle) {
     const hasNote = e.target.value.trim().length > 0;
     toggle.classList.toggle('has-notes', hasNote);
     toggle.textContent = hasNote ? '📑 Notes' : '+ Add note';
-    toggle.dataset.noteid = noteId;
   }
 });
 
