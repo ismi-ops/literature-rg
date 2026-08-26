@@ -58,6 +58,7 @@ def add_papers(new_papers: list[dict]) -> int:
             "journal": paper.get("journal", ""),
             "type": paper.get("type", "research"),
             "summary": paper.get("summary", ""),
+            "relevance": paper.get("relevance", ""),
             "tags": tags,
             "doi": paper.get("doi", ""),
             "link": paper.get("link", "") or paper.get("url", ""),

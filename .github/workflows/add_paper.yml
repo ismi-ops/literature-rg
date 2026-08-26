@@ -42,6 +42,11 @@ jobs:
       - name: Backfill authors
         run: python backfill_authors.py
 
+      - name: Backfill summaries and relevance
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python backfill_summaries.py
+
       - name: Backfill PDF link
         run: python backfill_pdfs.py
 

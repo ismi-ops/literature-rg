@@ -6,18 +6,18 @@
 <title>Ru's Reading List · Cell Science</title>
 <style>
   :root {
-    --bg: #f8f9fb; --surface: #ffffff; --border: #e2e5ea;
-    --text: #1a1d23; --muted: #6b7280; --accent: #2563eb;
-    --accent-light: #eff6ff; --tag-bg: #f0f4ff; --tag-text: #3b4fc0;
-    --chip-active-bg: #2563eb; --chip-active-text: #ffffff;
+    --bg: #F3F0E8; --surface: #ffffff; --border: #DED9D1;
+    --text: #1a1d23; --muted: #737373; --accent: #6464FF;
+    --accent-light: #efecff; --tag-bg: #edeaff; --tag-text: #6464FF;
+    --chip-active-bg: #6464FF; --chip-active-text: #ffffff;
     --shadow: 0 1px 3px rgba(0,0,0,.08); --shadow-hover: 0 4px 12px rgba(0,0,0,.12);
     --radius: 10px;
   }
   @media (prefers-color-scheme: dark) {
     :root {
       --bg: #0f1117; --surface: #1c1f27; --border: #2a2e38;
-      --text: #e8eaf0; --muted: #9ca3af; --accent: #60a5fa;
-      --accent-light: #1e2a3d; --tag-bg: #1e2a3d; --tag-text: #93b4f8;
+      --text: #e8eaf0; --muted: #AAA39F; --accent: #8b8bff;
+      --accent-light: #1a1a3d; --tag-bg: #1a1a3d; --tag-text: #a0a0ff;
       --shadow: 0 1px 3px rgba(0,0,0,.3); --shadow-hover: 0 4px 12px rgba(0,0,0,.4);
     }
   }
@@ -77,13 +77,13 @@
   .top-pick-star { position: absolute; bottom: 12px; right: 14px; font-size: 20px; line-height: 1; user-select: none; cursor: default; filter: drop-shadow(0 1px 2px rgba(0,0,0,.15)); }
   .card-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
   .badge { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 12px; text-transform: capitalize; }
-  .badge-research { background: #e0f2fe; color: #0369a1; }
-  .badge-review { background: #fce7f3; color: #9d174d; }
-  .badge-perspective { background: #f0fdf4; color: #166534; }
+  .badge-research { background: #edeaff; color: #6464FF; }
+  .badge-review { background: #fde8f0; color: #CD0F55; }
+  .badge-perspective { background: #e0faf9; color: #007d75; }
   @media (prefers-color-scheme: dark) {
-    .badge-research { background: #0c2a3d; color: #7dd3fc; }
-    .badge-review { background: #3b0a20; color: #f9a8d4; }
-    .badge-perspective { background: #052e16; color: #86efac; }
+    .badge-research { background: #1a1a3d; color: #a0a0ff; }
+    .badge-review { background: #3b0018; color: #ff80aa; }
+    .badge-perspective { background: #003630; color: #4dd9d3; }
   }
   .card-date { font-size: 11.5px; color: var(--muted); margin-left: auto; }
   .card-title { font-size: 15px; font-weight: 650; line-height: 1.4; }
@@ -359,6 +359,54 @@ function noteKey(p) { return 'note:' + (p.doi || p.title || '').slice(0, 120); }
 function getNote(p) { try { return localStorage.getItem(noteKey(p)) || ''; } catch(e) { return ''; } }
 function setNote(p, v) { try { localStorage.setItem(noteKey(p), v); } catch(e) {} }
 
+/* ── Journal URL map ────────────────────────────────────────────────────── */
+const JOURNAL_URLS = {
+  'nature': 'https://www.nature.com/nature/',
+  'science': 'https://www.science.org/journal/science',
+  'cell': 'https://www.cell.com/cell/home',
+  'nature cell biology': 'https://www.nature.com/ncb/',
+  'nature methods': 'https://www.nature.com/nmeth/',
+  'nature communications': 'https://www.nature.com/ncomms/',
+  'nature biotechnology': 'https://www.nature.com/nbt/',
+  'nature reviews molecular cell biology': 'https://www.nature.com/nrm/',
+  'nature reviews genetics': 'https://www.nature.com/nrg/',
+  'nature reviews bioengineering': 'https://www.nature.com/natrevbioeng/',
+  'nature chemical biology': 'https://www.nature.com/nchembio/',
+  'nature computational science': 'https://www.nature.com/natcomputsci/',
+  'nature nanotechnology': 'https://www.nature.com/nnano/',
+  'developmental cell': 'https://www.cell.com/developmental-cell/home',
+  'cell stem cell': 'https://www.cell.com/cell-stem-cell/home',
+  'cell reports': 'https://www.cell.com/cell-reports/home',
+  'cell reports methods': 'https://www.cell.com/cell-reports-methods/home',
+  'cell systems': 'https://www.cell.com/cell-systems/home',
+  'molecular biology of the cell': 'https://www.molbiolcell.org/',
+  'molecular biology of the cell (mboc)': 'https://www.molbiolcell.org/',
+  'elife': 'https://elifesciences.org/',
+  'development': 'https://journals.biologists.com/dev',
+  'development (cambridge, england)': 'https://journals.biologists.com/dev',
+  'developmental biology': 'https://www.sciencedirect.com/journal/developmental-biology',
+  'biophysical journal': 'https://www.cell.com/biophysical-journal/home',
+  'plos computational biology': 'https://journals.plos.org/ploscompbiol/',
+  'annual review of cell and developmental biology': 'https://www.annualreviews.org/journal/cellbio',
+  'annual review of biomedical data science': 'https://www.annualreviews.org/journal/biodatasci',
+  'journal of cell biology': 'https://www.jcb.org/',
+  'stem cell reports': 'https://www.cell.com/stem-cell-reports/home',
+  'stem cells': 'https://stemcellsjournals.onlinelibrary.wiley.com/journal/15494918',
+  'frontiers in bioengineering and biotechnology': 'https://www.frontiersin.org/journals/bioengineering-and-biotechnology',
+  'frontiers in cell and developmental biology': 'https://www.frontiersin.org/journals/cell-and-developmental-biology',
+  'npj systems biology and applications': 'https://www.nature.com/npjsba/',
+  'seminars in cell & developmental biology': 'https://www.sciencedirect.com/journal/seminars-in-cell-and-developmental-biology',
+  'seminars in cell and developmental biology': 'https://www.sciencedirect.com/journal/seminars-in-cell-and-developmental-biology',
+  'current opinion in genetics and development': 'https://www.sciencedirect.com/journal/current-opinion-in-genetics-and-development',
+  'advanced science': 'https://onlinelibrary.wiley.com/journal/21983844',
+  'biorxiv': 'https://www.biorxiv.org/',
+  'arxiv': 'https://arxiv.org/',
+};
+function journalUrl(name) {
+  if (!name) return '';
+  return JOURNAL_URLS[name.toLowerCase().trim()] || '';
+}
+
 /* ── Card rendering ─────────────────────────────────────────────────────── */
 function authorLink(name) { return 'https://scholar.google.com/scholar?q=' + encodeURIComponent(name); }
 function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
@@ -374,7 +422,9 @@ function fmt(p) {
   }).filter(Boolean).join('<span style="color:var(--border)"> · </span>');
   const tags = (p.tags||[]).filter(isTopicTag).map(t=>'<span class="tag" data-clicktag="'+esc(t)+'">'+esc(t)+'</span>').join('');
   const added = p.added ? '<span class="card-date">added '+p.added+'</span>' : '';
-  const venue = [p.journal, p.year].filter(Boolean).join(' · ');
+  const jUrl = journalUrl(p.journal);
+  const journalHtml = p.journal ? (jUrl ? '<a href="'+esc(jUrl)+'" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">'+esc(p.journal)+'</a>' : esc(p.journal)) : '';
+  const venue = [journalHtml, p.year ? esc(p.year) : ''].filter(Boolean).join(' · ');
   const pdfBtn = p.pdf_link ? '<a class="btn-pdf" href="'+esc(p.pdf_link)+'" target="_blank" rel="noopener">&#8595; PDF</a>' : '';
   const existingNote = getNote(p);
   const hasNote = existingNote.trim().length > 0;
@@ -384,7 +434,7 @@ function fmt(p) {
     +'<div class="card-meta"><span class="badge '+badgeClass+'">'+esc(type)+'</span>'+added+'</div>'
     +'<div class="card-title">'+titleHtml+'</div>'
     +(authorHtml ? '<div class="card-authors">'+authorHtml+'</div>' : '')
-    +(venue ? '<div class="card-venue">'+esc(venue)+'</div>' : '')
+    +(venue ? '<div class="card-venue">'+venue+'</div>' : '')
     +(p.summary ? '<div class="card-summary">'+esc(p.summary)+'</div>' : '')
     +(p.relevance ? '<div class="card-relevance"><div class="card-relevance-label">Cell Science relevance</div><div class="card-relevance-text">'+esc(p.relevance)+'</div></div>' : '')
     +(tags ? '<div class="card-tags">'+tags+'</div>' : '')
