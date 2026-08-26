@@ -121,7 +121,7 @@ HTML_TEMPLATE = """<!doctype html>
   .tag { font-size: 11.5px; padding: 2px 8px; border-radius: 10px; background: #edeaff; color: #6464FF; cursor: pointer; }
   .tag:hover { opacity: .8; }
   .card-actions { display: flex; gap: 8px; margin-top: 2px; align-items: center; }
-  .btn-pdf { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 7px; background: #fde8f0; color: #CD0F55; text-decoration: none; border: 1px solid #CD0F55; opacity: .85; transition: opacity .12s; }
+  .btn-pdf { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 7px; background: transparent; color: #CD0F55; text-decoration: none; border: 1px solid #CD0F55; opacity: .85; transition: opacity .12s; }
   .btn-pdf:hover { opacity: 1; }
   .notes-section { margin-top: 6px; }
   .notes-toggle { background: none; border: none; padding: 0; font-size: 12px; color: var(--muted); cursor: pointer; display: flex; align-items: center; gap: 4px; transition: color .12s; }
