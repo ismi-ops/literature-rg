@@ -93,6 +93,8 @@
   .author-link { color: var(--muted); text-decoration: none; }
   .author-link:hover { color: var(--accent); text-decoration: underline; }
   .card-venue { font-size: 12.5px; color: var(--muted); font-style: italic; }
+  .journal-link { color: inherit; text-decoration: none; }
+  .journal-link:hover { text-decoration: underline; }
   .card-summary { font-size: 13.5px; color: var(--text); opacity: .88; }
   .card-relevance { margin-top: 10px; border-left: 3px solid var(--accent); border-radius: 4px; background: var(--accent-light); padding: 8px 12px; }
   .card-relevance-label { font-size: 10.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); opacity: .8; margin-bottom: 3px; }
@@ -423,7 +425,7 @@ function fmt(p) {
   const tags = (p.tags||[]).filter(isTopicTag).map(t=>'<span class="tag" data-clicktag="'+esc(t)+'">'+esc(t)+'</span>').join('');
   const added = p.added ? '<span class="card-date">added '+p.added+'</span>' : '';
   const jUrl = journalUrl(p.journal);
-  const journalHtml = p.journal ? (jUrl ? '<a href="'+esc(jUrl)+'" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">'+esc(p.journal)+'</a>' : esc(p.journal)) : '';
+  const journalHtml = p.journal ? (jUrl ? '<a class="journal-link" href="'+esc(jUrl)+'" target="_blank" rel="noopener">'+esc(p.journal)+'</a>' : esc(p.journal)) : '';
   const venue = [journalHtml, p.year ? esc(p.year) : ''].filter(Boolean).join(' · ');
   const pdfBtn = p.pdf_link ? '<a class="btn-pdf" href="'+esc(p.pdf_link)+'" target="_blank" rel="noopener">&#8595; PDF</a>' : '';
   const existingNote = getNote(p);
