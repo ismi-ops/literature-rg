@@ -97,11 +97,11 @@ HTML_TEMPLATE = """<!doctype html>
     .badge-research { background: #1a1a3d; color: #a0a0ff; }
     .badge-review { background: #3b0018; color: #ff80aa; }
     .badge-perspective { background: #003630; color: #4dd9d3; }
-    .card-relevance { border-color: #00A59B; background: #002f2d; }
+    .card-relevance { border-color: #00A59B; background: transparent; }
     .card-relevance-label { color: #4dd9d3; }
-    .card-relevance-text { color: #a0e8e4; }
-    .tag { background: #2e2b27; color: #9a9490; }
-    .btn-pdf { background: #3b0018; color: #ff80aa; border-color: #ff80aa; }
+    .card-relevance-text { color: #4dd9d3; opacity: .85; }
+    .tag { background: #1a1a3d; color: #a0a0ff; }
+    .btn-pdf { background: transparent; color: #ff80aa; border-color: #ff80aa; }
   }
   .card-date { font-size: 11.5px; color: var(--muted); margin-left: auto; }
   .card-title { font-size: 15px; font-weight: 650; line-height: 1.4; }
@@ -118,7 +118,7 @@ HTML_TEMPLATE = """<!doctype html>
   .card-relevance-label { font-size: 10.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #007d75; opacity: .9; margin-bottom: 3px; }
   .card-relevance-text { font-size: 13px; color: #005c57; font-style: italic; line-height: 1.45; }
   .card-tags { display: flex; flex-wrap: wrap; gap: 5px; }
-  .tag { font-size: 11.5px; padding: 2px 8px; border-radius: 10px; background: #E8E3DC; color: #5f5a55; cursor: pointer; }
+  .tag { font-size: 11.5px; padding: 2px 8px; border-radius: 10px; background: #edeaff; color: #6464FF; cursor: pointer; }
   .tag:hover { opacity: .8; }
   .card-actions { display: flex; gap: 8px; margin-top: 2px; align-items: center; }
   .btn-pdf { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 7px; background: #fde8f0; color: #CD0F55; text-decoration: none; border: 1px solid #CD0F55; opacity: .85; transition: opacity .12s; }
