@@ -11,7 +11,7 @@ on:
         type: string
       min_score:
         description: "Minimum relevance score (0-10)"
-        default: "7"
+        default: "8"
         type: string
       dry_run:
         description: "Dry run (don't write to papers.json)"

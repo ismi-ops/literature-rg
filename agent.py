@@ -52,7 +52,7 @@ def deduplicate(candidates: list[dict], existing: set[str]) -> list[dict]:
 
 # ── Main ───────────────────────────────────────────────────────────────────────
 
-def run_agent(days_back: int = 14, min_score: int = 7, dry_run: bool = False):
+def run_agent(days_back: int = 14, min_score: int = 8, dry_run: bool = False):
     load_dotenv()
 
     if not os.environ.get("ANTHROPIC_API_KEY"):
@@ -162,8 +162,8 @@ if __name__ == "__main__":
         help="How many days back to search (default: 14)"
     )
     parser.add_argument(
-        "--min-score", type=int, default=7,
-        help="Minimum relevance score 0-10 (default: 7)"
+        "--min-score", type=int, default=8,
+        help="Minimum relevance score 0-10 (default: 8)"
     )
     parser.add_argument(
         "--dry-run", action="store_true",

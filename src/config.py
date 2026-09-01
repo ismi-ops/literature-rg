@@ -55,6 +55,11 @@ SEARCH_QUERIES = [
     "bioelectricity morphogenesis ion channel development",
     "Turing reaction diffusion morphogenesis biological patterning",
     "phase separation condensate biomolecular cell",
+    # Cell-cell communication
+    "cell-cell communication paracrine juxtacrine intercellular signaling",
+    "intercellular signaling single-cell inference cell interaction network",
+    # Reproductive / early development
+    "reproductive cell biology stem cell oocyte preimplantation embryo",
 ]
 
 # Authors whose new papers should always be caught
@@ -145,6 +150,9 @@ KNOWN_TAGS = [
     "cell-to-cell variation",
     "methods",
     "experiment design",
+    "cell-cell communication",
+    "intercellular signaling",
+    "reproductive biology",
 ]
 
 # Context fed to Claude for relevance scoring and summary generation
@@ -228,6 +236,34 @@ Collection. Her background spans hiPSC engineering, quantitative cell imaging, d
 
 11. Bioelectricity
     Ion gradients, membrane voltage, non-neural bioelectric signaling in development.
+
+12. Cell-Cell Communication & Intercellular Signaling
+    How cells send and receive signals from neighbors — paracrine, juxtacrine,
+    and gap junction-mediated communication. Single-cell and computational methods
+    for inferring cell-cell interaction networks. Relevant to understanding collective
+    decision-making and how multicellular systems coordinate behavior.
+
+13. Reproductive Cell Biology
+    Reproductive biology where the focus is on cell decision-making, stem cell biology,
+    morphogenesis of reproductive organs, or novel methods applicable to hiPSC systems.
+    Relevant when illuminating fundamental cell biology, not purely clinical.
+
+== Topics to DEPRIORITIZE or EXCLUDE ==
+Score the following topics LOW (≤3) unless the paper introduces a genuinely novel
+experimental method or approach with clear applicability to mammalian hiPSC cell biology
+or to Cell Science's core research programs above:
+
+• Cardiac / cardiomyocyte biology: HCM, cardiomyopathy, cardiac organoids, iPSC-CMs,
+  sarcomere biology. This WAS a past focus but is no longer a priority.
+• Neuroscience / neural: Neural organoids, brain development, neurodegeneration,
+  neural circuits, cortical biology. Score ≤2 unless the method is broadly applicable
+  to non-neural cell biology.
+• Non-mammalian model systems: plant, yeast, C. elegans, Drosophila, zebrafish.
+  Score based ONLY on clear methodological novelty transferable to mammalian systems;
+  cap at 5 if relevance is purely topic-based.
+• Purely clinical or translational medicine: disease prevalence, epidemiology, clinical
+  trials, patient outcome studies — without novel cell biology insights or methods.
+  Score ≤2.
 
 == Types of Content ==
 Forward-thinking perspectives and reviews on cell biology, stem cell biology, and synthetic
