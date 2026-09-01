@@ -26,8 +26,18 @@ UNPAYWALL_EMAIL = "isabelle.smith@alleninstitute.org"
 # ── Metadata fetchers ──────────────────────────────────────────────────────────
 
 def _doi_from_url(url: str) -> str | None:
+    # Standard embedded DOI (e.g. nature.com, doi.org, elifesciences.org)
     m = re.search(r"(10\.\d{4,}/[^\s\"'&?#]+)", url)
-    return m.group(1).rstrip("/.") if m else None
+    if m:
+        return m.group(1).rstrip("/.")
+
+    # Company of Biologists: journals.biologists.com/{journal}/article/…/{article_id}/…
+    # e.g. dev205774 → 10.1242/dev.205774, jcs123456 → 10.1242/jcs.123456
+    cob = re.search(r"journals\.biologists\.com/[^/]+/article/[^/]+/[^/]+/([a-z]+)(\d+)", url)
+    if cob:
+        return f"10.1242/{cob.group(1)}.{cob.group(2)}"
+
+    return None
 
 
 def _fetch_via_ss(doi: str) -> dict | None:

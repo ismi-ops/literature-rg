@@ -1417,19 +1417,22 @@
     "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis."
   },
   {
-    "title": "https://journals.biologists.com/dev/article/153/16/dev205774/372642/The-role-of-geometry-in-morphogenesis",
+    "title": "The role of geometry in morphogenesis",
     "authors": "",
     "year": "2026",
-    "journal": "",
+    "journal": "Development",
     "type": "research",
     "summary": "",
-    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures.",
+    "relevance": "",
     "tags": [
-      "morphogenesis"
+      "morphogenesis",
+      "shape mechanics"
     ],
-    "doi": "",
-    "link": "https://journals.biologists.com/dev/article/153/16/dev205774/372642/The-role-of-geometry-in-morphogenesis",
-    "score": 2,
-    "added": "2026-09-01"
+    "doi": "10.1242/dev.205774",
+    "link": "https://doi.org/10.1242/dev.205774",
+    "score": 7,
+    "added": "2026-09-01",
+    "pdf_link": "",
+    "source": "manual"
   }
 ]
