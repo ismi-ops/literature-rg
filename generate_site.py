@@ -433,7 +433,8 @@ function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;'
 function fmt(p) {
   const type = (p.type||'research').toLowerCase();
   const badgeClass = 'badge-'+(type==='review'?'review':type==='perspective'?'perspective':'research');
-  const titleHtml = p.link ? '<a href="'+esc(p.link)+'" target="_blank" rel="noopener">'+esc(p.title)+'</a>' : esc(p.title);
+  const paperUrl = (p.doi ? 'https://doi.org/'+p.doi : p.link) || '';
+  const titleHtml = paperUrl ? '<a href="'+esc(paperUrl)+'" target="_blank" rel="noopener">'+esc(p.title)+'</a>' : esc(p.title);
   const rawAuthors = typeof p.authors === 'string' ? p.authors : (p.authors||[]).join(', ');
   const authorNames = rawAuthors.split(/,\s*et al\.?/).map(s=>s.trim()).join('').split(/,\s*/).map(s=>s.trim()).filter(Boolean);
   const authorHtml = authorNames.map(a => {

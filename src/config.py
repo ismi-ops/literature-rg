@@ -58,8 +58,9 @@ SEARCH_QUERIES = [
     # Cell-cell communication
     "cell-cell communication paracrine juxtacrine intercellular signaling",
     "intercellular signaling single-cell inference cell interaction network",
-    # Reproductive / early development
-    "reproductive cell biology stem cell oocyte preimplantation embryo",
+    # Developmental biology
+    "developmental biology gene regulatory network lineage specification embryo",
+    "cell lineage tracing embryonic patterning transcription factor cascade development",
 ]
 
 # Authors whose new papers should always be caught
@@ -152,7 +153,7 @@ KNOWN_TAGS = [
     "experiment design",
     "cell-cell communication",
     "intercellular signaling",
-    "reproductive biology",
+    "developmental biology",
 ]
 
 # Context fed to Claude for relevance scoring and summary generation
@@ -243,10 +244,12 @@ Collection. Her background spans hiPSC engineering, quantitative cell imaging, d
     for inferring cell-cell interaction networks. Relevant to understanding collective
     decision-making and how multicellular systems coordinate behavior.
 
-13. Reproductive Cell Biology
-    Reproductive biology where the focus is on cell decision-making, stem cell biology,
-    morphogenesis of reproductive organs, or novel methods applicable to hiPSC systems.
-    Relevant when illuminating fundamental cell biology, not purely clinical.
+13. Developmental Biology
+    Classical and molecular developmental biology — gene regulatory networks in development,
+    transcription factor cascades, embryonic patterning, lineage specification, cell lineage
+    tracing, temporal control of gene expression, and embryo models. Very high priority
+    because understanding how cells acquire and maintain identity in developmental contexts
+    is foundational to all of Cell Science's programs.
 
 == Topics to DEPRIORITIZE or EXCLUDE ==
 Score the following topics LOW (≤3) unless the paper introduces a genuinely novel
