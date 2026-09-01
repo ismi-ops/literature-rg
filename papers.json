@@ -1511,5 +1511,40 @@
     "score": 10,
     "added": "2026-09-01",
     "pdf_link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13081558/"
+  },
+  {
+    "title": "A systems view of cellular heterogeneity: Unlocking the \"wheel of fate\"",
+    "authors": "Hourieh Movasat, Enzo Giacopino, Ali Shahdoost, Yeganeh Dorri Nokoorani, Ali Houshyar Abrbekouh, Yaser Tahamtani, Nika Shakiba",
+    "year": "2025",
+    "journal": "Cell Systems",
+    "type": "perspective",
+    "summary": "Frames cell fate as a stochastic 'wheel' that each cell spins in response to molecular inputs, with the outcome depending on both the signal and the cell's internal state. The paper argues that single-cell heterogeneity isn't noise to be averaged away but meaningful variation encoding information about cell identity and trajectory. Connects well to Cell Science's work on cell state and how cells within the same population make distinct decisions.",
+    "tags": [
+      "cell fate",
+      "cell state"
+    ],
+    "doi": "10.1016/j.cels.2025.101300",
+    "link": "https://www.cell.com/cell-systems/abstract/S2405-4712(25)00133-4",
+    "added": "2026-08-19",
+    "pdf_link": "",
+    "relevance": "Directly addresses Cell Science's core question of why genetically identical cells differ structurally and how variation encodes functional information."
+  },
+  {
+    "title": "Multiscale integration of tissue and chromatin context converts cell heterogeneity into stable intestinal patterning",
+    "authors": "C. Schwayer, S. Barbiero, David B. Brückner, K. Oost, C. Baader, N. Repina et al.",
+    "year": "2026",
+    "journal": "Cell",
+    "type": "research",
+    "summary": "Summary Tissue regeneration requires de novo patterning, which has been proposed to be facilitated by cellular heterogeneity. Yet how such heterogeneities are integrated with the mechanochemical state of the tissue and stabilized at the chromatin level into stable, spatially organized fates remains poorly understood. Using in vivo mouse intestinal regeneration models and organoids, we identify a critical density regime that produces a permissive window for heterogeneity in the mechanosensor Yes-associated protein 1 (YAP1).",
+    "relevance": "Directly addresses the top-priority question of how cells make decisions — bistability, signal integration, and stochastic switching are central to understanding cell identity and fate. Directly addresses Cell Science's core question of why genetically identical cells differ structurally and how variation encodes functional information.",
+    "tags": [
+      "single-cell",
+      "organoid"
+    ],
+    "doi": "10.1016/j.cell.2026.06.009",
+    "link": "https://doi.org/10.1016/j.cell.2026.06.009",
+    "score": 10,
+    "added": "2026-09-01",
+    "pdf_link": "https://doi.org/10.1016/j.cell.2026.06.009"
   }
 ]
