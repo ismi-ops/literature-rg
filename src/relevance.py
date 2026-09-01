@@ -56,6 +56,8 @@ _KEYWORD_RULES = [
     (["image-based profiling", "cell painting", "phenomics", "high-content imaging"], 2),
     (["disease model", "hypertrophic cardiomyopathy", "HCM", "myosin mutation"], 1),
     (["cell-to-cell variation", "cell-to-cell variability", "single-cell heterogeneity"], 2),
+    (["cell-cell communication", "intercellular signaling", "paracrine", "juxtacrine", "cell interaction network", "ligand-receptor"], 3),
+    (["reproductive biology", "oocyte", "preimplantation", "embryogenesis", "gametogenesis"], 2),
     # Lower-weight topics
     (["single-cell", "single cell omics", "scRNA"], 1),
     (["patterning", "tissue patterning", "developmental patterning"], 1),
@@ -113,6 +115,10 @@ _RELEVANCE_NOTES = [
      "Relevant to Cell Science's morphodynamic phenotyping program, which treats live-imaging data as a high-dimensional readout of cell state and genotype."),
     (["virtual cell", "generative cell model", "VAE cell morphology"],
      "Supports Cell Science's virtual cell and generative modeling agenda for integrating multi-modal cell biology data into predictive computational models."),
+    (["cell-cell communication", "intercellular signaling", "paracrine", "juxtacrine", "cell interaction network", "ligand-receptor"],
+     "Directly relevant to understanding how cells send and receive signals from neighbors — foundational for collective cell decision-making and multicellular coordination, both core Cell Science themes."),
+    (["reproductive biology", "oocyte", "preimplantation", "embryogenesis", "gametogenesis"],
+     "Relevant to Cell Science's interest in cell decision-making, fate, and stem cell biology as illuminated through reproductive and early developmental contexts."),
     (["disease model", "hypertrophic cardiomyopathy", "HCM", "myosin mutation"],
      "Tangentially relevant to disease modeling using hiPSC lines."),
     (["cell-to-cell variation", "cell-to-cell variability", "single-cell heterogeneity", "cellular heterogeneity"],
@@ -287,7 +293,13 @@ Scoring guide:
 - 9-10: Directly on core topics, from a high-impact journal, clear Cell Science relevance
 - 7-8: Relevant to ≥2 interest areas, or from a tracked author/lab
 - 5-6: Tangentially relevant, interesting but lower priority
-- 0-4: Not relevant to Cell Science interests"""
+- 0-4: Not relevant to Cell Science interests
+
+Hard caps — score these LOW regardless of keyword matches:
+- Cardiac / cardiomyocyte biology (HCM, cardiomyopathy, sarcomere, iPSC-CM): ≤3 unless genuinely novel method applicable beyond cardiac
+- Neuroscience / neural (neural organoids, brain, neurodegeneration, cortex): ≤2 unless method is broadly applicable to non-neural cell biology
+- Non-mammalian systems (plant, yeast, C. elegans, Drosophila, zebrafish): ≤4 unless novel method with clear mammalian applicability
+- Purely clinical or translational (epidemiology, patient cohorts, clinical trials, disease treatment): ≤2"""
 
     try:
         response = _get_client().messages.create(
