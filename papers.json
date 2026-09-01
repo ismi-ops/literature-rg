@@ -1,7 +1,7 @@
 [
   {
     "title": "A human epiblast model reveals dynamic TGFβ-mediated control of epithelial identity during mammalian epiblast development",
-    "authors": "I. Zorzan, Elena Carbognin, Andrea Lauria, V. Proserpio, Davide Benvegnù, Federica Bertelli, Susana De Juambelz Urías, Caterina Dalrio et al.",
+    "authors": "Irene Zorzan, Elena Carbognin, Andrea Lauria, Valentina Proserpio, Davide Benvegnù, Federica Bertelli, Susana De Juambelz Urías, Caterina Dalrio et al.",
     "year": "2026",
     "journal": "Nature Cell Biology",
     "type": "research",
@@ -15,7 +15,82 @@
     "link": "https://www.nature.com/articles/s41556-025-01831-6",
     "added": "2026-08-19",
     "pdf_link": "",
-    "relevance": "Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs."
+    "relevance": "Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs.",
+    "author_data": [
+      {
+        "name": "Irene Zorzan",
+        "orcid": "0000-0002-9229-5293"
+      },
+      {
+        "name": "Elena Carbognin",
+        "orcid": "0000-0001-6591-6915"
+      },
+      {
+        "name": "Andrea Lauria",
+        "orcid": "0000-0003-4753-861X"
+      },
+      {
+        "name": "Valentina Proserpio",
+        "orcid": "0000-0003-2071-4206"
+      },
+      {
+        "name": "Davide Benvegnù"
+      },
+      {
+        "name": "Federica Bertelli"
+      },
+      {
+        "name": "Susana De Juambelz Urías"
+      },
+      {
+        "name": "Caterina Dalrio",
+        "orcid": "0009-0009-7939-4922"
+      },
+      {
+        "name": "Giorgia Panebianco"
+      },
+      {
+        "name": "Rebecca Scarfò"
+      },
+      {
+        "name": "Eleonora Pensabene",
+        "orcid": "0000-0001-5100-1028"
+      },
+      {
+        "name": "Mattia Arboit"
+      },
+      {
+        "name": "Irene Paolucci"
+      },
+      {
+        "name": "Andrea Drusin"
+      },
+      {
+        "name": "Dario Bizzotto"
+      },
+      {
+        "name": "Monika Sledziowska"
+      },
+      {
+        "name": "Paola Braghetta"
+      },
+      {
+        "name": "Andrea Ditadi",
+        "orcid": "0000-0003-3283-8943"
+      },
+      {
+        "name": "Gianluca Amadei",
+        "orcid": "0000-0001-5405-968X"
+      },
+      {
+        "name": "Salvatore Oliviero",
+        "orcid": "0000-0002-3405-765X"
+      },
+      {
+        "name": "Graziano Martello",
+        "orcid": "0000-0001-5520-085X"
+      }
+    ]
   },
   {
     "title": "A systems view of cellular heterogeneity: Unlocking the \"wheel of fate\"",
@@ -36,7 +111,7 @@
   },
   {
     "title": "Adherens junctions as molecular regulators of emergent tissue mechanics",
-    "authors": "O. Campàs, Ivar Noordstra, A. Yap",
+    "authors": "Otger Campàs, Ivar Noordstra, Alpha S. Yap",
     "year": "2024",
     "journal": "Nature Reviews Molecular Cell Biology",
     "type": "review",
@@ -49,11 +124,23 @@
     "link": "https://www.nature.com/articles/s41580-023-00688-7",
     "added": "2026-08-19",
     "pdf_link": "",
-    "relevance": "Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis."
+    "relevance": "Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis.",
+    "author_data": [
+      {
+        "name": "Otger Campàs"
+      },
+      {
+        "name": "Ivar Noordstra"
+      },
+      {
+        "name": "Alpha S. Yap",
+        "orcid": "0000-0002-1038-8956"
+      }
+    ]
   },
   {
     "title": "Advancing mechanobiology from single molecules to complex cellular systems",
-    "authors": "Kasuba, Fläschner, Jain, Krieg, Liberali et al.",
+    "authors": "Krishna Chaitanya Kasuba, Gotthold Fläschner, Akanksha Jain, Michael Krieg, Upnishad Sharma, Valentin Gensbittel, Michele M. Nava, Miguel Camacho Rufino et al.",
     "year": "2026",
     "journal": "Nature Nanotechnology",
     "type": "review",
@@ -67,11 +154,79 @@
     "link": "https://www.nature.com/articles/s41565-026-02179-0",
     "added": "2026-08-19",
     "pdf_link": "https://eprints.gla.ac.uk/view/journal_volume/Nature_Nanotechnology.html>,",
-    "relevance": "Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis."
+    "relevance": "Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis.",
+    "author_data": [
+      {
+        "name": "Krishna Chaitanya Kasuba",
+        "orcid": "0000-0002-3837-3182"
+      },
+      {
+        "name": "Gotthold Fläschner",
+        "orcid": "0000-0001-6707-6905"
+      },
+      {
+        "name": "Akanksha Jain",
+        "orcid": "0000-0003-4704-7992"
+      },
+      {
+        "name": "Michael Krieg",
+        "orcid": "0000-0003-0501-5036"
+      },
+      {
+        "name": "Upnishad Sharma"
+      },
+      {
+        "name": "Valentin Gensbittel",
+        "orcid": "0000-0001-7363-2218"
+      },
+      {
+        "name": "Michele M. Nava",
+        "orcid": "0000-0001-8733-6364"
+      },
+      {
+        "name": "Miguel Camacho Rufino"
+      },
+      {
+        "name": "Barbara Treutlein"
+      },
+      {
+        "name": "Prisca Liberali",
+        "orcid": "0000-0003-0695-6081"
+      },
+      {
+        "name": "Xavier Trepat"
+      },
+      {
+        "name": "Frank Jülicher",
+        "orcid": "0000-0003-4731-9185"
+      },
+      {
+        "name": "Matthieu Piel",
+        "orcid": "0000-0002-2848-177X"
+      },
+      {
+        "name": "Dagmar Iber",
+        "orcid": "0000-0001-8051-1035"
+      },
+      {
+        "name": "Matthias P. Lutolf"
+      },
+      {
+        "name": "Botond Roska"
+      },
+      {
+        "name": "Massimo Vassalli",
+        "orcid": "0000-0002-3063-4376"
+      },
+      {
+        "name": "Daniel J. Müller",
+        "orcid": "0000-0003-3075-0665"
+      }
+    ]
   },
   {
     "title": "Bioelectricity in Morphogenesis",
-    "authors": "Nunes & Barriga",
+    "authors": "Custodio O. Nunes, Elias H. Barriga",
     "year": "2025",
     "journal": "Annual Review of Cell and Developmental Biology",
     "type": "review",
@@ -87,7 +242,15 @@
     "link": "https://www.annualreviews.org/content/journals/10.1146/annurev-cellbio-101323-032747",
     "added": "2026-08-19",
     "pdf_link": "https://doi.org/10.1146/annurev-cellbio-101323-032747",
-    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Touches on bioelectric signaling mechanisms relevant to Cell Science's broader interest in non-canonical developmental signals in morphogenesis."
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Touches on bioelectric signaling mechanisms relevant to Cell Science's broader interest in non-canonical developmental signals in morphogenesis.",
+    "author_data": [
+      {
+        "name": "Custodio O. Nunes"
+      },
+      {
+        "name": "Elias H. Barriga"
+      }
+    ]
   },
   {
     "title": "Break to build: fracture as a unifying morphogenetic strategy",
@@ -108,7 +271,7 @@
   },
   {
     "title": "Building a Synthetic Cell Together",
-    "authors": "Multiple authors",
+    "authors": "S. Giaveri, Z. Abil, S. Kohyama, M. Fu, A. Levrier, K. Adamala, W. Chinantuya, C. Dekker et al.",
     "year": "2025",
     "journal": "Nature Communications",
     "type": "perspective",
@@ -122,7 +285,80 @@
     "link": "https://www.nature.com/articles/s41467-025-62778-8",
     "added": "2026-08-19",
     "pdf_link": "https://www.nature.com/articles/s41467-025-62778-8.pdf",
-    "relevance": "Aligned with the CellScapes program and Cell Science's engagement with synthetic developmental biology — engineering gene circuits to program cell community behavior."
+    "relevance": "Aligned with the CellScapes program and Cell Science's engagement with synthetic developmental biology — engineering gene circuits to program cell community behavior.",
+    "author_data": [
+      {
+        "name": "S. Giaveri",
+        "orcid": "0000-0002-0113-6044"
+      },
+      {
+        "name": "Z. Abil",
+        "orcid": "0000-0001-9550-2633"
+      },
+      {
+        "name": "S. Kohyama",
+        "orcid": "0000-0002-7588-2488"
+      },
+      {
+        "name": "M. Fu"
+      },
+      {
+        "name": "A. Levrier"
+      },
+      {
+        "name": "K. Adamala",
+        "orcid": "0000-0003-1066-7207"
+      },
+      {
+        "name": "W. Chinantuya",
+        "orcid": "0000-0003-4773-9307"
+      },
+      {
+        "name": "C. Dekker",
+        "orcid": "0000-0001-6273-071X"
+      },
+      {
+        "name": "N. Deng",
+        "orcid": "0000-0001-7183-7973"
+      },
+      {
+        "name": "J. Fredens"
+      },
+      {
+        "name": "K. Hagino"
+      },
+      {
+        "name": "K. Jahnke",
+        "orcid": "0000-0001-7311-6993"
+      },
+      {
+        "name": "X. Li",
+        "orcid": "0000-0002-6085-0838"
+      },
+      {
+        "name": "A. B. Lindner",
+        "orcid": "0000-0001-5015-6511"
+      },
+      {
+        "name": "C. Liu",
+        "orcid": "0000-0003-3029-7207"
+      },
+      {
+        "name": "S. Majumder"
+      },
+      {
+        "name": "V. Noireaux",
+        "orcid": "0000-0002-5213-273X"
+      },
+      {
+        "name": "P. Schwille",
+        "orcid": "0000-0002-6106-4847"
+      },
+      {
+        "name": "I. N. Westensee",
+        "orcid": "0000-0003-4895-0964"
+      }
+    ]
   },
   {
     "title": "Challenges and potential applications of AI in systems biology",
@@ -200,7 +436,7 @@
   },
   {
     "title": "Coupling of cell shape, matrix and tissue dynamics ensures embryonic patterning robustness",
-    "authors": "Prachiti Moghe, R. Belousov, Takafumi Ichikawa, C. Iwatani, Tomoyuki Tsukiyama, A. Erzberger, Takashi Hiiragi",
+    "authors": "Prachiti Moghe, Roman Belousov, Takafumi Ichikawa, Chizuru Iwatani, Tomoyuki Tsukiyama, Anna Erzberger, Takashi Hiiragi",
     "year": "2025",
     "journal": "Nature Cell Biology",
     "type": "research",
@@ -214,7 +450,36 @@
     "link": "https://www.nature.com/articles/s41556-025-01618-9",
     "added": "2026-08-19",
     "pdf_link": "https://www.nature.com/articles/s41556-025-01618-9.pdf",
-    "relevance": "Relevant to Cell Science's interest in how spatial patterns emerge during development from molecular and cellular interactions."
+    "relevance": "Relevant to Cell Science's interest in how spatial patterns emerge during development from molecular and cellular interactions.",
+    "author_data": [
+      {
+        "name": "Prachiti Moghe",
+        "orcid": "0000-0002-7924-9671"
+      },
+      {
+        "name": "Roman Belousov",
+        "orcid": "0000-0002-8896-8109"
+      },
+      {
+        "name": "Takafumi Ichikawa",
+        "orcid": "0000-0002-0490-4176"
+      },
+      {
+        "name": "Chizuru Iwatani"
+      },
+      {
+        "name": "Tomoyuki Tsukiyama",
+        "orcid": "0000-0002-2657-7719"
+      },
+      {
+        "name": "Anna Erzberger",
+        "orcid": "0000-0002-2200-4665"
+      },
+      {
+        "name": "Takashi Hiiragi",
+        "orcid": "0000-0003-4964-7203"
+      }
+    ]
   },
   {
     "title": "Curvature feedback for repetitive tissue morphogenesis – Bridging algorithmic principles and self-regulatory systems",
@@ -236,7 +501,7 @@
   },
   {
     "title": "Data modeling the interplay between single-cell shape, single-cell protein expression, and tissue state",
-    "authors": "Yuval Tamir, Yuval Bussi, C. Owczarek, Luciana Luque, G. Torrisi, Leor Ariel Rose, Orit Kliper-Gross, C. Sander et al.",
+    "authors": "Yuval Tamir, Yuval Bussi, Claudia Owczarek, Luciana Luque, Giuseppe Torrisi, Leor Ariel Rose, Orit Kliper-Gross, Linus Schumacher et al.",
     "year": "2026",
     "journal": "Cell Reports Methods",
     "type": "research",
@@ -251,7 +516,43 @@
     "link": "https://www.cell.com/cell-reports-methods/fulltext/S2667-2375(26)00163-3",
     "added": "2026-08-19",
     "pdf_link": "https://doi.org/10.1016/j.crmeth.2026.101463",
-    "relevance": "Relevant to Cell Science's multimodal view of cell state, where single-cell molecular data is integrated with structural and morphological measurements."
+    "relevance": "Relevant to Cell Science's multimodal view of cell state, where single-cell molecular data is integrated with structural and morphological measurements.",
+    "author_data": [
+      {
+        "name": "Yuval Tamir"
+      },
+      {
+        "name": "Yuval Bussi"
+      },
+      {
+        "name": "Claudia Owczarek"
+      },
+      {
+        "name": "Luciana Luque"
+      },
+      {
+        "name": "Giuseppe Torrisi"
+      },
+      {
+        "name": "Leor Ariel Rose"
+      },
+      {
+        "name": "Orit Kliper-Gross"
+      },
+      {
+        "name": "Linus Schumacher"
+      },
+      {
+        "name": "Maddy Parsons"
+      },
+      {
+        "name": "Leeat Keren"
+      },
+      {
+        "name": "Assaf Zaritsky",
+        "orcid": "0000-0002-1477-5478"
+      }
+    ]
   },
   {
     "title": "Deciphering mechanical determinants of morphological evolution",
@@ -292,7 +593,7 @@
   },
   {
     "title": "Designing soft materials through synthetic morphogenesis",
-    "authors": "Bortnikov et al.",
+    "authors": "Evgeniy O. Bortnikov, Arpita Paikar, Ekaterina A. Zhigileva, Polina Fomitskaya, Noam Ariel, Yael Diskin-Posner, Liat Avram, Xiao-Meng Sui et al.",
     "year": "2026",
     "journal": "Nature Communications",
     "type": "research",
@@ -307,7 +608,55 @@
     "link": "https://www.nature.com/articles/s41467-026-71999-4",
     "added": "2026-08-19",
     "pdf_link": "https://www.nature.com/articles/s41467-026-71999-4_reference.pdf",
-    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures."
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures.",
+    "author_data": [
+      {
+        "name": "Evgeniy O. Bortnikov",
+        "orcid": "0000-0001-6553-1492"
+      },
+      {
+        "name": "Arpita Paikar"
+      },
+      {
+        "name": "Ekaterina A. Zhigileva"
+      },
+      {
+        "name": "Polina Fomitskaya"
+      },
+      {
+        "name": "Noam Ariel"
+      },
+      {
+        "name": "Yael Diskin-Posner",
+        "orcid": "0000-0002-9008-8477"
+      },
+      {
+        "name": "Liat Avram",
+        "orcid": "0000-0001-6535-3470"
+      },
+      {
+        "name": "Xiao-Meng Sui",
+        "orcid": "0000-0001-7710-0091"
+      },
+      {
+        "name": "Ekaterina V. Skorb"
+      },
+      {
+        "name": "István Sütő"
+      },
+      {
+        "name": "Dezső Horváth",
+        "orcid": "0000-0003-3852-6879"
+      },
+      {
+        "name": "Ágota Tóth",
+        "orcid": "0000-0001-8254-6354"
+      },
+      {
+        "name": "Sergey N. Semenov",
+        "orcid": "0000-0002-5829-2283"
+      }
+    ]
   },
   {
     "title": "Discovering what is possible: How synthetic biology illuminates development",
@@ -330,7 +679,7 @@
   },
   {
     "title": "Engineering development: From the repressilator and toggle switch to synthetic developmental biology",
-    "authors": "Saha et al.",
+    "authors": "Margaret S. Saha, Kate B. R. Carline, Madeline W Eibner-Gebhardt, Grace E. Hussey, Marcus O. Royster",
     "year": "2025",
     "journal": "Developmental Biology",
     "type": "perspective",
@@ -340,10 +689,10 @@
       "gene circuits",
       "cell fate"
     ],
-    "doi": "",
+    "doi": "10.1016/j.ydbio.2025.06.021",
     "link": "https://www.sciencedirect.com/science/article/pii/S0012160625001800",
     "added": "2026-08-19",
-    "pdf_link": "",
+    "pdf_link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12357324/pdf/nihms-2095324.pdf",
     "relevance": "Aligned with the CellScapes program and Cell Science's engagement with synthetic developmental biology — engineering gene circuits to program cell community behavior. Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs."
   },
   {
@@ -438,7 +787,7 @@
   },
   {
     "title": "Mapping, Modeling, and Reprogramming Cell-Fate Decision-Making Systems",
-    "authors": "Ham, Woodward, Coomer & Stumpf",
+    "authors": "Lucy Ham, Taylor E. Woodward, Megan A. Coomer, Michael P.H. Stumpf",
     "year": "2025",
     "journal": "Annual Review of Biomedical Data Science",
     "type": "review",
@@ -453,7 +802,21 @@
     "link": "https://www.annualreviews.org/content/journals/10.1146/annurev-biodatasci-101424-121439",
     "added": "2026-08-19",
     "pdf_link": "https://doi.org/10.1146/annurev-biodatasci-101424-121439",
-    "relevance": "Relevant to Cell Science's interest in how cells make identity decisions, with implications for stem cell differentiation and iPSC-based model systems."
+    "relevance": "Relevant to Cell Science's interest in how cells make identity decisions, with implications for stem cell differentiation and iPSC-based model systems.",
+    "author_data": [
+      {
+        "name": "Lucy Ham"
+      },
+      {
+        "name": "Taylor E. Woodward"
+      },
+      {
+        "name": "Megan A. Coomer"
+      },
+      {
+        "name": "Michael P.H. Stumpf"
+      }
+    ]
   },
   {
     "title": "Measuring and manipulating mechanical forces during development",
@@ -512,7 +875,7 @@
   },
   {
     "title": "New developments and applications of human organoids",
-    "authors": "Multiple authors",
+    "authors": "Amanda Andersson-Rolf, Hans Clevers",
     "year": "2026",
     "journal": "Nature Reviews Molecular Cell Biology",
     "type": "review",
@@ -527,7 +890,16 @@
     "link": "https://www.nature.com/articles/s41580-026-00974-0",
     "added": "2026-08-19",
     "pdf_link": "",
-    "relevance": "Relevant to Cell Science's interest in organoid systems, lumen formation mechanics, and live imaging of three-dimensional culture morphodynamics. Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs."
+    "relevance": "Relevant to Cell Science's interest in organoid systems, lumen formation mechanics, and live imaging of three-dimensional culture morphodynamics. Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs.",
+    "author_data": [
+      {
+        "name": "Amanda Andersson-Rolf"
+      },
+      {
+        "name": "Hans Clevers",
+        "orcid": "0000-0002-3077-5582"
+      }
+    ]
   },
   {
     "title": "Open problems in synthetic multicellularity",
@@ -583,7 +955,7 @@
   },
   {
     "title": "Present and future of synthetic cell development",
-    "authors": "Adamala, Dogterom, Elani, Schwille, Takinoue & Tang",
+    "authors": "Katarzyna P. Adamala, Marileen Dogterom, Yuval Elani, Petra Schwille, Masahiro Takinoue, T-Y Dora Tang",
     "year": "2024",
     "journal": "Nature Reviews Molecular Cell Biology",
     "type": "perspective",
@@ -597,11 +969,36 @@
     "link": "https://www.nature.com/articles/s41580-023-00686-9",
     "added": "2026-08-19",
     "pdf_link": "",
-    "relevance": "Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs."
+    "relevance": "Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs.",
+    "author_data": [
+      {
+        "name": "Katarzyna P. Adamala",
+        "orcid": "0000-0003-1066-7207"
+      },
+      {
+        "name": "Marileen Dogterom",
+        "orcid": "0000-0002-8803-5261"
+      },
+      {
+        "name": "Yuval Elani",
+        "orcid": "0000-0002-9603-2490"
+      },
+      {
+        "name": "Petra Schwille",
+        "orcid": "0000-0002-6106-4847"
+      },
+      {
+        "name": "Masahiro Takinoue",
+        "orcid": "0000-0002-3874-2670"
+      },
+      {
+        "name": "T-Y Dora Tang"
+      }
+    ]
   },
   {
     "title": "Programmed and self-organized flow of information during morphogenesis",
-    "authors": "C. Collinet, Thomas Lecuit",
+    "authors": "Claudio Collinet, Thomas Lecuit",
     "year": "2021",
     "journal": "Nature Reviews Molecular Cell Biology",
     "type": "review",
@@ -615,7 +1012,17 @@
     "link": "https://www.nature.com/articles/s41580-020-00318-6",
     "added": "2026-08-19",
     "pdf_link": "",
-    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Relevant to Cell Science's interest in emergent tissue organization and how multicellular systems self-pattern without external instruction."
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Relevant to Cell Science's interest in emergent tissue organization and how multicellular systems self-pattern without external instruction.",
+    "author_data": [
+      {
+        "name": "Claudio Collinet",
+        "orcid": "0000-0002-8532-2601"
+      },
+      {
+        "name": "Thomas Lecuit",
+        "orcid": "0000-0001-7222-9646"
+      }
+    ]
   },
   {
     "title": "Programming the elongation of mammalian cell aggregates with synthetic gene circuits",
@@ -671,7 +1078,7 @@
   },
   {
     "title": "Single-cell morphodynamical trajectories enable prediction of gene expression accompanying cell state change",
-    "authors": "J. Copperman, Ian C. Mclean, Sean M. Gross, Jalim Singh, Vaibhav Murthy, Young Hwan Chang, Alexander E. Davies, Daniel M. Zuckerman et al.",
+    "authors": "Jeremy Copperman, Ian C. Mclean, Sean M. Gross, Jalim Singh, Vaibhav Murthy, Young Hwan Chang, Alexander E. Davies, Daniel M. Zuckerman et al.",
     "year": "2026",
     "journal": "Cell Systems",
     "type": "research",
@@ -686,11 +1093,49 @@
     "link": "https://www.cell.com/cell-systems/fulltext/S2405-4712(26)00049-9",
     "added": "2026-08-19",
     "pdf_link": "https://www.biorxiv.org/content/biorxiv/early/2024/01/20/2024.01.18.576248.full.pdf",
-    "relevance": "Relevant to Cell Science's multimodal view of cell state, where single-cell molecular data is integrated with structural and morphological measurements. Relevant to Cell Science's holistic cell state program, which integrates molecular, structural, and morphological data to define cell identity."
+    "relevance": "Relevant to Cell Science's multimodal view of cell state, where single-cell molecular data is integrated with structural and morphological measurements. Relevant to Cell Science's holistic cell state program, which integrates molecular, structural, and morphological data to define cell identity.",
+    "author_data": [
+      {
+        "name": "Jeremy Copperman",
+        "orcid": "0000-0002-5202-0690"
+      },
+      {
+        "name": "Ian C. Mclean",
+        "orcid": "0000-0003-2741-7941"
+      },
+      {
+        "name": "Sean M. Gross",
+        "orcid": "0000-0002-9621-8551"
+      },
+      {
+        "name": "Jalim Singh",
+        "orcid": "0000-0001-8027-6653"
+      },
+      {
+        "name": "Vaibhav Murthy",
+        "orcid": "0000-0002-4171-2296"
+      },
+      {
+        "name": "Young Hwan Chang",
+        "orcid": "0000-0001-8764-1959"
+      },
+      {
+        "name": "Alexander E. Davies",
+        "orcid": "0000-0002-1917-8816"
+      },
+      {
+        "name": "Daniel M. Zuckerman",
+        "orcid": "0000-0001-7662-2031"
+      },
+      {
+        "name": "Laura M. Heiser",
+        "orcid": "0000-0003-3330-0950"
+      }
+    ]
   },
   {
     "title": "Spatial architecture of development and disease",
-    "authors": "Multiple authors",
+    "authors": "Enikő Lázár, Joakim Lundeberg",
     "year": "2025",
     "journal": "Nature Reviews Genetics",
     "type": "review",
@@ -706,11 +1151,21 @@
     "link": "https://www.nature.com/articles/s41576-025-00892-5",
     "added": "2026-08-19",
     "pdf_link": "",
-    "relevance": "Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs."
+    "relevance": "Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs.",
+    "author_data": [
+      {
+        "name": "Enikő Lázár",
+        "orcid": "0000-0001-8664-7531"
+      },
+      {
+        "name": "Joakim Lundeberg",
+        "orcid": "0000-0003-4313-1601"
+      }
+    ]
   },
   {
     "title": "Strategies and applications of synthetic cell communication",
-    "authors": "Moghimianavval, Newell, Parvizian, Booth & Liu",
+    "authors": "Hossein Moghimianavval, Charlie Newell, Parsa Parvizian, Michael J. Booth, Allen P. Liu",
     "year": "2025",
     "journal": "Nature Chemical Biology",
     "type": "review",
@@ -725,7 +1180,27 @@
     "link": "https://www.nature.com/articles/s41589-025-02002-2",
     "added": "2026-08-19",
     "pdf_link": "",
-    "relevance": "Aligned with the CellScapes program and Cell Science's engagement with synthetic developmental biology — engineering gene circuits to program cell community behavior."
+    "relevance": "Aligned with the CellScapes program and Cell Science's engagement with synthetic developmental biology — engineering gene circuits to program cell community behavior.",
+    "author_data": [
+      {
+        "name": "Hossein Moghimianavval"
+      },
+      {
+        "name": "Charlie Newell"
+      },
+      {
+        "name": "Parsa Parvizian",
+        "orcid": "0000-0001-7573-7152"
+      },
+      {
+        "name": "Michael J. Booth",
+        "orcid": "0000-0002-4224-798X"
+      },
+      {
+        "name": "Allen P. Liu",
+        "orcid": "0000-0002-0309-7018"
+      }
+    ]
   },
   {
     "title": "Synthetic circuits for cell ratio control",
@@ -747,7 +1222,7 @@
   },
   {
     "title": "Synthetic Developmental Biology: Understanding Through Reconstitution",
-    "authors": "Schlissel & Li",
+    "authors": "Gavin Schlissel, Pulin Li",
     "year": "2020",
     "journal": "Annual Review of Cell and Developmental Biology",
     "type": "review",
@@ -762,11 +1237,19 @@
     "link": "https://www.annualreviews.org/content/journals/10.1146/annurev-cellbio-020620-090650",
     "added": "2026-08-19",
     "pdf_link": "https://www.annualreviews.org/doi/pdf/10.1146/annurev-cellbio-020620-090650",
-    "relevance": "Aligned with the CellScapes program and Cell Science's engagement with synthetic developmental biology — engineering gene circuits to program cell community behavior. Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs."
+    "relevance": "Aligned with the CellScapes program and Cell Science's engagement with synthetic developmental biology — engineering gene circuits to program cell community behavior. Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs.",
+    "author_data": [
+      {
+        "name": "Gavin Schlissel"
+      },
+      {
+        "name": "Pulin Li"
+      }
+    ]
   },
   {
     "title": "Synthetic morphology with agential materials",
-    "authors": "Davies & Levin",
+    "authors": "Jamie Davies, Michael Levin",
     "year": "2023",
     "journal": "Nature Reviews Bioengineering",
     "type": "review",
@@ -781,7 +1264,16 @@
     "link": "https://www.nature.com/articles/s44222-022-00001-9",
     "added": "2026-08-19",
     "pdf_link": "https://www.nature.com/articles/s44222-022-00001-9.pdf",
-    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Aligned with the CellScapes program and Cell Science's engagement with synthetic developmental biology — engineering gene circuits to program cell community behavior."
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Aligned with the CellScapes program and Cell Science's engagement with synthetic developmental biology — engineering gene circuits to program cell community behavior.",
+    "author_data": [
+      {
+        "name": "Jamie Davies"
+      },
+      {
+        "name": "Michael Levin",
+        "orcid": "0000-0001-7292-8084"
+      }
+    ]
   },
   {
     "title": "The Polymers of Life: Exploring Cellular Function Through Polymer Concepts",
@@ -842,7 +1334,7 @@
   },
   {
     "title": "Towards multimodal foundation models in molecular cell biology",
-    "authors": "Cui, Tejada-Lapuerta, Brbić, Theis et al.",
+    "authors": "Haotian Cui, Alejandro Tejada-Lapuerta, Maria Brbić, Julio Saez-Rodriguez, Simona Cristea, Hani Goodarzi, Mohammad Lotfollahi, Fabian J. Theis et al.",
     "year": "2025",
     "journal": "Nature",
     "type": "perspective",
@@ -858,7 +1350,42 @@
     "link": "https://www.nature.com/articles/s41586-025-08710-y",
     "added": "2026-08-19",
     "pdf_link": "https://dash.harvard.edu/bitstreams/60dc22c5-5b11-4eab-a6d5-6da5bdc5d887/download",
-    "relevance": "Relevant to Cell Science's AI and computational agenda for modeling cell biology and building virtual cell frameworks."
+    "relevance": "Relevant to Cell Science's AI and computational agenda for modeling cell biology and building virtual cell frameworks.",
+    "author_data": [
+      {
+        "name": "Haotian Cui",
+        "orcid": "0000-0001-8119-9485"
+      },
+      {
+        "name": "Alejandro Tejada-Lapuerta"
+      },
+      {
+        "name": "Maria Brbić",
+        "orcid": "0000-0002-1120-1778"
+      },
+      {
+        "name": "Julio Saez-Rodriguez",
+        "orcid": "0000-0002-8552-8976"
+      },
+      {
+        "name": "Simona Cristea"
+      },
+      {
+        "name": "Hani Goodarzi",
+        "orcid": "0000-0002-9648-8949"
+      },
+      {
+        "name": "Mohammad Lotfollahi"
+      },
+      {
+        "name": "Fabian J. Theis",
+        "orcid": "0000-0002-2419-1943"
+      },
+      {
+        "name": "Bo Wang",
+        "orcid": "0000-0002-9620-3413"
+      }
+    ]
   },
   {
     "title": "Turing's next steps: the mechanochemical basis of morphogenesis",
@@ -899,7 +1426,7 @@
   },
   {
     "title": "Visions of the future of molecular cell biology",
-    "authors": "",
+    "authors": "M. Abu-Remaileh, C. J. Chan, Leilei Chen, Gozde S. Demirer, Ana Fiszbein, Florian Jug, A. V. Lechuga-Vieco, Raphaëlle Luisier et al.",
     "year": "2025",
     "journal": "Nature Reviews Molecular Cell Biology",
     "type": "perspective",
@@ -908,7 +1435,7 @@
       "cell state",
       "development"
     ],
-    "doi": "",
+    "doi": "10.1038/s41580-025-00892-7",
     "link": "https://www.nature.com/articles/s41580-025-00892-7",
     "added": "2026-08-19",
     "pdf_link": "",
@@ -933,7 +1460,7 @@
   },
   {
     "title": "Why the temporal dimension matters in cellular signalling",
-    "authors": "Yang & Jin",
+    "authors": "Shuai Yang, Fan Jin",
     "year": "2026",
     "journal": "Nature Cell Biology",
     "type": "perspective",
@@ -947,11 +1474,20 @@
     "link": "https://www.nature.com/articles/s41556-026-02006-7",
     "added": "2026-08-19",
     "pdf_link": "",
-    "relevance": "Relevant to Cell Science's holistic cell state program, which integrates molecular, structural, and morphological data to define cell identity."
+    "relevance": "Relevant to Cell Science's holistic cell state program, which integrates molecular, structural, and morphological data to define cell identity.",
+    "author_data": [
+      {
+        "name": "Shuai Yang"
+      },
+      {
+        "name": "Fan Jin",
+        "orcid": "0000-0003-2313-0388"
+      }
+    ]
   },
   {
     "title": "Mechanotransduction and cell fate: from molecular sensors to multicellular self-organization",
-    "authors": "María del Carmen Estrada Elorza, Mónica Cruz-Lemini, Karina Martínez-Mayorga, Mariana G. Martinez-Garfias, Ana Carolina Gómez-Carrillo, A. Ríos-Pérez et al.",
+    "authors": "María del Carmen Estrada Elorza, Mónica Cruz-Lemini, Karina Martínez-Mayorga, Mariana G. Martinez-Garfias, Ana Carolina Gómez-Carrillo, Alfonso Rios-Perez, Julio Granados-Montiel",
     "year": "2026",
     "journal": "Frontiers in Cell and Developmental Biology",
     "type": "review",
@@ -969,11 +1505,34 @@
     "score": 10,
     "added": "2026-08-19",
     "pdf_link": "https://www.frontiersin.org/journals/cell-and-developmental-biology/articles/10.3389/fcell.2026.1871354/pdf",
-    "relevance": "Relevant to Cell Science's interest in how cells make identity decisions, with implications for stem cell differentiation and iPSC-based model systems. Relevant to Cell Science's interest in emergent tissue organization and how multicellular systems self-pattern without external instruction."
+    "relevance": "Relevant to Cell Science's interest in how cells make identity decisions, with implications for stem cell differentiation and iPSC-based model systems. Relevant to Cell Science's interest in emergent tissue organization and how multicellular systems self-pattern without external instruction.",
+    "author_data": [
+      {
+        "name": "María del Carmen Estrada Elorza"
+      },
+      {
+        "name": "Mónica Cruz-Lemini"
+      },
+      {
+        "name": "Karina Martínez-Mayorga"
+      },
+      {
+        "name": "Mariana G. Martinez-Garfias"
+      },
+      {
+        "name": "Ana Carolina Gómez-Carrillo"
+      },
+      {
+        "name": "Alfonso Rios-Perez"
+      },
+      {
+        "name": "Julio Granados-Montiel"
+      }
+    ]
   },
   {
     "title": "Spatial Control of Light-Responsive Proteins and Optogenetics Within Hydrogels via Volumetric Bioprinting.",
-    "authors": "Davide Ribezzi, Pere Català, Gabriel Größbacher, Paulina Nuñez Bernal, Olaf Nijssen, Sammy Florczak et al.",
+    "authors": "Davide Ribezzi, Pere Català, Gabriel Größbacher, Paulina Nuñez Bernal, Olaf Nijssen, Sammy Florczak, Wilco Nijenhuis, Nuria Crusellas‐Villorbina et al.",
     "year": "2026",
     "journal": "Advanced materials (Deerfield Beach, Fla.)",
     "type": "research",
@@ -987,11 +1546,68 @@
     "score": 8,
     "added": "2026-08-19",
     "pdf_link": "https://doi.org/10.1002/adma.74563",
-    "relevance": "Aligned with CellScapes' use of engineered gene circuits to program synthetic cell communities toward controlled tissue-level behaviors."
+    "relevance": "Aligned with CellScapes' use of engineered gene circuits to program synthetic cell communities toward controlled tissue-level behaviors.",
+    "author_data": [
+      {
+        "name": "Davide Ribezzi"
+      },
+      {
+        "name": "Pere Català"
+      },
+      {
+        "name": "Gabriel Größbacher",
+        "orcid": "0009-0002-9346-8659"
+      },
+      {
+        "name": "Paulina Nuñez Bernal",
+        "orcid": "0000-0002-0875-5438"
+      },
+      {
+        "name": "Olaf Nijssen",
+        "orcid": "0009-0008-4700-0004"
+      },
+      {
+        "name": "Sammy Florczak",
+        "orcid": "0009-0007-2354-7892"
+      },
+      {
+        "name": "Wilco Nijenhuis",
+        "orcid": "0000-0002-7095-0955"
+      },
+      {
+        "name": "Nuria Crusellas‐Villorbina"
+      },
+      {
+        "name": "Bram Nijhoff"
+      },
+      {
+        "name": "Paul Delrot",
+        "orcid": "0000-0001-8349-9019"
+      },
+      {
+        "name": "Jos Malda",
+        "orcid": "0000-0002-9241-7676"
+      },
+      {
+        "name": "Andreas Hierholzer"
+      },
+      {
+        "name": "Martin Fussenegger",
+        "orcid": "0000-0001-8545-667X"
+      },
+      {
+        "name": "Lukas C. Kapitein",
+        "orcid": "0000-0001-9418-6739"
+      },
+      {
+        "name": "Riccardo Levato",
+        "orcid": "0000-0002-3795-3804"
+      }
+    ]
   },
   {
     "title": "Bioelectrical regionalization of multicellular aggregates by microRNAs.",
-    "authors": "Josu Egea-Carro, S. Mafe, Michael Levin, J. Cervera",
+    "authors": "Josu Egea-Carro, Salvador Mafe, Michael Levin, Javier Cervera",
     "year": "2026",
     "journal": "Journal of Chemical Physics",
     "type": "research",
@@ -1007,11 +1623,29 @@
     "score": 7,
     "added": "2026-08-19",
     "pdf_link": "",
-    "relevance": "Touches on bioelectric signaling mechanisms relevant to Cell Science's broader interest in non-canonical developmental signals in morphogenesis. Relevant to CellScapes and Cell Science's broader interest in how cells cooperate and self-organize to form tissues with emergent properties."
+    "relevance": "Touches on bioelectric signaling mechanisms relevant to Cell Science's broader interest in non-canonical developmental signals in morphogenesis. Relevant to CellScapes and Cell Science's broader interest in how cells cooperate and self-organize to form tissues with emergent properties.",
+    "author_data": [
+      {
+        "name": "Josu Egea-Carro",
+        "orcid": "0009-0001-2181-0059"
+      },
+      {
+        "name": "Salvador Mafe",
+        "orcid": "0000-0003-3248-7020"
+      },
+      {
+        "name": "Michael Levin",
+        "orcid": "0000-0001-7292-8084"
+      },
+      {
+        "name": "Javier Cervera",
+        "orcid": "0000-0001-8965-9298"
+      }
+    ]
   },
   {
     "title": "Identifying phenotype-genotype-function coupling in 3D organoid imaging using Shape, Appearance and Motion Phenotype Observation Tool (SPOT)",
-    "authors": "Felix Y. Zhou, Brittany Jacobs, Adam Norton-Steele, Xiaoyue Han, Linna Zhou, Thomas Carroll, Carlos Ruiz Puig, Joseph Chadwick et al.",
+    "authors": "Felix Y. Zhou, Brittany-Amber Jacobs, Adam Norton-Steele, Xiaoyue Han, Linna Zhou, Thomas M. Carroll, Carlos Ruiz Puig, Joseph Chadwick et al.",
     "year": "2026",
     "journal": "Nature Communications",
     "type": "research",
@@ -1030,7 +1664,62 @@
     "score": 10,
     "added": "2026-08-20",
     "pdf_link": "https://doi.org/10.1038/s41467-026-75506-7",
-    "relevance": "Relevant to Cell Science's interest in organoid systems, lumen formation mechanics, and live imaging of three-dimensional culture morphodynamics."
+    "relevance": "Relevant to Cell Science's interest in organoid systems, lumen formation mechanics, and live imaging of three-dimensional culture morphodynamics.",
+    "author_data": [
+      {
+        "name": "Felix Y. Zhou",
+        "orcid": "0000-0003-4463-1165"
+      },
+      {
+        "name": "Brittany-Amber Jacobs",
+        "orcid": "0000-0002-9741-3519"
+      },
+      {
+        "name": "Adam Norton-Steele",
+        "orcid": "0009-0006-1580-0117"
+      },
+      {
+        "name": "Xiaoyue Han",
+        "orcid": "0000-0002-3905-1759"
+      },
+      {
+        "name": "Linna Zhou",
+        "orcid": "0000-0002-1938-5428"
+      },
+      {
+        "name": "Thomas M. Carroll",
+        "orcid": "0000-0001-9753-2385"
+      },
+      {
+        "name": "Carlos Ruiz Puig",
+        "orcid": "0000-0002-9214-3804"
+      },
+      {
+        "name": "Joseph Chadwick",
+        "orcid": "0000-0002-5380-2125"
+      },
+      {
+        "name": "Xiao Qin",
+        "orcid": "0000-0002-8738-4187"
+      },
+      {
+        "name": "Richard Lisle"
+      },
+      {
+        "name": "Lewis Marsh"
+      },
+      {
+        "name": "Helen M. Byrne",
+        "orcid": "0000-0003-1771-5910"
+      },
+      {
+        "name": "Heather A. Harrington"
+      },
+      {
+        "name": "Xin Lu",
+        "orcid": "0000-0002-6587-1152"
+      }
+    ]
   },
   {
     "title": "Machine learning approaches for biomechanical and bioelectrical regulation in developmental tissue engineering",
@@ -1054,7 +1743,7 @@
   },
   {
     "title": "Shield-4i: A Whole-mount Multiplexed Imaging Platform for Studying Multiscale Information Flow in 3D Multicellular Systems",
-    "authors": "Ruth Hornbachner, Shayan Shamipour, Feyza Nur Arslan, Rui Fan, Max Hess, Florian Curvaia et al.",
+    "authors": "Ruth Hornbachner, Shayan Shamipour, Feyza Nur Arslan, Rui Fan, Max Hess, Florian Curvaia, Joel Lüthi, Andrew C. Oates et al.",
     "year": "2026",
     "journal": "bioRxiv",
     "type": "research",
@@ -1069,11 +1758,52 @@
     "score": 10,
     "added": "2026-08-20",
     "pdf_link": "https://doi.org/10.64898/2026.07.01.735871",
-    "relevance": "Relevant to CellScapes and Cell Science's broader interest in how cells cooperate and self-organize to form tissues with emergent properties."
+    "relevance": "Relevant to CellScapes and Cell Science's broader interest in how cells cooperate and self-organize to form tissues with emergent properties.",
+    "author_data": [
+      {
+        "name": "Ruth Hornbachner",
+        "orcid": "0000-0003-4912-3725"
+      },
+      {
+        "name": "Shayan Shamipour",
+        "orcid": "0000-0002-0635-3873"
+      },
+      {
+        "name": "Feyza Nur Arslan",
+        "orcid": "0000-0001-5809-9566"
+      },
+      {
+        "name": "Rui Fan"
+      },
+      {
+        "name": "Max Hess"
+      },
+      {
+        "name": "Florian Curvaia"
+      },
+      {
+        "name": "Joel Lüthi"
+      },
+      {
+        "name": "Andrew C. Oates"
+      },
+      {
+        "name": "Ivan Bedzhov"
+      },
+      {
+        "name": "Darren Gilmour"
+      },
+      {
+        "name": "Virginie Uhlmann"
+      },
+      {
+        "name": "Lucas Pelkmans"
+      }
+    ]
   },
   {
     "title": "Biophysical forces in tissue formation.",
-    "authors": "Lei Xia, Anish Ashok Adpaikar, Liling Wen, Y. Rinkevich",
+    "authors": "Lei Xia, Anish Ashok Adpaikar, Liling Wen, Yuval Rinkevich",
     "year": "2026",
     "journal": "Seminars in Cell and Developmental Biology",
     "type": "review",
@@ -1090,7 +1820,21 @@
     "link": "https://doi.org/10.1016/j.semcdb.2026.103684",
     "score": 10,
     "added": "2026-08-20",
-    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis."
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis.",
+    "author_data": [
+      {
+        "name": "Lei Xia"
+      },
+      {
+        "name": "Anish Ashok Adpaikar"
+      },
+      {
+        "name": "Liling Wen"
+      },
+      {
+        "name": "Yuval Rinkevich"
+      }
+    ]
   },
   {
     "title": "Mechanics of compression-driven morphogenesis.",
@@ -1113,7 +1857,7 @@
   },
   {
     "title": "Mechanical constraints on cell plasticity: insights from the olfactory epithelium",
-    "authors": "Raphaël Aguillon, P. Dufourcq, Julie Batut",
+    "authors": "Raphaël Aguillon, Pascale Dufourcq, Julie Batut",
     "year": "2026",
     "journal": "Frontiers in Cell and Developmental Biology",
     "type": "review",
@@ -1128,11 +1872,22 @@
     "score": 7,
     "added": "2026-08-21",
     "pdf_link": "https://doi.org/10.3389/fcell.2026.1841670",
-    "relevance": "Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis."
+    "relevance": "Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis.",
+    "author_data": [
+      {
+        "name": "Raphaël Aguillon"
+      },
+      {
+        "name": "Pascale Dufourcq"
+      },
+      {
+        "name": "Julie Batut"
+      }
+    ]
   },
   {
     "title": "Synthetic developmental engineering of human liver organogenesis.",
-    "authors": "M. Taheri, Yuda Xiang, Mohammed Ebrahimkhani",
+    "authors": "Mohammad N. Taheri, Yuda Xiang, Mo R. Ebrahimkhani",
     "year": "2026",
     "journal": "Development",
     "type": "review",
@@ -1150,7 +1905,20 @@
     "score": 10,
     "added": "2026-08-24",
     "relevance": "Aligned with the CellScapes program and Cell Science's engagement with synthetic developmental biology — engineering gene circuits to program cell community behavior. Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs.",
-    "pdf_link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13405231/"
+    "pdf_link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13405231/",
+    "author_data": [
+      {
+        "name": "Mohammad N. Taheri",
+        "orcid": "0000-0002-8476-2453"
+      },
+      {
+        "name": "Yuda Xiang"
+      },
+      {
+        "name": "Mo R. Ebrahimkhani",
+        "orcid": "0000-0001-5753-6779"
+      }
+    ]
   },
   {
     "title": "Geometric mechanogenomics: engineering boundary conditions for deterministic cell fate control",
@@ -1175,7 +1943,7 @@
   },
   {
     "title": "Dissecting Human Organ Development using Spatial Technologies",
-    "authors": "Xi-aosha Zhang, J. Jeya Vandana, Benjamin C. Greenspun, Shuibing Chen",
+    "authors": "Xiaoshan Zhang, J. Jeya Vandana, Benjamin Greenspun, Shuibing Chen",
     "year": "2026",
     "journal": "Developmental Cell",
     "type": "review",
@@ -1189,11 +1957,26 @@
     "score": 8,
     "added": "2026-08-24",
     "relevance": "Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs.",
-    "pdf_link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13353200/"
+    "pdf_link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13353200/",
+    "author_data": [
+      {
+        "name": "Xiaoshan Zhang"
+      },
+      {
+        "name": "J. Jeya Vandana"
+      },
+      {
+        "name": "Benjamin Greenspun"
+      },
+      {
+        "name": "Shuibing Chen",
+        "orcid": "0000-0002-6294-5187"
+      }
+    ]
   },
   {
     "title": "Cell Biology and Reproductive Medicine: Major Trends in Their Interaction",
-    "authors": "D. Bogolyubov, I. Bogolyubova",
+    "authors": "D. S. Bogolyubov, I. O. Bogolyubova",
     "year": "2026",
     "journal": "Cell and Tissue Biology",
     "type": "review",
@@ -1202,11 +1985,21 @@
     "doi": "10.1134/S1990519X2660064X",
     "link": "https://doi.org/10.1134/S1990519X2660064X",
     "score": 1,
-    "added": "2026-08-24"
+    "added": "2026-08-24",
+    "author_data": [
+      {
+        "name": "D. S. Bogolyubov",
+        "orcid": "0000-0001-7179-9487"
+      },
+      {
+        "name": "I. O. Bogolyubova",
+        "orcid": "0000-0003-0795-8222"
+      }
+    ]
   },
   {
     "title": "Robust identification of cell-cell communication heterogeneity in single cells.",
-    "authors": "F. Bocci, Yunlong Y. Jia, Scott Atwood, Qing Nie",
+    "authors": "Federico Bocci, Yunlong Jia, Scott Atwood, Qing Nie",
     "year": "2026",
     "journal": "Cell Systems",
     "type": "review",
@@ -1220,11 +2013,26 @@
     "score": 6,
     "added": "2026-08-24",
     "pdf_link": "https://doi.org/10.1016/j.cels.2026.101703",
-    "relevance": "Directly relevant to understanding how cells send and receive signals from neighbors — foundational for collective cell decision-making and multicellular coordination, both core Cell Science themes."
+    "relevance": "Directly relevant to understanding how cells send and receive signals from neighbors — foundational for collective cell decision-making and multicellular coordination, both core Cell Science themes.",
+    "author_data": [
+      {
+        "name": "Federico Bocci"
+      },
+      {
+        "name": "Yunlong Jia"
+      },
+      {
+        "name": "Scott Atwood"
+      },
+      {
+        "name": "Qing Nie",
+        "orcid": "0000-0002-8804-3368"
+      }
+    ]
   },
   {
     "title": "Biophysics of lumen morphogenesis.",
-    "authors": "Byung Ho Lee, Markus Mukenhirn, Tristan Guyomar, Yann Maggipinto, Sakurako Tanida, Kana Fuji et al.",
+    "authors": "Byung Ho Lee, Markus Mukenhirn, Tristan Guyomar, Yann Maggipinto, Sakurako Tanida, Kana Fuji, Linjie Lu, Felix Romer et al.",
     "year": "2026",
     "journal": "Development (Cambridge, England)",
     "type": "research",
@@ -1239,7 +2047,53 @@
     "score": 10,
     "added": "2026-08-24",
     "relevance": "Directly relevant to lumen morphogenesis and lumenoid systems — a top priority covering how pressure, osmotic forces, and shape mechanics drive lumen formation across tissue types. Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures.",
-    "pdf_link": "https://doi.org/10.1242/dev.205628"
+    "pdf_link": "https://doi.org/10.1242/dev.205628",
+    "author_data": [
+      {
+        "name": "Byung Ho Lee"
+      },
+      {
+        "name": "Markus Mukenhirn"
+      },
+      {
+        "name": "Tristan Guyomar"
+      },
+      {
+        "name": "Yann Maggipinto"
+      },
+      {
+        "name": "Sakurako Tanida"
+      },
+      {
+        "name": "Kana Fuji"
+      },
+      {
+        "name": "Linjie Lu"
+      },
+      {
+        "name": "Felix Romer",
+        "orcid": "0009-0008-4738-559X"
+      },
+      {
+        "name": "Makiko Nonomura"
+      },
+      {
+        "name": "Tetsuya Hiraiwa"
+      },
+      {
+        "name": "Masaki Sano"
+      },
+      {
+        "name": "Alf Honigmann"
+      },
+      {
+        "name": "Daniel Riveline"
+      },
+      {
+        "name": "Anne Grapin-Botton",
+        "orcid": "0000-0002-1202-5235"
+      }
+    ]
   },
   {
     "title": "Mechanical forces and organoid biology: From mechanotransduction mechanisms to translational frontiers",
@@ -1283,7 +2137,7 @@
   },
   {
     "title": "Epigenetic regulation of vertebrate limb development: from field specification to tissue morphogenesis",
-    "authors": "Claudia Monserrat Vallejo-De Lira, C. I. Galván-Hernández, J. Chimal-Monroy, J. C. Marín-Llera",
+    "authors": "Claudia Monserrat Vallejo-De Lira, Claudio Iván Galván-Hernández, Jesús Chimal-Monroy, Jessica Cristina Marin-Llera",
     "year": "2026",
     "journal": "Epigenetics",
     "type": "review",
@@ -1299,11 +2153,29 @@
     "link": "https://doi.org/10.1080/15592294.2026.2695477",
     "score": 8,
     "added": "2026-08-31",
-    "pdf_link": "https://doi.org/10.1080/15592294.2026.2695477"
+    "pdf_link": "https://doi.org/10.1080/15592294.2026.2695477",
+    "author_data": [
+      {
+        "name": "Claudia Monserrat Vallejo-De Lira",
+        "orcid": "0009-0007-1911-0866"
+      },
+      {
+        "name": "Claudio Iván Galván-Hernández",
+        "orcid": "0009-0000-9850-3244"
+      },
+      {
+        "name": "Jesús Chimal-Monroy",
+        "orcid": "0000-0002-6511-7408"
+      },
+      {
+        "name": "Jessica Cristina Marin-Llera",
+        "orcid": "0000-0002-1221-5258"
+      }
+    ]
   },
   {
     "title": "Collective fate decisions and cell rearrangements underlie gastruloid symmetry breaking",
-    "authors": "David Oriola, G. Torregrosa-Cortés, Sotiris Samatas, Krisztina Arató, David Fernández-Munuera, E. Hahn et al.",
+    "authors": "David Oriola, Gabriel Torregrosa-Cortés, Sotiris Samatas, Krisztina Arató, David Fernández-Munuera, Elisa Maria Hahn, Kerim Anlaş, Jordi Garcia-Ojalvo et al.",
     "year": "2026",
     "journal": "bioRxiv",
     "type": "research",
@@ -1321,11 +2193,48 @@
     "link": "https://doi.org/10.1101/2024.12.16.628776",
     "score": 10,
     "added": "2026-09-01",
-    "pdf_link": "https://doi.org/10.1101/2024.12.16.628776"
+    "pdf_link": "https://doi.org/10.1101/2024.12.16.628776",
+    "author_data": [
+      {
+        "name": "David Oriola",
+        "orcid": "0000-0002-8356-7832"
+      },
+      {
+        "name": "Gabriel Torregrosa-Cortés",
+        "orcid": "0000-0003-4528-5663"
+      },
+      {
+        "name": "Sotiris Samatas",
+        "orcid": "0009-0005-8431-4342"
+      },
+      {
+        "name": "Krisztina Arató",
+        "orcid": "0000-0003-0366-0998"
+      },
+      {
+        "name": "David Fernández-Munuera"
+      },
+      {
+        "name": "Elisa Maria Hahn",
+        "orcid": "0000-0002-4064-1828"
+      },
+      {
+        "name": "Kerim Anlaş",
+        "orcid": "0000-0002-9272-8626"
+      },
+      {
+        "name": "Jordi Garcia-Ojalvo",
+        "orcid": "0000-0002-3716-7520"
+      },
+      {
+        "name": "Vikas Trivedi",
+        "orcid": "0009-0003-0676-7392"
+      }
+    ]
   },
   {
     "title": "Dual-mode SOX2 regulation by miR-150 via mRNA suppression and autophagy controls stem cell fate",
-    "authors": "Xing Zhen, Hyebin Koh, Dong-Seok Lee, Jae-Won Huh, Seok-Ho Hong, Tae-Don Kim et al.",
+    "authors": "Xing Zhen, Hyebin Koh, Dong-Seok Lee, Jae-Won Huh, Seok-Ho Hong, Tae-Don Kim, Jong-Hee Lee",
     "year": "2026",
     "journal": "Signal Transduction and Targeted Therapy",
     "type": "research",
@@ -1339,11 +2248,36 @@
     "link": "https://doi.org/10.1038/s41392-026-02778-2",
     "score": 9,
     "added": "2026-09-01",
-    "pdf_link": "https://www.nature.com/articles/s41392-026-02778-2.pdf"
+    "pdf_link": "https://www.nature.com/articles/s41392-026-02778-2.pdf",
+    "author_data": [
+      {
+        "name": "Xing Zhen",
+        "orcid": "0009-0004-8766-2388"
+      },
+      {
+        "name": "Hyebin Koh"
+      },
+      {
+        "name": "Dong-Seok Lee"
+      },
+      {
+        "name": "Jae-Won Huh"
+      },
+      {
+        "name": "Seok-Ho Hong"
+      },
+      {
+        "name": "Tae-Don Kim"
+      },
+      {
+        "name": "Jong-Hee Lee",
+        "orcid": "0000-0002-8619-1383"
+      }
+    ]
   },
   {
     "title": "A developmental biologist's guide to mechanics.",
-    "authors": "Jia-Ling Cao, Alessandro Chiappori, Sylvain Landiech, Raphaël Clément, P. Lenne",
+    "authors": "Jialing Cao, Alessandro Chiappori, Sylvain Landiech, Raphaël Clément, Pierre-François Lenne",
     "year": "2026",
     "journal": "Development",
     "type": "review",
@@ -1357,7 +2291,29 @@
     "doi": "10.1242/dev.205785",
     "link": "https://doi.org/10.1242/dev.205785",
     "score": 9,
-    "added": "2026-09-01"
+    "added": "2026-09-01",
+    "author_data": [
+      {
+        "name": "Jialing Cao",
+        "orcid": "0000-0003-0004-1438"
+      },
+      {
+        "name": "Alessandro Chiappori",
+        "orcid": "0009-0001-5927-1572"
+      },
+      {
+        "name": "Sylvain Landiech",
+        "orcid": "0009-0004-1858-1912"
+      },
+      {
+        "name": "Raphaël Clément",
+        "orcid": "0000-0002-1270-1934"
+      },
+      {
+        "name": "Pierre-François Lenne",
+        "orcid": "0000-0003-1066-7506"
+      }
+    ]
   },
   {
     "title": "Epithelial convergent extension as a tuning process.",
@@ -1381,7 +2337,7 @@
   },
   {
     "title": "Multiscale Modeling of Embryonic Morphogenesis from Fertilization to Organogenesis.",
-    "authors": "Debanik Deb, Orishma Parida, Laasya Naduthota, B. Chakrabortty",
+    "authors": "Debanik Deb, Orishma Parida, Laasya Naduthota, Bandan Chakrabortty",
     "year": "2026",
     "journal": "npj Systems Biology and Applications",
     "type": "review",
@@ -1396,11 +2352,25 @@
     "link": "https://doi.org/10.1038/s41540-026-00788-y",
     "score": 8,
     "added": "2026-09-01",
-    "pdf_link": "https://www.nature.com/articles/s41540-026-00788-y_reference.pdf"
+    "pdf_link": "https://www.nature.com/articles/s41540-026-00788-y_reference.pdf",
+    "author_data": [
+      {
+        "name": "Debanik Deb"
+      },
+      {
+        "name": "Orishma Parida"
+      },
+      {
+        "name": "Laasya Naduthota"
+      },
+      {
+        "name": "Bandan Chakrabortty"
+      }
+    ]
   },
   {
     "title": "Deciphering mechanical determinants of morphological evolution",
-    "authors": "Richard Bailleul, Nicolas Cuny, Diana Khoromskaia, Soham Basu, G. Bergamini, P. Cucurachi, Florian Gabler, Sebastian Rupp et al.",
+    "authors": "Richard Bailleul, Nicolas Cuny, Diana Khoromskaia, Soham Basu, Giulia Bergamini, Paolo Cucurachi, Florian Gabler, Sebastian Rupp et al.",
     "year": "2026",
     "journal": "Cell",
     "type": "research",
@@ -1414,11 +2384,71 @@
     "link": "https://www.sciencedirect.com/science/article/pii/S0092867426001753",
     "added": "2026-08-19",
     "pdf_link": "https://doi.org/10.1016/j.cell.2026.02.010",
-    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis."
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis.",
+    "author_data": [
+      {
+        "name": "Richard Bailleul"
+      },
+      {
+        "name": "Nicolas Cuny"
+      },
+      {
+        "name": "Diana Khoromskaia"
+      },
+      {
+        "name": "Soham Basu"
+      },
+      {
+        "name": "Giulia Bergamini"
+      },
+      {
+        "name": "Paolo Cucurachi"
+      },
+      {
+        "name": "Florian Gabler"
+      },
+      {
+        "name": "Sebastian Rupp"
+      },
+      {
+        "name": "Annika Guse"
+      },
+      {
+        "name": "Camille Curantz"
+      },
+      {
+        "name": "Natalie Swinhoe"
+      },
+      {
+        "name": "Phillip A. Cleves"
+      },
+      {
+        "name": "Jamie Craggs"
+      },
+      {
+        "name": "Sosuke Fujita"
+      },
+      {
+        "name": "Yu-ichiro Nakajima"
+      },
+      {
+        "name": "Petrus J. Steenbergen"
+      },
+      {
+        "name": "Alba Diz-Muñoz"
+      },
+      {
+        "name": "Guillaume Salbreux"
+      },
+      {
+        "name": "Aissam Ikmi",
+        "orcid": "0000-0001-6310-8404"
+      }
+    ]
   },
   {
     "title": "The role of geometry in morphogenesis",
-    "authors": "R. Harrison, Olivier Hamant, T. Saunders",
+    "authors": "Ryan Harrison, Olivier Hamant, Timothy E. Saunders",
     "year": "2026",
     "journal": "Development",
     "type": "research",
@@ -1435,11 +2465,24 @@
     "added": "2026-09-01",
     "pdf_link": "https://doi.org/10.1242/dev.205774",
     "source": "manual",
-    "abstract": "Across multicellular life, cells need to act in a coordinated manner to generate tissues with specific and reproducible forms necessary for their effective function. This process of morphogenesis is regulated by a myriad of signalling and mechanical inputs, which are often inter-related. Tissue morphogenesis typically occurs within constrained environments, such as the eggshell or buds for plants, that often have complex geometries. Yet, understanding how such boundaries impact the formation of tissues and organs has remained challenging. Recent advances in imaging, in vitro methods and genetic manipulation are leading to new understanding of how geometry interplays with signalling and mechanics to ensure tissues form robustly. Here, we focus on the role of geometric constraints in guiding morphogenesis, utilising examples from across the animal and plant kingdoms to highlight key principles. This demonstrates that geometry can be instructive, rather than simply a passive constraint, during morphogenesis."
+    "abstract": "Across multicellular life, cells need to act in a coordinated manner to generate tissues with specific and reproducible forms necessary for their effective function. This process of morphogenesis is regulated by a myriad of signalling and mechanical inputs, which are often inter-related. Tissue morphogenesis typically occurs within constrained environments, such as the eggshell or buds for plants, that often have complex geometries. Yet, understanding how such boundaries impact the formation of tissues and organs has remained challenging. Recent advances in imaging, in vitro methods and genetic manipulation are leading to new understanding of how geometry interplays with signalling and mechanics to ensure tissues form robustly. Here, we focus on the role of geometric constraints in guiding morphogenesis, utilising examples from across the animal and plant kingdoms to highlight key principles. This demonstrates that geometry can be instructive, rather than simply a passive constraint, during morphogenesis.",
+    "author_data": [
+      {
+        "name": "Ryan Harrison"
+      },
+      {
+        "name": "Olivier Hamant",
+        "orcid": "0000-0001-6906-6620"
+      },
+      {
+        "name": "Timothy E. Saunders",
+        "orcid": "0000-0001-5755-0060"
+      }
+    ]
   },
   {
     "title": "Generic comparison of lumen nucleation and fusion in epithelial organoids with and without hydrostatic pressure",
-    "authors": "Linjie Lu, Kana Fuji, Tristan Guyomar, Michèle Lieb, Marie André, Sakura Tanida, M. Nonomura, Tetsuya Hiraiwa et al.",
+    "authors": "Linjie Lu, Kana Fuji, Tristan Guyomar, Michèle Lieb, Marie André, Sakurako Tanida, Makiko Nonomura, Tetsuya Hiraiwa et al.",
     "year": "2025",
     "journal": "Nature Communications",
     "type": "research",
@@ -1453,11 +2496,69 @@
     "link": "https://www.nature.com/articles/s41467-025-60780-8",
     "added": "2026-08-19",
     "pdf_link": "https://doi.org/10.1038/s41467-025-60780-8",
-    "relevance": "Relevant to Cell Science's interest in organoid systems, lumen formation mechanics, and live imaging of three-dimensional culture morphodynamics."
+    "relevance": "Relevant to Cell Science's interest in organoid systems, lumen formation mechanics, and live imaging of three-dimensional culture morphodynamics.",
+    "author_data": [
+      {
+        "name": "Linjie Lu",
+        "orcid": "0000-0003-1445-5201"
+      },
+      {
+        "name": "Kana Fuji"
+      },
+      {
+        "name": "Tristan Guyomar"
+      },
+      {
+        "name": "Michèle Lieb"
+      },
+      {
+        "name": "Marie André"
+      },
+      {
+        "name": "Sakurako Tanida"
+      },
+      {
+        "name": "Makiko Nonomura",
+        "orcid": "0000-0003-4774-4173"
+      },
+      {
+        "name": "Tetsuya Hiraiwa",
+        "orcid": "0000-0003-3221-345X"
+      },
+      {
+        "name": "Yara Alcheikh"
+      },
+      {
+        "name": "Siham Yennek"
+      },
+      {
+        "name": "Heike Petzold",
+        "orcid": "0000-0001-9518-4989"
+      },
+      {
+        "name": "Cecilie Martin-Lemaitre"
+      },
+      {
+        "name": "Anne Grapin-Botton",
+        "orcid": "0000-0002-1202-5235"
+      },
+      {
+        "name": "Alf Honigmann",
+        "orcid": "0000-0003-0475-3790"
+      },
+      {
+        "name": "Masaki Sano",
+        "orcid": "0000-0002-6262-9635"
+      },
+      {
+        "name": "Daniel Riveline",
+        "orcid": "0000-0002-4632-011X"
+      }
+    ]
   },
   {
     "title": "Permeability-driven pressure and cell proliferation control lumen morphogenesis in pancreatic organoids",
-    "authors": "Byung Ho Lee, Kana Fuji, Heike Petzold, Phil Seymour, S. Yennek, Coline Schewin, Allison Lewis, D. Riveline et al.",
+    "authors": "Byung Ho Lee, Kana Fuji, Heike Petzold, Phil Seymour, Siham Yennek, Coline Schewin, Allison Lewis, Daniel Riveline et al.",
     "year": "2026",
     "journal": "Nature Cell Biology",
     "type": "research",
@@ -1471,11 +2572,52 @@
     "link": "https://www.nature.com/articles/s41556-025-01832-5",
     "added": "2026-08-19",
     "pdf_link": "https://doi.org/10.1038/s41556-025-01832-5",
-    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Relevant to Cell Science's interest in organoid systems, lumen formation mechanics, and live imaging of three-dimensional culture morphodynamics."
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Relevant to Cell Science's interest in organoid systems, lumen formation mechanics, and live imaging of three-dimensional culture morphodynamics.",
+    "author_data": [
+      {
+        "name": "Byung Ho Lee",
+        "orcid": "0000-0002-5837-7914"
+      },
+      {
+        "name": "Kana Fuji"
+      },
+      {
+        "name": "Heike Petzold",
+        "orcid": "0000-0001-9518-4989"
+      },
+      {
+        "name": "Phil Seymour",
+        "orcid": "0000-0001-5782-6020"
+      },
+      {
+        "name": "Siham Yennek"
+      },
+      {
+        "name": "Coline Schewin"
+      },
+      {
+        "name": "Allison Lewis"
+      },
+      {
+        "name": "Daniel Riveline",
+        "orcid": "0000-0002-4632-011X"
+      },
+      {
+        "name": "Tetsuya Hiraiwa"
+      },
+      {
+        "name": "Masaki Sano",
+        "orcid": "0000-0002-6262-9635"
+      },
+      {
+        "name": "Anne Grapin-Botton",
+        "orcid": "0000-0002-1202-5235"
+      }
+    ]
   },
   {
     "title": "Machines all the way up and cognition all the way down: Updating the machine metaphor in biology.",
-    "authors": "M. Levin, Richard A. Watson",
+    "authors": "Michael Levin, Richard Watson",
     "year": "2026",
     "journal": "Seminars in Cell and Developmental Biology",
     "type": "review",
@@ -1489,11 +2631,20 @@
     "link": "https://doi.org/10.1016/j.semcdb.2026.103668",
     "score": 6,
     "added": "2026-09-01",
-    "pdf_link": "https://doi.org/10.1016/j.semcdb.2026.103668"
+    "pdf_link": "https://doi.org/10.1016/j.semcdb.2026.103668",
+    "author_data": [
+      {
+        "name": "Michael Levin",
+        "orcid": "0000-0001-7292-8084"
+      },
+      {
+        "name": "Richard Watson"
+      }
+    ]
   },
   {
     "title": "Integrating synthetic biology to understand and engineer the heart, lung, blood, and sleep systems",
-    "authors": "Elliot L. Chaikof, Jichao Chen, M. U. Gillette, L. Boyer, Tara L. Deans, Pulin Li et al.",
+    "authors": "Elliot L. Chaikof, Jichao Chen, Martha U. Gillette, Laurie A. Boyer, Tara L. Deans, Pulin Li, Isaac B. Hilton, Kyle Daniels et al.",
     "year": "2025",
     "journal": "Cell Systems",
     "type": "review",
@@ -1510,7 +2661,82 @@
     "link": "https://doi.org/10.1016/j.cels.2025.101446",
     "score": 10,
     "added": "2026-09-01",
-    "pdf_link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13081558/"
+    "pdf_link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13081558/",
+    "author_data": [
+      {
+        "name": "Elliot L. Chaikof"
+      },
+      {
+        "name": "Jichao Chen"
+      },
+      {
+        "name": "Martha U. Gillette"
+      },
+      {
+        "name": "Laurie A. Boyer"
+      },
+      {
+        "name": "Tara L. Deans"
+      },
+      {
+        "name": "Pulin Li"
+      },
+      {
+        "name": "Isaac B. Hilton"
+      },
+      {
+        "name": "Kyle Daniels"
+      },
+      {
+        "name": "Yogesh Goyal"
+      },
+      {
+        "name": "Ying Mei"
+      },
+      {
+        "name": "Changyang Linghu"
+      },
+      {
+        "name": "Theresa B. Loveless"
+      },
+      {
+        "name": "David M. Truong"
+      },
+      {
+        "name": "Michael R. Blatchley"
+      },
+      {
+        "name": "Mingxia Gu"
+      },
+      {
+        "name": "Caleb J. Bashor"
+      },
+      {
+        "name": "Jason H. Yang"
+      },
+      {
+        "name": "Ritu Raman"
+      },
+      {
+        "name": "Akhilesh B. Reddy"
+      },
+      {
+        "name": "Krishanu Saha"
+      },
+      {
+        "name": "Jennifer Davis"
+      },
+      {
+        "name": "Kalpna Gupta"
+      },
+      {
+        "name": "Xiaojing J. Gao",
+        "orcid": "0000-0002-3094-1456"
+      },
+      {
+        "name": "Kate E. Galloway"
+      }
+    ]
   },
   {
     "title": "A systems view of cellular heterogeneity: Unlocking the \"wheel of fate\"",
@@ -1531,7 +2757,7 @@
   },
   {
     "title": "Multiscale integration of tissue and chromatin context converts cell heterogeneity into stable intestinal patterning",
-    "authors": "C. Schwayer, S. Barbiero, David B. Brückner, K. Oost, C. Baader, N. Repina et al.",
+    "authors": "Cornelia Schwayer, Silvia Barbiero, David B. Brückner, Koen C. Oost, Clara Baader, Nicole A. Repina, Jinse Kim, Oscar E. Diaz et al.",
     "year": "2026",
     "journal": "Cell",
     "type": "research",
@@ -1545,11 +2771,89 @@
     "link": "https://doi.org/10.1016/j.cell.2026.06.009",
     "score": 10,
     "added": "2026-09-01",
-    "pdf_link": "https://doi.org/10.1016/j.cell.2026.06.009"
+    "pdf_link": "https://doi.org/10.1016/j.cell.2026.06.009",
+    "author_data": [
+      {
+        "name": "Cornelia Schwayer"
+      },
+      {
+        "name": "Silvia Barbiero"
+      },
+      {
+        "name": "David B. Brückner"
+      },
+      {
+        "name": "Koen C. Oost"
+      },
+      {
+        "name": "Clara Baader"
+      },
+      {
+        "name": "Nicole A. Repina"
+      },
+      {
+        "name": "Jinse Kim"
+      },
+      {
+        "name": "Oscar E. Diaz"
+      },
+      {
+        "name": "Isa Uccelli"
+      },
+      {
+        "name": "Laura Capolupo"
+      },
+      {
+        "name": "Ludivine Challet Meylan"
+      },
+      {
+        "name": "Veronique Kalck"
+      },
+      {
+        "name": "Franziska Moos"
+      },
+      {
+        "name": "Simon Suppinger"
+      },
+      {
+        "name": "Qiutan Yang"
+      },
+      {
+        "name": "Jakob Schnabl"
+      },
+      {
+        "name": "Umut Kilik"
+      },
+      {
+        "name": "Matthieu Bourdon"
+      },
+      {
+        "name": "J. Gray Camp"
+      },
+      {
+        "name": "Brigitta Stockinger"
+      },
+      {
+        "name": "Alessandra Ferrari"
+      },
+      {
+        "name": "Marc Bühler"
+      },
+      {
+        "name": "Michael B. Stadler"
+      },
+      {
+        "name": "Edouard Hannezo"
+      },
+      {
+        "name": "Prisca Liberali",
+        "orcid": "0000-0003-0695-6081"
+      }
+    ]
   },
   {
     "title": "Engineering morphogenesis of cell clusters with differentiable programming",
-    "authors": "Ramya Deshpande, Francesco Mottes, Ariana-Dalia Vlad, M. P. Brenner, Alma Dal Co",
+    "authors": "Ramya Deshpande, Francesco Mottes, Ariana-Dalia Vlad, Michael P. Brenner, Alma Dal Co",
     "year": "2025",
     "journal": "Nature Computational Science",
     "type": "research",
@@ -1563,11 +2867,29 @@
     "link": "https://www.nature.com/articles/s43588-025-00851-4",
     "added": "2026-08-19",
     "pdf_link": "",
-    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures."
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures.",
+    "author_data": [
+      {
+        "name": "Ramya Deshpande"
+      },
+      {
+        "name": "Francesco Mottes"
+      },
+      {
+        "name": "Ariana-Dalia Vlad"
+      },
+      {
+        "name": "Michael P. Brenner",
+        "orcid": "0000-0002-5673-7947"
+      },
+      {
+        "name": "Alma Dal Co"
+      }
+    ]
   },
   {
     "title": "Pathway to Independence: a forecast for the future of developmental biology.",
-    "authors": "Chee Kiang Ewe, M. Farnworth, Anzy Miller, Joaquín Navajas Acedo, Marlies E. Oomen, Giulia Paci et al.",
+    "authors": "Chee Kiang Ewe, Max S. Farnworth, Anzy Miller, Joaquín Navajas Acedo, Marlies E. Oomen, Giulia Paci, Sonya A. Widen, Toshimichi Yamada",
     "year": "2025",
     "journal": "Development",
     "type": "research",
@@ -1581,6 +2903,40 @@
     "link": "https://doi.org/10.1242/dev.205224",
     "score": 4,
     "added": "2026-09-01",
-    "pdf_link": "https://journals.biologists.com/dev/article-pdf/152/19/dev205224/3667340/dev205224.pdf"
+    "pdf_link": "https://journals.biologists.com/dev/article-pdf/152/19/dev205224/3667340/dev205224.pdf",
+    "author_data": [
+      {
+        "name": "Chee Kiang Ewe",
+        "orcid": "0000-0003-1973-1308"
+      },
+      {
+        "name": "Max S. Farnworth",
+        "orcid": "0000-0003-2418-3203"
+      },
+      {
+        "name": "Anzy Miller",
+        "orcid": "0000-0001-6384-8795"
+      },
+      {
+        "name": "Joaquín Navajas Acedo",
+        "orcid": "0000-0003-2855-6660"
+      },
+      {
+        "name": "Marlies E. Oomen",
+        "orcid": "0000-0002-2432-3862"
+      },
+      {
+        "name": "Giulia Paci",
+        "orcid": "0000-0003-0565-4356"
+      },
+      {
+        "name": "Sonya A. Widen",
+        "orcid": "0000-0001-7224-2701"
+      },
+      {
+        "name": "Toshimichi Yamada",
+        "orcid": "0000-0001-7200-2433"
+      }
+    ]
   }
 ]
