@@ -1418,12 +1418,12 @@
   },
   {
     "title": "The role of geometry in morphogenesis",
-    "authors": "",
+    "authors": "R. Harrison, Olivier Hamant, T. Saunders",
     "year": "2026",
     "journal": "Development",
     "type": "research",
     "summary": "",
-    "relevance": "",
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures.",
     "tags": [
       "morphogenesis",
       "shape mechanics"
@@ -1432,7 +1432,43 @@
     "link": "https://doi.org/10.1242/dev.205774",
     "score": 7,
     "added": "2026-09-01",
-    "pdf_link": "",
+    "pdf_link": "https://doi.org/10.1242/dev.205774",
     "source": "manual"
+  },
+  {
+    "title": "Generic comparison of lumen nucleation and fusion in epithelial organoids with and without hydrostatic pressure",
+    "authors": "Linjie Lu, Kana Fuji, Tristan Guyomar, Michèle Lieb, Marie André, Sakura Tanida, M. Nonomura, Tetsuya Hiraiwa et al.",
+    "year": "2025",
+    "journal": "Nature Communications",
+    "type": "research",
+    "summary": "Systematically compares the two known routes to lumen formation in epithelial organoids — nucleation (growing a lumen from scratch) versus fusion (merging smaller fluid pockets) — and examines how hydrostatic pressure modulates each pathway. Provides quantitative benchmarks for lumenogenesis that can inform both experimental design and theoretical models. Relevant to Cell Science's interest in 3D cell organization and the physical mechanisms of tissue self-assembly.",
+    "tags": [
+      "organoid",
+      "morphogenesis",
+      "development"
+    ],
+    "doi": "10.1038/s41467-025-60780-8",
+    "link": "https://www.nature.com/articles/s41467-025-60780-8",
+    "added": "2026-08-19",
+    "pdf_link": "https://doi.org/10.1038/s41467-025-60780-8",
+    "relevance": "Relevant to Cell Science's interest in organoid systems, lumen formation mechanics, and live imaging of three-dimensional culture morphodynamics."
+  },
+  {
+    "title": "Permeability-driven pressure and cell proliferation control lumen morphogenesis in pancreatic organoids",
+    "authors": "Byung Ho Lee, Kana Fuji, Heike Petzold, Phil Seymour, S. Yennek, Coline Schewin, Allison Lewis, D. Riveline et al.",
+    "year": "2026",
+    "journal": "Nature Cell Biology",
+    "type": "research",
+    "summary": "Using pancreatic organoids, this paper dissects how lumen size is controlled by two independent parameters: fluid pressure driven by epithelial permeability, and mechanical feedback from cell proliferation. The interplay of these two inputs determines whether a lumen grows, stabilizes, or collapses. A quantitative mechanobiology paper with direct implications for understanding organoid architecture — relevant to Cell Science's growing interest in lumenoids and 3D tissue models.",
+    "tags": [
+      "organoid",
+      "morphogenesis",
+      "development"
+    ],
+    "doi": "10.1038/s41556-025-01832-5",
+    "link": "https://www.nature.com/articles/s41556-025-01832-5",
+    "added": "2026-08-19",
+    "pdf_link": "https://doi.org/10.1038/s41556-025-01832-5",
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Relevant to Cell Science's interest in organoid systems, lumen formation mechanics, and live imaging of three-dimensional culture morphodynamics."
   }
 ]
