@@ -1564,5 +1564,23 @@
     "added": "2026-08-19",
     "pdf_link": "",
     "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures."
+  },
+  {
+    "title": "Pathway to Independence: a forecast for the future of developmental biology.",
+    "authors": "Chee Kiang Ewe, M. Farnworth, Anzy Miller, Joaquín Navajas Acedo, Marlies E. Oomen, Giulia Paci et al.",
+    "year": "2025",
+    "journal": "Development",
+    "type": "research",
+    "summary": "In 2022, Development launched its Pathway to Independence (PI) programme, aimed at supporting postdocs as they transition to their first independent position. In 2025, we welcome our third cohort of eight talented PI fellows. In this article, each fellow discusses their perspective on the future of their field and how their work will contribute to this exciting new era.",
+    "relevance": "Directly relevant to Cell Science's foundational interest in how cells acquire and maintain identity — gene regulatory networks, lineage specification, and embryonic patterning are central to understanding cell decision-making and fate in developmental contexts. Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs.",
+    "tags": [
+      "development",
+      "developmental biology"
+    ],
+    "doi": "10.1242/dev.205224",
+    "link": "https://doi.org/10.1242/dev.205224",
+    "score": 4,
+    "added": "2026-09-01",
+    "pdf_link": "https://journals.biologists.com/dev/article-pdf/152/19/dev205224/3667340/dev205224.pdf"
   }
 ]
