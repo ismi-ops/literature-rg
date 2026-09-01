@@ -1472,5 +1472,23 @@
     "added": "2026-08-19",
     "pdf_link": "https://doi.org/10.1038/s41556-025-01832-5",
     "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Relevant to Cell Science's interest in organoid systems, lumen formation mechanics, and live imaging of three-dimensional culture morphodynamics."
+  },
+  {
+    "title": "Machines all the way up and cognition all the way down: Updating the machine metaphor in biology.",
+    "authors": "M. Levin, Richard A. Watson",
+    "year": "2026",
+    "journal": "Seminars in Cell and Developmental Biology",
+    "type": "review",
+    "summary": "Cell and developmental biology (CDB) offer numerous remarkable examples of collective adaptive plasticity, as cells coordinate to implement large-scale form and function. Despite the gaps in understanding, it is often assumed that the machine metaphor (dominating molecular and cell biology) will explain all of the adaptive complexity involved, from molecules up. In the case of goal-driven intentional agents, however, living tissues have cognitive properties that seem different from machines.",
+    "relevance": "Directly relevant to Cell Science's foundational interest in how cells acquire and maintain identity — gene regulatory networks, lineage specification, and embryonic patterning are central to understanding cell decision-making and fate in developmental contexts. Relevant to Cell Science's holistic cell state program, which integrates molecular, structural, and morphological data to define cell identity.",
+    "tags": [
+      "development",
+      "developmental biology"
+    ],
+    "doi": "10.1016/j.semcdb.2026.103668",
+    "link": "https://doi.org/10.1016/j.semcdb.2026.103668",
+    "score": 6,
+    "added": "2026-09-01",
+    "pdf_link": "https://doi.org/10.1016/j.semcdb.2026.103668"
   }
 ]
