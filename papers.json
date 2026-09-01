@@ -1093,69 +1093,6 @@
     "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis."
   },
   {
-    "title": "Real-time sensing-integrated organoid-on-a-chip platforms: Technological progress and emerging biomedical applications",
-    "authors": "Chenwei Sun, Guohua Wu, Di Wu, Qijun Du, Q. Lu, Wenqi Hu et al.",
-    "year": "2026",
-    "journal": "Bioactive Materials",
-    "type": "review",
-    "summary": "Surveys organ-on-a-chip systems that combine live organoid culture with embedded biosensors for real-time monitoring of metabolic, electrophysiological, and mechanical parameters. Discusses how continuous readouts from these platforms can accelerate disease modeling, drug screening, and our understanding of tissue homeostasis.",
-    "tags": [
-      "stem cells",
-      "development",
-      "organoid",
-      "disease modeling"
-    ],
-    "doi": "10.1016/j.bioactmat.2026.06.041",
-    "link": "https://doi.org/10.1016/j.bioactmat.2026.06.041",
-    "score": 8,
-    "added": "2026-08-20",
-    "pdf_link": "https://doi.org/10.1016/j.bioactmat.2026.06.041",
-    "relevance": "Relevant to Cell Science's interest in organoid systems, lumen formation mechanics, and live imaging of three-dimensional culture morphodynamics."
-  },
-  {
-    "title": "Cardiac EndMT and EpiMT as a developmental continuum: integration of mechanical, metabolic, and epigenetic regulation",
-    "authors": "Diwen Li, Shijun Hu, Tianli Zhao",
-    "year": "2026",
-    "journal": "Frontiers in Cell and Developmental Biology",
-    "type": "review",
-    "summary": "Endothelial-to-mesenchymal transition (EndMT) and epithelial-to-mesenchymal transition (EpiMT) are fundamental cell-state changes that shape the heart during development. This work reframes them as a unified developmental continuum, integrating the mechanical, signaling, and molecular programs that drive these transitions in cardiac tissue. Understanding these processes as a continuum rather than discrete events has implications for stem cell-based cardiac models and disease research.",
-    "tags": [
-      "development",
-      "cell fate",
-      "cell state",
-      "single-cell",
-      "organoid",
-      "live imaging"
-    ],
-    "doi": "10.3389/fcell.2026.1892888",
-    "link": "https://doi.org/10.3389/fcell.2026.1892888",
-    "score": 10,
-    "added": "2026-08-21",
-    "pdf_link": "https://doi.org/10.3389/fcell.2026.1892888",
-    "relevance": "Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs."
-  },
-  {
-    "title": "Engineering Pluripotent Stem Cells-Derived Inner Ear Organoids With Enhanced Maturation and Reproducibility by Micro-Topographical Cues.",
-    "authors": "H. Sharma, Jungeun Lim, W. Kim, Y. Kim, Dream Kim, Shinyull Lee et al.",
-    "year": "2026",
-    "journal": "Advances in Materials",
-    "type": "research",
-    "summary": "Inner ear organoids derived from pluripotent stem cells offer a powerful platform for studying auditory development and hearing disorders, but recapitulating functional maturation of cochlear hair cells and supporting structures remains a major challenge. This study introduces enhanced engineering strategies — likely through biomaterial scaffolds or small-molecule protocols — to improve structural and functional maturation of PSC-derived inner ear organoids. Better-matured organoids expand the utility of stem cell models for mechanistic studies and translational applications in hearing biology.",
-    "tags": [
-      "stem cells",
-      "development",
-      "morphogenesis",
-      "organoid",
-      "disease modeling"
-    ],
-    "doi": "10.1002/adma.74560",
-    "link": "https://doi.org/10.1002/adma.74560",
-    "score": 8,
-    "added": "2026-08-21",
-    "pdf_link": "https://doi.org/10.1002/adma.74560",
-    "relevance": "Relevant to Cell Science's interest in organoid systems, lumen formation mechanics, and live imaging of three-dimensional culture morphodynamics. Relevant to Cell Science's core work on hiPSC biology, pluripotent stem cell engineering, and stem cell-derived model systems."
-  },
-  {
     "title": "Mechanics of compression-driven morphogenesis.",
     "authors": "Jue Yu Kelly Tan, Chii Jou Chan",
     "year": "2026",
@@ -1194,25 +1131,6 @@
     "relevance": "Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis."
   },
   {
-    "title": "Human iPSC-derived 3D cardiac models for cardiomyopathies: organoids, spheroids, and engineered heart tissues as translational platforms",
-    "authors": "Prabin Upadhyaya",
-    "year": "2026",
-    "journal": "Stem Cells",
-    "type": "review",
-    "summary": "Human iPSC-derived three-dimensional cardiac models — including organoids, spheroids, and engineered heart tissues — have emerged as powerful platforms for studying cardiomyopathies with patient-specific genetic backgrounds. This review systematically compares these model types across dimensions of structural maturity, functional readout, scalability, and disease relevance. The analysis highlights how advances in 3D cardiac modeling are bringing stem cell biology closer to the structural complexity and functional maturity needed for mechanistic disease studies and drug screening.",
-    "tags": [
-      "development",
-      "organoid",
-      "iPSC"
-    ],
-    "doi": "10.1093/stmcls/sxag039",
-    "link": "https://doi.org/10.1093/stmcls/sxag039",
-    "score": 7,
-    "added": "2026-08-21",
-    "pdf_link": "https://doi.org/10.1093/stmcls/sxag039",
-    "relevance": "Relevant to Cell Science's interest in organoid systems, lumen formation mechanics, and live imaging of three-dimensional culture morphodynamics. Relevant to Cell Science's core work on hiPSC biology, pluripotent stem cell engineering, and stem cell-derived model systems."
-  },
-  {
     "title": "Synthetic developmental engineering of human liver organogenesis.",
     "authors": "M. Taheri, Yuda Xiang, Mohammed Ebrahimkhani",
     "year": "2026",
@@ -1233,25 +1151,6 @@
     "added": "2026-08-24",
     "relevance": "Aligned with the CellScapes program and Cell Science's engagement with synthetic developmental biology — engineering gene circuits to program cell community behavior. Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs.",
     "pdf_link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13405231/"
-  },
-  {
-    "title": "Translational cell fate reprogramming and regenerative medicine enabled by microphysiological systems.",
-    "authors": "Hrithiha Sriramulu, Hyunsung Woo, Anavi Kaul, S. Musah",
-    "year": "2026",
-    "journal": "Current Opinion in Genetics and Development",
-    "type": "review",
-    "summary": "Recent advances in genetic engineering and in vivo reprogramming have opened transformative possibilities for controlling cell fate in tissue repair and regeneration. However, clinical translation remains constrained by the limited predictive value of animal models and traditional in vitro systems, which often fail to fully recapitulate human responses, including the physiological consequences of genetic manipulations. Emerging microphysiological systems, exemplified by three-dimensional organoids and organs-on-chips (OoCs) systems, help bridge this gap by recreating key aspects of human physiology while enabling precise bioengineering of the niche to modulate cell fate decisions and plasticity.",
-    "tags": [
-      "stem cells",
-      "development",
-      "cell fate",
-      "organoid"
-    ],
-    "doi": "10.1016/j.gde.2026.102512",
-    "link": "https://doi.org/10.1016/j.gde.2026.102512",
-    "score": 10,
-    "added": "2026-08-24",
-    "relevance": "Relevant to Cell Science's interest in how cells make identity decisions, with implications for stem cell differentiation and iPSC-based model systems."
   },
   {
     "title": "Geometric mechanogenomics: engineering boundary conditions for deterministic cell fate control",
@@ -1323,39 +1222,6 @@
     "pdf_link": "https://doi.org/10.1016/j.cels.2026.101703"
   },
   {
-    "title": "Mechanical memory in cells: mechanisms, effects, and applications in regenerative medicine",
-    "authors": "Antara Bhuyan, M. Ahearne",
-    "year": "2026",
-    "journal": "Frontiers in Bioengineering and Biotechnology",
-    "type": "review",
-    "summary": "Mechanical memory is the ability of cells to retain information from past mechanical environments, which profoundly influences cellular behaviour and fate, particularly in stem cells. This review combines contemporary insights into mechanical memory with specific attention to its underlying processes, which span mechanotransduction to epigenetic alterations. Various approaches to study mechanical memory have been investigated through substrate stiffness modulation, shear stress, and cyclic strain while evaluating the impact of mechanical memory on several cell types.",
-    "tags": [
-      "stem cells"
-    ],
-    "doi": "10.3389/fbioe.2026.1922947",
-    "link": "https://doi.org/10.3389/fbioe.2026.1922947",
-    "score": 2,
-    "added": "2026-08-24",
-    "pdf_link": "https://www.frontiersin.org/journals/bioengineering-and-biotechnology/articles/10.3389/fbioe.2026.1922947/pdf"
-  },
-  {
-    "title": "The Single-Cell Atlas Revolution: Integrating Lineage, Space, and Evolution to Decode Animal Biology",
-    "authors": "S. U. Rehman, Rahmat Ali, Hosameldeen Mohamed Husien, Mengzhi Wang",
-    "year": "2026",
-    "journal": "DNA and Cell Biology",
-    "type": "review",
-    "summary": "The advent of single-cell RNA sequencing (scRNA-seq) has fundamentally transformed biological research, converting our understanding of cellular diversity from a purely conceptual idea into a quantifiable, applicable, and observable reality. Early efforts successfully created catalogs of cell types across diverse tissues and species, delivering an effective inventory of the components that make up complex animal systems. Yet the field now stands at a crossroads; rather than bringing clarity, the ever-growing number of cellular atlases threatens to flood and overwhelm it.",
-    "tags": [
-      "development",
-      "single-cell"
-    ],
-    "doi": "10.1177/10445498261460199",
-    "link": "https://doi.org/10.1177/10445498261460199",
-    "score": 2,
-    "added": "2026-08-24",
-    "relevance": "Relevant to Cell Science's multimodal view of cell state, where single-cell molecular data is integrated with structural and morphological measurements."
-  },
-  {
     "title": "Biophysics of lumen morphogenesis.",
     "authors": "Byung Ho Lee, Markus Mukenhirn, Tristan Guyomar, Yann Maggipinto, Sakurako Tanida, Kana Fuji et al.",
     "year": "2026",
@@ -1394,44 +1260,6 @@
     "pdf_link": "https://www.sciopen.com/local/article_pdf/10.26599/CO.2026.9410025.pdf"
   },
   {
-    "title": "Engineering Neural Organoids: Technological Advances and Translational Frontiers.",
-    "authors": "Sungmin Kim, H. Jo, Sunghwan Moon",
-    "year": "2026",
-    "journal": "Stem Cells",
-    "type": "research",
-    "summary": "Neural organoids have transformed experimental neuroscience by enabling human-specific models of brain development, function, and disease. Emerging at the intersection of stem cell biology and tissue engineering, these self-organizing systems recapitulate key aspects of neurogenesis, gliogenesis, and circuit formation within a controllable in vitro context. Advances in guided patterning, vascularization, and electrophysiological monitoring have enhanced structural and functional fidelity, enabling the study of dynamic processes previously inaccessible in human models.",
-    "tags": [
-      "development",
-      "organoid"
-    ],
-    "doi": "10.1093/stmcls/sxag041",
-    "link": "https://doi.org/10.1093/stmcls/sxag041",
-    "score": 9,
-    "added": "2026-08-24",
-    "relevance": "Relevant to lumen morphogenesis, lumenoid self-organization, organoid systems, and live imaging of three-dimensional culture morphodynamics.",
-    "pdf_link": "https://research-information.bris.ac.uk/en/publications/b71e0600-47a5-43ae-90b1-ef5e465e3d57"
-  },
-  {
-    "title": "Decoding plants cell by cell: opportunities and challenges in single-cell and spatial biology.",
-    "authors": "L. de Veylder, Maite Saura-Sánchez, B. De Rybel, Tatsuya Norobi, Klaas Vandepoele, Lorenzo Caputi et al.",
-    "year": "2026",
-    "journal": "The Plant Cell",
-    "type": "review",
-    "summary": "Recent advances in single-cell and spatial omics technologies are transforming plant research by enabling cell-resolved analyses of gene expression, proteomics, chromatin organization, and metabolism at the level of individual cells and at spatial resolution. These approaches have revealed extensive cellular heterogeneity, rare and transient cell states, and previously unrecognized developmental and physiological programs. However, they also introduce conceptual, technical, and computational challenges related to data quality and integration, and biological interpretation.",
-    "tags": [
-      "development",
-      "cell state",
-      "single-cell",
-      "spatial biology"
-    ],
-    "doi": "10.1093/plcell/koag223",
-    "link": "https://doi.org/10.1093/plcell/koag223",
-    "score": 7,
-    "added": "2026-08-24",
-    "relevance": "Supports the multimodal view of cell state central to Cell Science, connecting tissue organization and spatial context with molecular identity. Supports Cell Science's multimodal cell state program by linking molecular identity to spatial tissue context.",
-    "pdf_link": "https://hdl.handle.net/21.11116/0000-0013-7673-5"
-  },
-  {
     "title": "3D bioprinting modalities for tissue engineering and regenerative medicine.",
     "authors": "Kannan Badri Narayanan, Sung Soo Han",
     "year": "2026",
@@ -1451,84 +1279,6 @@
     "link": "https://doi.org/10.1016/j.cis.2026.104026",
     "score": 10,
     "added": "2026-08-31"
-  },
-  {
-    "title": "Compartment-Specific iPSC-Derived Cardiomyocytes and Organoids: Differentiation Strategies and Applications in Cardiovascular Disease Modeling",
-    "authors": "Aaron Argall, Rabina Shrestha, Jiyoon Lee, Ming-Tao Zhao",
-    "year": "2026",
-    "journal": "Cells",
-    "type": "review",
-    "summary": "Compartment-specific induced pluripotent stem cell (iPSC)-derived cardiomyocytes provide a powerful resource to study cellular and molecular underpinnings of congenital heart disease (CHD) and acquired cardiovascular disease (CVD). Human heart development requires coordinated and complex regulation of key signaling pathways including Notch, BMP, Wnt, Nodal, and Shh during each step of heart morphogenesis. Compartment-specific cardiac cells for modeling the various structures in the heart can be generated by fine tuning these signaling pathways in a sequential manner thereby mimicking spatiotemporal regulation during embryonic heart morphogenesis.",
-    "relevance": "Tangentially relevant to disease modeling using hiPSC lines. Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures.",
-    "tags": [
-      "development",
-      "morphogenesis",
-      "organoid",
-      "iPSC"
-    ],
-    "doi": "10.3390/cells15161460",
-    "link": "https://doi.org/10.3390/cells15161460",
-    "score": 10,
-    "added": "2026-08-31",
-    "pdf_link": "https://doi.org/10.3390/cells15161460"
-  },
-  {
-    "title": "From Organoids to Organ-on-Chip: Advancing Human-Relevant Models for Viral Pathogenesis and Antiviral Drug Discovery",
-    "authors": "Vaibhav Tiwari, Joanna Choe, Aryan Vora, Ishita Kataki, Sara A. L. Roujouleh, K. Allenspach et al.",
-    "year": "2026",
-    "journal": "Cells",
-    "type": "review",
-    "summary": "Organoid and organ-on-chip technologies are rapidly evolving platforms for viral research that integrate stem cell biology, tissue engineering, and microfluidics to recapitulate key structural, mechanical, biochemical, and cellular features of human and animal physiology. By incorporating multicellular organoids into perfused microfluidic systems, these models can provide complex, dynamic, and physiologically relevant micro-environments for investigating virus–host interactions that are difficult to capture in conventional two-dimensional cultures and static organoids. Controlled flow, shear stress, extracellular matrix organization, tissue–tissue interfaces, and multicellular signaling enable mechanistic investigation of viral infectivity, dissemination, tissue injury and immune activation.",
-    "relevance": "Introduces a novel experimental method or platform — very high priority given strong interest in how experiments are designed and what new biological questions they make tractable. Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis.",
-    "tags": [
-      "development",
-      "organoid",
-      "multicellular"
-    ],
-    "doi": "10.3390/cells15171514",
-    "link": "https://doi.org/10.3390/cells15171514",
-    "score": 10,
-    "added": "2026-08-31",
-    "pdf_link": "https://doi.org/10.3390/cells15171514"
-  },
-  {
-    "title": "Mechanobiology of hippocampal neurogenesis: directing neural stem cell fate through physical cues",
-    "authors": "Irem Akyel, Emad Moeendarbary, Graham K Sheridan",
-    "year": "2026",
-    "journal": "Frontiers in Molecular Neuroscience",
-    "type": "review",
-    "summary": "Adult hippocampal neurogenesis (AHN), the generation of new neurons in the dentate gyrus of the hippocampus, is a dynamic and tightly regulated process essential for memory encoding, regulation of emotions, and cognitive flexibility. While the molecular and biochemical underpinnings of AHN have been studied extensively, recent advances have illuminated the pivotal role of mechanical forces in shaping neural stem cell (NSC) behavior. This perspective highlights the emerging field of hippocampal mechanobiology, examining how the physical properties of the neurogenic niche, such as extracellular matrix (ECM) stiffness and parenchymal viscoelasticity, act in concert with instructive biomechanical cues to govern NSC fate decisions.",
-    "relevance": "Relevant to Cell Science's interest in how cells make identity decisions, with implications for stem cell differentiation and iPSC-based model systems. Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis.",
-    "tags": [
-      "cell fate",
-      "mechanobiology",
-      "tissue mechanics"
-    ],
-    "doi": "10.3389/fnmol.2026.1868741",
-    "link": "https://doi.org/10.3389/fnmol.2026.1868741",
-    "score": 8,
-    "added": "2026-08-31",
-    "pdf_link": "https://doi.org/10.3389/fnmol.2026.1868741"
-  },
-  {
-    "title": "Microbioreactor design for eukaryotic cell-based biomedical applications",
-    "authors": "Gustavo Rosero, Camilo Pérez-Sosa, Julio Patricio Peñaherrera, Ana Belén Peñaherrera‐Pazmiño",
-    "year": "2026",
-    "journal": "Frontiers in Bioengineering and Biotechnology",
-    "type": "review",
-    "summary": "The eukaryotic cell-based biomedicine landscape is undergoing a paradigm shift, driven by the transition from static culture to highly controlled microbioreactor environments. This mini-review assembles high-value applications, including autologous cell therapies, recombinant protein production, induced pluripotent stem cell expansion, and organoid engineering. Technologically, we highlight how the integration of microfluidics into Chimeric antigen receptor T-cell manufacturing achieves numerical optimization of cell count and phenotypic distribution through automated, closed-loop workflows.",
-    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Relevant to lumen morphogenesis, lumenoid self-organization, organoid systems, and live imaging of three-dimensional culture morphodynamics.",
-    "tags": [
-      "stem cells",
-      "development",
-      "morphogenesis",
-      "organoid"
-    ],
-    "doi": "10.3389/fbioe.2026.1854988",
-    "link": "https://doi.org/10.3389/fbioe.2026.1854988",
-    "score": 8,
-    "added": "2026-08-31",
-    "pdf_link": "https://www.frontiersin.org/journals/bioengineering-and-biotechnology/articles/10.3389/fbioe.2026.1854988/pdf"
   },
   {
     "title": "Epigenetic regulation of vertebrate limb development: from field specification to tissue morphogenesis",
