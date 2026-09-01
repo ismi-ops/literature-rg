@@ -1324,25 +1324,6 @@
     "pdf_link": "https://doi.org/10.1101/2024.12.16.628776"
   },
   {
-    "title": "Translational cell fate reprogramming and regenerative medicine enabled by microphysiological systems.",
-    "authors": "Hrithiha Sriramulu, Hyunsung Woo, Anavi Kaul, S. Musah",
-    "year": "2026",
-    "journal": "Current Opinion in Genetics and Development",
-    "type": "review",
-    "summary": "Recent advances in genetic engineering and in vivo reprogramming have opened transformative possibilities for controlling cell fate in tissue repair and regeneration. However, clinical translation remains constrained by the limited predictive value of animal models and traditional in vitro systems, which often fail to fully recapitulate human responses, including the physiological consequences of genetic manipulations. Emerging microphysiological systems, exemplified by three-dimensional organoids and organs-on-chips (OoCs) systems, help bridge this gap by recreating key aspects of human physiology while enabling precise bioengineering of the niche to modulate cell fate decisions and plasticity.",
-    "relevance": "Directly addresses the top-priority question of how cells make decisions — bistability, signal integration, and stochastic switching are central to understanding cell identity and fate. Relevant to Cell Science's interest in how cells make identity decisions, with implications for stem cell differentiation and iPSC-based model systems.",
-    "tags": [
-      "stem cells",
-      "development",
-      "cell fate",
-      "organoid"
-    ],
-    "doi": "10.1016/j.gde.2026.102512",
-    "link": "https://doi.org/10.1016/j.gde.2026.102512",
-    "score": 10,
-    "added": "2026-09-01"
-  },
-  {
     "title": "Dual-mode SOX2 regulation by miR-150 via mRNA suppression and autophagy controls stem cell fate",
     "authors": "Xing Zhen, Hyebin Koh, Dong-Seok Lee, Jae-Won Huh, Seok-Ho Hong, Tae-Don Kim et al.",
     "year": "2026",
@@ -1359,45 +1340,6 @@
     "score": 9,
     "added": "2026-09-01",
     "pdf_link": "https://www.nature.com/articles/s41392-026-02778-2.pdf"
-  },
-  {
-    "title": "Decoding plants cell by cell: opportunities and challenges in single-cell and spatial biology.",
-    "authors": "L. de Veylder, Maite Saura-Sánchez, B. De Rybel, Tatsuya Norobi, Klaas Vandepoele, Lorenzo Caputi et al.",
-    "year": "2026",
-    "journal": "The Plant Cell",
-    "type": "review",
-    "summary": "Recent advances in single-cell and spatial omics technologies are transforming plant research by enabling cell-resolved analyses of gene expression, proteomics, chromatin organization, and metabolism at the level of individual cells and at spatial resolution. These approaches have revealed extensive cellular heterogeneity, rare and transient cell states, and previously unrecognized developmental and physiological programs. However, they also introduce conceptual, technical, and computational challenges related to data quality and integration, and biological interpretation.",
-    "relevance": "Introduces a novel experimental method or platform — very high priority given strong interest in how experiments are designed and what new biological questions they make tractable. Directly relevant to Cell Science's foundational interest in how cells acquire and maintain identity — gene regulatory networks, lineage specification, and embryonic patterning are central to understanding cell decision-making and fate in developmental contexts.",
-    "tags": [
-      "development",
-      "cell state",
-      "single-cell",
-      "spatial biology"
-    ],
-    "doi": "10.1093/plcell/koag223",
-    "link": "https://doi.org/10.1093/plcell/koag223",
-    "score": 9,
-    "added": "2026-09-01",
-    "pdf_link": "https://hdl.handle.net/21.11116/0000-0013-7673-5"
-  },
-  {
-    "title": "Decoding Cardiac Development and Maturation at Single-Cell and Spatial Transcriptomic Resolution",
-    "authors": "Biyi Li, Xihe Liu, S. Murphy, Emmanouil Tampakakis, Chulan Kwon",
-    "year": "2026",
-    "journal": "Circulation Research",
-    "type": "review",
-    "summary": "Recent advances in single-cell transcriptomics have revolutionized our understanding of cardiac development and maturation by resolving cellular heterogeneity, delineating lineage trajectories, and uncovering gene regulatory networks and intercellular signaling at unprecedented resolution. The heart develops through a tightly coordinated spatiotemporal process that extends from early organogenesis through postnatal maturation. Despite major progress, key questions remain unresolved, including the localization and function of rare progenitor populations and the mechanisms that guide cardiomyocyte maturation and loss of regenerative capacity.",
-    "relevance": "Relevant to hiPSC-derived cardiomyocyte biology and quantitative structural imaging of cardiac cells. Directly relevant to understanding how cells send and receive signals from neighbors — foundational for collective cell decision-making and multicellular coordination, both core Cell Science themes.",
-    "tags": [
-      "development",
-      "single-cell",
-      "intercellular signaling"
-    ],
-    "doi": "10.1161/CIRCRESAHA.125.327473",
-    "link": "https://doi.org/10.1161/CIRCRESAHA.125.327473",
-    "score": 9,
-    "added": "2026-09-01",
-    "pdf_link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13425939/pdf/nihms-2187208.pdf"
   },
   {
     "title": "A developmental biologist's guide to mechanics.",
@@ -1473,19 +1415,5 @@
     "added": "2026-08-19",
     "pdf_link": "https://doi.org/10.1016/j.cell.2026.02.010",
     "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis."
-  },
-  {
-    "title": "https://journals.biologists.com/dev/article/150/21/dev201873/334525/scTOP-physics-inspired-order-parameters-for",
-    "authors": "",
-    "year": "2026",
-    "journal": "",
-    "type": "research",
-    "summary": "",
-    "relevance": "",
-    "tags": [],
-    "doi": "",
-    "link": "https://journals.biologists.com/dev/article/150/21/dev201873/334525/scTOP-physics-inspired-order-parameters-for",
-    "score": 0,
-    "added": "2026-09-01"
   }
 ]
