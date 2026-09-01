@@ -1546,5 +1546,23 @@
     "score": 10,
     "added": "2026-09-01",
     "pdf_link": "https://doi.org/10.1016/j.cell.2026.06.009"
+  },
+  {
+    "title": "Engineering morphogenesis of cell clusters with differentiable programming",
+    "authors": "Ramya Deshpande, Francesco Mottes, Ariana-Dalia Vlad, M. P. Brenner, Alma Dal Co",
+    "year": "2025",
+    "journal": "Nature Computational Science",
+    "type": "research",
+    "summary": "Introduces a computational framework where the rules governing cell cluster shape changes can be optimized using gradient descent — essentially training a developmental program the way you'd train a neural network. Applied to real cell clusters, it can infer the mechanical rules producing observed morphologies and design new ones. A methodological advance at the intersection of AI, synthetic morphogenesis, and mechanobiology that connects directly to Cell Science's computational and imaging work.",
+    "tags": [
+      "synthetic biology",
+      "morphogenesis",
+      "AI / ML"
+    ],
+    "doi": "10.1038/s43588-025-00851-4",
+    "link": "https://www.nature.com/articles/s43588-025-00851-4",
+    "added": "2026-08-19",
+    "pdf_link": "",
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures."
   }
 ]
