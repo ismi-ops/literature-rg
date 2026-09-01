@@ -70,9 +70,8 @@ def _normalize(paper: dict) -> dict:
     external_ids = paper.get("externalIds") or {}
     doi = external_ids.get("DOI", "")
 
-    url = paper.get("url", "") or ""
-    if doi and not url:
-        url = f"https://doi.org/{doi}"
+    # Always prefer a direct doi.org link over a Semantic Scholar intermediary URL
+    url = f"https://doi.org/{doi}" if doi else (paper.get("url", "") or "")
 
     pub_types = paper.get("publicationTypes") or []
     pub_type = "research"

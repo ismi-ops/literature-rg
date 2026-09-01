@@ -965,7 +965,7 @@
       "multicellular"
     ],
     "doi": "10.3389/fcell.2026.1871354",
-    "link": "https://www.semanticscholar.org/paper/32fe6b588cf0457a27bf8ee60d1b8b8d9a232218",
+    "link": "https://doi.org/10.3389/fcell.2026.1871354",
     "score": 10,
     "added": "2026-08-19",
     "pdf_link": "https://www.frontiersin.org/journals/cell-and-developmental-biology/articles/10.3389/fcell.2026.1871354/pdf",
@@ -1003,7 +1003,7 @@
       "bioelectricity"
     ],
     "doi": "10.1063/5.0345058",
-    "link": "https://www.semanticscholar.org/paper/df3b59fbf9dcb700e60e973f26663b973f77856e",
+    "link": "https://doi.org/10.1063/5.0345058",
     "score": 7,
     "added": "2026-08-19",
     "pdf_link": "",
@@ -1046,7 +1046,7 @@
       "self-organization"
     ],
     "doi": "10.1631/bdm.2500560",
-    "link": "https://www.semanticscholar.org/paper/09d07ecff3610a09f647f0d906cab3bac1f13bd9",
+    "link": "https://doi.org/10.1631/bdm.2500560",
     "score": 10,
     "added": "2026-08-20",
     "pdf_link": "https://link.springer.com/content/pdf/10.1631/bdm.2500560.pdf",
@@ -1065,7 +1065,7 @@
       "multicellular"
     ],
     "doi": "10.64898/2026.07.01.735871",
-    "link": "https://www.semanticscholar.org/paper/f9295adb463b542d03d6150b157d0b04206ec80f",
+    "link": "https://doi.org/10.64898/2026.07.01.735871",
     "score": 10,
     "added": "2026-08-20",
     "pdf_link": "https://doi.org/10.64898/2026.07.01.735871",
@@ -1087,7 +1087,7 @@
       "collective migration"
     ],
     "doi": "10.1016/j.semcdb.2026.103684",
-    "link": "https://www.semanticscholar.org/paper/f14d9603ebc9682cf6435aa7bd652ed51997f72b",
+    "link": "https://doi.org/10.1016/j.semcdb.2026.103684",
     "score": 10,
     "added": "2026-08-20",
     "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis."
@@ -1106,7 +1106,7 @@
       "disease modeling"
     ],
     "doi": "10.1016/j.bioactmat.2026.06.041",
-    "link": "https://www.semanticscholar.org/paper/a7254cc7bee45c1bfbfa0856ffee13e8d51d3f59",
+    "link": "https://doi.org/10.1016/j.bioactmat.2026.06.041",
     "score": 8,
     "added": "2026-08-20",
     "pdf_link": "https://doi.org/10.1016/j.bioactmat.2026.06.041",
@@ -1128,7 +1128,7 @@
       "live imaging"
     ],
     "doi": "10.3389/fcell.2026.1892888",
-    "link": "https://www.semanticscholar.org/paper/b2bd374167d4bfa141d951cc13891d4d679d7768",
+    "link": "https://doi.org/10.3389/fcell.2026.1892888",
     "score": 10,
     "added": "2026-08-21",
     "pdf_link": "https://doi.org/10.3389/fcell.2026.1892888",
@@ -1149,7 +1149,7 @@
       "disease modeling"
     ],
     "doi": "10.1002/adma.74560",
-    "link": "https://www.semanticscholar.org/paper/e00e7b28f70f5208563baf404cae873a3c07074c",
+    "link": "https://doi.org/10.1002/adma.74560",
     "score": 8,
     "added": "2026-08-21",
     "pdf_link": "https://doi.org/10.1002/adma.74560",
@@ -1187,7 +1187,7 @@
       "single-cell"
     ],
     "doi": "10.3389/fcell.2026.1841670",
-    "link": "https://www.semanticscholar.org/paper/3f44c0363b0f7f2a48ca6c9b818fdfbe31627f41",
+    "link": "https://doi.org/10.3389/fcell.2026.1841670",
     "score": 7,
     "added": "2026-08-21",
     "pdf_link": "https://doi.org/10.3389/fcell.2026.1841670",
@@ -1206,7 +1206,7 @@
       "iPSC"
     ],
     "doi": "10.1093/stmcls/sxag039",
-    "link": "https://www.semanticscholar.org/paper/7ad12009fd8110049134451ce70983e486696400",
+    "link": "https://doi.org/10.1093/stmcls/sxag039",
     "score": 7,
     "added": "2026-08-21",
     "pdf_link": "https://doi.org/10.1093/stmcls/sxag039",
@@ -1228,7 +1228,7 @@
       "disease modeling"
     ],
     "doi": "10.1242/dev.205040",
-    "link": "https://www.semanticscholar.org/paper/c6f7e3255044de75dbefbaa24b587f58759b1feb",
+    "link": "https://doi.org/10.1242/dev.205040",
     "score": 10,
     "added": "2026-08-24",
     "relevance": "Aligned with the CellScapes program and Cell Science's engagement with synthetic developmental biology — engineering gene circuits to program cell community behavior. Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs.",
@@ -1248,7 +1248,7 @@
       "organoid"
     ],
     "doi": "10.1016/j.gde.2026.102512",
-    "link": "https://www.semanticscholar.org/paper/44e30aba80e717add4c9df592a4399c80b1b1dd6",
+    "link": "https://doi.org/10.1016/j.gde.2026.102512",
     "score": 10,
     "added": "2026-08-24",
     "relevance": "Relevant to Cell Science's interest in how cells make identity decisions, with implications for stem cell differentiation and iPSC-based model systems."
@@ -1268,7 +1268,7 @@
       "disease modeling"
     ],
     "doi": "10.3389/fcell.2026.1922536",
-    "link": "https://www.semanticscholar.org/paper/241363f8161062a88b7be481d65a34553d45f7be",
+    "link": "https://doi.org/10.3389/fcell.2026.1922536",
     "score": 10,
     "added": "2026-08-24",
     "relevance": "Relevant to Cell Science's interest in how cells make identity decisions, with implications for stem cell differentiation and iPSC-based model systems.",
@@ -1286,7 +1286,7 @@
       "organoid"
     ],
     "doi": "10.1016/j.devcel.2026.05.004",
-    "link": "https://www.semanticscholar.org/paper/da697d5a2f756fe3112189a16a0fffe9f58d15dc",
+    "link": "https://doi.org/10.1016/j.devcel.2026.05.004",
     "score": 8,
     "added": "2026-08-24",
     "relevance": "Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs.",
@@ -1301,7 +1301,7 @@
     "summary": "This review examines hot topics at the intersection of cell biology and reproductive medicine, focusing on how advanced cell technologies are being translated into clinical fertility practice. The authors survey 3D cell and tissue culturing, multi-omics approaches, and stem cell-based technologies as tools for improving infertility treatment outcomes. While the application domain is reproductive medicine rather than basic cell science, the paper touches on methods — 3D culture systems, omics integration, stem cell engineering — that overlap with Cell Science's own toolkit.",
     "tags": [],
     "doi": "10.1134/S1990519X2660064X",
-    "link": "https://www.semanticscholar.org/paper/3a797a3c76c12705e52bb47b9efde80a3c97e79e",
+    "link": "https://doi.org/10.1134/S1990519X2660064X",
     "score": 1,
     "added": "2026-08-24"
   },
@@ -1317,7 +1317,7 @@
       "single-cell"
     ],
     "doi": "10.1016/j.cels.2026.101703",
-    "link": "https://www.semanticscholar.org/paper/b73d26e0c8516d7c6c6aaa08c0b2a3d85e921e08",
+    "link": "https://doi.org/10.1016/j.cels.2026.101703",
     "score": 6,
     "added": "2026-08-24",
     "pdf_link": "https://doi.org/10.1016/j.cels.2026.101703"
@@ -1333,7 +1333,7 @@
       "stem cells"
     ],
     "doi": "10.3389/fbioe.2026.1922947",
-    "link": "https://www.semanticscholar.org/paper/a11d2ee24cad92447d53b4992331508603dd900e",
+    "link": "https://doi.org/10.3389/fbioe.2026.1922947",
     "score": 2,
     "added": "2026-08-24",
     "pdf_link": "https://www.frontiersin.org/journals/bioengineering-and-biotechnology/articles/10.3389/fbioe.2026.1922947/pdf"
@@ -1350,7 +1350,7 @@
       "single-cell"
     ],
     "doi": "10.1177/10445498261460199",
-    "link": "https://www.semanticscholar.org/paper/17260fd4d03872e8e8e7ca48b5b8431a3d053c7b",
+    "link": "https://doi.org/10.1177/10445498261460199",
     "score": 2,
     "added": "2026-08-24",
     "relevance": "Relevant to Cell Science's multimodal view of cell state, where single-cell molecular data is integrated with structural and morphological measurements."
@@ -1387,7 +1387,7 @@
       "organoid"
     ],
     "doi": "10.26599/co.2026.9410025",
-    "link": "https://www.semanticscholar.org/paper/72d228ce3cafccca85f953319f1bed1d38706617",
+    "link": "https://doi.org/10.26599/co.2026.9410025",
     "score": 10,
     "added": "2026-08-24",
     "relevance": "Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis. Relevant to lumen morphogenesis, lumenoid self-organization, organoid systems, and live imaging of three-dimensional culture morphodynamics.",
@@ -1405,7 +1405,7 @@
       "organoid"
     ],
     "doi": "10.1093/stmcls/sxag041",
-    "link": "https://www.semanticscholar.org/paper/b34b38e919c7e70367b2d150a6885b6488432b02",
+    "link": "https://doi.org/10.1093/stmcls/sxag041",
     "score": 9,
     "added": "2026-08-24",
     "relevance": "Relevant to lumen morphogenesis, lumenoid self-organization, organoid systems, and live imaging of three-dimensional culture morphodynamics.",
@@ -1425,7 +1425,7 @@
       "spatial biology"
     ],
     "doi": "10.1093/plcell/koag223",
-    "link": "https://www.semanticscholar.org/paper/c6bf6ff9b1625a1e9a6516659797937878601c98",
+    "link": "https://doi.org/10.1093/plcell/koag223",
     "score": 7,
     "added": "2026-08-24",
     "relevance": "Supports the multimodal view of cell state central to Cell Science, connecting tissue organization and spatial context with molecular identity. Supports Cell Science's multimodal cell state program by linking molecular identity to spatial tissue context.",
@@ -1467,7 +1467,7 @@
       "iPSC"
     ],
     "doi": "10.3390/cells15161460",
-    "link": "https://www.semanticscholar.org/paper/695cc8fa25a742a0f996d8eff803cde27919440f",
+    "link": "https://doi.org/10.3390/cells15161460",
     "score": 10,
     "added": "2026-08-31",
     "pdf_link": "https://doi.org/10.3390/cells15161460"
@@ -1486,7 +1486,7 @@
       "multicellular"
     ],
     "doi": "10.3390/cells15171514",
-    "link": "https://www.semanticscholar.org/paper/1f6db19892f341cb9e184c047983ca0cdacdeedc",
+    "link": "https://doi.org/10.3390/cells15171514",
     "score": 10,
     "added": "2026-08-31",
     "pdf_link": "https://doi.org/10.3390/cells15171514"
@@ -1505,7 +1505,7 @@
       "tissue mechanics"
     ],
     "doi": "10.3389/fnmol.2026.1868741",
-    "link": "https://www.semanticscholar.org/paper/605654ca7ba91a1328000566c8db5485a4bde61f",
+    "link": "https://doi.org/10.3389/fnmol.2026.1868741",
     "score": 8,
     "added": "2026-08-31",
     "pdf_link": "https://doi.org/10.3389/fnmol.2026.1868741"
@@ -1525,7 +1525,7 @@
       "organoid"
     ],
     "doi": "10.3389/fbioe.2026.1854988",
-    "link": "https://www.semanticscholar.org/paper/7c29808a571693eca22567f18246767857231348",
+    "link": "https://doi.org/10.3389/fbioe.2026.1854988",
     "score": 8,
     "added": "2026-08-31",
     "pdf_link": "https://www.frontiersin.org/journals/bioengineering-and-biotechnology/articles/10.3389/fbioe.2026.1854988/pdf"
@@ -1536,7 +1536,7 @@
     "year": "2026",
     "journal": "Epigenetics",
     "type": "review",
-    "summary": "ABSTRACT Vertebrate limb development provides an excellent model for understanding how epigenetic mechanisms coordinate the integration of positional information and temporal signals to generate complex three-dimensional structures. An increasing body of evidence shows that chromatin-based mechanisms, including DNA methylation, histone modifications, and higher-order chromatin organization, define the competence of progenitor cells to respond to morphogenetic signals with spatial and temporal precision during limb development. This review explores how epigenetic mechanisms orchestrate and regulate the major phases of limb formation: from field specification and bud induction to morphogenesis, lineage differentiation, and programmed cell death.",
+    "summary": "Vertebrate limb development provides an excellent model for understanding how epigenetic mechanisms coordinate the integration of positional information and temporal signals to generate complex three-dimensional structures. An increasing body of evidence shows that chromatin-based mechanisms, including DNA methylation, histone modifications, and higher-order chromatin organization, define the competence of progenitor cells to respond to morphogenetic signals with spatial and temporal precision during limb development. This review explores how epigenetic mechanisms orchestrate and regulate the major phases of limb formation: from field specification and bud induction to morphogenesis, lineage differentiation, and programmed cell death.",
     "relevance": "Directly addresses the top-priority question of how cells make decisions — bistability, signal integration, and stochastic switching are central to understanding cell identity and fate. Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures.",
     "tags": [
       "development",
@@ -1545,7 +1545,7 @@
       "morphology"
     ],
     "doi": "10.1080/15592294.2026.2695477",
-    "link": "https://www.semanticscholar.org/paper/8e2939e9536ec4bcdcaf85ae21ec1082d4e60e09",
+    "link": "https://doi.org/10.1080/15592294.2026.2695477",
     "score": 8,
     "added": "2026-08-31",
     "pdf_link": "https://doi.org/10.1080/15592294.2026.2695477"
