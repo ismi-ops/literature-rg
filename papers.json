@@ -1455,5 +1455,37 @@
     "score": 8,
     "added": "2026-09-01",
     "pdf_link": "https://www.nature.com/articles/s41540-026-00788-y_reference.pdf"
+  },
+  {
+    "title": "Deciphering mechanical determinants of morphological evolution",
+    "authors": "Richard Bailleul, Nicolas Cuny, Diana Khoromskaia, Soham Basu, G. Bergamini, P. Cucurachi, Florian Gabler, Sebastian Rupp et al.",
+    "year": "2026",
+    "journal": "Cell",
+    "type": "research",
+    "summary": "Examines how differences in tissue mechanical properties — stiffness, viscosity, active force generation — have driven the evolution of diverse animal body forms across species. Rather than focusing on genetic differences, it asks what physical constraints and possibilities shaped morphological diversity. A broad evolutionary perspective on the biophysics of development that connects mechanobiology to deep questions about form and function relevant to Cell Science.",
+    "tags": [
+      "morphogenesis",
+      "development",
+      "mechanobiology"
+    ],
+    "doi": "10.1016/j.cell.2026.02.010",
+    "link": "https://www.sciencedirect.com/science/article/pii/S0092867426001753",
+    "added": "2026-08-19",
+    "pdf_link": "https://doi.org/10.1016/j.cell.2026.02.010",
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis."
+  },
+  {
+    "title": "https://journals.biologists.com/dev/article/150/21/dev201873/334525/scTOP-physics-inspired-order-parameters-for",
+    "authors": "",
+    "year": "2026",
+    "journal": "",
+    "type": "research",
+    "summary": "",
+    "relevance": "",
+    "tags": [],
+    "doi": "",
+    "link": "https://journals.biologists.com/dev/article/150/21/dev201873/334525/scTOP-physics-inspired-order-parameters-for",
+    "score": 0,
+    "added": "2026-09-01"
   }
 ]
