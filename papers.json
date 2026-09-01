@@ -200,7 +200,7 @@
   },
   {
     "title": "Coupling of cell shape, matrix and tissue dynamics ensures embryonic patterning robustness",
-    "authors": "",
+    "authors": "Prachiti Moghe, R. Belousov, Takafumi Ichikawa, C. Iwatani, Tomoyuki Tsukiyama, A. Erzberger, Takashi Hiiragi",
     "year": "2025",
     "journal": "Nature Cell Biology",
     "type": "research",
@@ -210,10 +210,10 @@
       "morphogenesis",
       "tissue mechanics"
     ],
-    "doi": "",
+    "doi": "10.1038/s41556-025-01618-9",
     "link": "https://www.nature.com/articles/s41556-025-01618-9",
     "added": "2026-08-19",
-    "pdf_link": "",
+    "pdf_link": "https://www.nature.com/articles/s41556-025-01618-9.pdf",
     "relevance": "Relevant to Cell Science's interest in how spatial patterns emerge during development from molecular and cellular interactions."
   },
   {
@@ -1219,7 +1219,8 @@
     "link": "https://doi.org/10.1016/j.cels.2026.101703",
     "score": 6,
     "added": "2026-08-24",
-    "pdf_link": "https://doi.org/10.1016/j.cels.2026.101703"
+    "pdf_link": "https://doi.org/10.1016/j.cels.2026.101703",
+    "relevance": "Directly relevant to understanding how cells send and receive signals from neighbors — foundational for collective cell decision-making and multicellular coordination, both core Cell Science themes."
   },
   {
     "title": "Biophysics of lumen morphogenesis.",
@@ -1299,5 +1300,160 @@
     "score": 8,
     "added": "2026-08-31",
     "pdf_link": "https://doi.org/10.1080/15592294.2026.2695477"
+  },
+  {
+    "title": "Collective fate decisions and cell rearrangements underlie gastruloid symmetry breaking",
+    "authors": "David Oriola, G. Torregrosa-Cortés, Sotiris Samatas, Krisztina Arató, David Fernández-Munuera, E. Hahn et al.",
+    "year": "2026",
+    "journal": "bioRxiv",
+    "type": "research",
+    "summary": "How cell fate decisions coordinate with tissue-scale morphogenesis remains a major challenge in developmental biology. Gastruloids, three-dimensional aggregates of pluripo-tent stem cells that self-organise and break symmetry via polarised Brachyury/T expres-sion, provide an ideal system to address this question. By generating gastruloids with defined initial proportions of T-expressing cells we show that fate decisions occur collec-tively, with cell-fate proportions influencing the transition rates.",
+    "relevance": "Directly addresses the top-priority question of how cells make decisions — bistability, signal integration, and stochastic switching are central to understanding cell identity and fate. Directly relevant to Cell Science's foundational interest in how cells acquire and maintain identity — gene regulatory networks, lineage specification, and embryonic patterning are central to understanding cell decision-making and fate in developmental contexts.",
+    "tags": [
+      "stem cells",
+      "development",
+      "morphogenesis",
+      "cell fate",
+      "multicellular",
+      "developmental biology"
+    ],
+    "doi": "10.1101/2024.12.16.628776",
+    "link": "https://doi.org/10.1101/2024.12.16.628776",
+    "score": 10,
+    "added": "2026-09-01",
+    "pdf_link": "https://doi.org/10.1101/2024.12.16.628776"
+  },
+  {
+    "title": "Translational cell fate reprogramming and regenerative medicine enabled by microphysiological systems.",
+    "authors": "Hrithiha Sriramulu, Hyunsung Woo, Anavi Kaul, S. Musah",
+    "year": "2026",
+    "journal": "Current Opinion in Genetics and Development",
+    "type": "review",
+    "summary": "Recent advances in genetic engineering and in vivo reprogramming have opened transformative possibilities for controlling cell fate in tissue repair and regeneration. However, clinical translation remains constrained by the limited predictive value of animal models and traditional in vitro systems, which often fail to fully recapitulate human responses, including the physiological consequences of genetic manipulations. Emerging microphysiological systems, exemplified by three-dimensional organoids and organs-on-chips (OoCs) systems, help bridge this gap by recreating key aspects of human physiology while enabling precise bioengineering of the niche to modulate cell fate decisions and plasticity.",
+    "relevance": "Directly addresses the top-priority question of how cells make decisions — bistability, signal integration, and stochastic switching are central to understanding cell identity and fate. Relevant to Cell Science's interest in how cells make identity decisions, with implications for stem cell differentiation and iPSC-based model systems.",
+    "tags": [
+      "stem cells",
+      "development",
+      "cell fate",
+      "organoid"
+    ],
+    "doi": "10.1016/j.gde.2026.102512",
+    "link": "https://doi.org/10.1016/j.gde.2026.102512",
+    "score": 10,
+    "added": "2026-09-01"
+  },
+  {
+    "title": "Dual-mode SOX2 regulation by miR-150 via mRNA suppression and autophagy controls stem cell fate",
+    "authors": "Xing Zhen, Hyebin Koh, Dong-Seok Lee, Jae-Won Huh, Seok-Ho Hong, Tae-Don Kim et al.",
+    "year": "2026",
+    "journal": "Signal Transduction and Targeted Therapy",
+    "type": "research",
+    "summary": "Autophagy plays a critical role in maintaining cellular homeostasis and regulating stem cell fate. Although microRNAs (miRNAs) are being increasingly recognized for their ability to modulate autophagy and pluripotency in human pluripotent stem cells (hPSCs), the underlying molecular mechanisms remain incompletely understood. This study defines a role for miR-150 deficiency in biasing ectoderm–mesoderm lineage specification in hPSCs and identifies SOX2 as a key downstream node regulated primarily through altered mRNA stability, with additional involvement of an autophagy-associated pathway.",
+    "relevance": "Directly addresses the top-priority question of how cells make decisions — bistability, signal integration, and stochastic switching are central to understanding cell identity and fate. Directly relevant to Cell Science's foundational interest in how cells acquire and maintain identity — gene regulatory networks, lineage specification, and embryonic patterning are central to understanding cell decision-making and fate in developmental contexts.",
+    "tags": [
+      "stem cells",
+      "cell fate"
+    ],
+    "doi": "10.1038/s41392-026-02778-2",
+    "link": "https://doi.org/10.1038/s41392-026-02778-2",
+    "score": 9,
+    "added": "2026-09-01",
+    "pdf_link": "https://www.nature.com/articles/s41392-026-02778-2.pdf"
+  },
+  {
+    "title": "Decoding plants cell by cell: opportunities and challenges in single-cell and spatial biology.",
+    "authors": "L. de Veylder, Maite Saura-Sánchez, B. De Rybel, Tatsuya Norobi, Klaas Vandepoele, Lorenzo Caputi et al.",
+    "year": "2026",
+    "journal": "The Plant Cell",
+    "type": "review",
+    "summary": "Recent advances in single-cell and spatial omics technologies are transforming plant research by enabling cell-resolved analyses of gene expression, proteomics, chromatin organization, and metabolism at the level of individual cells and at spatial resolution. These approaches have revealed extensive cellular heterogeneity, rare and transient cell states, and previously unrecognized developmental and physiological programs. However, they also introduce conceptual, technical, and computational challenges related to data quality and integration, and biological interpretation.",
+    "relevance": "Introduces a novel experimental method or platform — very high priority given strong interest in how experiments are designed and what new biological questions they make tractable. Directly relevant to Cell Science's foundational interest in how cells acquire and maintain identity — gene regulatory networks, lineage specification, and embryonic patterning are central to understanding cell decision-making and fate in developmental contexts.",
+    "tags": [
+      "development",
+      "cell state",
+      "single-cell",
+      "spatial biology"
+    ],
+    "doi": "10.1093/plcell/koag223",
+    "link": "https://doi.org/10.1093/plcell/koag223",
+    "score": 9,
+    "added": "2026-09-01",
+    "pdf_link": "https://hdl.handle.net/21.11116/0000-0013-7673-5"
+  },
+  {
+    "title": "Decoding Cardiac Development and Maturation at Single-Cell and Spatial Transcriptomic Resolution",
+    "authors": "Biyi Li, Xihe Liu, S. Murphy, Emmanouil Tampakakis, Chulan Kwon",
+    "year": "2026",
+    "journal": "Circulation Research",
+    "type": "review",
+    "summary": "Recent advances in single-cell transcriptomics have revolutionized our understanding of cardiac development and maturation by resolving cellular heterogeneity, delineating lineage trajectories, and uncovering gene regulatory networks and intercellular signaling at unprecedented resolution. The heart develops through a tightly coordinated spatiotemporal process that extends from early organogenesis through postnatal maturation. Despite major progress, key questions remain unresolved, including the localization and function of rare progenitor populations and the mechanisms that guide cardiomyocyte maturation and loss of regenerative capacity.",
+    "relevance": "Relevant to hiPSC-derived cardiomyocyte biology and quantitative structural imaging of cardiac cells. Directly relevant to understanding how cells send and receive signals from neighbors — foundational for collective cell decision-making and multicellular coordination, both core Cell Science themes.",
+    "tags": [
+      "development",
+      "single-cell",
+      "intercellular signaling"
+    ],
+    "doi": "10.1161/CIRCRESAHA.125.327473",
+    "link": "https://doi.org/10.1161/CIRCRESAHA.125.327473",
+    "score": 9,
+    "added": "2026-09-01",
+    "pdf_link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13425939/pdf/nihms-2187208.pdf"
+  },
+  {
+    "title": "A developmental biologist's guide to mechanics.",
+    "authors": "Jia-Ling Cao, Alessandro Chiappori, Sylvain Landiech, Raphaël Clément, P. Lenne",
+    "year": "2026",
+    "journal": "Development",
+    "type": "review",
+    "summary": "Developmental biology seeks to explain how living systems self-organize into functional, robust forms. While molecular and genetic approaches have revealed how biological information is encoded and processed, they often do not explain how this information is translated into physical shape. Here, we introduce the mechanical principles underlying tissue morphogenesis, aimed at developmental biologists with little background in physics.",
+    "relevance": "Directly relevant to Cell Science's foundational interest in how cells acquire and maintain identity — gene regulatory networks, lineage specification, and embryonic patterning are central to understanding cell decision-making and fate in developmental contexts. Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures.",
+    "tags": [
+      "development",
+      "morphogenesis",
+      "developmental biology"
+    ],
+    "doi": "10.1242/dev.205785",
+    "link": "https://doi.org/10.1242/dev.205785",
+    "score": 9,
+    "added": "2026-09-01"
+  },
+  {
+    "title": "Epithelial convergent extension as a tuning process.",
+    "authors": "Sadjad Arzash, Andrea J Liu, M Lisa Manning",
+    "year": "2026",
+    "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+    "type": "research",
+    "summary": "Self-tuning-the ability of disordered systems to develop desired collective behaviors by tuning internal couplings in response to feedback-has recently emerged as a powerful framework for understanding adaptation in amorphous solids, mechanical metamaterials, and electrical networks. These systems can learn desired responses, encode memory, and robustly reorganize under repeated stimuli, much like artificial neural networks but without requiring processors to adjust their weights. Here, we extend this paradigm to morphogenesis and show that it is useful to view the epithelium as tunable matter and epithelial convergent extension (CE) as a self-tuning process.",
+    "relevance": "Directly relevant to Cell Science's foundational interest in how cells acquire and maintain identity — gene regulatory networks, lineage specification, and embryonic patterning are central to understanding cell decision-making and fate in developmental contexts. Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures.",
+    "tags": [
+      "development",
+      "morphogenesis",
+      "methods",
+      "developmental biology"
+    ],
+    "doi": "10.1073/pnas.2532099123",
+    "link": "https://doi.org/10.1073/pnas.2532099123",
+    "score": 8,
+    "added": "2026-09-01",
+    "pdf_link": "https://www.biorxiv.org/content/biorxiv/early/2025/11/07/2025.11.06.687029.full.pdf"
+  },
+  {
+    "title": "Multiscale Modeling of Embryonic Morphogenesis from Fertilization to Organogenesis.",
+    "authors": "Debanik Deb, Orishma Parida, Laasya Naduthota, B. Chakrabortty",
+    "year": "2026",
+    "journal": "npj Systems Biology and Applications",
+    "type": "review",
+    "summary": "Embryonic development transforms a single cell into a structured multicellular organism through coordinated molecular, cellular, and tissue-level processes. In this review, we discuss multiscale modeling studies spanning early embryogenesis from fertilization to organogenesis across diverse systems, emphasizing how distinct computational frameworks have been used to investigate different stages of embryonic morphogenesis. Drawing on complementary animal models, we highlight how multiscale approaches provide mechanistic insights into embryonic patterning and form generation.",
+    "relevance": "Directly relevant to Cell Science's foundational interest in how cells acquire and maintain identity — gene regulatory networks, lineage specification, and embryonic patterning are central to understanding cell decision-making and fate in developmental contexts. Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures.",
+    "tags": [
+      "development",
+      "morphogenesis",
+      "multicellular"
+    ],
+    "doi": "10.1038/s41540-026-00788-y",
+    "link": "https://doi.org/10.1038/s41540-026-00788-y",
+    "score": 8,
+    "added": "2026-09-01",
+    "pdf_link": "https://www.nature.com/articles/s41540-026-00788-y_reference.pdf"
   }
 ]
