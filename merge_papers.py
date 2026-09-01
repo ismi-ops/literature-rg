@@ -24,6 +24,7 @@ for i, p in enumerate(origin):
 
 merged = list(origin)
 added = 0
+updated = 0
 for p in local:
     k = (p.get("doi") or "").strip().lower() or (p.get("title") or "").strip().lower()
     if not k:
@@ -34,14 +35,18 @@ for p in local:
         added += 1
     else:
         idx = by_key[k]
-        for field in ("authors", "pdf_link"):
+        changed = False
+        for field in ("authors", "pdf_link", "summary", "relevance", "tags", "score"):
             if p.get(field) and not merged[idx].get(field):
                 merged[idx][field] = p[field]
+                changed = True
+        if changed:
+            updated += 1
 
 with open("papers.json", "w") as f:
     json.dump(merged, f, indent=2, ensure_ascii=False)
     f.write("\n")
 
-print(f"Merged: +{added} new paper(s), {len(merged)} total")
-if added == 0:
+print(f"Merged: +{added} new paper(s), {updated} updated, {len(merged)} total")
+if added == 0 and updated == 0:
     sys.exit(42)
