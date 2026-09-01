@@ -452,7 +452,7 @@ function fmt(p) {
       +'<button class="notes-toggle'+(hasNote?' has-notes':'')+'" data-noteid="'+noteId+'">'
         +(hasNote ? '&#128221; Notes' : '+ Add note')
       +'</button>'
-      +'<div class="notes-area" id="'+noteId+'" data-nk="'+esc(nk)+'">'
+      +'<div class="notes-area'+(hasNote?' open':'')+'" id="'+noteId+'" data-nk="'+esc(nk)+'">'
         +'<textarea class="notes-textarea" rows="3" placeholder="Your notes…">'+esc(existingNote)+'</textarea>'
         +'<div class="notes-saved"></div>'
       +'</div>'
