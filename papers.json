@@ -1422,18 +1422,20 @@
     "year": "2026",
     "journal": "Development",
     "type": "research",
-    "summary": "",
-    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures.",
+    "summary": "Across multicellular life, cells need to act in a coordinated manner to generate tissues with specific and reproducible forms necessary for their effective function. This process of morphogenesis is regulated by a myriad of signalling and mechanical inputs, which are often inter-related. Tissue morphogenesis typically occurs within constrained environments, such as the eggshell or buds for plants, that often have complex geometries.",
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Relevant to CellScapes and Cell Science's broader interest in how cells cooperate and self-organize to form tissues with emergent properties.",
     "tags": [
       "morphogenesis",
-      "shape mechanics"
+      "multicellular",
+      "methods"
     ],
     "doi": "10.1242/dev.205774",
     "link": "https://doi.org/10.1242/dev.205774",
-    "score": 7,
+    "score": 5,
     "added": "2026-09-01",
     "pdf_link": "https://doi.org/10.1242/dev.205774",
-    "source": "manual"
+    "source": "manual",
+    "abstract": "Across multicellular life, cells need to act in a coordinated manner to generate tissues with specific and reproducible forms necessary for their effective function. This process of morphogenesis is regulated by a myriad of signalling and mechanical inputs, which are often inter-related. Tissue morphogenesis typically occurs within constrained environments, such as the eggshell or buds for plants, that often have complex geometries. Yet, understanding how such boundaries impact the formation of tissues and organs has remained challenging. Recent advances in imaging, in vitro methods and genetic manipulation are leading to new understanding of how geometry interplays with signalling and mechanics to ensure tissues form robustly. Here, we focus on the role of geometric constraints in guiding morphogenesis, utilising examples from across the animal and plant kingdoms to highlight key principles. This demonstrates that geometry can be instructive, rather than simply a passive constraint, during morphogenesis."
   },
   {
     "title": "Generic comparison of lumen nucleation and fusion in epithelial organoids with and without hydrostatic pressure",
