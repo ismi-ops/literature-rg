@@ -1,130 +1,206 @@
 """
-Backfill missing or incomplete author lists from Semantic Scholar.
+Backfill missing or incomplete author lists.
 
-Searches by DOI first (exact), then falls back to title search with
-a similarity check to avoid false matches. Updates authors and fills
-in any missing DOIs in the process.
+Tries CrossRef first (DOI-based, provides ORCID IDs), then falls back to
+Semantic Scholar by DOI, then by title. Updates authors and fills in any
+missing DOIs in the process. Stores author_data with ORCID IDs when available.
+
+Incomplete detection covers: blank, last-name-only, initial-only first names
+(e.g. "I. Zorzan"), et al. abbreviations, "Multiple authors", and "&"-joined
+last names.
 """
+import re
 import time
 import requests
 from difflib import SequenceMatcher
 from src import storage
-from src.sources.semantic_scholar import FIELDS
 
 SS_BASE = "https://api.semanticscholar.org/graph/v1"
+CR_BASE = "https://api.crossref.org/works"
+MAILTO = "isabelle.smith@alleninstitute.org"
 _SESSION = requests.Session()
 _SESSION.headers["User-Agent"] = "literature-rg/1.0 (mailto:isabelle.smith@alleninstitute.org)"
 
-AUTHOR_FIELDS = "paperId,title,authors,externalIds,publicationDate,year"
+SS_AUTHOR_FIELDS = "paperId,title,authors,externalIds,publicationDate,year"
+_INITIAL_RE = re.compile(r"^[A-Z]\.$")
 
 
-def _fmt_authors(ss_authors: list) -> str:
-    names = [a.get("name", "") for a in ss_authors if a.get("name")]
+def _fmt_names(names: list[str]) -> str:
     if not names:
         return ""
-    # SS returns full names; trim to first 8 then et al.
     if len(names) > 8:
         return ", ".join(names[:8]) + " et al."
     return ", ".join(names)
 
 
+def _extract_orcid(val: str) -> str:
+    """Return the bare ORCID identifier from a URL or plain ID string."""
+    if not val:
+        return ""
+    m = re.search(r"(\d{4}-\d{4}-\d{4}-\d{3}[\dX])$", val)
+    return m.group(1) if m else ""
+
+
 def _is_incomplete(authors: str) -> bool:
-    """True if authors field is blank or looks like last-name-only entries."""
+    """True when the authors string is blank, abbreviated, or uses initials / last names only."""
     if not authors or not authors.strip():
         return True
-    parts = [p.strip() for p in authors.split(",") if p.strip()]
-    # If every part is a single word, it's last-name only
-    return all(len(p.split()) == 1 for p in parts)
+    s = authors.strip()
+    if s.lower() in ("multiple authors", "multiple"):
+        return True
+    if "et al." in s.lower() or " et al" in s.lower():
+        return True
+    # Normalise "&" → "," so "Nunes & Barriga" splits into two parts
+    s_norm = re.sub(r"\s*&\s*", ", ", s)
+    parts = [p.strip() for p in s_norm.split(",") if p.strip()]
+    if not parts:
+        return True
+    for part in parts:
+        words = part.split()
+        if not words:
+            continue
+        if len(words) == 1:          # last-name only
+            return True
+        if _INITIAL_RE.match(words[0]):   # first-name initial like "I. Zorzan"
+            return True
+    return False
 
 
-def _lookup_by_doi(doi: str) -> dict | None:
+# ── CrossRef ────────────────────────────────────────────────────────────────
+
+def _crossref_by_doi(doi: str) -> dict | None:
+    """Return {'names': [...], 'author_data': [{name, orcid?}, ...]} or None."""
+    try:
+        r = _SESSION.get(
+            f"{CR_BASE}/{doi}",
+            params={"mailto": MAILTO},
+            timeout=15,
+        )
+        time.sleep(0.3)
+        if r.status_code != 200:
+            return None
+        raw = r.json().get("message", {}).get("author", [])
+        names, author_data = [], []
+        for a in raw:
+            given = (a.get("given") or "").strip()
+            family = (a.get("family") or "").strip()
+            name = (f"{given} {family}".strip()) if given else family
+            if not name:
+                continue
+            names.append(name)
+            entry: dict = {"name": name}
+            orcid = _extract_orcid(a.get("ORCID") or "")
+            if orcid:
+                entry["orcid"] = orcid
+            author_data.append(entry)
+        if names:
+            return {"names": names, "author_data": author_data}
+    except Exception as e:
+        print(f"    CrossRef error: {e}")
+    return None
+
+
+# ── Semantic Scholar ─────────────────────────────────────────────────────────
+
+def _ss_by_doi(doi: str) -> dict | None:
     try:
         r = _SESSION.get(
             f"{SS_BASE}/paper/DOI:{doi}",
-            params={"fields": AUTHOR_FIELDS},
+            params={"fields": SS_AUTHOR_FIELDS},
             timeout=15,
         )
         time.sleep(0.5)
         if r.status_code == 200:
             return r.json()
     except Exception as e:
-        print(f"    DOI lookup error: {e}")
+        print(f"    SS DOI error: {e}")
     return None
 
 
-def _lookup_by_title(title: str) -> dict | None:
-    """Search SS by title; return best match if similarity ≥ 0.85."""
+def _ss_by_title(title: str) -> dict | None:
     try:
         r = _SESSION.get(
             f"{SS_BASE}/paper/search",
-            params={"query": title, "fields": AUTHOR_FIELDS, "limit": 3},
+            params={"query": title, "fields": SS_AUTHOR_FIELDS, "limit": 3},
             timeout=15,
         )
         time.sleep(0.5)
         if r.status_code != 200:
             return None
-        results = r.json().get("data", [])
-        for candidate in results:
+        for candidate in r.json().get("data", []):
             ct = candidate.get("title") or ""
-            score = SequenceMatcher(None, title.lower(), ct.lower()).ratio()
-            if score >= 0.85:
+            if SequenceMatcher(None, title.lower(), ct.lower()).ratio() >= 0.85:
                 return candidate
     except Exception as e:
-        print(f"    Title search error: {e}")
+        print(f"    SS title error: {e}")
     return None
 
+
+def _fmt_ss_authors(ss_authors: list) -> str:
+    return _fmt_names([a["name"] for a in ss_authors if a.get("name")])
+
+
+# ── Main ─────────────────────────────────────────────────────────────────────
 
 def main():
     papers = storage.load_papers()
     updated = 0
 
     for paper in papers:
-        authors = paper.get("authors") or ""
-        if not _is_incomplete(authors):
+        if not _is_incomplete(paper.get("authors") or ""):
             continue
 
         title = (paper.get("title") or "").strip()
         doi = (paper.get("doi") or "").strip()
         print(f"  Resolving: {title[:65]}...")
 
+        # 1. CrossRef (best for DOI lookups; returns ORCID)
+        if doi:
+            cr = _crossref_by_doi(doi)
+            if cr:
+                print("    → CrossRef")
+                paper["authors"] = _fmt_names(cr["names"])
+                paper["author_data"] = cr["author_data"]
+                updated += 1
+                print("    ✓ authors" + (" + orcid" if any(e.get("orcid") for e in cr["author_data"]) else ""))
+                continue
+
+        # 2. Semantic Scholar by DOI
         hit = None
         if doi:
-            hit = _lookup_by_doi(doi)
+            hit = _ss_by_doi(doi)
             if hit:
-                print(f"    → found via DOI")
+                print("    → Semantic Scholar (DOI)")
+        # 3. Semantic Scholar by title
         if not hit:
-            hit = _lookup_by_title(title)
+            hit = _ss_by_title(title)
             if hit:
-                print(f"    → found via title search")
+                print("    → Semantic Scholar (title)")
 
         if not hit:
-            print(f"    – not found in Semantic Scholar")
+            print("    – not found")
             continue
 
-        new_authors = _fmt_authors(hit.get("authors", []))
+        new_authors = _fmt_ss_authors(hit.get("authors", []))
         if not new_authors:
-            print(f"    – SS returned no authors")
+            print("    – no authors returned")
             continue
 
         paper["authors"] = new_authors
-
-        # Also backfill DOI if missing
         if not doi:
-            ext_ids = hit.get("externalIds") or {}
-            found_doi = ext_ids.get("DOI") or ""
+            found_doi = (hit.get("externalIds") or {}).get("DOI") or ""
             if found_doi:
                 paper["doi"] = found_doi
-                print(f"    ✓ authors + doi")
+                print("    ✓ authors + doi")
             else:
-                print(f"    ✓ authors")
+                print("    ✓ authors")
         else:
-            print(f"    ✓ authors")
-
+            print("    ✓ authors")
         updated += 1
 
     if updated:
         storage.save_papers(papers)
-        print(f"\nUpdated {updated} papers with author data.")
+        print(f"\nUpdated {updated} papers.")
     else:
         print("\nNo author updates needed.")
 

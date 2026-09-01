@@ -422,12 +422,24 @@ function fmt(p) {
   const badgeClass = 'badge-'+(type==='review'?'review':type==='perspective'?'perspective':'research');
   const paperUrl = (p.doi ? 'https://doi.org/'+p.doi : p.link) || '';
   const titleHtml = paperUrl ? '<a href="'+esc(paperUrl)+'" target="_blank" rel="noopener">'+esc(p.title)+'</a>' : esc(p.title);
-  const rawAuthors = typeof p.authors === 'string' ? p.authors : (p.authors||[]).join(', ');
-  const authorNames = rawAuthors.split(/,\s*et al\.?/).map(s=>s.trim()).join('').split(/,\s*/).map(s=>s.trim()).filter(Boolean);
-  const authorHtml = authorNames.map(a => {
-    const name = a.replace(/\s*et al\.?\s*$/,'').trim();
-    return name ? '<a class="author-link" href="'+authorLink(name)+'" target="_blank" rel="noopener">'+esc(name)+'</a>' : '';
-  }).filter(Boolean).join('<span style="color:var(--border)"> · </span>');
+  let authorHtml;
+  if (p.author_data && p.author_data.length) {
+    authorHtml = p.author_data.map(a => {
+      const name = a.name || '';
+      if (!name) return '';
+      const href = a.orcid
+        ? 'https://orcid.org/' + esc(a.orcid)
+        : authorLink(name);
+      return '<a class="author-link" href="'+href+'" target="_blank" rel="noopener">'+esc(name)+'</a>';
+    }).filter(Boolean).join('<span style="color:var(--border)"> · </span>');
+  } else {
+    const rawAuthors = typeof p.authors === 'string' ? p.authors : (p.authors||[]).join(', ');
+    const authorNames = rawAuthors.split(/,\s*et al\.?/).map(s=>s.trim()).join('').split(/,\s*/).map(s=>s.trim()).filter(Boolean);
+    authorHtml = authorNames.map(a => {
+      const name = a.replace(/\s*et al\.?\s*$/,'').trim();
+      return name ? '<a class="author-link" href="'+authorLink(name)+'" target="_blank" rel="noopener">'+esc(name)+'</a>' : '';
+    }).filter(Boolean).join('<span style="color:var(--border)"> · </span>');
+  }
   const tags = (p.tags||[]).filter(isTopicTag).map(t=>'<span class="tag" data-clicktag="'+esc(t)+'">'+esc(t)+'</span>').join('');
   const added = p.added ? '<span class="card-date">added '+p.added+'</span>' : '';
   const jUrl = journalUrl(p.journal);

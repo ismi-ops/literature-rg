@@ -1,0 +1,60 @@
+name: Backfill
+
+on:
+  workflow_dispatch:
+    inputs:
+      step:
+        description: "Which backfill step to run"
+        required: false
+        default: "all"
+        type: choice
+        options:
+          - all
+          - authors
+          - summaries
+          - pdfs
+
+permissions:
+  contents: write
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Backfill authors
+        if: ${{ github.event.inputs.step == 'all' || github.event.inputs.step == 'authors' }}
+        run: python backfill_authors.py
+
+      - name: Backfill summaries and relevance
+        if: ${{ github.event.inputs.step == 'all' || github.event.inputs.step == 'summaries' }}
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python backfill_summaries.py
+
+      - name: Backfill PDF links
+        if: ${{ github.event.inputs.step == 'all' || github.event.inputs.step == 'pdfs' }}
+        run: python backfill_pdfs.py
+
+      - name: Regenerate site
+        run: python generate_site.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add papers.json index.html
+          if git diff --cached --quiet; then
+            echo "Nothing to commit."
+          else
+            git commit -m "chore: backfill authors, summaries, and pdf links"
+            git push
+          fi
