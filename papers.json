@@ -1490,5 +1490,26 @@
     "score": 6,
     "added": "2026-09-01",
     "pdf_link": "https://doi.org/10.1016/j.semcdb.2026.103668"
+  },
+  {
+    "title": "Integrating synthetic biology to understand and engineer the heart, lung, blood, and sleep systems",
+    "authors": "Elliot L. Chaikof, Jichao Chen, M. U. Gillette, L. Boyer, Tara L. Deans, Pulin Li et al.",
+    "year": "2025",
+    "journal": "Cell Systems",
+    "type": "review",
+    "summary": "Synthetic biology offers control over cellular and tissue functions. As it moves beyond microbes into humans, synthetic biology enables precise control over gene expression, cell fate, and tissue organization across heart, lung, blood, and sleep systems. By integrating genome engineering, dynamic gene circuits, and high-dimensional biosensors, these advances support scalable, quantitative models of multicellular biology, expanding the need for systems-level model and integration.",
+    "relevance": "Introduces a novel experimental method or platform — very high priority given strong interest in how experiments are designed and what new biological questions they make tractable. Aligned with the CellScapes program and Cell Science's engagement with synthetic developmental biology — engineering gene circuits to program cell community behavior.",
+    "tags": [
+      "development",
+      "cell fate",
+      "synthetic biology",
+      "gene circuits",
+      "multicellular"
+    ],
+    "doi": "10.1016/j.cels.2025.101446",
+    "link": "https://doi.org/10.1016/j.cels.2025.101446",
+    "score": 10,
+    "added": "2026-09-01",
+    "pdf_link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13081558/"
   }
 ]
