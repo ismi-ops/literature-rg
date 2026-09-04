@@ -2938,5 +2938,51 @@
         "orcid": "0000-0001-7200-2433"
       }
     ]
+  },
+  {
+    "title": "Hydraulic fracturing and active coarsening position the lumen of the mouse blastocyst",
+    "authors": "Julien G. Dumortier, Mathieu Le Verge-Serandour, Anna Francesca Tortorelli, Annette Mielke, Ludmilla de Plater, Hervé Turlier, Jean-Léon Maître",
+    "year": "2019",
+    "journal": "Science",
+    "type": "research",
+    "summary": "The making of a lumen During the early days of mammalian development, the formation and positioning of a fluid-filled lumen, the blastocoel, defines the first axis of embryo symmetry. Dumortier et al. describe how a blastocoel lumen arises from the hydraulic fracturing of cell-cell contacts into hundreds of micrometer-size water pockets that then form a single large lumen (see the Perspective by Arroyo and Trepat).",
+    "relevance": "Relevant to lumen morphogenesis, lumenoid self-organization, organoid systems, and live imaging of three-dimensional culture morphodynamics. Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs.",
+    "tags": [
+      "development"
+    ],
+    "doi": "10.1126/science.aaw7709",
+    "link": "https://doi.org/10.1126/science.aaw7709",
+    "score": 4,
+    "added": "2026-09-04",
+    "author_data": [
+      {
+        "name": "Julien G. Dumortier",
+        "orcid": "0000-0002-1483-4028"
+      },
+      {
+        "name": "Mathieu Le Verge-Serandour"
+      },
+      {
+        "name": "Anna Francesca Tortorelli",
+        "orcid": "0000-0002-9995-9582"
+      },
+      {
+        "name": "Annette Mielke",
+        "orcid": "0000-0002-0835-2655"
+      },
+      {
+        "name": "Ludmilla de Plater",
+        "orcid": "0000-0002-0982-5960"
+      },
+      {
+        "name": "Hervé Turlier",
+        "orcid": "0000-0002-9332-9125"
+      },
+      {
+        "name": "Jean-Léon Maître",
+        "orcid": "0000-0002-3688-1474"
+      }
+    ],
+    "pdf_link": "https://doi.org/10.1126/science.aaw7709"
   }
 ]
