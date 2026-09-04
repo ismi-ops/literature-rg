@@ -16,27 +16,50 @@ try:
 except Exception:
     origin = []
 
-by_key = {}
+# Build lookup by BOTH doi and title so a paper that got its DOI backfilled
+# after the original blank-DOI entry was created is still matched correctly.
+doi_to_idx: dict[str, int] = {}
+title_to_idx: dict[str, int] = {}
 for i, p in enumerate(origin):
-    k = (p.get("doi") or "").strip().lower() or (p.get("title") or "").strip().lower()
-    if k:
-        by_key[k] = i
+    doi = (p.get("doi") or "").strip().lower()
+    title = (p.get("title") or "").strip().lower()
+    if doi:
+        doi_to_idx[doi] = i
+    if title:
+        title_to_idx[title] = i
+
+
+def _find_origin_idx(p: dict) -> int | None:
+    """Return origin index matching by DOI first, then title."""
+    doi = (p.get("doi") or "").strip().lower()
+    title = (p.get("title") or "").strip().lower()
+    if doi and doi in doi_to_idx:
+        return doi_to_idx[doi]
+    if title and title in title_to_idx:
+        return title_to_idx[title]
+    return None
+
+
+MERGE_FIELDS = ("authors", "author_data", "curated", "pdf_link", "summary", "relevance", "tags", "score")
 
 merged = list(origin)
 added = 0
 updated = 0
 for p in local:
-    k = (p.get("doi") or "").strip().lower() or (p.get("title") or "").strip().lower()
-    if not k:
-        continue
-    if k not in by_key:
-        by_key[k] = len(merged)
+    idx = _find_origin_idx(p)
+    if idx is None:
+        new_idx = len(merged)
         merged.append(p)
+        doi = (p.get("doi") or "").strip().lower()
+        title = (p.get("title") or "").strip().lower()
+        if doi:
+            doi_to_idx[doi] = new_idx
+        if title:
+            title_to_idx[title] = new_idx
         added += 1
     else:
-        idx = by_key[k]
         changed = False
-        for field in ("authors", "pdf_link", "summary", "relevance", "tags", "score"):
+        for field in MERGE_FIELDS:
             if p.get(field) and not merged[idx].get(field):
                 merged[idx][field] = p[field]
                 changed = True

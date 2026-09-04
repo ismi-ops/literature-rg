@@ -94,7 +94,7 @@
   },
   {
     "title": "A systems view of cellular heterogeneity: Unlocking the \"wheel of fate\"",
-    "authors": "",
+    "authors": "Hourieh Movasat, Enzo Giacopino, Ali Shahdoost, Yeganeh Dorri Nokoorani, Ali Houshyar Abrbekouh, Yaser Tahamtani, Nika Shakiba",
     "year": "2025",
     "journal": "Cell Systems",
     "type": "perspective",
@@ -103,7 +103,7 @@
       "cell fate",
       "cell state"
     ],
-    "doi": "",
+    "doi": "10.1016/j.cels.2025.101300",
     "link": "https://www.cell.com/cell-systems/abstract/S2405-4712(25)00133-4",
     "added": "2026-08-19",
     "pdf_link": "",
@@ -556,7 +556,7 @@
   },
   {
     "title": "Deciphering mechanical determinants of morphological evolution",
-    "authors": "",
+    "authors": "Richard Bailleul, Nicolas Cuny, Diana Khoromskaia, Soham Basu, Giulia Bergamini, Paolo Cucurachi, Florian Gabler, Sebastian Rupp et al.",
     "year": "2026",
     "journal": "Cell",
     "type": "research",
@@ -566,11 +566,71 @@
       "development",
       "mechanobiology"
     ],
-    "doi": "",
+    "doi": "10.1016/j.cell.2026.02.010",
     "link": "https://www.sciencedirect.com/science/article/pii/S0092867426001753",
     "added": "2026-08-19",
-    "pdf_link": "",
-    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis."
+    "pdf_link": "https://doi.org/10.1016/j.cell.2026.02.010",
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis.",
+    "author_data": [
+      {
+        "name": "Richard Bailleul"
+      },
+      {
+        "name": "Nicolas Cuny"
+      },
+      {
+        "name": "Diana Khoromskaia"
+      },
+      {
+        "name": "Soham Basu"
+      },
+      {
+        "name": "Giulia Bergamini"
+      },
+      {
+        "name": "Paolo Cucurachi"
+      },
+      {
+        "name": "Florian Gabler"
+      },
+      {
+        "name": "Sebastian Rupp"
+      },
+      {
+        "name": "Annika Guse"
+      },
+      {
+        "name": "Camille Curantz"
+      },
+      {
+        "name": "Natalie Swinhoe"
+      },
+      {
+        "name": "Phillip A. Cleves"
+      },
+      {
+        "name": "Jamie Craggs"
+      },
+      {
+        "name": "Sosuke Fujita"
+      },
+      {
+        "name": "Yu-ichiro Nakajima"
+      },
+      {
+        "name": "Petrus J. Steenbergen"
+      },
+      {
+        "name": "Alba Diz-Muñoz"
+      },
+      {
+        "name": "Guillaume Salbreux"
+      },
+      {
+        "name": "Aissam Ikmi",
+        "orcid": "0000-0001-6310-8404"
+      }
+    ]
   },
   {
     "title": "Decoding the origins of cellular self-organization for engineered biology",
@@ -697,7 +757,7 @@
   },
   {
     "title": "Engineering morphogenesis of cell clusters with differentiable programming",
-    "authors": "",
+    "authors": "Ramya Deshpande, Francesco Mottes, Ariana-Dalia Vlad, Michael P. Brenner, Alma Dal Co",
     "year": "2025",
     "journal": "Nature Computational Science",
     "type": "research",
@@ -707,11 +767,29 @@
       "morphogenesis",
       "AI / ML"
     ],
-    "doi": "",
+    "doi": "10.1038/s43588-025-00851-4",
     "link": "https://www.nature.com/articles/s43588-025-00851-4",
     "added": "2026-08-19",
     "pdf_link": "",
-    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures."
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures.",
+    "author_data": [
+      {
+        "name": "Ramya Deshpande"
+      },
+      {
+        "name": "Francesco Mottes"
+      },
+      {
+        "name": "Ariana-Dalia Vlad"
+      },
+      {
+        "name": "Michael P. Brenner",
+        "orcid": "0000-0002-5673-7947"
+      },
+      {
+        "name": "Alma Dal Co"
+      }
+    ]
   },
   {
     "title": "From modality-specific to compositional foundation models for cell biology",
@@ -733,7 +811,7 @@
   },
   {
     "title": "Generic comparison of lumen nucleation and fusion in epithelial organoids with and without hydrostatic pressure",
-    "authors": "",
+    "authors": "Linjie Lu, Kana Fuji, Tristan Guyomar, Michèle Lieb, Marie André, Sakurako Tanida, Makiko Nonomura, Tetsuya Hiraiwa et al.",
     "year": "2025",
     "journal": "Nature Communications",
     "type": "research",
@@ -743,11 +821,69 @@
       "morphogenesis",
       "development"
     ],
-    "doi": "",
+    "doi": "10.1038/s41467-025-60780-8",
     "link": "https://www.nature.com/articles/s41467-025-60780-8",
     "added": "2026-08-19",
-    "pdf_link": "",
-    "relevance": "Relevant to Cell Science's interest in organoid systems, lumen formation mechanics, and live imaging of three-dimensional culture morphodynamics."
+    "pdf_link": "https://doi.org/10.1038/s41467-025-60780-8",
+    "relevance": "Relevant to Cell Science's interest in organoid systems, lumen formation mechanics, and live imaging of three-dimensional culture morphodynamics.",
+    "author_data": [
+      {
+        "name": "Linjie Lu",
+        "orcid": "0000-0003-1445-5201"
+      },
+      {
+        "name": "Kana Fuji"
+      },
+      {
+        "name": "Tristan Guyomar"
+      },
+      {
+        "name": "Michèle Lieb"
+      },
+      {
+        "name": "Marie André"
+      },
+      {
+        "name": "Sakurako Tanida"
+      },
+      {
+        "name": "Makiko Nonomura",
+        "orcid": "0000-0003-4774-4173"
+      },
+      {
+        "name": "Tetsuya Hiraiwa",
+        "orcid": "0000-0003-3221-345X"
+      },
+      {
+        "name": "Yara Alcheikh"
+      },
+      {
+        "name": "Siham Yennek"
+      },
+      {
+        "name": "Heike Petzold",
+        "orcid": "0000-0001-9518-4989"
+      },
+      {
+        "name": "Cecilie Martin-Lemaitre"
+      },
+      {
+        "name": "Anne Grapin-Botton",
+        "orcid": "0000-0002-1202-5235"
+      },
+      {
+        "name": "Alf Honigmann",
+        "orcid": "0000-0003-0475-3790"
+      },
+      {
+        "name": "Masaki Sano",
+        "orcid": "0000-0002-6262-9635"
+      },
+      {
+        "name": "Daniel Riveline",
+        "orcid": "0000-0002-4632-011X"
+      }
+    ]
   },
   {
     "title": "Large-scale control over collective cell migration using light-activated epidermal growth factor receptors",
@@ -937,7 +1073,7 @@
   },
   {
     "title": "Permeability-driven pressure and cell proliferation control lumen morphogenesis in pancreatic organoids",
-    "authors": "",
+    "authors": "Byung Ho Lee, Kana Fuji, Heike Petzold, Phil Seymour, Siham Yennek, Coline Schewin, Allison Lewis, Daniel Riveline et al.",
     "year": "2026",
     "journal": "Nature Cell Biology",
     "type": "research",
@@ -947,11 +1083,52 @@
       "morphogenesis",
       "development"
     ],
-    "doi": "",
+    "doi": "10.1038/s41556-025-01832-5",
     "link": "https://www.nature.com/articles/s41556-025-01832-5",
     "added": "2026-08-19",
-    "pdf_link": "",
-    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Relevant to Cell Science's interest in organoid systems, lumen formation mechanics, and live imaging of three-dimensional culture morphodynamics."
+    "pdf_link": "https://doi.org/10.1038/s41556-025-01832-5",
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Relevant to Cell Science's interest in organoid systems, lumen formation mechanics, and live imaging of three-dimensional culture morphodynamics.",
+    "author_data": [
+      {
+        "name": "Byung Ho Lee",
+        "orcid": "0000-0002-5837-7914"
+      },
+      {
+        "name": "Kana Fuji"
+      },
+      {
+        "name": "Heike Petzold",
+        "orcid": "0000-0001-9518-4989"
+      },
+      {
+        "name": "Phil Seymour",
+        "orcid": "0000-0001-5782-6020"
+      },
+      {
+        "name": "Siham Yennek"
+      },
+      {
+        "name": "Coline Schewin"
+      },
+      {
+        "name": "Allison Lewis"
+      },
+      {
+        "name": "Daniel Riveline",
+        "orcid": "0000-0002-4632-011X"
+      },
+      {
+        "name": "Tetsuya Hiraiwa"
+      },
+      {
+        "name": "Masaki Sano",
+        "orcid": "0000-0002-6262-9635"
+      },
+      {
+        "name": "Anne Grapin-Botton",
+        "orcid": "0000-0002-1202-5235"
+      }
+    ]
   },
   {
     "title": "Present and future of synthetic cell development",
@@ -2230,7 +2407,8 @@
         "name": "Vikas Trivedi",
         "orcid": "0009-0003-0676-7392"
       }
-    ]
+    ],
+    "curated": true
   },
   {
     "title": "Dual-mode SOX2 regulation by miR-150 via mRNA suppression and autophagy controls stem cell fate",
@@ -2273,7 +2451,8 @@
         "name": "Jong-Hee Lee",
         "orcid": "0000-0002-8619-1383"
       }
-    ]
+    ],
+    "curated": true
   },
   {
     "title": "A developmental biologist's guide to mechanics.",
@@ -2313,7 +2492,8 @@
         "name": "Pierre-François Lenne",
         "orcid": "0000-0003-1066-7506"
       }
-    ]
+    ],
+    "curated": true
   },
   {
     "title": "Epithelial convergent extension as a tuning process.",
@@ -2333,7 +2513,8 @@
     "link": "https://doi.org/10.1073/pnas.2532099123",
     "score": 8,
     "added": "2026-09-01",
-    "pdf_link": "https://www.biorxiv.org/content/biorxiv/early/2025/11/07/2025.11.06.687029.full.pdf"
+    "pdf_link": "https://www.biorxiv.org/content/biorxiv/early/2025/11/07/2025.11.06.687029.full.pdf",
+    "curated": true
   },
   {
     "title": "Multiscale Modeling of Embryonic Morphogenesis from Fertilization to Organogenesis.",
@@ -2366,85 +2547,8 @@
       {
         "name": "Bandan Chakrabortty"
       }
-    ]
-  },
-  {
-    "title": "Deciphering mechanical determinants of morphological evolution",
-    "authors": "Richard Bailleul, Nicolas Cuny, Diana Khoromskaia, Soham Basu, Giulia Bergamini, Paolo Cucurachi, Florian Gabler, Sebastian Rupp et al.",
-    "year": "2026",
-    "journal": "Cell",
-    "type": "research",
-    "summary": "Examines how differences in tissue mechanical properties — stiffness, viscosity, active force generation — have driven the evolution of diverse animal body forms across species. Rather than focusing on genetic differences, it asks what physical constraints and possibilities shaped morphological diversity. A broad evolutionary perspective on the biophysics of development that connects mechanobiology to deep questions about form and function relevant to Cell Science.",
-    "tags": [
-      "morphogenesis",
-      "development",
-      "mechanobiology"
     ],
-    "doi": "10.1016/j.cell.2026.02.010",
-    "link": "https://www.sciencedirect.com/science/article/pii/S0092867426001753",
-    "added": "2026-08-19",
-    "pdf_link": "https://doi.org/10.1016/j.cell.2026.02.010",
-    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis.",
-    "author_data": [
-      {
-        "name": "Richard Bailleul"
-      },
-      {
-        "name": "Nicolas Cuny"
-      },
-      {
-        "name": "Diana Khoromskaia"
-      },
-      {
-        "name": "Soham Basu"
-      },
-      {
-        "name": "Giulia Bergamini"
-      },
-      {
-        "name": "Paolo Cucurachi"
-      },
-      {
-        "name": "Florian Gabler"
-      },
-      {
-        "name": "Sebastian Rupp"
-      },
-      {
-        "name": "Annika Guse"
-      },
-      {
-        "name": "Camille Curantz"
-      },
-      {
-        "name": "Natalie Swinhoe"
-      },
-      {
-        "name": "Phillip A. Cleves"
-      },
-      {
-        "name": "Jamie Craggs"
-      },
-      {
-        "name": "Sosuke Fujita"
-      },
-      {
-        "name": "Yu-ichiro Nakajima"
-      },
-      {
-        "name": "Petrus J. Steenbergen"
-      },
-      {
-        "name": "Alba Diz-Muñoz"
-      },
-      {
-        "name": "Guillaume Salbreux"
-      },
-      {
-        "name": "Aissam Ikmi",
-        "orcid": "0000-0001-6310-8404"
-      }
-    ]
+    "curated": true
   },
   {
     "title": "The role of geometry in morphogenesis",
@@ -2478,142 +2582,8 @@
         "name": "Timothy E. Saunders",
         "orcid": "0000-0001-5755-0060"
       }
-    ]
-  },
-  {
-    "title": "Generic comparison of lumen nucleation and fusion in epithelial organoids with and without hydrostatic pressure",
-    "authors": "Linjie Lu, Kana Fuji, Tristan Guyomar, Michèle Lieb, Marie André, Sakurako Tanida, Makiko Nonomura, Tetsuya Hiraiwa et al.",
-    "year": "2025",
-    "journal": "Nature Communications",
-    "type": "research",
-    "summary": "Systematically compares the two known routes to lumen formation in epithelial organoids — nucleation (growing a lumen from scratch) versus fusion (merging smaller fluid pockets) — and examines how hydrostatic pressure modulates each pathway. Provides quantitative benchmarks for lumenogenesis that can inform both experimental design and theoretical models. Relevant to Cell Science's interest in 3D cell organization and the physical mechanisms of tissue self-assembly.",
-    "tags": [
-      "organoid",
-      "morphogenesis",
-      "development"
     ],
-    "doi": "10.1038/s41467-025-60780-8",
-    "link": "https://www.nature.com/articles/s41467-025-60780-8",
-    "added": "2026-08-19",
-    "pdf_link": "https://doi.org/10.1038/s41467-025-60780-8",
-    "relevance": "Relevant to Cell Science's interest in organoid systems, lumen formation mechanics, and live imaging of three-dimensional culture morphodynamics.",
-    "author_data": [
-      {
-        "name": "Linjie Lu",
-        "orcid": "0000-0003-1445-5201"
-      },
-      {
-        "name": "Kana Fuji"
-      },
-      {
-        "name": "Tristan Guyomar"
-      },
-      {
-        "name": "Michèle Lieb"
-      },
-      {
-        "name": "Marie André"
-      },
-      {
-        "name": "Sakurako Tanida"
-      },
-      {
-        "name": "Makiko Nonomura",
-        "orcid": "0000-0003-4774-4173"
-      },
-      {
-        "name": "Tetsuya Hiraiwa",
-        "orcid": "0000-0003-3221-345X"
-      },
-      {
-        "name": "Yara Alcheikh"
-      },
-      {
-        "name": "Siham Yennek"
-      },
-      {
-        "name": "Heike Petzold",
-        "orcid": "0000-0001-9518-4989"
-      },
-      {
-        "name": "Cecilie Martin-Lemaitre"
-      },
-      {
-        "name": "Anne Grapin-Botton",
-        "orcid": "0000-0002-1202-5235"
-      },
-      {
-        "name": "Alf Honigmann",
-        "orcid": "0000-0003-0475-3790"
-      },
-      {
-        "name": "Masaki Sano",
-        "orcid": "0000-0002-6262-9635"
-      },
-      {
-        "name": "Daniel Riveline",
-        "orcid": "0000-0002-4632-011X"
-      }
-    ]
-  },
-  {
-    "title": "Permeability-driven pressure and cell proliferation control lumen morphogenesis in pancreatic organoids",
-    "authors": "Byung Ho Lee, Kana Fuji, Heike Petzold, Phil Seymour, Siham Yennek, Coline Schewin, Allison Lewis, Daniel Riveline et al.",
-    "year": "2026",
-    "journal": "Nature Cell Biology",
-    "type": "research",
-    "summary": "Using pancreatic organoids, this paper dissects how lumen size is controlled by two independent parameters: fluid pressure driven by epithelial permeability, and mechanical feedback from cell proliferation. The interplay of these two inputs determines whether a lumen grows, stabilizes, or collapses. A quantitative mechanobiology paper with direct implications for understanding organoid architecture — relevant to Cell Science's growing interest in lumenoids and 3D tissue models.",
-    "tags": [
-      "organoid",
-      "morphogenesis",
-      "development"
-    ],
-    "doi": "10.1038/s41556-025-01832-5",
-    "link": "https://www.nature.com/articles/s41556-025-01832-5",
-    "added": "2026-08-19",
-    "pdf_link": "https://doi.org/10.1038/s41556-025-01832-5",
-    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Relevant to Cell Science's interest in organoid systems, lumen formation mechanics, and live imaging of three-dimensional culture morphodynamics.",
-    "author_data": [
-      {
-        "name": "Byung Ho Lee",
-        "orcid": "0000-0002-5837-7914"
-      },
-      {
-        "name": "Kana Fuji"
-      },
-      {
-        "name": "Heike Petzold",
-        "orcid": "0000-0001-9518-4989"
-      },
-      {
-        "name": "Phil Seymour",
-        "orcid": "0000-0001-5782-6020"
-      },
-      {
-        "name": "Siham Yennek"
-      },
-      {
-        "name": "Coline Schewin"
-      },
-      {
-        "name": "Allison Lewis"
-      },
-      {
-        "name": "Daniel Riveline",
-        "orcid": "0000-0002-4632-011X"
-      },
-      {
-        "name": "Tetsuya Hiraiwa"
-      },
-      {
-        "name": "Masaki Sano",
-        "orcid": "0000-0002-6262-9635"
-      },
-      {
-        "name": "Anne Grapin-Botton",
-        "orcid": "0000-0002-1202-5235"
-      }
-    ]
+    "curated": true
   },
   {
     "title": "Machines all the way up and cognition all the way down: Updating the machine metaphor in biology.",
@@ -2640,7 +2610,8 @@
       {
         "name": "Richard Watson"
       }
-    ]
+    ],
+    "curated": true
   },
   {
     "title": "Integrating synthetic biology to understand and engineer the heart, lung, blood, and sleep systems",
@@ -2736,24 +2707,8 @@
       {
         "name": "Kate E. Galloway"
       }
-    ]
-  },
-  {
-    "title": "A systems view of cellular heterogeneity: Unlocking the \"wheel of fate\"",
-    "authors": "Hourieh Movasat, Enzo Giacopino, Ali Shahdoost, Yeganeh Dorri Nokoorani, Ali Houshyar Abrbekouh, Yaser Tahamtani, Nika Shakiba",
-    "year": "2025",
-    "journal": "Cell Systems",
-    "type": "perspective",
-    "summary": "Frames cell fate as a stochastic 'wheel' that each cell spins in response to molecular inputs, with the outcome depending on both the signal and the cell's internal state. The paper argues that single-cell heterogeneity isn't noise to be averaged away but meaningful variation encoding information about cell identity and trajectory. Connects well to Cell Science's work on cell state and how cells within the same population make distinct decisions.",
-    "tags": [
-      "cell fate",
-      "cell state"
     ],
-    "doi": "10.1016/j.cels.2025.101300",
-    "link": "https://www.cell.com/cell-systems/abstract/S2405-4712(25)00133-4",
-    "added": "2026-08-19",
-    "pdf_link": "",
-    "relevance": "Directly addresses Cell Science's core question of why genetically identical cells differ structurally and how variation encodes functional information."
+    "curated": true
   },
   {
     "title": "Multiscale integration of tissue and chromatin context converts cell heterogeneity into stable intestinal patterning",
@@ -2849,43 +2804,8 @@
         "name": "Prisca Liberali",
         "orcid": "0000-0003-0695-6081"
       }
-    ]
-  },
-  {
-    "title": "Engineering morphogenesis of cell clusters with differentiable programming",
-    "authors": "Ramya Deshpande, Francesco Mottes, Ariana-Dalia Vlad, Michael P. Brenner, Alma Dal Co",
-    "year": "2025",
-    "journal": "Nature Computational Science",
-    "type": "research",
-    "summary": "Introduces a computational framework where the rules governing cell cluster shape changes can be optimized using gradient descent — essentially training a developmental program the way you'd train a neural network. Applied to real cell clusters, it can infer the mechanical rules producing observed morphologies and design new ones. A methodological advance at the intersection of AI, synthetic morphogenesis, and mechanobiology that connects directly to Cell Science's computational and imaging work.",
-    "tags": [
-      "synthetic biology",
-      "morphogenesis",
-      "AI / ML"
     ],
-    "doi": "10.1038/s43588-025-00851-4",
-    "link": "https://www.nature.com/articles/s43588-025-00851-4",
-    "added": "2026-08-19",
-    "pdf_link": "",
-    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures.",
-    "author_data": [
-      {
-        "name": "Ramya Deshpande"
-      },
-      {
-        "name": "Francesco Mottes"
-      },
-      {
-        "name": "Ariana-Dalia Vlad"
-      },
-      {
-        "name": "Michael P. Brenner",
-        "orcid": "0000-0002-5673-7947"
-      },
-      {
-        "name": "Alma Dal Co"
-      }
-    ]
+    "curated": true
   },
   {
     "title": "Pathway to Independence: a forecast for the future of developmental biology.",
@@ -2937,7 +2857,8 @@
         "name": "Toshimichi Yamada",
         "orcid": "0000-0001-7200-2433"
       }
-    ]
+    ],
+    "curated": true
   },
   {
     "title": "Hydraulic fracturing and active coarsening position the lumen of the mouse blastocyst",

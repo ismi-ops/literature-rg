@@ -142,6 +142,7 @@ def run(url: str | None = None, doi: str | None = None, min_score: int = 0, dry_
     print("\nScoring relevance...")
     result = score_and_summarize(paper)
     result["added"] = date.today().isoformat()
+    result["curated"] = True
     result["pdf_link"] = get_pdf_link(paper) or ""
     result["source"] = paper.get("source", "manual")
 

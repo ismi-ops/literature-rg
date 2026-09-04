@@ -243,6 +243,31 @@ def _keyword_score(paper: dict) -> dict:
 
 # ── Main public function ───────────────────────────────────────────────────────
 
+def _curated_examples_block(exclude_doi: str = "", exclude_title: str = "") -> str:
+    """Return a formatted block of top curated papers to use as few-shot calibration."""
+    try:
+        from src import storage
+        papers = storage.load_papers()
+        curated = [
+            p for p in papers
+            if p.get("curated") and p.get("score") and p.get("relevance")
+            and (p.get("doi") or "").strip().lower() != (exclude_doi or "").strip().lower()
+            and (p.get("title") or "").strip().lower() != (exclude_title or "").strip().lower()
+        ]
+        curated.sort(key=lambda p: p.get("score", 0), reverse=True)
+        top = curated[:5]
+        if not top:
+            return ""
+        lines = ["Examples of papers hand-picked by the Cell Science team (use as calibration):"]
+        for p in top:
+            lines.append(
+                f"  • [{p.get('score')}/10] \"{p.get('title', '')[:90]}\" — {p.get('relevance', '')[:200]}"
+            )
+        return "\n".join(lines)
+    except Exception:
+        return ""
+
+
 def score_and_summarize(paper: dict) -> dict:
     """
     Score a paper's relevance to Ru's interests (0-10) and generate a summary.
@@ -266,10 +291,16 @@ def score_and_summarize(paper: dict) -> dict:
     pub_kw_str = ", ".join(publisher_keywords[:10]) if publisher_keywords else "none"
     tags_list = ", ".join(KNOWN_TAGS)
 
+    curated_block = _curated_examples_block(
+        exclude_doi=(paper.get("doi") or ""),
+        exclude_title=title,
+    )
+
     prompt = f"""You are helping curate a research paper reading list for the Allen Institute for Cell Science.
 
 Background on research interests:
 {RELEVANCE_CONTEXT}
+{(chr(10) + curated_block + chr(10)) if curated_block else ""}
 
 Paper to evaluate:
 Title: {title}
