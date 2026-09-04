@@ -106,9 +106,18 @@ def fetch_metadata(url: str | None, doi: str | None) -> dict | None:
             print("  Metadata from Unpaywall (no abstract — Claude will score on title/journal).")
             return paper
 
-    # Fallback: return a minimal stub with just the URL so the user can fill it in
+    # Could not resolve — fail with a helpful message rather than saving a useless stub.
+    # News articles, blog posts, and non-paper URLs won't have DOIs or SS entries.
     if url:
-        print("  Could not resolve metadata automatically. Creating stub entry.")
+        print(
+            "\n  Could not resolve paper metadata from this URL.\n"
+            "  If this is a news article or blog post about a paper, find the\n"
+            "  actual DOI (shown in the article or on the journal page) and\n"
+            "  re-submit using --doi instead.\n"
+        )
+        sys.exit(1)
+    # unreachable — kept for type safety
+    if False:
         return {
             "title": url,
             "authors": "",
