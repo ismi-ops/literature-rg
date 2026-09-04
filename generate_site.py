@@ -93,10 +93,12 @@ HTML_TEMPLATE = """<!doctype html>
   .badge-research { background: #edeaff; color: #6464FF; }
   .badge-review { background: #fde8f0; color: #CD0F55; }
   .badge-perspective { background: #e0faf9; color: #007d75; }
+  .badge-article { background: #fef3e0; color: #b45309; }
   @media (prefers-color-scheme: dark) {
     .badge-research { background: #1a1a3d; color: #a0a0ff; }
     .badge-review { background: #3b0018; color: #ff80aa; }
     .badge-perspective { background: #003630; color: #4dd9d3; }
+    .badge-article { background: #2d1a00; color: #f59e0b; }
     .card-relevance { border-color: #00A59B; background: transparent; }
     .card-relevance-label { color: #4dd9d3; }
     .card-relevance-text { color: var(--text); opacity: .88; }
@@ -269,7 +271,7 @@ let activeType = 'all', activeTags = new Set(), activeYear = 'all', activeAdded 
 function countByType(type) {
   return type === 'all' ? PAPERS.length : PAPERS.filter(p => (p.type||'research') === type).length;
 }
-const TYPES = ['all','research','review','perspective'];
+const TYPES = ['all','research','review','perspective','article'];
 const typeRow = document.getElementById('type-filters');
 TYPES.forEach(t => {
   const chip = document.createElement('button');
@@ -432,7 +434,7 @@ function authorLink(name) { return 'https://scholar.google.com/scholar?q=' + enc
 function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 function fmt(p) {
   const type = (p.type||'research').toLowerCase();
-  const badgeClass = 'badge-'+(type==='review'?'review':type==='perspective'?'perspective':'research');
+  const badgeClass = 'badge-'+(type==='review'?'review':type==='perspective'?'perspective':type==='article'?'article':'research');
   const paperUrl = (p.doi ? 'https://doi.org/'+p.doi : p.link) || '';
   const titleHtml = paperUrl ? '<a href="'+esc(paperUrl)+'" target="_blank" rel="noopener">'+esc(p.title)+'</a>' : esc(p.title);
   let authorHtml;

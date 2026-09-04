@@ -1,5 +1,27 @@
 [
   {
+    "title": "Connecting tissue physical changes to what developing cells become",
+    "authors": "",
+    "year": "2026",
+    "journal": "EMBL",
+    "doi": "",
+    "link": "https://www.embl.org/news/science-technology/connecting-tissue-physical-changes-to-what-developing-cells-become/",
+    "abstract": "",
+    "tags": [
+      "mechanobiology",
+      "cell fate",
+      "morphogenesis"
+    ],
+    "type": "article",
+    "source": "manual",
+    "curated": true,
+    "added": "2026-09-04",
+    "score": 0,
+    "relevance": "News article from EMBL covering how tissue mechanics influence cell fate decisions during development — directly relevant to the group's interest in mechanobiology and cell biology.",
+    "summary": "EMBL news feature on research connecting physical tissue changes to developmental cell identity.",
+    "pdf_link": ""
+  },
+  {
     "title": "A human epiblast model reveals dynamic TGFβ-mediated control of epithelial identity during mammalian epiblast development",
     "authors": "Irene Zorzan, Elena Carbognin, Andrea Lauria, Valentina Proserpio, Davide Benvegnù, Federica Bertelli, Susana De Juambelz Urías, Caterina Dalrio et al.",
     "year": "2026",

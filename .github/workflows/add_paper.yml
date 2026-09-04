@@ -4,13 +4,27 @@ on:
   workflow_dispatch:
     inputs:
       url:
-        description: "Paper URL (e.g. https://www.nature.com/articles/...)"
+        description: "Paper/article URL"
         required: false
         type: string
       doi:
         description: "DOI (e.g. 10.1038/s41467-...) — use instead of URL if you have it"
         required: false
         type: string
+      title:
+        description: "Title for manual entry (news articles, blog posts — use when there is no DOI)"
+        required: false
+        type: string
+      content_type:
+        description: "Content type"
+        required: false
+        default: "research"
+        type: choice
+        options:
+          - research
+          - review
+          - perspective
+          - article
 
 permissions:
   contents: write
@@ -34,9 +48,13 @@ jobs:
         run: |
           URL="${{ github.event.inputs.url }}"
           DOI="${{ github.event.inputs.doi }}"
+          TITLE="${{ github.event.inputs.title }}"
+          CTYPE="${{ github.event.inputs.content_type }}"
           ARGS=()
-          if [ -n "$URL" ]; then ARGS+=(--url "$URL"); fi
-          if [ -n "$DOI" ]; then ARGS+=(--doi "$DOI"); fi
+          if [ -n "$URL" ];   then ARGS+=(--url "$URL");     fi
+          if [ -n "$DOI" ];   then ARGS+=(--doi "$DOI");     fi
+          if [ -n "$TITLE" ]; then ARGS+=(--title "$TITLE"); fi
+          if [ -n "$CTYPE" ]; then ARGS+=(--type "$CTYPE");  fi
           python add_paper.py "${ARGS[@]}"
 
       - name: Backfill authors

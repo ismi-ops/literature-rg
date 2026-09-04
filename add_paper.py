@@ -1,9 +1,10 @@
 """
-Add a single paper by URL or DOI to papers.json.
+Add a single paper or article by URL, DOI, or manual title to papers.json.
 
 Usage:
     python add_paper.py --url https://www.nature.com/articles/...
     python add_paper.py --doi 10.1038/s41467-026-75506-7
+    python add_paper.py --title "Connecting tissue physical changes..." --url https://www.embl.org/... --type article
 """
 import argparse
 import re
@@ -111,38 +112,41 @@ def fetch_metadata(url: str | None, doi: str | None) -> dict | None:
     if url:
         print(
             "\n  Could not resolve paper metadata from this URL.\n"
-            "  If this is a news article or blog post about a paper, find the\n"
-            "  actual DOI (shown in the article or on the journal page) and\n"
-            "  re-submit using --doi instead.\n"
+            "  If this is a news article or blog post, use --title to provide the\n"
+            "  title manually and --type article (or omit --doi).\n"
         )
         sys.exit(1)
-    # unreachable — kept for type safety
-    if False:
-        return {
-            "title": url,
-            "authors": "",
-            "year": str(date.today().year),
-            "journal": "",
-            "doi": doi or "",
-            "link": url,
-            "abstract": "",
-            "tags": [],
-            "type": "research",
-            "source": "manual",
-        }
     return None
 
 
 # ── Main ───────────────────────────────────────────────────────────────────────
 
-def run(url: str | None = None, doi: str | None = None, min_score: int = 0, dry_run: bool = False):
+def run(url: str | None = None, doi: str | None = None, title: str | None = None,
+        content_type: str = "research", min_score: int = 0, dry_run: bool = False):
     load_dotenv()
 
-    print("Fetching paper metadata...")
-    paper = fetch_metadata(url, doi)
-    if not paper:
-        print("Could not fetch metadata. Provide --url or --doi.")
-        sys.exit(1)
+    if title:
+        # Manual entry for news articles / non-DOI content
+        paper = {
+            "title": title,
+            "authors": "",
+            "year": str(date.today().year),
+            "journal": "",
+            "doi": doi or "",
+            "link": url or "",
+            "abstract": "",
+            "tags": [],
+            "type": content_type,
+            "source": "manual",
+        }
+        print(f"  Manual entry: {title[:80]}")
+    else:
+        print("Fetching paper metadata...")
+        paper = fetch_metadata(url, doi)
+        if not paper:
+            print("Could not fetch metadata. Provide --url, --doi, or --title.")
+            sys.exit(1)
+        paper["type"] = content_type
 
     print(f"\n  Title  : {paper.get('title', '')[:80]}")
     print(f"  Authors: {str(paper.get('authors', ''))[:60]}")
@@ -182,12 +186,17 @@ def run(url: str | None = None, doi: str | None = None, min_score: int = 0, dry_
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Add a single paper by URL or DOI")
-    parser.add_argument("--url", help="Paper landing page URL")
+    parser = argparse.ArgumentParser(description="Add a single paper or article by URL, DOI, or title")
+    parser.add_argument("--url", help="Paper/article URL")
     parser.add_argument("--doi", help="DOI (e.g. 10.1038/...)")
+    parser.add_argument("--title", help="Title for manual entry (news articles, blog posts, etc.)")
+    parser.add_argument("--type", dest="content_type", default="research",
+                        choices=["research", "review", "perspective", "article"],
+                        help="Content type (default: research)")
     parser.add_argument("--min-score", type=int, default=0, help="Minimum score to add (default 0 = always add)")
     parser.add_argument("--dry-run", action="store_true", help="Score but don't write")
     args = parser.parse_args()
-    if not args.url and not args.doi:
-        parser.error("Provide at least --url or --doi")
-    run(url=args.url, doi=args.doi, min_score=args.min_score, dry_run=args.dry_run)
+    if not args.url and not args.doi and not args.title:
+        parser.error("Provide at least --url, --doi, or --title")
+    run(url=args.url, doi=args.doi, title=args.title, content_type=args.content_type,
+        min_score=args.min_score, dry_run=args.dry_run)
