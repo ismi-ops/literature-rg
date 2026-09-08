@@ -209,6 +209,21 @@ def _keyword_score(paper: dict) -> dict:
     # Normalise to 0-10 (raw points cap at ~15 for a perfect paper)
     score = min(10, round(points * 10 / 12))
 
+    # Hard caps — same as the Claude prompt — applied after normalisation
+    text_lower = text  # already lowercased above
+    _CARDIAC = ["cardiomyocyte", "cardiomyopathy", "sarcomere", "cardiac", "ipsc-cm", "heart failure"]
+    _NEURAL  = ["neural organoid", "brain organoid", "neurodegeneration", "cortex", "olfactory", "neuroscience"]
+    _PLANT   = ["plant cell", "arabidopsis", "maize", "rice genome", "yeast cell", "c. elegans", "drosophila", "zebrafish"]
+    _CLINICAL = ["clinical trial", "patient cohort", "epidemiology", "disease treatment"]
+    if any(kw in text_lower for kw in _CARDIAC):
+        score = min(score, 3)
+    if any(kw in text_lower for kw in _NEURAL):
+        score = min(score, 2)
+    if any(kw in text_lower for kw in _PLANT):
+        score = min(score, 4)
+    if any(kw in text_lower for kw in _CLINICAL):
+        score = min(score, 2)
+
     tags = [t for t in KNOWN_TAGS if t.lower() in text]
 
     pub_type = paper.get("pub_type", "research")
