@@ -93,12 +93,12 @@ HTML_TEMPLATE = """<!doctype html>
   .badge-research { background: #edeaff; color: #6464FF; }
   .badge-review { background: #fde8f0; color: #CD0F55; }
   .badge-perspective { background: #e0faf9; color: #007d75; }
-  .badge-article { background: #fef3e0; color: #b45309; }
+  .badge-article { background: #fef6d9; color: #DE9C00; }
   @media (prefers-color-scheme: dark) {
     .badge-research { background: #1a1a3d; color: #a0a0ff; }
     .badge-review { background: #3b0018; color: #ff80aa; }
     .badge-perspective { background: #003630; color: #4dd9d3; }
-    .badge-article { background: #2d1a00; color: #f59e0b; }
+    .badge-article { background: #2a1f00; color: #DE9C00; }
     .card-relevance { border-color: #00A59B; background: transparent; }
     .card-relevance-label { color: #4dd9d3; }
     .card-relevance-text { color: var(--text); opacity: .88; }
