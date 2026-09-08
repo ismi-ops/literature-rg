@@ -3209,5 +3209,37 @@
     "pdf_link": "https://doi.org/10.1016/j.gde.2026.102530",
     "curated": true,
     "source": "manual"
+  },
+  {
+    "title": "Hydrostatic pressure and lateral actomyosin tension control stretch and tension of the basement membrane in epithelia",
+    "authors": "Karla Y. Guerra Santillán, Christian Dahmann, Elisabeth Fischer-Friedrich",
+    "year": "2022",
+    "journal": "bioRxiv",
+    "type": "research",
+    "summary": "",
+    "relevance": "",
+    "tags": [],
+    "doi": "10.1101/2022.09.02.506324",
+    "link": "https://doi.org/10.1101/2022.09.02.506324",
+    "score": 0,
+    "added": "2026-09-08",
+    "pdf_link": "https://www.biorxiv.org/content/biorxiv/early/2022/09/27/2022.09.02.506324.full.pdf",
+    "source": "semantic_scholar",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "curated": true,
+    "preprint": true,
+    "author_data": [
+      {
+        "name": "Karla Y. Guerra Santillán"
+      },
+      {
+        "name": "Christian Dahmann",
+        "orcid": "0000-0001-6822-0964"
+      },
+      {
+        "name": "Elisabeth Fischer-Friedrich",
+        "orcid": "0000-0002-2433-916X"
+      }
+    ]
   }
 ]
