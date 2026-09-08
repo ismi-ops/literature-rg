@@ -3313,5 +3313,94 @@
     "link": "https://doi.org/10.1016/j.cels.2026.101699",
     "score": 7,
     "added": "2026-09-07"
+  },
+  {
+    "title": "Meeting report - CellExIt#1, the first international symposium on cell extrusion.",
+    "authors": "Naoka Shiratsuchi, Yasuyuki Fujita, Simon de Beco, Cécile Daubech, Benoit Ladoux, Aline Grata, Romain Levayer, Emile Magny et al.",
+    "year": "2026",
+    "journal": "Journal of Cell Science",
+    "type": "review",
+    "summary": "In April 2026, the first international symposium on cell extrusion (CellExIt#1) was held in St Jean-Cap-Ferrat in the south of France. The meeting gathered investigators who, through different perspectives and disciplines, are dissecting the mechanisms leading to the seamless expulsion of cells from epithelial tissues. In this Meeting Report, we provide a brief overview of cell extrusion as well as a panoramic view of the research on this crucial physiological process that has recently been performed in the different laboratories represented at CellExIt#1, outlining ongoing projects, the diversity of experimental angles and important open questions in the field.",
+    "relevance": "",
+    "tags": [],
+    "doi": "10.1242/jcs.265128",
+    "link": "https://doi.org/10.1242/jcs.265128",
+    "score": 2,
+    "added": "2026-09-08",
+    "author_data": [
+      {
+        "name": "Naoka Shiratsuchi"
+      },
+      {
+        "name": "Yasuyuki Fujita"
+      },
+      {
+        "name": "Simon de Beco"
+      },
+      {
+        "name": "Cécile Daubech"
+      },
+      {
+        "name": "Benoit Ladoux"
+      },
+      {
+        "name": "Aline Grata"
+      },
+      {
+        "name": "Romain Levayer",
+        "orcid": "0000-0001-6769-1465"
+      },
+      {
+        "name": "Emile Magny"
+      },
+      {
+        "name": "Lucy Erin O'Brien"
+      },
+      {
+        "name": "Rashmi Priya"
+      },
+      {
+        "name": "Saranne J. Mitchell"
+      },
+      {
+        "name": "Jody Rosenblatt"
+      },
+      {
+        "name": "Jean-François Rupprecht"
+      },
+      {
+        "name": "Lieke Stockmann"
+      },
+      {
+        "name": "Jakub Sedzinski"
+      },
+      {
+        "name": "Léa Roquin"
+      },
+      {
+        "name": "Magali Suzanne"
+      },
+      {
+        "name": "Yusuke Toyama"
+      },
+      {
+        "name": "Marija Matekcic"
+      },
+      {
+        "name": "Xavier Trepat"
+      },
+      {
+        "name": "Sabrina Vinzens"
+      },
+      {
+        "name": "Sara A. Wickström"
+      },
+      {
+        "name": "Angela K. O. Lwin"
+      },
+      {
+        "name": "Alpha S. Yap"
+      }
+    ]
   }
 ]
