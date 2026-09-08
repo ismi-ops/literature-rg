@@ -1509,7 +1509,7 @@
     "doi": "",
     "link": "https://www.sciencedirect.com/science/article/pii/S0006349525006526",
     "added": "2026-08-19",
-    "pdf_link": "",
+    "pdf_link": "https://doi.org/10.1101/2025.03.01.640992",
     "relevance": "Relevant to Cell Science's interest in tissue mechanics and phase-like transitions that govern how tissues flow or stiffen during morphogenesis. Relevant to CellScapes and Cell Science's broader interest in how cells cooperate and self-organize to form tissues with emergent properties."
   },
   {
@@ -3187,5 +3187,23 @@
     "link": "https://doi.org/10.1016/j.gde.2026.102531",
     "score": 3,
     "added": "2026-09-08"
+  },
+  {
+    "title": "Metabolic regulation of stem cell plasticity.",
+    "authors": "Emilia Kuuluvainen, Swetha Gopalakrishnan, Pekka Katajisto",
+    "year": "2026",
+    "journal": "Current Opinion in Genetics and Development",
+    "type": "review",
+    "summary": "Stem cells must accurately balance self-renewal with the generation of specialized cells that each adopt the type of metabolism facilitating their specific function. However, recent advances demonstrate that metabolism can regulate decisions between self-renewal and differentiation, in addition to being a downstream outcome of transcriptional programs of differentiation. Here we discuss how metabolism influences mammalian stem cells, focusing on the conundrum of how cell fate determination can be accurately controlled if the endpoint product - the specialized cellular metabolism - can influence the process.",
+    "relevance": "Relevant to Cell Science's interest in how cells make identity decisions, with implications for stem cell differentiation and iPSC-based model systems. Relevant to Cell Science's core work on hiPSC biology, pluripotent stem cell engineering, and stem cell-derived model systems.",
+    "tags": [
+      "stem cells",
+      "cell fate"
+    ],
+    "doi": "10.1016/j.gde.2026.102530",
+    "link": "https://doi.org/10.1016/j.gde.2026.102530",
+    "score": 5,
+    "added": "2026-09-08",
+    "pdf_link": "https://doi.org/10.1016/j.gde.2026.102530"
   }
 ]
