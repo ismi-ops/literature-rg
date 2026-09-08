@@ -64,7 +64,14 @@ def add_papers(new_papers: list[dict]) -> int:
             "link": paper.get("link", "") or paper.get("url", ""),
             "score": paper.get("score", 0),
             "added": paper.get("added", ""),
+            "pdf_link": paper.get("pdf_link", ""),
+            "source": paper.get("source", ""),
+            "reasoning": paper.get("reasoning", ""),
         }
+        if paper.get("curated"):
+            paper_entry["curated"] = paper["curated"]
+        if paper.get("author_data"):
+            paper_entry["author_data"] = paper["author_data"]
         existing.append(paper_entry)
         existing_keys.add(key)
         added += 1
