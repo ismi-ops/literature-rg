@@ -1588,7 +1588,7 @@
   },
   {
     "title": "Turing's next steps: the mechanochemical basis of morphogenesis",
-    "authors": "",
+    "authors": "J. Howard, S. Grill, J. Bois",
     "year": "2011",
     "journal": "Nature Reviews Molecular Cell Biology",
     "type": "perspective",
@@ -3171,5 +3171,21 @@
         "name": "Alpha S. Yap"
       }
     ]
+  },
+  {
+    "title": "Editorial overview: At the edge of plasticity: Decoding cell fate in regeneration and repair.",
+    "authors": "Dongwei Li, Joo-Hyeon Lee",
+    "year": "2026",
+    "journal": "Current Opinion in Genetics and Development",
+    "type": "review",
+    "summary": "",
+    "relevance": "Relevant to Cell Science's interest in how cells make identity decisions, with implications for stem cell differentiation and iPSC-based model systems.",
+    "tags": [
+      "cell fate"
+    ],
+    "doi": "10.1016/j.gde.2026.102531",
+    "link": "https://doi.org/10.1016/j.gde.2026.102531",
+    "score": 3,
+    "added": "2026-09-08"
   }
 ]
