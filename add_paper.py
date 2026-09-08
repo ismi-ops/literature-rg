@@ -30,7 +30,10 @@ def _doi_from_url(url: str) -> str | None:
     # Standard embedded DOI (e.g. nature.com, doi.org, elifesciences.org)
     m = re.search(r"(10\.\d{4,}/[^\s\"'&?#]+)", url)
     if m:
-        return m.group(1).rstrip("/.")
+        doi = m.group(1).rstrip("/.")
+        # Strip biorxiv/medrxiv version suffixes: e.g. 10.1101/2022.09.02.506324v2
+        doi = re.sub(r"v\d+(?:\.\w+)*$", "", doi)
+        return doi
 
     # Company of Biologists: journals.biologists.com/{journal}/article/…/{article_id}/…
     # e.g. dev205774 → 10.1242/dev.205774, jcs123456 → 10.1242/jcs.123456
@@ -158,6 +161,11 @@ def run(url: str | None = None, doi: str | None = None, title: str | None = None
     result["curated"] = True
     result["pdf_link"] = get_pdf_link(paper) or ""
     result["source"] = paper.get("source", "manual")
+
+    _preprint_hosts = ("biorxiv.org", "medrxiv.org", "arxiv.org", "preprints.org", "10.1101/", "10.48550/")
+    link_or_doi = (url or "") + (doi or "") + (result.get("doi") or "")
+    if any(h in link_or_doi for h in _preprint_hosts):
+        result["preprint"] = True
 
     score = result.get("score", 0)
     print(f"  Score  : {score}/10")

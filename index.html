@@ -81,11 +81,13 @@
   .badge-review { background: #fde8f0; color: #CD0F55; }
   .badge-perspective { background: #e0faf9; color: #007d75; }
   .badge-article { background: #fef6d9; color: #DE9C00; }
+  .badge-preprint { background: #f3fad0; color: #6a7a04; }
   @media (prefers-color-scheme: dark) {
     .badge-research { background: #1a1a3d; color: #a0a0ff; }
     .badge-review { background: #3b0018; color: #ff80aa; }
     .badge-perspective { background: #003630; color: #4dd9d3; }
     .badge-article { background: #2a1f00; color: #DE9C00; }
+    .badge-preprint { background: #1e2500; color: #CCE805; }
     .card-relevance { border-color: #00A59B; background: transparent; }
     .card-relevance-label { color: #4dd9d3; }
     .card-relevance-text { color: var(--text); opacity: .88; }
@@ -176,6 +178,7 @@
 <div class="filters">
   <div class="filters-inner">
     <div class="filter-row" id="type-filters"><span class="filter-label">Type</span></div>
+    <div class="filter-row" id="preprint-filters"><span class="filter-label">Status</span></div>
     <div class="filter-row" id="tag-filters"><span class="filter-label">Topic</span></div>
     <div class="filter-row" id="year-filters"><span class="filter-label">Year</span></div>
     <div class="filter-row" id="added-filters"><span class="filter-label">Added</span></div>
@@ -252,7 +255,7 @@ const TOP_PICK_IDS = new Set(_recentBatch.slice(0, 4).map(p => p.doi || p.title 
 function isTopPick(p) { return TOP_PICK_IDS.size > 0 && TOP_PICK_IDS.has(p.doi || p.title || ''); }
 
 /* ── Filter state ───────────────────────────────────────────────────────── */
-let activeType = 'all', activeTags = new Set(), activeYear = 'all', activeAdded = 'all', searchText = '';
+let activeType = 'all', activeTags = new Set(), activeYear = 'all', activeAdded = 'all', activePreprint = false, searchText = '';
 
 /* ── Type chips ─────────────────────────────────────────────────────────── */
 function countByType(type) {
@@ -273,6 +276,29 @@ TYPES.forEach(t => {
   });
   typeRow.appendChild(chip);
 });
+
+/* ── Preprint filter ────────────────────────────────────────────────────── */
+const preprintCount = PAPERS.filter(p => p.preprint).length;
+const preprintRow = document.getElementById('preprint-filters');
+if (preprintCount > 0) {
+  const allChip = document.createElement('button');
+  allChip.className = 'chip active'; allChip.textContent = 'All';
+  allChip.addEventListener('click', () => {
+    activePreprint = false;
+    allChip.classList.add('active'); preChip.classList.remove('active'); render();
+  });
+  const preChip = document.createElement('button');
+  preChip.className = 'chip';
+  preChip.innerHTML = 'Preprint<span class="count">' + preprintCount + '</span>';
+  preChip.addEventListener('click', () => {
+    activePreprint = true;
+    preChip.classList.add('active'); allChip.classList.remove('active'); render();
+  });
+  preprintRow.appendChild(allChip);
+  preprintRow.appendChild(preChip);
+} else {
+  preprintRow.style.display = 'none';
+}
 
 /* ── Topic tag chips ────────────────────────────────────────────────────── */
 const TAG_BLOCKLIST = new Set(['perspective','perspectives','review','research','preprint','editorial','comment','letter']);
@@ -453,8 +479,9 @@ function fmt(p) {
   const nk = noteKey(p);
   const noteId = 'note-' + Math.random().toString(36).slice(2);
   const starHtml = isTopPick(p) ? '<div class="top-pick-star" title="Top pick · recommended for printing">⭐</div>' : '';
+  const preprintBadge = p.preprint ? '<span class="badge badge-preprint">preprint</span>' : '';
   return '<div class="card">'
-    +'<div class="card-meta"><span class="badge '+badgeClass+'">'+esc(type)+'</span>'+added+'</div>'
+    +'<div class="card-meta"><span class="badge '+badgeClass+'">'+esc(type)+'</span>'+preprintBadge+added+'</div>'
     +'<div class="card-title">'+titleHtml+'</div>'
     +(authorHtml ? '<div class="card-authors">'+authorHtml+'</div>' : '')
     +(venue ? '<div class="card-venue">'+venue+'</div>' : '')
@@ -515,6 +542,7 @@ function render() {
   const addedCutoff = activeAdded === 'all' ? '' : activeAdded === 'year' ? String(today.getFullYear())+'-01-01' : daysAgo(parseInt(activeAdded));
   const filtered = PAPERS.filter(p => {
     if (activeType !== 'all' && (p.type||'research') !== activeType) return false;
+    if (activePreprint && !p.preprint) return false;
     if (activeTags.size > 0 && ![...(p.tags||[])].some(t => activeTags.has(t))) return false;
     if (activeYear !== 'all' && String(p.year||'').trim() !== activeYear) return false;
     if (addedCutoff && (p.added||'') < addedCutoff) return false;
