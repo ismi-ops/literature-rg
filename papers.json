@@ -3563,5 +3563,59 @@
         "orcid": "0000-0002-0510-7515"
       }
     ]
+  },
+  {
+    "title": "Substrate heterogeneity promotes cancer cell dissemination through interface roughening",
+    "authors": "Zuzana Dunajová, Saren Tasciyan, Juraj Májek, Jack Merrin, Robert P. Jenkins, Erik Sahai, Michael Sixt, Edouard Hannezo",
+    "year": "2026",
+    "journal": "Science Advances",
+    "type": "research",
+    "summary": "Although studies of tumor invasion have mainly emphasized the evolution of genetic and epigenetic heterogeneity, cellular behaviors also depend on the physical microenvironment. Yet, the tumor microenvironment is both complex and continuously remodeled, making it hard to rigorously test its causal influence on tumor dissemination. Here, we adopted a reductionist approach to studying tumor cell invasion in microengineered environments of tunable patterned geometries.",
+    "relevance": "Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis. Relevant to Cell Science's multimodal view of cell state, where single-cell molecular data is integrated with structural and morphological measurements.",
+    "tags": [
+      "single-cell"
+    ],
+    "doi": "10.1126/sciadv.aed0587",
+    "link": "https://doi.org/10.1126/sciadv.aed0587",
+    "score": 3,
+    "added": "2026-09-14",
+    "pdf_link": "https://doi.org/10.1126/sciadv.aed0587",
+    "source": "semantic_scholar",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "curated": true,
+    "author_data": [
+      {
+        "name": "Zuzana Dunajová",
+        "orcid": "0000-0003-4827-912X"
+      },
+      {
+        "name": "Saren Tasciyan",
+        "orcid": "0000-0003-1671-393X"
+      },
+      {
+        "name": "Juraj Májek",
+        "orcid": "0009-0005-6251-9814"
+      },
+      {
+        "name": "Jack Merrin",
+        "orcid": "0000-0001-5145-4609"
+      },
+      {
+        "name": "Robert P. Jenkins",
+        "orcid": "0000-0002-6186-7746"
+      },
+      {
+        "name": "Erik Sahai",
+        "orcid": "0000-0002-3932-5086"
+      },
+      {
+        "name": "Michael Sixt",
+        "orcid": "0000-0002-6620-9179"
+      },
+      {
+        "name": "Edouard Hannezo",
+        "orcid": "0000-0001-6005-1561"
+      }
+    ]
   }
 ]
