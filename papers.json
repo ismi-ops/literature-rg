@@ -3340,7 +3340,8 @@
         "name": "Jian Xu",
         "orcid": "0000-0001-6194-6316"
       }
-    ]
+    ],
+    "rejected": true
   },
   {
     "title": "In vivo multimodal lineage tracing of mammalian development by DeepTrack barcoding",
@@ -3431,5 +3432,50 @@
         "name": "Weike Pei"
       }
     ]
+  },
+  {
+    "doi": "10.1093/stmcls/sxag041",
+    "title": "Engineering Neural Organoids: Technological Advances and Translational Frontiers.",
+    "rejected": true,
+    "added": "2026-09-08",
+    "score": 0,
+    "tags": [],
+    "type": "research"
+  },
+  {
+    "doi": "10.3389/fncel.2026.1897347",
+    "title": "Olfactory models as a platform for neuroscience research",
+    "rejected": true,
+    "added": "2026-09-08",
+    "score": 0,
+    "tags": [],
+    "type": "research"
+  },
+  {
+    "doi": "10.1002/btm2.70164",
+    "title": "Engineering brain organoids for functional validation and translational applications",
+    "rejected": true,
+    "added": "2026-09-08",
+    "score": 0,
+    "tags": [],
+    "type": "research"
+  },
+  {
+    "doi": "10.3390/cells15161460",
+    "title": "Compartment-Specific iPSC-Derived Cardiomyocytes and Organoids",
+    "rejected": true,
+    "added": "2026-09-08",
+    "score": 0,
+    "tags": [],
+    "type": "research"
+  },
+  {
+    "doi": "10.1161/CIRCRESAHA.125.327473",
+    "title": "Decoding Cardiac Development and Maturation at Single-Cell and Spatial Transcriptomic Resolution",
+    "rejected": true,
+    "added": "2026-09-08",
+    "score": 0,
+    "tags": [],
+    "type": "research"
   }
 ]

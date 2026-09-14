@@ -47,6 +47,8 @@ added = 0
 updated = 0
 for p in local:
     idx = _find_origin_idx(p)
+    if idx is not None and merged[idx].get("rejected"):
+        continue  # never re-add a tombstoned paper
     if idx is None:
         new_idx = len(merged)
         merged.append(p)

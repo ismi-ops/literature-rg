@@ -693,6 +693,7 @@ def main():
         return
     with open(PAPERS_PATH) as f:
         papers = json.load(f)
+    papers = [p for p in papers if not p.get("rejected")]
     html = build_html(papers)
     OUTPUT_PATH.write_text(html, encoding="utf-8")
     print(f"Generated {OUTPUT_PATH} ({len(papers)} papers)")

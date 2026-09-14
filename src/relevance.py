@@ -213,7 +213,7 @@ def _keyword_score(paper: dict) -> dict:
     text_lower = text  # already lowercased above
     _CARDIAC = ["cardiomyocyte", "cardiomyopathy", "sarcomere", "cardiac", "ipsc-cm", "heart failure"]
     _NEURAL  = ["neural organoid", "brain organoid", "neurodegeneration", "cortex", "olfactory", "neuroscience"]
-    _PLANT   = ["plant cell", "arabidopsis", "maize", "rice genome", "yeast cell", "c. elegans", "drosophila", "zebrafish"]
+    _PLANT   = ["plant cell", "plant biology", "plant genome", " plants ", "arabidopsis", "maize", "rice genome", "yeast cell", "c. elegans", "drosophila", "zebrafish"]
     _CLINICAL = ["clinical trial", "patient cohort", "epidemiology", "disease treatment"]
     if any(kw in text_lower for kw in _CARDIAC):
         score = min(score, 3)
