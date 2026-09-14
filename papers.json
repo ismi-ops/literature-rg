@@ -3617,5 +3617,91 @@
         "orcid": "0000-0001-6005-1561"
       }
     ]
+  },
+  {
+    "title": "Pancreatic cancer cells breach endothelial barriers through protrusion-driven invasion or endothelial retraction",
+    "authors": "Gautier Follain, Sujan Ghimire, Monika Vaitkevičiūtė, Helene Helo, Joanna W. Pylvänäinen, Frédéric Fercoq, Aleksi Isomursu, Megan R. Chastney et al.",
+    "year": "2026",
+    "journal": "bioRxiv",
+    "type": "research",
+    "summary": "Extravasation, the exit of circulating cancer cells from blood vessels, is a critical yet poorly understood step in metastatic dissemination. Here we show that pancreatic ductal adenocarcinoma (PDAC) cells can breach endothelial barriers through two mechanistically distinct modes of extravasation. MIA PaCa-2 cells breach endothelial junctions via filopodia-like protrusions, enabling access to and spread across the basal extracellular matrix (ECM).",
+    "relevance": "",
+    "tags": [],
+    "doi": "10.64898/2026.09.02.749041",
+    "link": "https://doi.org/10.64898/2026.09.02.749041",
+    "score": 0,
+    "added": "2026-09-14",
+    "pdf_link": "https://doi.org/10.64898/2026.09.02.749041",
+    "source": "semantic_scholar",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "curated": true,
+    "author_data": [
+      {
+        "name": "Gautier Follain",
+        "orcid": "0000-0003-0495-9529"
+      },
+      {
+        "name": "Sujan Ghimire",
+        "orcid": "0000-0003-3660-4300"
+      },
+      {
+        "name": "Monika Vaitkevičiūtė",
+        "orcid": "0000-0003-1803-9571"
+      },
+      {
+        "name": "Helene Helo"
+      },
+      {
+        "name": "Joanna W. Pylvänäinen",
+        "orcid": "0000-0002-3540-5150"
+      },
+      {
+        "name": "Frédéric Fercoq",
+        "orcid": "0000-0002-4825-024X"
+      },
+      {
+        "name": "Aleksi Isomursu",
+        "orcid": "0000-0001-6006-9163"
+      },
+      {
+        "name": "Megan R. Chastney",
+        "orcid": "0000-0002-9866-2322"
+      },
+      {
+        "name": "Omkar Joshi",
+        "orcid": "0000-0002-7410-9987"
+      },
+      {
+        "name": "Marco De Donatis"
+      },
+      {
+        "name": "Ermei Mäkilä",
+        "orcid": "0000-0002-8300-6533"
+      },
+      {
+        "name": "James R.W. Conway",
+        "orcid": "0000-0003-3787-277X"
+      },
+      {
+        "name": "Marko Salmi",
+        "orcid": "0000-0002-1913-7408"
+      },
+      {
+        "name": "Sara A. Wickström",
+        "orcid": "0000-0001-6383-6292"
+      },
+      {
+        "name": "Leo M. Carlin",
+        "orcid": "0000-0001-7172-5234"
+      },
+      {
+        "name": "Johanna Ivaska",
+        "orcid": "0000-0002-6295-6556"
+      },
+      {
+        "name": "Guillaume Jacquemet",
+        "orcid": "0000-0002-9286-920X"
+      }
+    ]
   }
 ]
