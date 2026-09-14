@@ -3703,5 +3703,41 @@
         "orcid": "0000-0002-9286-920X"
       }
     ]
+  },
+  {
+    "title": "Multiscale biophysical control of epithelial shape transitions during animal development.",
+    "authors": "Jianyi Mai, Abhirami Anil Gayathry, David M. Richards, Stefan Harmansa",
+    "year": "2026",
+    "journal": "Seminars in Cell and Developmental Biology",
+    "type": "review",
+    "summary": "The regulation of epithelial cell shape is fundamental to development, homeostasis and disease, and is intricately linked to tissue function. Epithelial morphology emerges from integration of biochemical and mechanical cues across multiple scales, from intrinsic cellular factors to tissue-wide forces. In this review we focus on the mechanical aspects of cell shape control and highlight the multi-scale regulation of epithelial cell shape that links (i) cell-intrinsic factors, such as cytoskeletal organization, contractility and growth, (ii) the local mechanical environment, including cell-matrix interactions and (iii) tissue-scale mechanics governing global morphogenesis.",
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis.",
+    "tags": [
+      "development",
+      "morphogenesis",
+      "morphology"
+    ],
+    "doi": "10.1016/j.semcdb.2026.103686",
+    "link": "https://doi.org/10.1016/j.semcdb.2026.103686",
+    "score": 4,
+    "added": "2026-09-14",
+    "pdf_link": "https://www.sciencedirect.com/science/article/pii/S1084952126000200/pdf",
+    "source": "semantic_scholar",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "curated": true,
+    "author_data": [
+      {
+        "name": "Jianyi Mai"
+      },
+      {
+        "name": "Abhirami Anil Gayathry"
+      },
+      {
+        "name": "David M. Richards"
+      },
+      {
+        "name": "Stefan Harmansa"
+      }
+    ]
   }
 ]
