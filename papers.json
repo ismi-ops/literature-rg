@@ -3528,5 +3528,40 @@
         "name": "Atefeh Lafzi"
       }
     ]
+  },
+  {
+    "title": "An extraordinary exploration of the extracellular environment.",
+    "authors": "Alex Eve, Alex Hughes, Rashmi Priya",
+    "year": "2026",
+    "journal": "Development",
+    "type": "research",
+    "summary": "Summary: This Editorial summarises the contents of Development's Special Issue – The Extracellular Environment in Development, Regeneration and Stem Cells.",
+    "relevance": "Relevant to Cell Science's core work on hiPSC biology, pluripotent stem cell engineering, and stem cell-derived model systems. Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs.",
+    "tags": [
+      "stem cells",
+      "development"
+    ],
+    "doi": "10.1242/dev.206043",
+    "link": "https://doi.org/10.1242/dev.206043",
+    "score": 5,
+    "added": "2026-09-14",
+    "pdf_link": "",
+    "source": "semantic_scholar",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "curated": true,
+    "author_data": [
+      {
+        "name": "Alex Eve",
+        "orcid": "0000-0003-3577-4324"
+      },
+      {
+        "name": "Alex Hughes",
+        "orcid": "0000-0001-6801-3455"
+      },
+      {
+        "name": "Rashmi Priya",
+        "orcid": "0000-0002-0510-7515"
+      }
+    ]
   }
 ]
