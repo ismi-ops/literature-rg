@@ -46,7 +46,7 @@ _KEYWORD_RULES = [
     (["organoid", "lumenogenesis", "lumen formation", "lumenoid"], 3),
     (["stem cell", "iPSC", "pluripotent", "hiPSC"], 2),
     (["bioelectricity", "bioelectric", "membrane voltage"], 2),
-    (["spatial transcriptomics", "spatial biology", "spatial cell"], 2),
+    (["spatial transcriptomics", "spatial biology", "spatial cell"], 1),
     (["tissue fluidity", "solid-fluid", "fluid-solid"], 2),
     (["Turing pattern", "reaction-diffusion", "reaction diffusion"], 2),
     (["phase separation", "condensate", "biomolecular condensate"], 2),
@@ -215,6 +215,7 @@ def _keyword_score(paper: dict) -> dict:
     _NEURAL  = ["neural organoid", "brain organoid", "neurodegeneration", "cortex", "olfactory", "neuroscience"]
     _PLANT   = ["plant cell", "plant biology", "plant genome", " plants ", "arabidopsis", "maize", "rice genome", "yeast cell", "c. elegans", "drosophila", "zebrafish"]
     _CLINICAL = ["clinical trial", "patient cohort", "epidemiology", "disease treatment"]
+    _SPATIAL_TX = ["spatial transcriptomics", "spatial multi-omics", "visium", "slide-seq", "merfish", "seqfish"]
     if any(kw in text_lower for kw in _CARDIAC):
         score = min(score, 3)
     if any(kw in text_lower for kw in _NEURAL):
@@ -223,6 +224,8 @@ def _keyword_score(paper: dict) -> dict:
         score = min(score, 4)
     if any(kw in text_lower for kw in _CLINICAL):
         score = min(score, 2)
+    if any(kw in text_lower for kw in _SPATIAL_TX):
+        score = min(score, 4)
 
     tags = [t for t in KNOWN_TAGS if t.lower() in text]
 
@@ -345,7 +348,8 @@ Hard caps — score these LOW regardless of keyword matches:
 - Cardiac / cardiomyocyte biology (HCM, cardiomyopathy, sarcomere, iPSC-CM): ≤3 unless genuinely novel method applicable beyond cardiac
 - Neuroscience / neural (neural organoids, brain, neurodegeneration, cortex): ≤2 unless method is broadly applicable to non-neural cell biology
 - Non-mammalian systems (plant, yeast, C. elegans, Drosophila, zebrafish): ≤4 unless novel method with clear mammalian applicability
-- Purely clinical or translational (epidemiology, patient cohorts, clinical trials, disease treatment): ≤2"""
+- Purely clinical or translational (epidemiology, patient cohorts, clinical trials, disease treatment): ≤2
+- Spatial transcriptomics as the primary topic (Visium, MERFISH, Slide-seq, seqFISH, spatial multi-omics): ≤4 unless the method or findings directly advance hiPSC biology, organoid imaging, or intracellular organization research"""
 
     try:
         response = _get_client().messages.create(
