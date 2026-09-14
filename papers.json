@@ -3477,5 +3477,56 @@
     "score": 0,
     "tags": [],
     "type": "research"
+  },
+  {
+    "title": "Clonal memory in human embryonic stem cells biases fate potential during endoderm differentiation",
+    "authors": "Madeleine Linneberg-Agerholm, Álvaro Bustos Gutiérrez, Stine Lind Hansen, Yutaka Shimizu, Nicolaj Strøyer Christophersen, Samantha A. Morris, Atefeh Lafzi",
+    "year": "2026",
+    "journal": "bioRxiv",
+    "type": "research",
+    "summary": "Cell fate decisions during development are shaped not only by extrinsic signals but also by heritable intrinsic states passed on across cell division. The extent to which this phenomenon, termed clonal memory, can explain the persistent heterogeneity observed from directed differentiation of human embryonic stem cells is unclear. Here, we combine lineage tracing with single-cell transcriptomics and chromatin accessibility profiling to track clonal behaviour across human embryonic stem cell differentiation towards definitive endoderm.",
+    "relevance": "Directly addresses the top-priority question of how cells make decisions — bistability, signal integration, and stochastic switching are central to understanding cell identity and fate. Relevant to Cell Science's interest in how cells make identity decisions, with implications for stem cell differentiation and iPSC-based model systems.",
+    "tags": [
+      "stem cells",
+      "development",
+      "cell fate",
+      "single-cell"
+    ],
+    "doi": "10.64898/2026.09.02.748863",
+    "link": "https://doi.org/10.64898/2026.09.02.748863",
+    "score": 8,
+    "added": "2026-09-14",
+    "pdf_link": "https://doi.org/10.64898/2026.09.02.748863",
+    "source": "semantic_scholar",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "curated": true,
+    "author_data": [
+      {
+        "name": "Madeleine Linneberg-Agerholm",
+        "orcid": "0000-0003-2517-7972"
+      },
+      {
+        "name": "Álvaro Bustos Gutiérrez",
+        "orcid": "0009-0006-0522-1269"
+      },
+      {
+        "name": "Stine Lind Hansen",
+        "orcid": "0000-0002-5967-286X"
+      },
+      {
+        "name": "Yutaka Shimizu"
+      },
+      {
+        "name": "Nicolaj Strøyer Christophersen",
+        "orcid": "0009-0005-3166-2298"
+      },
+      {
+        "name": "Samantha A. Morris",
+        "orcid": "0000-0001-8561-4340"
+      },
+      {
+        "name": "Atefeh Lafzi"
+      }
+    ]
   }
 ]
