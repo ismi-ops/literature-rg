@@ -927,7 +927,7 @@
   },
   {
     "title": "Lumens as active balloons: a biological physics review",
-    "authors": "",
+    "authors": "Sebasti'an Echeverr'ia-Alar, B. N. Narasimhan, S. Fraley, W.-J. Rappel",
     "year": "2026",
     "journal": "arXiv",
     "type": "review",
@@ -3737,6 +3737,41 @@
       },
       {
         "name": "Stefan Harmansa"
+      }
+    ]
+  },
+  {
+    "title": "Regenerative Therapy at the Crossroads: From Cell-Based to Cell-Free Precision Medicine",
+    "authors": "Kandasamy Nagarajan ArulJothi, Ramya Lakshmi Rajendran, Byeong-Cheol Ahn, Prakash Gangadaran",
+    "year": "2026",
+    "journal": "Bioengineering",
+    "type": "perspective",
+    "summary": "The study of regenerative medicine is an ongoing revolution in modern healthcare, with the aim of restoring the function of a diseased organ or a system through repair, replacing or regenerative modes, as opposed to conventional treatments that merely treat symptoms [...].",
+    "relevance": "",
+    "tags": [],
+    "doi": "10.3390/bioengineering13050515",
+    "link": "https://doi.org/10.3390/bioengineering13050515",
+    "score": 0,
+    "added": "2026-09-14",
+    "pdf_link": "https://www.mdpi.com/2306-5354/13/5/515/pdf?version=1777447478",
+    "source": "semantic_scholar",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "curated": true,
+    "author_data": [
+      {
+        "name": "Kandasamy Nagarajan ArulJothi"
+      },
+      {
+        "name": "Ramya Lakshmi Rajendran",
+        "orcid": "0000-0001-6987-0854"
+      },
+      {
+        "name": "Byeong-Cheol Ahn",
+        "orcid": "0000-0001-7700-3929"
+      },
+      {
+        "name": "Prakash Gangadaran",
+        "orcid": "0000-0002-0658-4604"
       }
     ]
   }
