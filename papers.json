@@ -3241,5 +3241,195 @@
         "orcid": "0000-0002-2433-916X"
       }
     ]
+  },
+  {
+    "title": "Multilineage coordination mechanisms in craniofacial organ development",
+    "authors": "Xu-Xi Jiang, Yan Li, Xue-Chun Li, Xiao-Shan Wu",
+    "year": "2026",
+    "journal": "Oral Science and Homeostatic Medicine",
+    "type": "review",
+    "summary": "Craniofacial development is a complex process shaped by the coordinated work of multiple embryonic lineages, including cranial neural crest cells (CNCCs), surface ectoderm, mesoderm, and pharyngeal endoderm. CNCCs make major contributions to craniofacial skeletal and connective tissues, but craniofacial morphogenesis cannot be explained by one lineage alone. This process depends on active interactions among different cell lineage populations, which provide both structural components and regulatory signals.",
+    "relevance": "Directly relevant to Cell Science's foundational interest in how cells acquire and maintain identity — gene regulatory networks, lineage specification, and embryonic patterning are central to understanding cell decision-making and fate in developmental contexts. Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures.",
+    "tags": [
+      "development",
+      "morphogenesis",
+      "single-cell"
+    ],
+    "doi": "10.26599/oshm.2026.9610070",
+    "link": "https://doi.org/10.26599/oshm.2026.9610070",
+    "score": 10,
+    "added": "2026-09-14",
+    "pdf_link": "https://www.sciopen.com/local/article_pdf/10.26599/OSHM.2026.9610070.pdf",
+    "source": "ss_recommendations",
+    "reasoning": "keyword match (no Anthropic API key)"
+  },
+  {
+    "title": "A metabolic view of gastrulation: Coordinating signalling, epigenetics and morphogenesis.",
+    "authors": "Tatiana Firfa, Tamara Civetta, Eunice HoYee Chan, Kristina S. Stapornwongkul",
+    "year": "2026",
+    "journal": "Seminars in Cell and Developmental Biology",
+    "type": "review",
+    "summary": "Gastrulation is the morphogenetic process by which the single-layered pluripotent epiblast is reorganised into the three germ layers and the basic body plan is established. While the metabolic state of pluripotent stem cells is well characterised, the metabolic remodelling that coincides with germ layer specification is less well understood. Emerging evidence suggests that metabolism functions as more than a passive housekeeping process and instead acts as a dynamic regulator of cell state during these developmental transitions.",
+    "relevance": "Introduces a novel experimental method or platform — very high priority given strong interest in how experiments are designed and what new biological questions they make tractable. Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures.",
+    "tags": [
+      "stem cells",
+      "development",
+      "morphogenesis",
+      "cell fate",
+      "cell state"
+    ],
+    "doi": "10.1016/j.semcdb.2026.103688",
+    "link": "https://doi.org/10.1016/j.semcdb.2026.103688",
+    "score": 10,
+    "added": "2026-09-14",
+    "pdf_link": "https://doi.org/10.1016/j.semcdb.2026.103688",
+    "source": "ss_recommendations",
+    "reasoning": "keyword match (no Anthropic API key)"
+  },
+  {
+    "title": "Decoding plants cell by cell: opportunities and challenges in single-cell and spatial biology.",
+    "authors": "Lieven De Veylder, Maite Saura-Sanchez, Bert De Rybel, Tatsuya Nobori, Klaas Vandepoele, Lorenzo Caputi, Sarah E O’Connor, Jian Xu",
+    "year": "2026",
+    "journal": "The Plant Cell",
+    "type": "review",
+    "summary": "Recent advances in single-cell and spatial omics technologies are transforming plant research by enabling cell-resolved analyses of gene expression, proteomics, chromatin organization, and metabolism at the level of individual cells and at spatial resolution. These approaches have revealed extensive cellular heterogeneity, rare and transient cell states, and previously unrecognized developmental and physiological programs. However, they also introduce conceptual, technical, and computational challenges related to data quality and integration, and biological interpretation.",
+    "relevance": "Introduces a novel experimental method or platform — very high priority given strong interest in how experiments are designed and what new biological questions they make tractable. Directly relevant to Cell Science's foundational interest in how cells acquire and maintain identity — gene regulatory networks, lineage specification, and embryonic patterning are central to understanding cell decision-making and fate in developmental contexts.",
+    "tags": [
+      "development",
+      "cell state",
+      "single-cell",
+      "spatial biology"
+    ],
+    "doi": "10.1093/plcell/koag223",
+    "link": "https://doi.org/10.1093/plcell/koag223",
+    "score": 9,
+    "added": "2026-09-14",
+    "pdf_link": "https://hdl.handle.net/21.11116/0000-0013-7673-5",
+    "source": "ss_recommendations",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "author_data": [
+      {
+        "name": "Lieven De Veylder",
+        "orcid": "0000-0003-1150-4426"
+      },
+      {
+        "name": "Maite Saura-Sanchez",
+        "orcid": "0000-0001-8115-3540"
+      },
+      {
+        "name": "Bert De Rybel",
+        "orcid": "0000-0002-9551-042X"
+      },
+      {
+        "name": "Tatsuya Nobori",
+        "orcid": "0000-0002-1773-3361"
+      },
+      {
+        "name": "Klaas Vandepoele",
+        "orcid": "0000-0003-4790-2725"
+      },
+      {
+        "name": "Lorenzo Caputi",
+        "orcid": "0000-0002-7783-6733"
+      },
+      {
+        "name": "Sarah E O’Connor",
+        "orcid": "0000-0003-0356-6213"
+      },
+      {
+        "name": "Jian Xu",
+        "orcid": "0000-0001-6194-6316"
+      }
+    ]
+  },
+  {
+    "title": "In vivo multimodal lineage tracing of mammalian development by DeepTrack barcoding",
+    "authors": "Chenyu Guo, Junyao Jiang, Xiaomin Wang, Xinghuai Huang, Shenghu Zhang, Chenyang Shao, Mingyuan Zhang, Xiwen Hu et al.",
+    "year": "2026",
+    "journal": "bioRxiv",
+    "type": "research",
+    "summary": "A comprehensive recording of cell fate transitions and underlying molecular changes remains a fundamental goal in developmental biology. Here, we present DeepTrack, a lineage tracing mouse model that integrates in situ cellular barcoding with high-throughput, single-cell multi-omics to simultaneously profile clonal fates, transcriptomic states, and chromatin accessibility. Using DeepTrack, we profiled clonal behaviors during gastrulation and early organogenesis, uncovered early fate priming within epiblast clones, and revealed clonal architecture within distinct regions of the nervous system.",
+    "relevance": "Directly relevant to Cell Science's foundational interest in how cells acquire and maintain identity — gene regulatory networks, lineage specification, and embryonic patterning are central to understanding cell decision-making and fate in developmental contexts. Relevant to Cell Science's interest in how cells make identity decisions, with implications for stem cell differentiation and iPSC-based model systems.",
+    "tags": [
+      "development",
+      "cell fate",
+      "single-cell",
+      "multimodal",
+      "developmental biology"
+    ],
+    "doi": "10.64898/2026.08.29.748052",
+    "link": "https://doi.org/10.64898/2026.08.29.748052",
+    "score": 7,
+    "added": "2026-09-14",
+    "pdf_link": "https://doi.org/10.64898/2026.08.29.748052",
+    "source": "ss_recommendations",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "author_data": [
+      {
+        "name": "Chenyu Guo"
+      },
+      {
+        "name": "Junyao Jiang"
+      },
+      {
+        "name": "Xiaomin Wang"
+      },
+      {
+        "name": "Xinghuai Huang"
+      },
+      {
+        "name": "Shenghu Zhang"
+      },
+      {
+        "name": "Chenyang Shao"
+      },
+      {
+        "name": "Mingyuan Zhang"
+      },
+      {
+        "name": "Xiwen Hu"
+      },
+      {
+        "name": "Wenqian Yang"
+      },
+      {
+        "name": "Fuwei Shang"
+      },
+      {
+        "name": "Xi Wang",
+        "orcid": "0000-0002-7572-6354"
+      },
+      {
+        "name": "Hongbo Zhai"
+      },
+      {
+        "name": "Quan Du"
+      },
+      {
+        "name": "Fang Liu"
+      },
+      {
+        "name": "Danyang He"
+      },
+      {
+        "name": "Xiaodong Liu"
+      },
+      {
+        "name": "Guangdun Peng",
+        "orcid": "0000-0002-8586-0637"
+      },
+      {
+        "name": "Saifeng Cheng"
+      },
+      {
+        "name": "Yanxiao Zhang"
+      },
+      {
+        "name": "Duanqing Pei"
+      },
+      {
+        "name": "Weike Pei"
+      }
+    ]
   }
 ]
