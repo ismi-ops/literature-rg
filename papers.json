@@ -3987,5 +3987,57 @@
         "orcid": "0000-0001-9424-8215"
       }
     ]
+  },
+  {
+    "title": "Prepatterned Tissue Stiffness Gradient Controls Organ shape and size",
+    "authors": "Jie Tong, Meng-Ju Lin, Nanzhong Deng, Marisa Delliturri, Mingang Xu, Sarah Millar, Mayumi Ito, Haogang Cai et al.",
+    "year": "2026",
+    "journal": "bioRxiv",
+    "type": "research",
+    "summary": "Organ morphogenesis is orchestrated by precise coupling of mechanical and biochemical signals, yet how these two signals are integrated within tissue niche to regulate organ shape and size remains poorly understood. Here, using sweat gland as a tractable model of exocrine mini-organs, we demonstrate that dermal fibroblasts play a key role to translate prepatterned tissue stiffness gradients into spatial Wnt5a gradients via Piezo1-mediated mechanosensing. Following epidermal placode formation, progenitor cells collectively invaginate into the dermis, where spatiotemporally graded Wnt5a directs their sequential transition from ductal to glandular fate in softer distal dermis, specifying distinct exocrine compartments.",
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Relevant to Cell Science's interest in how cells make identity decisions, with implications for stem cell differentiation and iPSC-based model systems.",
+    "tags": [
+      "morphogenesis",
+      "tissue mechanics"
+    ],
+    "doi": "10.64898/2026.09.04.748946",
+    "link": "https://doi.org/10.64898/2026.09.04.748946",
+    "score": 8,
+    "added": "2026-09-21",
+    "pdf_link": "https://doi.org/10.64898/2026.09.04.748946",
+    "source": "semantic_scholar",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "curated": true,
+    "preprint": true,
+    "author_data": [
+      {
+        "name": "Jie Tong"
+      },
+      {
+        "name": "Meng-Ju Lin"
+      },
+      {
+        "name": "Nanzhong Deng"
+      },
+      {
+        "name": "Marisa Delliturri"
+      },
+      {
+        "name": "Mingang Xu"
+      },
+      {
+        "name": "Sarah Millar",
+        "orcid": "0000-0001-8792-6890"
+      },
+      {
+        "name": "Mayumi Ito"
+      },
+      {
+        "name": "Haogang Cai"
+      },
+      {
+        "name": "Catherine P. Lu"
+      }
+    ]
   }
 ]
