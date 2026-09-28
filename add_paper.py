@@ -44,6 +44,12 @@ def _doi_from_url(url: str) -> str | None:
     return None
 
 
+def _arxiv_id_from_url(url: str) -> str | None:
+    """Return bare arxiv ID (e.g. '2609.21021') from an arxiv URL, or None."""
+    m = re.search(r"arxiv\.org/(?:abs|pdf)/(\d{4}\.\d+)", url)
+    return m.group(1) if m else None
+
+
 def _fetch_via_ss(doi: str) -> dict | None:
     """Look up metadata from Semantic Scholar by DOI."""
     try:
@@ -59,6 +65,28 @@ def _fetch_via_ss(doi: str) -> dict | None:
                 return _normalize(data)
     except Exception as e:
         print(f"  Semantic Scholar lookup failed: {e}")
+    return None
+
+
+def _fetch_via_ss_arxiv(arxiv_id: str) -> dict | None:
+    """Look up an arxiv preprint from Semantic Scholar using its arxiv ID."""
+    try:
+        resp = requests.get(
+            f"{SS_BASE}/paper/arXiv:{arxiv_id}",
+            params={"fields": FIELDS},
+            timeout=15,
+        )
+        time.sleep(0.5)
+        if resp.status_code == 200:
+            data = resp.json()
+            if data.get("title"):
+                paper = _normalize(data)
+                # Ensure the canonical arxiv DOI is set
+                if not paper.get("doi"):
+                    paper["doi"] = f"10.48550/arXiv.{arxiv_id}"
+                return paper
+    except Exception as e:
+        print(f"  Semantic Scholar (arXiv) lookup failed: {e}")
     return None
 
 
@@ -96,7 +124,28 @@ def _fetch_via_unpaywall(doi: str) -> dict | None:
 
 def fetch_metadata(url: str | None, doi: str | None) -> dict | None:
     """Try to build a paper dict from a URL or DOI."""
+    # Check for arxiv URL before the generic DOI extractor
     if url and not doi:
+        arxiv_id = _arxiv_id_from_url(url)
+        if arxiv_id:
+            print(f"  arXiv ID detected: {arxiv_id}")
+            paper = _fetch_via_ss_arxiv(arxiv_id)
+            if paper:
+                print("  Metadata from Semantic Scholar (arXiv).")
+                return paper
+            # Fallback: minimal stub with canonical arxiv DOI
+            return {
+                "title": "",
+                "authors": "",
+                "year": str(date.today().year),
+                "journal": "arXiv",
+                "doi": f"10.48550/arXiv.{arxiv_id}",
+                "link": f"https://arxiv.org/abs/{arxiv_id}",
+                "abstract": "",
+                "tags": [],
+                "type": "research",
+                "source": "manual",
+            }
         doi = _doi_from_url(url)
 
     if doi:
