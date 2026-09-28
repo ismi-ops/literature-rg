@@ -4039,5 +4039,65 @@
         "name": "Catherine P. Lu"
       }
     ]
+  },
+  {
+    "title": "Predicting organoid morphology through a phase field model: Insights into cell division and lumenal pressure",
+    "authors": "Sakurako Tanida, Kana Fuji, Linjie Lu, Tristan Guyomar, Byung Ho Lee, Alf Honigmann, Anne Grapin-Botton, Daniel Riveline et al.",
+    "year": "2025",
+    "journal": "bioRxiv",
+    "type": "research",
+    "summary": "Organoids are ideal systems to predict the phenotypes of organs. However, there is currently a lack of understanding regarding the generalized rules that enable use of simple cellular principles to make morphological predictions of entire organoids. Therefore, we employed a phase field model with the following basic components: the minimum conditions for the timing and volume of cell division, lumen nucleation rules, and lumenal pressure.",
+    "relevance": "Directly relevant to lumen morphogenesis and lumenoid systems — a top priority covering how pressure, osmotic forces, and shape mechanics drive lumen formation across tissue types. Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures.",
+    "tags": [
+      "self-organization",
+      "morphology",
+      "organoid",
+      "multicellular"
+    ],
+    "doi": "10.1371/journal.pcbi.1012090",
+    "link": "https://doi.org/10.1371/journal.pcbi.1012090",
+    "score": 10,
+    "added": "2026-09-28",
+    "pdf_link": "https://doi.org/10.1371/journal.pcbi.1012090",
+    "source": "semantic_scholar",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "curated": true,
+    "author_data": [
+      {
+        "name": "Sakurako Tanida"
+      },
+      {
+        "name": "Kana Fuji"
+      },
+      {
+        "name": "Linjie Lu"
+      },
+      {
+        "name": "Tristan Guyomar"
+      },
+      {
+        "name": "Byung Ho Lee"
+      },
+      {
+        "name": "Alf Honigmann"
+      },
+      {
+        "name": "Anne Grapin-Botton"
+      },
+      {
+        "name": "Daniel Riveline"
+      },
+      {
+        "name": "Tetsuya Hiraiwa"
+      },
+      {
+        "name": "Makiko Nonomura",
+        "orcid": "0000-0003-4774-4173"
+      },
+      {
+        "name": "Masaki Sano",
+        "orcid": "0000-0002-6262-9635"
+      }
+    ]
   }
 ]
