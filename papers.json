@@ -4099,5 +4099,82 @@
         "orcid": "0000-0002-6262-9635"
       }
     ]
+  },
+  {
+    "title": "Reverse bioengineering of the liver: developmental principles for next-generation liver-on-a-chip systems",
+    "authors": "Ken-ichiro Kamei",
+    "year": "2026",
+    "journal": "Communications Biology",
+    "type": "review",
+    "summary": "Despite major advances in liver-on-a-chip and organoid technologies, most current in vitro liver models remain limited. Here, it is argued that these limitations are fundamentally conceptual rather than purely technical. Reverse bioengineering is introduced as a unifying design framework for liver-on-a-chip systems, in which human liver development is treated as the primary engineering blueprint rather than adult hepatic phenotype as the endpoint.",
+    "relevance": "Relevant to Cell Science's interest in emergent tissue organization and how multicellular systems self-pattern without external instruction. Relevant to Cell Science's AI and computational agenda for modeling cell biology and building virtual cell frameworks.",
+    "tags": [
+      "stem cells",
+      "development",
+      "self-organization",
+      "organoid"
+    ],
+    "doi": "10.1038/s42003-026-10887-5",
+    "link": "https://doi.org/10.1038/s42003-026-10887-5",
+    "score": 8,
+    "added": "2026-09-28",
+    "pdf_link": "https://www.nature.com/articles/s42003-026-10887-5.pdf",
+    "source": "ss_recommendations",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "author_data": [
+      {
+        "name": "Ken-ichiro Kamei",
+        "orcid": "0000-0003-2948-3264"
+      }
+    ]
+  },
+  {
+    "title": "Synthetic Morphogen Gradient Engineering in Human Organoids: Toward Programmable Tissue Patterning for Next-Generation Regenerative Medicine",
+    "authors": "Rene Tanwieh Esoh, Esoh Stephano Bezeng, Kiranjot Kaur, John Ricky, Simon Boateng, Rajshreejeet Jayant Bhensdadiya, Solomon Gyampoh, Shey Fortune Ndzi",
+    "year": "2026",
+    "journal": "Modern Journal of Health and Applied Sciences",
+    "type": "review",
+    "summary": "Despite impressive self-organisation, conventional human organoids (cell aggregates) fail to reproduce intricate, reproducible, and scalable in vivo-like structures and organ formations because they rely on uniform (constant) pro-differentiation morphogen gradients. To address this developmental impasse, the field has evolved toward synthetic gradient engineering with morphogen signals, which combines developmental signalling cues with cutting-edge synthetic biology and bioengineering platforms. Here, we present a comprehensive overview of cutting-edge advances in four main areas: novel gradient engineering systems (ranging from microfluidic chips to sustained-release hydrogels, optogenetics, and DNA-barcoded microbeads); the types of organoids that respond to these spatial cues; the engineered \"Morphogenic Programming\" circuits that allow cells to automatically interpret morphogen thresholds and record positional history; and the profound translational implications of these advances.",
+    "relevance": "Aligned with the CellScapes program and Cell Science's engagement with synthetic developmental biology — engineering gene circuits to program cell community behavior. Aligned with CellScapes' use of engineered gene circuits to program synthetic cell communities toward controlled tissue-level behaviors.",
+    "tags": [
+      "development",
+      "synthetic biology",
+      "organoid"
+    ],
+    "doi": "10.70411/mjhas.3.2.2026408",
+    "link": "https://doi.org/10.70411/mjhas.3.2.2026408",
+    "score": 8,
+    "added": "2026-09-28",
+    "pdf_link": "https://mucjournals.muc.edu.ps/index.php/MJHAS/article/download/408/278",
+    "source": "ss_recommendations",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "author_data": [
+      {
+        "name": "Rene Tanwieh Esoh",
+        "orcid": "0009-0006-6206-1257"
+      },
+      {
+        "name": "Esoh Stephano Bezeng"
+      },
+      {
+        "name": "Kiranjot Kaur",
+        "orcid": "0009-0008-5969-9879"
+      },
+      {
+        "name": "John Ricky"
+      },
+      {
+        "name": "Simon Boateng"
+      },
+      {
+        "name": "Rajshreejeet Jayant Bhensdadiya"
+      },
+      {
+        "name": "Solomon Gyampoh"
+      },
+      {
+        "name": "Shey Fortune Ndzi"
+      }
+    ]
   }
 ]
