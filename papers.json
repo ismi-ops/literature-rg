@@ -4176,5 +4176,25 @@
         "name": "Shey Fortune Ndzi"
       }
     ]
+  },
+  {
+    "title": "Bioelectric regulation of stem cell fate: From the plasma membrane to organelles.",
+    "authors": "Alessandra G. Jester, Bernice C. Lin, Beverly J. Piggott",
+    "year": "2026",
+    "journal": "Current Opinion in Cell Biology",
+    "type": "review",
+    "summary": "Stem cell identity has traditionally been viewed through the lens of transcriptional and metabolic programs. Recent work has revealed an additional layer of complexity: the plasma membrane and intracellular organelles maintain compartment-specific membrane potentials, pH gradients, and ion dynamics that can influence stemness and fate. In this review, we synthesize recent advances identified across diverse stem cell populations to highlight convergent and divergent bioelectric mechanisms driving cell fate decisions.",
+    "relevance": "Directly addresses the top-priority question of how cells make decisions — bistability, signal integration, and stochastic switching are central to understanding cell identity and fate. Relevant to Cell Science's interest in how cells make identity decisions, with implications for stem cell differentiation and iPSC-based model systems.",
+    "tags": [
+      "cell fate"
+    ],
+    "doi": "10.1016/j.ceb.2026.102687",
+    "link": "https://doi.org/10.1016/j.ceb.2026.102687",
+    "score": 10,
+    "added": "2026-09-28",
+    "pdf_link": "https://doi.org/10.1016/j.ceb.2026.102687",
+    "source": "semantic_scholar",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "curated": true
   }
 ]
