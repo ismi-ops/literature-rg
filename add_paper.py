@@ -90,6 +90,52 @@ def _fetch_via_ss_arxiv(arxiv_id: str) -> dict | None:
     return None
 
 
+def _fetch_via_arxiv_api(arxiv_id: str) -> dict | None:
+    """Fetch metadata directly from the arxiv Atom API — works for brand-new preprints."""
+    try:
+        resp = requests.get(
+            "https://export.arxiv.org/api/query",
+            params={"id_list": arxiv_id, "max_results": 1},
+            timeout=15,
+        )
+        if resp.status_code != 200:
+            return None
+        # Parse Atom XML — avoid lxml dependency, use stdlib ElementTree
+        import xml.etree.ElementTree as ET
+        ns = {
+            "atom": "http://www.w3.org/2005/Atom",
+            "arxiv": "http://arxiv.org/schemas/atom",
+        }
+        root = ET.fromstring(resp.text)
+        entry = root.find("atom:entry", ns)
+        if entry is None:
+            return None
+        title = (entry.findtext("atom:title", "", ns) or "").strip().replace("\n", " ")
+        abstract = (entry.findtext("atom:summary", "", ns) or "").strip().replace("\n", " ")
+        published = (entry.findtext("atom:published", "", ns) or "")[:4]  # year
+        authors = ", ".join(
+            (a.findtext("atom:name", "", ns) or "").strip()
+            for a in entry.findall("atom:author", ns)
+        )[:8 * 30]  # rough cap
+        if not title:
+            return None
+        return {
+            "title": title,
+            "authors": authors,
+            "year": published,
+            "journal": "arXiv",
+            "doi": f"10.48550/arXiv.{arxiv_id}",
+            "link": f"https://arxiv.org/abs/{arxiv_id}",
+            "abstract": abstract,
+            "tags": [],
+            "type": "research",
+            "source": "manual",
+        }
+    except Exception as e:
+        print(f"  arXiv API lookup failed: {e}")
+    return None
+
+
 def _fetch_via_unpaywall(doi: str) -> dict | None:
     """Fetch basic metadata from Unpaywall (title, authors, year, journal)."""
     try:
@@ -133,19 +179,10 @@ def fetch_metadata(url: str | None, doi: str | None) -> dict | None:
             if paper:
                 print("  Metadata from Semantic Scholar (arXiv).")
                 return paper
-            # Fallback: minimal stub with canonical arxiv DOI
-            return {
-                "title": "",
-                "authors": "",
-                "year": str(date.today().year),
-                "journal": "arXiv",
-                "doi": f"10.48550/arXiv.{arxiv_id}",
-                "link": f"https://arxiv.org/abs/{arxiv_id}",
-                "abstract": "",
-                "tags": [],
-                "type": "research",
-                "source": "manual",
-            }
+            paper = _fetch_via_arxiv_api(arxiv_id)
+            if paper:
+                print("  Metadata from arXiv API.")
+                return paper
         doi = _doi_from_url(url)
 
     if doi:
@@ -157,6 +194,10 @@ def fetch_metadata(url: str | None, doi: str | None) -> dict | None:
             paper = _fetch_via_ss_arxiv(arxiv_id)
             if paper:
                 print("  Metadata from Semantic Scholar (arXiv).")
+                return paper
+            paper = _fetch_via_arxiv_api(arxiv_id)
+            if paper:
+                print("  Metadata from arXiv API.")
                 return paper
         paper = _fetch_via_ss(doi)
         if paper:
