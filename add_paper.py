@@ -150,6 +150,14 @@ def fetch_metadata(url: str | None, doi: str | None) -> dict | None:
 
     if doi:
         print(f"  DOI detected: {doi}")
+        # arxiv DOIs (10.48550/arXiv.*) work better via the arXiv SS endpoint
+        arxiv_match = re.match(r"10\.48550/arXiv\.(\d{4}\.\d+)", doi, re.IGNORECASE)
+        if arxiv_match:
+            arxiv_id = arxiv_match.group(1)
+            paper = _fetch_via_ss_arxiv(arxiv_id)
+            if paper:
+                print("  Metadata from Semantic Scholar (arXiv).")
+                return paper
         paper = _fetch_via_ss(doi)
         if paper:
             print("  Metadata from Semantic Scholar.")
