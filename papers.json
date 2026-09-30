@@ -1378,7 +1378,7 @@
     "doi": "10.1038/s41589-025-02002-2",
     "link": "https://www.nature.com/articles/s41589-025-02002-2",
     "added": "2026-08-19",
-    "pdf_link": "",
+    "pdf_link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13616191/",
     "relevance": "Aligned with the CellScapes program and Cell Science's engagement with synthetic developmental biology — engineering gene circuits to program cell community behavior.",
     "author_data": [
       {
@@ -4196,5 +4196,164 @@
     "source": "semantic_scholar",
     "reasoning": "keyword match (no Anthropic API key)",
     "curated": true
+  },
+  {
+    "title": "How to build the virtual cell with artificial intelligence: Priorities and opportunities",
+    "authors": "Charlotte Bunne, Yusuf Roohani, Yanay Rosen, Ankit Gupta, Xikun Zhang, Marcel Roed, Theo Alexandrov, Mohammed AlQuraishi et al.",
+    "year": "2024",
+    "journal": "Cell",
+    "type": "review",
+    "summary": "SUMMARY Cells are essential to understanding health and disease, yet traditional models fall short of modeling and simulating their function and behavior. Advances in AI and omics offer groundbreaking opportunities to create an AI virtual cell (AIVC), a multi-scale, multi-modal large-neural-network-based model that can represent and simulate the behavior of molecules, cells, and tissues across diverse states. This Perspective provides a vision on their design and how collaborative efforts to build AIVCs will transform biological research by allowing high-fidelity simulations, accelerating discoveries, and guiding experimental studies, offering new opportunities for understanding cellular functions and fostering interdisciplinary collaborations in open science.",
+    "relevance": "Supports Cell Science's virtual cell and generative modeling agenda for integrating multi-modal cell biology data into predictive computational models. Relevant to Cell Science's AI and computational agenda for modeling cell biology and building virtual cell frameworks.",
+    "tags": [
+      "virtual cell"
+    ],
+    "doi": "10.1016/j.cell.2024.11.015",
+    "link": "https://doi.org/10.1016/j.cell.2024.11.015",
+    "score": 8,
+    "added": "2026-09-30",
+    "pdf_link": "https://doi.org/10.1016/j.cell.2024.11.015",
+    "source": "semantic_scholar",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "curated": true,
+    "author_data": [
+      {
+        "name": "Charlotte Bunne",
+        "orcid": "0000-0003-1431-103X"
+      },
+      {
+        "name": "Yusuf Roohani",
+        "orcid": "0000-0002-9577-5014"
+      },
+      {
+        "name": "Yanay Rosen",
+        "orcid": "0000-0003-1129-9645"
+      },
+      {
+        "name": "Ankit Gupta",
+        "orcid": "0000-0002-9961-1041"
+      },
+      {
+        "name": "Xikun Zhang",
+        "orcid": "0000-0002-8346-8594"
+      },
+      {
+        "name": "Marcel Roed",
+        "orcid": "0000-0002-1369-8933"
+      },
+      {
+        "name": "Theo Alexandrov"
+      },
+      {
+        "name": "Mohammed AlQuraishi"
+      },
+      {
+        "name": "Patricia Brennan"
+      },
+      {
+        "name": "Daniel B. Burkhardt"
+      },
+      {
+        "name": "Andrea Califano"
+      },
+      {
+        "name": "Jonah Cool"
+      },
+      {
+        "name": "Abby F. Dernburg"
+      },
+      {
+        "name": "Kirsty Ewing"
+      },
+      {
+        "name": "Emily B. Fox"
+      },
+      {
+        "name": "Matthias Haury"
+      },
+      {
+        "name": "Amy E. Herr"
+      },
+      {
+        "name": "Eric Horvitz"
+      },
+      {
+        "name": "Patrick D. Hsu"
+      },
+      {
+        "name": "Viren Jain"
+      },
+      {
+        "name": "Gregory R. Johnson"
+      },
+      {
+        "name": "Thomas Kalil"
+      },
+      {
+        "name": "David R. Kelley"
+      },
+      {
+        "name": "Shana O. Kelley"
+      },
+      {
+        "name": "Anna Kreshuk"
+      },
+      {
+        "name": "Tim Mitchison"
+      },
+      {
+        "name": "Stephani Otte"
+      },
+      {
+        "name": "Jay Shendure"
+      },
+      {
+        "name": "Nicholas J. Sofroniew"
+      },
+      {
+        "name": "Fabian Theis"
+      },
+      {
+        "name": "Christina V. Theodoris"
+      },
+      {
+        "name": "Srigokul Upadhyayula"
+      },
+      {
+        "name": "Marc Valer"
+      },
+      {
+        "name": "Bo Wang"
+      },
+      {
+        "name": "Eric Xing"
+      },
+      {
+        "name": "Serena Yeung-Levy"
+      },
+      {
+        "name": "Marinka Zitnik"
+      },
+      {
+        "name": "Theofanis Karaletsos",
+        "orcid": "0000-0002-0296-3092"
+      },
+      {
+        "name": "Aviv Regev",
+        "orcid": "0000-0003-3293-3158"
+      },
+      {
+        "name": "Emma Lundberg",
+        "orcid": "0000-0001-7034-0850"
+      },
+      {
+        "name": "Jure Leskovec",
+        "orcid": "0000-0002-5411-923X"
+      },
+      {
+        "name": "Stephen R. Quake",
+        "orcid": "0000-0002-1613-0809"
+      }
+    ]
   }
 ]
