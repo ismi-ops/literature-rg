@@ -1,0 +1,69 @@
+name: Track VIP Authors
+
+on:
+  schedule:
+    # Every Monday at 08:00 UTC
+    - cron: '0 8 * * 1'
+  workflow_dispatch:
+    inputs:
+      lookback_days:
+        description: 'Days back to look for new papers'
+        default: '14'
+        type: string
+      vip_threshold:
+        description: 'Min score for main feed (below → vip_only)'
+        default: '6'
+        type: string
+      dry_run:
+        description: 'Score but do not write'
+        default: false
+        type: boolean
+
+jobs:
+  track:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Fetch VIP author papers
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          LOOKBACK="${{ inputs.lookback_days || '14' }}"
+          THRESHOLD="${{ inputs.vip_threshold || '6' }}"
+          DRY_RUN="${{ inputs.dry_run || 'false' }}"
+
+          ARGS=(--lookback-days "$LOOKBACK" --vip-threshold "$THRESHOLD")
+          [ "$DRY_RUN" = "true" ] && ARGS+=(--dry-run)
+
+          python track_authors.py "${ARGS[@]}"
+
+      - name: Regenerate site
+        if: ${{ inputs.dry_run != 'true' }}
+        run: python generate_site.py
+
+      - name: Commit and push
+        if: ${{ inputs.dry_run != 'true' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add papers.json authors.json index.html
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: add VIP author papers ($(date -u +%Y-%m-%d))"
+            git push origin main
+          fi

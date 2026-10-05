@@ -36,7 +36,7 @@
     "doi": "10.1038/s41556-025-01831-6",
     "link": "https://www.nature.com/articles/s41556-025-01831-6",
     "added": "2026-08-19",
-    "pdf_link": "",
+    "pdf_link": "https://hdl.handle.net/2318/2118574",
     "relevance": "Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs.",
     "author_data": [
       {
@@ -1378,7 +1378,7 @@
     "doi": "10.1038/s41589-025-02002-2",
     "link": "https://www.nature.com/articles/s41589-025-02002-2",
     "added": "2026-08-19",
-    "pdf_link": "",
+    "pdf_link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13616191/",
     "relevance": "Aligned with the CellScapes program and Cell Science's engagement with synthetic developmental biology — engineering gene circuits to program cell community behavior.",
     "author_data": [
       {
@@ -4196,5 +4196,316 @@
     "source": "semantic_scholar",
     "reasoning": "keyword match (no Anthropic API key)",
     "curated": true
+  },
+  {
+    "title": "How to build the virtual cell with artificial intelligence: Priorities and opportunities",
+    "authors": "Charlotte Bunne, Yusuf Roohani, Yanay Rosen, Ankit Gupta, Xikun Zhang, Marcel Roed, Theo Alexandrov, Mohammed AlQuraishi et al.",
+    "year": "2024",
+    "journal": "Cell",
+    "type": "review",
+    "summary": "SUMMARY Cells are essential to understanding health and disease, yet traditional models fall short of modeling and simulating their function and behavior. Advances in AI and omics offer groundbreaking opportunities to create an AI virtual cell (AIVC), a multi-scale, multi-modal large-neural-network-based model that can represent and simulate the behavior of molecules, cells, and tissues across diverse states. This Perspective provides a vision on their design and how collaborative efforts to build AIVCs will transform biological research by allowing high-fidelity simulations, accelerating discoveries, and guiding experimental studies, offering new opportunities for understanding cellular functions and fostering interdisciplinary collaborations in open science.",
+    "relevance": "Supports Cell Science's virtual cell and generative modeling agenda for integrating multi-modal cell biology data into predictive computational models. Relevant to Cell Science's AI and computational agenda for modeling cell biology and building virtual cell frameworks.",
+    "tags": [
+      "virtual cell"
+    ],
+    "doi": "10.1016/j.cell.2024.11.015",
+    "link": "https://doi.org/10.1016/j.cell.2024.11.015",
+    "score": 8,
+    "added": "2026-09-30",
+    "pdf_link": "https://doi.org/10.1016/j.cell.2024.11.015",
+    "source": "semantic_scholar",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "curated": true,
+    "author_data": [
+      {
+        "name": "Charlotte Bunne",
+        "orcid": "0000-0003-1431-103X"
+      },
+      {
+        "name": "Yusuf Roohani",
+        "orcid": "0000-0002-9577-5014"
+      },
+      {
+        "name": "Yanay Rosen",
+        "orcid": "0000-0003-1129-9645"
+      },
+      {
+        "name": "Ankit Gupta",
+        "orcid": "0000-0002-9961-1041"
+      },
+      {
+        "name": "Xikun Zhang",
+        "orcid": "0000-0002-8346-8594"
+      },
+      {
+        "name": "Marcel Roed",
+        "orcid": "0000-0002-1369-8933"
+      },
+      {
+        "name": "Theo Alexandrov"
+      },
+      {
+        "name": "Mohammed AlQuraishi"
+      },
+      {
+        "name": "Patricia Brennan"
+      },
+      {
+        "name": "Daniel B. Burkhardt"
+      },
+      {
+        "name": "Andrea Califano"
+      },
+      {
+        "name": "Jonah Cool"
+      },
+      {
+        "name": "Abby F. Dernburg"
+      },
+      {
+        "name": "Kirsty Ewing"
+      },
+      {
+        "name": "Emily B. Fox"
+      },
+      {
+        "name": "Matthias Haury"
+      },
+      {
+        "name": "Amy E. Herr"
+      },
+      {
+        "name": "Eric Horvitz"
+      },
+      {
+        "name": "Patrick D. Hsu"
+      },
+      {
+        "name": "Viren Jain"
+      },
+      {
+        "name": "Gregory R. Johnson"
+      },
+      {
+        "name": "Thomas Kalil"
+      },
+      {
+        "name": "David R. Kelley"
+      },
+      {
+        "name": "Shana O. Kelley"
+      },
+      {
+        "name": "Anna Kreshuk"
+      },
+      {
+        "name": "Tim Mitchison"
+      },
+      {
+        "name": "Stephani Otte"
+      },
+      {
+        "name": "Jay Shendure"
+      },
+      {
+        "name": "Nicholas J. Sofroniew"
+      },
+      {
+        "name": "Fabian Theis"
+      },
+      {
+        "name": "Christina V. Theodoris"
+      },
+      {
+        "name": "Srigokul Upadhyayula"
+      },
+      {
+        "name": "Marc Valer"
+      },
+      {
+        "name": "Bo Wang"
+      },
+      {
+        "name": "Eric Xing"
+      },
+      {
+        "name": "Serena Yeung-Levy"
+      },
+      {
+        "name": "Marinka Zitnik"
+      },
+      {
+        "name": "Theofanis Karaletsos",
+        "orcid": "0000-0002-0296-3092"
+      },
+      {
+        "name": "Aviv Regev",
+        "orcid": "0000-0003-3293-3158"
+      },
+      {
+        "name": "Emma Lundberg",
+        "orcid": "0000-0001-7034-0850"
+      },
+      {
+        "name": "Jure Leskovec",
+        "orcid": "0000-0002-5411-923X"
+      },
+      {
+        "name": "Stephen R. Quake",
+        "orcid": "0000-0002-1613-0809"
+      }
+    ]
+  },
+  {
+    "title": "Emergence of the Endoderm in the Mammalian Embryo: From Cell Fate Specification to Gut Tube Formation.",
+    "authors": "Sonja Nowotschin, Anna-Katerina Hadjantonakis",
+    "year": "2026",
+    "journal": "Annual review of cell and developmental biology",
+    "type": "research",
+    "summary": "The endoderm is the embryonic tissue that gives rise to vital organ systems in both the developing embryo and adult animal. Cells with a definitive (embryonic) endoderm identity emerge from the pluripotent epiblast at gastrulation, and go on to form the gut tube, which develops into the epithelial component of the digestive and respiratory tracts. In this review, we discuss the mechanisms driving endoderm emergence and morphogenesis, including key epithelial-mesenchymal and mesenchymal-epithelial transitions, the mechanical forces driving gut tube formation, and the patterning events that subdivide the gut tube into different organ territories.",
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Relevant to Cell Science's interest in how cells make identity decisions, with implications for stem cell differentiation and iPSC-based model systems.",
+    "tags": [
+      "development",
+      "morphogenesis",
+      "cell fate"
+    ],
+    "doi": "10.1146/annurev-cellbio-111524-021734",
+    "link": "https://doi.org/10.1146/annurev-cellbio-111524-021734",
+    "score": 10,
+    "added": "2026-10-05",
+    "pdf_link": "https://doi.org/10.1146/annurev-cellbio-111524-021734",
+    "source": "pubmed",
+    "reasoning": "keyword match (no Anthropic API key)"
+  },
+  {
+    "title": "Human stem cell-based embryo models: from self-organization to recapitulating development",
+    "authors": "Dong-Song Liu, Tian-Yao He",
+    "year": "2026",
+    "journal": "Frontiers in Cell and Developmental Biology",
+    "type": "review",
+    "summary": "Human stem cell-based embryo models (hereafter referred to as embryo models) are a rapidly evolving field at the intersection of developmental biology and bioengineering. In this review, we examine design principles, material systems, and engineering approaches that enable the construction of models arising from pluripotent stem cells. We consider how three-dimensional environments, synthetic hydrogels, and spatiotemporal modulation of morphogenetic signals guide self-organization.",
+    "relevance": "Directly relevant to Cell Science's foundational interest in how cells acquire and maintain identity — gene regulatory networks, lineage specification, and embryonic patterning are central to understanding cell decision-making and fate in developmental contexts. Tangentially relevant to disease modeling using hiPSC lines.",
+    "tags": [
+      "stem cells",
+      "development",
+      "self-organization",
+      "developmental biology"
+    ],
+    "doi": "10.3389/fcell.2026.1857249",
+    "link": "https://doi.org/10.3389/fcell.2026.1857249",
+    "score": 9,
+    "added": "2026-10-05",
+    "pdf_link": "https://www.frontiersin.org/journals/cell-and-developmental-biology/articles/10.3389/fcell.2026.1857249/pdf",
+    "source": "ss_recommendations",
+    "reasoning": "keyword match (no Anthropic API key)"
+  },
+  {
+    "title": "Decoding Sebaceous Gland Biology Through Experimental Models: Progress, Limitations, and Future Directions",
+    "authors": "Stefania Briganti, Sarah Mosca, Monica Ottaviani, Enrica Flori",
+    "year": "2026",
+    "journal": "Cells",
+    "type": "review",
+    "summary": "The sebaceous gland (SG) is a highly dynamic skin appendage that plays a central role in maintaining skin homeostasis through lipid production, immune modulation, and interactions with the skin microbiome. Dysregulation of SG function is implicated in several dermatological disorders, including acne and other inflammatory skin diseases. Over the past decades, a wide range of experimental models has been developed to investigate SG biology and pathology.",
+    "relevance": "Relevant to lumen morphogenesis, lumenoid self-organization, organoid systems, and live imaging of three-dimensional culture morphodynamics. Relevant to Cell Science's core work on hiPSC biology, pluripotent stem cell engineering, and stem cell-derived model systems.",
+    "tags": [
+      "stem cells",
+      "development",
+      "organoid"
+    ],
+    "doi": "10.3390/cells15171591",
+    "link": "https://doi.org/10.3390/cells15171591",
+    "score": 8,
+    "added": "2026-10-05",
+    "pdf_link": "https://doi.org/10.3390/cells15171591",
+    "source": "ss_recommendations",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "author_data": [
+      {
+        "name": "Stefania Briganti"
+      },
+      {
+        "name": "Sarah Mosca",
+        "orcid": "0000-0002-6468-200X"
+      },
+      {
+        "name": "Monica Ottaviani",
+        "orcid": "0000-0002-6613-2570"
+      },
+      {
+        "name": "Enrica Flori",
+        "orcid": "0000-0002-9275-1041"
+      }
+    ]
+  },
+  {
+    "title": "A mini-review of the molecular mechanisms, mutational landscape, and therapeutic opportunities of TWIST1 in oncology.",
+    "authors": "Bruno Ricardo Barreto Pires, Gerson Moura Ferreira, Eliana Abdelhay",
+    "year": "2026",
+    "journal": "Biochimica et biophysica acta. Molecular cell research",
+    "type": "research",
+    "summary": "TWIST1 is a deeply conserved basic helix-loop-helix (bHLH) transcription factor that has emerged as a central transcriptional regulator bridging developmental biology and cancer pathogenesis. This key regulator orchestrates mesoderm formation, neural crest migration, and craniofacial morphogenesis through precise dimerization-dependent mechanisms. The TWIST1 bHLH domain mediates DNA binding at E-box motifs (CANNTG), with its regulatory role determined by homodimer versus E-protein heterodimer formation.",
+    "relevance": "Directly relevant to Cell Science's foundational interest in how cells acquire and maintain identity — gene regulatory networks, lineage specification, and embryonic patterning are central to understanding cell decision-making and fate in developmental contexts. Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures.",
+    "tags": [
+      "development",
+      "morphogenesis",
+      "developmental biology"
+    ],
+    "doi": "10.1016/j.bbamcr.2026.120226",
+    "link": "https://doi.org/10.1016/j.bbamcr.2026.120226",
+    "score": 7,
+    "added": "2026-10-05",
+    "pdf_link": "",
+    "source": "pubmed",
+    "reasoning": "keyword match (no Anthropic API key)"
+  },
+  {
+    "title": "Advances in organoids for personalized medicine: from technological development to clinical application",
+    "authors": "Xinkui Zhou, Xingxue Yan, Zhengyang Zhang, Zhilei Zhang, Yixiang Que, Yanfan Wang, Yaodong Zhang, Kuo Lu et al.",
+    "year": "2026",
+    "journal": "Frontiers in Cell and Developmental Biology",
+    "type": "review",
+    "summary": "Organoids, three-dimensional cell culture models derived from patient tissues or stem cells, have emerged as a cutting-edge technology in personalized medicine, owing to their remarkable ability to closely recapitulate in vivo tissue architecture and function. This review provides a comprehensive overview of the technological evolution and construction methodologies of organoids, highlighting their significant applications in oncology, genetic disorders, infectious diseases, and drug screening. This review examines how organoids enable precision medicine by preserving genomic fidelity, predicting drug sensitivity, and creating disease models via gene editing.",
+    "relevance": "Tangentially relevant to disease modeling using hiPSC lines. Relevant to lumen morphogenesis, lumenoid self-organization, organoid systems, and live imaging of three-dimensional culture morphodynamics.",
+    "tags": [
+      "stem cells",
+      "development",
+      "organoid"
+    ],
+    "doi": "10.3389/fcell.2026.1890385",
+    "link": "https://doi.org/10.3389/fcell.2026.1890385",
+    "score": 7,
+    "added": "2026-10-05",
+    "pdf_link": "https://doi.org/10.3389/fcell.2026.1890385",
+    "source": "ss_recommendations",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "author_data": [
+      {
+        "name": "Xinkui Zhou"
+      },
+      {
+        "name": "Xingxue Yan"
+      },
+      {
+        "name": "Zhengyang Zhang"
+      },
+      {
+        "name": "Zhilei Zhang"
+      },
+      {
+        "name": "Yixiang Que"
+      },
+      {
+        "name": "Yanfan Wang"
+      },
+      {
+        "name": "Yaodong Zhang"
+      },
+      {
+        "name": "Kuo Lu"
+      },
+      {
+        "name": "Longfei Wang"
+      }
+    ]
   }
 ]
