@@ -36,7 +36,7 @@
     "doi": "10.1038/s41556-025-01831-6",
     "link": "https://www.nature.com/articles/s41556-025-01831-6",
     "added": "2026-08-19",
-    "pdf_link": "",
+    "pdf_link": "https://hdl.handle.net/2318/2118574",
     "relevance": "Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs.",
     "author_data": [
       {
@@ -4353,6 +4353,158 @@
       {
         "name": "Stephen R. Quake",
         "orcid": "0000-0002-1613-0809"
+      }
+    ]
+  },
+  {
+    "title": "Emergence of the Endoderm in the Mammalian Embryo: From Cell Fate Specification to Gut Tube Formation.",
+    "authors": "Sonja Nowotschin, Anna-Katerina Hadjantonakis",
+    "year": "2026",
+    "journal": "Annual review of cell and developmental biology",
+    "type": "research",
+    "summary": "The endoderm is the embryonic tissue that gives rise to vital organ systems in both the developing embryo and adult animal. Cells with a definitive (embryonic) endoderm identity emerge from the pluripotent epiblast at gastrulation, and go on to form the gut tube, which develops into the epithelial component of the digestive and respiratory tracts. In this review, we discuss the mechanisms driving endoderm emergence and morphogenesis, including key epithelial-mesenchymal and mesenchymal-epithelial transitions, the mechanical forces driving gut tube formation, and the patterning events that subdivide the gut tube into different organ territories.",
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Relevant to Cell Science's interest in how cells make identity decisions, with implications for stem cell differentiation and iPSC-based model systems.",
+    "tags": [
+      "development",
+      "morphogenesis",
+      "cell fate"
+    ],
+    "doi": "10.1146/annurev-cellbio-111524-021734",
+    "link": "https://doi.org/10.1146/annurev-cellbio-111524-021734",
+    "score": 10,
+    "added": "2026-10-05",
+    "pdf_link": "https://doi.org/10.1146/annurev-cellbio-111524-021734",
+    "source": "pubmed",
+    "reasoning": "keyword match (no Anthropic API key)"
+  },
+  {
+    "title": "Human stem cell-based embryo models: from self-organization to recapitulating development",
+    "authors": "Dong-Song Liu, Tian-Yao He",
+    "year": "2026",
+    "journal": "Frontiers in Cell and Developmental Biology",
+    "type": "review",
+    "summary": "Human stem cell-based embryo models (hereafter referred to as embryo models) are a rapidly evolving field at the intersection of developmental biology and bioengineering. In this review, we examine design principles, material systems, and engineering approaches that enable the construction of models arising from pluripotent stem cells. We consider how three-dimensional environments, synthetic hydrogels, and spatiotemporal modulation of morphogenetic signals guide self-organization.",
+    "relevance": "Directly relevant to Cell Science's foundational interest in how cells acquire and maintain identity — gene regulatory networks, lineage specification, and embryonic patterning are central to understanding cell decision-making and fate in developmental contexts. Tangentially relevant to disease modeling using hiPSC lines.",
+    "tags": [
+      "stem cells",
+      "development",
+      "self-organization",
+      "developmental biology"
+    ],
+    "doi": "10.3389/fcell.2026.1857249",
+    "link": "https://doi.org/10.3389/fcell.2026.1857249",
+    "score": 9,
+    "added": "2026-10-05",
+    "pdf_link": "https://www.frontiersin.org/journals/cell-and-developmental-biology/articles/10.3389/fcell.2026.1857249/pdf",
+    "source": "ss_recommendations",
+    "reasoning": "keyword match (no Anthropic API key)"
+  },
+  {
+    "title": "Decoding Sebaceous Gland Biology Through Experimental Models: Progress, Limitations, and Future Directions",
+    "authors": "Stefania Briganti, Sarah Mosca, Monica Ottaviani, Enrica Flori",
+    "year": "2026",
+    "journal": "Cells",
+    "type": "review",
+    "summary": "The sebaceous gland (SG) is a highly dynamic skin appendage that plays a central role in maintaining skin homeostasis through lipid production, immune modulation, and interactions with the skin microbiome. Dysregulation of SG function is implicated in several dermatological disorders, including acne and other inflammatory skin diseases. Over the past decades, a wide range of experimental models has been developed to investigate SG biology and pathology.",
+    "relevance": "Relevant to lumen morphogenesis, lumenoid self-organization, organoid systems, and live imaging of three-dimensional culture morphodynamics. Relevant to Cell Science's core work on hiPSC biology, pluripotent stem cell engineering, and stem cell-derived model systems.",
+    "tags": [
+      "stem cells",
+      "development",
+      "organoid"
+    ],
+    "doi": "10.3390/cells15171591",
+    "link": "https://doi.org/10.3390/cells15171591",
+    "score": 8,
+    "added": "2026-10-05",
+    "pdf_link": "https://doi.org/10.3390/cells15171591",
+    "source": "ss_recommendations",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "author_data": [
+      {
+        "name": "Stefania Briganti"
+      },
+      {
+        "name": "Sarah Mosca",
+        "orcid": "0000-0002-6468-200X"
+      },
+      {
+        "name": "Monica Ottaviani",
+        "orcid": "0000-0002-6613-2570"
+      },
+      {
+        "name": "Enrica Flori",
+        "orcid": "0000-0002-9275-1041"
+      }
+    ]
+  },
+  {
+    "title": "A mini-review of the molecular mechanisms, mutational landscape, and therapeutic opportunities of TWIST1 in oncology.",
+    "authors": "Bruno Ricardo Barreto Pires, Gerson Moura Ferreira, Eliana Abdelhay",
+    "year": "2026",
+    "journal": "Biochimica et biophysica acta. Molecular cell research",
+    "type": "research",
+    "summary": "TWIST1 is a deeply conserved basic helix-loop-helix (bHLH) transcription factor that has emerged as a central transcriptional regulator bridging developmental biology and cancer pathogenesis. This key regulator orchestrates mesoderm formation, neural crest migration, and craniofacial morphogenesis through precise dimerization-dependent mechanisms. The TWIST1 bHLH domain mediates DNA binding at E-box motifs (CANNTG), with its regulatory role determined by homodimer versus E-protein heterodimer formation.",
+    "relevance": "Directly relevant to Cell Science's foundational interest in how cells acquire and maintain identity — gene regulatory networks, lineage specification, and embryonic patterning are central to understanding cell decision-making and fate in developmental contexts. Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures.",
+    "tags": [
+      "development",
+      "morphogenesis",
+      "developmental biology"
+    ],
+    "doi": "10.1016/j.bbamcr.2026.120226",
+    "link": "https://doi.org/10.1016/j.bbamcr.2026.120226",
+    "score": 7,
+    "added": "2026-10-05",
+    "pdf_link": "",
+    "source": "pubmed",
+    "reasoning": "keyword match (no Anthropic API key)"
+  },
+  {
+    "title": "Advances in organoids for personalized medicine: from technological development to clinical application",
+    "authors": "Xinkui Zhou, Xingxue Yan, Zhengyang Zhang, Zhilei Zhang, Yixiang Que, Yanfan Wang, Yaodong Zhang, Kuo Lu et al.",
+    "year": "2026",
+    "journal": "Frontiers in Cell and Developmental Biology",
+    "type": "review",
+    "summary": "Organoids, three-dimensional cell culture models derived from patient tissues or stem cells, have emerged as a cutting-edge technology in personalized medicine, owing to their remarkable ability to closely recapitulate in vivo tissue architecture and function. This review provides a comprehensive overview of the technological evolution and construction methodologies of organoids, highlighting their significant applications in oncology, genetic disorders, infectious diseases, and drug screening. This review examines how organoids enable precision medicine by preserving genomic fidelity, predicting drug sensitivity, and creating disease models via gene editing.",
+    "relevance": "Tangentially relevant to disease modeling using hiPSC lines. Relevant to lumen morphogenesis, lumenoid self-organization, organoid systems, and live imaging of three-dimensional culture morphodynamics.",
+    "tags": [
+      "stem cells",
+      "development",
+      "organoid"
+    ],
+    "doi": "10.3389/fcell.2026.1890385",
+    "link": "https://doi.org/10.3389/fcell.2026.1890385",
+    "score": 7,
+    "added": "2026-10-05",
+    "pdf_link": "https://doi.org/10.3389/fcell.2026.1890385",
+    "source": "ss_recommendations",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "author_data": [
+      {
+        "name": "Xinkui Zhou"
+      },
+      {
+        "name": "Xingxue Yan"
+      },
+      {
+        "name": "Zhengyang Zhang"
+      },
+      {
+        "name": "Zhilei Zhang"
+      },
+      {
+        "name": "Yixiang Que"
+      },
+      {
+        "name": "Yanfan Wang"
+      },
+      {
+        "name": "Yaodong Zhang"
+      },
+      {
+        "name": "Kuo Lu"
+      },
+      {
+        "name": "Longfei Wang"
       }
     ]
   }
