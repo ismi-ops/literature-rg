@@ -20,5 +20,6 @@
   {"name": "Margaret Gardel", "search_name": "Margaret Gardel", "institution": "University of Chicago", "relationship": "collaborator", "ss_id": null},
   {"name": "Jan Ellenberg", "search_name": "Jan Ellenberg", "institution": "EMBL", "relationship": "collaborator", "ss_id": null},
   {"name": "Gaudenz Danuser", "search_name": "Gaudenz Danuser", "institution": "UT Southwestern", "relationship": "collaborator", "ss_id": null},
-  {"name": "Alan Lowe", "search_name": "Alan Lowe", "institution": "UCL", "relationship": "collaborator", "ss_id": null}
+  {"name": "Alan Lowe", "search_name": "Alan Lowe", "institution": "UCL", "relationship": "collaborator", "ss_id": null},
+  {"name": "Jen Zallin", "search_name": "Jen Zallin", "institution": "", "relationship": "collaborator", "ss_id": null}
 ]
