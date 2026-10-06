@@ -1,25 +1,163 @@
 [
-  {"name": "Zev Gartner", "search_name": "Zev Gartner", "institution": "UCSF", "relationship": "collaborator", "ss_id": null},
-  {"name": "L. Mahadevan", "search_name": "Lakshminarayanan Mahadevan", "institution": "Harvard University", "relationship": "collaborator", "ss_id": null},
-  {"name": "Anna Kreshuk", "search_name": "Anna Kreshuk", "institution": "EMBL", "relationship": "collaborator", "ss_id": null},
-  {"name": "Wallace Marshall", "search_name": "Wallace Marshall", "institution": "UCSF", "relationship": "collaborator", "ss_id": null},
-  {"name": "Prisca Liberali", "search_name": "Prisca Liberali", "institution": "FMI Basel", "relationship": "collaborator", "ss_id": null},
-  {"name": "Jin Wang", "search_name": "Jin Wang", "institution": "Stony Brook University", "relationship": "collaborator", "ss_id": null},
-  {"name": "Anne Grapin-Botton", "search_name": "Anne Grapin-Botton", "institution": "", "relationship": "collaborator", "ss_id": null},
-  {"name": "Sadao Ota", "search_name": "Sadao Ota", "institution": "", "relationship": "collaborator", "ss_id": null},
-  {"name": "Magdalena Zernicka-Goetz", "search_name": "Magdalena Zernicka-Goetz", "institution": "", "relationship": "collaborator", "ss_id": null},
-  {"name": "Sebastian Streichan", "search_name": "Sebastian Streichan", "institution": "UCSB", "relationship": "collaborator", "ss_id": null},
-  {"name": "M. Lisa Manning", "search_name": "M. Lisa Manning", "institution": "Syracuse University", "relationship": "collaborator", "ss_id": null},
-  {"name": "Kaitlyn McCreery", "search_name": "Kaitlyn McCreery", "institution": "", "relationship": "collaborator", "ss_id": null},
-  {"name": "Chris Obara", "search_name": "Chris Obara", "institution": "", "relationship": "collaborator", "ss_id": null},
-  {"name": "Yuchuan Miao", "search_name": "Yuchuan Miao", "institution": "", "relationship": "collaborator", "ss_id": null},
-  {"name": "Michael Elowitz", "search_name": "Michael Elowitz", "institution": "Caltech", "relationship": "collaborator", "ss_id": null},
-  {"name": "Miki Ebisuya", "search_name": "Miki Ebisuya", "institution": "EMBL Barcelona", "relationship": "collaborator", "ss_id": null},
-  {"name": "Ron Weiss", "search_name": "Ron Weiss", "institution": "MIT", "relationship": "collaborator", "ss_id": null},
-  {"name": "Thomas Lecuit", "search_name": "Thomas Lecuit", "institution": "Collège de France", "relationship": "collaborator", "ss_id": null},
-  {"name": "Margaret Gardel", "search_name": "Margaret Gardel", "institution": "University of Chicago", "relationship": "collaborator", "ss_id": null},
-  {"name": "Jan Ellenberg", "search_name": "Jan Ellenberg", "institution": "EMBL", "relationship": "collaborator", "ss_id": null},
-  {"name": "Gaudenz Danuser", "search_name": "Gaudenz Danuser", "institution": "UT Southwestern", "relationship": "collaborator", "ss_id": null},
-  {"name": "Alan Lowe", "search_name": "Alan Lowe", "institution": "UCL", "relationship": "collaborator", "ss_id": null},
-  {"name": "Jen Zallin", "search_name": "Jen Zallin", "institution": "", "relationship": "collaborator", "ss_id": null}
+  {
+    "name": "Zev Gartner",
+    "search_name": "Zev Gartner",
+    "institution": "UCSF",
+    "relationship": "collaborator",
+    "ss_id": "6398901"
+  },
+  {
+    "name": "L. Mahadevan",
+    "search_name": "Lakshminarayanan Mahadevan",
+    "institution": "Harvard University",
+    "relationship": "collaborator",
+    "ss_id": "2334906775"
+  },
+  {
+    "name": "Anna Kreshuk",
+    "search_name": "Anna Kreshuk",
+    "institution": "EMBL",
+    "relationship": "collaborator",
+    "ss_id": "3190177"
+  },
+  {
+    "name": "Wallace Marshall",
+    "search_name": "Wallace Marshall",
+    "institution": "UCSF",
+    "relationship": "collaborator",
+    "ss_id": "148352515"
+  },
+  {
+    "name": "Prisca Liberali",
+    "search_name": "Prisca Liberali",
+    "institution": "FMI Basel",
+    "relationship": "collaborator",
+    "ss_id": "5688665"
+  },
+  {
+    "name": "Jin Wang",
+    "search_name": "Jin Wang",
+    "institution": "Stony Brook University",
+    "relationship": "collaborator",
+    "ss_id": "2143719263"
+  },
+  {
+    "name": "Anne Grapin-Botton",
+    "search_name": "Anne Grapin-Botton",
+    "institution": "",
+    "relationship": "collaborator",
+    "ss_id": "1393630824"
+  },
+  {
+    "name": "Sadao Ota",
+    "search_name": "Sadao Ota",
+    "institution": "",
+    "relationship": "collaborator",
+    "ss_id": "3746140"
+  },
+  {
+    "name": "Magdalena Zernicka-Goetz",
+    "search_name": "Magdalena Zernicka-Goetz",
+    "institution": "",
+    "relationship": "collaborator",
+    "ss_id": "1398486329"
+  },
+  {
+    "name": "Sebastian Streichan",
+    "search_name": "Sebastian Streichan",
+    "institution": "UCSB",
+    "relationship": "collaborator",
+    "ss_id": "3551981"
+  },
+  {
+    "name": "M. Lisa Manning",
+    "search_name": "M. Lisa Manning",
+    "institution": "Syracuse University",
+    "relationship": "collaborator",
+    "ss_id": "2375906823"
+  },
+  {
+    "name": "Kaitlyn McCreery",
+    "search_name": "Kaitlyn McCreery",
+    "institution": "",
+    "relationship": "collaborator",
+    "ss_id": null
+  },
+  {
+    "name": "Chris Obara",
+    "search_name": "Chris Obara",
+    "institution": "",
+    "relationship": "collaborator",
+    "ss_id": null
+  },
+  {
+    "name": "Yuchuan Miao",
+    "search_name": "Yuchuan Miao",
+    "institution": "",
+    "relationship": "collaborator",
+    "ss_id": "1391607274"
+  },
+  {
+    "name": "Michael Elowitz",
+    "search_name": "Michael Elowitz",
+    "institution": "Caltech",
+    "relationship": "collaborator",
+    "ss_id": "2565400"
+  },
+  {
+    "name": "Miki Ebisuya",
+    "search_name": "Miki Ebisuya",
+    "institution": "EMBL Barcelona",
+    "relationship": "collaborator",
+    "ss_id": "6602880"
+  },
+  {
+    "name": "Ron Weiss",
+    "search_name": "Ron Weiss",
+    "institution": "MIT",
+    "relationship": "collaborator",
+    "ss_id": "2286510219"
+  },
+  {
+    "name": "Thomas Lecuit",
+    "search_name": "Thomas Lecuit",
+    "institution": "Collège de France",
+    "relationship": "collaborator",
+    "ss_id": "2097611375"
+  },
+  {
+    "name": "Margaret Gardel",
+    "search_name": "Margaret Gardel",
+    "institution": "University of Chicago",
+    "relationship": "collaborator",
+    "ss_id": "2790484"
+  },
+  {
+    "name": "Jan Ellenberg",
+    "search_name": "Jan Ellenberg",
+    "institution": "EMBL",
+    "relationship": "collaborator",
+    "ss_id": "2363369"
+  },
+  {
+    "name": "Gaudenz Danuser",
+    "search_name": "Gaudenz Danuser",
+    "institution": "UT Southwestern",
+    "relationship": "collaborator",
+    "ss_id": "3059315"
+  },
+  {
+    "name": "Alan Lowe",
+    "search_name": "Alan Lowe",
+    "institution": "UCL",
+    "relationship": "collaborator",
+    "ss_id": "94951694"
+  },
+  {
+    "name": "Jen Zallin",
+    "search_name": "Jen Zallin",
+    "institution": "",
+    "relationship": "collaborator",
+    "ss_id": null
+  }
 ]
