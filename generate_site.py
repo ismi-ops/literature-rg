@@ -95,12 +95,14 @@ HTML_TEMPLATE = """<!doctype html>
   .badge-perspective { background: #e0faf9; color: #007d75; }
   .badge-article { background: #fef6d9; color: #DE9C00; }
   .badge-preprint { background: #f3fad0; color: #6a7a04; }
+  .badge-collab { background: #fff0e8; color: #b05000; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 12px; }
   @media (prefers-color-scheme: dark) {
     .badge-research { background: #1a1a3d; color: #a0a0ff; }
     .badge-review { background: #3b0018; color: #ff80aa; }
     .badge-perspective { background: #003630; color: #4dd9d3; }
     .badge-article { background: #2a1f00; color: #DE9C00; }
     .badge-preprint { background: #1e2500; color: #CCE805; }
+    .badge-collab { background: #2a1400; color: #ff9955; }
     .card-relevance { border-color: #00A59B; background: transparent; }
     .card-relevance-label { color: #4dd9d3; }
     .card-relevance-text { color: var(--text); opacity: .88; }
@@ -192,6 +194,7 @@ HTML_TEMPLATE = """<!doctype html>
   <div class="filters-inner">
     <div class="filter-row" id="type-filters"><span class="filter-label">Type</span></div>
     <div class="filter-row" id="preprint-filters"><span class="filter-label">Status</span></div>
+    <div class="filter-row" id="collab-filters"><span class="filter-label">Collaborators</span></div>
     <div class="filter-row" id="tag-filters"><span class="filter-label">Topic</span></div>
     <div class="filter-row" id="year-filters"><span class="filter-label">Year</span></div>
     <div class="filter-row" id="added-filters"><span class="filter-label">Added</span></div>
@@ -268,7 +271,7 @@ const TOP_PICK_IDS = new Set(_recentBatch.slice(0, 4).map(p => p.doi || p.title 
 function isTopPick(p) { return TOP_PICK_IDS.size > 0 && TOP_PICK_IDS.has(p.doi || p.title || ''); }
 
 /* ── Filter state ───────────────────────────────────────────────────────── */
-let activeType = 'all', activeTags = new Set(), activeYear = 'all', activeAdded = 'all', activePreprint = false, searchText = '';
+let activeType = 'all', activeTags = new Set(), activeYear = 'all', activeAdded = 'all', activePreprint = false, activeCollab = false, searchText = '';
 
 /* ── Type chips ─────────────────────────────────────────────────────────── */
 function countByType(type) {
@@ -311,6 +314,29 @@ if (preprintCount > 0) {
   preprintRow.appendChild(preChip);
 } else {
   preprintRow.style.display = 'none';
+}
+
+/* ── Collaborators filter ───────────────────────────────────────────────── */
+const collabPapers = PAPERS.filter(p => p.vip_author);
+const collabRow = document.getElementById('collab-filters');
+if (collabPapers.length > 0) {
+  const collabAllChip = document.createElement('button');
+  collabAllChip.className = 'chip active'; collabAllChip.textContent = 'All';
+  collabAllChip.addEventListener('click', () => {
+    activeCollab = false;
+    collabAllChip.classList.add('active'); collabOnlyChip.classList.remove('active'); render();
+  });
+  const collabOnlyChip = document.createElement('button');
+  collabOnlyChip.className = 'chip';
+  collabOnlyChip.innerHTML = 'Collaborators<span class="count">' + collabPapers.length + '</span>';
+  collabOnlyChip.addEventListener('click', () => {
+    activeCollab = true;
+    collabOnlyChip.classList.add('active'); collabAllChip.classList.remove('active'); render();
+  });
+  collabRow.appendChild(collabAllChip);
+  collabRow.appendChild(collabOnlyChip);
+} else {
+  collabRow.style.display = 'none';
 }
 
 /* ── Topic tag chips ────────────────────────────────────────────────────── */
@@ -493,8 +519,9 @@ function fmt(p) {
   const noteId = 'note-' + Math.random().toString(36).slice(2);
   const starHtml = isTopPick(p) ? '<div class="top-pick-star" title="Top pick · recommended for printing">⭐</div>' : '';
   const preprintBadge = p.preprint ? '<span class="badge badge-preprint">preprint</span>' : '';
+  const collabBadge = p.vip_author ? '<span class="badge badge-collab" title="Paper by collaborator '+esc(p.vip_author)+'">&#128101; '+esc(p.vip_author)+'</span>' : '';
   return '<div class="card">'
-    +'<div class="card-meta"><span class="badge '+badgeClass+'">'+esc(type)+'</span>'+preprintBadge+added+'</div>'
+    +'<div class="card-meta"><span class="badge '+badgeClass+'">'+esc(type)+'</span>'+preprintBadge+collabBadge+added+'</div>'
     +'<div class="card-title">'+titleHtml+'</div>'
     +(authorHtml ? '<div class="card-authors">'+authorHtml+'</div>' : '')
     +(venue ? '<div class="card-venue">'+venue+'</div>' : '')
@@ -556,6 +583,8 @@ function render() {
   const filtered = PAPERS.filter(p => {
     if (activeType !== 'all' && (p.type||'research') !== activeType) return false;
     if (activePreprint && !p.preprint) return false;
+    if (activeCollab) { if (!p.vip_author) return false; }
+    else { if (p.vip_only) return false; }
     if (activeTags.size > 0 && ![...(p.tags||[])].some(t => activeTags.has(t))) return false;
     if (activeYear !== 'all' && String(p.year||'').trim() !== activeYear) return false;
     if (addedCutoff && (p.added||'') < addedCutoff) return false;

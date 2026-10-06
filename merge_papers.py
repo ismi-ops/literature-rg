@@ -40,7 +40,7 @@ def _find_origin_idx(p: dict) -> int | None:
     return None
 
 
-MERGE_FIELDS = ("authors", "author_data", "curated", "pdf_link", "summary", "relevance", "tags", "score")
+MERGE_FIELDS = ("authors", "author_data", "curated", "pdf_link", "summary", "relevance", "tags", "score", "vip_author", "vip_only")
 
 merged = list(origin)
 added = 0
