@@ -81,14 +81,14 @@
     "search_name": "Kaitlin P. McCreery",
     "institution": "University of Vermont",
     "relationship": "collaborator",
-    "ss_id": null
+    "ss_id": "94251620"
   },
   {
     "name": "Chris Obara",
     "search_name": "Christopher Obara",
     "institution": "UCSD",
     "relationship": "collaborator",
-    "ss_id": null
+    "ss_id": "39235692"
   },
   {
     "name": "Yuchuan Miao",
@@ -158,6 +158,6 @@
     "search_name": "Jennifer Zallen",
     "institution": "Sloan Kettering Institute",
     "relationship": "collaborator",
-    "ss_id": null
+    "ss_id": "6149577"
   }
 ]
