@@ -78,15 +78,15 @@
   },
   {
     "name": "Kaitlyn McCreery",
-    "search_name": "Kaitlyn McCreery",
-    "institution": "",
+    "search_name": "Kaitlin P. McCreery",
+    "institution": "University of Vermont",
     "relationship": "collaborator",
     "ss_id": null
   },
   {
     "name": "Chris Obara",
-    "search_name": "Chris Obara",
-    "institution": "",
+    "search_name": "Christopher Obara",
+    "institution": "UCSD",
     "relationship": "collaborator",
     "ss_id": null
   },
@@ -155,8 +155,8 @@
   },
   {
     "name": "Jen Zallin",
-    "search_name": "Jen Zallin",
-    "institution": "",
+    "search_name": "Jennifer Zallen",
+    "institution": "Sloan Kettering Institute",
     "relationship": "collaborator",
     "ss_id": null
   }
