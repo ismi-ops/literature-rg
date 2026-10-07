@@ -4507,5 +4507,63 @@
         "name": "Longfei Wang"
       }
     ]
+  },
+  {
+    "title": "Self-organization of vascularized muscle from bovine embryonic stem cells",
+    "authors": "M, a, r, i, n, a et al.",
+    "year": "2026",
+    "journal": "Nature Communications",
+    "type": "research",
+    "summary": "Cultured beef offers a promising alternative to traditional meat. While adult stem cells are commonly used as the cell source for cultured beef, their proliferation and differentiation capacities are limited. Current manufacturing processes for cultured beef steaks often require separate preparation of multiple cell types and their intricate assembly.",
+    "relevance": "Relevant to hiPSC-derived cardiomyocyte biology and quantitative structural imaging of cardiac cells. Relevant to Cell Science's interest in emergent tissue organization and how multicellular systems self-pattern without external instruction.",
+    "tags": [
+      "stem cells",
+      "self-organization"
+    ],
+    "doi": "10.1038/s41467-026-76569-2",
+    "link": "https://doi.org/10.1038/s41467-026-76569-2",
+    "score": 3,
+    "added": "2026-10-07",
+    "pdf_link": "https://www.nature.com/articles/s41467-026-76569-2.pdf",
+    "source": "author_tracker",
+    "reasoning": "keyword match (no Anthropic API key)"
+  },
+  {
+    "title": "Species-specific basal fluidization shapes early forebrain development",
+    "authors": "S, h, u, t, i, n et al.",
+    "year": "2026",
+    "journal": "bioRxiv",
+    "type": "research",
+    "summary": "The human forebrain exhibits an expanded surface area compared with other great apes. Despite progress in dissecting species-specific gene expression programs and cell lineages, the tissue-level physical mechanisms underlying human-specific neurodevelopment remain unclear. Here, by quantifying tissue dynamics and mechanics using oil microdroplets in cerebral organoids from humans, gorillas, chimpanzees, and mice, we uncover a transient tissue fluidization occurring exclusively in the basal region of human neuroepithelia.",
+    "relevance": "Directly relevant to Cell Science's foundational interest in how cells acquire and maintain identity — gene regulatory networks, lineage specification, and embryonic patterning are central to understanding cell decision-making and fate in developmental contexts. Relevant to lumen morphogenesis, lumenoid self-organization, organoid systems, and live imaging of three-dimensional culture morphodynamics.",
+    "tags": [
+      "development",
+      "organoid"
+    ],
+    "doi": "10.1101/2025.10.07.680907",
+    "link": "https://doi.org/10.1101/2025.10.07.680907",
+    "score": 6,
+    "added": "2026-10-07",
+    "pdf_link": "https://www.biorxiv.org/content/biorxiv/early/2025/10/07/2025.10.07.680907.full.pdf",
+    "source": "author_tracker",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "preprint": true
+  },
+  {
+    "title": "The actin crosslinker Fimbrin is required for force sensing at tricellular junctions.",
+    "authors": "N, i, l, a, y,   et al.",
+    "year": "2026",
+    "journal": "Developmental cell",
+    "type": "research",
+    "summary": "Epithelial cells sense and respond to mechanical forces by reinforcing connections between adherens junctions and the actin cytoskeleton. Tricellular junctions are key sites of mechanotransduction in epithelial cells, but how force responses are coordinated at these structures during epithelial remodeling is poorly understood. We show that the actin crosslinking protein Fimbrin is recruited by forces to tricellular junctions in Drosophila and promotes actin reorganization and cell adhesion during epithelial remodeling.",
+    "relevance": "Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis.",
+    "tags": [],
+    "doi": "10.1016/j.devcel.2026.07.001",
+    "link": "https://doi.org/10.1016/j.devcel.2026.07.001",
+    "score": 3,
+    "added": "2026-10-07",
+    "pdf_link": "https://doi.org/10.1016/j.devcel.2026.07.001",
+    "source": "author_tracker",
+    "reasoning": "keyword match (no Anthropic API key)"
   }
 ]
