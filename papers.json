@@ -4874,5 +4874,46 @@
     "source": "semantic_scholar",
     "reasoning": "keyword match (no Anthropic API key)",
     "curated": true
+  },
+  {
+    "title": "Future Directions in Stem Cells, Cell Therapy, and Bioengineering in Lung Biology and Diseases.",
+    "authors": "Lei Wang, Sarah Shin, Jaime L Hook, Darcy E Wagner, Laure-Emmanuelle Zaragosi, Robert E Hynds",
+    "year": "2026",
+    "journal": "American Journal of Respiratory Cell and Molecular Biology",
+    "type": "review",
+    "summary": "Over the past two decades, progress in stem cell biology, bioengineering, and systems biology has improved our understanding of lung regeneration and repair. Building on work presented at the 20th Anniversary Stem Cells, Cell Therapies, and Bioengineering in Lung Biology and Diseases Conference, this review examines the evolving trajectory of the field and outlines remaining challenges and opportunities for future research. We focus on three main areas: improving ex vivo lung models to better capture cellular heterogeneity and biomechanics; using single-cell, spatial, and computational approaches to support translation into clinical practice; and innovative therapeutic strategies, including gene therapies, epithelial cell therapies, immune cell engineering, extracellular matrix reconditioning, senescence targeting, and whole-organ bioengineering and xenotransplantation.",
+    "relevance": "Directly addresses Cell Science's core question of why genetically identical cells differ structurally and how variation encodes functional information. Relevant to Cell Science's AI and computational agenda for modeling cell biology and building virtual cell frameworks.",
+    "tags": [
+      "stem cells",
+      "single-cell"
+    ],
+    "doi": "10.1093/ajrcmb/aanag138",
+    "link": "https://doi.org/10.1093/ajrcmb/aanag138",
+    "score": 3,
+    "added": "2026-10-12",
+    "pdf_link": "https://doi.org/10.1093/ajrcmb/aanag138",
+    "source": "semantic_scholar",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "curated": true,
+    "author_data": [
+      {
+        "name": "Lei Wang"
+      },
+      {
+        "name": "Sarah Shin"
+      },
+      {
+        "name": "Jaime L Hook"
+      },
+      {
+        "name": "Darcy E Wagner"
+      },
+      {
+        "name": "Laure-Emmanuelle Zaragosi"
+      },
+      {
+        "name": "Robert E Hynds"
+      }
+    ]
   }
 ]
