@@ -4454,7 +4454,7 @@
     "link": "https://doi.org/10.1016/j.bbamcr.2026.120226",
     "score": 7,
     "added": "2026-10-05",
-    "pdf_link": "",
+    "pdf_link": "https://doi.org/10.1016/j.bbamcr.2026.120226",
     "source": "pubmed",
     "reasoning": "keyword match (no Anthropic API key)"
   },
@@ -4531,7 +4531,7 @@
   },
   {
     "title": "Species-specific basal fluidization shapes early forebrain development",
-    "authors": "",
+    "authors": "Shuting Xu, Sangwoo Kim, Guanlin Li, Michaela Wilsch-Bräuninger, Annika Kolodziejczyk, Theresa M. Schütze, Mareike Albert, Vikas Trivedi et al.",
     "year": "2026",
     "journal": "bioRxiv",
     "type": "research",
@@ -4548,11 +4548,48 @@
     "pdf_link": "https://www.biorxiv.org/content/biorxiv/early/2025/10/07/2025.10.07.680907.full.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "preprint": true
+    "preprint": true,
+    "author_data": [
+      {
+        "name": "Shuting Xu"
+      },
+      {
+        "name": "Sangwoo Kim"
+      },
+      {
+        "name": "Guanlin Li"
+      },
+      {
+        "name": "Michaela Wilsch-Bräuninger",
+        "orcid": "0000-0002-7217-6879"
+      },
+      {
+        "name": "Annika Kolodziejczyk"
+      },
+      {
+        "name": "Theresa M. Schütze"
+      },
+      {
+        "name": "Mareike Albert",
+        "orcid": "0000-0001-9855-9344"
+      },
+      {
+        "name": "Vikas Trivedi",
+        "orcid": "0000-0003-0953-0553"
+      },
+      {
+        "name": "Otger Campàs",
+        "orcid": "0000-0002-9642-8030"
+      },
+      {
+        "name": "Miki Ebisuya",
+        "orcid": "0000-0003-1854-7496"
+      }
+    ]
   },
   {
     "title": "The actin crosslinker Fimbrin is required for force sensing at tricellular junctions.",
-    "authors": "",
+    "authors": "Nilay Taneja, Claire A. Looney, Michael F. Moubarak, Meriel J. McGovern, Kenji Yeoh, Jennifer A. Zallen",
     "year": "2026",
     "journal": "Developmental cell",
     "type": "research",
@@ -4565,11 +4602,31 @@
     "added": "2026-10-07",
     "pdf_link": "https://doi.org/10.1016/j.devcel.2026.07.001",
     "source": "author_tracker",
-    "reasoning": "keyword match (no Anthropic API key)"
+    "reasoning": "keyword match (no Anthropic API key)",
+    "author_data": [
+      {
+        "name": "Nilay Taneja"
+      },
+      {
+        "name": "Claire A. Looney"
+      },
+      {
+        "name": "Michael F. Moubarak"
+      },
+      {
+        "name": "Meriel J. McGovern"
+      },
+      {
+        "name": "Kenji Yeoh"
+      },
+      {
+        "name": "Jennifer A. Zallen"
+      }
+    ]
   },
   {
     "title": "Integrating Technologies for Synthetic, Systems, and Spatial Approaches in Cancer Research",
-    "authors": "",
+    "authors": "Karmella A. Haynes, Kolade Adebowale, Belinda S. Akpa, Joel S. Bader, Trisha Bansal, Joshua Breunig, Ran Brosh, Lukasz J. Bugaj et al.",
     "year": "2026",
     "journal": "ACS Synthetic Biology",
     "type": "research",
@@ -4584,6 +4641,279 @@
     "added": "2026-10-12",
     "pdf_link": "https://pubs.acs.org/asbcd6/article-pdf/doi/10.1021/acssynbio.6c00339/68809399/sb6c00339.pdf",
     "source": "author_tracker",
-    "reasoning": "keyword match (no Anthropic API key)"
+    "reasoning": "keyword match (no Anthropic API key)",
+    "author_data": [
+      {
+        "name": "Karmella A. Haynes",
+        "orcid": "0000-0002-5975-577X"
+      },
+      {
+        "name": "Kolade Adebowale"
+      },
+      {
+        "name": "Belinda S. Akpa"
+      },
+      {
+        "name": "Joel S. Bader"
+      },
+      {
+        "name": "Trisha Bansal"
+      },
+      {
+        "name": "Joshua Breunig"
+      },
+      {
+        "name": "Ran Brosh"
+      },
+      {
+        "name": "Lukasz J. Bugaj",
+        "orcid": "0000-0002-0749-2912"
+      },
+      {
+        "name": "George M. Burslem",
+        "orcid": "0000-0002-2812-983X"
+      },
+      {
+        "name": "Awalpreet Chadha"
+      },
+      {
+        "name": "Moumita Das"
+      },
+      {
+        "name": "Tara Deans",
+        "orcid": "0000-0002-2361-2195"
+      },
+      {
+        "name": "Cole A. DeForest",
+        "orcid": "0000-0003-0337-3577"
+      },
+      {
+        "name": "Lawrence J. Dooling"
+      },
+      {
+        "name": "Zev Gartner",
+        "orcid": "0000-0001-7803-1219"
+      },
+      {
+        "name": "Laura M. Heiser"
+      },
+      {
+        "name": "Alex Hughes"
+      },
+      {
+        "name": "Melissa L. Kemp",
+        "orcid": "0000-0003-3781-8802"
+      },
+      {
+        "name": "Kirill S. Korolev"
+      },
+      {
+        "name": "Chunru Lin"
+      },
+      {
+        "name": "Timothee Lionnet"
+      },
+      {
+        "name": "Xin Lu"
+      },
+      {
+        "name": "Alison P. McGuigan",
+        "orcid": "0000-0003-2803-0917"
+      },
+      {
+        "name": "Hamid Reza Mirzaei"
+      },
+      {
+        "name": "Ajit J. Nirmal"
+      },
+      {
+        "name": "Marina Pasca di Magliano"
+      },
+      {
+        "name": "Alexandros Poulopoulos"
+      },
+      {
+        "name": "Kunal Rai"
+      },
+      {
+        "name": "José Reyes"
+      },
+      {
+        "name": "Dagan Segal"
+      },
+      {
+        "name": "Mary Kathryn Sewell-Loftin"
+      },
+      {
+        "name": "Evgeniya V. Shmeleva",
+        "orcid": "0000-0002-7654-2960"
+      },
+      {
+        "name": "Adam Stevens"
+      },
+      {
+        "name": "Subbaya Subramanian"
+      },
+      {
+        "name": "Thea Tlsty"
+      },
+      {
+        "name": "Jennifer Totonchy"
+      },
+      {
+        "name": "Alexander Vlahos",
+        "orcid": "0000-0002-2154-8791"
+      },
+      {
+        "name": "Pei Wang"
+      },
+      {
+        "name": "Ioannis K. Zervantonakis"
+      },
+      {
+        "name": "Yanding Zhao"
+      },
+      {
+        "name": "Jeffrey H. Chuang"
+      }
+    ]
+  },
+  {
+    "title": "A fluctuation test for gastruloid heterogeneity.",
+    "authors": "Samuel G. Regalado, Chengxiang Qiu, Sanjay Kottapalli, Chau Huynh, Riza M. Daza, Aidan Keith, Jihye Park, Beth K. Martin et al.",
+    "year": "2026",
+    "journal": "Cell",
+    "type": "research",
+    "summary": "Stem cells self-organize into models of early development, but even under carefully controlled conditions, the resulting organoids exhibit substantial \"inter-individual\" heterogeneity. To explore its origins, we generated monoclonal gastruloids, each derived from a single mouse embryonic stem cell (mESC). Molecular profiling revealed extensive heterogeneity: some gastruloids failed to develop, others were biased toward mesodermal or neural fates, and yet others contained cell types atypical of conventional polyclonal gastruloids.",
+    "relevance": "Directly relevant to Cell Science's foundational interest in how cells acquire and maintain identity — gene regulatory networks, lineage specification, and embryonic patterning are central to understanding cell decision-making and fate in developmental contexts. Relevant to Cell Science's interest in emergent tissue organization and how multicellular systems self-pattern without external instruction.",
+    "tags": [
+      "stem cells",
+      "development",
+      "organoid"
+    ],
+    "doi": "10.1016/j.cell.2026.09.057",
+    "link": "https://doi.org/10.1016/j.cell.2026.09.057",
+    "score": 10,
+    "added": "2026-10-12",
+    "pdf_link": "https://doi.org/10.1016/j.cell.2026.09.057",
+    "source": "semantic_scholar",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "curated": true,
+    "author_data": [
+      {
+        "name": "Samuel G. Regalado"
+      },
+      {
+        "name": "Chengxiang Qiu"
+      },
+      {
+        "name": "Sanjay Kottapalli"
+      },
+      {
+        "name": "Chau Huynh"
+      },
+      {
+        "name": "Riza M. Daza"
+      },
+      {
+        "name": "Aidan Keith"
+      },
+      {
+        "name": "Jihye Park",
+        "orcid": "0000-0001-8728-6301"
+      },
+      {
+        "name": "Beth K. Martin"
+      },
+      {
+        "name": "Wei Chen"
+      },
+      {
+        "name": "Hanna Liao"
+      },
+      {
+        "name": "Haedong Kim"
+      },
+      {
+        "name": "Xiaoyi Li"
+      },
+      {
+        "name": "Jean-Benoît Lalanne"
+      },
+      {
+        "name": "Nobuhiko Hamazaki"
+      },
+      {
+        "name": "Silvia Domcke"
+      },
+      {
+        "name": "Junhong Choi"
+      },
+      {
+        "name": "Jay Shendure",
+        "orcid": "0000-0002-1516-1865"
+      }
+    ]
+  },
+  {
+    "title": "The regulatory logic of a dose-dependent developmental fate decision.",
+    "authors": "Alison H. Araten, Emily K. Ho, Jared E. Toettcher",
+    "year": "2026",
+    "journal": "Developmental Biology",
+    "type": "research",
+    "summary": "In canonical developmental patterning, the embryo is exposed to gradients of signaling activators that elicit different cellular responses depending on the activator's concentration. It remains largely unknown how very low doses of an inductive signal are read out to produce potent developmental responses. Recent optogenetic studies in early Drosophila embryos show that a brief, 5-minute ERK stimulus is sufficient to rescue the development of larval tail structures.",
+    "relevance": "Relevant to Cell Science's interest in how cells make identity decisions, with implications for stem cell differentiation and iPSC-based model systems. Aligned with Cell Science's synthetic biology program use of engineered gene circuits to program synthetic cell communities toward controlled tissue-level behaviors.",
+    "tags": [
+      "development"
+    ],
+    "doi": "10.1016/j.ydbio.2026.10.002",
+    "link": "https://doi.org/10.1016/j.ydbio.2026.10.002",
+    "score": 4,
+    "added": "2026-10-12",
+    "pdf_link": "https://doi.org/10.64898/2026.06.01.729432",
+    "source": "semantic_scholar",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "curated": true
+  },
+  {
+    "title": "Future Directions in Stem Cells, Cell Therapy, and Bioengineering in Lung Biology and Diseases.",
+    "authors": "Lei Wang, Sarah Shin, Jaime L Hook, Darcy E Wagner, Laure-Emmanuelle Zaragosi, Robert E Hynds",
+    "year": "2026",
+    "journal": "American Journal of Respiratory Cell and Molecular Biology",
+    "type": "review",
+    "summary": "Over the past two decades, progress in stem cell biology, bioengineering, and systems biology has improved our understanding of lung regeneration and repair. Building on work presented at the 20th Anniversary Stem Cells, Cell Therapies, and Bioengineering in Lung Biology and Diseases Conference, this review examines the evolving trajectory of the field and outlines remaining challenges and opportunities for future research. We focus on three main areas: improving ex vivo lung models to better capture cellular heterogeneity and biomechanics; using single-cell, spatial, and computational approaches to support translation into clinical practice; and innovative therapeutic strategies, including gene therapies, epithelial cell therapies, immune cell engineering, extracellular matrix reconditioning, senescence targeting, and whole-organ bioengineering and xenotransplantation.",
+    "relevance": "Directly addresses Cell Science's core question of why genetically identical cells differ structurally and how variation encodes functional information. Relevant to Cell Science's AI and computational agenda for modeling cell biology and building virtual cell frameworks.",
+    "tags": [
+      "stem cells",
+      "single-cell"
+    ],
+    "doi": "10.1093/ajrcmb/aanag138",
+    "link": "https://doi.org/10.1093/ajrcmb/aanag138",
+    "score": 3,
+    "added": "2026-10-12",
+    "pdf_link": "https://doi.org/10.1093/ajrcmb/aanag138",
+    "source": "semantic_scholar",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "curated": true,
+    "author_data": [
+      {
+        "name": "Lei Wang"
+      },
+      {
+        "name": "Sarah Shin"
+      },
+      {
+        "name": "Jaime L Hook"
+      },
+      {
+        "name": "Darcy E Wagner"
+      },
+      {
+        "name": "Laure-Emmanuelle Zaragosi"
+      },
+      {
+        "name": "Robert E Hynds"
+      }
+    ]
   }
 ]
