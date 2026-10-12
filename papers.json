@@ -4526,7 +4526,8 @@
     "added": "2026-10-07",
     "pdf_link": "https://www.nature.com/articles/s41467-026-76569-2.pdf",
     "source": "author_tracker",
-    "reasoning": "keyword match (no Anthropic API key)"
+    "reasoning": "keyword match (no Anthropic API key)",
+    "rejected": true
   },
   {
     "title": "Species-specific basal fluidization shapes early forebrain development",
