@@ -4854,5 +4854,25 @@
         "orcid": "0000-0002-1516-1865"
       }
     ]
+  },
+  {
+    "title": "The regulatory logic of a dose-dependent developmental fate decision.",
+    "authors": "Alison H. Araten, Emily K. Ho, Jared E. Toettcher",
+    "year": "2026",
+    "journal": "Developmental Biology",
+    "type": "research",
+    "summary": "In canonical developmental patterning, the embryo is exposed to gradients of signaling activators that elicit different cellular responses depending on the activator's concentration. It remains largely unknown how very low doses of an inductive signal are read out to produce potent developmental responses. Recent optogenetic studies in early Drosophila embryos show that a brief, 5-minute ERK stimulus is sufficient to rescue the development of larval tail structures.",
+    "relevance": "Relevant to Cell Science's interest in how cells make identity decisions, with implications for stem cell differentiation and iPSC-based model systems. Aligned with CellScapes' use of engineered gene circuits to program synthetic cell communities toward controlled tissue-level behaviors.",
+    "tags": [
+      "development"
+    ],
+    "doi": "10.1016/j.ydbio.2026.10.002",
+    "link": "https://doi.org/10.1016/j.ydbio.2026.10.002",
+    "score": 4,
+    "added": "2026-10-12",
+    "pdf_link": "https://doi.org/10.64898/2026.06.01.729432",
+    "source": "semantic_scholar",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "curated": true
   }
 ]
