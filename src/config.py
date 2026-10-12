@@ -201,10 +201,10 @@ Collection. Her background spans hiPSC engineering, quantitative cell imaging, d
    structural organization, and cell morphology. Papers combining imaging + omics, or challenging
    transcriptomics-centric views of cell identity, are high priority.
 
-   CellScapes Initiative (launched May 2025)
-   10-year program to build "synthoids" — programmable synthetic cell communities — to study how
-   cells cooperate to form tissues. Bridges synthetic biology, organoid biology, and quantitative
-   imaging. Papers on synthetic multicellular systems or programmable tissues are high priority.
+   Synthetic Cell Communities (Synthoids)
+   Long-term program to build programmable synthetic cell communities to study how cells cooperate
+   to form tissues. Bridges synthetic biology, organoid biology, and quantitative imaging. Papers
+   on synthetic multicellular systems or programmable tissues are high priority.
 
    Live-Cell Imaging & Phenomics
    Morpho-dynamic phenotyping of organoids and cells over time, image-based profiling, phenotype-
