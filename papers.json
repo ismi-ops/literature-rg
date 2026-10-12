@@ -4565,5 +4565,24 @@
     "pdf_link": "https://doi.org/10.1016/j.devcel.2026.07.001",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)"
+  },
+  {
+    "title": "Integrating Technologies for Synthetic, Systems, and Spatial Approaches in Cancer Research",
+    "authors": "K, a, r, m, e, l et al.",
+    "year": "2026",
+    "journal": "ACS Synthetic Biology",
+    "type": "research",
+    "summary": "Emerging tools for spatial analysis, systems biology, and synthetic biology offer opportunities to observe, dissect, and perturb cancer mechanisms, to design strategies for the prevention of oncogenesis, and to identify therapies that lead to durable tumor control. Here, we summarize perspectives from the virtual Innovation Lab on “Synthetic and Systems Approaches to Interrogate Spatiotemporal Processes in Cancer” (S3) hosted by the National Institutes of Health (NIH), which assembled interdisciplinary experts to discuss cancer spatial organization and dynamic cellular interactions and how they can be addressed by leveraging novel synthetic and systems biology approaches. These discussions focused especially on cancer initiation, which results from a failure of systems control.",
+    "relevance": "Aligned with the CellScapes program and Cell Science's engagement with synthetic developmental biology — engineering gene circuits to program cell community behavior. Relevant to Cell Science's AI and computational agenda for modeling cell biology and building virtual cell frameworks.",
+    "tags": [
+      "synthetic biology"
+    ],
+    "doi": "10.1021/acssynbio.6c00339",
+    "link": "https://doi.org/10.1021/acssynbio.6c00339",
+    "score": 2,
+    "added": "2026-10-12",
+    "pdf_link": "https://pubs.acs.org/asbcd6/article-pdf/doi/10.1021/acssynbio.6c00339/68809399/sb6c00339.pdf",
+    "source": "author_tracker",
+    "reasoning": "keyword match (no Anthropic API key)"
   }
 ]
