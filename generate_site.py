@@ -113,8 +113,10 @@ HTML_TEMPLATE = """<!doctype html>
   .card-title { font-size: 15px; font-weight: 650; line-height: 1.4; }
   .card-title a { color: var(--text); text-decoration: none; }
   .card-title a:hover { color: var(--accent); text-decoration: underline; }
-  .card-authors { font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 6px; }
+  .card-authors { font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 2px 0; }
   .author-link { color: var(--muted); text-decoration: none; }
+  .author-link::after { content: ' ·'; color: var(--border); margin-right: 6px; }
+  .author-link:last-child::after { content: ''; margin-right: 0; }
   .author-link:hover { color: var(--accent); text-decoration: underline; }
   .card-venue { font-size: 12.5px; color: var(--muted); font-style: italic; }
   .journal-link { color: inherit; text-decoration: none; }
@@ -498,14 +500,14 @@ function fmt(p) {
         ? 'https://orcid.org/' + esc(a.orcid)
         : authorLink(name);
       return '<a class="author-link" href="'+href+'" target="_blank" rel="noopener">'+esc(name)+'</a>';
-    }).filter(Boolean).join('<span style="color:var(--border)"> · </span>');
+    }).filter(Boolean).join('');
   } else {
     const rawAuthors = typeof p.authors === 'string' ? p.authors : (p.authors||[]).join(', ');
     const authorNames = rawAuthors.split(/,\s*et al\.?/).map(s=>s.trim()).join('').split(/,\s*/).map(s=>s.trim()).filter(Boolean);
     authorHtml = authorNames.map(a => {
       const name = a.replace(/\s*et al\.?\s*$/,'').trim();
       return name ? '<a class="author-link" href="'+authorLink(name)+'" target="_blank" rel="noopener">'+esc(name)+'</a>' : '';
-    }).filter(Boolean).join('<span style="color:var(--border)"> · </span>');
+    }).filter(Boolean).join('');
   }
   const tags = (p.tags||[]).filter(isTopicTag).map(t=>'<span class="tag" data-clicktag="'+esc(t)+'">'+esc(t)+'</span>').join('');
   const added = p.added ? '<span class="card-date">added '+p.added+'</span>' : '';
