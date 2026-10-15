@@ -74,6 +74,10 @@ def add_papers(new_papers: list[dict]) -> int:
             paper_entry["author_data"] = paper["author_data"]
         if paper.get("preprint"):
             paper_entry["preprint"] = paper["preprint"]
+        if paper.get("vip_author"):
+            paper_entry["vip_author"] = paper["vip_author"]
+        if paper.get("vip_only"):
+            paper_entry["vip_only"] = paper["vip_only"]
         existing.append(paper_entry)
         existing_keys.add(key)
         added += 1
