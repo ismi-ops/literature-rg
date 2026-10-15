@@ -273,7 +273,7 @@ const TOP_PICK_IDS = new Set(_recentBatch.slice(0, 4).map(p => p.doi || p.title 
 function isTopPick(p) { return TOP_PICK_IDS.size > 0 && TOP_PICK_IDS.has(p.doi || p.title || ''); }
 
 /* ── Filter state ───────────────────────────────────────────────────────── */
-let activeType = 'all', activeTags = new Set(), activeYear = 'all', activeAdded = 'all', activePreprint = false, activeCollab = false, searchText = '';
+let activeType = 'all', activeTags = new Set(), activeYear = 'all', activeAdded = 'all', activePreprint = false, activeCollab = '', searchText = '';
 
 /* ── Type chips ─────────────────────────────────────────────────────────── */
 function countByType(type) {
@@ -322,21 +322,34 @@ if (preprintCount > 0) {
 const collabPapers = PAPERS.filter(p => p.vip_author);
 const collabRow = document.getElementById('collab-filters');
 if (collabPapers.length > 0) {
+  const collabChips = [];
   const collabAllChip = document.createElement('button');
   collabAllChip.className = 'chip active'; collabAllChip.textContent = 'All';
   collabAllChip.addEventListener('click', () => {
-    activeCollab = false;
-    collabAllChip.classList.add('active'); collabOnlyChip.classList.remove('active'); render();
-  });
-  const collabOnlyChip = document.createElement('button');
-  collabOnlyChip.className = 'chip';
-  collabOnlyChip.innerHTML = 'Collaborators<span class="count">' + collabPapers.length + '</span>';
-  collabOnlyChip.addEventListener('click', () => {
-    activeCollab = true;
-    collabOnlyChip.classList.add('active'); collabAllChip.classList.remove('active'); render();
+    activeCollab = '';
+    collabChips.forEach(c => c.classList.remove('active'));
+    collabAllChip.classList.add('active'); render();
   });
   collabRow.appendChild(collabAllChip);
-  collabRow.appendChild(collabOnlyChip);
+  // one chip per author, sorted alphabetically by last name
+  const authors = [...new Set(collabPapers.map(p => p.vip_author))].sort((a, b) => {
+    const lastName = n => n.split(' ').pop();
+    return lastName(a).localeCompare(lastName(b));
+  });
+  authors.forEach(author => {
+    const n = collabPapers.filter(p => p.vip_author === author).length;
+    const chip = document.createElement('button');
+    chip.className = 'chip';
+    chip.innerHTML = author + '<span class="count">' + n + '</span>';
+    chip.addEventListener('click', () => {
+      collabChips.forEach(c => c.classList.remove('active'));
+      collabAllChip.classList.remove('active');
+      chip.classList.add('active');
+      activeCollab = author; render();
+    });
+    collabRow.appendChild(chip);
+    collabChips.push(chip);
+  });
 } else {
   collabRow.style.display = 'none';
 }
@@ -585,7 +598,7 @@ function render() {
   const filtered = PAPERS.filter(p => {
     if (activeType !== 'all' && (p.type||'research') !== activeType) return false;
     if (activePreprint && !p.preprint) return false;
-    if (activeCollab) { if (!p.vip_author) return false; }
+    if (activeCollab) { if (p.vip_author !== activeCollab) return false; }
     else { if (p.vip_only) return false; }
     if (activeTags.size > 0 && ![...(p.tags||[])].some(t => activeTags.has(t))) return false;
     if (activeYear !== 'all' && String(p.year||'').trim() !== activeYear) return false;

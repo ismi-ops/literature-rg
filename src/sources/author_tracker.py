@@ -153,7 +153,7 @@ def _normalize_paper(raw: dict, vip_author_name: str) -> dict | None:
     }
 
 
-def fetch_recent_papers(author: dict, since_date: str, limit: int = 20) -> list[dict]:
+def fetch_recent_papers(author: dict, since_date: str, limit: int = 100) -> list[dict]:
     """Fetch papers published on or after since_date (YYYY-MM-DD) for one author."""
     ss_id = author.get("ss_id")
     if not ss_id:
