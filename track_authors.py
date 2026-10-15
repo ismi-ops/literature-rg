@@ -10,7 +10,7 @@ Usage:
 Score rules:
   - score >= vip_threshold (default 6): added to the main feed
   - score 1–5: added as vip_only (visible in Collaborators tab only)
-  - score 0: excluded entirely
+  - score 0: added as vip_only (all VIP author papers appear in Collaborators tab)
 
 Age rules:
   - Papers older than 10 years are excluded entirely.
@@ -30,7 +30,7 @@ from src.sources.pdf_finder import get_pdf_link
 
 MAX_AGE_YEARS = 10
 OLD_PAPER_EXTRA = 2   # extra score points needed for 5–10 yr old papers to reach the main feed
-MIN_COLLAB_SCORE = 1  # minimum score to appear in Collaborators tab (score 0 = exclude entirely)
+MIN_COLLAB_SCORE = 0  # minimum score to appear in Collaborators tab (all VIP papers included)
 
 
 def _main_feed_threshold(paper_year: str, today_year: int, base_threshold: int) -> int | None:
@@ -100,7 +100,7 @@ def run(lookback_days: int = 14, vip_threshold: int = 6, dry_run: bool = False):
         print(f"    Score: {score}/10  [{paper['vip_author']}]{age_note}")
 
         if score < MIN_COLLAB_SCORE:
-            # Score 0 — not relevant enough even for the Collaborators tab
+            # Below minimum — excluded entirely (currently unreachable with MIN_COLLAB_SCORE=0)
             print(f"    → excluded (score {score} < min collab score {MIN_COLLAB_SCORE})")
             excluded_count += 1
             continue
