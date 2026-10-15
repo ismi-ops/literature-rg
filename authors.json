@@ -23,7 +23,8 @@
     "name": "Wallace Marshall",
     "search_name": "Wallace Marshall",
     "institution": "UCSF",
-    "relationship": "collaborator"
+    "relationship": "collaborator",
+    "ss_id": "2261425511"
   },
   {
     "name": "Prisca Liberali",
@@ -92,7 +93,8 @@
     "name": "Yuchuan Miao",
     "search_name": "Yuchuan Miao",
     "institution": "",
-    "relationship": "collaborator"
+    "relationship": "collaborator",
+    "ss_id": "1391607274"
   },
   {
     "name": "Michael Elowitz",
@@ -119,7 +121,8 @@
     "name": "Thomas Lecuit",
     "search_name": "Thomas Lecuit",
     "institution": "Collège de France",
-    "relationship": "collaborator"
+    "relationship": "collaborator",
+    "ss_id": "2097611375"
   },
   {
     "name": "Margaret Gardel",
@@ -139,7 +142,8 @@
     "name": "Alan Lowe",
     "search_name": "Alan Lowe",
     "institution": "UCL",
-    "relationship": "collaborator"
+    "relationship": "collaborator",
+    "ss_id": "94951694"
   },
   {
     "name": "Jen Zallin",
