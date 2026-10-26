@@ -815,7 +815,7 @@
   },
   {
     "title": "From modality-specific to compositional foundation models for cell biology",
-    "authors": "Mojtaba Bahrami, Till Richter, Niklas A. Schmacke, Aitana Egea Lavandera, F. Theis",
+    "authors": "Mojtaba Bahrami, Till Richter, Niklas A. Schmacke, Aitana Egea Lavandera, Fabian J. Theis",
     "year": "2026",
     "journal": "Cell Systems",
     "type": "perspective",
@@ -829,7 +829,28 @@
     "link": "https://www.cell.com/cell-systems/fulltext/S2405-4712(26)00016-5",
     "added": "2026-08-19",
     "pdf_link": "https://doi.org/10.1016/j.cels.2026.101534",
-    "relevance": "Relevant to Cell Science's AI and computational agenda for modeling cell biology and building virtual cell frameworks."
+    "relevance": "Relevant to Cell Science's AI and computational agenda for modeling cell biology and building virtual cell frameworks.",
+    "author_data": [
+      {
+        "name": "Mojtaba Bahrami",
+        "orcid": "0009-0003-0151-5196"
+      },
+      {
+        "name": "Till Richter",
+        "orcid": "0000-0001-6008-8209"
+      },
+      {
+        "name": "Niklas A. Schmacke",
+        "orcid": "0000-0002-3998-1139"
+      },
+      {
+        "name": "Aitana Egea Lavandera"
+      },
+      {
+        "name": "Fabian J. Theis",
+        "orcid": "0000-0002-2419-1943"
+      }
+    ]
   },
   {
     "title": "Generic comparison of lumen nucleation and fusion in epithelial organoids with and without hydrostatic pressure",
@@ -1210,7 +1231,7 @@
     "doi": "10.1038/s41580-020-00318-6",
     "link": "https://www.nature.com/articles/s41580-020-00318-6",
     "added": "2026-08-19",
-    "pdf_link": "",
+    "pdf_link": "https://hal.science/hal-03445395v1/document",
     "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Relevant to Cell Science's interest in emergent tissue organization and how multicellular systems self-pattern without external instruction.",
     "author_data": [
       {
@@ -12612,7 +12633,7 @@
   },
   {
     "title": "SequenceLayers: Sequence Processing and Streaming Neural Networks Made Easy",
-    "authors": "R. Skerry-Ryan, Julian Salazar, Soroosh Mariooryad, David Kao, Daisy Stanton, Eric Battenberg et al.",
+    "authors": "R. Skerry-Ryan, Julian Salazar, Soroosh Mariooryad, David Kao, Daisy Stanton, Eric Battenberg, Matt Shannon, Ron J. Weiss et al.",
     "year": "2025",
     "journal": "ArXiv",
     "type": "research",
@@ -24642,5 +24663,123 @@
     "reasoning": "keyword match (no Anthropic API key)",
     "vip_author": "Jan Ellenberg",
     "vip_only": true
+  },
+  {
+    "title": "Mechano-metabolic control of multicellular morphogenesis.",
+    "authors": "Clément Bodineau, Matyas Bubna-Litic, Alexandra K Eicher, Olivier Pourquié, Alessandro Mongera",
+    "year": "2026",
+    "journal": "Development (Cambridge, England)",
+    "type": "research",
+    "summary": "During multicellular morphogenesis, tissues display mechanical behaviors reminiscent of non-living materials. Unlike inert matter, however, tissues are not shaped solely by external forces; they self-assemble by generating - and adapting to - internal forces, a process that requires active catabolic (energetic) and anabolic (biosynthetic) metabolism. Crucially, tissue mechanics can in turn instruct metabolic states, revealing a reciprocal relationship.",
+    "relevance": "Directly relevant to Cell Science's foundational interest in how cells acquire and maintain identity — gene regulatory networks, lineage specification, and embryonic patterning are central to understanding cell decision-making and fate in developmental contexts. Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures.",
+    "tags": [
+      "development",
+      "morphogenesis",
+      "tissue mechanics",
+      "multicellular",
+      "developmental biology"
+    ],
+    "doi": "10.1242/dev.204876",
+    "link": "https://doi.org/10.1242/dev.204876",
+    "score": 10,
+    "added": "2026-10-26",
+    "pdf_link": "",
+    "source": "pubmed",
+    "reasoning": "keyword match (no Anthropic API key)"
+  },
+  {
+    "title": "Lineage tracing reveals asynchronous fate restriction in mouse embryos and stem cell-derived embryo models",
+    "authors": "Yunzheng Liu, Jihye Park, Laura Amaya, Sergi Junyent, Xiangkai Sun, Jiabao Sean Xiao, Yuqi Wang, Hao Wang et al.",
+    "year": "2026",
+    "journal": "bioRxiv",
+    "type": "research",
+    "summary": "How a flexible mammalian embryo gives rise to a reproducible body plan remains unclear, partly because cell lineages cannot be followed continuously in vivo. We combined DNA Typewriter lineage recording with tetraploid complementation to reconstruct high-resolution single-cell genealogies across mouse development and built FateVec, an analysis framework that infers fate-bias dynamics and lineage-associated transcriptional programs from reconstructed phylogenies. Loss of developmental potential proved progressive and asynchronous, with multiple lineages acquiring detectable fate bias before morphological diversification at gastrulation.",
+    "relevance": "Directly relevant to Cell Science's foundational interest in how cells acquire and maintain identity — gene regulatory networks, lineage specification, and embryonic patterning are central to understanding cell decision-making and fate in developmental contexts. Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures.",
+    "tags": [
+      "development",
+      "single-cell"
+    ],
+    "doi": "10.64898/2026.10.06.756974",
+    "link": "https://www.biorxiv.org/content/10.64898/2026.10.06.756974v1",
+    "score": 8,
+    "added": "2026-10-26",
+    "pdf_link": "https://www.biorxiv.org/content/10.64898/2026.10.06.756974v1.full.pdf",
+    "source": "biorxiv",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "author_data": [
+      {
+        "name": "Yunzheng Liu",
+        "orcid": "0009-0003-0559-7440"
+      },
+      {
+        "name": "Jihye Park"
+      },
+      {
+        "name": "Laura Amaya",
+        "orcid": "0000-0002-8742-9111"
+      },
+      {
+        "name": "Sergi Junyent",
+        "orcid": "0000-0003-2405-5885"
+      },
+      {
+        "name": "Xiangkai Sun"
+      },
+      {
+        "name": "Jiabao Sean Xiao"
+      },
+      {
+        "name": "Yuqi Wang",
+        "orcid": "0009-0005-1524-7270"
+      },
+      {
+        "name": "Hao Wang"
+      },
+      {
+        "name": "Yunrui Lu",
+        "orcid": "0000-0003-1089-9323"
+      },
+      {
+        "name": "Shoma Nakagawa"
+      },
+      {
+        "name": "Sung-Eun Park"
+      },
+      {
+        "name": "Wenqi Hu",
+        "orcid": "0000-0002-7934-9429"
+      },
+      {
+        "name": "Shichen Liu"
+      },
+      {
+        "name": "Jiangbo Wei",
+        "orcid": "0000-0003-2691-6490"
+      },
+      {
+        "name": "Hyongbum Henry Kim",
+        "orcid": "0000-0002-4693-738X"
+      },
+      {
+        "name": "Matthew Thomson",
+        "orcid": "0000-0003-1021-1234"
+      },
+      {
+        "name": "Cheng-Wei Ju",
+        "orcid": "0000-0002-2250-8548"
+      },
+      {
+        "name": "Marianne E. Bronner",
+        "orcid": "0000-0003-4274-1862"
+      },
+      {
+        "name": "Junhong Choi",
+        "orcid": "0000-0001-9291-5977"
+      },
+      {
+        "name": "Magdalena Zernicka-Goetz",
+        "orcid": "0000-0002-7004-2471"
+      }
+    ]
   }
 ]
