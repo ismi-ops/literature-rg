@@ -24939,5 +24939,64 @@
         "orcid": "0000-0002-1546-4030"
       }
     ]
+  },
+  {
+    "title": "Hair-bearing human skin generated entirely from pluripotent stem cells",
+    "authors": "Jiyoon Lee, Cyrus C. Rabbani, Hongyu Gao, Matthew R. Steinhart, Benjamin M. Woodruff, Zachary E. Pflum, Alexander Kim, Stefan Heller et al.",
+    "year": "2020",
+    "journal": "Nature",
+    "type": "research",
+    "summary": "",
+    "relevance": "Relevant to Cell Science's core work on hiPSC biology, pluripotent stem cell engineering, and stem cell-derived model systems.",
+    "tags": [
+      "stem cells"
+    ],
+    "doi": "10.1038/s41586-020-2352-3",
+    "link": "https://doi.org/10.1038/s41586-020-2352-3",
+    "score": 2,
+    "added": "2026-11-02",
+    "pdf_link": "https://www.ncbi.nlm.nih.gov/pmc/articles/7593871",
+    "source": "manual",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "curated": true,
+    "author_data": [
+      {
+        "name": "Jiyoon Lee",
+        "orcid": "0000-0002-5561-5331"
+      },
+      {
+        "name": "Cyrus C. Rabbani"
+      },
+      {
+        "name": "Hongyu Gao"
+      },
+      {
+        "name": "Matthew R. Steinhart",
+        "orcid": "0000-0002-9619-6057"
+      },
+      {
+        "name": "Benjamin M. Woodruff",
+        "orcid": "0000-0003-3045-4196"
+      },
+      {
+        "name": "Zachary E. Pflum"
+      },
+      {
+        "name": "Alexander Kim"
+      },
+      {
+        "name": "Stefan Heller"
+      },
+      {
+        "name": "Yunlong Liu"
+      },
+      {
+        "name": "Taha Z. Shipchandler"
+      },
+      {
+        "name": "Karl R. Koehler",
+        "orcid": "0000-0002-0685-538X"
+      }
+    ]
   }
 ]
