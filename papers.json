@@ -24899,5 +24899,45 @@
         "orcid": "0000-0003-0695-6081"
       }
     ]
+  },
+  {
+    "title": "Recording morphogen signals reveals mechanisms underlying gastruloid symmetry breaking",
+    "authors": "Harold M. McNamara, Sabrina C. Solley, Britt Adamson, Michelle M. Chan, Jared E. Toettcher",
+    "year": "2024",
+    "journal": "Nature Cell Biology",
+    "type": "research",
+    "summary": "",
+    "relevance": "Directly relevant to Cell Science's foundational interest in how cells acquire and maintain identity — gene regulatory networks, lineage specification, and embryonic patterning are central to understanding cell decision-making and fate in developmental contexts.",
+    "tags": [],
+    "doi": "10.1038/s41556-024-01521-9",
+    "link": "https://doi.org/10.1038/s41556-024-01521-9",
+    "score": 3,
+    "added": "2026-11-02",
+    "pdf_link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11806519/pdf/nihms-2041436.pdf",
+    "source": "manual",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "curated": true,
+    "author_data": [
+      {
+        "name": "Harold M. McNamara",
+        "orcid": "0009-0006-6593-6477"
+      },
+      {
+        "name": "Sabrina C. Solley",
+        "orcid": "0000-0002-2356-5608"
+      },
+      {
+        "name": "Britt Adamson",
+        "orcid": "0000-0002-9451-5819"
+      },
+      {
+        "name": "Michelle M. Chan",
+        "orcid": "0000-0001-9451-9716"
+      },
+      {
+        "name": "Jared E. Toettcher",
+        "orcid": "0000-0002-1546-4030"
+      }
+    ]
   }
 ]
