@@ -24998,5 +24998,67 @@
         "orcid": "0000-0002-0685-538X"
       }
     ]
+  },
+  {
+    "title": "Geometry-aware modeling with cellPACK for evaluating spatial trends in intracellular organization.",
+    "authors": "Saurabh S. Mogre, Ruge Li, Allison Scibisz, Thao P. Do, Julie C. Dixon, Matheus P. Viana, Ehssan Nazockdast, Susanne M. Rafelski et al.",
+    "year": "2026",
+    "journal": "Protein science : a publication of the Protein Society",
+    "type": "research",
+    "summary": "Cells appear extraordinarily complex, yet aspects of their organization may arise from a small number of influences acting within geometric constraints. Here, we extend and use cellPACK, an open-source framework for rule-based spatial modeling, to compare observed and simulated 3D distributions of peroxisomes and endosomes (puncta) in human induced pluripotent stem cells. Simulations conditioned on observed cell and nuclear geometries along with puncta counts show that geometric variation can generate apparent structure in organelle localization, highlighting the need to account for geometry when interpreting spatial statistics.",
+    "relevance": "Directly addresses Cell Science's program on intracellular organization — how organelles are coordinated within cells and why genetically identical cells differ structurally. Relevant to Cell Science's core work on hiPSC biology, pluripotent stem cell engineering, and stem cell-derived model systems.",
+    "tags": [
+      "stem cells",
+      "intracellular organization"
+    ],
+    "doi": "10.1002/pro.70832",
+    "link": "https://doi.org/10.1002/pro.70832",
+    "score": 7,
+    "added": "2026-11-02",
+    "pdf_link": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/pro.70832",
+    "source": "pubmed",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "author_data": [
+      {
+        "name": "Saurabh S. Mogre",
+        "orcid": "0000-0002-3781-5161"
+      },
+      {
+        "name": "Ruge Li",
+        "orcid": "0009-0003-9554-0113"
+      },
+      {
+        "name": "Allison Scibisz",
+        "orcid": "0009-0007-9841-5034"
+      },
+      {
+        "name": "Thao P. Do"
+      },
+      {
+        "name": "Julie C. Dixon",
+        "orcid": "0000-0001-9829-194X"
+      },
+      {
+        "name": "Matheus P. Viana",
+        "orcid": "0000-0001-9288-2108"
+      },
+      {
+        "name": "Ehssan Nazockdast"
+      },
+      {
+        "name": "Susanne M. Rafelski"
+      },
+      {
+        "name": "Julie A. Theriot"
+      },
+      {
+        "name": "Megan M. Riel‐Mehan",
+        "orcid": "0000-0001-8097-0450"
+      },
+      {
+        "name": "Graham T. Johnson",
+        "orcid": "0000-0002-1259-8762"
+      }
+    ]
   }
 ]
