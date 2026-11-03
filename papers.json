@@ -25262,5 +25262,84 @@
         "orcid": "0000-0003-1590-5964"
       }
     ]
+  },
+  {
+    "title": "Modelling human blastocysts by reprogramming fibroblasts into iBlastoids",
+    "authors": "Xiaodong Liu, Jia Ping Tan, Jan Schröder, Asma Aberkane, John F. Ouyang, Monika Mohenska, Sue Mei Lim, Yu B. Y. Sun et al.",
+    "year": "2021",
+    "journal": "Nature",
+    "type": "research",
+    "summary": "",
+    "relevance": "",
+    "tags": [],
+    "doi": "10.1038/s41586-021-03372-y",
+    "link": "https://doi.org/10.1038/s41586-021-03372-y",
+    "score": 1,
+    "added": "2026-11-03",
+    "pdf_link": "",
+    "source": "manual",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "curated": true,
+    "author_data": [
+      {
+        "name": "Xiaodong Liu",
+        "orcid": "0000-0002-9315-3406"
+      },
+      {
+        "name": "Jia Ping Tan"
+      },
+      {
+        "name": "Jan Schröder",
+        "orcid": "0000-0001-5270-0605"
+      },
+      {
+        "name": "Asma Aberkane"
+      },
+      {
+        "name": "John F. Ouyang",
+        "orcid": "0000-0002-1239-1577"
+      },
+      {
+        "name": "Monika Mohenska"
+      },
+      {
+        "name": "Sue Mei Lim"
+      },
+      {
+        "name": "Yu B. Y. Sun",
+        "orcid": "0000-0003-0863-2769"
+      },
+      {
+        "name": "Joseph Chen"
+      },
+      {
+        "name": "Guizhi Sun"
+      },
+      {
+        "name": "Yichen Zhou"
+      },
+      {
+        "name": "Daniel Poppe",
+        "orcid": "0000-0002-6674-8420"
+      },
+      {
+        "name": "Ryan Lister",
+        "orcid": "0000-0001-6637-7239"
+      },
+      {
+        "name": "Amander T. Clark"
+      },
+      {
+        "name": "Owen J. L. Rackham",
+        "orcid": "0000-0002-4390-0872"
+      },
+      {
+        "name": "Jennifer Zenker"
+      },
+      {
+        "name": "Jose M. Polo",
+        "orcid": "0000-0002-2531-778X"
+      }
+    ]
   }
 ]
