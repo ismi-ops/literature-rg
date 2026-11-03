@@ -25182,5 +25182,85 @@
         "orcid": "0000-0001-9863-1668"
       }
     ]
+  },
+  {
+    "title": "Human blastoids model blastocyst development and implantation",
+    "authors": "Harunobu Kagawa, Alok Javali, Heidar Heidari Khoei, Theresa Maria Sommer, Giovanni Sestini, Maria Novatchkova, Yvonne Scholte op Reimer, Gaël Castel et al.",
+    "year": "2021",
+    "journal": "Nature",
+    "type": "research",
+    "summary": "One week after fertilization, human embryos implant into the uterus. This event requires the embryo to form a blastocyst consisting of a sphere encircling a cavity lodging the embryo proper. Stem cells can form a blastocyst model that we called a blastoid1.",
+    "relevance": "Relevant to Cell Science's core work on hiPSC biology, pluripotent stem cell engineering, and stem cell-derived model systems. Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs.",
+    "tags": [
+      "stem cells",
+      "development"
+    ],
+    "doi": "10.1038/s41586-021-04267-8",
+    "link": "https://doi.org/10.1038/s41586-021-04267-8",
+    "score": 3,
+    "added": "2026-11-03",
+    "pdf_link": "https://www.nature.com/articles/s41586-021-04267-8.pdf",
+    "source": "semantic_scholar",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "curated": true,
+    "author_data": [
+      {
+        "name": "Harunobu Kagawa",
+        "orcid": "0000-0003-0436-3805"
+      },
+      {
+        "name": "Alok Javali"
+      },
+      {
+        "name": "Heidar Heidari Khoei"
+      },
+      {
+        "name": "Theresa Maria Sommer"
+      },
+      {
+        "name": "Giovanni Sestini",
+        "orcid": "0000-0002-6643-7585"
+      },
+      {
+        "name": "Maria Novatchkova"
+      },
+      {
+        "name": "Yvonne Scholte op Reimer",
+        "orcid": "0000-0002-1656-9221"
+      },
+      {
+        "name": "Gaël Castel",
+        "orcid": "0000-0002-7563-1179"
+      },
+      {
+        "name": "Alexandre Bruneau"
+      },
+      {
+        "name": "Nina Maenhoudt",
+        "orcid": "0000-0002-5523-3819"
+      },
+      {
+        "name": "Jenna Lammers"
+      },
+      {
+        "name": "Sophie Loubersac"
+      },
+      {
+        "name": "Thomas Freour",
+        "orcid": "0000-0002-7243-7709"
+      },
+      {
+        "name": "Hugo Vankelecom",
+        "orcid": "0000-0002-2251-7284"
+      },
+      {
+        "name": "Laurent David",
+        "orcid": "0000-0003-3594-0353"
+      },
+      {
+        "name": "Nicolas Rivron",
+        "orcid": "0000-0003-1590-5964"
+      }
+    ]
   }
 ]
