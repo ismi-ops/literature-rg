@@ -25060,5 +25060,47 @@
         "orcid": "0000-0002-1259-8762"
       }
     ]
+  },
+  {
+    "title": "Morphogenesis beyond in vivo",
+    "authors": "Yue Liu, Xufeng Xue, Shiyu Sun, Norio Kobayashi, Yung Su Kim, Jianping Fu",
+    "year": "2023",
+    "journal": "Nature Reviews Physics",
+    "type": "research",
+    "summary": "",
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures.",
+    "tags": [
+      "morphogenesis"
+    ],
+    "doi": "10.1038/s42254-023-00669-x",
+    "link": "https://doi.org/10.1038/s42254-023-00669-x",
+    "score": 3,
+    "added": "2026-11-03",
+    "pdf_link": "",
+    "source": "manual",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "curated": true,
+    "author_data": [
+      {
+        "name": "Yue Liu",
+        "orcid": "0000-0002-3153-6962"
+      },
+      {
+        "name": "Xufeng Xue"
+      },
+      {
+        "name": "Shiyu Sun"
+      },
+      {
+        "name": "Norio Kobayashi"
+      },
+      {
+        "name": "Yung Su Kim"
+      },
+      {
+        "name": "Jianping Fu",
+        "orcid": "0000-0001-9629-6739"
+      }
+    ]
   }
 ]
