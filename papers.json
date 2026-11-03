@@ -25127,5 +25127,60 @@
         "name": "John T. Ngo"
       }
     ]
+  },
+  {
+    "title": "Blastocyst-like structures generated from human pluripotent stem cells",
+    "authors": "Leqian Yu, Yulei Wei, Jialei Duan, Daniel A. Schmitz, Masahiro Sakurai, Lei Wang, Kunhua Wang, Shuhua Zhao et al.",
+    "year": "2021",
+    "journal": "Nature",
+    "type": "research",
+    "summary": "",
+    "relevance": "Relevant to Cell Science's core work on hiPSC biology, pluripotent stem cell engineering, and stem cell-derived model systems.",
+    "tags": [
+      "stem cells"
+    ],
+    "doi": "10.1038/s41586-021-03356-y",
+    "link": "https://doi.org/10.1038/s41586-021-03356-y",
+    "score": 2,
+    "added": "2026-11-03",
+    "pdf_link": "",
+    "source": "manual",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "curated": true,
+    "author_data": [
+      {
+        "name": "Leqian Yu"
+      },
+      {
+        "name": "Yulei Wei"
+      },
+      {
+        "name": "Jialei Duan",
+        "orcid": "0000-0003-4086-7461"
+      },
+      {
+        "name": "Daniel A. Schmitz"
+      },
+      {
+        "name": "Masahiro Sakurai",
+        "orcid": "0000-0002-6376-0299"
+      },
+      {
+        "name": "Lei Wang"
+      },
+      {
+        "name": "Kunhua Wang"
+      },
+      {
+        "name": "Shuhua Zhao"
+      },
+      {
+        "name": "Gary C. Hon"
+      },
+      {
+        "name": "Jun Wu",
+        "orcid": "0000-0001-9863-1668"
+      }
+    ]
   }
 ]
