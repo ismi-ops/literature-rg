@@ -9903,7 +9903,7 @@
     "link": "https://doi.org/10.1038/s41556-023-01087-y",
     "score": 4,
     "added": "2026-10-15",
-    "pdf_link": "",
+    "pdf_link": "pdfs/10-1038-s41556-023-01087-y.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "author_data": [
@@ -11488,7 +11488,7 @@
     "link": "https://doi.org/10.1016/j.gde.2024.102202",
     "score": 3,
     "added": "2026-10-15",
-    "pdf_link": "",
+    "pdf_link": "pdfs/10-1016-j-gde-2024-102202.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)"
   },
