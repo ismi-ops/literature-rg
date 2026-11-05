@@ -107,7 +107,7 @@ HTML_TEMPLATE = """<!doctype html>
     .card-relevance-label { color: #4dd9d3; }
     .card-relevance-text { color: var(--text); opacity: .88; }
     .tag { background: transparent; color: #a0a0ff; border-color: #a0a0ff; }
-    .btn-pdf { background: transparent; color: #ff80aa; border-color: #ff80aa; }
+    .btn-pdf { background: #ff80aa; color: #fff; border-color: #ff80aa; }
   }
   .card-date { font-size: 11.5px; color: var(--muted); margin-left: auto; }
   .card-title { font-size: 15px; font-weight: 650; line-height: 1.4; }
@@ -129,8 +129,17 @@ HTML_TEMPLATE = """<!doctype html>
   .tag { font-size: 11.5px; padding: 2px 8px; border-radius: 10px; background: transparent; color: #6464FF; border: 1px solid #6464FF; cursor: pointer; }
   .tag:hover { opacity: .8; }
   .card-actions { display: flex; gap: 8px; margin-top: 2px; align-items: center; }
-  .btn-pdf { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 7px; background: transparent; color: #CD0F55; text-decoration: none; border: 1px solid #CD0F55; opacity: .85; transition: opacity .12s; }
-  .btn-pdf:hover { opacity: 1; }
+  .btn-pdf { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 7px; background: #CD0F55; color: #fff; text-decoration: none; border: 1px solid #CD0F55; transition: opacity .12s; }
+  .btn-pdf:hover { opacity: .85; }
+  .btn-add-pdf { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 500; padding: 4px 10px; border-radius: 7px; background: transparent; color: var(--muted); border: 1px dashed var(--muted); cursor: pointer; opacity: .6; transition: opacity .12s; position: relative; }
+  .btn-add-pdf:hover { opacity: 1; }
+  .pdf-popover { display: none; position: absolute; bottom: calc(100% + 8px); left: 0; z-index: 200; background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; width: 300px; box-shadow: 0 4px 20px rgba(0,0,0,.18); text-align: left; }
+  .btn-add-pdf.open .pdf-popover { display: block; }
+  .pdf-popover-title { font-size: 12px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+  .pdf-popover-step { font-size: 12px; color: var(--muted); line-height: 1.5; margin-bottom: 4px; }
+  .pdf-popover-filename { font-size: 11.5px; font-family: monospace; background: var(--bg); border: 1px solid var(--border); border-radius: 5px; padding: 4px 8px; display: block; margin: 6px 0 10px; color: var(--text); word-break: break-all; }
+  .pdf-popover-link { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 7px; background: var(--accent); color: #fff; text-decoration: none; }
+  .pdf-popover-link:hover { opacity: .85; }
   .notes-section { margin-top: 6px; }
   .notes-toggle { background: none; border: none; padding: 0; font-size: 12px; color: var(--muted); cursor: pointer; display: flex; align-items: center; gap: 4px; transition: color .12s; }
   .notes-toggle:hover { color: var(--accent); }
@@ -165,6 +174,10 @@ HTML_TEMPLATE = """<!doctype html>
   .modal-link { color: var(--accent); }
   .modal-token-row { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }
   .modal-token-btn { background: none; border: none; color: var(--accent); font-size: 12px; cursor: pointer; padding: 0; text-decoration: underline; }
+  .modal-check-row { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text); cursor: pointer; user-select: none; }
+  .modal-check-row input[type=checkbox] { width: 16px; height: 16px; accent-color: var(--accent); cursor: pointer; flex-shrink: 0; }
+  .ru-badge { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 10px; background: #7c3aed22; color: #7c3aed; border: 1px solid #7c3aed66; letter-spacing: .02em; }
+  @media (prefers-color-scheme: dark) { .ru-badge { background: #7c3aed33; color: #c084fc; border-color: #7c3aed88; } }
   .card-notes { margin-top: 4px; }
   .notes-textarea { width: 100%; min-height: 52px; padding: 7px 10px; border: 1px dashed var(--border); border-radius: 7px; background: transparent; color: var(--text); font-size: 12.5px; font-family: inherit; line-height: 1.5; resize: vertical; outline: none; transition: border-color .15s, background .15s; }
   .notes-textarea::placeholder { color: var(--muted); opacity: .7; font-style: italic; }
@@ -196,6 +209,7 @@ HTML_TEMPLATE = """<!doctype html>
   <div class="filters-inner">
     <div class="filter-row" id="type-filters"><span class="filter-label">Type</span></div>
     <div class="filter-row" id="preprint-filters"><span class="filter-label">Status</span></div>
+    <div class="filter-row" id="ru-filters"><span class="filter-label">Picks</span></div>
     <div class="filter-row" id="collab-filters"><span class="filter-label">Collaborators</span></div>
     <div class="filter-row" id="tag-filters"><span class="filter-label">Topic</span></div>
     <div class="filter-row" id="year-filters"><span class="filter-label">Year</span></div>
@@ -227,6 +241,10 @@ HTML_TEMPLATE = """<!doctype html>
       <div class="modal-label">Paper URL or DOI</div>
       <p class="modal-desc">Paste a link (Nature, bioRxiv, PubMed…) or a DOI like <code>10.1038/…</code>. The paper will be scored and added automatically — check back in ~2 minutes.</p>
       <input class="modal-input" id="paper-input" type="text" placeholder="https://… or 10.xxxx/…" autocomplete="off">
+      <label class="modal-check-row">
+        <input type="checkbox" id="ru-pick-check">
+        Chosen by Ru
+      </label>
       <button class="modal-btn" id="paper-submit-btn">+ Add paper</button>
       <div class="modal-feedback" id="paper-feedback"></div>
       <div class="modal-token-row">Token saved. <button class="modal-token-btn" id="change-token-btn">Change token</button></div>
@@ -273,7 +291,7 @@ const TOP_PICK_IDS = new Set(_recentBatch.slice(0, 4).map(p => p.doi || p.title 
 function isTopPick(p) { return TOP_PICK_IDS.size > 0 && TOP_PICK_IDS.has(p.doi || p.title || ''); }
 
 /* ── Filter state ───────────────────────────────────────────────────────── */
-let activeType = 'all', activeTags = new Set(), activeYear = 'all', activeAdded = 'all', activePreprint = false, activeCollab = '', searchText = '';
+let activeType = 'all', activeTags = new Set(), activeYear = 'all', activeAdded = 'all', activePreprint = false, activeCollab = '', activeRuPick = false, searchText = '';
 
 /* ── Type chips ─────────────────────────────────────────────────────────── */
 function countByType(type) {
@@ -294,6 +312,29 @@ TYPES.forEach(t => {
   });
   typeRow.appendChild(chip);
 });
+
+/* ── Chosen by Ru filter ────────────────────────────────────────────────── */
+const ruPapers = PAPERS.filter(p => p.ru_pick);
+const ruRow = document.getElementById('ru-filters');
+if (ruPapers.length > 0) {
+  const ruAllChip = document.createElement('button');
+  ruAllChip.className = 'chip active'; ruAllChip.textContent = 'All';
+  ruAllChip.addEventListener('click', () => {
+    activeRuPick = false;
+    ruAllChip.classList.add('active'); ruPickChip.classList.remove('active'); render();
+  });
+  const ruPickChip = document.createElement('button');
+  ruPickChip.className = 'chip';
+  ruPickChip.innerHTML = '&#10024; Chosen by Ru<span class="count">' + ruPapers.length + '</span>';
+  ruPickChip.addEventListener('click', () => {
+    activeRuPick = true;
+    ruPickChip.classList.add('active'); ruAllChip.classList.remove('active'); render();
+  });
+  ruRow.appendChild(ruAllChip);
+  ruRow.appendChild(ruPickChip);
+} else {
+  ruRow.style.display = 'none';
+}
 
 /* ── Preprint filter ────────────────────────────────────────────────────── */
 const preprintCount = PAPERS.filter(p => p.preprint).length;
@@ -527,7 +568,18 @@ function fmt(p) {
   const jUrl = journalUrl(p.journal);
   const journalHtml = p.journal ? (jUrl ? '<a class="journal-link" href="'+esc(jUrl)+'" target="_blank" rel="noopener">'+esc(p.journal)+'</a>' : esc(p.journal)) : '';
   const venue = [journalHtml, p.year ? esc(p.year) : ''].filter(Boolean).join(' · ');
-  const pdfBtn = p.pdf_link ? '<a class="btn-pdf" href="'+esc(p.pdf_link)+'" target="_blank" rel="noopener">&#8595; PDF</a>' : '';
+  const pdfSlug = (p.doi ? p.doi.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'') : (p.title||'paper').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,60)) + '.pdf';
+  const uploadUrl = 'https://github.com/ismi-ops/literature-rg/upload/main/pdfs';
+  const pdfBtn = p.pdf_link ? '<a class="btn-pdf" href="'+esc(p.pdf_link)+'" target="_blank" rel="noopener">&#8595; PDF</a>'
+    : '<button class="btn-add-pdf" data-addpdf="1">＋ Add PDF'
+        +'<div class="pdf-popover" onclick="event.stopPropagation()">'
+          +'<div class="pdf-popover-title">Attach a PDF to this paper</div>'
+          +'<div class="pdf-popover-step">1. Rename your file to exactly:</div>'
+          +'<code class="pdf-popover-filename">'+esc(pdfSlug)+'</code>'
+          +'<div class="pdf-popover-step">2. Click below and drag it onto the GitHub upload page.</div>'
+          +'<a class="pdf-popover-link" href="'+esc(uploadUrl)+'" target="_blank" rel="noopener">Open upload page ↗</a>'
+        +'</div>'
+      +'</button>';
   const existingNote = getNote(p);
   const hasNote = existingNote.trim().length > 0;
   const nk = noteKey(p);
@@ -535,15 +587,16 @@ function fmt(p) {
   const starHtml = isTopPick(p) ? '<div class="top-pick-star" title="Top pick · recommended for printing">⭐</div>' : '';
   const preprintBadge = p.preprint ? '<span class="badge badge-preprint">preprint</span>' : '';
   const collabBadge = p.vip_author ? '<span class="badge badge-collab" title="Paper by collaborator '+esc(p.vip_author)+'">&#128101; '+esc(p.vip_author)+'</span>' : '';
+  const ruBadge = p.ru_pick ? '<span class="ru-badge">&#10024; Chosen by Ru</span>' : '';
   return '<div class="card">'
-    +'<div class="card-meta"><span class="badge '+badgeClass+'">'+esc(type)+'</span>'+preprintBadge+collabBadge+added+'</div>'
+    +'<div class="card-meta"><span class="badge '+badgeClass+'">'+esc(type)+'</span>'+preprintBadge+collabBadge+ruBadge+added+'</div>'
     +'<div class="card-title">'+titleHtml+'</div>'
     +(authorHtml ? '<div class="card-authors">'+authorHtml+'</div>' : '')
     +(venue ? '<div class="card-venue">'+venue+'</div>' : '')
     +(p.summary ? '<div class="card-summary">'+esc(p.summary)+'</div>' : '')
     +(p.relevance ? '<div class="card-relevance"><div class="card-relevance-label">Cell Science relevance</div><div class="card-relevance-text">'+esc(p.relevance)+'</div></div>' : '')
     +(tags ? '<div class="card-tags">'+tags+'</div>' : '')
-    +(pdfBtn ? '<div class="card-actions">'+pdfBtn+'</div>' : '')
+    +'<div class="card-actions">'+pdfBtn+'</div>'
     +'<div class="notes-section">'
       +'<button class="notes-toggle'+(hasNote?' has-notes':'')+'" data-noteid="'+noteId+'">'
         +(hasNote ? '&#128221; Notes' : '+ Add note')
@@ -563,6 +616,14 @@ function bindNotes(paper, noteId) {
   _papersByNoteId[noteId] = paper;
 }
 document.getElementById('grid').addEventListener('click', e => {
+  const addBtn = e.target.closest('[data-addpdf]');
+  if (addBtn) {
+    e.stopPropagation();
+    const wasOpen = addBtn.classList.contains('open');
+    document.querySelectorAll('.btn-add-pdf.open').forEach(b => b.classList.remove('open'));
+    if (!wasOpen) addBtn.classList.add('open');
+    return;
+  }
   const btn = e.target.closest('.notes-toggle');
   if (!btn) return;
   const id = btn.dataset.noteid;
@@ -572,6 +633,9 @@ document.getElementById('grid').addEventListener('click', e => {
   if (area.classList.contains('open')) {
     area.querySelector('textarea').focus();
   }
+});
+document.addEventListener('click', () => {
+  document.querySelectorAll('.btn-add-pdf.open').forEach(b => b.classList.remove('open'));
 });
 document.getElementById('grid').addEventListener('input', e => {
   if (!e.target.classList.contains('notes-textarea')) return;
@@ -598,6 +662,7 @@ function render() {
   const filtered = PAPERS.filter(p => {
     if (activeType !== 'all' && (p.type||'research') !== activeType) return false;
     if (activePreprint && !p.preprint) return false;
+    if (activeRuPick && !p.ru_pick) return false;
     if (activeCollab) { if (p.vip_author !== activeCollab) return false; }
     else { if (p.vip_only) return false; }
     if (activeTags.size > 0 && ![...(p.tags||[])].some(t => activeTags.has(t))) return false;
@@ -682,7 +747,8 @@ document.getElementById('paper-submit-btn').addEventListener('click', async () =
   if (!token) { showTokenScreen(); return; }
 
   const isDOI = /^10\.\d{4,}\//.test(raw);
-  const inputs = isDOI ? { doi: raw, url: '' } : { url: raw, doi: '' };
+  const ruPick = document.getElementById('ru-pick-check').checked;
+  const inputs = isDOI ? { doi: raw, url: '', ru_pick: ruPick ? 'true' : 'false' } : { url: raw, doi: '', ru_pick: ruPick ? 'true' : 'false' };
 
   btn.disabled = true;
   fb.className = 'modal-feedback';
@@ -705,6 +771,7 @@ document.getElementById('paper-submit-btn').addEventListener('click', async () =
       fb.className = 'modal-feedback ok';
       fb.textContent = '✓ Submitted! The paper will appear in ~2 minutes after the workflow finishes.';
       document.getElementById('paper-input').value = '';
+      document.getElementById('ru-pick-check').checked = false;
     } else if (resp.status === 401) {
       fb.className = 'modal-feedback err';
       fb.textContent = 'Invalid token (401). Please update your GitHub PAT.';

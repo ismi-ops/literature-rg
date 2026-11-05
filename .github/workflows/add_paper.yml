@@ -25,6 +25,11 @@ on:
           - review
           - perspective
           - article
+      ru_pick:
+        description: "Chosen by Ru (true/false)"
+        required: false
+        default: "false"
+        type: string
 
 permissions:
   contents: write
@@ -50,11 +55,13 @@ jobs:
           DOI="${{ github.event.inputs.doi }}"
           TITLE="${{ github.event.inputs.title }}"
           CTYPE="${{ github.event.inputs.content_type }}"
+          RU="${{ github.event.inputs.ru_pick }}"
           ARGS=()
           if [ -n "$URL" ];   then ARGS+=(--url "$URL");     fi
           if [ -n "$DOI" ];   then ARGS+=(--doi "$DOI");     fi
           if [ -n "$TITLE" ]; then ARGS+=(--title "$TITLE"); fi
           if [ -n "$CTYPE" ]; then ARGS+=(--type "$CTYPE");  fi
+          if [ "$RU" = "true" ]; then ARGS+=(--ru-pick);     fi
           python add_paper.py "${ARGS[@]}"
 
       - name: Backfill authors

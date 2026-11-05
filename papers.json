@@ -8687,9 +8687,7 @@
     "added": "2026-10-15",
     "pdf_link": "https://www.frontiersin.org/journals/pediatrics/articles/10.3389/fped.2025.1646973/pdf",
     "source": "author_tracker",
-    "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Jin Wang",
-    "vip_only": true
+    "reasoning": "keyword match (no Anthropic API key)"
   },
   {
     "title": "Pancreatic progenitor cells respond to laminar shear stress with transcriptomic changes, accompanied by reduced YAP1 activity",
@@ -9822,8 +9820,6 @@
     "pdf_link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11182571/pdf/nihms-1999520.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Magdalena Zernicka-Goetz",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Charlotte E. Handford"
@@ -9863,8 +9859,6 @@
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
-    "vip_author": "Magdalena Zernicka-Goetz",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Bailey AT Weatherbee",
@@ -9912,8 +9906,6 @@
     "pdf_link": "",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Magdalena Zernicka-Goetz",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Effie Apostolou"
@@ -9960,8 +9952,6 @@
     "pdf_link": "https://www.nature.com/articles/s41556-023-01157-1.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Magdalena Zernicka-Goetz",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Min Bao"
@@ -10020,8 +10010,6 @@
     "pdf_link": "https://www.nature.com/articles/s41467-023-40322-w.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Magdalena Zernicka-Goetz",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Joachim De Jonghe",
@@ -10087,9 +10075,7 @@
     "added": "2026-10-15",
     "pdf_link": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10291876",
     "source": "author_tracker",
-    "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Magdalena Zernicka-Goetz",
-    "vip_only": true
+    "reasoning": "keyword match (no Anthropic API key)"
   },
   {
     "title": "Stem cell based human and mouse embryo models",
@@ -10112,8 +10098,6 @@
     "pdf_link": "https://doi.org/10.1016/j.gde.2022.101970",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Magdalena Zernicka-Goetz",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Min Bao"
@@ -10145,8 +10129,6 @@
     "pdf_link": "https://www.nature.com/articles/s41556-022-00984-y.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Magdalena Zernicka-Goetz",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Min Bao"
@@ -10205,8 +10187,6 @@
     "pdf_link": "https://doi.org/10.1038/s41586-022-05246-3",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Magdalena Zernicka-Goetz",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Gianluca Amadei"
@@ -10282,8 +10262,6 @@
     "pdf_link": "https://doi.org/10.1016/j.fertnstert.2022.08.302",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Magdalena Zernicka-Goetz",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Dong-Yuan Chen"
@@ -10325,8 +10303,6 @@
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
-    "vip_author": "Magdalena Zernicka-Goetz",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Gianluca Amadei"
@@ -10369,8 +10345,6 @@
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
-    "vip_author": "Magdalena Zernicka-Goetz",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Kasey Y.C. Lau"
@@ -10414,8 +10388,6 @@
     "pdf_link": "https://www.nature.com/articles/s41467-022-28139-5.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Magdalena Zernicka-Goetz",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Binyamin Duethorn"
@@ -10491,8 +10463,6 @@
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
-    "vip_author": "Magdalena Zernicka-Goetz",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Xuan Liang"
@@ -10531,8 +10501,6 @@
     "pdf_link": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.15252/embj.2022111021",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Magdalena Zernicka-Goetz",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Xuan Liang",
@@ -10575,8 +10543,6 @@
     "pdf_link": "https://doi.org/10.1038/s41556-025-01767-x",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Kaitlyn McCreery",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Kaitlin P. McCreery",
@@ -10659,8 +10625,6 @@
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
-    "vip_author": "Kaitlyn McCreery",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Kaitlin P. McCreery"
@@ -10735,8 +10699,6 @@
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
-    "vip_author": "Kaitlyn McCreery",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Sarah N. Lipp",
@@ -10786,8 +10748,6 @@
     "pdf_link": "",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Kaitlyn McCreery",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Maureen E. Lynch"
@@ -10821,8 +10781,6 @@
     "pdf_link": "https://www.nature.com/articles/s41467-025-58538-3.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Chris Obara",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Koki Nakamura",
@@ -10923,8 +10881,6 @@
     "pdf_link": "https://www.nature.com/articles/s41586-023-06956-y.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Chris Obara",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Christopher J. Obara",
@@ -10997,8 +10953,6 @@
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
-    "vip_author": "Chris Obara",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Matteo Dora",
@@ -11036,8 +10990,6 @@
     "pdf_link": "https://www.nature.com/articles/s41586-022-04656-7.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Chris Obara",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Pengli Zheng",
@@ -11087,8 +11039,6 @@
     "pdf_link": "https://doi.org/10.1038/s41586-021-04204-9",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Chris Obara",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Pengli Zheng",
@@ -11136,8 +11086,6 @@
     "pdf_link": "https://www.nature.com/articles/s41586-023-05828-9.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Chris Obara",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Yan Zhang"
@@ -11243,9 +11191,7 @@
     "added": "2026-10-15",
     "pdf_link": "https://doi.org/10.64898/2026.03.30.715222",
     "source": "author_tracker",
-    "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Miki Ebisuya",
-    "vip_only": true
+    "reasoning": "keyword match (no Anthropic API key)"
   },
   {
     "title": "In preprints: robust segmentation clock outputs via cell cycle and synthetic coupling.",
@@ -11263,8 +11209,6 @@
     "pdf_link": "https://journals.biologists.com/dev/article-pdf/152/8/dev204819/3644813/dev204819.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Miki Ebisuya",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Jorge Lázaro",
@@ -11295,8 +11239,6 @@
     "pdf_link": "https://doi.org/10.1016/j.stem.2025.03.011",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Miki Ebisuya",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Kristina S. Stapornwongkul"
@@ -11362,8 +11304,6 @@
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
-    "vip_author": "Miki Ebisuya",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Mitsuhiro Matsuda"
@@ -11404,8 +11344,6 @@
     "pdf_link": "https://www.nature.com/articles/s41467-025-56120-5.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Miki Ebisuya",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Mitsuhiro Matsuda",
@@ -11440,8 +11378,6 @@
     "pdf_link": "https://link.springer.com/content/pdf/10.1038/s44321-026-00467-9.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Miki Ebisuya",
-    "vip_only": true,
     "author_data": [
       {
         "name": "François Korbmacher"
@@ -11503,9 +11439,7 @@
     "pdf_link": "https://www.biorxiv.org/content/biorxiv/early/2024/03/25/2024.03.22.586252.full.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "preprint": true,
-    "vip_author": "Miki Ebisuya",
-    "vip_only": true
+    "preprint": true
   },
   {
     "title": "The stem cell zoo for comparative studies of developmental tempo",
@@ -11525,8 +11459,6 @@
     "pdf_link": "https://doi.org/10.1016/j.gde.2023.102149",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Miki Ebisuya",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Jorge Lázaro",
@@ -11558,9 +11490,7 @@
     "added": "2026-10-15",
     "pdf_link": "",
     "source": "author_tracker",
-    "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Miki Ebisuya",
-    "vip_only": true
+    "reasoning": "keyword match (no Anthropic API key)"
   },
   {
     "title": "Metabolic activities are selective modulators for individual segmentation clock processes",
@@ -11581,8 +11511,6 @@
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
-    "vip_author": "Miki Ebisuya",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Mitsuhiro Matsuda"
@@ -11615,8 +11543,6 @@
     "pdf_link": "https://doi.org/10.1016/j.devcel.2024.05.029",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Miki Ebisuya",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Miki Ebisuya"
@@ -11665,8 +11591,6 @@
     "pdf_link": "http://hdl.handle.net/2445/189321",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Miki Ebisuya",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Miki Ebisuya"
@@ -11696,8 +11620,6 @@
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
-    "vip_author": "Miki Ebisuya",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Jorge Lázaro",
@@ -11775,8 +11697,6 @@
     "pdf_link": "https://www.nature.com/articles/s41467-022-29967-1.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Miki Ebisuya",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Marina Sanaki-Matsumiya",
@@ -11825,8 +11745,6 @@
     "pdf_link": "http://www.cell.com/article/S1534580721009412/pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Miki Ebisuya",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Takashi Hiiragi"
@@ -11890,8 +11808,6 @@
     "pdf_link": "https://doi.org/10.1038/s41586-025-09255-w",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Ron Weiss",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Patrick Kaifosh"
@@ -12647,9 +12563,7 @@
     "pdf_link": "",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "preprint": true,
-    "vip_author": "Ron Weiss",
-    "vip_only": true
+    "preprint": true
   },
   {
     "title": "Towards Unsupervised Speech-to-Speech Translation",
@@ -12666,9 +12580,7 @@
     "added": "2026-10-15",
     "pdf_link": "",
     "source": "author_tracker",
-    "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Ron Weiss",
-    "vip_only": true
+    "reasoning": "keyword match (no Anthropic API key)"
   },
   {
     "title": "Deep Speech Synthesis from Articulatory Features",
@@ -12685,9 +12597,7 @@
     "added": "2026-10-15",
     "pdf_link": "",
     "source": "author_tracker",
-    "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Ron Weiss",
-    "vip_only": true
+    "reasoning": "keyword match (no Anthropic API key)"
   },
   {
     "title": "Correction for Colen et al., Machine learning active-nematic hydrodynamics",
@@ -12704,9 +12614,7 @@
     "added": "2026-10-15",
     "pdf_link": "https://doi.org/10.1073/pnas.2502090122",
     "source": "author_tracker",
-    "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Margaret Gardel",
-    "vip_only": true
+    "reasoning": "keyword match (no Anthropic API key)"
   },
   {
     "title": "Tension transmission across a supracellular network drives increased tissue rigidity in the Drosophila retina",
@@ -12727,8 +12635,6 @@
     "pdf_link": "https://doi.org/10.1016/j.celrep.2025.116355",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Margaret Gardel",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Jacob R. Decker"
@@ -12772,9 +12678,7 @@
     "pdf_link": "",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "preprint": true,
-    "vip_author": "Margaret Gardel",
-    "vip_only": true
+    "preprint": true
   },
   {
     "title": "Mechanochemical control systems regulating animal cell size.",
@@ -12792,8 +12696,6 @@
     "pdf_link": "https://doi.org/10.1016/j.ceb.2024.102443",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Margaret Gardel",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Heather E. Rizzo"
@@ -12823,8 +12725,6 @@
     "pdf_link": "https://doi.org/10.1016/j.cell.2023.11.041",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Margaret Gardel",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Matthew S. Schmitt"
@@ -12873,8 +12773,6 @@
     "pdf_link": "https://doi.org/10.1016/j.devcel.2023.05.018",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Margaret Gardel",
-    "vip_only": true,
     "author_data": [
       {
         "name": "John Devany"
@@ -12910,8 +12808,6 @@
     "pdf_link": "http://www.cell.com/article/S0006349523041243/pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Margaret Gardel",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Wen-Hung Chou"
@@ -12951,8 +12847,6 @@
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
-    "vip_author": "Margaret Gardel",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Wen-hung Chou",
@@ -12995,8 +12889,6 @@
     "pdf_link": "https://doi.org/10.1073/pnas.2219558120",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Margaret Gardel",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Martin J. Falk",
@@ -13044,8 +12936,6 @@
     "pdf_link": "https://rupress.org/jcb/article-pdf/224/3/e202405169/1937548/jcb_202405169.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Jan Ellenberg",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Andreas Brunner",
@@ -13105,8 +12995,6 @@
     "pdf_link": "https://www.nature.com/articles/s41592-024-02259-w.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Jan Ellenberg",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Fan Yang",
@@ -13179,8 +13067,6 @@
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
-    "vip_author": "Jan Ellenberg",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Andrew P. Latham",
@@ -13227,8 +13113,6 @@
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
-    "vip_author": "Jan Ellenberg",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Kai Sandvold Beckwith",
@@ -13268,8 +13152,6 @@
     "pdf_link": "",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Jan Ellenberg",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Andrea Callegari",
@@ -13312,8 +13194,6 @@
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
-    "vip_author": "Jan Ellenberg",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Damian Dalle Nogare"
@@ -13351,8 +13231,6 @@
     "pdf_link": "https://www.nature.com/articles/s41592-023-02053-0.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Jan Ellenberg",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Herman K. H. Fung",
@@ -13410,8 +13288,6 @@
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
-    "vip_author": "Jan Ellenberg",
-    "vip_only": true,
     "author_data": [
       {
         "name": "K.S. Beckwith",
@@ -13478,8 +13354,6 @@
     "pdf_link": "https://link.springer.com/content/pdf/10.15252/embj.2022113280.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Jan Ellenberg",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Vladyslav Bondarenko",
@@ -13561,8 +13435,6 @@
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
-    "vip_author": "Jan Ellenberg",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Alberto Hernandez-Armendariz",
@@ -13614,8 +13486,6 @@
     "pdf_link": "https://www.nature.com/articles/s41592-023-02054-z.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Jan Ellenberg",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Fan Yang",
@@ -13685,8 +13555,6 @@
     "pdf_link": "",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Jan Ellenberg",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Klaus C. Gwosch",
@@ -13746,8 +13614,6 @@
     "pdf_link": "https://www.nature.com/articles/s41592-023-01822-1.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Jan Ellenberg",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Carlo Bevilacqua",
@@ -13811,8 +13677,6 @@
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
-    "vip_author": "Jan Ellenberg",
-    "vip_only": true,
     "author_data": [
       {
         "name": "V. Bondarenko",
@@ -13888,8 +13752,6 @@
     "pdf_link": "",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Jan Ellenberg",
-    "vip_only": true,
     "author_data": [
       {
         "name": "J Ellenberg"
@@ -21415,8 +21277,6 @@
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
-    "vip_author": "Margaret Gardel",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Mehdi Molaei"
@@ -21462,8 +21322,6 @@
     "pdf_link": "https://doi.org/10.1016/j.ejcb.2023.151367",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Margaret Gardel",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Cristian Suarez"
@@ -21507,9 +21365,7 @@
     "pdf_link": "http://arxiv.org/pdf/2303.00176",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "preprint": true,
-    "vip_author": "Margaret Gardel",
-    "vip_only": true
+    "preprint": true
   },
   {
     "title": "Tissue confinement regulates cell growth and size in epithelia",
@@ -21530,8 +21386,6 @@
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
-    "vip_author": "Margaret Gardel",
-    "vip_only": true,
     "author_data": [
       {
         "name": "John Devany",
@@ -21572,8 +21426,6 @@
     "pdf_link": "http://www.cell.com/article/S0960982222016190/pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Margaret Gardel",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Kate E. Cavanaugh"
@@ -21620,8 +21472,6 @@
     "pdf_link": "https://doi.org/10.1016/j.cub.2022.10.045",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Margaret Gardel",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Allison M. Lynch"
@@ -21681,8 +21531,6 @@
     "pdf_link": "https://www.biorxiv.org/content/biorxiv/early/2022/03/04/2022.03.02.482689.full.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Margaret Gardel",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Theresa A. Chmiel"
@@ -21711,8 +21559,6 @@
     "pdf_link": "https://doi.org/10.1016/j.cub.2022.03.024",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Margaret Gardel",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Kate E. Cavanaugh"
@@ -22484,9 +22330,7 @@
     "pdf_link": "",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "preprint": true,
-    "vip_author": "Jin Wang",
-    "vip_only": true
+    "preprint": true
   },
   {
     "title": "60 THE INFLUENCE OF READING THERAPY ON MENTAL REHABILITATION OF SCHIZOPHRENIC PATIENTS",
@@ -22503,9 +22347,7 @@
     "added": "2026-10-15",
     "pdf_link": "https://academic.oup.com/schizophreniabulletin/article-pdf/51/Supplement_1/S32/61939693/sbaf007.060.pdf",
     "source": "author_tracker",
-    "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Jin Wang",
-    "vip_only": true
+    "reasoning": "keyword match (no Anthropic API key)"
   },
   {
     "title": "Integrated medical and nursing ward rounds in a case of severe pneumonia",
@@ -22523,8 +22365,6 @@
     "pdf_link": "http://dx.doi.org/10.55111/j.issn2709-1961.202306012",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Jin Wang",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Ying LI"
@@ -23074,8 +22914,6 @@
     "pdf_link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13174594/",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Kaitlyn McCreery",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Jeanne E. Barthold"
@@ -23150,8 +22988,6 @@
     "pdf_link": "https://www.nature.com/articles/s41536-024-00367-x.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Kaitlyn McCreery",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Jeanne E. Barthold"
@@ -23200,8 +23036,6 @@
     "pdf_link": "https://doi.org/10.1016/j.jbiomech.2022.111397",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Kaitlyn McCreery",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Kaitlin P. McCreery"
@@ -23233,8 +23067,6 @@
     "pdf_link": "https://doi.org/10.2139/ssrn.4147149",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Kaitlyn McCreery",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Kaitlin  P. McCreery",
@@ -23271,8 +23103,6 @@
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
-    "vip_author": "Kaitlyn McCreery",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Jeanne E. Barthold"
@@ -23322,8 +23152,6 @@
     "pdf_link": "https://iopscience.iop.org/article/10.1088/1758-5090/ac584c/pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Kaitlyn McCreery",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Jeanne E Barthold",
@@ -23369,8 +23197,6 @@
     "pdf_link": "https://doi.org/10.64898/2026.06.16.732623",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Chris Obara",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Tim Abel"
@@ -23420,8 +23246,6 @@
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
-    "vip_author": "Chris Obara",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Juan C. Landoni",
@@ -23489,8 +23313,6 @@
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
-    "vip_author": "Chris Obara",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Koki Nakamura",
@@ -23588,8 +23410,6 @@
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
-    "vip_author": "Chris Obara",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Christopher J. Obara"
@@ -23620,8 +23440,6 @@
     "pdf_link": "http://link.aps.org/pdf/10.1103/PhysRevResearch.4.023182",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Chris Obara",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Yunhao Sun"
@@ -23661,8 +23479,6 @@
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
-    "vip_author": "Chris Obara",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Christopher J. Obara",
@@ -23737,9 +23553,7 @@
     "pdf_link": "",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "preprint": true,
-    "vip_author": "Chris Obara",
-    "vip_only": true
+    "preprint": true
   },
   {
     "title": "Recomposer: Event-roll-guided generative audio editing",
@@ -23759,9 +23573,7 @@
     "pdf_link": "",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "preprint": true,
-    "vip_author": "Ron Weiss",
-    "vip_only": true
+    "preprint": true
   },
   {
     "title": "Dynamiques du vivant",
@@ -23779,8 +23591,6 @@
     "pdf_link": "https://journals.openedition.org/annuaire-cdf/pdf/20502",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Thomas Lecuit",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Thomas Lecuit",
@@ -23804,8 +23614,6 @@
     "pdf_link": "https://journals.openedition.org/annuaire-cdf/pdf/18266",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Thomas Lecuit",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Thomas Lecuit",
@@ -23831,8 +23639,6 @@
     "pdf_link": "https://doi.org/10.1038/s44318-026-00807-y",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Margaret Gardel",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Shailaja Seetharaman",
@@ -23886,8 +23692,6 @@
     "pdf_link": "https://doi.org/10.1039/d4sm01390e",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Margaret Gardel",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Matteo Brizioli",
@@ -23940,9 +23744,7 @@
     "pdf_link": "",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "preprint": true,
-    "vip_author": "Margaret Gardel",
-    "vip_only": true
+    "preprint": true
   },
   {
     "title": "Editorial: PRX Life Celebrates Its First Anniversary",
@@ -23960,8 +23762,6 @@
     "pdf_link": "http://link.aps.org/pdf/10.1103/PRXLife.2.030001",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Margaret Gardel",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Serena Bradde"
@@ -23990,8 +23790,6 @@
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
-    "vip_author": "Margaret Gardel",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Shailaja Seetharaman",
@@ -24046,8 +23844,6 @@
     "pdf_link": "https://pubs.rsc.org/en/content/articlepdf/2024/sm/d3sm01341c",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Margaret Gardel",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Tyler D. Jorgenson",
@@ -24088,8 +23884,6 @@
     "pdf_link": "",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Margaret Gardel",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Shailaja Seetharaman"
@@ -24122,8 +23916,6 @@
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
-    "vip_author": "Margaret Gardel",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Vilmos Zsolnay"
@@ -24155,8 +23947,6 @@
     "pdf_link": "https://www.nature.com/articles/s42003-023-04818-x.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Margaret Gardel",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Ryota Sakamoto",
@@ -24207,8 +23997,6 @@
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
-    "vip_author": "Margaret Gardel",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Steven A. Redford",
@@ -24270,8 +24058,6 @@
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
-    "vip_author": "Margaret Gardel",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Samantha Stam"
@@ -24300,8 +24086,6 @@
     "pdf_link": "http://link.aps.org/pdf/10.1103/PRXLife.1.010001",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Margaret Gardel",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Serena Bradde"
@@ -24327,8 +24111,6 @@
     "pdf_link": "https://www.nature.com/articles/s42003-023-04684-7.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Margaret Gardel",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Ryota Sakamoto",
@@ -24378,9 +24160,7 @@
     "pdf_link": "",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "preprint": true,
-    "vip_author": "Margaret Gardel",
-    "vip_only": true
+    "preprint": true
   },
   {
     "title": "Catapulting of topological defects through elasticity bands in active nematics.",
@@ -24399,8 +24179,6 @@
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
-    "vip_author": "Margaret Gardel",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Nitin Kumar",
@@ -24441,8 +24219,6 @@
     "pdf_link": "https://academic.oup.com/bioinformatics/advance-article-pdf/doi/10.1093/bioinformatics/btad587/51770594/btad587.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Jan Ellenberg",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Maria Theiss",
@@ -24492,8 +24268,6 @@
     "pdf_link": "",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Jan Ellenberg",
-    "vip_only": true,
     "author_data": [
       {
         "name": "A. Larreategui"
@@ -24538,8 +24312,6 @@
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
-    "vip_author": "Jan Ellenberg",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Herman KH Fung",
@@ -24600,8 +24372,6 @@
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
-    "vip_author": "Jan Ellenberg",
-    "vip_only": true,
     "author_data": [
       {
         "name": "Klaus C. Gwosch",
@@ -24660,9 +24430,7 @@
     "added": "2026-10-15",
     "pdf_link": "",
     "source": "author_tracker",
-    "reasoning": "keyword match (no Anthropic API key)",
-    "vip_author": "Jan Ellenberg",
-    "vip_only": true
+    "reasoning": "keyword match (no Anthropic API key)"
   },
   {
     "title": "Mechano-metabolic control of multicellular morphogenesis.",

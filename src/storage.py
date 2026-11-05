@@ -78,6 +78,8 @@ def add_papers(new_papers: list[dict]) -> int:
             paper_entry["vip_author"] = paper["vip_author"]
         if paper.get("vip_only"):
             paper_entry["vip_only"] = paper["vip_only"]
+        if paper.get("ru_pick"):
+            paper_entry["ru_pick"] = paper["ru_pick"]
         existing.append(paper_entry)
         existing_keys.add(key)
         added += 1

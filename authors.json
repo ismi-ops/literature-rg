@@ -35,13 +35,6 @@
     "ss_id": "5688665"
   },
   {
-    "name": "Jin Wang",
-    "search_name": "Jin Wang",
-    "institution": "Stony Brook University",
-    "relationship": "collaborator",
-    "ss_id": "2143719263"
-  },
-  {
     "name": "Anne Grapin-Botton",
     "search_name": "Anne Grapin-Botton",
     "institution": "",
@@ -54,13 +47,6 @@
     "institution": "",
     "relationship": "collaborator",
     "ss_id": "3746140"
-  },
-  {
-    "name": "Magdalena Zernicka-Goetz",
-    "search_name": "Magdalena Zernicka-Goetz",
-    "institution": "",
-    "relationship": "collaborator",
-    "ss_id": "1398486329"
   },
   {
     "name": "Sebastian Streichan",
@@ -77,20 +63,6 @@
     "ss_id": "2375906823"
   },
   {
-    "name": "Kaitlyn McCreery",
-    "search_name": "Kaitlin P. McCreery",
-    "institution": "University of Vermont",
-    "relationship": "collaborator",
-    "ss_id": "94251620"
-  },
-  {
-    "name": "Chris Obara",
-    "search_name": "Christopher Obara",
-    "institution": "UCSD",
-    "relationship": "collaborator",
-    "ss_id": "39235692"
-  },
-  {
     "name": "Yuchuan Miao",
     "search_name": "Yuchuan Miao",
     "institution": "",
@@ -105,41 +77,6 @@
     "ss_id": "2565400"
   },
   {
-    "name": "Miki Ebisuya",
-    "search_name": "Miki Ebisuya",
-    "institution": "EMBL Barcelona",
-    "relationship": "collaborator",
-    "ss_id": "6602880"
-  },
-  {
-    "name": "Ron Weiss",
-    "search_name": "Ron Weiss",
-    "institution": "MIT",
-    "relationship": "collaborator",
-    "ss_id": "2286510219"
-  },
-  {
-    "name": "Thomas Lecuit",
-    "search_name": "Thomas Lecuit",
-    "institution": "Collège de France",
-    "relationship": "collaborator",
-    "ss_id": "2097611375"
-  },
-  {
-    "name": "Margaret Gardel",
-    "search_name": "Margaret Gardel",
-    "institution": "University of Chicago",
-    "relationship": "collaborator",
-    "ss_id": "2790484"
-  },
-  {
-    "name": "Jan Ellenberg",
-    "search_name": "Jan Ellenberg",
-    "institution": "EMBL",
-    "relationship": "collaborator",
-    "ss_id": "2363369"
-  },
-  {
     "name": "Alan Lowe",
     "search_name": "Alan Lowe",
     "institution": "UCL",
@@ -147,7 +84,7 @@
     "ss_id": "94951694"
   },
   {
-    "name": "Jen Zallin",
+    "name": "Jen Zallen",
     "search_name": "Jennifer Zallen",
     "institution": "Sloan Kettering Institute",
     "relationship": "collaborator",
