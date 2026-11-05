@@ -3103,7 +3103,8 @@
     "doi": "10.1016/j.cels.2026.101699",
     "link": "https://doi.org/10.1016/j.cels.2026.101699",
     "score": 7,
-    "added": "2026-09-07"
+    "added": "2026-09-07",
+    "pdf_link": "pdfs/10-1016-j-cels-2026-101699.pdf"
   },
   {
     "title": "Meeting report - CellExIt#1, the first international symposium on cell extrusion.",
@@ -9903,7 +9904,7 @@
     "link": "https://doi.org/10.1038/s41556-023-01087-y",
     "score": 4,
     "added": "2026-10-15",
-    "pdf_link": "",
+    "pdf_link": "pdfs/10-1038-s41556-023-01087-y.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "author_data": [
@@ -11488,7 +11489,7 @@
     "link": "https://doi.org/10.1016/j.gde.2024.102202",
     "score": 3,
     "added": "2026-10-15",
-    "pdf_link": "",
+    "pdf_link": "pdfs/10-1016-j-gde-2024-102202.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)"
   },
@@ -24844,7 +24845,7 @@
     "link": "https://doi.org/10.1038/s42254-023-00669-x",
     "score": 3,
     "added": "2026-11-03",
-    "pdf_link": "",
+    "pdf_link": "pdfs/10-1038-s42254-023-00669-x.pdf",
     "source": "manual",
     "reasoning": "keyword match (no Anthropic API key)",
     "curated": true,
@@ -24911,7 +24912,7 @@
     "link": "https://doi.org/10.1038/s41586-021-03356-y",
     "score": 2,
     "added": "2026-11-03",
-    "pdf_link": "",
+    "pdf_link": "pdfs/10-1038-s41586-021-03356-y.pdf",
     "source": "manual",
     "reasoning": "keyword match (no Anthropic API key)",
     "curated": true,
@@ -25044,7 +25045,7 @@
     "link": "https://doi.org/10.1038/s41586-021-03372-y",
     "score": 1,
     "added": "2026-11-03",
-    "pdf_link": "",
+    "pdf_link": "pdfs/10-1038-s41586-021-03372-y.pdf",
     "source": "manual",
     "reasoning": "keyword match (no Anthropic API key)",
     "curated": true,
