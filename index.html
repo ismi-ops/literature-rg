@@ -143,6 +143,18 @@
   .empty { text-align: center; padding: 64px 0; color: var(--muted); font-size: 15px; grid-column: 1/-1; }
   .btn-add { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 8px; background: var(--accent); color: #fff; text-decoration: none; border: none; cursor: pointer; transition: opacity .12s; white-space: nowrap; }
   .btn-add:hover { opacity: .85; }
+  /* ── Toast notifications ──────────────────────────────────────────────── */
+  #toast-container { position: fixed; bottom: 24px; right: 24px; z-index: 9999; display: flex; flex-direction: column; gap: 8px; pointer-events: none; }
+  .toast { pointer-events: auto; display: flex; align-items: flex-start; gap: 10px; padding: 12px 16px; border-radius: 10px; font-size: 13px; line-height: 1.4; max-width: 320px; box-shadow: 0 4px 20px rgba(0,0,0,.22); animation: toast-in .2s ease; }
+  .toast.success { background: #dcfce7; color: #15803d; border: 1px solid #86efac; }
+  .toast.error   { background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; }
+  @media (prefers-color-scheme: dark) {
+    .toast.success { background: #14532d; color: #86efac; border-color: #166534; }
+    .toast.error   { background: #450a0a; color: #fca5a5; border-color: #7f1d1d; }
+  }
+  .toast-close { background: none; border: none; font-size: 16px; cursor: pointer; color: inherit; opacity: .6; padding: 0; line-height: 1; flex-shrink: 0; }
+  .toast-close:hover { opacity: 1; }
+  @keyframes toast-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 
   /* ── Add Paper modal ──────────────────────────────────────────────────── */
   .modal-backdrop { display: none; position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,.45); align-items: center; justify-content: center; }
@@ -209,6 +221,7 @@
 </div>
 <main><div class="grid" id="grid"></div></main>
 
+<div id="toast-container"></div>
 <!-- Add Paper modal -->
 <div class="modal-backdrop" id="add-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title-text">
   <div class="modal-box">
@@ -475,6 +488,20 @@ document.getElementById('grid').addEventListener('click', e => {
   render();
 });
 
+/* ── Toast notifications ─────────────────────────────────────────────────── */
+function showToast(msg, type = 'success', duration = 8000) {
+  const c = document.getElementById('toast-container');
+  if (!c) return;
+  const t = document.createElement('div');
+  t.className = 'toast ' + type;
+  const icon = type === 'success' ? '✓' : '✕';
+  t.innerHTML = '<span>' + icon + ' ' + msg.replace(/</g,'&lt;') + '</span>'
+    + '<button class="toast-close" aria-label="Close">&times;</button>';
+  t.querySelector('.toast-close').addEventListener('click', () => t.remove());
+  c.appendChild(t);
+  setTimeout(() => { if (t.parentNode) t.remove(); }, duration);
+}
+
 /* ── Notes storage (localStorage) ───────────────────────────────────────── */
 function noteKey(p) { return 'note:' + (p.doi || p.title || '').slice(0, 120); }
 function getNote(p) { try { return localStorage.getItem(noteKey(p)) || ''; } catch(e) { return ''; } }
@@ -658,20 +685,25 @@ document.getElementById('grid').addEventListener('click', e => {
             body: JSON.stringify({ message: 'chore: upload PDF via site', content: b64 }),
           }
         );
-        if (!status) return;
         if (resp.ok) {
-          status.textContent = '✓ Uploaded! Button will appear in ~1 min.';
-          status.style.color = '#16a34a';
+          if (status) { status.textContent = '✓ Uploaded!'; status.style.color = '#16a34a'; }
+          addBtn.classList.remove('open');
+          showToast('PDF uploaded — button will appear on this card in ~1 min.', 'success', 10000);
         } else {
           const err = await resp.json().catch(() => ({}));
-          if (resp.status === 401) status.textContent = 'Invalid token — update your GitHub PAT.';
-          else if (resp.status === 403) status.textContent = 'Token needs "contents" scope — regenerate PAT with public_repo.';
-          else if (resp.status === 422) status.textContent = 'A PDF for this paper already exists in the repo.';
-          else status.textContent = 'Error ' + resp.status + ': ' + (err.message || 'Upload failed.');
+          let msg;
+          if (resp.status === 401) msg = 'Invalid token — please update your GitHub PAT.';
+          else if (resp.status === 403) msg = 'Token needs "contents" permission — regenerate your PAT and add the public_repo scope.';
+          else if (resp.status === 422) msg = 'A PDF for this paper already exists in the repo.';
+          else msg = 'Upload error ' + resp.status + ': ' + (err.message || 'unknown.');
+          if (status) status.textContent = msg;
+          showToast(msg, 'error', 12000);
           uploadBtn.disabled = false;
         }
       } catch (err) {
-        if (status) status.textContent = 'Upload failed: ' + err.message;
+        const msg = 'Upload failed: ' + err.message;
+        if (status) status.textContent = msg;
+        showToast(msg, 'error', 12000);
         uploadBtn.disabled = false;
       }
     };
