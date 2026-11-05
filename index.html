@@ -235,8 +235,9 @@
 
     <!-- Screen 1: GitHub token setup -->
     <div id="modal-token-screen">
-      <p class="modal-desc">To add papers you need a GitHub Personal Access Token (PAT) with the <strong>workflow</strong> scope. It's stored only in your browser.</p>
-      <p class="modal-desc"><a class="modal-link" href="https://github.com/settings/tokens/new?scopes=workflow,public_repo&description=literature-rg" target="_blank" rel="noopener">Create a token on GitHub →</a></p>
+      <p class="modal-desc">To add papers and upload PDFs you need a GitHub Personal Access Token (PAT) stored only in your browser.</p>
+      <p class="modal-desc"><strong>Fine-grained PAT:</strong> enable <em>Actions</em>, <em>Contents</em>, and <em>Workflows</em> permissions (read &amp; write) for <code>ismi-ops/literature-rg</code>.</p>
+      <p class="modal-desc"><a class="modal-link" href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">Create a fine-grained token on GitHub →</a></p>
       <div class="modal-label">Personal Access Token</div>
       <input class="modal-input" id="token-input" type="password" placeholder="ghp_…" autocomplete="off">
       <button class="modal-btn" id="token-save-btn">Save &amp; continue</button>
@@ -723,9 +724,9 @@ document.getElementById('grid').addEventListener('click', e => {
         } else {
           const err = await resp.json().catch(() => ({}));
           let msg;
-          if (resp.status === 401) msg = 'Invalid token — please update your GitHub PAT.';
-          else if (resp.status === 403) msg = 'Token needs "contents" permission — regenerate your PAT and add the public_repo scope.';
-          else if (resp.status === 422) msg = 'A PDF for this paper already exists in the repo.';
+          if (resp.status === 401) msg = 'Invalid token — click "Change token" in the ＋ Add Paper modal to update it.';
+          else if (resp.status === 403) msg = 'Token lacks Contents permission — regenerate your PAT and enable Contents (R&W). Click "Change token" in the ＋ Add Paper modal.';
+          else if (resp.status === 422) msg = (err.message || '').includes('sha') ? 'This PDF was already uploaded. Reload the page — the PDF button should appear.' : 'Upload error 422: ' + (err.message || 'invalid request.');
           else msg = 'Upload error ' + resp.status + ': ' + (err.message || 'unknown.');
           if (status) status.textContent = msg;
           showToast(msg, 'error', 12000);
