@@ -1,0 +1,38 @@
+name: Sync PDFs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "pdfs/**"
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Match PDFs to papers and regenerate site
+        run: python sync_pdfs.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add papers.json index.html
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: attach uploaded PDFs to papers"
+            git push
+          fi
