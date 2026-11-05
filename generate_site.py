@@ -131,15 +131,19 @@ HTML_TEMPLATE = """<!doctype html>
   .card-actions { display: flex; gap: 8px; margin-top: 2px; align-items: center; }
   .btn-pdf { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 7px; background: #CD0F55; color: #fff; text-decoration: none; border: 1px solid #CD0F55; transition: opacity .12s; }
   .btn-pdf:hover { opacity: .85; }
-  .btn-add-pdf { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 500; padding: 4px 10px; border-radius: 7px; background: transparent; color: var(--muted); border: 1px dashed var(--muted); cursor: pointer; opacity: .6; transition: opacity .12s; position: relative; }
+  .btn-add-pdf { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 500; padding: 4px 10px; border-radius: 7px; background: transparent; color: var(--muted); border: 1px dashed var(--muted); cursor: pointer; opacity: .6; transition: opacity .12s; position: relative; user-select: none; }
   .btn-add-pdf:hover { opacity: 1; }
-  .pdf-popover { display: none; position: absolute; bottom: calc(100% + 8px); left: 0; z-index: 200; background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; width: 300px; box-shadow: 0 4px 20px rgba(0,0,0,.18); text-align: left; }
+  .pdf-popover { display: none; position: absolute; bottom: calc(100% + 8px); left: 0; z-index: 200; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; width: 290px; box-shadow: 0 4px 20px rgba(0,0,0,.22); text-align: left; cursor: default; }
   .btn-add-pdf.open .pdf-popover { display: block; }
-  .pdf-popover-title { font-size: 12px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
-  .pdf-popover-step { font-size: 12px; color: var(--muted); line-height: 1.5; margin-bottom: 4px; }
-  .pdf-popover-filename { font-size: 11.5px; font-family: monospace; background: var(--bg); border: 1px solid var(--border); border-radius: 5px; padding: 4px 8px; display: block; margin: 6px 0 10px; color: var(--text); word-break: break-all; }
-  .pdf-popover-link { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 7px; background: var(--accent); color: #fff; text-decoration: none; }
-  .pdf-popover-link:hover { opacity: .85; }
+  .pdf-popover-title { font-size: 12px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+  .pdf-file-input { display: none; }
+  .pdf-file-label { display: inline-flex; align-items: center; gap: 5px; padding: 5px 12px; border-radius: 7px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 12px; cursor: pointer; transition: border-color .12s, color .12s; }
+  .pdf-file-label:hover { border-color: var(--accent); color: var(--accent); }
+  .pdf-selected-name { font-size: 11px; font-family: monospace; color: var(--muted); margin: 6px 0 8px; min-height: 14px; word-break: break-all; }
+  .pdf-upload-btn { display: block; width: 100%; padding: 7px; border-radius: 7px; border: none; background: var(--accent); color: #fff; font-size: 13px; font-weight: 600; cursor: pointer; transition: opacity .12s; }
+  .pdf-upload-btn:disabled { opacity: .35; cursor: default; }
+  .pdf-upload-btn:not(:disabled):hover { opacity: .85; }
+  .pdf-upload-status { font-size: 11.5px; margin-top: 7px; color: var(--muted); min-height: 14px; line-height: 1.4; }
   .notes-section { margin-top: 6px; }
   .notes-toggle { background: none; border: none; padding: 0; font-size: 12px; color: var(--muted); cursor: pointer; display: flex; align-items: center; gap: 4px; transition: color .12s; }
   .notes-toggle:hover { color: var(--accent); }
@@ -229,7 +233,7 @@ HTML_TEMPLATE = """<!doctype html>
     <!-- Screen 1: GitHub token setup -->
     <div id="modal-token-screen">
       <p class="modal-desc">To add papers you need a GitHub Personal Access Token (PAT) with the <strong>workflow</strong> scope. It's stored only in your browser.</p>
-      <p class="modal-desc"><a class="modal-link" href="https://github.com/settings/tokens/new?scopes=workflow&description=literature-rg" target="_blank" rel="noopener">Create a token on GitHub →</a></p>
+      <p class="modal-desc"><a class="modal-link" href="https://github.com/settings/tokens/new?scopes=workflow,public_repo&description=literature-rg" target="_blank" rel="noopener">Create a token on GitHub →</a></p>
       <div class="modal-label">Personal Access Token</div>
       <input class="modal-input" id="token-input" type="password" placeholder="ghp_…" autocomplete="off">
       <button class="modal-btn" id="token-save-btn">Save &amp; continue</button>
@@ -569,17 +573,19 @@ function fmt(p) {
   const journalHtml = p.journal ? (jUrl ? '<a class="journal-link" href="'+esc(jUrl)+'" target="_blank" rel="noopener">'+esc(p.journal)+'</a>' : esc(p.journal)) : '';
   const venue = [journalHtml, p.year ? esc(p.year) : ''].filter(Boolean).join(' · ');
   const pdfSlug = (p.doi ? p.doi.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'') : (p.title||'paper').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,60)) + '.pdf';
-  const uploadUrl = 'https://github.com/ismi-ops/literature-rg/upload/main/pdfs';
   const pdfBtn = p.pdf_link ? '<a class="btn-pdf" href="'+esc(p.pdf_link)+'" target="_blank" rel="noopener">&#8595; PDF</a>'
-    : '<button class="btn-add-pdf" data-addpdf="1">＋ Add PDF'
+    : '<div class="btn-add-pdf" role="button" tabindex="0" data-addpdf="1" data-pdfslug="'+esc(pdfSlug)+'">＋ Add PDF'
         +'<div class="pdf-popover" onclick="event.stopPropagation()">'
-          +'<div class="pdf-popover-title">Attach a PDF to this paper</div>'
-          +'<div class="pdf-popover-step">1. Rename your file to exactly:</div>'
-          +'<code class="pdf-popover-filename">'+esc(pdfSlug)+'</code>'
-          +'<div class="pdf-popover-step">2. Click below and drag it onto the GitHub upload page.</div>'
-          +'<a class="pdf-popover-link" href="'+esc(uploadUrl)+'" target="_blank" rel="noopener">Open upload page ↗</a>'
+          +'<div class="pdf-popover-title">Upload PDF for this paper</div>'
+          +'<label class="pdf-file-label" onclick="event.stopPropagation()">'
+            +'<input type="file" accept=".pdf" class="pdf-file-input">'
+            +'&#128194; Choose file…'
+          +'</label>'
+          +'<div class="pdf-selected-name"></div>'
+          +'<button class="pdf-upload-btn" disabled>&#8593; Upload</button>'
+          +'<div class="pdf-upload-status"></div>'
         +'</div>'
-      +'</button>';
+      +'</div>';
   const existingNote = getNote(p);
   const hasNote = existingNote.trim().length > 0;
   const nk = noteKey(p);
@@ -615,7 +621,77 @@ let _papersByNoteId = {};
 function bindNotes(paper, noteId) {
   _papersByNoteId[noteId] = paper;
 }
+document.getElementById('grid').addEventListener('change', e => {
+  const input = e.target.closest('.pdf-file-input');
+  if (!input) return;
+  const file = input.files[0];
+  const popover = input.closest('.pdf-popover');
+  if (!file || !popover) return;
+  const nameEl = popover.querySelector('.pdf-selected-name');
+  const btn = popover.querySelector('.pdf-upload-btn');
+  if (nameEl) nameEl.textContent = file.name;
+  if (btn) { btn.disabled = false; btn._pdfFile = file; }
+  const status = popover.querySelector('.pdf-upload-status');
+  if (status) { status.textContent = ''; status.style.color = ''; }
+});
+
 document.getElementById('grid').addEventListener('click', e => {
+  const uploadBtn = e.target.closest('.pdf-upload-btn');
+  if (uploadBtn) {
+    e.stopPropagation();
+    if (uploadBtn.disabled) return;
+    const file = uploadBtn._pdfFile;
+    if (!file) return;
+    const addBtn = uploadBtn.closest('[data-addpdf]');
+    const slug = addBtn ? addBtn.dataset.pdfslug : null;
+    if (!slug) return;
+    const token = getToken();
+    if (!token) {
+      addBtn.classList.remove('open');
+      addModal.classList.add('open');
+      showTokenScreen();
+      return;
+    }
+    uploadBtn.disabled = true;
+    const status = uploadBtn.closest('.pdf-popover').querySelector('.pdf-upload-status');
+    if (status) { status.textContent = 'Uploading…'; status.style.color = ''; }
+    const reader = new FileReader();
+    reader.onload = async () => {
+      const b64 = reader.result.split(',')[1];
+      try {
+        const resp = await fetch(
+          'https://api.github.com/repos/ismi-ops/literature-rg/contents/pdfs/' + encodeURIComponent(slug),
+          {
+            method: 'PUT',
+            headers: {
+              'Authorization': 'Bearer ' + token,
+              'Accept': 'application/vnd.github+json',
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ message: 'chore: upload PDF via site', content: b64 }),
+          }
+        );
+        if (!status) return;
+        if (resp.ok) {
+          status.textContent = '✓ Uploaded! Button will appear in ~1 min.';
+          status.style.color = '#16a34a';
+        } else {
+          const err = await resp.json().catch(() => ({}));
+          if (resp.status === 401) status.textContent = 'Invalid token — update your GitHub PAT.';
+          else if (resp.status === 403) status.textContent = 'Token needs "contents" scope — regenerate PAT with public_repo.';
+          else if (resp.status === 422) status.textContent = 'A PDF for this paper already exists in the repo.';
+          else status.textContent = 'Error ' + resp.status + ': ' + (err.message || 'Upload failed.');
+          uploadBtn.disabled = false;
+        }
+      } catch (err) {
+        if (status) status.textContent = 'Upload failed: ' + err.message;
+        uploadBtn.disabled = false;
+      }
+    };
+    reader.readAsDataURL(file);
+    return;
+  }
+
   const addBtn = e.target.closest('[data-addpdf]');
   if (addBtn) {
     e.stopPropagation();
