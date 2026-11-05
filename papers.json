@@ -25139,5 +25139,27 @@
         "name": "Alfonso Martinez Arias"
       }
     ]
+  },
+  {
+    "title": "Bioelectricity is a universal multifaced signaling cue in living organisms",
+    "authors": "GuangJun Zhang, Michael Levin",
+    "year": "2025",
+    "journal": "Molecular Biology of the Cell",
+    "type": "review",
+    "summary": "The cellular electrical signals of living organisms were discovered more than a century ago and have been extensively investigated in the neuromuscular system. Neuronal depolarization and hyperpolarization are essential for our neuromuscular physiological and pathological functions. Bioelectricity is being recognized as an ancient, intrinsic, fundamental property of all living cells, and it is not limited to the neuromuscular system.",
+    "relevance": "Touches on bioelectric signaling mechanisms relevant to Cell Science's broader interest in non-canonical developmental signals in morphogenesis. Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs.",
+    "tags": [
+      "development",
+      "bioelectricity"
+    ],
+    "doi": "10.1091/mbc.E23-08-0312",
+    "link": "https://doi.org/10.1091/mbc.E23-08-0312",
+    "score": 5,
+    "added": "2026-11-05",
+    "pdf_link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11809311/pdf/mbc-36-pe2.pdf",
+    "source": "semantic_scholar",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "curated": true,
+    "ru_pick": true
   }
 ]
