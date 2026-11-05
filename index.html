@@ -598,7 +598,7 @@ function fmt(p) {
             +'&#128194; Choose file…'
           +'</label>'
           +'<div class="pdf-selected-name"></div>'
-          +'<button class="pdf-upload-btn" disabled>&#8593; Upload</button>'
+          +'<button class="pdf-upload-btn">&#8593; Upload</button>'
           +'<div class="pdf-upload-status"></div>'
         +'</div>'
       +'</div>';
@@ -642,22 +642,25 @@ document.getElementById('grid').addEventListener('change', e => {
   if (!input) return;
   const file = input.files[0];
   const popover = input.closest('.pdf-popover');
-  if (!file || !popover) return;
+  if (!popover) return;
   const nameEl = popover.querySelector('.pdf-selected-name');
-  const btn = popover.querySelector('.pdf-upload-btn');
-  if (nameEl) nameEl.textContent = file.name;
-  if (btn) { btn.disabled = false; btn._pdfFile = file; }
   const status = popover.querySelector('.pdf-upload-status');
-  if (status) { status.textContent = ''; status.style.color = ''; }
+  if (nameEl) nameEl.textContent = file ? file.name : '';
+  if (status) { status.textContent = file ? 'Ready to upload.' : ''; status.style.color = ''; }
 });
 
 document.getElementById('grid').addEventListener('click', e => {
   const uploadBtn = e.target.closest('.pdf-upload-btn');
   if (uploadBtn) {
     e.stopPropagation();
-    if (uploadBtn.disabled) return;
-    const file = uploadBtn._pdfFile;
-    if (!file) return;
+    const popover = uploadBtn.closest('.pdf-popover');
+    const status = popover ? popover.querySelector('.pdf-upload-status') : null;
+    const fileInput = popover ? popover.querySelector('.pdf-file-input') : null;
+    const file = fileInput && fileInput.files[0];
+    if (!file) {
+      if (status) { status.textContent = 'Please choose a PDF file first.'; status.style.color = '#b91c1c'; }
+      return;
+    }
     const addBtn = uploadBtn.closest('[data-addpdf]');
     const slug = addBtn ? addBtn.dataset.pdfslug : null;
     if (!slug) return;
@@ -669,7 +672,6 @@ document.getElementById('grid').addEventListener('click', e => {
       return;
     }
     uploadBtn.disabled = true;
-    const status = uploadBtn.closest('.pdf-popover').querySelector('.pdf-upload-status');
     if (status) { status.textContent = 'Uploading…'; status.style.color = ''; }
     const reader = new FileReader();
     reader.onload = async () => {
