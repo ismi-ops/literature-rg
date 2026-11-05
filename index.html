@@ -598,7 +598,7 @@ function fmt(p) {
             +'&#128194; Choose file…'
           +'</label>'
           +'<div class="pdf-selected-name"></div>'
-          +'<button class="pdf-upload-btn">&#8593; Upload</button>'
+          +'<button class="pdf-upload-btn" onclick="handlePdfUpload(this,event)">&#8593; Upload</button>'
           +'<div class="pdf-upload-status"></div>'
         +'</div>'
       +'</div>';
@@ -649,72 +649,70 @@ document.getElementById('grid').addEventListener('change', e => {
   if (status) { status.textContent = file ? 'Ready to upload.' : ''; status.style.color = ''; }
 });
 
-document.getElementById('grid').addEventListener('click', e => {
-  const uploadBtn = e.target.closest('.pdf-upload-btn');
-  if (uploadBtn) {
-    e.stopPropagation();
-    const popover = uploadBtn.closest('.pdf-popover');
-    const status = popover ? popover.querySelector('.pdf-upload-status') : null;
-    const fileInput = popover ? popover.querySelector('.pdf-file-input') : null;
-    const file = fileInput && fileInput.files[0];
-    if (!file) {
-      if (status) { status.textContent = 'Please choose a PDF file first.'; status.style.color = '#b91c1c'; }
-      return;
-    }
-    const addBtn = uploadBtn.closest('[data-addpdf]');
-    const slug = addBtn ? addBtn.dataset.pdfslug : null;
-    if (!slug) return;
-    const token = getToken();
-    if (!token) {
-      addBtn.classList.remove('open');
-      addModal.classList.add('open');
-      showTokenScreen();
-      return;
-    }
-    uploadBtn.disabled = true;
-    if (status) { status.textContent = 'Uploading…'; status.style.color = ''; }
-    const reader = new FileReader();
-    reader.onload = async () => {
-      const b64 = reader.result.split(',')[1];
-      try {
-        const resp = await fetch(
-          'https://api.github.com/repos/ismi-ops/literature-rg/contents/pdfs/' + encodeURIComponent(slug),
-          {
-            method: 'PUT',
-            headers: {
-              'Authorization': 'Bearer ' + token,
-              'Accept': 'application/vnd.github+json',
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ message: 'chore: upload PDF via site', content: b64 }),
-          }
-        );
-        if (resp.ok) {
-          if (status) { status.textContent = '✓ Uploaded!'; status.style.color = '#16a34a'; }
-          addBtn.classList.remove('open');
-          showToast('PDF uploaded — button will appear on this card in ~1 min.', 'success', 10000);
-        } else {
-          const err = await resp.json().catch(() => ({}));
-          let msg;
-          if (resp.status === 401) msg = 'Invalid token — click "Change token" in the ＋ Add Paper modal to update it.';
-          else if (resp.status === 403) msg = 'Token lacks Contents permission — regenerate your PAT and enable Contents (R&W). Click "Change token" in the ＋ Add Paper modal.';
-          else if (resp.status === 422) msg = (err.message || '').includes('sha') ? 'This PDF was already uploaded. Reload the page — the PDF button should appear.' : 'Upload error 422: ' + (err.message || 'invalid request.');
-          else msg = 'Upload error ' + resp.status + ': ' + (err.message || 'unknown.');
-          if (status) status.textContent = msg;
-          showToast(msg, 'error', 12000);
-          uploadBtn.disabled = false;
-        }
-      } catch (err) {
-        const msg = 'Upload failed: ' + err.message;
-        if (status) status.textContent = msg;
-        showToast(msg, 'error', 12000);
-        uploadBtn.disabled = false;
-      }
-    };
-    reader.readAsDataURL(file);
+async function handlePdfUpload(btn, event) {
+  event.stopPropagation();
+  const popover = btn.closest('.pdf-popover');
+  const status = popover ? popover.querySelector('.pdf-upload-status') : null;
+  const fileInput = popover ? popover.querySelector('.pdf-file-input') : null;
+  const file = fileInput && fileInput.files[0];
+  if (!file) {
+    if (status) { status.textContent = 'Please choose a PDF file first.'; status.style.color = '#b91c1c'; }
     return;
   }
+  const addBtn = btn.closest('[data-addpdf]');
+  const slug = addBtn ? addBtn.dataset.pdfslug : null;
+  if (!slug) return;
+  const token = getToken();
+  if (!token) {
+    if (addBtn) addBtn.classList.remove('open');
+    addModal.classList.add('open');
+    showTokenScreen();
+    return;
+  }
+  btn.disabled = true;
+  if (status) { status.textContent = 'Uploading…'; status.style.color = ''; }
+  const reader = new FileReader();
+  reader.onload = async () => {
+    const b64 = reader.result.split(',')[1];
+    try {
+      const resp = await fetch(
+        'https://api.github.com/repos/ismi-ops/literature-rg/contents/pdfs/' + encodeURIComponent(slug),
+        {
+          method: 'PUT',
+          headers: {
+            'Authorization': 'Bearer ' + token,
+            'Accept': 'application/vnd.github+json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ message: 'chore: upload PDF via site', content: b64 }),
+        }
+      );
+      if (resp.ok) {
+        if (status) { status.textContent = '✓ Uploaded!'; status.style.color = '#16a34a'; }
+        if (addBtn) addBtn.classList.remove('open');
+        showToast('PDF uploaded — button will appear on this card in ~1 min.', 'success', 10000);
+      } else {
+        const err = await resp.json().catch(() => ({}));
+        let msg;
+        if (resp.status === 401) msg = 'Invalid token — click "Change token" in the ＋ Add Paper modal to update it.';
+        else if (resp.status === 403) msg = 'Token lacks Contents permission — regenerate your PAT and enable Contents (R&W). Click "Change token" in the ＋ Add Paper modal.';
+        else if (resp.status === 422) msg = (err.message || '').includes('sha') ? 'This PDF was already uploaded. Reload the page — the PDF button should appear.' : 'Upload error 422: ' + (err.message || 'invalid request.');
+        else msg = 'Upload error ' + resp.status + ': ' + (err.message || 'unknown.');
+        if (status) status.textContent = msg;
+        showToast(msg, 'error', 12000);
+        btn.disabled = false;
+      }
+    } catch (err) {
+      const msg = 'Upload failed: ' + err.message;
+      if (status) status.textContent = msg;
+      showToast(msg, 'error', 12000);
+      btn.disabled = false;
+    }
+  };
+  reader.readAsDataURL(file);
+}
 
+document.getElementById('grid').addEventListener('click', e => {
   const addBtn = e.target.closest('[data-addpdf]');
   if (addBtn) {
     e.stopPropagation();
