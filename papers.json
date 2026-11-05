@@ -25161,5 +25161,35 @@
     "reasoning": "keyword match (no Anthropic API key)",
     "curated": true,
     "ru_pick": true
+  },
+  {
+    "title": "Mechanochemical Feedback Loops in Development and Disease.",
+    "authors": "Edouard Hannezo, Carl-Philipp Heisenberg",
+    "year": "2019",
+    "journal": "Cell",
+    "type": "review",
+    "summary": "There is increasing evidence that both mechanical and biochemical signals play important roles in development and disease. The development of complex organisms, in particular, has been proposed to rely on the feedback between mechanical and biochemical patterning events. This feedback occurs at the molecular level via mechanosensation but can also arise as an emergent property of the system at the cellular and tissue level.",
+    "relevance": "Relevant to Cell Science's interest in how cells make identity decisions, with implications for stem cell differentiation and iPSC-based model systems. Relevant to Cell Science's interest in how spatial patterns emerge during development from molecular and cellular interactions.",
+    "tags": [
+      "development",
+      "cell fate"
+    ],
+    "doi": "10.1016/j.cell.2019.05.052",
+    "link": "https://doi.org/10.1016/j.cell.2019.05.052",
+    "score": 7,
+    "added": "2026-11-05",
+    "pdf_link": "http://www.cell.com/article/S0092867419306233/pdf",
+    "source": "semantic_scholar",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "curated": true,
+    "ru_pick": true,
+    "author_data": [
+      {
+        "name": "Edouard Hannezo"
+      },
+      {
+        "name": "Carl-Philipp Heisenberg"
+      }
+    ]
   }
 ]
