@@ -172,6 +172,10 @@ HTML_TEMPLATE = """<!doctype html>
   .modal-link { color: var(--accent); }
   .modal-token-row { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }
   .modal-token-btn { background: none; border: none; color: var(--accent); font-size: 12px; cursor: pointer; padding: 0; text-decoration: underline; }
+  .modal-check-row { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text); cursor: pointer; user-select: none; }
+  .modal-check-row input[type=checkbox] { width: 16px; height: 16px; accent-color: var(--accent); cursor: pointer; flex-shrink: 0; }
+  .ru-badge { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 10px; background: #7c3aed22; color: #7c3aed; border: 1px solid #7c3aed66; letter-spacing: .02em; }
+  @media (prefers-color-scheme: dark) { .ru-badge { background: #7c3aed33; color: #c084fc; border-color: #7c3aed88; } }
   .card-notes { margin-top: 4px; }
   .notes-textarea { width: 100%; min-height: 52px; padding: 7px 10px; border: 1px dashed var(--border); border-radius: 7px; background: transparent; color: var(--text); font-size: 12.5px; font-family: inherit; line-height: 1.5; resize: vertical; outline: none; transition: border-color .15s, background .15s; }
   .notes-textarea::placeholder { color: var(--muted); opacity: .7; font-style: italic; }
@@ -203,6 +207,7 @@ HTML_TEMPLATE = """<!doctype html>
   <div class="filters-inner">
     <div class="filter-row" id="type-filters"><span class="filter-label">Type</span></div>
     <div class="filter-row" id="preprint-filters"><span class="filter-label">Status</span></div>
+    <div class="filter-row" id="ru-filters"><span class="filter-label">Picks</span></div>
     <div class="filter-row" id="collab-filters"><span class="filter-label">Collaborators</span></div>
     <div class="filter-row" id="tag-filters"><span class="filter-label">Topic</span></div>
     <div class="filter-row" id="year-filters"><span class="filter-label">Year</span></div>
@@ -234,6 +239,10 @@ HTML_TEMPLATE = """<!doctype html>
       <div class="modal-label">Paper URL or DOI</div>
       <p class="modal-desc">Paste a link (Nature, bioRxiv, PubMed…) or a DOI like <code>10.1038/…</code>. The paper will be scored and added automatically — check back in ~2 minutes.</p>
       <input class="modal-input" id="paper-input" type="text" placeholder="https://… or 10.xxxx/…" autocomplete="off">
+      <label class="modal-check-row">
+        <input type="checkbox" id="ru-pick-check">
+        Chosen by Ru
+      </label>
       <button class="modal-btn" id="paper-submit-btn">+ Add paper</button>
       <div class="modal-feedback" id="paper-feedback"></div>
       <div class="modal-token-row">Token saved. <button class="modal-token-btn" id="change-token-btn">Change token</button></div>
@@ -280,7 +289,7 @@ const TOP_PICK_IDS = new Set(_recentBatch.slice(0, 4).map(p => p.doi || p.title 
 function isTopPick(p) { return TOP_PICK_IDS.size > 0 && TOP_PICK_IDS.has(p.doi || p.title || ''); }
 
 /* ── Filter state ───────────────────────────────────────────────────────── */
-let activeType = 'all', activeTags = new Set(), activeYear = 'all', activeAdded = 'all', activePreprint = false, activeCollab = false, searchText = '';
+let activeType = 'all', activeTags = new Set(), activeYear = 'all', activeAdded = 'all', activePreprint = false, activeCollab = false, activeRuPick = false, searchText = '';
 
 /* ── Type chips ─────────────────────────────────────────────────────────── */
 function countByType(type) {
@@ -301,6 +310,29 @@ TYPES.forEach(t => {
   });
   typeRow.appendChild(chip);
 });
+
+/* ── Chosen by Ru filter ────────────────────────────────────────────────── */
+const ruPapers = PAPERS.filter(p => p.ru_pick);
+const ruRow = document.getElementById('ru-filters');
+if (ruPapers.length > 0) {
+  const ruAllChip = document.createElement('button');
+  ruAllChip.className = 'chip active'; ruAllChip.textContent = 'All';
+  ruAllChip.addEventListener('click', () => {
+    activeRuPick = false;
+    ruAllChip.classList.add('active'); ruPickChip.classList.remove('active'); render();
+  });
+  const ruPickChip = document.createElement('button');
+  ruPickChip.className = 'chip';
+  ruPickChip.innerHTML = '&#10024; Chosen by Ru<span class="count">' + ruPapers.length + '</span>';
+  ruPickChip.addEventListener('click', () => {
+    activeRuPick = true;
+    ruPickChip.classList.add('active'); ruAllChip.classList.remove('active'); render();
+  });
+  ruRow.appendChild(ruAllChip);
+  ruRow.appendChild(ruPickChip);
+} else {
+  ruRow.style.display = 'none';
+}
 
 /* ── Preprint filter ────────────────────────────────────────────────────── */
 const preprintCount = PAPERS.filter(p => p.preprint).length;
@@ -540,8 +572,9 @@ function fmt(p) {
   const starHtml = isTopPick(p) ? '<div class="top-pick-star" title="Top pick · recommended for printing">⭐</div>' : '';
   const preprintBadge = p.preprint ? '<span class="badge badge-preprint">preprint</span>' : '';
   const collabBadge = p.vip_author ? '<span class="badge badge-collab" title="Paper by collaborator '+esc(p.vip_author)+'">&#128101; '+esc(p.vip_author)+'</span>' : '';
+  const ruBadge = p.ru_pick ? '<span class="ru-badge">&#10024; Chosen by Ru</span>' : '';
   return '<div class="card">'
-    +'<div class="card-meta"><span class="badge '+badgeClass+'">'+esc(type)+'</span>'+preprintBadge+collabBadge+added+'</div>'
+    +'<div class="card-meta"><span class="badge '+badgeClass+'">'+esc(type)+'</span>'+preprintBadge+collabBadge+ruBadge+added+'</div>'
     +'<div class="card-title">'+titleHtml+'</div>'
     +(authorHtml ? '<div class="card-authors">'+authorHtml+'</div>' : '')
     +(venue ? '<div class="card-venue">'+venue+'</div>' : '')
@@ -614,6 +647,7 @@ function render() {
   const filtered = PAPERS.filter(p => {
     if (activeType !== 'all' && (p.type||'research') !== activeType) return false;
     if (activePreprint && !p.preprint) return false;
+    if (activeRuPick && !p.ru_pick) return false;
     if (activeCollab) { if (!p.vip_author) return false; }
     else { if (p.vip_only) return false; }
     if (activeTags.size > 0 && ![...(p.tags||[])].some(t => activeTags.has(t))) return false;
@@ -698,7 +732,8 @@ document.getElementById('paper-submit-btn').addEventListener('click', async () =
   if (!token) { showTokenScreen(); return; }
 
   const isDOI = /^10\.\d{4,}\//.test(raw);
-  const inputs = isDOI ? { doi: raw, url: '' } : { url: raw, doi: '' };
+  const ruPick = document.getElementById('ru-pick-check').checked;
+  const inputs = isDOI ? { doi: raw, url: '', ru_pick: ruPick ? 'true' : 'false' } : { url: raw, doi: '', ru_pick: ruPick ? 'true' : 'false' };
 
   btn.disabled = true;
   fb.className = 'modal-feedback';
@@ -721,6 +756,7 @@ document.getElementById('paper-submit-btn').addEventListener('click', async () =
       fb.className = 'modal-feedback ok';
       fb.textContent = '✓ Submitted! The paper will appear in ~2 minutes after the workflow finishes.';
       document.getElementById('paper-input').value = '';
+      document.getElementById('ru-pick-check').checked = false;
     } else if (resp.status === 401) {
       fb.className = 'modal-feedback err';
       fb.textContent = 'Invalid token (401). Please update your GitHub PAT.';
