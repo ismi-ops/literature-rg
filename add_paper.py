@@ -224,7 +224,7 @@ def fetch_metadata(url: str | None, doi: str | None) -> dict | None:
 
 def run(url: str | None = None, doi: str | None = None, title: str | None = None,
         content_type: str = "research", min_score: int = 0, dry_run: bool = False,
-        ru_pick: bool = False, for_printing: bool = False):
+        ru_pick: bool = False):
     load_dotenv()
 
     if title:
@@ -260,8 +260,6 @@ def run(url: str | None = None, doi: str | None = None, title: str | None = None
     result["curated"] = True
     if ru_pick:
         result["ru_pick"] = True
-    if for_printing:
-        result["for_printing"] = True
     result["pdf_link"] = get_pdf_link(paper) or ""
     result["source"] = paper.get("source", "manual")
 
@@ -306,11 +304,9 @@ if __name__ == "__main__":
                         help="Content type (default: research)")
     parser.add_argument("--min-score", type=int, default=0, help="Minimum score to add (default 0 = always add)")
     parser.add_argument("--dry-run", action="store_true", help="Score but don't write")
-    parser.add_argument("--ru-pick", action="store_true", help="Mark as chosen by Ru")
-    parser.add_argument("--for-printing", action="store_true", help="Mark as sent for printing")
+    parser.add_argument("--ru-pick", action="store_true", help="Mark as Ru's pick")
     args = parser.parse_args()
     if not args.url and not args.doi and not args.title:
         parser.error("Provide at least --url, --doi, or --title")
     run(url=args.url, doi=args.doi, title=args.title, content_type=args.content_type,
-        min_score=args.min_score, dry_run=args.dry_run, ru_pick=args.ru_pick,
-        for_printing=args.for_printing)
+        min_score=args.min_score, dry_run=args.dry_run, ru_pick=args.ru_pick)
