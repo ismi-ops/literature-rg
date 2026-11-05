@@ -263,7 +263,7 @@ HTML_TEMPLATE = """<!doctype html>
       <input class="modal-input" id="paper-input" type="text" placeholder="https://… or 10.xxxx/…" autocomplete="off">
       <label class="modal-check-row">
         <input type="checkbox" id="ru-pick-check">
-        Chosen by Ru
+        Ru's Picks
       </label>
       <label class="modal-check-row">
         <input type="checkbox" id="for-printing-check">
@@ -349,7 +349,7 @@ if (ruPapers.length > 0) {
   });
   const ruPickChip = document.createElement('button');
   ruPickChip.className = 'chip';
-  ruPickChip.innerHTML = '&#10024; Chosen by Ru<span class="count">' + ruPapers.length + '</span>';
+  ruPickChip.innerHTML = '&#10024; Ru\'s Picks<span class="count">' + ruPapers.length + '</span>';
   ruPickChip.addEventListener('click', () => {
     activeRuPick = true;
     ruPickChip.classList.add('active'); ruAllChip.classList.remove('active'); render();
@@ -650,7 +650,7 @@ function fmt(p) {
   const starHtml = isTopPick(p) ? '<div class="top-pick-star" title="Top pick · recommended for printing">⭐</div>' : '';
   const preprintBadge = p.preprint ? '<span class="badge badge-preprint">preprint</span>' : '';
   const collabBadge = p.vip_author ? '<span class="badge badge-collab" title="Paper by collaborator '+esc(p.vip_author)+'">&#128101; '+esc(p.vip_author)+'</span>' : '';
-  const ruBadge = p.ru_pick ? '<span class="ru-badge">&#10024; Chosen by Ru</span>' : '';
+  const ruBadge = p.ru_pick ? '<span class="ru-badge">&#10024; Ru\'s Picks</span>' : '';
   const printBadge = p.for_printing ? '<span class="print-badge">&#128247; For printing</span>' : '';
   return '<div class="card">'
     +'<div class="card-meta"><span class="badge '+badgeClass+'">'+esc(type)+'</span>'+preprintBadge+collabBadge+ruBadge+printBadge+added+'</div>'
