@@ -30,6 +30,11 @@ on:
         required: false
         default: "false"
         type: string
+      for_printing:
+        description: "For printing (true/false)"
+        required: false
+        default: "false"
+        type: string
 
 permissions:
   contents: write
@@ -56,12 +61,14 @@ jobs:
           TITLE="${{ github.event.inputs.title }}"
           CTYPE="${{ github.event.inputs.content_type }}"
           RU="${{ github.event.inputs.ru_pick }}"
+          FP="${{ github.event.inputs.for_printing }}"
           ARGS=()
           if [ -n "$URL" ];   then ARGS+=(--url "$URL");     fi
           if [ -n "$DOI" ];   then ARGS+=(--doi "$DOI");     fi
           if [ -n "$TITLE" ]; then ARGS+=(--title "$TITLE"); fi
           if [ -n "$CTYPE" ]; then ARGS+=(--type "$CTYPE");  fi
           if [ "$RU" = "true" ]; then ARGS+=(--ru-pick);     fi
+          if [ "$FP" = "true" ]; then ARGS+=(--for-printing); fi
           python add_paper.py "${ARGS[@]}"
 
       - name: Backfill authors

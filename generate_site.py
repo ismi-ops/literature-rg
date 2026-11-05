@@ -194,6 +194,8 @@ HTML_TEMPLATE = """<!doctype html>
   .modal-check-row input[type=checkbox] { width: 16px; height: 16px; accent-color: var(--accent); cursor: pointer; flex-shrink: 0; }
   .ru-badge { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 10px; background: #7c3aed22; color: #7c3aed; border: 1px solid #7c3aed66; letter-spacing: .02em; }
   @media (prefers-color-scheme: dark) { .ru-badge { background: #7c3aed33; color: #c084fc; border-color: #7c3aed88; } }
+  .print-badge { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 10px; background: #0ea5e922; color: #0369a1; border: 1px solid #0ea5e966; letter-spacing: .02em; }
+  @media (prefers-color-scheme: dark) { .print-badge { background: #0ea5e933; color: #38bdf8; border-color: #0ea5e988; } }
   .card-notes { margin-top: 4px; }
   .notes-textarea { width: 100%; min-height: 52px; padding: 7px 10px; border: 1px dashed var(--border); border-radius: 7px; background: transparent; color: var(--text); font-size: 12.5px; font-family: inherit; line-height: 1.5; resize: vertical; outline: none; transition: border-color .15s, background .15s; }
   .notes-textarea::placeholder { color: var(--muted); opacity: .7; font-style: italic; }
@@ -226,6 +228,7 @@ HTML_TEMPLATE = """<!doctype html>
     <div class="filter-row" id="type-filters"><span class="filter-label">Type</span></div>
     <div class="filter-row" id="preprint-filters"><span class="filter-label">Status</span></div>
     <div class="filter-row" id="ru-filters"><span class="filter-label">Picks</span></div>
+    <div class="filter-row" id="print-filters"><span class="filter-label">Printing</span></div>
     <div class="filter-row" id="collab-filters"><span class="filter-label">Collaborators</span></div>
     <div class="filter-row" id="tag-filters"><span class="filter-label">Topic</span></div>
     <div class="filter-row" id="year-filters"><span class="filter-label">Year</span></div>
@@ -261,6 +264,10 @@ HTML_TEMPLATE = """<!doctype html>
       <label class="modal-check-row">
         <input type="checkbox" id="ru-pick-check">
         Chosen by Ru
+      </label>
+      <label class="modal-check-row">
+        <input type="checkbox" id="for-printing-check">
+        For printing
       </label>
       <button class="modal-btn" id="paper-submit-btn">+ Add paper</button>
       <div class="modal-feedback" id="paper-feedback"></div>
@@ -308,7 +315,7 @@ const TOP_PICK_IDS = new Set(_recentBatch.slice(0, 4).map(p => p.doi || p.title 
 function isTopPick(p) { return TOP_PICK_IDS.size > 0 && TOP_PICK_IDS.has(p.doi || p.title || ''); }
 
 /* ── Filter state ───────────────────────────────────────────────────────── */
-let activeType = 'all', activeTags = new Set(), activeYear = 'all', activeAdded = 'all', activePreprint = false, activeCollab = '', activeRuPick = false, searchText = '';
+let activeType = 'all', activeTags = new Set(), activeYear = 'all', activeAdded = 'all', activePreprint = false, activeCollab = '', activeRuPick = false, activeForPrinting = false, searchText = '';
 
 /* ── Type chips ─────────────────────────────────────────────────────────── */
 function countByType(type) {
@@ -351,6 +358,29 @@ if (ruPapers.length > 0) {
   ruRow.appendChild(ruPickChip);
 } else {
   ruRow.style.display = 'none';
+}
+
+/* ── For Printing filter ────────────────────────────────────────────────── */
+const printPapers = PAPERS.filter(p => p.for_printing);
+const printRow = document.getElementById('print-filters');
+if (printPapers.length > 0) {
+  const printAllChip = document.createElement('button');
+  printAllChip.className = 'chip active'; printAllChip.textContent = 'All';
+  printAllChip.addEventListener('click', () => {
+    activeForPrinting = false;
+    printAllChip.classList.add('active'); printChip.classList.remove('active'); render();
+  });
+  const printChip = document.createElement('button');
+  printChip.className = 'chip';
+  printChip.innerHTML = '&#128247; For printing<span class="count">' + printPapers.length + '</span>';
+  printChip.addEventListener('click', () => {
+    activeForPrinting = true;
+    printChip.classList.add('active'); printAllChip.classList.remove('active'); render();
+  });
+  printRow.appendChild(printAllChip);
+  printRow.appendChild(printChip);
+} else {
+  printRow.style.display = 'none';
 }
 
 /* ── Preprint filter ────────────────────────────────────────────────────── */
@@ -621,8 +651,9 @@ function fmt(p) {
   const preprintBadge = p.preprint ? '<span class="badge badge-preprint">preprint</span>' : '';
   const collabBadge = p.vip_author ? '<span class="badge badge-collab" title="Paper by collaborator '+esc(p.vip_author)+'">&#128101; '+esc(p.vip_author)+'</span>' : '';
   const ruBadge = p.ru_pick ? '<span class="ru-badge">&#10024; Chosen by Ru</span>' : '';
+  const printBadge = p.for_printing ? '<span class="print-badge">&#128247; For printing</span>' : '';
   return '<div class="card">'
-    +'<div class="card-meta"><span class="badge '+badgeClass+'">'+esc(type)+'</span>'+preprintBadge+collabBadge+ruBadge+added+'</div>'
+    +'<div class="card-meta"><span class="badge '+badgeClass+'">'+esc(type)+'</span>'+preprintBadge+collabBadge+ruBadge+printBadge+added+'</div>'
     +'<div class="card-title">'+titleHtml+'</div>'
     +(authorHtml ? '<div class="card-authors">'+authorHtml+'</div>' : '')
     +(venue ? '<div class="card-venue">'+venue+'</div>' : '')
@@ -771,6 +802,7 @@ function render() {
     if (activeType !== 'all' && (p.type||'research') !== activeType) return false;
     if (activePreprint && !p.preprint) return false;
     if (activeRuPick && !p.ru_pick) return false;
+    if (activeForPrinting && !p.for_printing) return false;
     if (activeCollab) { if (p.vip_author !== activeCollab) return false; }
     else { if (p.vip_only) return false; }
     if (activeTags.size > 0 && ![...(p.tags||[])].some(t => activeTags.has(t))) return false;
@@ -856,7 +888,8 @@ document.getElementById('paper-submit-btn').addEventListener('click', async () =
 
   const isDOI = /^10\.\d{4,}\//.test(raw);
   const ruPick = document.getElementById('ru-pick-check').checked;
-  const inputs = isDOI ? { doi: raw, url: '', ru_pick: ruPick ? 'true' : 'false' } : { url: raw, doi: '', ru_pick: ruPick ? 'true' : 'false' };
+  const forPrinting = document.getElementById('for-printing-check').checked;
+  const inputs = isDOI ? { doi: raw, url: '', ru_pick: ruPick ? 'true' : 'false', for_printing: forPrinting ? 'true' : 'false' } : { url: raw, doi: '', ru_pick: ruPick ? 'true' : 'false', for_printing: forPrinting ? 'true' : 'false' };
 
   btn.disabled = true;
   fb.className = 'modal-feedback';
@@ -880,6 +913,7 @@ document.getElementById('paper-submit-btn').addEventListener('click', async () =
       fb.textContent = '✓ Submitted! The paper will appear in ~2 minutes after the workflow finishes.';
       document.getElementById('paper-input').value = '';
       document.getElementById('ru-pick-check').checked = false;
+      document.getElementById('for-printing-check').checked = false;
     } else if (resp.status === 401) {
       fb.className = 'modal-feedback err';
       fb.textContent = 'Invalid token (401). Please update your GitHub PAT.';
