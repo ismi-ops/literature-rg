@@ -194,8 +194,6 @@ HTML_TEMPLATE = """<!doctype html>
   .modal-check-row input[type=checkbox] { width: 16px; height: 16px; accent-color: var(--accent); cursor: pointer; flex-shrink: 0; }
   .ru-badge { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 10px; background: #7c3aed22; color: #7c3aed; border: 1px solid #7c3aed66; letter-spacing: .02em; }
   @media (prefers-color-scheme: dark) { .ru-badge { background: #7c3aed33; color: #c084fc; border-color: #7c3aed88; } }
-  .print-badge { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 10px; background: #0ea5e922; color: #0369a1; border: 1px solid #0ea5e966; letter-spacing: .02em; }
-  @media (prefers-color-scheme: dark) { .print-badge { background: #0ea5e933; color: #38bdf8; border-color: #0ea5e988; } }
   .card-notes { margin-top: 4px; }
   .notes-textarea { width: 100%; min-height: 52px; padding: 7px 10px; border: 1px dashed var(--border); border-radius: 7px; background: transparent; color: var(--text); font-size: 12.5px; font-family: inherit; line-height: 1.5; resize: vertical; outline: none; transition: border-color .15s, background .15s; }
   .notes-textarea::placeholder { color: var(--muted); opacity: .7; font-style: italic; }
@@ -228,7 +226,6 @@ HTML_TEMPLATE = """<!doctype html>
     <div class="filter-row" id="type-filters"><span class="filter-label">Type</span></div>
     <div class="filter-row" id="preprint-filters"><span class="filter-label">Status</span></div>
     <div class="filter-row" id="ru-filters"><span class="filter-label">Picks</span></div>
-    <div class="filter-row" id="print-filters"><span class="filter-label">Printing</span></div>
     <div class="filter-row" id="collab-filters"><span class="filter-label">Collaborators</span></div>
     <div class="filter-row" id="tag-filters"><span class="filter-label">Topic</span></div>
     <div class="filter-row" id="year-filters"><span class="filter-label">Year</span></div>
@@ -248,8 +245,9 @@ HTML_TEMPLATE = """<!doctype html>
 
     <!-- Screen 1: GitHub token setup -->
     <div id="modal-token-screen">
-      <p class="modal-desc">To add papers you need a GitHub Personal Access Token (PAT) with the <strong>workflow</strong> scope. It's stored only in your browser.</p>
-      <p class="modal-desc"><a class="modal-link" href="https://github.com/settings/tokens/new?scopes=workflow,public_repo&description=literature-rg" target="_blank" rel="noopener">Create a token on GitHub →</a></p>
+      <p class="modal-desc">To add papers and upload PDFs you need a GitHub Personal Access Token (PAT) stored only in your browser.</p>
+      <p class="modal-desc"><strong>Fine-grained PAT:</strong> enable <em>Actions</em>, <em>Contents</em>, and <em>Workflows</em> permissions (read &amp; write) for <code>ismi-ops/literature-rg</code>.</p>
+      <p class="modal-desc"><a class="modal-link" href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">Create a fine-grained token on GitHub →</a></p>
       <div class="modal-label">Personal Access Token</div>
       <input class="modal-input" id="token-input" type="password" placeholder="ghp_…" autocomplete="off">
       <button class="modal-btn" id="token-save-btn">Save &amp; continue</button>
@@ -263,11 +261,7 @@ HTML_TEMPLATE = """<!doctype html>
       <input class="modal-input" id="paper-input" type="text" placeholder="https://… or 10.xxxx/…" autocomplete="off">
       <label class="modal-check-row">
         <input type="checkbox" id="ru-pick-check">
-        Chosen by Ru
-      </label>
-      <label class="modal-check-row">
-        <input type="checkbox" id="for-printing-check">
-        For printing
+        Ru's Picks
       </label>
       <button class="modal-btn" id="paper-submit-btn">+ Add paper</button>
       <div class="modal-feedback" id="paper-feedback"></div>
@@ -315,7 +309,7 @@ const TOP_PICK_IDS = new Set(_recentBatch.slice(0, 4).map(p => p.doi || p.title 
 function isTopPick(p) { return TOP_PICK_IDS.size > 0 && TOP_PICK_IDS.has(p.doi || p.title || ''); }
 
 /* ── Filter state ───────────────────────────────────────────────────────── */
-let activeType = 'all', activeTags = new Set(), activeYear = 'all', activeAdded = 'all', activePreprint = false, activeCollab = '', activeRuPick = false, activeForPrinting = false, searchText = '';
+let activeType = 'all', activeTags = new Set(), activeYear = 'all', activeAdded = 'all', activePreprint = false, activeCollab = '', activeRuPick = false, searchText = '';
 
 /* ── Type chips ─────────────────────────────────────────────────────────── */
 function countByType(type) {
@@ -349,7 +343,7 @@ if (ruPapers.length > 0) {
   });
   const ruPickChip = document.createElement('button');
   ruPickChip.className = 'chip';
-  ruPickChip.innerHTML = '&#10024; Chosen by Ru<span class="count">' + ruPapers.length + '</span>';
+  ruPickChip.innerHTML = '&#10024; Ru\'s Picks<span class="count">' + ruPapers.length + '</span>';
   ruPickChip.addEventListener('click', () => {
     activeRuPick = true;
     ruPickChip.classList.add('active'); ruAllChip.classList.remove('active'); render();
@@ -360,28 +354,6 @@ if (ruPapers.length > 0) {
   ruRow.style.display = 'none';
 }
 
-/* ── For Printing filter ────────────────────────────────────────────────── */
-const printPapers = PAPERS.filter(p => p.for_printing);
-const printRow = document.getElementById('print-filters');
-if (printPapers.length > 0) {
-  const printAllChip = document.createElement('button');
-  printAllChip.className = 'chip active'; printAllChip.textContent = 'All';
-  printAllChip.addEventListener('click', () => {
-    activeForPrinting = false;
-    printAllChip.classList.add('active'); printChip.classList.remove('active'); render();
-  });
-  const printChip = document.createElement('button');
-  printChip.className = 'chip';
-  printChip.innerHTML = '&#128247; For printing<span class="count">' + printPapers.length + '</span>';
-  printChip.addEventListener('click', () => {
-    activeForPrinting = true;
-    printChip.classList.add('active'); printAllChip.classList.remove('active'); render();
-  });
-  printRow.appendChild(printAllChip);
-  printRow.appendChild(printChip);
-} else {
-  printRow.style.display = 'none';
-}
 
 /* ── Preprint filter ────────────────────────────────────────────────────── */
 const preprintCount = PAPERS.filter(p => p.preprint).length;
@@ -650,10 +622,9 @@ function fmt(p) {
   const starHtml = isTopPick(p) ? '<div class="top-pick-star" title="Top pick · recommended for printing">⭐</div>' : '';
   const preprintBadge = p.preprint ? '<span class="badge badge-preprint">preprint</span>' : '';
   const collabBadge = p.vip_author ? '<span class="badge badge-collab" title="Paper by collaborator '+esc(p.vip_author)+'">&#128101; '+esc(p.vip_author)+'</span>' : '';
-  const ruBadge = p.ru_pick ? '<span class="ru-badge">&#10024; Chosen by Ru</span>' : '';
-  const printBadge = p.for_printing ? '<span class="print-badge">&#128247; For printing</span>' : '';
+  const ruBadge = p.ru_pick ? '<span class="ru-badge">&#10024; Ru\'s Picks</span>' : '';
   return '<div class="card">'
-    +'<div class="card-meta"><span class="badge '+badgeClass+'">'+esc(type)+'</span>'+preprintBadge+collabBadge+ruBadge+printBadge+added+'</div>'
+    +'<div class="card-meta"><span class="badge '+badgeClass+'">'+esc(type)+'</span>'+preprintBadge+collabBadge+ruBadge+added+'</div>'
     +'<div class="card-title">'+titleHtml+'</div>'
     +(authorHtml ? '<div class="card-authors">'+authorHtml+'</div>' : '')
     +(venue ? '<div class="card-venue">'+venue+'</div>' : '')
@@ -736,9 +707,9 @@ document.getElementById('grid').addEventListener('click', e => {
         } else {
           const err = await resp.json().catch(() => ({}));
           let msg;
-          if (resp.status === 401) msg = 'Invalid token — please update your GitHub PAT.';
-          else if (resp.status === 403) msg = 'Token needs "contents" permission — regenerate your PAT and add the public_repo scope.';
-          else if (resp.status === 422) msg = 'A PDF for this paper already exists in the repo.';
+          if (resp.status === 401) msg = 'Invalid token — click "Change token" in the ＋ Add Paper modal to update it.';
+          else if (resp.status === 403) msg = 'Token lacks Contents permission — regenerate your PAT and enable Contents (R&W). Click "Change token" in the ＋ Add Paper modal.';
+          else if (resp.status === 422) msg = (err.message || '').includes('sha') ? 'This PDF was already uploaded. Reload the page — the PDF button should appear.' : 'Upload error 422: ' + (err.message || 'invalid request.');
           else msg = 'Upload error ' + resp.status + ': ' + (err.message || 'unknown.');
           if (status) status.textContent = msg;
           showToast(msg, 'error', 12000);
@@ -802,7 +773,6 @@ function render() {
     if (activeType !== 'all' && (p.type||'research') !== activeType) return false;
     if (activePreprint && !p.preprint) return false;
     if (activeRuPick && !p.ru_pick) return false;
-    if (activeForPrinting && !p.for_printing) return false;
     if (activeCollab) { if (p.vip_author !== activeCollab) return false; }
     else { if (p.vip_only) return false; }
     if (activeTags.size > 0 && ![...(p.tags||[])].some(t => activeTags.has(t))) return false;
@@ -888,8 +858,7 @@ document.getElementById('paper-submit-btn').addEventListener('click', async () =
 
   const isDOI = /^10\.\d{4,}\//.test(raw);
   const ruPick = document.getElementById('ru-pick-check').checked;
-  const forPrinting = document.getElementById('for-printing-check').checked;
-  const inputs = isDOI ? { doi: raw, url: '', ru_pick: ruPick ? 'true' : 'false', for_printing: forPrinting ? 'true' : 'false' } : { url: raw, doi: '', ru_pick: ruPick ? 'true' : 'false', for_printing: forPrinting ? 'true' : 'false' };
+  const inputs = isDOI ? { doi: raw, url: '', ru_pick: ruPick ? 'true' : 'false' } : { url: raw, doi: '', ru_pick: ruPick ? 'true' : 'false' };
 
   btn.disabled = true;
   fb.className = 'modal-feedback';
@@ -913,7 +882,6 @@ document.getElementById('paper-submit-btn').addEventListener('click', async () =
       fb.textContent = '✓ Submitted! The paper will appear in ~2 minutes after the workflow finishes.';
       document.getElementById('paper-input').value = '';
       document.getElementById('ru-pick-check').checked = false;
-      document.getElementById('for-printing-check').checked = false;
     } else if (resp.status === 401) {
       fb.className = 'modal-feedback err';
       fb.textContent = 'Invalid token (401). Please update your GitHub PAT.';
