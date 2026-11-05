@@ -334,25 +334,21 @@ TYPES.forEach(t => {
 /* ── Chosen by Ru filter ────────────────────────────────────────────────── */
 const ruPapers = PAPERS.filter(p => p.ru_pick);
 const ruRow = document.getElementById('ru-filters');
-if (ruPapers.length > 0) {
-  const ruAllChip = document.createElement('button');
-  ruAllChip.className = 'chip active'; ruAllChip.textContent = 'All';
-  ruAllChip.addEventListener('click', () => {
-    activeRuPick = false;
-    ruAllChip.classList.add('active'); ruPickChip.classList.remove('active'); render();
-  });
-  const ruPickChip = document.createElement('button');
-  ruPickChip.className = 'chip';
-  ruPickChip.innerHTML = '&#10024; Ru\\'s Picks<span class="count">' + ruPapers.length + '</span>';
-  ruPickChip.addEventListener('click', () => {
-    activeRuPick = true;
-    ruPickChip.classList.add('active'); ruAllChip.classList.remove('active'); render();
-  });
-  ruRow.appendChild(ruAllChip);
-  ruRow.appendChild(ruPickChip);
-} else {
-  ruRow.style.display = 'none';
-}
+const ruAllChip = document.createElement('button');
+ruAllChip.className = 'chip active'; ruAllChip.textContent = 'All';
+ruAllChip.addEventListener('click', () => {
+  activeRuPick = false;
+  ruAllChip.classList.add('active'); ruPickChip.classList.remove('active'); render();
+});
+const ruPickChip = document.createElement('button');
+ruPickChip.className = 'chip';
+ruPickChip.innerHTML = '&#10024; Ru\\'s Picks<span class="count">' + ruPapers.length + '</span>';
+ruPickChip.addEventListener('click', () => {
+  activeRuPick = true;
+  ruPickChip.classList.add('active'); ruAllChip.classList.remove('active'); render();
+});
+ruRow.appendChild(ruAllChip);
+ruRow.appendChild(ruPickChip);
 
 
 /* ── Preprint filter ────────────────────────────────────────────────────── */
