@@ -6732,7 +6732,7 @@
     "link": "https://doi.org/10.1109/ICCV51701.2025.01218",
     "score": 1,
     "added": "2026-10-15",
-    "pdf_link": "",
+    "pdf_link": "https://arxiv.org/pdf/2503.19545",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
@@ -13150,7 +13150,7 @@
     "link": "https://doi.org/10.1038/s41596-024-01043-6",
     "score": 1,
     "added": "2026-10-15",
-    "pdf_link": "",
+    "pdf_link": "https://www.biorxiv.org/content/biorxiv/early/2021/07/01/2021.06.23.449557.full.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "author_data": [
@@ -25108,6 +25108,35 @@
       {
         "name": "Jose M. Polo",
         "orcid": "0000-0002-2531-778X"
+      }
+    ]
+  },
+  {
+    "title": "The cell in the age of the genomic revolution: Cell Regulatory Networks.",
+    "authors": "Nicole Gorfinkiel, Alfonso Martinez Arias",
+    "year": "2021",
+    "journal": "Cells and Development",
+    "type": "research",
+    "summary": "Over the last few years an intense activity in the areas of advanced microscopy and quantitative cell biology has put the focus on the morphogenetic events that shape embryos. The interest in these processes is taking place against the backdrop of genomic studies, particularly of global patterns of gene expression at the level of single cells, which cannot fully account for the way cells build tissues and organs. Here we discuss the need to integrate the activity of genes with that of cells and propose the need to develop a framework, based on cellular processes and cell interactions, that parallels that which has been created for gene activity in the form of Gene Regulatory Networks (GRNs).",
+    "relevance": "Directly relevant to Cell Science's foundational interest in how cells acquire and maintain identity — gene regulatory networks, lineage specification, and embryonic patterning are central to understanding cell decision-making and fate in developmental contexts. Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures.",
+    "tags": [
+      "cell fate"
+    ],
+    "doi": "10.1016/j.cdev.2021.203720",
+    "link": "https://doi.org/10.1016/j.cdev.2021.203720",
+    "score": 6,
+    "added": "2026-11-05",
+    "pdf_link": "https://www.sciencedirect.com/science/article/pii/S2667290121000541/pdf",
+    "source": "semantic_scholar",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "curated": true,
+    "ru_pick": true,
+    "author_data": [
+      {
+        "name": "Nicole Gorfinkiel"
+      },
+      {
+        "name": "Alfonso Martinez Arias"
       }
     ]
   }
