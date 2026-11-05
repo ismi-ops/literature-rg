@@ -113,8 +113,10 @@ HTML_TEMPLATE = """<!doctype html>
   .card-title { font-size: 15px; font-weight: 650; line-height: 1.4; }
   .card-title a { color: var(--text); text-decoration: none; }
   .card-title a:hover { color: var(--accent); text-decoration: underline; }
-  .card-authors { font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 6px; }
+  .card-authors { font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 2px 0; }
   .author-link { color: var(--muted); text-decoration: none; }
+  .author-link::after { content: ' ·'; color: var(--border); margin-right: 6px; }
+  .author-link:last-child::after { content: ''; margin-right: 0; }
   .author-link:hover { color: var(--accent); text-decoration: underline; }
   .card-venue { font-size: 12.5px; color: var(--muted); font-style: italic; }
   .journal-link { color: inherit; text-decoration: none; }
@@ -289,7 +291,7 @@ const TOP_PICK_IDS = new Set(_recentBatch.slice(0, 4).map(p => p.doi || p.title 
 function isTopPick(p) { return TOP_PICK_IDS.size > 0 && TOP_PICK_IDS.has(p.doi || p.title || ''); }
 
 /* ── Filter state ───────────────────────────────────────────────────────── */
-let activeType = 'all', activeTags = new Set(), activeYear = 'all', activeAdded = 'all', activePreprint = false, activeCollab = false, activeRuPick = false, searchText = '';
+let activeType = 'all', activeTags = new Set(), activeYear = 'all', activeAdded = 'all', activePreprint = false, activeCollab = '', activeRuPick = false, searchText = '';
 
 /* ── Type chips ─────────────────────────────────────────────────────────── */
 function countByType(type) {
@@ -361,21 +363,34 @@ if (preprintCount > 0) {
 const collabPapers = PAPERS.filter(p => p.vip_author);
 const collabRow = document.getElementById('collab-filters');
 if (collabPapers.length > 0) {
+  const collabChips = [];
   const collabAllChip = document.createElement('button');
   collabAllChip.className = 'chip active'; collabAllChip.textContent = 'All';
   collabAllChip.addEventListener('click', () => {
-    activeCollab = false;
-    collabAllChip.classList.add('active'); collabOnlyChip.classList.remove('active'); render();
-  });
-  const collabOnlyChip = document.createElement('button');
-  collabOnlyChip.className = 'chip';
-  collabOnlyChip.innerHTML = 'Collaborators<span class="count">' + collabPapers.length + '</span>';
-  collabOnlyChip.addEventListener('click', () => {
-    activeCollab = true;
-    collabOnlyChip.classList.add('active'); collabAllChip.classList.remove('active'); render();
+    activeCollab = '';
+    collabChips.forEach(c => c.classList.remove('active'));
+    collabAllChip.classList.add('active'); render();
   });
   collabRow.appendChild(collabAllChip);
-  collabRow.appendChild(collabOnlyChip);
+  // one chip per author, sorted alphabetically by last name
+  const authors = [...new Set(collabPapers.map(p => p.vip_author))].sort((a, b) => {
+    const lastName = n => n.split(' ').pop();
+    return lastName(a).localeCompare(lastName(b));
+  });
+  authors.forEach(author => {
+    const n = collabPapers.filter(p => p.vip_author === author).length;
+    const chip = document.createElement('button');
+    chip.className = 'chip';
+    chip.innerHTML = author + '<span class="count">' + n + '</span>';
+    chip.addEventListener('click', () => {
+      collabChips.forEach(c => c.classList.remove('active'));
+      collabAllChip.classList.remove('active');
+      chip.classList.add('active');
+      activeCollab = author; render();
+    });
+    collabRow.appendChild(chip);
+    collabChips.push(chip);
+  });
 } else {
   collabRow.style.display = 'none';
 }
@@ -539,14 +554,14 @@ function fmt(p) {
         ? 'https://orcid.org/' + esc(a.orcid)
         : authorLink(name);
       return '<a class="author-link" href="'+href+'" target="_blank" rel="noopener">'+esc(name)+'</a>';
-    }).filter(Boolean).join('<span style="color:var(--border)"> · </span>');
+    }).filter(Boolean).join('');
   } else {
     const rawAuthors = typeof p.authors === 'string' ? p.authors : (p.authors||[]).join(', ');
     const authorNames = rawAuthors.split(/,\s*et al\.?/).map(s=>s.trim()).join('').split(/,\s*/).map(s=>s.trim()).filter(Boolean);
     authorHtml = authorNames.map(a => {
       const name = a.replace(/\s*et al\.?\s*$/,'').trim();
       return name ? '<a class="author-link" href="'+authorLink(name)+'" target="_blank" rel="noopener">'+esc(name)+'</a>' : '';
-    }).filter(Boolean).join('<span style="color:var(--border)"> · </span>');
+    }).filter(Boolean).join('');
   }
   const tags = (p.tags||[]).filter(isTopicTag).map(t=>'<span class="tag" data-clicktag="'+esc(t)+'">'+esc(t)+'</span>').join('');
   const added = p.added ? '<span class="card-date">added '+p.added+'</span>' : '';
@@ -648,7 +663,7 @@ function render() {
     if (activeType !== 'all' && (p.type||'research') !== activeType) return false;
     if (activePreprint && !p.preprint) return false;
     if (activeRuPick && !p.ru_pick) return false;
-    if (activeCollab) { if (!p.vip_author) return false; }
+    if (activeCollab) { if (p.vip_author !== activeCollab) return false; }
     else { if (p.vip_only) return false; }
     if (activeTags.size > 0 && ![...(p.tags||[])].some(t => activeTags.has(t))) return false;
     if (activeYear !== 'all' && String(p.year||'').trim() !== activeYear) return false;

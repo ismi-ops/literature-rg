@@ -107,7 +107,7 @@ def _normalize_paper(raw: dict, vip_author_name: str) -> dict | None:
     arxiv_id = ext.get("ArXiv") or ""
 
     authors_list = raw.get("authors") or []
-    authors_str = ", ".join(a.get("name", "") for a in authors_list[:8])
+    authors_names = [a.get("name", "") for a in authors_list if a.get("name")]
 
     pub_date = raw.get("publicationDate") or ""
     year = pub_date[:4] if pub_date else str(raw.get("year") or "")
@@ -138,7 +138,7 @@ def _normalize_paper(raw: dict, vip_author_name: str) -> dict | None:
 
     return {
         "title": title,
-        "authors": authors_str,
+        "authors": authors_names,
         "year": year,
         "journal": journal,
         "doi": doi,
@@ -153,7 +153,7 @@ def _normalize_paper(raw: dict, vip_author_name: str) -> dict | None:
     }
 
 
-def fetch_recent_papers(author: dict, since_date: str, limit: int = 20) -> list[dict]:
+def fetch_recent_papers(author: dict, since_date: str, limit: int = 100) -> list[dict]:
     """Fetch papers published on or after since_date (YYYY-MM-DD) for one author."""
     ss_id = author.get("ss_id")
     if not ss_id:
