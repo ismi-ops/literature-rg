@@ -1,0 +1,55 @@
+name: Edit Papers
+
+# Dispatched by the gear menu on the site: Ru's Picks toggle, PDF link changes, and removing papers.
+on:
+  workflow_dispatch:
+    inputs:
+      edits:
+        description: "JSON list of edits (sent by the site)"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  edit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Apply edits and push
+        env:
+          EDITS: ${{ github.event.inputs.edits }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          PUSHED=0
+          for attempt in 1 2 3 4 5 6; do
+            # Re-apply on top of the latest main each time so concurrent runs never clobber each other.
+            git fetch origin main
+            git reset --hard origin/main
+            python apply_edits.py
+            git add papers.json index.html filters.json papers_data.json
+            if git diff --cached --quiet; then
+              echo "No changes to commit."
+              PUSHED=1
+              break
+            fi
+            git commit -m "chore: edit papers via site"
+            if git push; then
+              echo "Pushed on attempt $attempt."
+              PUSHED=1
+              break
+            fi
+            echo "Push rejected on attempt $attempt — retrying in $((attempt * 4))s..."
+            sleep $((attempt * 4))
+          done
+          if [ $PUSHED -eq 0 ]; then
+            echo "All push attempts failed."
+            exit 1
+          fi

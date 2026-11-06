@@ -177,7 +177,30 @@ HTML_TEMPLATE = r"""<!doctype html>
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
   .card { position: relative; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 10px; transition: box-shadow .15s; }
   .card:hover { box-shadow: var(--shadow-hover); }
-  .top-pick-star { position: absolute; bottom: 12px; right: 14px; font-size: 20px; line-height: 1; user-select: none; cursor: default; filter: drop-shadow(0 1px 2px rgba(0,0,0,.15)); }
+  .card-corner { position: absolute; bottom: 10px; right: 12px; display: flex; align-items: center; gap: 8px; }
+  .top-pick-star { font-size: 20px; line-height: 1; user-select: none; cursor: default; filter: drop-shadow(0 1px 2px rgba(0,0,0,.15)); }
+  .card-gear { position: relative; }
+  .gear-btn { background: none; border: none; font-size: 19px; line-height: 1; color: var(--muted); cursor: pointer; padding: 2px 4px; border-radius: 6px; opacity: .55; transition: opacity .12s, color .12s; }
+  .gear-btn:hover, .card-gear.open .gear-btn { opacity: 1; color: var(--accent); }
+  .gear-panel { display: none; position: absolute; bottom: calc(100% + 8px); right: 0; z-index: 200; width: 290px; max-width: calc(100vw - 48px); background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; box-shadow: 0 4px 20px rgba(0,0,0,.22); text-align: left; cursor: default; }
+  .card-gear.open .gear-panel { display: flex; flex-direction: column; gap: 10px; }
+  .gear-check { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; cursor: pointer; user-select: none; }
+  .gear-check input { width: 16px; height: 16px; accent-color: var(--accent); cursor: pointer; }
+  .gear-section { display: flex; flex-direction: column; gap: 6px; border-top: 1px solid var(--border); padding-top: 10px; }
+  .gear-h { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+  .gear-current { font-size: 12px; color: var(--muted); word-break: break-all; }
+  .gear-current a { color: var(--accent); }
+  .gear-input { width: 100%; padding: 6px 8px; border: 1px solid var(--border); border-radius: 7px; background: var(--bg); color: var(--text); font-size: 12.5px; outline: none; }
+  .gear-input:focus { border-color: var(--accent); }
+  .gear-row { display: flex; gap: 6px; }
+  .gear-btn2 { flex: 1; padding: 6px 8px; border-radius: 7px; border: none; background: var(--accent); color: #fff; font-size: 12.5px; font-weight: 600; cursor: pointer; }
+  .gear-btn2.ghost { background: transparent; color: var(--muted); border: 1px solid var(--border); font-weight: 500; }
+  .gear-btn2:hover { opacity: .88; }
+  .gear-status { font-size: 11.5px; color: #b91c1c; min-height: 0; }
+  .gear-or { font-size: 11.5px; color: var(--muted); margin-top: 4px; }
+  .gear-delete { padding: 6px 8px; border-radius: 7px; border: 1px solid #fca5a5; background: transparent; color: #b91c1c; font-size: 12.5px; cursor: pointer; text-align: left; }
+  .gear-delete:hover { background: #fee2e2; }
+  @media (prefers-color-scheme: dark) { .gear-delete { color: #fca5a5; border-color: #7f1d1d; } .gear-delete:hover { background: #450a0a; } .gear-status { color: #fca5a5; } }
   .card-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
   .badge { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 12px; text-transform: capitalize; }
   .badge-research { background: #edeaff; color: #6464FF; }
@@ -321,6 +344,7 @@ HTML_TEMPLATE = r"""<!doctype html>
   <div class="filters-inner" id="filters-inner">
     <div class="filter-bar" id="filter-bar"></div>
   </div>
+</div>
 <main>
   <div class="toolbar">
     <span id="range-label"></span>
