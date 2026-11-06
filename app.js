@@ -279,7 +279,17 @@ function showToast(msg, type = 'success', duration = 8000) {
 
 /* ── Notes storage (localStorage) ───────────────────────────────────────── */
 function noteKey(p) { return 'note:' + (p.doi || p.title || '').slice(0, 120); }
-function getNote(p) { try { return localStorage.getItem(noteKey(p)) || ''; } catch(e) { return ''; } }
+function getNote(p) {
+  try {
+    let v = localStorage.getItem(noteKey(p)) || '';
+    // A preprint that got published changes DOI: carry the note over from its earlier DOI.
+    if (!v) for (const d of (p.previous_dois || [])) {
+      const old = localStorage.getItem('note:' + d.slice(0, 120));
+      if (old) { v = old; localStorage.setItem(noteKey(p), old); break; }
+    }
+    return v;
+  } catch(e) { return ''; }
+}
 function saveNoteByKey(k, v) { try { localStorage.setItem(k, v); } catch(e) {} }
 
 /* ── Journal URL map ────────────────────────────────────────────────────── */
@@ -404,10 +414,12 @@ function fmt(p) {
   const adminTools = !!getToken();
   const starHtml = isTopPick(p) ? '<div class="top-pick-star" title="Top pick · recommended for printing">⭐</div>' : '';
   const preprintBadge = p.preprint ? '<span class="badge badge-preprint">preprint</span>' : '';
+  const publishedBadge = p.published_on && p.published_on >= daysAgo(30)
+    ? '<span class="badge badge-published" title="Formerly a preprint (' + esc((p.previous_dois || []).slice(-1)[0] || '') + '), now published">&#10003; Published</span>' : '';
   const collabBadge = p.vip_author ? '<span class="badge badge-collab" title="Paper by collaborator '+esc(p.vip_author)+'">&#128101; '+esc(p.vip_author)+'</span>' : '';
   const ruBadge = p.ru_pick ? '<span class="ru-badge">&#10024; Ru\'s Picks</span>' : '';
   return '<div class="card" data-key="'+esc(paperKey(p))+'" data-pdfslug="'+esc(pdfSlug)+'">'
-    +'<div class="card-meta"><span class="badge '+badgeClass+'">'+esc(type)+'</span>'+preprintBadge+collabBadge+ruBadge+added+'</div>'
+    +'<div class="card-meta"><span class="badge '+badgeClass+'">'+esc(type)+'</span>'+preprintBadge+publishedBadge+collabBadge+ruBadge+added+'</div>'
     +'<div class="card-title">'+titleHtml+'</div>'
     +(authorHtml ? '<div class="card-authors">'+authorHtml+'</div>' : '')
     +(venue ? '<div class="card-venue">'+venue+'</div>' : '')

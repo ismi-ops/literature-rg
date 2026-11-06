@@ -23,7 +23,7 @@ from datetime import date, timedelta
 
 from dotenv import load_dotenv
 
-from src import storage
+from src import own_publications, storage
 from src.relevance import score_and_summarize
 from src.sources.author_tracker import fetch_all_recent
 from src.sources.pdf_finder import get_pdf_link
@@ -66,6 +66,7 @@ def run(lookback_days: int = 14, vip_threshold: int = 6, dry_run: bool = False):
         return
 
     existing = storage.get_existing_papers()
+    own = own_publications.load()
     added_count = 0
     skipped_count = 0
     excluded_count = 0
@@ -74,6 +75,9 @@ def run(lookback_days: int = 14, vip_threshold: int = 6, dry_run: bool = False):
         doi_key = (paper.get("doi") or "").strip().lower()
         title_key = (paper.get("title") or "").strip().lower()
         if (doi_key and doi_key in existing) or (title_key and title_key in existing):
+            skipped_count += 1
+            continue
+        if own.match(paper):   # one of our own publications
             skipped_count += 1
             continue
 
