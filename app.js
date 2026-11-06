@@ -65,7 +65,8 @@ const DIMS = {
             passes: p => !sel.picks.size || sel.picks.has(p.ru_pick ? 'ru' : 'agent'),
             keys:   p => [p.ru_pick ? 'ru' : 'agent'] },
   collab: { label: 'Collaborators',
-            passes: p => sel.collab.size ? sel.collab.has(p.vip_author) : !p.vip_only,
+            // collaborator-only papers stay off the main list, but a search always finds them
+            passes: p => sel.collab.size ? sel.collab.has(p.vip_author) : (!p.vip_only || !!state.search),
             keys:   p => p.vip_author ? [p.vip_author] : [] },
   tags:   { label: 'Topic',
             passes: p => !sel.tags.size || (p.tags || []).some(t => sel.tags.has(t)),
@@ -670,6 +671,33 @@ function putPdf(slug, token, b64, sha) {
   return fetch(PDF_API + encodeURIComponent(slug), { method: 'PUT', headers: ghHeaders(token), body: JSON.stringify(body) });
 }
 
+function readBase64(file) {
+  return new Promise((resolve, reject) => {
+    const r = new FileReader();
+    r.onload = () => resolve(String(r.result).split(',')[1]);
+    r.onerror = () => reject(new Error('could not read the file'));
+    r.readAsDataURL(file);
+  });
+}
+// Upload (or replace) pdfs/<slug> in the repo. Resolves to { ok: true } or { ok: false, msg }.
+async function uploadPdfFile(slug, file, token) {
+  const b64 = await readBase64(file);
+  let resp = await putPdf(slug, token, b64, null);
+  if (resp.status === 422) {   // a file with this name exists (replacing a PDF): GitHub wants its sha
+    const cur = await fetch(PDF_API + encodeURIComponent(slug), { headers: ghHeaders(token) });
+    const meta = cur.ok ? await cur.json().catch(() => ({})) : {};
+    if (meta.sha) resp = await putPdf(slug, token, b64, meta.sha);
+  }
+  if (resp.ok) return { ok: true };
+  const err = await resp.json().catch(() => ({}));
+  let msg;
+  if (resp.status === 401) msg = 'Invalid token — click "Change token" in the ＋ Add Paper modal to update it.';
+  else if (resp.status === 403) msg = 'Token lacks Contents permission — regenerate your PAT and enable Contents (R&W). Click "Change token" in the ＋ Add Paper modal.';
+  else if (resp.status === 422) msg = (err.message || '').includes('sha') ? 'This PDF was already uploaded. Reload the page — the PDF button should appear.' : 'Upload error 422: ' + (err.message || 'invalid request.');
+  else msg = 'Upload error ' + resp.status + ': ' + (err.message || 'unknown.');
+  return { ok: false, msg };
+}
+
 async function handlePdfUpload(btn, event) {
   event.stopPropagation();
   const popover = btn.closest('[data-pdfbox]');
@@ -696,39 +724,23 @@ async function handlePdfUpload(btn, event) {
   }
   btn.disabled = true;
   if (status) { status.textContent = 'Uploading…'; status.style.color = ''; }
-  const reader = new FileReader();
-  reader.onload = async () => {
-    const b64 = reader.result.split(',')[1];
-    try {
-      let resp = await putPdf(slug, token, b64, null);
-      if (resp.status === 422) {   // a file with this name exists (replacing a PDF): GitHub wants its sha
-        const cur = await fetch(PDF_API + encodeURIComponent(slug), { headers: ghHeaders(token) });
-        const meta = cur.ok ? await cur.json().catch(() => ({})) : {};
-        if (meta.sha) resp = await putPdf(slug, token, b64, meta.sha);
-      }
-      if (resp.ok) {
-        if (status) { status.textContent = '✓ Uploaded!'; status.style.color = '#16a34a'; }
-        closeMenus();
-        showToast('PDF uploaded — button will appear on this card in ~1 min.', 'success', 10000);
-      } else {
-        const err = await resp.json().catch(() => ({}));
-        let msg;
-        if (resp.status === 401) msg = 'Invalid token — click "Change token" in the ＋ Add Paper modal to update it.';
-        else if (resp.status === 403) msg = 'Token lacks Contents permission — regenerate your PAT and enable Contents (R&W). Click "Change token" in the ＋ Add Paper modal.';
-        else if (resp.status === 422) msg = (err.message || '').includes('sha') ? 'This PDF was already uploaded. Reload the page — the PDF button should appear.' : 'Upload error 422: ' + (err.message || 'invalid request.');
-        else msg = 'Upload error ' + resp.status + ': ' + (err.message || 'unknown.');
-        if (status) status.textContent = msg;
-        showToast(msg, 'error', 12000);
-        btn.disabled = false;
-      }
-    } catch (err) {
-      const msg = 'Upload failed: ' + err.message;
-      if (status) status.textContent = msg;
-      showToast(msg, 'error', 12000);
+  try {
+    const r = await uploadPdfFile(slug, file, token);
+    if (r.ok) {
+      if (status) { status.textContent = '✓ Uploaded!'; status.style.color = '#16a34a'; }
+      closeMenus();
+      showToast('PDF uploaded — button will appear on this card in ~1 min.', 'success', 10000);
+    } else {
+      if (status) status.textContent = r.msg;
+      showToast(r.msg, 'error', 12000);
       btn.disabled = false;
     }
-  };
-  reader.readAsDataURL(file);
+  } catch (err) {
+    const msg = 'Upload failed: ' + err.message;
+    if (status) status.textContent = msg;
+    showToast(msg, 'error', 12000);
+    btn.disabled = false;
+  }
 }
 
 document.getElementById('grid').addEventListener('click', e => {
@@ -911,11 +923,36 @@ document.getElementById('token-input').addEventListener('keydown', e => { if (e.
 
 document.getElementById('change-token-btn').addEventListener('click', showTokenScreen);
 
+// Mirrors add_paper._doi_from_url, so the PDF is filed under the DOI the workflow will resolve.
+function doiFromInput(raw) {
+  let m = raw.match(/(10\.\d{4,}\/[^\s"'&?#]+)/);
+  if (m) return m[1].replace(/[\/.]+$/, '').replace(/v\d+(?:\.\w+)*$/, '');
+  m = raw.match(/journals\.biologists\.com\/[^\/]+\/article\/[^\/]+\/[^\/]+\/([a-z]+)(\d+)/);
+  if (m) return '10.1242/' + m[1] + '.' + m[2];
+  m = raw.match(/arxiv\.org\/(?:abs|pdf)\/(\d{4}\.\d+)/);
+  if (m) return '10.48550/arXiv.' + m[1];
+  return '';
+}
+function doiSlug(doi) { return doi.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') + '.pdf'; }
+
+const paperPdfInput = document.getElementById('paper-pdf-input');
+const paperPdfName = document.getElementById('paper-pdf-name');
+const paperPdfClear = document.getElementById('paper-pdf-clear');
+function showChosenPdf() {
+  const f = paperPdfInput.files[0];
+  paperPdfName.textContent = f ? f.name + ' (' + (f.size / 1048576).toFixed(1) + ' MB)' : '';
+  paperPdfClear.hidden = !f;
+}
+paperPdfInput.addEventListener('change', showChosenPdf);
+paperPdfClear.addEventListener('click', () => { paperPdfInput.value = ''; showChosenPdf(); });
+
+const MAX_PDF_BYTES = 30 * 1024 * 1024;
 document.getElementById('paper-submit-btn').addEventListener('click', async () => {
   const raw = document.getElementById('paper-input').value.trim();
   const fb = document.getElementById('paper-feedback');
   const btn = document.getElementById('paper-submit-btn');
-  if (!raw) { fb.className = 'modal-feedback err'; fb.textContent = 'Please enter a URL or DOI.'; return; }
+  const fail = msg => { fb.className = 'modal-feedback err'; fb.textContent = msg; };
+  if (!raw) { fail('Please enter a URL or DOI.'); return; }
 
   const token = getToken();
   if (!token) { showTokenScreen(); return; }
@@ -924,11 +961,26 @@ document.getElementById('paper-submit-btn').addEventListener('click', async () =
   const ruPick = document.getElementById('ru-pick-check').checked;
   const inputs = isDOI ? { doi: raw, url: '', ru_pick: ruPick ? 'true' : 'false' } : { url: raw, doi: '', ru_pick: ruPick ? 'true' : 'false' };
 
+  // An attached PDF is filed under the paper's DOI so the new tile picks it up.
+  const file = paperPdfInput.files[0];
+  let slug = '';
+  if (file) {
+    if (!/\.pdf$/i.test(file.name) && file.type !== 'application/pdf') { fail('Please choose a PDF file.'); return; }
+    if (file.size > MAX_PDF_BYTES) { fail('That PDF is over 30 MB — too large to upload here.'); return; }
+    const doi = doiFromInput(raw);
+    if (!doi) { fail('To attach a PDF I need the paper\'s DOI, and I can\'t find one in that link. Paste the DOI itself (10.xxxx/…), or add the paper first and upload the PDF from its tile.'); return; }
+    slug = doiSlug(doi);
+  }
+
   btn.disabled = true;
   fb.className = 'modal-feedback';
-  fb.textContent = 'Submitting…';
-
   try {
+    if (file) {
+      fb.textContent = 'Uploading PDF…';
+      const up = await uploadPdfFile(slug, file, token);
+      if (!up.ok) { fail(up.msg); btn.disabled = false; return; }   // nothing is submitted until the PDF is safely in
+    }
+    fb.textContent = 'Submitting…';
     const resp = await fetch(
       'https://api.github.com/repos/ismi-ops/literature-rg/actions/workflows/add_paper.yml/dispatches',
       {
@@ -943,26 +995,22 @@ document.getElementById('paper-submit-btn').addEventListener('click', async () =
     );
     if (resp.status === 204) {
       fb.className = 'modal-feedback ok';
-      fb.textContent = '✓ Submitted! The paper will appear in ~2 minutes after the workflow finishes.';
+      fb.textContent = (file ? '✓ PDF uploaded and paper submitted! ' : '✓ Submitted! ') + 'The paper will appear in ~2 minutes after the workflow finishes.';
       document.getElementById('paper-input').value = '';
       document.getElementById('ru-pick-check').checked = false;
+      paperPdfInput.value = ''; showChosenPdf();
     } else if (resp.status === 401) {
-      fb.className = 'modal-feedback err';
-      fb.textContent = 'Invalid token (401). Please update your GitHub PAT.';
+      fail('Invalid token (401). Please update your GitHub PAT.');
     } else if (resp.status === 403) {
-      fb.className = 'modal-feedback err';
-      fb.textContent = 'Permission denied (403). Make sure the token has "workflow" scope.';
+      fail('Permission denied (403). Make sure the token has "workflow" scope.');
     } else if (resp.status === 422) {
-      fb.className = 'modal-feedback err';
-      fb.textContent = 'Workflow not found (422). Check that the branch "main" exists.';
+      fail('Workflow not found (422). Check that the branch "main" exists.');
     } else {
       const body = await resp.text().catch(() => '');
-      fb.className = 'modal-feedback err';
-      fb.textContent = 'GitHub error ' + resp.status + (body ? ': ' + body.slice(0, 120) : '');
+      fail('GitHub error ' + resp.status + (body ? ': ' + body.slice(0, 120) : ''));
     }
   } catch(err) {
-    fb.className = 'modal-feedback err';
-    fb.textContent = 'Network error: ' + err.message;
+    fail('Network error: ' + err.message);
   }
   btn.disabled = false;
 });

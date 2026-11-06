@@ -8,6 +8,8 @@ vip_only=True so they are hidden from the main feed.
 import json
 import re
 import time
+
+from src.people_of_interest import same_person
 from pathlib import Path
 
 import requests
@@ -52,8 +54,12 @@ def _resolve_author_id(author: dict) -> str | None:
     if not data or not data.get("data"):
         return None
 
-    candidates = data["data"]
-    # Prefer candidate whose affiliation matches, else take highest paperCount
+    # Only consider real name matches: SS also returns people with the same words in a different order
+    # ("Marshall W. Wallace" for "Wallace Marshall"), and guessing the first result tracked the wrong person.
+    candidates = [c for c in data["data"] if same_person(c.get("name", ""), query)]
+    if not candidates:
+        return None
+    # Prefer candidate whose affiliation matches, else take the first (most relevant) name match
     if institution:
         inst_lower = institution.lower()
         for c in candidates:
