@@ -12617,7 +12617,8 @@
     "added": "2026-10-15",
     "pdf_link": "https://doi.org/10.1073/pnas.2502090122",
     "source": "author_tracker",
-    "reasoning": "keyword match (no Anthropic API key)"
+    "reasoning": "keyword match (no Anthropic API key)",
+    "rejected": true
   },
   {
     "title": "Tension transmission across a supracellular network drives increased tissue rigidity in the Drosophila retina",
