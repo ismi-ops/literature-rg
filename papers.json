@@ -24593,7 +24593,7 @@
     "link": "https://doi.org/10.1038/s41586-019-1146-y",
     "score": 10,
     "added": "2026-11-02",
-    "pdf_link": "https://www.ncbi.nlm.nih.gov/pmc/articles/6544541",
+    "pdf_link": "pdfs/10-1038-s41586-019-1146-y.pdf",
     "source": "semantic_scholar",
     "reasoning": "keyword match (no Anthropic API key)",
     "curated": true,
