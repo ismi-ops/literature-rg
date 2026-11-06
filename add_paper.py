@@ -11,6 +11,7 @@ import re
 import sys
 import time
 from datetime import date
+from pathlib import Path
 
 import requests
 from dotenv import load_dotenv
@@ -20,8 +21,24 @@ from src.relevance import score_and_summarize
 from src.sources.pdf_finder import get_pdf_link
 from src.sources.semantic_scholar import FIELDS, _normalize
 
+PDFS_DIR = Path(__file__).parent / "pdfs"
 SS_BASE = "https://api.semanticscholar.org/graph/v1"
 UNPAYWALL_EMAIL = "isabelle.smith@alleninstitute.org"
+
+
+def _slugify(text: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "-", (text or "").lower()).strip("-")[:80]
+
+
+def uploaded_pdf(*names) -> str | None:
+    """pdfs/<slug>.pdf if a PDF was already uploaded for this paper (the site's Add Paper window uploads the
+    PDF first, under the DOI slug, then starts this workflow). Tries each DOI/title given."""
+    for name in names:
+        full = _slugify(name or "")
+        for slug in (full, full[:60].strip("-")):   # title-named uploads are capped at 60 characters
+            if slug and (PDFS_DIR / f"{slug}.pdf").exists():
+                return f"pdfs/{slug}.pdf"
+    return None
 
 
 # ── Metadata fetchers ──────────────────────────────────────────────────────────
@@ -261,6 +278,10 @@ def run(url: str | None = None, doi: str | None = None, title: str | None = None
     if ru_pick:
         result["ru_pick"] = True
     result["pdf_link"] = get_pdf_link(paper) or ""
+    attached = uploaded_pdf(result.get("doi"), doi, _doi_from_url(url or ""), title, result.get("title", "")[:60])
+    if attached:
+        result["pdf_link"] = attached   # a PDF uploaded alongside the DOI beats any auto-found link
+        print(f"  Attached uploaded PDF: {attached}")
     result["source"] = paper.get("source", "manual")
 
     _preprint_hosts = ("biorxiv.org", "medrxiv.org", "arxiv.org", "preprints.org", "10.1101/", "10.48550/")

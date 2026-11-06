@@ -312,6 +312,10 @@ HTML_TEMPLATE = r"""<!doctype html>
   .modal-feedback.ok { color: #16a34a; }
   .modal-feedback.err { color: #dc2626; }
   .modal-link { color: var(--accent); }
+  .modal-optional { font-weight: 400; color: var(--muted); font-size: 12px; }
+  .modal-label-gap { margin-top: 14px; }
+  .modal-pdf-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 6px 0 14px; }
+  .modal-pdf-row .pdf-selected-name { margin: 0; min-height: 0; }
   .modal-token-row { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }
   .modal-token-btn { background: none; border: none; color: var(--accent); font-size: 12px; cursor: pointer; padding: 0; text-decoration: underline; }
   .modal-check-row { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text); cursor: pointer; user-select: none; }
@@ -384,8 +388,14 @@ HTML_TEMPLATE = r"""<!doctype html>
     <!-- Screen 2: Paper URL / DOI input -->
     <div id="modal-paper-screen" style="display:none">
       <div class="modal-label">Paper URL or DOI</div>
-      <p class="modal-desc">Paste a link (Nature, bioRxiv, PubMed…) or a DOI like <code>10.1038/…</code>. The paper will be scored and added automatically — check back in ~2 minutes.</p>
+      <p class="modal-desc">Paste a link (Nature, bioRxiv, PubMed…) or a DOI like <code>10.1038/…</code>. The authors, summary and relevance note are filled in automatically — check back in ~2 minutes.</p>
       <input class="modal-input" id="paper-input" type="text" placeholder="https://… or 10.xxxx/…" autocomplete="off">
+      <div class="modal-label modal-label-gap">PDF <span class="modal-optional">(optional — attach it now to do both in one step)</span></div>
+      <div class="modal-pdf-row">
+        <label class="pdf-file-label"><input type="file" accept=".pdf,application/pdf" id="paper-pdf-input" class="pdf-file-input">&#128194; Choose PDF…</label>
+        <span class="pdf-selected-name" id="paper-pdf-name"></span>
+        <button type="button" class="modal-token-btn" id="paper-pdf-clear" hidden>Remove</button>
+      </div>
       <label class="modal-check-row">
         <input type="checkbox" id="ru-pick-check">
         Ru's Picks
