@@ -23,7 +23,7 @@ from src.sources.pubmed import search_pubmed
 from src.sources.ss_recommendations import fetch_recommendations
 from src.relevance import score_and_summarize
 from src.sources.pdf_finder import get_pdf_link
-from src import storage
+from src import own_publications, storage
 
 
 # ── Deduplication ──────────────────────────────────────────────────────────────
@@ -103,6 +103,11 @@ def run_agent(days_back: int = 14, min_score: int = 8, dry_run: bool = False):
 
     print(f"\n{len(candidates)} total candidates before deduplication")
     unique = deduplicate(candidates, existing)
+    own = own_publications.load()
+    ours = [p for p in unique if own.match(p)]
+    if ours:
+        unique = [p for p in unique if not own.match(p)]
+        print(f"Skipped {len(ours)} paper(s) from our own publications list")
     print(f"{len(unique)} unique new candidates\n")
 
     if not unique:

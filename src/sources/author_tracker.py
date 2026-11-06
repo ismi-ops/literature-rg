@@ -123,6 +123,8 @@ def _normalize_paper(raw: dict, vip_author_name: str) -> dict | None:
         link = f"https://doi.org/{doi}"
     elif arxiv_id:
         link = f"https://arxiv.org/abs/{arxiv_id}"
+    else:
+        return None  # no DOI or arXiv id: nothing to link the title to (usually an author-name collision)
 
     pdf_link = ""
     oa = raw.get("openAccessPdf") or {}

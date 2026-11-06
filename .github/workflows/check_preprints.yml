@@ -1,0 +1,74 @@
+name: Check Preprints
+
+# Finds preprints that have since been published and updates their tiles (journal, DOI, link).
+# Runs weekly; each preprint is only re-checked every 21 days.
+on:
+  schedule:
+    - cron: "0 8 * * 3"   # Wednesdays 08:00 UTC
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (report only, commit nothing)"
+        default: "false"
+        type: choice
+        options: ["false", "true"]
+      force:
+        description: "Check every preprint now, ignoring the 21-day interval"
+        default: "false"
+        type: choice
+        options: ["false", "true"]
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Dry run
+        if: github.event.inputs.dry_run == 'true'
+        env:
+          FORCE: ${{ github.event.inputs.force }}
+        run: |
+          FLAGS="--dry-run"
+          if [ "$FORCE" = "true" ]; then FLAGS="$FLAGS --force"; fi
+          python check_preprints.py $FLAGS
+
+      - name: Update tiles, regenerate, push
+        if: github.event.inputs.dry_run != 'true'
+        env:
+          FORCE: ${{ github.event.inputs.force }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          FLAGS=""
+          if [ "$FORCE" = "true" ]; then FLAGS="--force"; fi
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            python check_preprints.py $FLAGS
+            python generate_site.py
+            git add papers.json index.html filters.json papers_data.json
+            if git diff --cached --quiet; then
+              echo "Nothing changed."
+              exit 0
+            fi
+            git commit -m "chore: update tiles for newly published preprints"
+            if git push; then
+              echo "Pushed on attempt $attempt."
+              exit 0
+            fi
+            echo "Push rejected on attempt $attempt — retrying..."
+            sleep $((attempt * 4))
+          done
+          echo "All push attempts failed."
+          exit 1

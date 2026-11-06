@@ -33,7 +33,7 @@ def main():
             slug_to_idx[_slugify(p["doi"])] = i
         title = (p.get("title") or "").strip()
         if title:
-            slug_to_idx[_slugify(title)[:60]] = i
+            slug_to_idx[_slugify(title)[:60].strip("-")] = i
 
     pdf_files = [f for f in PDFS_DIR.iterdir() if f.suffix.lower() == ".pdf" and f.name != ".gitkeep"]
     if not pdf_files:
@@ -46,11 +46,10 @@ def main():
         stem = _slugify(pdf.stem)
         idx = slug_to_idx.get(stem)
         if idx is None:
-            # Try prefix match (first 60 chars of title slug)
-            for slug, i in slug_to_idx.items():
-                if stem.startswith(slug[:40]) or slug.startswith(stem[:40]):
-                    idx = i
-                    break
+            # Prefix match (truncated title slugs) — only when it identifies exactly one paper
+            hits = {i for slug, i in slug_to_idx.items() if stem.startswith(slug[:40]) or slug.startswith(stem[:40])}
+            if len(hits) == 1:
+                idx = hits.pop()
 
         if idx is None:
             unmatched.append(pdf.name)

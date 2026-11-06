@@ -5,7 +5,6 @@
 const BOOT = (document.currentScript && document.currentScript.dataset) || {};
 const PAGE_SIZES = [15, 25, 50, 100];
 const DEFAULT_PAGE_SIZE = 25;
-const COLLAPSED_CHIPS = 5;   // chips shown in a long filter row until its toggle is clicked
 
 function prefGet(k, d) { try { const v = localStorage.getItem(k); return v === null ? d : v; } catch (e) { return d; } }
 function prefSet(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
@@ -17,30 +16,32 @@ let TAG_BLOCKLIST = new Set();
 function isTopicTag(t) { return !TAG_BLOCKLIST.has(t.toLowerCase()); }
 
 const state = {
-  type: 'all', preprint: false, ru: false, collab: '', tags: new Set(),
-  year: 'all', added: 'all', search: '',
+  search: '',
   page: 1,
   pageSize: (() => { const n = parseInt(prefGet('rg_page_size', ''), 10); return PAGE_SIZES.includes(n) ? n : DEFAULT_PAGE_SIZE; })(),
 };
 
-/* ── Top picks (highest-scored 4 from the past 7 days) ──────────────────── */
+/* ── Top picks: the agent's 4 highest-scored papers from the past 7 days, starred as "recommended
+   for printing". Papers Ru sent are already being printed, so they are never starred or counted. */
 let TOP_PICK_IDS = new Set();
-function isTopPick(p) { return TOP_PICK_IDS.size > 0 && TOP_PICK_IDS.has(p.doi || p.title || ''); }
+function isTopPick(p) { return !p.ru_pick && TOP_PICK_IDS.size > 0 && TOP_PICK_IDS.has(p.doi || p.title || ''); }
 function computeTopPicks(papers) {
   const latest = papers.reduce((max, p) => (p.added || '') > max ? (p.added || '') : max, '');
   const d = new Date(latest || new Date()); d.setDate(d.getDate() - 7);
   const cutoff = d.toISOString().slice(0, 10);
-  const recent = papers.filter(p => (p.added || '') >= cutoff).sort((a, b) => (b.score || 0) - (a.score || 0));
+  const recent = papers.filter(p => !p.ru_pick && (p.added || '') >= cutoff).sort((a, b) => (b.score || 0) - (a.score || 0));
   TOP_PICK_IDS = new Set(recent.slice(0, 4).map(p => p.doi || p.title || ''));
 }
 
 /* ── Filter dimensions ──────────────────────────────────────────────────────
-   Each dimension has passes(p) (does the paper satisfy the current selection?) and
-   keys(p) (which chip keys the paper belongs to). compute() uses both for live counts. */
+   sel[dim] is the set of selected option keys (empty = no restriction). Within a dimension the
+   selections are OR'd; across dimensions they are AND'd.
+   passes(p): does the paper satisfy the current selection of this dimension?
+   keys(p):   which option keys does the paper belong to? (drives the live counts) */
 const today = new Date();
 function daysAgo(n) { const d = new Date(today); d.setDate(d.getDate() - n); return d.toISOString().slice(0, 10); }
 const ADDED_RANGES = [
-  { label: 'All', key: 'all' },
+  { label: 'Any time', key: 'all' },
   { label: 'Last 30 days', key: '30' },
   { label: 'Last 3 months', key: '90' },
   { label: 'Last 6 months', key: '180' },
@@ -51,54 +52,56 @@ const ADDED_CUTOFF = Object.fromEntries(ADDED_RANGES.map(r => [r.key,
 
 const typeOf = p => p.type || 'research';
 const yearOf = p => String(p.year || '').trim();
+// Property order is the order the dropdowns appear in.
 const DIMS = {
-  type:   { passes: p => state.type === 'all' || typeOf(p) === state.type,
-            keys:   p => ['all', typeOf(p)] },
-  status: { passes: p => !state.preprint || !!p.preprint,
-            keys:   p => p.preprint ? ['all', 'preprint'] : ['all'] },
-  picks:  { passes: p => !state.ru || !!p.ru_pick,
-            keys:   p => p.ru_pick ? ['all', 'ru'] : ['all'] },
-  collab: { passes: p => state.collab ? p.vip_author === state.collab : !p.vip_only,
-            keys:   p => { const k = p.vip_only ? [] : ['all']; if (p.vip_author) k.push(p.vip_author); return k; } },
-  tags:   { passes: p => state.tags.size === 0 || (p.tags || []).some(t => state.tags.has(t)),
+  type:   { label: 'Type',
+            passes: p => !sel.type.size || sel.type.has(typeOf(p)),
+            keys:   p => [typeOf(p)] },
+  status: { label: 'Status',
+            passes: p => !sel.status.size || !!p.preprint,
+            keys:   p => p.preprint ? ['preprint'] : [] },
+  picks:  { label: 'Picks',
+            passes: p => !sel.picks.size || sel.picks.has(p.ru_pick ? 'ru' : 'agent'),
+            keys:   p => [p.ru_pick ? 'ru' : 'agent'] },
+  collab: { label: 'Collaborators',
+            passes: p => sel.collab.size ? sel.collab.has(p.vip_author) : !p.vip_only,
+            keys:   p => p.vip_author ? [p.vip_author] : [] },
+  tags:   { label: 'Topic',
+            passes: p => !sel.tags.size || (p.tags || []).some(t => sel.tags.has(t)),
             keys:   p => (p.tags || []).filter(isTopicTag) },
-  year:   { passes: p => state.year === 'all' || yearOf(p) === state.year,
-            keys:   p => yearOf(p) ? ['all', yearOf(p)] : ['all'] },
-  added:  { passes: p => state.added === 'all' || (p.added || '') >= ADDED_CUTOFF[state.added],
+  year:   { label: 'Year',
+            passes: p => !sel.year.size || sel.year.has(yearOf(p)),
+            keys:   p => yearOf(p) ? [yearOf(p)] : [] },
+  added:  { label: 'Added', single: true,   // ranges overlap, so pick one
+            passes: p => !sel.added.size || (p.added || '') >= ADDED_CUTOFF[[...sel.added][0]],
             keys:   p => ADDED_RANGES.filter(r => r.key === 'all' || (p.added || '') >= ADDED_CUTOFF[r.key]).map(r => r.key) },
+  pdf:    { label: 'PDF', admin: true,      // only shown when a GitHub token is saved (the site owner)
+            passes: p => !sel.pdf.size || !hasPdf(p),
+            keys:   p => hasPdf(p) ? [] : ['missing'] },
 };
 const DIM_NAMES = Object.keys(DIMS);
+const sel = Object.fromEntries(DIM_NAMES.map(d => [d, new Set()]));
 
-function isActive(dim, key) {
-  switch (dim) {
-    case 'type':   return state.type === key;
-    case 'status': return key === 'all' ? !state.preprint : state.preprint;
-    case 'picks':  return key === 'all' ? !state.ru : state.ru;
-    case 'collab': return key === 'all' ? !state.collab : state.collab === key;
-    case 'tags':   return state.tags.has(key);
-    case 'year':   return state.year === key;
-    case 'added':  return state.added === key;
-  }
-  return false;
-}
+function isActive(dim, key) { return key === 'all' ? sel[dim].size === 0 : sel[dim].has(key); }
 
 function setFilter(dim, key) {
-  switch (dim) {
-    case 'type':   state.type = key; break;
-    case 'status': state.preprint = key === 'preprint'; break;
-    case 'picks':  state.ru = key === 'ru'; break;
-    case 'collab': state.collab = key === 'all' ? '' : key; break;
-    case 'tags':   if (state.tags.has(key)) state.tags.delete(key); else state.tags.add(key); break;
-    case 'year':   state.year = key; break;
-    case 'added':  state.added = key; break;
-  }
+  const s = sel[dim];
+  if (DIMS[dim].single) { s.clear(); if (key !== 'all') s.add(key); }
+  else if (s.has(key)) s.delete(key);
+  else s.add(key);
   state.page = 1;
   update();
 }
+function clearFilters() {
+  DIM_NAMES.forEach(d => sel[d].clear());
+  state.page = 1;
+  update();
+}
+function activeFilterCount() { return DIM_NAMES.reduce((n, d) => n + sel[d].size, 0); }
 
-/* One pass over PAPERS: the filtered list plus, for every chip, how many papers would match if that
-   chip were selected (all *other* active filters and the search still applied). A paper failing
-   exactly one dimension counts toward that dimension's chips only; failing two or more counts nowhere. */
+/* One pass over PAPERS: the filtered list plus, for every option, how many papers would match if
+   that option were selected (all *other* dimensions and the search still applied). A paper failing
+   exactly one dimension counts toward that dimension's options only; failing two or more counts nowhere. */
 function compute() {
   const counts = {};
   DIM_NAMES.forEach(d => { counts[d] = Object.create(null); });
@@ -121,104 +124,119 @@ function compute() {
   return { filtered, counts };
 }
 
-/* ── Filter UI ──────────────────────────────────────────────────────────── */
-const ROW_IDS = { type: 'type-filters', status: 'preprint-filters', picks: 'ru-filters', collab: 'collab-filters', tags: 'tag-filters', year: 'year-filters', added: 'added-filters' };
-const chipReg = {};   // dim -> Map(key -> { el, countEl })
-const rowCfg = {};    // dim -> { btn, expanded }   (only rows long enough to collapse)
-let rowPrefs = {};
-try { rowPrefs = JSON.parse(prefGet('rg_rows_expanded', '{}')) || {}; } catch (e) {}
+/* ── Filter UI: one multiselect dropdown per dimension ──────────────────── */
+const ddReg = {};     // dim -> { wrap, btn, nEl, panel }
+const chipReg = {};   // dim -> Map(key -> { row, input, countEl })
 
-function addChip(dim, key, label, count) {
-  const el = document.createElement('button');
-  el.type = 'button'; el.className = 'chip';
-  const countEl = document.createElement('span');
-  countEl.className = 'count'; countEl.textContent = count == null ? '' : count;
-  el.append(label, countEl);
-  el.addEventListener('click', () => setFilter(dim, key));
-  document.getElementById(ROW_IDS[dim]).appendChild(el);
-  if (!chipReg[dim]) chipReg[dim] = new Map();
-  chipReg[dim].set(key, { el, countEl });
-}
-function hideRow(dim) { document.getElementById(ROW_IDS[dim]).classList.add('is-empty'); }
-
-function initRowToggle(dim) {
-  const reg = chipReg[dim];
-  if (!reg || reg.size - (reg.has('all') ? 1 : 0) <= COLLAPSED_CHIPS) return;
+function makeDropdown(dim) {
+  const wrap = document.createElement('div');
+  wrap.className = 'dd';
   const btn = document.createElement('button');
-  btn.type = 'button'; btn.className = 'row-toggle';
-  const cfg = rowCfg[dim] = { btn, expanded: !!rowPrefs[dim] };
-  btn.addEventListener('click', () => {
-    cfg.expanded = !cfg.expanded;
-    rowPrefs[dim] = cfg.expanded;
-    prefSet('rg_rows_expanded', JSON.stringify(rowPrefs));
-    applyRowCollapse(dim);
-  });
-  document.getElementById(ROW_IDS[dim]).querySelector('.filter-head').appendChild(btn);
+  btn.type = 'button'; btn.className = 'dd-btn';
+  btn.setAttribute('aria-haspopup', 'true'); btn.setAttribute('aria-expanded', 'false');
+  const nEl = document.createElement('span'); nEl.className = 'dd-n';
+  const caret = document.createElement('span'); caret.className = 'dd-caret'; caret.textContent = '▾';
+  btn.append(DIMS[dim].label, nEl, caret);
+  const panel = document.createElement('div');
+  panel.className = 'dd-panel'; panel.setAttribute('role', 'group'); panel.setAttribute('aria-label', DIMS[dim].label);
+  wrap.append(btn, panel);
+  btn.addEventListener('click', () => toggleDropdown(dim));
+  document.getElementById('filter-bar').appendChild(wrap);
+  ddReg[dim] = { wrap, btn, nEl, panel };
+  chipReg[dim] = new Map();
 }
 
-// Collapsed rows show the first few chips plus any active ones, so a selection is never hidden.
-function applyRowCollapse(dim) {
-  const cfg = rowCfg[dim];
-  if (!cfg) return;
-  let idx = 0, hidden = 0;
-  chipReg[dim].forEach((c, key) => {
-    if (key === 'all') return;
-    const show = cfg.expanded || idx < COLLAPSED_CHIPS || isActive(dim, key);
-    c.el.classList.toggle('is-hidden', !show);
-    if (!show) hidden++;
-    idx++;
+function addOption(dim, key, label, count) {
+  const row = document.createElement('label');
+  row.className = 'dd-opt';
+  const input = document.createElement('input');
+  input.type = DIMS[dim].single ? 'radio' : 'checkbox';
+  input.name = 'f-' + dim;
+  input.addEventListener('change', () => setFilter(dim, key));
+  const text = document.createElement('span'); text.className = 'dd-label'; text.textContent = label;
+  const countEl = document.createElement('span'); countEl.className = 'count'; countEl.textContent = count == null ? '' : count;
+  row.append(input, text, countEl);
+  ddReg[dim].panel.appendChild(row);
+  chipReg[dim].set(key, { row, input, countEl });
+}
+function hideDropdown(dim) { ddReg[dim].wrap.classList.add('is-empty'); }
+
+function setOpen(dim, open) {
+  const d = ddReg[dim];
+  d.wrap.classList.toggle('open', open);
+  d.btn.setAttribute('aria-expanded', String(open));
+  if (open) {   // keep the panel on screen on narrow viewports
+    d.wrap.classList.remove('align-right');
+    if (d.panel.getBoundingClientRect().right > window.innerWidth - 8) d.wrap.classList.add('align-right');
+  }
+}
+function closeDropdowns(except) {
+  DIM_NAMES.forEach(d => { if (d !== except && ddReg[d] && ddReg[d].wrap.classList.contains('open')) setOpen(d, false); });
+}
+function toggleDropdown(dim) {
+  const open = !ddReg[dim].wrap.classList.contains('open');
+  closeDropdowns(open ? dim : null);
+  setOpen(dim, open);
+}
+document.addEventListener('click', e => { if (!e.target.closest('.dd')) closeDropdowns(); });
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Escape') return;
+  const open = DIM_NAMES.find(d => ddReg[d] && ddReg[d].wrap.classList.contains('open'));
+  if (open) { closeDropdowns(); ddReg[open].btn.focus(); }
+});
+
+// The "no PDF" filter is for the site owner: it appears only when a GitHub token is saved in this browser.
+function syncAdminFilters() {
+  DIM_NAMES.filter(d => DIMS[d].admin && ddReg[d]).forEach(d => {
+    const show = !!getToken();
+    ddReg[d].wrap.classList.toggle('is-empty', !show);
+    if (!show) sel[d].clear();
   });
-  cfg.btn.textContent = cfg.expanded ? '− Less' : '…' + (hidden ? ' +' + hidden : '');
-  cfg.btn.title = cfg.expanded ? 'Show fewer options' : 'Show all options';
-  cfg.btn.setAttribute('aria-expanded', String(cfg.expanded));
+  if (dataReady) update();   // also (re)draws the gear menus on the cards
 }
 
 function buildFilters(F) {
   TAG_BLOCKLIST = new Set(F.tagBlocklist || []);
+  DIM_NAMES.forEach(makeDropdown);
   const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
-  F.types.forEach(t => addChip('type', t, t === 'all' ? 'All' : cap(t), F.typeCounts[t]));
-  if (F.hasPreprint) { addChip('status', 'all', 'All'); addChip('status', 'preprint', 'Preprint'); } else hideRow('status');
-  addChip('picks', 'all', 'All');
-  addChip('picks', 'ru', "✨ Ru's Picks");
-  if (F.authors.length) {
-    addChip('collab', 'all', 'All');
-    F.authors.forEach(a => addChip('collab', a.name, a.name, a.count));
-  } else hideRow('collab');
-  if (F.tags.length) F.tags.forEach(t => addChip('tags', t.name, t.name, t.count)); else hideRow('tags');
-  addChip('year', 'all', 'All', F.total);
-  F.years.forEach(y => addChip('year', y.name, y.name, y.count));
-  ADDED_RANGES.forEach(r => addChip('added', r.key, r.label));
-  DIM_NAMES.forEach(initRowToggle);
+  F.types.filter(t => t !== 'all').forEach(t => addOption('type', t, cap(t), F.typeCounts[t]));
+  if (F.hasPreprint) addOption('status', 'preprint', 'Preprint'); else hideDropdown('status');
+  addOption('picks', 'ru', "✨ Ru's Picks");
+  addOption('picks', 'agent', 'Agent picks');
+  if (F.authors.length) F.authors.forEach(a => addOption('collab', a.name, a.name, a.count)); else hideDropdown('collab');
+  if (F.tags.length) F.tags.forEach(t => addOption('tags', t.name, t.name, t.count)); else hideDropdown('tags');
+  F.years.forEach(y => addOption('year', y.name, y.name, y.count));
+  ADDED_RANGES.forEach(r => addOption('added', r.key, r.label));
+  addOption('pdf', 'missing', 'No PDF');
+  syncAdminFilters();
   update();
 }
 
-// Active state, live counts and row collapsing; counts are null until the data has loaded.
+// Checkbox state, live counts and button badges; counts is null until the data has loaded.
 function syncChips(counts) {
   DIM_NAMES.forEach(dim => {
-    const reg = chipReg[dim];
-    if (!reg) return;
-    reg.forEach((c, key) => {
-      const active = isActive(dim, key);
-      c.el.classList.toggle('active', active);
+    if (!chipReg[dim]) return;
+    chipReg[dim].forEach((c, key) => {
+      const on = isActive(dim, key);
+      c.input.checked = on;
+      c.row.classList.toggle('checked', on);
       if (counts) {
         const n = counts[dim][key] || 0;
         c.countEl.textContent = n;
-        c.el.classList.toggle('zero', n === 0 && !active);
+        c.row.classList.toggle('zero', n === 0 && !on);
       }
     });
-    applyRowCollapse(dim);
+    const n = sel[dim].size;
+    ddReg[dim].nEl.textContent = n ? String(n) : '';
+    ddReg[dim].btn.classList.toggle('has-sel', n > 0);
   });
 }
 
-function activeFilterCount() {
-  return (state.type !== 'all' ? 1 : 0) + (state.preprint ? 1 : 0) + (state.ru ? 1 : 0) + (state.collab ? 1 : 0)
-    + state.tags.size + (state.year !== 'all' ? 1 : 0) + (state.added !== 'all' ? 1 : 0);
-}
-
-/* ── Whole-panel minimize (filters stay applied while hidden) ───────────── */
+/* ── Whole-bar minimize (filters stay applied while hidden) ─────────────── */
 const filtersEl = document.querySelector('.filters');
 const filtersToggle = document.getElementById('filters-toggle');
 function setFiltersCollapsed(collapsed) {
+  if (collapsed) closeDropdowns();
   filtersEl.classList.toggle('collapsed', collapsed);
   filtersToggle.setAttribute('aria-expanded', String(!collapsed));
 }
@@ -227,6 +245,7 @@ filtersToggle.addEventListener('click', () => {
   setFiltersCollapsed(collapsed);
   prefSet('rg_filters_min', collapsed ? '1' : '0');
 });
+document.getElementById('filters-clear').addEventListener('click', clearFilters);
 if (prefGet('rg_filters_min', '0') === '1') setFiltersCollapsed(true);
 
 /* ── Search (debounced) ─────────────────────────────────────────────────── */
@@ -244,7 +263,6 @@ grid.addEventListener('click', e => {
   if (tag) setFilter('tags', tag);
 });
 
-
 /* ── Toast notifications ─────────────────────────────────────────────────── */
 function showToast(msg, type = 'success', duration = 8000) {
   const c = document.getElementById('toast-container');
@@ -261,7 +279,17 @@ function showToast(msg, type = 'success', duration = 8000) {
 
 /* ── Notes storage (localStorage) ───────────────────────────────────────── */
 function noteKey(p) { return 'note:' + (p.doi || p.title || '').slice(0, 120); }
-function getNote(p) { try { return localStorage.getItem(noteKey(p)) || ''; } catch(e) { return ''; } }
+function getNote(p) {
+  try {
+    let v = localStorage.getItem(noteKey(p)) || '';
+    // A preprint that got published changes DOI: carry the note over from its earlier DOI.
+    if (!v) for (const d of (p.previous_dois || [])) {
+      const old = localStorage.getItem('note:' + d.slice(0, 120));
+      if (old) { v = old; localStorage.setItem(noteKey(p), old); break; }
+    }
+    return v;
+  } catch(e) { return ''; }
+}
 function saveNoteByKey(k, v) { try { localStorage.setItem(k, v); } catch(e) {} }
 
 /* ── Journal URL map ────────────────────────────────────────────────────── */
@@ -309,8 +337,28 @@ const JOURNAL_URLS = {
 };
 function journalUrl(name) {
   if (!name) return '';
-  return JOURNAL_URLS[name.toLowerCase().trim()] || '';
+  const k = name.toLowerCase().trim();
+  if (JOURNAL_URLS[k]) return JOURNAL_URLS[k];
+  // "Science (New York, N.Y.)" -> "science", "Nature reviews. Genetics" -> "nature reviews genetics"
+  const n = k.replace(/\s*\([^)]*\)/g, '').replace(/\.\s+/g, ' ').replace(/\.$/, '').replace(/\s+/g, ' ').trim();
+  return JOURNAL_URLS[n] || '';
 }
+
+/* ── Link helpers ───────────────────────────────────────────────────────── */
+// Only http(s) links or our own uploaded pdfs/*.pdf ever reach an href; http is upgraded to https.
+function safeUrl(u) {
+  u = String(u || '').trim().replace(/[>,;]+$/, '');
+  if (/^pdfs\/[^?#]+\.pdf$/i.test(u)) return u;
+  if (!/^https?:\/\//i.test(u)) return '';
+  return u.replace(/^http:\/\//i, 'https://').replace(/^(https:\/\/)dx\.doi\.org\//i, '$1doi.org/');
+}
+// A "real" PDF: one we hold, or a URL that points straight at a PDF file (not an article/landing page).
+function isDirectPdf(u) {
+  if (!/^https?:\/\//i.test(u)) return true;
+  const path = u.split(/[?#]/)[0].toLowerCase();
+  return /\.pdf$/.test(path) || /\/(pdf|epdf|pdfdirect|pdfft|articlepdf)(\/|$)/.test(path) || /[?&]type=printable\b/i.test(u);
+}
+function hasPdf(p) { const u = safeUrl(p.pdf_link); return !!u && isDirectPdf(u); }
 
 /* ── Card rendering ─────────────────────────────────────────────────────── */
 function authorLink(name) { return 'https://scholar.google.com/scholar?q=' + encodeURIComponent(name); }
@@ -318,7 +366,7 @@ function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;'
 function fmt(p) {
   const type = (p.type||'research').toLowerCase();
   const badgeClass = 'badge-'+(type==='review'?'review':type==='perspective'?'perspective':type==='article'?'article':'research');
-  const paperUrl = (p.doi ? 'https://doi.org/'+p.doi : p.link) || '';
+  const paperUrl = safeUrl(p.doi ? 'https://doi.org/'+p.doi : p.link);
   const titleHtml = paperUrl ? '<a href="'+esc(paperUrl)+'" target="_blank" rel="noopener">'+esc(p.title)+'</a>' : esc(p.title);
   let authorHtml;
   if (p.author_data && p.author_data.length) {
@@ -343,10 +391,12 @@ function fmt(p) {
   const jUrl = journalUrl(p.journal);
   const journalHtml = p.journal ? (jUrl ? '<a class="journal-link" href="'+esc(jUrl)+'" target="_blank" rel="noopener">'+esc(p.journal)+'</a>' : esc(p.journal)) : '';
   const venue = [journalHtml, p.year ? esc(p.year) : ''].filter(Boolean).join(' · ');
-  const pdfSlug = (p.doi ? p.doi.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'') : (p.title||'paper').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,60)) + '.pdf';
-  const pdfBtn = p.pdf_link ? '<a class="btn-pdf" href="'+esc(p.pdf_link)+'" target="_blank" rel="noopener">&#8595; PDF</a>'
-    : '<div class="btn-add-pdf" role="button" tabindex="0" data-addpdf="1" data-pdfslug="'+esc(pdfSlug)+'">＋ Add PDF'
-        +'<div class="pdf-popover" onclick="event.stopPropagation()">'
+  const pdfSlug = (p.doi ? p.doi.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'') : (p.title||'paper').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,60).replace(/-+$/,'')) + '.pdf';
+  const pdfHref = safeUrl(p.pdf_link);
+  const fullTextBtn = pdfHref && !hasPdf(p) ? '<a class="btn-fulltext" href="'+esc(pdfHref)+'" target="_blank" rel="noopener" title="Opens the article page (not a PDF file)">Full text &#8599;</a>' : '';
+  const pdfBtn = hasPdf(p) ? '<a class="btn-pdf" href="'+esc(pdfHref)+'" target="_blank" rel="noopener">&#8595; PDF</a>'
+    : '<div class="btn-add-pdf" role="button" tabindex="0" data-addpdf="1">＋ Add PDF'
+        +'<div class="pdf-popover" data-pdfbox="1" onclick="event.stopPropagation()">'
           +'<div class="pdf-popover-title">Upload PDF for this paper</div>'
           +'<label class="pdf-file-label" onclick="event.stopPropagation()">'
             +'<input type="file" accept=".pdf" class="pdf-file-input">'
@@ -361,19 +411,22 @@ function fmt(p) {
   const hasNote = existingNote.trim().length > 0;
   const nk = noteKey(p);
   const noteId = 'note-' + Math.random().toString(36).slice(2);
+  const adminTools = !!getToken();
   const starHtml = isTopPick(p) ? '<div class="top-pick-star" title="Top pick · recommended for printing">⭐</div>' : '';
   const preprintBadge = p.preprint ? '<span class="badge badge-preprint">preprint</span>' : '';
+  const publishedBadge = p.published_on && p.published_on >= daysAgo(30)
+    ? '<span class="badge badge-published" title="Formerly a preprint (' + esc((p.previous_dois || []).slice(-1)[0] || '') + '), now published">&#10003; Published</span>' : '';
   const collabBadge = p.vip_author ? '<span class="badge badge-collab" title="Paper by collaborator '+esc(p.vip_author)+'">&#128101; '+esc(p.vip_author)+'</span>' : '';
   const ruBadge = p.ru_pick ? '<span class="ru-badge">&#10024; Ru\'s Picks</span>' : '';
-  return '<div class="card">'
-    +'<div class="card-meta"><span class="badge '+badgeClass+'">'+esc(type)+'</span>'+preprintBadge+collabBadge+ruBadge+added+'</div>'
+  return '<div class="card" data-key="'+esc(paperKey(p))+'" data-pdfslug="'+esc(pdfSlug)+'">'
+    +'<div class="card-meta"><span class="badge '+badgeClass+'">'+esc(type)+'</span>'+preprintBadge+publishedBadge+collabBadge+ruBadge+added+'</div>'
     +'<div class="card-title">'+titleHtml+'</div>'
     +(authorHtml ? '<div class="card-authors">'+authorHtml+'</div>' : '')
     +(venue ? '<div class="card-venue">'+venue+'</div>' : '')
     +(p.summary ? '<div class="card-summary">'+esc(p.summary)+'</div>' : '')
     +(p.relevance ? '<div class="card-relevance"><div class="card-relevance-label">Cell Science relevance</div><div class="card-relevance-text">'+esc(p.relevance)+'</div></div>' : '')
     +(tags ? '<div class="card-tags">'+tags+'</div>' : '')
-    +'<div class="card-actions">'+pdfBtn+'</div>'
+    +'<div class="card-actions">'+fullTextBtn+pdfBtn+'</div>'
     +'<div class="notes-section">'
       +'<button class="notes-toggle'+(hasNote?' has-notes':'')+'" data-noteid="'+noteId+'">'
         +(hasNote ? '&#128221; Notes' : '+ Add note')
@@ -383,16 +436,171 @@ function fmt(p) {
         +'<div class="notes-saved"></div>'
       +'</div>'
     +'</div>'
-    +starHtml
+    +(starHtml || adminTools ? '<div class="card-corner">'+starHtml+(adminTools ? gearHtml(p) : '')+'</div>' : '')
     +'</div>';
 }
+
+/* ── Owner tools: gear menu on every card (shown only when a GitHub token is saved) ─────────
+   Edits (Ru's Picks, PDF link, remove) take effect instantly in this browser, then go out in one
+   batch to the "Edit Papers" workflow, which updates papers.json and regenerates the site. */
+const EDIT_WORKFLOW_URL = 'https://api.github.com/repos/ismi-ops/literature-rg/actions/workflows/edit_papers.yml/dispatches';
+const EDIT_FLUSH_MS = 5000;                      // wait for a pause in clicking before sending
+const EDIT_PENDING_TTL_MS = 2 * 60 * 60 * 1000;  // stop overlaying an edit the site never picked up
+const EDIT_BATCH = 80;
+let PAPER_BY_KEY = new Map();
+function paperKey(p) { return p.doi || p.title || ''; }
+
+function gearHtml(p) {
+  const href = safeUrl(p.pdf_link);
+  const shown = href.length > 46 ? href.slice(0, 30) + '…' + href.slice(-14) : href;
+  return '<div class="card-gear">'
+    + '<button type="button" class="gear-btn" data-act="gear" title="Edit this paper" aria-label="Edit this paper" aria-haspopup="true">&#9881;</button>'
+    + '<div class="gear-panel" role="group" aria-label="Edit paper">'
+      + '<label class="gear-check"><input type="checkbox" data-act="ru-pick"' + (p.ru_pick ? ' checked' : '') + '> &#10024; Ru\'s Picks</label>'
+      + '<div class="gear-section" data-pdfbox="1">'
+        + '<div class="gear-h">PDF</div>'
+        + '<div class="gear-current">' + (href ? 'Now: <a href="' + esc(href) + '" target="_blank" rel="noopener">' + esc(shown) + '</a>' : 'No PDF link yet') + '</div>'
+        + '<input type="url" class="gear-input" placeholder="Paste a link to the PDF (https://…)" aria-label="PDF link">'
+        + '<div class="gear-row">'
+          + '<button type="button" class="gear-btn2" data-act="save-link">Save link</button>'
+          + (p.pdf_link ? '<button type="button" class="gear-btn2 ghost" data-act="clear-link">Remove link</button>' : '')
+        + '</div>'
+        + '<div class="gear-status"></div>'
+        + '<div class="gear-or">or upload a file</div>'
+        + '<label class="pdf-file-label"><input type="file" accept=".pdf" class="pdf-file-input">&#128194; Choose file…</label>'
+        + '<div class="pdf-selected-name"></div>'
+        + '<button type="button" class="pdf-upload-btn" onclick="handlePdfUpload(this,event)">&#8593; Upload</button>'
+        + '<div class="pdf-upload-status"></div>'
+      + '</div>'
+      + '<button type="button" class="gear-delete" data-act="delete">&#128465; Remove from list</button>'
+    + '</div>'
+  + '</div>';
+}
+
+/* pendingEdits[key] = { patch, t, sent } — kept in localStorage so edits survive a reload until the
+   regenerated site data reflects them. */
+let pendingEdits = {};
+try { pendingEdits = JSON.parse(prefGet('rg_pending_edits', '{}')) || {}; } catch (e) {}
+let flushTimer = null;
+function savePending() { prefSet('rg_pending_edits', JSON.stringify(pendingEdits)); }
+
+function applyPatchLocally(p, patch) {
+  if ('ru_pick' in patch) { if (patch.ru_pick) p.ru_pick = true; else delete p.ru_pick; }
+  if ('pdf_link' in patch) p.pdf_link = patch.pdf_link;
+  if (patch.delete) PAPERS = PAPERS.filter(x => x !== p);
+}
+function queueEdit(p, patch) {
+  const key = paperKey(p);
+  const cur = pendingEdits[key] || { patch: {}, t: 0, sent: false };
+  Object.assign(cur.patch, patch);
+  cur.t = Date.now(); cur.sent = false;
+  pendingEdits[key] = cur;
+  savePending();
+  applyPatchLocally(p, patch);
+  update();
+  scheduleFlush();
+}
+function scheduleFlush() { clearTimeout(flushTimer); flushTimer = setTimeout(() => flushEdits(false), EDIT_FLUSH_MS); }
+
+// Called once the freshly fetched data is in: drop edits the site already reflects, re-apply the rest.
+function applyPendingEdits() {
+  const byKey = new Map(PAPERS.map(p => [paperKey(p), p]));
+  let dirty = false;
+  Object.keys(pendingEdits).forEach(key => {
+    const e = pendingEdits[key], p = byKey.get(key);
+    const confirmed = !p || (!e.patch.delete && Object.entries(e.patch).every(([k, v]) => k === 'ru_pick' ? !!p.ru_pick === !!v : p[k] === v));
+    if (confirmed || Date.now() - e.t > EDIT_PENDING_TTL_MS) { delete pendingEdits[key]; dirty = true; return; }
+    applyPatchLocally(p, e.patch);
+  });
+  if (dirty) savePending();
+}
+
+async function flushEdits(keepalive) {
+  clearTimeout(flushTimer); flushTimer = null;
+  const unsent = Object.entries(pendingEdits).filter(([, e]) => !e.sent);
+  if (!unsent.length) return;
+  const token = getToken();
+  if (!token) { showToast('Save your GitHub token (＋ Add paper) so changes can be sent.', 'error', 10000); return; }
+  for (let i = 0; i < unsent.length; i += EDIT_BATCH) {
+    const chunk = unsent.slice(i, i + EDIT_BATCH);
+    const stamps = chunk.map(([key, e]) => [key, e.t]);
+    const edits = chunk.map(([key, e]) => Object.assign({ key }, e.patch));
+    try {
+      const resp = await fetch(EDIT_WORKFLOW_URL, {
+        method: 'POST', keepalive: !!keepalive, headers: ghHeaders(token),
+        body: JSON.stringify({ ref: 'main', inputs: { edits: JSON.stringify(edits) } }),
+      });
+      if (resp.status === 204) {
+        stamps.forEach(([key, t]) => { if (pendingEdits[key] && pendingEdits[key].t === t) pendingEdits[key].sent = true; });
+        savePending();
+        showToast('Changes sent — the site updates in about a minute.', 'success', 6000);
+      } else {
+        let msg;
+        if (resp.status === 401) msg = 'Invalid token — update it via "Change token" in the ＋ Add Paper window.';
+        else if (resp.status === 403) msg = 'Token lacks Actions permission — enable Actions (R&W) on your token.';
+        else if (resp.status === 404 || resp.status === 422) msg = 'The "Edit Papers" workflow was not found on main — it may not be deployed yet.';
+        else msg = 'Could not send changes (GitHub error ' + resp.status + '). They stay on this page and will retry on your next edit.';
+        showToast(msg, 'error', 12000);
+        return;
+      }
+    } catch (err) {
+      showToast('Could not send changes: ' + err.message + '. They will retry on your next edit.', 'error', 12000);
+      return;
+    }
+  }
+}
+document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') flushEdits(true); });
+
+/* ── Gear menu interaction ──────────────────────────────────────────────── */
+function closeGears(except) { document.querySelectorAll('.card-gear.open').forEach(g => { if (g !== except) g.classList.remove('open'); }); }
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeGears(); });
+
+grid.addEventListener('click', e => {
+  const el = e.target.closest('[data-act]');
+  if (!el || el.tagName === 'INPUT') return;
+  const card = el.closest('.card');
+  const p = card && PAPER_BY_KEY.get(card.dataset.key);
+  if (!p) return;
+  const act = el.dataset.act;
+  if (act === 'gear') {
+    const g = el.closest('.card-gear');
+    const open = !g.classList.contains('open');
+    closeGears(); g.classList.toggle('open', open);
+    if (open) {   // scroll just enough to keep the menu clear of the sticky header/filter bar
+      const r = g.querySelector('.gear-panel').getBoundingClientRect();
+      const top = filtersEl.getBoundingClientRect().bottom + 12;
+      if (r.top < top) window.scrollBy(0, r.top - top);
+      else if (r.bottom > window.innerHeight - 12) window.scrollBy(0, r.bottom - window.innerHeight + 12);
+    }
+  } else if (act === 'save-link') {
+    const status = card.querySelector('.gear-status');
+    const u = safeUrl(card.querySelector('.gear-input').value);
+    if (!u) { status.textContent = 'Enter a full https:// link.'; return; }
+    queueEdit(p, { pdf_link: u });
+    showToast(isDirectPdf(u) ? 'PDF link saved.' : 'Link saved — it doesn\'t look like a direct PDF file, so the card will say "Full text".', 'success', 8000);
+  } else if (act === 'clear-link') {
+    queueEdit(p, { pdf_link: '' });
+    showToast('PDF link removed.', 'success', 5000);
+  } else if (act === 'delete') {
+    if (!window.confirm('Remove "' + (p.title || 'this paper').slice(0, 120) + '" from the list?\n\nThe agent won\'t add it back.')) return;
+    queueEdit(p, { delete: true });
+    showToast('Removed — the site updates in about a minute.', 'success', 6000);
+  }
+});
+grid.addEventListener('change', e => {
+  if (!e.target.dataset || e.target.dataset.act !== 'ru-pick') return;
+  const card = e.target.closest('.card');
+  const p = card && PAPER_BY_KEY.get(card.dataset.key);
+  if (p) queueEdit(p, { ru_pick: e.target.checked });
+});
+
 
 /* ── Notes + PDF upload interaction ───────────────────────────────────────── */
 document.getElementById('grid').addEventListener('change', e => {
   const input = e.target.closest('.pdf-file-input');
   if (!input) return;
   const file = input.files[0];
-  const popover = input.closest('.pdf-popover');
+  const popover = input.closest('[data-pdfbox]');
   if (!popover) return;
   const nameEl = popover.querySelector('.pdf-selected-name');
   const status = popover.querySelector('.pdf-upload-status');
@@ -400,9 +608,19 @@ document.getElementById('grid').addEventListener('change', e => {
   if (status) { status.textContent = file ? 'Ready to upload.' : ''; status.style.color = ''; }
 });
 
+const PDF_API = 'https://api.github.com/repos/ismi-ops/literature-rg/contents/pdfs/';
+function ghHeaders(token) {
+  return { 'Authorization': 'Bearer ' + token, 'Accept': 'application/vnd.github+json', 'Content-Type': 'application/json' };
+}
+function putPdf(slug, token, b64, sha) {
+  const body = { message: sha ? 'chore: replace PDF via site' : 'chore: upload PDF via site', content: b64 };
+  if (sha) body.sha = sha;
+  return fetch(PDF_API + encodeURIComponent(slug), { method: 'PUT', headers: ghHeaders(token), body: JSON.stringify(body) });
+}
+
 async function handlePdfUpload(btn, event) {
   event.stopPropagation();
-  const popover = btn.closest('.pdf-popover');
+  const popover = btn.closest('[data-pdfbox]');
   const status = popover ? popover.querySelector('.pdf-upload-status') : null;
   const fileInput = popover ? popover.querySelector('.pdf-file-input') : null;
   const file = fileInput && fileInput.files[0];
@@ -410,12 +628,16 @@ async function handlePdfUpload(btn, event) {
     if (status) { status.textContent = 'Please choose a PDF file first.'; status.style.color = '#b91c1c'; }
     return;
   }
-  const addBtn = btn.closest('[data-addpdf]');
-  const slug = addBtn ? addBtn.dataset.pdfslug : null;
+  const card = btn.closest('.card');
+  const slug = card ? card.dataset.pdfslug : null;
   if (!slug) return;
+  const closeMenus = () => {
+    const a = btn.closest('.btn-add-pdf'); if (a) a.classList.remove('open');
+    const g = btn.closest('.card-gear'); if (g) g.classList.remove('open');
+  };
   const token = getToken();
   if (!token) {
-    if (addBtn) addBtn.classList.remove('open');
+    closeMenus();
     addModal.classList.add('open');
     showTokenScreen();
     return;
@@ -426,21 +648,15 @@ async function handlePdfUpload(btn, event) {
   reader.onload = async () => {
     const b64 = reader.result.split(',')[1];
     try {
-      const resp = await fetch(
-        'https://api.github.com/repos/ismi-ops/literature-rg/contents/pdfs/' + encodeURIComponent(slug),
-        {
-          method: 'PUT',
-          headers: {
-            'Authorization': 'Bearer ' + token,
-            'Accept': 'application/vnd.github+json',
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ message: 'chore: upload PDF via site', content: b64 }),
-        }
-      );
+      let resp = await putPdf(slug, token, b64, null);
+      if (resp.status === 422) {   // a file with this name exists (replacing a PDF): GitHub wants its sha
+        const cur = await fetch(PDF_API + encodeURIComponent(slug), { headers: ghHeaders(token) });
+        const meta = cur.ok ? await cur.json().catch(() => ({})) : {};
+        if (meta.sha) resp = await putPdf(slug, token, b64, meta.sha);
+      }
       if (resp.ok) {
         if (status) { status.textContent = '✓ Uploaded!'; status.style.color = '#16a34a'; }
-        if (addBtn) addBtn.classList.remove('open');
+        closeMenus();
         showToast('PDF uploaded — button will appear on this card in ~1 min.', 'success', 10000);
       } else {
         const err = await resp.json().catch(() => ({}));
@@ -482,8 +698,9 @@ document.getElementById('grid').addEventListener('click', e => {
     area.querySelector('textarea').focus();
   }
 });
-document.addEventListener('click', () => {
+document.addEventListener('click', e => {
   document.querySelectorAll('.btn-add-pdf.open').forEach(b => b.classList.remove('open'));
+  if (!e.target.closest('.card-gear')) closeGears();
 });
 document.getElementById('grid').addEventListener('input', e => {
   if (!e.target.classList.contains('notes-textarea')) return;
@@ -563,6 +780,7 @@ function update() {
   syncChips(counts);
   const n = activeFilterCount();
   document.getElementById('filters-badge').textContent = n ? n + ' active' : '';
+  document.getElementById('filters-clear').hidden = n === 0;
 }
 
 /* ── Boot ───────────────────────────────────────────────────────────────── */
@@ -584,9 +802,12 @@ async function boot() {
     PAPERS = await papersReq;
   } catch (err) { showLoadError(err); return; }
   PAPERS.forEach(p => { p._hay = [p.title, p.authors, p.journal, p.summary, ...(p.tags || [])].join(' ').toLowerCase(); });
+  applyPendingEdits();
+  PAPER_BY_KEY = new Map(PAPERS.map(p => [paperKey(p), p]));
   computeTopPicks(PAPERS);
   dataReady = true;
   update();
+  if (getToken() && Object.values(pendingEdits).some(e => !e.sent)) scheduleFlush();
 }
 
 /* ── Add Paper modal ────────────────────────────────────────────────────── */
@@ -631,6 +852,7 @@ document.getElementById('token-save-btn').addEventListener('click', () => {
   const fb = document.getElementById('token-feedback');
   if (!val) { fb.className = 'modal-feedback err'; fb.textContent = 'Please enter a token.'; return; }
   if (!saveToken(val)) { fb.className = 'modal-feedback err'; fb.textContent = 'Could not save token (browser storage may be blocked).'; return; }
+  syncAdminFilters();
   showPaperScreen();
 });
 document.getElementById('token-input').addEventListener('keydown', e => { if (e.key === 'Enter') document.getElementById('token-save-btn').click(); });
