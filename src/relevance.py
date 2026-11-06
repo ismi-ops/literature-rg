@@ -8,6 +8,7 @@ import re
 
 from src.config import RELEVANCE_CONTEXT, KNOWN_TAGS
 from src import people_of_interest
+from src.summary_text import clean_summary, summarize_abstract
 
 _client = None
 
@@ -244,10 +245,9 @@ def _keyword_score(paper: dict) -> dict:
 
     existing_summary = paper.get("summary", "")
     if not existing_summary and abstract:
-        sentences = re.split(r'(?<=[.!?])\s+', abstract)
-        summary = " ".join(sentences[:3])
+        summary = summarize_abstract(abstract)
     else:
-        summary = existing_summary
+        summary = clean_summary(existing_summary)
 
     paper_out = dict(paper)
     paper_out.update({

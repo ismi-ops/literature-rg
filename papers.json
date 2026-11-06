@@ -2220,7 +2220,7 @@
     "year": "2026",
     "journal": "Developmental Cell",
     "type": "review",
-    "summary": "SUMMARY Spatial technologies have revolutionized the study of human development by enabling molecular profiling within intact tissue architecture. Advances in spatial transcriptomics, epigenomics, proteomics, metabolomics, and multiomics have generated high-resolution atlases of embryonic and fetal organs, revealing how gene regulatory programs, cell–cell interactions, and tissue patterning are organized in space and time during organogenesis. However, limited access to human developmental tissues and ethical constraints restrict experimental validation and mechanistic studies.",
+    "summary": "Spatial technologies have revolutionized the study of human development by enabling molecular profiling within intact tissue architecture. Advances in spatial transcriptomics, epigenomics, proteomics, metabolomics, and multiomics have generated high-resolution atlases of embryonic and fetal organs, revealing how gene regulatory programs, cell–cell interactions, and tissue patterning are organized in space and time during organogenesis. However, limited access to human developmental tissues and ethical constraints restrict experimental validation and mechanistic studies.",
     "tags": [
       "development",
       "organoid"
@@ -2813,7 +2813,7 @@
     "year": "2026",
     "journal": "Cell",
     "type": "research",
-    "summary": "Summary Tissue regeneration requires de novo patterning, which has been proposed to be facilitated by cellular heterogeneity. Yet how such heterogeneities are integrated with the mechanochemical state of the tissue and stabilized at the chromatin level into stable, spatially organized fates remains poorly understood. Using in vivo mouse intestinal regeneration models and organoids, we identify a critical density regime that produces a permissive window for heterogeneity in the mechanosensor Yes-associated protein 1 (YAP1).",
+    "summary": "Tissue regeneration requires de novo patterning, which has been proposed to be facilitated by cellular heterogeneity. Yet how such heterogeneities are integrated with the mechanochemical state of the tissue and stabilized at the chromatin level into stable, spatially organized fates remains poorly understood. Using in vivo mouse intestinal regeneration models and organoids, we identify a critical density regime that produces a permissive window for heterogeneity in the mechanosensor Yes-associated protein 1 (YAP1).",
     "relevance": "Directly addresses the top-priority question of how cells make decisions — bistability, signal integration, and stochastic switching are central to understanding cell identity and fate. Directly addresses Cell Science's core question of why genetically identical cells differ structurally and how variation encodes functional information.",
     "tags": [
       "single-cell",
@@ -3668,7 +3668,7 @@
     "year": "2026",
     "journal": "Development",
     "type": "research",
-    "summary": "Summary: This Editorial summarises the contents of Development's Special Issue – The Extracellular Environment in Development, Regeneration and Stem Cells.",
+    "summary": "This Editorial summarises the contents of Development's Special Issue – The Extracellular Environment in Development, Regeneration and Stem Cells.",
     "relevance": "Relevant to Cell Science's core work on hiPSC biology, pluripotent stem cell engineering, and stem cell-derived model systems. Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs.",
     "tags": [
       "stem cells",
@@ -4226,7 +4226,7 @@
     "year": "2024",
     "journal": "Cell",
     "type": "review",
-    "summary": "SUMMARY Cells are essential to understanding health and disease, yet traditional models fall short of modeling and simulating their function and behavior. Advances in AI and omics offer groundbreaking opportunities to create an AI virtual cell (AIVC), a multi-scale, multi-modal large-neural-network-based model that can represent and simulate the behavior of molecules, cells, and tissues across diverse states. This Perspective provides a vision on their design and how collaborative efforts to build AIVCs will transform biological research by allowing high-fidelity simulations, accelerating discoveries, and guiding experimental studies, offering new opportunities for understanding cellular functions and fostering interdisciplinary collaborations in open science.",
+    "summary": "Cells are essential to understanding health and disease, yet traditional models fall short of modeling and simulating their function and behavior. Advances in AI and omics offer groundbreaking opportunities to create an AI virtual cell (AIVC), a multi-scale, multi-modal large-neural-network-based model that can represent and simulate the behavior of molecules, cells, and tissues across diverse states. This Perspective provides a vision on their design and how collaborative efforts to build AIVCs will transform biological research by allowing high-fidelity simulations, accelerating discoveries, and guiding experimental studies, offering new opportunities for understanding cellular functions and fostering interdisciplinary collaborations in open science.",
     "relevance": "Supports Cell Science's virtual cell and generative modeling agenda for integrating multi-modal cell biology data into predictive computational models. Relevant to Cell Science's AI and computational agenda for modeling cell biology and building virtual cell frameworks.",
     "tags": [
       "virtual cell"
@@ -5117,7 +5117,7 @@
     "year": "2024",
     "journal": "Cell",
     "type": "research",
-    "summary": "SUMMARY Tissue folds are structural motifs critical to organ function. In the intestine, bending of a flat epithelium into a periodic pattern of folds gives rise to villi, finger-like protrusions that enable nutrient absorption. However, the molecular and mechanical mechanisms driving villus morphogenesis remain unclear.",
+    "summary": "Tissue folds are structural motifs critical to organ function. In the intestine, bending of a flat epithelium into a periodic pattern of folds gives rise to villi, finger-like protrusions that enable nutrient absorption. However, the molecular and mechanical mechanisms driving villus morphogenesis remain unclear.",
     "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Relevant to Cell Science's interest in how spatial patterns emerge during development from molecular and cellular interactions.",
     "tags": [
       "morphogenesis"
@@ -7628,7 +7628,7 @@
     "year": "2025",
     "journal": "Cell",
     "type": "research",
-    "summary": "Summary The organs of many female animals are remodelled by reproduction. Using the mouse intestine, a striking and tractable model of organ resizing, we find that reproductive remodelling is anticipatory and distinct from diet- or microbiota-induced resizing. Reproductive remodelling involves partially irreversible elongation of the small intestine and fully reversible growth of its epithelial villi, associated with an expansion of isthmus progenitors and accelerated enterocyte migration.",
+    "summary": "The organs of many female animals are remodelled by reproduction. Using the mouse intestine, a striking and tractable model of organ resizing, we find that reproductive remodelling is anticipatory and distinct from diet- or microbiota-induced resizing. Reproductive remodelling involves partially irreversible elongation of the small intestine and fully reversible growth of its epithelial villi, associated with an expansion of isthmus progenitors and accelerated enterocyte migration.",
     "relevance": "",
     "tags": [],
     "doi": "10.1016/j.cell.2025.02.015",
@@ -8677,7 +8677,7 @@
     "year": "2025",
     "journal": "Frontiers in Pediatrics",
     "type": "research",
-    "summary": "Background Feeding intolerance (FI) represents a prevalent and serious complication in preterm infants, contributing to delayed enteral nutrition, prolonged hospitalization, and increased morbidity. Early identification of high-risk infants remains challenging due to limited predictive tools available before feeding initiation. Methods We conducted a retrospective cohort study of 402 preterm infants (<37 weeks gestational age) admitted between January 2023 and May 2024.",
+    "summary": "Feeding intolerance (FI) represents a prevalent and serious complication in preterm infants, contributing to delayed enteral nutrition, prolonged hospitalization, and increased morbidity. Early identification of high-risk infants remains challenging due to limited predictive tools available before feeding initiation. Methods We conducted a retrospective cohort study of 402 preterm infants (<37 weeks gestational age) admitted between January 2023 and May 2024.",
     "relevance": "Relevant to Cell Science's AI agenda for cell segmentation, morphology modeling, and predicting cell state from multi-modal imaging data.",
     "tags": [
       "methods"
@@ -10737,7 +10737,7 @@
     "year": "2020",
     "journal": "Review",
     "type": "research",
-    "summary": "Abstract The skeleton is the preferred site of metastasis for multiple cancers (e.g., breast, prostate), yet it remains incurable. The mechanical environment of whole bones, including the mineralized tissue and bone marrow, is a rich source of cues that directs resident bone cells, and thus also likely modulates disseminated metastatic tumor cells that have localized to the marrow compartment. Here, we provide an overview of the relevant mechanical cues in bone marrow microenvironment and discuss what is currently known of their impacts on tumor progression.",
+    "summary": "The skeleton is the preferred site of metastasis for multiple cancers (e.g., breast, prostate), yet it remains incurable. The mechanical environment of whole bones, including the mineralized tissue and bone marrow, is a rich source of cues that directs resident bone cells, and thus also likely modulates disseminated metastatic tumor cells that have localized to the marrow compartment. Here, we provide an overview of the relevant mechanical cues in bone marrow microenvironment and discuss what is currently known of their impacts on tumor progression.",
     "relevance": "Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis.",
     "tags": [
       "mechanobiology"
@@ -11227,7 +11227,7 @@
     "year": "2025",
     "journal": "Cell stem cell",
     "type": "research",
-    "summary": "Summary Metabolic pathways can influence cell fate decisions, yet their regulative role during embryonic development remains poorly understood. Here, we demonstrate an instructive role of glycolytic activity in regulating signalling pathways involved in mesoderm and endoderm specification. Using a mESC-based in vitro model for gastrulation, we found that glycolysis inhibition increases ectodermal cell fates at the expense of mesodermal and endodermal lineages.",
+    "summary": "Metabolic pathways can influence cell fate decisions, yet their regulative role during embryonic development remains poorly understood. Here, we demonstrate an instructive role of glycolytic activity in regulating signalling pathways involved in mesoderm and endoderm specification. Using a mESC-based in vitro model for gastrulation, we found that glycolysis inhibition increases ectodermal cell fates at the expense of mesodermal and endodermal lineages.",
     "relevance": "Directly addresses the top-priority question of how cells make decisions — bistability, signal integration, and stochastic switching are central to understanding cell identity and fate. Relevant to Cell Science's interest in how cells make identity decisions, with implications for stem cell differentiation and iPSC-based model systems.",
     "tags": [
       "development",
@@ -12626,7 +12626,7 @@
     "year": "2025",
     "journal": "Cell reports",
     "type": "research",
-    "summary": "SUMMARY Organ morphologies generated in development must be maintained in dynamic growth environments over long physical distances and timescales. How complex tissues like the Drosophila retina execute specialized cellular morphogenetic programs while maintaining their larger, tissue-scale morphology is not well understood. Here, we show that the developing retina acquires an organ scale curvature early in pupal development.",
+    "summary": "Organ morphologies generated in development must be maintained in dynamic growth environments over long physical distances and timescales. How complex tissues like the Drosophila retina execute specialized cellular morphogenetic programs while maintaining their larger, tissue-scale morphology is not well understood. Here, we show that the developing retina acquires an organ scale curvature early in pupal development.",
     "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Relevant to Cell Science's interest in tissue mechanics and phase-like transitions that govern how tissues flow or stiffen during morphogenesis.",
     "tags": [
       "development",
@@ -12719,7 +12719,7 @@
     "year": "2024",
     "journal": "Cell",
     "type": "research",
-    "summary": "SUMMARY Cellular form and function emerge from complex mechanochemical systems within the cytoplasm. Currently, no systematic strategy exists to infer large-scale physical properties of a cell from its molecular components. This is an obstacle to understanding processes such as cell adhesion and migration.",
+    "summary": "Cellular form and function emerge from complex mechanochemical systems within the cytoplasm. Currently, no systematic strategy exists to infer large-scale physical properties of a cell from its molecular components. This is an obstacle to understanding processes such as cell adhesion and migration.",
     "relevance": "Relevant to Cell Science's AI agenda for cell segmentation, morphology modeling, and predicting cell state from multi-modal imaging data.",
     "tags": [],
     "doi": "10.1016/j.cell.2023.11.041",
@@ -12765,7 +12765,7 @@
     "year": "2023",
     "journal": "Developmental cell",
     "type": "research",
-    "summary": "SUMMARY Cell proliferation is a central process in tissue development, homeostasis, and disease, yet how proliferation is regulated in the tissue context remains poorly understood. Here, we introduce a quantitative framework to elucidate how tissue growth dynamics regulate cell proliferation. Using MDCK epithelial monolayers, we show that a limiting rate of tissue expansion creates confinement that suppresses cell growth; however, this confinement does not directly affect the cell cycle.",
+    "summary": "Cell proliferation is a central process in tissue development, homeostasis, and disease, yet how proliferation is regulated in the tissue context remains poorly understood. Here, we introduce a quantitative framework to elucidate how tissue growth dynamics regulate cell proliferation. Using MDCK epithelial monolayers, we show that a limiting rate of tissue expansion creates confinement that suppresses cell growth; however, this confinement does not directly affect the cell cycle.",
     "relevance": "Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs.",
     "tags": [
       "development"
@@ -13997,7 +13997,7 @@
     "year": "2023",
     "journal": "Developmental cell",
     "type": "research",
-    "summary": "Summary Mesenchymal-epithelial transitions are fundamental drivers of development and disease, but how these behaviors generate epithelial structure is not well understood. Here we show that mesenchymal-epithelial transitions promote epithelial organization in the mouse node and notochordal plate through the assembly and radial intercalation of three-dimensional rosettes. Axial mesoderm rosettes acquire junctional and apical polarity, develop a central lumen, and dynamically expand, coalesce, and radially intercalate into the surface epithelium, converting mesenchymal-epithelial transitions into higher-order tissue structure.",
+    "summary": "Mesenchymal-epithelial transitions are fundamental drivers of development and disease, but how these behaviors generate epithelial structure is not well understood. Here we show that mesenchymal-epithelial transitions promote epithelial organization in the mouse node and notochordal plate through the assembly and radial intercalation of three-dimensional rosettes. Axial mesoderm rosettes acquire junctional and apical polarity, develop a central lumen, and dynamically expand, coalesce, and radially intercalate into the surface epithelium, converting mesenchymal-epithelial transitions into higher-order tissue structure.",
     "relevance": "Relevant to Cell Science's interest in emergent tissue organization and how multicellular systems self-pattern without external instruction. Relevant to lumen morphogenesis, lumenoid self-organization, organoid systems, and live imaging of three-dimensional culture morphodynamics.",
     "tags": [
       "development",
@@ -14027,7 +14027,7 @@
     "year": "2022",
     "journal": "bioRxiv",
     "type": "research",
-    "summary": "Background Changes in microenvironment cell-cell interactions (CCI) during the progression from ductal carcinoma in situ (DCIS) to invasive ductal carcinoma (IDC) are poorly understood. Gene expression studies are confounded by cellular heterogeneity and few separate stromal and epithelial contributions, resulting in a lack of reliable prognostic biomarker to guide treatment decisions. Methods The gene expression of 293 microdissected regions from DCIS (92 epithelial, 31 stromal) and IDC (78 epithelial, 30 stromal) cases was aggregated from 6 datasets.",
+    "summary": "Changes in microenvironment cell-cell interactions (CCI) during the progression from ductal carcinoma in situ (DCIS) to invasive ductal carcinoma (IDC) are poorly understood. Gene expression studies are confounded by cellular heterogeneity and few separate stromal and epithelial contributions, resulting in a lack of reliable prognostic biomarker to guide treatment decisions. Methods The gene expression of 293 microdissected regions from DCIS (92 epithelial, 31 stromal) and IDC (78 epithelial, 30 stromal) cases was aggregated from 6 datasets.",
     "relevance": "Directly relevant to understanding how cells send and receive signals from neighbors — foundational for collective cell decision-making and multicellular coordination, both core Cell Science themes. Directly relevant to Cell Science's foundational interest in how cells acquire and maintain identity — gene regulatory networks, lineage specification, and embryonic patterning are central to understanding cell decision-making and fate in developmental contexts.",
     "tags": [
       "cell state",
@@ -14198,7 +14198,7 @@
     "year": "2022",
     "journal": "Cell",
     "type": "research",
-    "summary": "SUMMARY Tumor evolution is driven by the progressive acquisition of genetic and epigenetic alterations that enable uncontrolled growth and expansion to neighboring and distal tissues. The study of phylogenetic relationships between cancer cells provides key insights into these processes. Here, we introduced an evolving lineage tracing system with a single-cell RNA-seq readout into a mouse model of Kras;Trp53(KP)-driven lung adenocarcinoma and tracked tumor evolution from single transformed cells to metastatic tumors at unprecedented resolution.",
+    "summary": "Tumor evolution is driven by the progressive acquisition of genetic and epigenetic alterations that enable uncontrolled growth and expansion to neighboring and distal tissues. The study of phylogenetic relationships between cancer cells provides key insights into these processes. Here, we introduced an evolving lineage tracing system with a single-cell RNA-seq readout into a mouse model of Kras;Trp53(KP)-driven lung adenocarcinoma and tracked tumor evolution from single transformed cells to metastatic tumors at unprecedented resolution.",
     "relevance": "Relevant to Cell Science's multimodal view of cell state, where single-cell molecular data is integrated with structural and morphological measurements.",
     "tags": [
       "single-cell"
@@ -14614,7 +14614,7 @@
     "year": "2022",
     "journal": "Cell systems",
     "type": "research",
-    "summary": "Summary The rise and fall of estrogen and progesterone across menstrual cycles and during pregnancy regulates breast development and modifies cancer risk. How these hormones impact each cell type in the breast remains poorly understood, because they act indirectly through paracrine networks. Using single-cell analysis of premenopausal breast tissue, we reveal a network of coordinated transcriptional programs representing the tissue-level response to changing hormone levels.",
+    "summary": "The rise and fall of estrogen and progesterone across menstrual cycles and during pregnancy regulates breast development and modifies cancer risk. How these hormones impact each cell type in the breast remains poorly understood, because they act indirectly through paracrine networks. Using single-cell analysis of premenopausal breast tissue, we reveal a network of coordinated transcriptional programs representing the tissue-level response to changing hormone levels.",
     "relevance": "Directly relevant to understanding how cells send and receive signals from neighbors — foundational for collective cell decision-making and multicellular coordination, both core Cell Science themes. Relevant to Cell Science's multimodal view of cell state, where single-cell molecular data is integrated with structural and morphological measurements.",
     "tags": [
       "development",
@@ -14675,7 +14675,7 @@
     "year": "2022",
     "journal": "Cancer Research",
     "type": "research",
-    "summary": "Background: The invasion of malignant cells into surrounding stroma is the histological hallmark differentiating invasive ductal carcinoma (IDC) from ductal carcinoma in situ (DCIS). The associated variations in the cellular composition and interactions in the tumor microenvironment, and how those mediate invasion are poorly understood. Systematic analyses of gene expression differences between DCIS and IDC are rare, confounded by cellular heterogeneity, and limited to few cases unable to distinguish stromal from epithelial contributions or compare pure DCIS from those synchronous with IDC.",
+    "summary": "The invasion of malignant cells into surrounding stroma is the histological hallmark differentiating invasive ductal carcinoma (IDC) from ductal carcinoma in situ (DCIS). The associated variations in the cellular composition and interactions in the tumor microenvironment, and how those mediate invasion are poorly understood. Systematic analyses of gene expression differences between DCIS and IDC are rare, confounded by cellular heterogeneity, and limited to few cases unable to distinguish stromal from epithelial contributions or compare pure DCIS from those synchronous with IDC.",
     "relevance": "Directly relevant to understanding how cells send and receive signals from neighbors — foundational for collective cell decision-making and multicellular coordination, both core Cell Science themes. Directly addresses Cell Science's core question of why genetically identical cells differ structurally and how variation encodes functional information.",
     "tags": [
       "methods"
@@ -14740,7 +14740,7 @@
     "year": "2024",
     "journal": "Journal of Cell Science",
     "type": "research",
-    "summary": "ABSTRACT Bioimage analysis (BIA), a crucial discipline in biological research, overcomes the limitations of subjective analysis in microscopy through the creation and application of quantitative and reproducible methods. The establishment of dedicated BIA support within academic institutions is vital to improving research quality and efficiency and can significantly advance scientific discovery. However, a lack of training resources, limited career paths and insufficient recognition of the contributions made by bioimage analysts prevent the full realization of this potential.",
+    "summary": "Bioimage analysis (BIA), a crucial discipline in biological research, overcomes the limitations of subjective analysis in microscopy through the creation and application of quantitative and reproducible methods. The establishment of dedicated BIA support within academic institutions is vital to improving research quality and efficiency and can significantly advance scientific discovery. However, a lack of training resources, limited career paths and insufficient recognition of the contributions made by bioimage analysts prevent the full realization of this potential.",
     "relevance": "",
     "tags": [
       "methods"
@@ -16065,7 +16065,7 @@
     "year": "2022",
     "journal": "Developmental Cell",
     "type": "research",
-    "summary": "Summary Upon implantation, mammalian embryos undergo major morphogenesis and key developmental processes such as body axis specification and gastrulation. However, limited accessibility obscures the study of these crucial processes. Here, we develop an ex vivo Matrigel-collagen-based culture to recapitulate mouse development from E4.5 to E6.0.",
+    "summary": "Upon implantation, mammalian embryos undergo major morphogenesis and key developmental processes such as body axis specification and gastrulation. However, limited accessibility obscures the study of these crucial processes. Here, we develop an ex vivo Matrigel-collagen-based culture to recapitulate mouse development from E4.5 to E6.0.",
     "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Relevant to Cell Science's interest in how spatial patterns emerge during development from molecular and cellular interactions.",
     "tags": [
       "development",
@@ -16820,7 +16820,7 @@
     "year": "2023",
     "journal": "Stem Cell Reports",
     "type": "research",
-    "summary": "Summary The laboratory culture of human stem cells seeks to capture a cellular state as an in vitro surrogate of a biological system. For the results and outputs from this research to be accurate, meaningful, and durable, standards that ensure reproducibility and reliability of the data should be applied. Although such standards have been previously proposed for repositories and distribution centers, no widely accepted best practices exist for laboratory research with human pluripotent and tissue stem cells.",
+    "summary": "The laboratory culture of human stem cells seeks to capture a cellular state as an in vitro surrogate of a biological system. For the results and outputs from this research to be accurate, meaningful, and durable, standards that ensure reproducibility and reliability of the data should be applied. Although such standards have been previously proposed for repositories and distribution centers, no widely accepted best practices exist for laboratory research with human pluripotent and tissue stem cells.",
     "relevance": "Relevant to Cell Science's core work on hiPSC biology, pluripotent stem cell engineering, and stem cell-derived model systems.",
     "tags": [
       "stem cells"
@@ -16924,7 +16924,7 @@
     "year": "2023",
     "journal": "Cell Stem Cell",
     "type": "research",
-    "summary": "Summary Gastruloids are 3D structures generated from pluripotent stem cells recapitulating fundamental principles of embryonic pattern formation. Using single-cell genomic analysis, we provide a resource mapping cell states and types during gastruloid development and compare them with the in vivo embryo. We developed a high-throughput handling and imaging pipeline to spatially monitor symmetry breaking during gastruloid development and report an early spatial variability in pluripotency determining a binary response to Wnt activation.",
+    "summary": "Gastruloids are 3D structures generated from pluripotent stem cells recapitulating fundamental principles of embryonic pattern formation. Using single-cell genomic analysis, we provide a resource mapping cell states and types during gastruloid development and compare them with the in vivo embryo. We developed a high-throughput handling and imaging pipeline to spatially monitor symmetry breaking during gastruloid development and report an early spatial variability in pluripotency determining a binary response to Wnt activation.",
     "relevance": "Directly relevant to Cell Science's foundational interest in how cells acquire and maintain identity — gene regulatory networks, lineage specification, and embryonic patterning are central to understanding cell decision-making and fate in developmental contexts. Relevant to Cell Science's core work on hiPSC biology, pluripotent stem cell engineering, and stem cell-derived model systems.",
     "tags": [
       "stem cells",
@@ -17544,7 +17544,7 @@
     "year": "2022",
     "journal": "Developmental cell",
     "type": "research",
-    "summary": "Epithelial regeneration can be mediated through activation of stem cells or de-differentiation of post-mitotic cells. In this issue of Developmental Cell, Ohara et al. report that regeneration of damaged intestinal villi occurs via a yes-associated protein 1 (YAP)-dependent adaptive differentiation of transit-amplifying progenitors to a fetal-like state that restores intestinal barrier function.",
+    "summary": "Epithelial regeneration can be mediated through activation of stem cells or de-differentiation of post-mitotic cells. In this issue of Developmental Cell, Ohara et al. report that regeneration of damaged intestinal villi occurs via a yes-associated protein 1 (YAP)-dependent adaptive differentiation of transit-amplifying progenitors to a fetal-like state that restores intestinal barrier function.",
     "relevance": "Relevant to Cell Science's core work on hiPSC biology, pluripotent stem cell engineering, and stem cell-derived model systems. Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs.",
     "tags": [
       "stem cells",
@@ -17643,7 +17643,7 @@
     "year": "2022",
     "journal": "Stem Cell Reports",
     "type": "research",
-    "summary": "Summary With the aim of producing β cells for replacement therapies to treat diabetes, several protocols have been developed to differentiate human pluripotent stem cells to β cells via pancreatic progenitors. While in vivo pancreatic progenitors expand throughout development, the in vitro protocols have been designed to make these cells progress as fast as possible to β cells. Here, we report on a protocol enabling a long-term expansion of human pancreatic progenitors in a defined medium on fibronectin, in the absence of feeder layers.",
+    "summary": "With the aim of producing β cells for replacement therapies to treat diabetes, several protocols have been developed to differentiate human pluripotent stem cells to β cells via pancreatic progenitors. While in vivo pancreatic progenitors expand throughout development, the in vitro protocols have been designed to make these cells progress as fast as possible to β cells. Here, we report on a protocol enabling a long-term expansion of human pancreatic progenitors in a defined medium on fibronectin, in the absence of feeder layers.",
     "relevance": "Relevant to Cell Science's core work on hiPSC biology, pluripotent stem cell engineering, and stem cell-derived model systems. Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs.",
     "tags": [
       "stem cells",
@@ -17707,7 +17707,7 @@
     "year": "2022",
     "journal": "Cell stem cell",
     "type": "research",
-    "summary": "Du et al. transplanted β cells derived from pluripotent stem cells in diabetic monkeys for the first time, as an intermediate stage toward clinical translation. They observed benefits unfolding over months but also observed immune rejection of the grafts by 5-6 months.",
+    "summary": "Du et al. transplanted β cells derived from pluripotent stem cells in diabetic monkeys for the first time, as an intermediate stage toward clinical translation. They observed benefits unfolding over months but also observed immune rejection of the grafts by 5-6 months.",
     "relevance": "Relevant to Cell Science's core work on hiPSC biology, pluripotent stem cell engineering, and stem cell-derived model systems.",
     "tags": [
       "stem cells"
@@ -17935,7 +17935,7 @@
     "year": "2025",
     "journal": "The Review of scientific instruments",
     "type": "research",
-    "summary": "We present a custom recording platform that enables electrophysiological recordings with Neuropixels 2.0 from human brain and heart organoids by maintaining a stable, physiological environment of 5% CO2, 37 °C, and 95% relative humidity. The platform combines a modular positioning system with real-time camera guidance for precise probe alignment. We validated the system by recording consistent bursting activity in brain organoids over a 110-min period and in heart organoids for up to 11 h.",
+    "summary": "We present a custom recording platform that enables electrophysiological recordings with Neuropixels 2.0 from human brain and heart organoids by maintaining a stable, physiological environment of 5% CO2, 37 °C, and 95% relative humidity. The platform combines a modular positioning system with real-time camera guidance for precise probe alignment. We validated the system by recording consistent bursting activity in brain organoids over a 110-min period and in heart organoids for up to 11 h.",
     "relevance": "Relevant to lumen morphogenesis, lumenoid self-organization, organoid systems, and live imaging of three-dimensional culture morphodynamics.",
     "tags": [
       "organoid"
@@ -18458,7 +18458,7 @@
     "year": "2023",
     "journal": "Developmental cell",
     "type": "research",
-    "summary": "Summary Septins self-assemble into polymers that bind and deform membranes in vitro and regulate diverse cell behaviors in vivo. How their in vitro properties relate to their in vivo functions is under active investigation. Here we uncover requirements for septins in detachment and motility of border cell clusters in the Drosophila ovary.",
+    "summary": "Septins self-assemble into polymers that bind and deform membranes in vitro and regulate diverse cell behaviors in vivo. How their in vitro properties relate to their in vivo functions is under active investigation. Here we uncover requirements for septins in detachment and motility of border cell clusters in the Drosophila ovary.",
     "relevance": "",
     "tags": [],
     "doi": "10.1016/j.devcel.2023.05.017",
@@ -19033,7 +19033,7 @@
     "year": "2026",
     "journal": "Protein Engineering, Design and Selection",
     "type": "research",
-    "summary": "Abstract With this status report, we aim to provide a timely snapshot of the protein engineering field as a broad and rapidly advancing discipline that integrates computational, molecular biology, structure-guided, evolutionary, and synthetic approaches to create new and improved proteins with tailored structures and useful functions. The report is organized into eight thematic areas spanning core methodologies and major application domains, including enzymes, therapeutics, detection, synthetic biology, and materials. Contributions from experts across these areas highlight both the historical foundations and recent advances in their respective fields, with particular emphasis on the growing influence of machine learning and artificial intelligence-based methods.",
+    "summary": "With this status report, we aim to provide a timely snapshot of the protein engineering field as a broad and rapidly advancing discipline that integrates computational, molecular biology, structure-guided, evolutionary, and synthetic approaches to create new and improved proteins with tailored structures and useful functions. The report is organized into eight thematic areas spanning core methodologies and major application domains, including enzymes, therapeutics, detection, synthetic biology, and materials. Contributions from experts across these areas highlight both the historical foundations and recent advances in their respective fields, with particular emphasis on the growing influence of machine learning and artificial intelligence-based methods.",
     "relevance": "Aligned with Cell Science's synthetic biology program — engineering gene circuits to program cell community behavior and synthetic multicellular systems. Relevant to Cell Science's AI and computational agenda for modeling cell biology and building virtual cell frameworks.",
     "tags": [
       "synthetic biology",
@@ -20034,7 +20034,7 @@
     "year": "2025",
     "journal": "Cell",
     "type": "research",
-    "summary": "Summary Many biological signaling pathways employ proteins that competitively dimerize in diverse combinations. These dimerization networks can perform biochemical computations, in which the concentrations of monomer inputs determine the concentrations of dimer outputs. Despite their prevalence, little is known about the range of input-output computations that dimerization networks can perform and how it depends on network size and connectivity.",
+    "summary": "Many biological signaling pathways employ proteins that competitively dimerize in diverse combinations. These dimerization networks can perform biochemical computations, in which the concentrations of monomer inputs determine the concentrations of dimer outputs. Despite their prevalence, little is known about the range of input-output computations that dimerization networks can perform and how it depends on network size and connectivity.",
     "relevance": "",
     "tags": [],
     "doi": "10.1016/j.cell.2025.01.036",
@@ -20105,7 +20105,7 @@
     "year": "2024",
     "journal": "Cell Genomics",
     "type": "research",
-    "summary": "Summary In animal cells, molecular pathways often comprise families of variant components, such as ligands or receptors. These pathway components are differentially expressed by different cell types, potentially tailoring pathway function to cell context. However, it has remained unclear how pathway expression profiles are distributed across cell types and whether similar profiles can occur in dissimilar cell types.",
+    "summary": "In animal cells, molecular pathways often comprise families of variant components, such as ligands or receptors. These pathway components are differentially expressed by different cell types, potentially tailoring pathway function to cell context. However, it has remained unclear how pathway expression profiles are distributed across cell types and whether similar profiles can occur in dissimilar cell types.",
     "relevance": "Relevant to Cell Science's multimodal view of cell state, where single-cell molecular data is integrated with structural and morphological measurements. Relevant to Cell Science's interest in key developmental pathways governing organoid patterning and stem cell differentiation.",
     "tags": [
       "development",
@@ -20192,7 +20192,7 @@
     "year": "2024",
     "journal": "Cell",
     "type": "research",
-    "summary": "SUMMARY Natural cell death pathways such as apoptosis and pyroptosis play dual roles: they eliminate harmful cells and modulate the immune system by dampening or stimulating inflammation. Synthetic protein circuits capable of triggering specific death programs in target cells could similarly remove harmful cells while appropriately modulating immune responses. However, cells actively influence their death modes in response to natural signals, making it challenging to control death modes.",
+    "summary": "Natural cell death pathways such as apoptosis and pyroptosis play dual roles: they eliminate harmful cells and modulate the immune system by dampening or stimulating inflammation. Synthetic protein circuits capable of triggering specific death programs in target cells could similarly remove harmful cells while appropriately modulating immune responses. However, cells actively influence their death modes in response to natural signals, making it challenging to control death modes.",
     "relevance": "",
     "tags": [],
     "doi": "10.1016/j.cell.2024.03.031",
@@ -20695,7 +20695,7 @@
     "year": "2023",
     "journal": "Cell",
     "type": "research",
-    "summary": "Summary A system for programmable export of RNA molecules from living cells would enable both non-destructive monitoring of cell dynamics and engineering of cells capable of delivering executable RNA programs to other cells. We developed genetically encoded cellular RNA exporters, inspired by viruses, that efficiently and selectively package and secrete target RNA molecules from mammalian cells within protective nanoparticles. Exporting and sequencing RNA barcodes enabled non-destructive monitoring of cell population dynamics with clonal resolution.",
+    "summary": "A system for programmable export of RNA molecules from living cells would enable both non-destructive monitoring of cell dynamics and engineering of cells capable of delivering executable RNA programs to other cells. We developed genetically encoded cellular RNA exporters, inspired by viruses, that efficiently and selectively package and secrete target RNA molecules from mammalian cells within protective nanoparticles. Exporting and sequencing RNA barcodes enabled non-destructive monitoring of cell population dynamics with clonal resolution.",
     "relevance": "",
     "tags": [],
     "doi": "10.1016/j.cell.2023.06.013",
@@ -20751,7 +20751,7 @@
     "year": "2023",
     "journal": "Cell systems",
     "type": "research",
-    "summary": "Summary Many biological circuits comprise sets of protein variants that interact with one another in a many-to-many, or promiscuous, fashion. These architectures can provide powerful computational capabilities that are especially critical in multicellular organisms. Understanding the principles of biochemical computations in these circuits could allow more precise cellular control of cellular behaviors.",
+    "summary": "Many biological circuits comprise sets of protein variants that interact with one another in a many-to-many, or promiscuous, fashion. These architectures can provide powerful computational capabilities that are especially critical in multicellular organisms. Understanding the principles of biochemical computations in these circuits could allow more precise cellular control of cellular behaviors.",
     "relevance": "Relevant to Cell Science's broader interest in how cells cooperate and self-organize to form tissues with emergent properties.",
     "tags": [
       "multicellular"
@@ -21464,7 +21464,7 @@
     "year": "2022",
     "journal": "Current biology : CB",
     "type": "research",
-    "summary": "SUMMARY LIM domain-containing repeat (LCR) proteins are recruited to strained actin filaments within stress fibers in cultured cells 1–3, but their roles at cell-cell junctions in living organisms have not been extensively studied. Here, we show that the Caenorhabditis elegans LCR proteins TES-1/Tes and ZYX-1/Zyxin are recruited to apical junctions during embryonic elongation, when junctions are under tension; in genetic backgrounds in which embryonic elongation fails, junctional recruitment is severely compromised. The two proteins display complementary patterns of expression: TES-1 is expressed in lateral (seam) epidermal cells, whereas ZYX-1 is expressed in dorsal and ventral epidermal cells.",
+    "summary": "LIM domain-containing repeat (LCR) proteins are recruited to strained actin filaments within stress fibers in cultured cells 1–3, but their roles at cell-cell junctions in living organisms have not been extensively studied. Here, we show that the Caenorhabditis elegans LCR proteins TES-1/Tes and ZYX-1/Zyxin are recruited to apical junctions during embryonic elongation, when junctions are under tension; in genetic backgrounds in which embryonic elongation fails, junctional recruitment is severely compromised. The two proteins display complementary patterns of expression: TES-1 is expressed in lateral (seam) epidermal cells, whereas ZYX-1 is expressed in dorsal and ventral epidermal cells.",
     "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Relevant to Cell Science's broader interest in how cells cooperate and self-organize to form tissues with emergent properties.",
     "tags": [
       "morphogenesis",
@@ -21552,7 +21552,7 @@
     "year": "2022",
     "journal": "Current biology : CB",
     "type": "research",
-    "summary": "Summary Tissue morphogenesis arises from the culmination of changes in cell-cell junction length. Mechanochemical signaling in the form of RhoA underlies these ratcheted contractions, which occur asymmetrically. The underlying mechanisms of asymmetry remain unknown.",
+    "summary": "Tissue morphogenesis arises from the culmination of changes in cell-cell junction length. Mechanochemical signaling in the form of RhoA underlies these ratcheted contractions, which occur asymmetrically. The underlying mechanisms of asymmetry remain unknown.",
     "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis.",
     "tags": [
       "morphogenesis"
@@ -21867,7 +21867,7 @@
     "year": "2024",
     "journal": "Journal of pediatric surgery",
     "type": "research",
-    "summary": "BACKGROUND\nTreatment of choledocholithiasis with laparoscopic cholecystectomy (LC) and intraoperative cholangiogram (IOC) ± transcystic laparoscopic common bile duct exploration (LCBDE) is associated with fewer procedures and shorter length of stay (LOS) compared to preoperative endoscopic retrograde cholangiopancreatography (ERCP) followed by LC. Fluoroscopy is required for both LCBDE and ERCP but fluoroscopic time (FT) and radiation dose (RD) in LCBDE has not been studied. METHODS\nThe Choledocholithiasis Alliance for Research, Education, and Surgery (CARES) Working Group conducted this retrospective study on pediatric patients with suspected choledocholithiasis who received IOC.",
+    "summary": "Treatment of choledocholithiasis with laparoscopic cholecystectomy (LC) and intraoperative cholangiogram (IOC) ± transcystic laparoscopic common bile duct exploration (LCBDE) is associated with fewer procedures and shorter length of stay (LOS) compared to preoperative endoscopic retrograde cholangiopancreatography (ERCP) followed by LC. Fluoroscopy is required for both LCBDE and ERCP but fluoroscopic time (FT) and radiation dose (RD) in LCBDE has not been studied. METHODS The Choledocholithiasis Alliance for Research, Education, and Surgery (CARES) Working Group conducted this retrospective study on pediatric patients with suspected choledocholithiasis who received IOC.",
     "relevance": "",
     "tags": [
       "methods"
@@ -21957,7 +21957,7 @@
     "year": "2024",
     "journal": "Journal of pediatric surgery",
     "type": "research",
-    "summary": "BACKGROUND\nCholedocholithiasis in children is rising and frequently managed with an endoscopy-first (EF) approach that utilizes endoscopic retrograde cholangiopancreatography (ERCP) followed by laparoscopic cholecystectomy (LC). Magnetic resonance cholangiopancreatography (MRCP) is a resource intensive modality that often precedes ERCP to gain further assurance of choledocholithiasis prior to intervention. MRCP can lead to a longer length of stay (LOS) and strain healthcare resources.",
+    "summary": "Choledocholithiasis in children is rising and frequently managed with an endoscopy-first (EF) approach that utilizes endoscopic retrograde cholangiopancreatography (ERCP) followed by laparoscopic cholecystectomy (LC). Magnetic resonance cholangiopancreatography (MRCP) is a resource intensive modality that often precedes ERCP to gain further assurance of choledocholithiasis prior to intervention. MRCP can lead to a longer length of stay (LOS) and strain healthcare resources.",
     "relevance": "",
     "tags": [
       "methods"
@@ -22047,7 +22047,7 @@
     "year": "2024",
     "journal": "Journal of pediatric surgery",
     "type": "research",
-    "summary": "BACKGROUND\nCholedocholithiasis in children is commonly managed with an \"endoscopy-first\" (EF) strategy (endoscopic retrograde cholangiopancreatography (ERCP) followed by laparoscopic cholecystectomy (LC)). Because ERCP availability is often limited at the end of the week (EoW), we hypothesized that a \"surgery-first\" (SF) approach (LC with intraoperative cholangiogram (IOC) ± transcystic laparoscopic common bile exploration (LCBDE)) would decrease length of stay (LOS) and time to definitive intervention (TTDI). METHODS\nA multicenter, retrospective cohort study was conducted on pediatric patients from 2018 to 2023 with suspected choledocholithiasis.",
+    "summary": "Choledocholithiasis in children is commonly managed with an \"endoscopy-first\" (EF) strategy (endoscopic retrograde cholangiopancreatography (ERCP) followed by laparoscopic cholecystectomy (LC)). Because ERCP availability is often limited at the end of the week (EoW), we hypothesized that a \"surgery-first\" (SF) approach (LC with intraoperative cholangiogram (IOC) ± transcystic laparoscopic common bile exploration (LCBDE)) would decrease length of stay (LOS) and time to definitive intervention (TTDI). METHODS A multicenter, retrospective cohort study was conducted on pediatric patients from 2018 to 2023 with suspected choledocholithiasis.",
     "relevance": "",
     "tags": [
       "methods"
@@ -22158,7 +22158,7 @@
     "year": "2024",
     "journal": "Journal of pediatric surgery",
     "type": "research",
-    "summary": "BACKGROUND\nIn adults, upfront intraoperative cholangiogram with laparoscopic common bile duct exploration (LCBDE) is well accepted for management of choledocholithiasis. Despite recent evidence supporting LCBDE utility in children, there has been hesitation to adopt this surgery first (SF) approach over ERCP first (EF) due to perceived technical challenges. We compared rates of successful stone clearance during LCBDE between adult and pediatric patients to evaluate if pediatric surgeons could anticipate similar rates of successful clearance.",
+    "summary": "In adults, upfront intraoperative cholangiogram with laparoscopic common bile duct exploration (LCBDE) is well accepted for management of choledocholithiasis. Despite recent evidence supporting LCBDE utility in children, there has been hesitation to adopt this surgery first (SF) approach over ERCP first (EF) due to perceived technical challenges. We compared rates of successful stone clearance during LCBDE between adult and pediatric patients to evaluate if pediatric surgeons could anticipate similar rates of successful clearance.",
     "relevance": "",
     "tags": [
       "methods"
@@ -22227,7 +22227,7 @@
     "year": "2023",
     "journal": "Journal of pediatric surgery",
     "type": "research",
-    "summary": "BACKGROUND\nPatients with choledocholithiasis are often treated with endoscopic retrograde cholangiopancreatography (ERCP) followed by laparoscopic cholecystectomy (LC). Upfront LC, intraoperative cholangiogram (IOC), and possible transcystic laparoscopic common bile duct exploration (LCBDE) could potentially avoid the need for ERCP. We hypothesized that upfront LC + IOC ± LCBDE will decrease length of stay (LOS) and the total number of interventions for children with suspected choledocholithiasis.",
+    "summary": "Patients with choledocholithiasis are often treated with endoscopic retrograde cholangiopancreatography (ERCP) followed by laparoscopic cholecystectomy (LC). Upfront LC, intraoperative cholangiogram (IOC), and possible transcystic laparoscopic common bile duct exploration (LCBDE) could potentially avoid the need for ERCP. We hypothesized that upfront LC + IOC ± LCBDE will decrease length of stay (LOS) and the total number of interventions for children with suspected choledocholithiasis.",
     "relevance": "",
     "tags": [
       "methods"
@@ -22415,7 +22415,7 @@
     "year": "2026",
     "journal": "bioRxiv",
     "type": "research",
-    "summary": "Background While pancreatic cysts have been described in syndromic ciliopathies, the pancreas is not commonly recognized as a target organ. However, several ciliary gene knockout mouse models develop a pancreatic phenotype combining acinar atrophy and adipocyte accumulation, hereby called adipopancreatosis, suggesting a link between ciliary dysfunction and pancreatic disease. Objective We investigated whether mutations in ciliopathy-associated genes are linked to pancreatic dysfunction in humans.",
+    "summary": "While pancreatic cysts have been described in syndromic ciliopathies, the pancreas is not commonly recognized as a target organ. However, several ciliary gene knockout mouse models develop a pancreatic phenotype combining acinar atrophy and adipocyte accumulation, hereby called adipopancreatosis, suggesting a link between ciliary dysfunction and pancreatic disease. Objective We investigated whether mutations in ciliopathy-associated genes are linked to pancreatic dysfunction in humans.",
     "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Relevant to lumen morphogenesis, lumenoid self-organization, organoid systems, and live imaging of three-dimensional culture morphodynamics.",
     "tags": [
       "morphology"
@@ -24212,7 +24212,7 @@
     "year": "2023",
     "journal": "Bioinformatics",
     "type": "research",
-    "summary": "Motivation The Nuclear Pore Complex (NPC) is the only passageway for macromolecules between nucleus and cytoplasm, and one of localization microscopy’s most important reference standards: it is massive and stereotypically arranged. The average architecture of NPC proteins has been resolved with pseudo-atomic precision, however observed NPC heterogeneities evidence a high degree of divergence from this average. Single Molecule Localization Microscopy (SMLM) images NPCs at protein-level resolution, whereupon image analysis software studies NPC variability.",
+    "summary": "The Nuclear Pore Complex (NPC) is the only passageway for macromolecules between nucleus and cytoplasm, and one of localization microscopy’s most important reference standards: it is massive and stereotypically arranged. The average architecture of NPC proteins has been resolved with pseudo-atomic precision, however observed NPC heterogeneities evidence a high degree of divergence from this average. Single Molecule Localization Microscopy (SMLM) images NPCs at protein-level resolution, whereupon image analysis software studies NPC variability.",
     "relevance": "",
     "tags": [
       "methods"
