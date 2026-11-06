@@ -11,6 +11,8 @@ import json
 from collections import Counter
 from pathlib import Path
 
+from src.people_of_interest import load_people
+
 PAPERS_PATH = Path("papers.json")
 INDEX_PATH = Path("index.html")
 APP_JS_PATH = Path("app.js")
@@ -44,6 +46,7 @@ def build_filters(papers):
         "typeCounts": {t: type_counts.get(t, 0) for t in TYPES},
         "hasPreprint": any(p.get("preprint") for p in papers),
         "tagBlocklist": TAG_BLOCKLIST,
+        "people": load_people(),   # always shown in collapsed author lists
         "tags": [{"name": t, "count": n} for t, n in topic_tags.most_common()],
         "years": [{"name": y, "count": years[y]} for y in sorted(years, key=lambda y: (not y.isdigit(), -int(y) if y.isdigit() else 0, y))],
         "authors": [{"name": a, "count": authors[a]} for a in sorted(authors, key=lambda a: (a.split()[-1].lower(), a.lower()))],

@@ -13,6 +13,7 @@ function prefSet(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
 let PAPERS = [];
 let dataReady = false;
 let TAG_BLOCKLIST = new Set();
+let PEOPLE = [];   // people of interest (people_of_interest.json): never hidden in a collapsed author list
 function isTopicTag(t) { return !TAG_BLOCKLIST.has(t.toLowerCase()); }
 
 const state = {
@@ -197,6 +198,7 @@ function syncAdminFilters() {
 
 function buildFilters(F) {
   TAG_BLOCKLIST = new Set(F.tagBlocklist || []);
+  PEOPLE = F.people || [];
   DIM_NAMES.forEach(makeDropdown);
   const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
   F.types.filter(t => t !== 'all').forEach(t => addOption('type', t, cap(t), F.typeCounts[t]));
@@ -363,21 +365,43 @@ function hasPdf(p) { const u = safeUrl(p.pdf_link); return !!u && isDirectPdf(u)
 /* ── Card rendering ─────────────────────────────────────────────────────── */
 function authorLink(name) { return 'https://scholar.google.com/scholar?q=' + encodeURIComponent(name); }
 function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
-// Long author lists collapse to the first 3 authors plus the last (senior / corresponding) author;
-// "+N more" expands the full list. If the source itself only listed the first few ("et al."), the last
-// listed name is not the senior author, so only the first 3 are kept.
+// Long author lists collapse to the first 3 authors, the last (senior / corresponding) author and the
+// tile's noted collaborator and any people of interest; "+N more" expands the full list. If the source itself only listed the
+// first few ("et al."), the last listed name is not the senior author, so it is not shown.
 const AU_HEAD = 3;
 const AU_SEP = '<span class="au-sep"> · </span>';
-function authorsBlock(items, truncated) {
+const AU_GAP = '<span class="au-gap">\u2026</span>';
+function nameTokens(n) {
+  return String(n || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/-/g, ' ').replace(/[^a-z\s']/g, ' ').split(/\s+/).filter(Boolean);
+}
+// "Michael Elowitz" == "Michael B. Elowitz" == "M. Elowitz" (same surname, compatible first name)
+function firstNamesAgree(a, b) {   // equal, an initial, or a nickname-style prefix ("Jen" / "Jennifer")
+  if (a.length === 1 || b.length === 1) return a[0] === b[0];
+  const [short, long] = a.length <= b.length ? [a, b] : [b, a];
+  return long.startsWith(short) && short.length >= 3;
+}
+function sameAuthor(a, b) {
+  const x = nameTokens(a), y = nameTokens(b);
+  return x.length > 0 && y.length > 0 && x[x.length - 1] === y[y.length - 1] && firstNamesAgree(x[0], y[0]);
+}
+function authorsBlock(items, truncated, collaborator) {
   if (!items.length) return '';
   const etal = truncated ? AU_SEP + '<span class="au-etal">et al.</span>' : '';
-  if (items.length <= AU_HEAD + 1) return '<div class="card-authors">' + items.join(AU_SEP) + etal + '</div>';
-  const hidden = items.length - AU_HEAD - (truncated ? 0 : 1);
-  const short = items.slice(0, AU_HEAD).join(AU_SEP) + AU_SEP + '<span class="au-gap">\u2026</span>'
-    + (truncated ? '' : AU_SEP + items[items.length - 1]) + etal;
+  const show = new Set(items.map((_, i) => i).slice(0, AU_HEAD));
+  if (!truncated) show.add(items.length - 1);
+  items.forEach((it, i) => {
+    if ((collaborator && sameAuthor(it.name, collaborator)) || PEOPLE.some(p => sameAuthor(it.name, p))) show.add(i);
+  });
+  const order = [...show].sort((a, b) => a - b);
+  const hidden = items.length - order.length;
+  const full = items.map(it => it.html).join(AU_SEP) + etal;
+  if (hidden <= 0) return '<div class="card-authors">' + full + '</div>';
+  const parts = [];
+  order.forEach((i, k) => { if (k && i - order[k - 1] > 1) parts.push(AU_GAP); parts.push(items[i].html); });
+  if (truncated && order[order.length - 1] < items.length - 1) parts.push(AU_GAP);
   return '<div class="card-authors">'
-    + '<span class="au-short">' + short + '</span>'
-    + '<span class="au-full">' + items.join(AU_SEP) + etal + '</span> '
+    + '<span class="au-short">' + parts.join(AU_SEP) + etal + '</span>'
+    + '<span class="au-full">' + full + '</span> '
     + '<button type="button" class="au-toggle" data-more="' + hidden + '" aria-expanded="false" title="Show the full author list">+' + hidden + ' more</button>'
     + '</div>';
 }
@@ -399,11 +423,11 @@ function fmt(p) {
   if (p.author_data && p.author_data.length) {
     authorItems = p.author_data.map(a => {
       const name = a.name || '';
-      if (!name) return '';
+      if (!name) return null;
       const href = a.orcid
         ? 'https://orcid.org/' + esc(a.orcid)
         : authorLink(name);
-      return '<a class="author-link" href="'+href+'" target="_blank" rel="noopener">'+esc(name)+'</a>';
+      return { name, html: '<a class="author-link" href="'+href+'" target="_blank" rel="noopener">'+esc(name)+'</a>' };
     }).filter(Boolean);
   } else {
     const rawAuthors = typeof p.authors === 'string' ? p.authors : (p.authors||[]).join(', ');
@@ -411,10 +435,10 @@ function fmt(p) {
     const authorNames = rawAuthors.split(/,\s*et al\.?/).map(s=>s.trim()).join('').split(/,\s*/).map(s=>s.trim()).filter(Boolean);
     authorItems = authorNames.map(a => {
       const name = a.replace(/\s*et al\.?\s*$/,'').trim();
-      return name ? '<a class="author-link" href="'+authorLink(name)+'" target="_blank" rel="noopener">'+esc(name)+'</a>' : '';
+      return name ? { name, html: '<a class="author-link" href="'+authorLink(name)+'" target="_blank" rel="noopener">'+esc(name)+'</a>' } : null;
     }).filter(Boolean);
   }
-  const authorHtml = authorsBlock(authorItems, authorsTruncated);
+  const authorHtml = authorsBlock(authorItems, authorsTruncated, p.vip_author);
   const tags = (p.tags||[]).filter(isTopicTag).map(t=>'<span class="tag" data-clicktag="'+esc(t)+'">'+esc(t)+'</span>').join('');
   const added = p.added ? '<span class="card-date">added '+p.added+'</span>' : '';
   const jUrl = journalUrl(p.journal);
