@@ -65,7 +65,8 @@ const DIMS = {
             passes: p => !sel.picks.size || sel.picks.has(p.ru_pick ? 'ru' : 'agent'),
             keys:   p => [p.ru_pick ? 'ru' : 'agent'] },
   collab: { label: 'Collaborators',
-            passes: p => sel.collab.size ? sel.collab.has(p.vip_author) : !p.vip_only,
+            // collaborator-only papers stay off the main list, but a search always finds them
+            passes: p => sel.collab.size ? sel.collab.has(p.vip_author) : (!p.vip_only || !!state.search),
             keys:   p => p.vip_author ? [p.vip_author] : [] },
   tags:   { label: 'Topic',
             passes: p => !sel.tags.size || (p.tags || []).some(t => sel.tags.has(t)),
