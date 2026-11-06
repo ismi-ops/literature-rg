@@ -12,10 +12,10 @@ on:
         type: choice
         options: ["false", "true"]
       prune:
-        description: "Also reject matching papers already in papers.json (never Ru's picks or hand-added papers)"
-        default: "true"
+        description: "Also reject matching papers already in papers.json (never Ru's picks or hand-added papers) — review a dry run first"
+        default: "false"
         type: choice
-        options: ["true", "false"]
+        options: ["false", "true"]
 
 permissions:
   contents: write
@@ -45,7 +45,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           FLAGS=""
-          if [ "$PRUNE" != "false" ]; then FLAGS="--prune"; fi
+          if [ "$PRUNE" = "true" ]; then FLAGS="--prune"; fi   # scheduled runs never prune
           for attempt in 1 2 3 4 5; do
             git fetch origin main
             git reset --hard origin/main

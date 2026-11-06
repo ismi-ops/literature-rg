@@ -297,3 +297,16 @@ Papers are especially valuable if they:
 - Advance synthetic biology, synthetic morphogenesis, or programmable multicellular systems
 - Present forward-looking perspectives or reviews on cell biology or synthetic morphogenesis
 """
+
+
+# ── People of particular interest (edit people_of_interest.json) ───────────────
+from src.people_of_interest import load_people, same_person  # noqa: E402
+
+PEOPLE_OF_INTEREST = load_people()
+TRACKED_AUTHORS += [n for n in PEOPLE_OF_INTEREST if not any(same_person(n, t) for t in TRACKED_AUTHORS)]
+if PEOPLE_OF_INTEREST:
+    RELEVANCE_CONTEXT += (
+        "\n\n== People of Particular Interest ==\n"
+        + ", ".join(PEOPLE_OF_INTEREST)
+        + " — papers they author deserve extra attention.\n"
+    )

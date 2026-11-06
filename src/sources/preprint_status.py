@@ -77,7 +77,8 @@ def from_arxiv(doi: str) -> dict | None:
         return None
     pub = _clean(entry.findtext("x:doi", "", ns) or "")
     if pub and pub != doi:
-        return {"doi": pub, "journal": (entry.findtext("x:journal_ref", "", ns) or "").strip(), "year": ""}
+        # journal_ref is author-typed free text ("Nature methods, 1-13 (2024)"); Crossref supplies the clean name
+        return {"doi": pub, "journal": "", "year": ""}
     return None
 
 

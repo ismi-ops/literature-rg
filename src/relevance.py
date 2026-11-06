@@ -7,6 +7,7 @@ import os
 import re
 
 from src.config import RELEVANCE_CONTEXT, KNOWN_TAGS
+from src import people_of_interest
 
 _client = None
 
@@ -202,6 +203,9 @@ def _keyword_score(paper: dict) -> dict:
         if author.lower() in authors.lower():
             points += 2
             break
+    else:
+        if people_of_interest.match_paper(paper):
+            points += 2
 
     if any(j.lower() in journal.lower() for j in _TOP_JOURNALS):
         points += 1
