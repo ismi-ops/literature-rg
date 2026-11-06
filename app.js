@@ -5,7 +5,6 @@
 const BOOT = (document.currentScript && document.currentScript.dataset) || {};
 const PAGE_SIZES = [15, 25, 50, 100];
 const DEFAULT_PAGE_SIZE = 25;
-const COLLAPSED_CHIPS = 5;   // chips shown in a long filter row until its toggle is clicked
 
 function prefGet(k, d) { try { const v = localStorage.getItem(k); return v === null ? d : v; } catch (e) { return d; } }
 function prefSet(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
@@ -17,8 +16,7 @@ let TAG_BLOCKLIST = new Set();
 function isTopicTag(t) { return !TAG_BLOCKLIST.has(t.toLowerCase()); }
 
 const state = {
-  type: 'all', preprint: false, ru: false, collab: '', tags: new Set(),
-  year: 'all', added: 'all', search: '',
+  search: '',
   page: 1,
   pageSize: (() => { const n = parseInt(prefGet('rg_page_size', ''), 10); return PAGE_SIZES.includes(n) ? n : DEFAULT_PAGE_SIZE; })(),
 };
@@ -35,12 +33,14 @@ function computeTopPicks(papers) {
 }
 
 /* ── Filter dimensions ──────────────────────────────────────────────────────
-   Each dimension has passes(p) (does the paper satisfy the current selection?) and
-   keys(p) (which chip keys the paper belongs to). compute() uses both for live counts. */
+   sel[dim] is the set of selected option keys (empty = no restriction). Within a dimension the
+   selections are OR'd; across dimensions they are AND'd.
+   passes(p): does the paper satisfy the current selection of this dimension?
+   keys(p):   which option keys does the paper belong to? (drives the live counts) */
 const today = new Date();
 function daysAgo(n) { const d = new Date(today); d.setDate(d.getDate() - n); return d.toISOString().slice(0, 10); }
 const ADDED_RANGES = [
-  { label: 'All', key: 'all' },
+  { label: 'Any time', key: 'all' },
   { label: 'Last 30 days', key: '30' },
   { label: 'Last 3 months', key: '90' },
   { label: 'Last 6 months', key: '180' },
@@ -51,54 +51,56 @@ const ADDED_CUTOFF = Object.fromEntries(ADDED_RANGES.map(r => [r.key,
 
 const typeOf = p => p.type || 'research';
 const yearOf = p => String(p.year || '').trim();
+// Property order is the order the dropdowns appear in.
 const DIMS = {
-  type:   { passes: p => state.type === 'all' || typeOf(p) === state.type,
-            keys:   p => ['all', typeOf(p)] },
-  status: { passes: p => !state.preprint || !!p.preprint,
-            keys:   p => p.preprint ? ['all', 'preprint'] : ['all'] },
-  picks:  { passes: p => !state.ru || !!p.ru_pick,
-            keys:   p => p.ru_pick ? ['all', 'ru'] : ['all'] },
-  collab: { passes: p => state.collab ? p.vip_author === state.collab : !p.vip_only,
-            keys:   p => { const k = p.vip_only ? [] : ['all']; if (p.vip_author) k.push(p.vip_author); return k; } },
-  tags:   { passes: p => state.tags.size === 0 || (p.tags || []).some(t => state.tags.has(t)),
+  type:   { label: 'Type',
+            passes: p => !sel.type.size || sel.type.has(typeOf(p)),
+            keys:   p => [typeOf(p)] },
+  status: { label: 'Status',
+            passes: p => !sel.status.size || !!p.preprint,
+            keys:   p => p.preprint ? ['preprint'] : [] },
+  picks:  { label: 'Picks',
+            passes: p => !sel.picks.size || sel.picks.has(p.ru_pick ? 'ru' : 'agent'),
+            keys:   p => [p.ru_pick ? 'ru' : 'agent'] },
+  collab: { label: 'Collaborators',
+            passes: p => sel.collab.size ? sel.collab.has(p.vip_author) : !p.vip_only,
+            keys:   p => p.vip_author ? [p.vip_author] : [] },
+  tags:   { label: 'Topic',
+            passes: p => !sel.tags.size || (p.tags || []).some(t => sel.tags.has(t)),
             keys:   p => (p.tags || []).filter(isTopicTag) },
-  year:   { passes: p => state.year === 'all' || yearOf(p) === state.year,
-            keys:   p => yearOf(p) ? ['all', yearOf(p)] : ['all'] },
-  added:  { passes: p => state.added === 'all' || (p.added || '') >= ADDED_CUTOFF[state.added],
+  year:   { label: 'Year',
+            passes: p => !sel.year.size || sel.year.has(yearOf(p)),
+            keys:   p => yearOf(p) ? [yearOf(p)] : [] },
+  added:  { label: 'Added', single: true,   // ranges overlap, so pick one
+            passes: p => !sel.added.size || (p.added || '') >= ADDED_CUTOFF[[...sel.added][0]],
             keys:   p => ADDED_RANGES.filter(r => r.key === 'all' || (p.added || '') >= ADDED_CUTOFF[r.key]).map(r => r.key) },
+  pdf:    { label: 'PDF', admin: true,      // only shown when a GitHub token is saved (the site owner)
+            passes: p => !sel.pdf.size || !p.pdf_link,
+            keys:   p => p.pdf_link ? [] : ['missing'] },
 };
 const DIM_NAMES = Object.keys(DIMS);
+const sel = Object.fromEntries(DIM_NAMES.map(d => [d, new Set()]));
 
-function isActive(dim, key) {
-  switch (dim) {
-    case 'type':   return state.type === key;
-    case 'status': return key === 'all' ? !state.preprint : state.preprint;
-    case 'picks':  return key === 'all' ? !state.ru : state.ru;
-    case 'collab': return key === 'all' ? !state.collab : state.collab === key;
-    case 'tags':   return state.tags.has(key);
-    case 'year':   return state.year === key;
-    case 'added':  return state.added === key;
-  }
-  return false;
-}
+function isActive(dim, key) { return key === 'all' ? sel[dim].size === 0 : sel[dim].has(key); }
 
 function setFilter(dim, key) {
-  switch (dim) {
-    case 'type':   state.type = key; break;
-    case 'status': state.preprint = key === 'preprint'; break;
-    case 'picks':  state.ru = key === 'ru'; break;
-    case 'collab': state.collab = key === 'all' ? '' : key; break;
-    case 'tags':   if (state.tags.has(key)) state.tags.delete(key); else state.tags.add(key); break;
-    case 'year':   state.year = key; break;
-    case 'added':  state.added = key; break;
-  }
+  const s = sel[dim];
+  if (DIMS[dim].single) { s.clear(); if (key !== 'all') s.add(key); }
+  else if (s.has(key)) s.delete(key);
+  else s.add(key);
   state.page = 1;
   update();
 }
+function clearFilters() {
+  DIM_NAMES.forEach(d => sel[d].clear());
+  state.page = 1;
+  update();
+}
+function activeFilterCount() { return DIM_NAMES.reduce((n, d) => n + sel[d].size, 0); }
 
-/* One pass over PAPERS: the filtered list plus, for every chip, how many papers would match if that
-   chip were selected (all *other* active filters and the search still applied). A paper failing
-   exactly one dimension counts toward that dimension's chips only; failing two or more counts nowhere. */
+/* One pass over PAPERS: the filtered list plus, for every option, how many papers would match if
+   that option were selected (all *other* dimensions and the search still applied). A paper failing
+   exactly one dimension counts toward that dimension's options only; failing two or more counts nowhere. */
 function compute() {
   const counts = {};
   DIM_NAMES.forEach(d => { counts[d] = Object.create(null); });
@@ -121,104 +123,118 @@ function compute() {
   return { filtered, counts };
 }
 
-/* ── Filter UI ──────────────────────────────────────────────────────────── */
-const ROW_IDS = { type: 'type-filters', status: 'preprint-filters', picks: 'ru-filters', collab: 'collab-filters', tags: 'tag-filters', year: 'year-filters', added: 'added-filters' };
-const chipReg = {};   // dim -> Map(key -> { el, countEl })
-const rowCfg = {};    // dim -> { btn, expanded }   (only rows long enough to collapse)
-let rowPrefs = {};
-try { rowPrefs = JSON.parse(prefGet('rg_rows_expanded', '{}')) || {}; } catch (e) {}
+/* ── Filter UI: one multiselect dropdown per dimension ──────────────────── */
+const ddReg = {};     // dim -> { wrap, btn, nEl, panel }
+const chipReg = {};   // dim -> Map(key -> { row, input, countEl })
 
-function addChip(dim, key, label, count) {
-  const el = document.createElement('button');
-  el.type = 'button'; el.className = 'chip';
-  const countEl = document.createElement('span');
-  countEl.className = 'count'; countEl.textContent = count == null ? '' : count;
-  el.append(label, countEl);
-  el.addEventListener('click', () => setFilter(dim, key));
-  document.getElementById(ROW_IDS[dim]).appendChild(el);
-  if (!chipReg[dim]) chipReg[dim] = new Map();
-  chipReg[dim].set(key, { el, countEl });
-}
-function hideRow(dim) { document.getElementById(ROW_IDS[dim]).classList.add('is-empty'); }
-
-function initRowToggle(dim) {
-  const reg = chipReg[dim];
-  if (!reg || reg.size - (reg.has('all') ? 1 : 0) <= COLLAPSED_CHIPS) return;
+function makeDropdown(dim) {
+  const wrap = document.createElement('div');
+  wrap.className = 'dd';
   const btn = document.createElement('button');
-  btn.type = 'button'; btn.className = 'row-toggle';
-  const cfg = rowCfg[dim] = { btn, expanded: !!rowPrefs[dim] };
-  btn.addEventListener('click', () => {
-    cfg.expanded = !cfg.expanded;
-    rowPrefs[dim] = cfg.expanded;
-    prefSet('rg_rows_expanded', JSON.stringify(rowPrefs));
-    applyRowCollapse(dim);
-  });
-  document.getElementById(ROW_IDS[dim]).querySelector('.filter-head').appendChild(btn);
+  btn.type = 'button'; btn.className = 'dd-btn';
+  btn.setAttribute('aria-haspopup', 'true'); btn.setAttribute('aria-expanded', 'false');
+  const nEl = document.createElement('span'); nEl.className = 'dd-n';
+  const caret = document.createElement('span'); caret.className = 'dd-caret'; caret.textContent = '▾';
+  btn.append(DIMS[dim].label, nEl, caret);
+  const panel = document.createElement('div');
+  panel.className = 'dd-panel'; panel.setAttribute('role', 'group'); panel.setAttribute('aria-label', DIMS[dim].label);
+  wrap.append(btn, panel);
+  btn.addEventListener('click', () => toggleDropdown(dim));
+  document.getElementById('filter-bar').appendChild(wrap);
+  ddReg[dim] = { wrap, btn, nEl, panel };
+  chipReg[dim] = new Map();
 }
 
-// Collapsed rows show the first few chips plus any active ones, so a selection is never hidden.
-function applyRowCollapse(dim) {
-  const cfg = rowCfg[dim];
-  if (!cfg) return;
-  let idx = 0, hidden = 0;
-  chipReg[dim].forEach((c, key) => {
-    if (key === 'all') return;
-    const show = cfg.expanded || idx < COLLAPSED_CHIPS || isActive(dim, key);
-    c.el.classList.toggle('is-hidden', !show);
-    if (!show) hidden++;
-    idx++;
+function addOption(dim, key, label, count) {
+  const row = document.createElement('label');
+  row.className = 'dd-opt';
+  const input = document.createElement('input');
+  input.type = DIMS[dim].single ? 'radio' : 'checkbox';
+  input.name = 'f-' + dim;
+  input.addEventListener('change', () => setFilter(dim, key));
+  const text = document.createElement('span'); text.className = 'dd-label'; text.textContent = label;
+  const countEl = document.createElement('span'); countEl.className = 'count'; countEl.textContent = count == null ? '' : count;
+  row.append(input, text, countEl);
+  ddReg[dim].panel.appendChild(row);
+  chipReg[dim].set(key, { row, input, countEl });
+}
+function hideDropdown(dim) { ddReg[dim].wrap.classList.add('is-empty'); }
+
+function setOpen(dim, open) {
+  const d = ddReg[dim];
+  d.wrap.classList.toggle('open', open);
+  d.btn.setAttribute('aria-expanded', String(open));
+  if (open) {   // keep the panel on screen on narrow viewports
+    d.wrap.classList.remove('align-right');
+    if (d.panel.getBoundingClientRect().right > window.innerWidth - 8) d.wrap.classList.add('align-right');
+  }
+}
+function closeDropdowns(except) {
+  DIM_NAMES.forEach(d => { if (d !== except && ddReg[d] && ddReg[d].wrap.classList.contains('open')) setOpen(d, false); });
+}
+function toggleDropdown(dim) {
+  const open = !ddReg[dim].wrap.classList.contains('open');
+  closeDropdowns(open ? dim : null);
+  setOpen(dim, open);
+}
+document.addEventListener('click', e => { if (!e.target.closest('.dd')) closeDropdowns(); });
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Escape') return;
+  const open = DIM_NAMES.find(d => ddReg[d] && ddReg[d].wrap.classList.contains('open'));
+  if (open) { closeDropdowns(); ddReg[open].btn.focus(); }
+});
+
+// The "no PDF" filter is for the site owner: it appears only when a GitHub token is saved in this browser.
+function syncAdminFilters() {
+  DIM_NAMES.filter(d => DIMS[d].admin && ddReg[d]).forEach(d => {
+    const show = !!getToken();
+    ddReg[d].wrap.classList.toggle('is-empty', !show);
+    if (!show && sel[d].size) { sel[d].clear(); update(); }
   });
-  cfg.btn.textContent = cfg.expanded ? '− Less' : '…' + (hidden ? ' +' + hidden : '');
-  cfg.btn.title = cfg.expanded ? 'Show fewer options' : 'Show all options';
-  cfg.btn.setAttribute('aria-expanded', String(cfg.expanded));
 }
 
 function buildFilters(F) {
   TAG_BLOCKLIST = new Set(F.tagBlocklist || []);
+  DIM_NAMES.forEach(makeDropdown);
   const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
-  F.types.forEach(t => addChip('type', t, t === 'all' ? 'All' : cap(t), F.typeCounts[t]));
-  if (F.hasPreprint) { addChip('status', 'all', 'All'); addChip('status', 'preprint', 'Preprint'); } else hideRow('status');
-  addChip('picks', 'all', 'All');
-  addChip('picks', 'ru', "✨ Ru's Picks");
-  if (F.authors.length) {
-    addChip('collab', 'all', 'All');
-    F.authors.forEach(a => addChip('collab', a.name, a.name, a.count));
-  } else hideRow('collab');
-  if (F.tags.length) F.tags.forEach(t => addChip('tags', t.name, t.name, t.count)); else hideRow('tags');
-  addChip('year', 'all', 'All', F.total);
-  F.years.forEach(y => addChip('year', y.name, y.name, y.count));
-  ADDED_RANGES.forEach(r => addChip('added', r.key, r.label));
-  DIM_NAMES.forEach(initRowToggle);
+  F.types.filter(t => t !== 'all').forEach(t => addOption('type', t, cap(t), F.typeCounts[t]));
+  if (F.hasPreprint) addOption('status', 'preprint', 'Preprint'); else hideDropdown('status');
+  addOption('picks', 'ru', "✨ Ru's Picks");
+  addOption('picks', 'agent', 'Agent picks');
+  if (F.authors.length) F.authors.forEach(a => addOption('collab', a.name, a.name, a.count)); else hideDropdown('collab');
+  if (F.tags.length) F.tags.forEach(t => addOption('tags', t.name, t.name, t.count)); else hideDropdown('tags');
+  F.years.forEach(y => addOption('year', y.name, y.name, y.count));
+  ADDED_RANGES.forEach(r => addOption('added', r.key, r.label));
+  addOption('pdf', 'missing', 'No PDF');
+  syncAdminFilters();
   update();
 }
 
-// Active state, live counts and row collapsing; counts are null until the data has loaded.
+// Checkbox state, live counts and button badges; counts is null until the data has loaded.
 function syncChips(counts) {
   DIM_NAMES.forEach(dim => {
-    const reg = chipReg[dim];
-    if (!reg) return;
-    reg.forEach((c, key) => {
-      const active = isActive(dim, key);
-      c.el.classList.toggle('active', active);
+    if (!chipReg[dim]) return;
+    chipReg[dim].forEach((c, key) => {
+      const on = isActive(dim, key);
+      c.input.checked = on;
+      c.row.classList.toggle('checked', on);
       if (counts) {
         const n = counts[dim][key] || 0;
         c.countEl.textContent = n;
-        c.el.classList.toggle('zero', n === 0 && !active);
+        c.row.classList.toggle('zero', n === 0 && !on);
       }
     });
-    applyRowCollapse(dim);
+    const n = sel[dim].size;
+    ddReg[dim].nEl.textContent = n ? String(n) : '';
+    ddReg[dim].btn.classList.toggle('has-sel', n > 0);
   });
 }
 
-function activeFilterCount() {
-  return (state.type !== 'all' ? 1 : 0) + (state.preprint ? 1 : 0) + (state.ru ? 1 : 0) + (state.collab ? 1 : 0)
-    + state.tags.size + (state.year !== 'all' ? 1 : 0) + (state.added !== 'all' ? 1 : 0);
-}
-
-/* ── Whole-panel minimize (filters stay applied while hidden) ───────────── */
+/* ── Whole-bar minimize (filters stay applied while hidden) ─────────────── */
 const filtersEl = document.querySelector('.filters');
 const filtersToggle = document.getElementById('filters-toggle');
 function setFiltersCollapsed(collapsed) {
+  if (collapsed) closeDropdowns();
   filtersEl.classList.toggle('collapsed', collapsed);
   filtersToggle.setAttribute('aria-expanded', String(!collapsed));
 }
@@ -227,6 +243,7 @@ filtersToggle.addEventListener('click', () => {
   setFiltersCollapsed(collapsed);
   prefSet('rg_filters_min', collapsed ? '1' : '0');
 });
+document.getElementById('filters-clear').addEventListener('click', clearFilters);
 if (prefGet('rg_filters_min', '0') === '1') setFiltersCollapsed(true);
 
 /* ── Search (debounced) ─────────────────────────────────────────────────── */
@@ -243,7 +260,6 @@ grid.addEventListener('click', e => {
   const tag = e.target.dataset && e.target.dataset.clicktag;
   if (tag) setFilter('tags', tag);
 });
-
 
 /* ── Toast notifications ─────────────────────────────────────────────────── */
 function showToast(msg, type = 'success', duration = 8000) {
@@ -563,6 +579,7 @@ function update() {
   syncChips(counts);
   const n = activeFilterCount();
   document.getElementById('filters-badge').textContent = n ? n + ' active' : '';
+  document.getElementById('filters-clear').hidden = n === 0;
 }
 
 /* ── Boot ───────────────────────────────────────────────────────────────── */
@@ -631,6 +648,7 @@ document.getElementById('token-save-btn').addEventListener('click', () => {
   const fb = document.getElementById('token-feedback');
   if (!val) { fb.className = 'modal-feedback err'; fb.textContent = 'Please enter a token.'; return; }
   if (!saveToken(val)) { fb.className = 'modal-feedback err'; fb.textContent = 'Could not save token (browser storage may be blocked).'; return; }
+  syncAdminFilters();
   showPaperScreen();
 });
 document.getElementById('token-input').addEventListener('keydown', e => { if (e.key === 'Enter') document.getElementById('token-save-btn').click(); });
