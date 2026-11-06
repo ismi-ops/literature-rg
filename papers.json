@@ -8689,7 +8689,8 @@
     "added": "2026-10-15",
     "pdf_link": "https://www.frontiersin.org/journals/pediatrics/articles/10.3389/fped.2025.1646973/pdf",
     "source": "author_tracker",
-    "reasoning": "keyword match (no Anthropic API key)"
+    "reasoning": "keyword match (no Anthropic API key)",
+    "rejected": true
   },
   {
     "title": "Pancreatic progenitor cells respond to laminar shear stress with transcriptomic changes, accompanied by reduced YAP1 activity",
@@ -9990,7 +9991,8 @@
         "name": "Magdalena Zernicka-Goetz",
         "orcid": "0000-0002-7004-2471"
       }
-    ]
+    ],
+    "rejected": true
   },
   {
     "title": "spinDrop: a droplet microfluidic platform to maximise single-cell sequencing information content",
@@ -11021,7 +11023,8 @@
         "name": "Craig Blackstone",
         "orcid": "0000-0003-1261-9655"
       }
-    ]
+    ],
+    "rejected": true
   },
   {
     "title": "ER proteins decipher the tubulin code to regulate organelle distribution",
@@ -13051,7 +13054,8 @@
         "name": "Robert Prevedel",
         "orcid": "0000-0003-3366-4703"
       }
-    ]
+    ],
+    "rejected": true
   },
   {
     "title": "Integrative spatiotemporal modeling of biomolecular processes: application to the assembly of the Nuclear Pore Complex",
@@ -16678,7 +16682,8 @@
         "name": "Lucy M. Collinson",
         "orcid": "0000-0003-0260-613X"
       }
-    ]
+    ],
+    "rejected": true
   },
   {
     "title": "Terminal differentiation of villus tip enterocytes is governed by distinct Tgfβ superfamily members",
@@ -18908,7 +18913,8 @@
       {
         "name": "Michael B. Elowitz"
       }
-    ]
+    ],
+    "rejected": true
   },
   {
     "title": "Mapping and engineering the human cell–cell interactome",
@@ -21860,7 +21866,8 @@
       {
         "name": "Irving J. Zamora"
       }
-    ]
+    ],
+    "rejected": true
   },
   {
     "title": "Patient Safety and Radiation Exposure in Transcystic Laparoscopic Common Bile Duct Exploration: A CARES Working Group Multicenter Study.",
@@ -21950,7 +21957,8 @@
       {
         "name": "Maggie Bosley"
       }
-    ]
+    ],
+    "rejected": true
   },
   {
     "title": "Reducing MRCP Utilization Through a \"Surgery First\" Approach for Pediatric Choledocholithiasis: A CARES Working Group Retrospective Study.",
@@ -22040,7 +22048,8 @@
       {
         "name": "Maggie Bosley"
       }
-    ]
+    ],
+    "rejected": true
   },
   {
     "title": "\"Surgery First\" vs. \"Endoscopy First\" for Pediatric Choledocholithiasis Presenting at the End of the Week - A CARES Working Group Study.",
@@ -22151,7 +22160,8 @@
         "name": "Hanna Alemayehu",
         "orcid": "0000-0002-5203-3352"
       }
-    ]
+    ],
+    "rejected": true
   },
   {
     "title": "Multi-institutional Analysis of Choledocholithiasis in Pediatric vs Adult Patients.",
@@ -22220,7 +22230,8 @@
       {
         "name": "Hanna Alemayehu"
       }
-    ]
+    ],
+    "rejected": true
   },
   {
     "title": "Transcystic Laparoscopic Common Bile Duct Exploration for Pediatric Patients with Choledocholithiasis: A Multi-Center Study.",
@@ -22316,7 +22327,8 @@
         "name": "Lucas P. Neff",
         "orcid": "0009-0005-3487-3074"
       }
-    ]
+    ],
+    "rejected": true
   },
   {
     "title": "LLM Reasoning for Cold-Start Item Recommendation",
@@ -22336,7 +22348,8 @@
     "pdf_link": "",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "preprint": true
+    "preprint": true,
+    "rejected": true
   },
   {
     "title": "60 THE INFLUENCE OF READING THERAPY ON MENTAL REHABILITATION OF SCHIZOPHRENIC PATIENTS",
@@ -22353,7 +22366,8 @@
     "added": "2026-10-15",
     "pdf_link": "https://academic.oup.com/schizophreniabulletin/article-pdf/51/Supplement_1/S32/61939693/sbaf007.060.pdf",
     "source": "author_tracker",
-    "reasoning": "keyword match (no Anthropic API key)"
+    "reasoning": "keyword match (no Anthropic API key)",
+    "rejected": true
   },
   {
     "title": "Integrated medical and nursing ward rounds in a case of severe pneumonia",
@@ -22408,7 +22422,8 @@
       {
         "name": "Jianping HAN"
       }
-    ]
+    ],
+    "rejected": true
   },
   {
     "title": "Ciliogenic pancreatopathy reveals a link between ciliopathies and exocrine pancreatic disease",
@@ -23579,7 +23594,8 @@
     "pdf_link": "",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "preprint": true
+    "preprint": true,
+    "rejected": true
   },
   {
     "title": "Dynamiques du vivant",
@@ -23984,7 +24000,8 @@
         "name": "Michael P. Murrell",
         "orcid": "0000-0001-6788-2077"
       }
-    ]
+    ],
+    "rejected": true
   },
   {
     "title": "Motor crosslinking augments elasticity in active nematics",
