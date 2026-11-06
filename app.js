@@ -1,4 +1,4 @@
-/* app.js — Ru's Reading List.
+/* app.js — Ru's Repository.
    Boot order: index.html shell (+ inline password gate) -> this script -> filters.json (builds the
    filter UI) -> papers_data.json (live counts + cards). Both fetches start together. */
 
@@ -363,29 +363,58 @@ function hasPdf(p) { const u = safeUrl(p.pdf_link); return !!u && isDirectPdf(u)
 /* ── Card rendering ─────────────────────────────────────────────────────── */
 function authorLink(name) { return 'https://scholar.google.com/scholar?q=' + encodeURIComponent(name); }
 function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+// Long author lists collapse to the first 3 authors plus the last (senior / corresponding) author;
+// "+N more" expands the full list. If the source itself only listed the first few ("et al."), the last
+// listed name is not the senior author, so only the first 3 are kept.
+const AU_HEAD = 3;
+const AU_SEP = '<span class="au-sep"> · </span>';
+function authorsBlock(items, truncated) {
+  if (!items.length) return '';
+  const etal = truncated ? AU_SEP + '<span class="au-etal">et al.</span>' : '';
+  if (items.length <= AU_HEAD + 1) return '<div class="card-authors">' + items.join(AU_SEP) + etal + '</div>';
+  const hidden = items.length - AU_HEAD - (truncated ? 0 : 1);
+  const short = items.slice(0, AU_HEAD).join(AU_SEP) + AU_SEP + '<span class="au-gap">\u2026</span>'
+    + (truncated ? '' : AU_SEP + items[items.length - 1]) + etal;
+  return '<div class="card-authors">'
+    + '<span class="au-short">' + short + '</span>'
+    + '<span class="au-full">' + items.join(AU_SEP) + etal + '</span> '
+    + '<button type="button" class="au-toggle" data-more="' + hidden + '" aria-expanded="false" title="Show the full author list">+' + hidden + ' more</button>'
+    + '</div>';
+}
+document.getElementById('grid').addEventListener('click', e => {
+  const b = e.target.closest('.au-toggle');
+  if (!b) return;
+  const open = b.closest('.card-authors').classList.toggle('expanded');
+  b.textContent = open ? 'Show fewer' : '+' + b.dataset.more + ' more';
+  b.title = open ? 'Collapse the author list' : 'Show the full author list';
+  b.setAttribute('aria-expanded', String(open));
+});
+
 function fmt(p) {
   const type = (p.type||'research').toLowerCase();
   const badgeClass = 'badge-'+(type==='review'?'review':type==='perspective'?'perspective':type==='article'?'article':'research');
   const paperUrl = safeUrl(p.doi ? 'https://doi.org/'+p.doi : p.link);
   const titleHtml = paperUrl ? '<a href="'+esc(paperUrl)+'" target="_blank" rel="noopener">'+esc(p.title)+'</a>' : esc(p.title);
-  let authorHtml;
+  let authorItems, authorsTruncated = false;
   if (p.author_data && p.author_data.length) {
-    authorHtml = p.author_data.map(a => {
+    authorItems = p.author_data.map(a => {
       const name = a.name || '';
       if (!name) return '';
       const href = a.orcid
         ? 'https://orcid.org/' + esc(a.orcid)
         : authorLink(name);
       return '<a class="author-link" href="'+href+'" target="_blank" rel="noopener">'+esc(name)+'</a>';
-    }).filter(Boolean).join('');
+    }).filter(Boolean);
   } else {
     const rawAuthors = typeof p.authors === 'string' ? p.authors : (p.authors||[]).join(', ');
+    authorsTruncated = /et al/i.test(rawAuthors);   // the source only listed the first few
     const authorNames = rawAuthors.split(/,\s*et al\.?/).map(s=>s.trim()).join('').split(/,\s*/).map(s=>s.trim()).filter(Boolean);
-    authorHtml = authorNames.map(a => {
+    authorItems = authorNames.map(a => {
       const name = a.replace(/\s*et al\.?\s*$/,'').trim();
       return name ? '<a class="author-link" href="'+authorLink(name)+'" target="_blank" rel="noopener">'+esc(name)+'</a>' : '';
-    }).filter(Boolean).join('');
+    }).filter(Boolean);
   }
+  const authorHtml = authorsBlock(authorItems, authorsTruncated);
   const tags = (p.tags||[]).filter(isTopicTag).map(t=>'<span class="tag" data-clicktag="'+esc(t)+'">'+esc(t)+'</span>').join('');
   const added = p.added ? '<span class="card-date">added '+p.added+'</span>' : '';
   const jUrl = journalUrl(p.journal);
@@ -421,7 +450,7 @@ function fmt(p) {
   return '<div class="card" data-key="'+esc(paperKey(p))+'" data-pdfslug="'+esc(pdfSlug)+'">'
     +'<div class="card-meta"><span class="badge '+badgeClass+'">'+esc(type)+'</span>'+preprintBadge+publishedBadge+collabBadge+ruBadge+added+'</div>'
     +'<div class="card-title">'+titleHtml+'</div>'
-    +(authorHtml ? '<div class="card-authors">'+authorHtml+'</div>' : '')
+    +authorHtml
     +(venue ? '<div class="card-venue">'+venue+'</div>' : '')
     +(p.summary ? '<div class="card-summary">'+esc(p.summary)+'</div>' : '')
     +(p.relevance ? '<div class="card-relevance"><div class="card-relevance-label">Cell Science relevance</div><div class="card-relevance-text">'+esc(p.relevance)+'</div></div>' : '')
