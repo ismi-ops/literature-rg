@@ -134,6 +134,8 @@ def main():
         try:
             got = fn()
             print(f"{name}: {len(got)} entries")
+            for e in got[:8]:   # a peek, so a bad parse is obvious in the log
+                print(f"    - {(e.get('title') or e.get('doi'))[:100]}")
             fetched.extend(got)
         except Exception as e:   # one source failing must not wipe or block the other
             pubmed_failed = pubmed_failed or name == "PubMed"
