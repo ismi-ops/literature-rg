@@ -9899,7 +9899,7 @@
     "year": "2023",
     "journal": "Nature Cell Biology",
     "type": "research",
-    "summary": "",
+    "summary": "Nine stem cell biologists give their view on the field's most striking advances and open challenges. Topics include reprogramming and induced pluripotency, muscle and heart regeneration, human neural organoids and assembloids, lung biology at single-cell resolution, blood stem cell development and ageing, epidermal stem cells and data integration, islet beta-cell regeneration, and whole-embryo models built from stem cells. Common needs emerge: better tools to map cell states and cell-cell interactions, engineering approaches for precise perturbation, and closer pairing of in vitro models with in vivo studies.",
     "relevance": "Relevant to Cell Science's core work on hiPSC biology, pluripotent stem cell engineering, and stem cell-derived model systems.",
     "tags": [],
     "doi": "10.1038/s41556-023-01087-y",
@@ -11484,7 +11484,7 @@
     "year": "2024",
     "journal": "Current opinion in genetics & development",
     "type": "research",
-    "summary": "",
+    "summary": "This editorial introduces a themed issue on how the timing and tempo of development are controlled, and why the pace of molecular and cellular processes matters for building tissues and organs. The articles cover epigenetic and metabolic control of developmental pace, internal mechanisms that coordinate time in embryos without an external clock, comparative studies of species-specific tempo, and temporal programs that pattern tissues. Together they offer a multidisciplinary view of the mechanisms that set the rate of development and their evolution.",
     "relevance": "Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs.",
     "tags": [
       "development"
@@ -24860,7 +24860,7 @@
     "year": "2023",
     "journal": "Nature Reviews Physics",
     "type": "research",
-    "summary": "",
+    "summary": "Morphogenetic events shape the body plan, but studying human development directly is limited by technical and ethical constraints, so stem cell-based in vitro models and theoretical models have been built to recapitulate them. This Review examines these models for topological events such as lumen formation, segmentation and folding, and for conformational morphogenesis, comparing them with natural development with emphasis on biomechanical driving forces. It highlights the engineering methods used to build them and the biomechanical and biophysical principles they have revealed. The authors discuss current limitations and propose combining theoretical and in vitro models with in vivo studies.",
     "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures.",
     "tags": [
       "morphogenesis"
@@ -24928,7 +24928,7 @@
     "year": "2021",
     "journal": "Nature",
     "type": "research",
-    "summary": "",
+    "summary": "Access to human embryos is limited, and models of the pre-implantation blastocyst have been lacking. Starting from naive human pluripotent stem cells, this study develops a three-dimensional culture strategy with successive lineage differentiation and self-organization that produces blastocyst-like structures, termed human blastoids. Blastoids resemble human blastocysts in morphology, size, cell number and the allocation of the embryonic and extra-embryonic lineages, and their single-cell transcriptomes are similar. They can seed embryonic and extra-embryonic stem cell derivation and develop into peri-implantation embryo-like structures, and chemical perturbations revealed a critical role for specific protein kinase C isozymes in forming the cavity.",
     "relevance": "Relevant to Cell Science's core work on hiPSC biology, pluripotent stem cell engineering, and stem cell-derived model systems.",
     "tags": [
       "stem cells"
@@ -25064,8 +25064,8 @@
     "year": "2021",
     "journal": "Nature",
     "type": "research",
-    "summary": "",
-    "relevance": "",
+    "summary": "Simple stem cell cultures cannot capture the spatiotemporal complexity of early human development, and research on human blastocysts faces technical and ethical constraints. This study reprograms human fibroblasts into three-dimensional blastocyst models, termed iBlastoids, which reproduce the overall blastocyst architecture: an inner cell mass-like structure with epiblast- and primitive endoderm-like cells, a blastocoel-like cavity and an outer trophectoderm-like layer. Single-cell transcriptomics confirms these three cell states. iBlastoids can give rise to pluripotent and trophoblast stem cells and model aspects of early implantation, offering a scalable system for studying early human development, the effects of mutations and toxins, and in vitro fertilization therapies.",
+    "relevance": "Relevant to Cell Science's core work on hiPSC biology, pluripotent stem cell engineering, and stem cell-derived model systems.",
     "tags": [],
     "doi": "10.1038/s41586-021-03372-y",
     "link": "https://doi.org/10.1038/s41586-021-03372-y",
