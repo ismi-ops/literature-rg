@@ -470,9 +470,8 @@ function fmt(p) {
   const publishedBadge = p.published_on && p.published_on >= daysAgo(30)
     ? '<span class="badge badge-published" title="Formerly a preprint (' + esc((p.previous_dois || []).slice(-1)[0] || '') + '), now published">&#10003; Published</span>' : '';
   const collabBadge = p.vip_author ? '<span class="badge badge-collab" title="Paper by collaborator '+esc(p.vip_author)+'">&#128101; '+esc(p.vip_author)+'</span>' : '';
-  const ruBadge = p.ru_pick ? '<span class="ru-badge">&#10024; Ru\'s Picks</span>' : '';
   return '<div class="card" data-key="'+esc(paperKey(p))+'" data-pdfslug="'+esc(pdfSlug)+'">'
-    +'<div class="card-meta"><span class="badge '+badgeClass+'">'+esc(type)+'</span>'+preprintBadge+publishedBadge+collabBadge+ruBadge+added+'</div>'
+    +'<div class="card-meta"><span class="badge '+badgeClass+'">'+esc(type)+'</span>'+preprintBadge+publishedBadge+collabBadge+added+'</div>'
     +'<div class="card-title">'+titleHtml+'</div>'
     +authorHtml
     +(venue ? '<div class="card-venue">'+venue+'</div>' : '')
