@@ -63,19 +63,18 @@ def parse_pubmed_xml(xml_text: str) -> list[dict]:
 
 
 def parse_website(page: str) -> list[dict]:
-    """Best effort: link/heading texts that look like paper titles, plus any DOIs linked on the page."""
+    """Only entries tied to a DOI link count: a live run showed that headings and menu text on the page are
+    noise (the publication list itself appears to be loaded by JavaScript, so a plain fetch may find nothing)."""
     out, seen = [], set()
-    for m in re.finditer(r"<(h[1-6]|a)\b[^>]*>(.*?)</\1>", page, flags=re.S | re.I):
+    for m in re.finditer(r"""<a\b[^>]*href=["'][^"']*doi\.org/(10\.\d{4,9}/[^"'\s?#]+)[^"']*["'][^>]*>(.*?)</a>""", page, flags=re.S | re.I):
+        doi = normalize_doi(m.group(1)).rstrip(".,;)")
+        if doi in seen:
+            continue
+        seen.add(doi)
         text = html.unescape(re.sub(r"<[^>]+>", " ", m.group(2)))
         text = re.sub(r"\s+", " ", text).strip().rstrip(".")
-        if 30 <= len(text) <= 400 and len(text.split()) >= 5 and text.lower() not in seen:
-            seen.add(text.lower())
-            out.append({"title": text, "doi": "", "source": "website"})
-    for m in re.finditer(r"doi\.org/(10\.\d{4,9}/[^\s\"'<>?#]+)", page, flags=re.I):
-        doi = normalize_doi(m.group(1)).rstrip(".,;)")
-        if doi not in seen:
-            seen.add(doi)
-            out.append({"title": "", "doi": doi, "source": "website"})
+        title = text if len(text) >= 30 and len(text.split()) >= 5 else ""   # "Read more" etc. are not titles
+        out.append({"title": title, "doi": doi, "source": "website"})
     return out
 
 
