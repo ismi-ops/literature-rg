@@ -122,11 +122,11 @@ def main():
     if not args.no_regen:
         result = subprocess.run(["python", "generate_site.py"], capture_output=True, text=True)
         if result.returncode == 0:
-            print("Regenerated index.html")
+            print("Regenerated index.html, filters.json, papers_data.json")
         else:
             print("Warning: generate_site.py failed:", result.stderr[:200])
 
-    print(f"\nDone. Commit and push to publish:\n  git add pdfs/{dest.name} papers.json index.html && git commit -m 'feat: add PDF for {paper['title'][:50]}' && git push")
+    print(f"\nDone. Commit and push to publish:\n  git add pdfs/{dest.name} papers.json index.html filters.json papers_data.json && git commit -m 'feat: add PDF for {paper['title'][:50]}' && git push")
 
 
 if __name__ == "__main__":

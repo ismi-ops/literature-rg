@@ -94,7 +94,7 @@ jobs:
             fi
             python generate_site.py
             git reset origin/main
-            git add papers.json index.html
+            git add papers.json index.html filters.json papers_data.json
             if git diff --cached --quiet; then
               echo "No changes after merge — nothing to push."
               PUSHED=1

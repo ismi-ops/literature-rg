@@ -1,17 +1,69 @@
-"""Generate index.html from papers.json."""
+"""Generate the static site from papers.json.
+
+Outputs (all served as-is by GitHub Pages):
+  index.html       page shell + inline password gate
+  filters.json     filter options + totals (small; fetched first so the filter UI builds immediately)
+  papers_data.json every paper (fetched alongside, renders cards and drives live filter counts)
+app.js is hand-written and committed as-is; only its content hash is read here for cache-busting.
+"""
+import hashlib
 import json
+from collections import Counter
 from pathlib import Path
 
 PAPERS_PATH = Path("papers.json")
-OUTPUT_PATH = Path("index.html")
+INDEX_PATH = Path("index.html")
+APP_JS_PATH = Path("app.js")
+FILTERS_PATH = Path("filters.json")
+DATA_PATH = Path("papers_data.json")
+
+TAG_BLOCKLIST = ["perspective", "perspectives", "review", "research", "preprint", "editorial", "comment", "letter"]
+TYPES = ["all", "research", "review", "perspective", "article"]
 
 
-def build_html(papers):
-    papers_json = json.dumps(papers, ensure_ascii=False)
-    return HTML_TEMPLATE.replace("__PAPERS_JSON__", papers_json)
+def _dumps(obj):
+    return json.dumps(obj, ensure_ascii=False, separators=(",", ":"))
 
 
-HTML_TEMPLATE = """<!doctype html>
+def sort_papers(papers):
+    """Newest added first, then highest score (stable for ties)."""
+    return sorted(papers, key=lambda p: (p.get("added") or "", p.get("score") or 0), reverse=True)
+
+
+def build_filters(papers):
+    topic_tags = Counter(
+        t for p in papers for t in (p.get("tags") or []) if t.lower() not in TAG_BLOCKLIST
+    )
+    years = Counter(str(p["year"]).strip() for p in papers if str(p.get("year") or "").strip())
+    authors = Counter(p["vip_author"] for p in papers if p.get("vip_author"))
+    type_counts = Counter(p.get("type") or "research" for p in papers)
+    type_counts["all"] = len(papers)
+    return {
+        "total": len(papers),
+        "types": TYPES,
+        "typeCounts": {t: type_counts.get(t, 0) for t in TYPES},
+        "hasPreprint": any(p.get("preprint") for p in papers),
+        "tagBlocklist": TAG_BLOCKLIST,
+        "tags": [{"name": t, "count": n} for t, n in topic_tags.most_common()],
+        "years": [{"name": y, "count": years[y]} for y in sorted(years, key=lambda y: (not y.isdigit(), -int(y) if y.isdigit() else 0, y))],
+        "authors": [{"name": a, "count": authors[a]} for a in sorted(authors, key=lambda a: (a.split()[-1].lower(), a.lower()))],
+    }
+
+
+def _version(data: bytes) -> str:
+    return hashlib.sha1(data).hexdigest()[:10]
+
+
+def build_index(app_js: bytes, filters_json: str, data_json: str) -> str:
+    return (
+        HTML_TEMPLATE
+        .replace("__APP_V__", _version(app_js))
+        .replace("__FILTERS_V__", _version(filters_json.encode("utf-8")))
+        .replace("__DATA_V__", _version(data_json.encode("utf-8")))
+    )
+
+
+HTML_TEMPLATE = r"""<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -81,6 +133,34 @@ HTML_TEMPLATE = """<!doctype html>
   .chip:hover { border-color: var(--accent); color: var(--accent); }
   .chip.active { background: var(--chip-active-bg); color: var(--chip-active-text); border-color: var(--chip-active-bg); }
   .chip .count { margin-left: 5px; opacity: .75; font-size: 11px; }
+  .chip.is-hidden { display: none; }
+  .chip.zero:not(.active) { opacity: .4; }
+  .filters { max-height: 60vh; overflow-y: auto; }
+  .filters-top { max-width: 1100px; margin: auto; display: flex; align-items: center; gap: 10px; }
+  .filters-top + .filters-inner { margin: 8px auto 0; }
+  .filters.collapsed .filters-inner { display: none; }
+  .filters-toggle { display: inline-flex; align-items: center; gap: 6px; padding: 2px 4px; border: none; background: none; color: var(--text); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; cursor: pointer; }
+  .filters-toggle:hover { color: var(--accent); }
+  .ft-caret { display: inline-block; transition: transform .15s; }
+  .filters.collapsed .ft-caret { transform: rotate(-90deg); }
+  .ft-badge { font-size: 11px; font-weight: 600; text-transform: none; letter-spacing: 0; padding: 1px 8px; border-radius: 10px; background: var(--accent); color: #fff; }
+  .ft-badge:empty { display: none; }
+  .filter-row.is-empty { display: none; }
+  .filter-head { display: inline-flex; align-items: center; gap: 6px; min-width: 176px; }
+  .row-toggle { padding: 2px 8px; border-radius: 12px; border: 1px dashed var(--border); background: none; color: var(--muted); font-size: 11.5px; cursor: pointer; white-space: nowrap; transition: border-color .12s, color .12s; }
+  .row-toggle:hover { border-color: var(--accent); color: var(--accent); }
+  @media (max-width: 640px) { .filter-head { min-width: 0; width: 100%; } }
+
+  /* ── Toolbar + pagination ─────────────────────────────────────────────── */
+  .toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; font-size: 13px; color: var(--muted); }
+  .page-size-label { display: inline-flex; align-items: center; gap: 6px; }
+  #page-size { padding: 4px 8px; border: 1px solid var(--border); border-radius: 7px; background: var(--surface); color: var(--text); font-size: 13px; cursor: pointer; }
+  .pager { display: flex; justify-content: center; align-items: center; gap: 6px; flex-wrap: wrap; margin-top: 28px; }
+  .page-btn { min-width: 34px; padding: 5px 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--text); font-size: 13px; cursor: pointer; transition: border-color .12s, color .12s; }
+  .page-btn:hover:not(:disabled):not(.active) { border-color: var(--accent); color: var(--accent); }
+  .page-btn.active { background: var(--chip-active-bg); color: var(--chip-active-text); border-color: var(--chip-active-bg); cursor: default; }
+  .page-btn:disabled { opacity: .4; cursor: default; }
+  .page-gap { color: var(--muted); padding: 0 2px; }
 
   /* ── Cards ────────────────────────────────────────────────────────────── */
   main { max-width: 1100px; margin: 24px auto; padding: 0 24px 48px; }
@@ -222,17 +302,27 @@ HTML_TEMPLATE = """<!doctype html>
   </div>
 </header>
 <div class="filters">
-  <div class="filters-inner">
-    <div class="filter-row" id="type-filters"><span class="filter-label">Type</span></div>
-    <div class="filter-row" id="preprint-filters"><span class="filter-label">Status</span></div>
-    <div class="filter-row" id="ru-filters"><span class="filter-label">Picks</span></div>
-    <div class="filter-row" id="collab-filters"><span class="filter-label">Collaborators</span></div>
-    <div class="filter-row" id="tag-filters"><span class="filter-label">Topic</span></div>
-    <div class="filter-row" id="year-filters"><span class="filter-label">Year</span></div>
-    <div class="filter-row" id="added-filters"><span class="filter-label">Added</span></div>
+  <div class="filters-top">
+    <button type="button" class="filters-toggle" id="filters-toggle" aria-expanded="true" aria-controls="filters-inner"><span class="ft-caret">&#9662;</span> Filters <span class="ft-badge" id="filters-badge"></span></button>
+  </div>
+  <div class="filters-inner" id="filters-inner">
+    <div class="filter-row" id="type-filters"><span class="filter-head"><span class="filter-label">Type</span></span></div>
+    <div class="filter-row" id="preprint-filters"><span class="filter-head"><span class="filter-label">Status</span></span></div>
+    <div class="filter-row" id="ru-filters"><span class="filter-head"><span class="filter-label">Picks</span></span></div>
+    <div class="filter-row" id="collab-filters"><span class="filter-head"><span class="filter-label">Collaborators</span></span></div>
+    <div class="filter-row" id="tag-filters"><span class="filter-head"><span class="filter-label">Topic</span></span></div>
+    <div class="filter-row" id="year-filters"><span class="filter-head"><span class="filter-label">Year</span></span></div>
+    <div class="filter-row" id="added-filters"><span class="filter-head"><span class="filter-label">Added</span></span></div>
   </div>
 </div>
-<main><div class="grid" id="grid"></div></main>
+<main>
+  <div class="toolbar">
+    <span id="range-label"></span>
+    <label class="page-size-label">Per page <select id="page-size"></select></label>
+  </div>
+  <div class="grid" id="grid"><div class="empty">Loading papers&hellip;</div></div>
+  <nav class="pager" id="pager" aria-label="Pagination"></nav>
+</main>
 
 <div id="toast-container"></div>
 <!-- Add Paper modal -->
@@ -291,615 +381,8 @@ document.getElementById('pw-input').addEventListener('keydown', e => {
   if (e.key === 'Enter') document.getElementById('pw-btn').click();
   document.getElementById('pw-error').textContent = '';
 });
-
-/* ── Data ───────────────────────────────────────────────────────────────── */
-const PAPERS = __PAPERS_JSON__;
-PAPERS.sort((a, b) => {
-  const da = a.added || '', db = b.added || '';
-  if (da !== db) return da > db ? -1 : 1;
-  return (b.score || 0) - (a.score || 0);
-});
-
-/* ── Top picks (highest-scored 4 from the past 7 days) ──────────────────── */
-const _latestDate = PAPERS.reduce((max, p) => (p.added||'') > max ? (p.added||'') : max, '');
-const _sevenDaysAgo = (() => { const d = new Date(_latestDate || new Date()); d.setDate(d.getDate()-7); return d.toISOString().slice(0,10); })();
-const _recentBatch = PAPERS.filter(p => (p.added||'') >= _sevenDaysAgo)
-  .slice().sort((a, b) => (b.score||0) - (a.score||0));
-const TOP_PICK_IDS = new Set(_recentBatch.slice(0, 4).map(p => p.doi || p.title || ''));
-function isTopPick(p) { return TOP_PICK_IDS.size > 0 && TOP_PICK_IDS.has(p.doi || p.title || ''); }
-
-/* ── Filter state ───────────────────────────────────────────────────────── */
-let activeType = 'all', activeTags = new Set(), activeYear = 'all', activeAdded = 'all', activePreprint = false, activeCollab = '', activeRuPick = false, searchText = '';
-
-/* ── Type chips ─────────────────────────────────────────────────────────── */
-function countByType(type) {
-  return type === 'all' ? PAPERS.length : PAPERS.filter(p => (p.type||'research') === type).length;
-}
-const TYPES = ['all','research','review','perspective','article'];
-const typeRow = document.getElementById('type-filters');
-TYPES.forEach(t => {
-  const chip = document.createElement('button');
-  chip.className = 'chip' + (t === 'all' ? ' active' : '');
-  chip.dataset.type = t;
-  const label = t === 'all' ? 'All' : t.charAt(0).toUpperCase() + t.slice(1);
-  chip.innerHTML = label + '<span class="count">' + countByType(t) + '</span>';
-  chip.addEventListener('click', () => {
-    activeType = t;
-    document.querySelectorAll('#type-filters .chip').forEach(c => c.classList.remove('active'));
-    chip.classList.add('active'); render();
-  });
-  typeRow.appendChild(chip);
-});
-
-/* ── Chosen by Ru filter ────────────────────────────────────────────────── */
-const ruPapers = PAPERS.filter(p => p.ru_pick);
-const ruRow = document.getElementById('ru-filters');
-const ruAllChip = document.createElement('button');
-ruAllChip.className = 'chip active'; ruAllChip.textContent = 'All';
-ruAllChip.addEventListener('click', () => {
-  activeRuPick = false;
-  ruAllChip.classList.add('active'); ruPickChip.classList.remove('active'); render();
-});
-const ruPickChip = document.createElement('button');
-ruPickChip.className = 'chip';
-ruPickChip.innerHTML = '&#10024; Ru\\'s Picks<span class="count">' + ruPapers.length + '</span>';
-ruPickChip.addEventListener('click', () => {
-  activeRuPick = true;
-  ruPickChip.classList.add('active'); ruAllChip.classList.remove('active'); render();
-});
-ruRow.appendChild(ruAllChip);
-ruRow.appendChild(ruPickChip);
-
-
-/* ── Preprint filter ────────────────────────────────────────────────────── */
-const preprintCount = PAPERS.filter(p => p.preprint).length;
-const preprintRow = document.getElementById('preprint-filters');
-if (preprintCount > 0) {
-  const allChip = document.createElement('button');
-  allChip.className = 'chip active'; allChip.textContent = 'All';
-  allChip.addEventListener('click', () => {
-    activePreprint = false;
-    allChip.classList.add('active'); preChip.classList.remove('active'); render();
-  });
-  const preChip = document.createElement('button');
-  preChip.className = 'chip';
-  preChip.innerHTML = 'Preprint<span class="count">' + preprintCount + '</span>';
-  preChip.addEventListener('click', () => {
-    activePreprint = true;
-    preChip.classList.add('active'); allChip.classList.remove('active'); render();
-  });
-  preprintRow.appendChild(allChip);
-  preprintRow.appendChild(preChip);
-} else {
-  preprintRow.style.display = 'none';
-}
-
-/* ── Collaborators filter ───────────────────────────────────────────────── */
-const collabPapers = PAPERS.filter(p => p.vip_author);
-const collabRow = document.getElementById('collab-filters');
-if (collabPapers.length > 0) {
-  const collabChips = [];
-  const collabAllChip = document.createElement('button');
-  collabAllChip.className = 'chip active'; collabAllChip.textContent = 'All';
-  collabAllChip.addEventListener('click', () => {
-    activeCollab = '';
-    collabChips.forEach(c => c.classList.remove('active'));
-    collabAllChip.classList.add('active'); render();
-  });
-  collabRow.appendChild(collabAllChip);
-  // one chip per author, sorted alphabetically by last name
-  const authors = [...new Set(collabPapers.map(p => p.vip_author))].sort((a, b) => {
-    const lastName = n => n.split(' ').pop();
-    return lastName(a).localeCompare(lastName(b));
-  });
-  authors.forEach(author => {
-    const n = collabPapers.filter(p => p.vip_author === author).length;
-    const chip = document.createElement('button');
-    chip.className = 'chip';
-    chip.innerHTML = author + '<span class="count">' + n + '</span>';
-    chip.addEventListener('click', () => {
-      collabChips.forEach(c => c.classList.remove('active'));
-      collabAllChip.classList.remove('active');
-      chip.classList.add('active');
-      activeCollab = author; render();
-    });
-    collabRow.appendChild(chip);
-    collabChips.push(chip);
-  });
-} else {
-  collabRow.style.display = 'none';
-}
-
-/* ── Topic tag chips ────────────────────────────────────────────────────── */
-const TAG_BLOCKLIST = new Set(['perspective','perspectives','review','research','preprint','editorial','comment','letter']);
-function isTopicTag(t) { return !TAG_BLOCKLIST.has(t.toLowerCase()); }
-const tagCounts = {};
-PAPERS.forEach(p => (p.tags||[]).filter(isTopicTag).forEach(tag => { tagCounts[tag] = (tagCounts[tag]||0)+1; }));
-const allTags = Object.entries(tagCounts).sort((a,b)=>b[1]-a[1]).map(([t])=>t);
-const tagRow = document.getElementById('tag-filters');
-allTags.forEach(tag => {
-  const chip = document.createElement('button');
-  chip.className = 'chip'; chip.dataset.tag = tag;
-  chip.innerHTML = tag + '<span class="count">' + tagCounts[tag] + '</span>';
-  chip.addEventListener('click', () => {
-    if (activeTags.has(tag)) { activeTags.delete(tag); chip.classList.remove('active'); }
-    else { activeTags.add(tag); chip.classList.add('active'); }
-    render();
-  });
-  tagRow.appendChild(chip);
-});
-
-/* ── Publication year chips ─────────────────────────────────────────────── */
-const yearCounts = {};
-PAPERS.forEach(p => { const y = String(p.year||'').trim(); if (y) yearCounts[y] = (yearCounts[y]||0)+1; });
-const allYears = Object.keys(yearCounts).sort((a,b)=>b-a);
-const yearRow = document.getElementById('year-filters');
-{
-  const chip = document.createElement('button');
-  chip.className = 'chip active'; chip.dataset.year = 'all';
-  chip.innerHTML = 'All<span class="count">'+PAPERS.length+'</span>';
-  chip.addEventListener('click', () => {
-    activeYear = 'all';
-    document.querySelectorAll('#year-filters .chip').forEach(c => c.classList.remove('active'));
-    chip.classList.add('active'); render();
-  });
-  yearRow.appendChild(chip);
-}
-allYears.forEach(y => {
-  const chip = document.createElement('button');
-  chip.className = 'chip'; chip.dataset.year = y;
-  chip.innerHTML = y + '<span class="count">'+yearCounts[y]+'</span>';
-  chip.addEventListener('click', () => {
-    activeYear = y;
-    document.querySelectorAll('#year-filters .chip').forEach(c => c.classList.remove('active'));
-    chip.classList.add('active'); render();
-  });
-  yearRow.appendChild(chip);
-});
-
-/* ── Date-added chips ───────────────────────────────────────────────────── */
-const today = new Date();
-function daysAgo(n) {
-  const d = new Date(today); d.setDate(d.getDate()-n); return d.toISOString().slice(0,10);
-}
-const ADDED_RANGES = [
-  { label: 'All', key: 'all' },
-  { label: 'Last 30 days', key: '30' },
-  { label: 'Last 3 months', key: '90' },
-  { label: 'Last 6 months', key: '180' },
-  { label: 'This year', key: 'year' },
-];
-function addedCount(key) {
-  if (key === 'all') return PAPERS.length;
-  const cutoff = key === 'year' ? String(today.getFullYear())+'-01-01' : daysAgo(parseInt(key));
-  return PAPERS.filter(p => (p.added||'') >= cutoff).length;
-}
-const addedRow = document.getElementById('added-filters');
-ADDED_RANGES.forEach(({label, key}) => {
-  const chip = document.createElement('button');
-  chip.className = 'chip' + (key === 'all' ? ' active' : ''); chip.dataset.added = key;
-  chip.innerHTML = label + '<span class="count">'+addedCount(key)+'</span>';
-  chip.addEventListener('click', () => {
-    activeAdded = key;
-    document.querySelectorAll('#added-filters .chip').forEach(c => c.classList.remove('active'));
-    chip.classList.add('active'); render();
-  });
-  addedRow.appendChild(chip);
-});
-
-/* ── Search ─────────────────────────────────────────────────────────────── */
-document.getElementById('search').addEventListener('input', e => { searchText = e.target.value.toLowerCase(); render(); });
-
-/* ── Tag clicks inside grid ─────────────────────────────────────────────── */
-document.getElementById('grid').addEventListener('click', e => {
-  const tag = e.target.dataset.clicktag;
-  if (!tag) return;
-  if (activeTags.has(tag)) activeTags.delete(tag); else activeTags.add(tag);
-  document.querySelectorAll('#tag-filters .chip').forEach(c => { c.classList.toggle('active', activeTags.has(c.dataset.tag)); });
-  render();
-});
-
-/* ── Toast notifications ─────────────────────────────────────────────────── */
-function showToast(msg, type = 'success', duration = 8000) {
-  const c = document.getElementById('toast-container');
-  if (!c) return;
-  const t = document.createElement('div');
-  t.className = 'toast ' + type;
-  const icon = type === 'success' ? '✓' : '✕';
-  t.innerHTML = '<span>' + icon + ' ' + msg.replace(/</g,'&lt;') + '</span>'
-    + '<button class="toast-close" aria-label="Close">&times;</button>';
-  t.querySelector('.toast-close').addEventListener('click', () => t.remove());
-  c.appendChild(t);
-  setTimeout(() => { if (t.parentNode) t.remove(); }, duration);
-}
-
-/* ── Notes storage (localStorage) ───────────────────────────────────────── */
-function noteKey(p) { return 'note:' + (p.doi || p.title || '').slice(0, 120); }
-function getNote(p) { try { return localStorage.getItem(noteKey(p)) || ''; } catch(e) { return ''; } }
-function saveNoteByKey(k, v) { try { localStorage.setItem(k, v); } catch(e) {} }
-
-/* ── Journal URL map ────────────────────────────────────────────────────── */
-const JOURNAL_URLS = {
-  'nature': 'https://www.nature.com/nature/',
-  'science': 'https://www.science.org/journal/science',
-  'cell': 'https://www.cell.com/cell/home',
-  'nature cell biology': 'https://www.nature.com/ncb/',
-  'nature methods': 'https://www.nature.com/nmeth/',
-  'nature communications': 'https://www.nature.com/ncomms/',
-  'nature biotechnology': 'https://www.nature.com/nbt/',
-  'nature reviews molecular cell biology': 'https://www.nature.com/nrm/',
-  'nature reviews genetics': 'https://www.nature.com/nrg/',
-  'nature reviews bioengineering': 'https://www.nature.com/natrevbioeng/',
-  'nature chemical biology': 'https://www.nature.com/nchembio/',
-  'nature computational science': 'https://www.nature.com/natcomputsci/',
-  'nature nanotechnology': 'https://www.nature.com/nnano/',
-  'developmental cell': 'https://www.cell.com/developmental-cell/home',
-  'cell stem cell': 'https://www.cell.com/cell-stem-cell/home',
-  'cell reports': 'https://www.cell.com/cell-reports/home',
-  'cell reports methods': 'https://www.cell.com/cell-reports-methods/home',
-  'cell systems': 'https://www.cell.com/cell-systems/home',
-  'molecular biology of the cell': 'https://www.molbiolcell.org/',
-  'molecular biology of the cell (mboc)': 'https://www.molbiolcell.org/',
-  'elife': 'https://elifesciences.org/',
-  'development': 'https://journals.biologists.com/dev',
-  'development (cambridge, england)': 'https://journals.biologists.com/dev',
-  'developmental biology': 'https://www.sciencedirect.com/journal/developmental-biology',
-  'biophysical journal': 'https://www.cell.com/biophysical-journal/home',
-  'plos computational biology': 'https://journals.plos.org/ploscompbiol/',
-  'annual review of cell and developmental biology': 'https://www.annualreviews.org/journal/cellbio',
-  'annual review of biomedical data science': 'https://www.annualreviews.org/journal/biodatasci',
-  'journal of cell biology': 'https://www.jcb.org/',
-  'stem cell reports': 'https://www.cell.com/stem-cell-reports/home',
-  'stem cells': 'https://stemcellsjournals.onlinelibrary.wiley.com/journal/15494918',
-  'frontiers in bioengineering and biotechnology': 'https://www.frontiersin.org/journals/bioengineering-and-biotechnology',
-  'frontiers in cell and developmental biology': 'https://www.frontiersin.org/journals/cell-and-developmental-biology',
-  'npj systems biology and applications': 'https://www.nature.com/npjsba/',
-  'seminars in cell & developmental biology': 'https://www.sciencedirect.com/journal/seminars-in-cell-and-developmental-biology',
-  'seminars in cell and developmental biology': 'https://www.sciencedirect.com/journal/seminars-in-cell-and-developmental-biology',
-  'current opinion in genetics and development': 'https://www.sciencedirect.com/journal/current-opinion-in-genetics-and-development',
-  'advanced science': 'https://onlinelibrary.wiley.com/journal/21983844',
-  'biorxiv': 'https://www.biorxiv.org/',
-  'arxiv': 'https://arxiv.org/',
-};
-function journalUrl(name) {
-  if (!name) return '';
-  return JOURNAL_URLS[name.toLowerCase().trim()] || '';
-}
-
-/* ── Card rendering ─────────────────────────────────────────────────────── */
-function authorLink(name) { return 'https://scholar.google.com/scholar?q=' + encodeURIComponent(name); }
-function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
-function fmt(p) {
-  const type = (p.type||'research').toLowerCase();
-  const badgeClass = 'badge-'+(type==='review'?'review':type==='perspective'?'perspective':type==='article'?'article':'research');
-  const paperUrl = (p.doi ? 'https://doi.org/'+p.doi : p.link) || '';
-  const titleHtml = paperUrl ? '<a href="'+esc(paperUrl)+'" target="_blank" rel="noopener">'+esc(p.title)+'</a>' : esc(p.title);
-  let authorHtml;
-  if (p.author_data && p.author_data.length) {
-    authorHtml = p.author_data.map(a => {
-      const name = a.name || '';
-      if (!name) return '';
-      const href = a.orcid
-        ? 'https://orcid.org/' + esc(a.orcid)
-        : authorLink(name);
-      return '<a class="author-link" href="'+href+'" target="_blank" rel="noopener">'+esc(name)+'</a>';
-    }).filter(Boolean).join('');
-  } else {
-    const rawAuthors = typeof p.authors === 'string' ? p.authors : (p.authors||[]).join(', ');
-    const authorNames = rawAuthors.split(/,\s*et al\.?/).map(s=>s.trim()).join('').split(/,\s*/).map(s=>s.trim()).filter(Boolean);
-    authorHtml = authorNames.map(a => {
-      const name = a.replace(/\s*et al\.?\s*$/,'').trim();
-      return name ? '<a class="author-link" href="'+authorLink(name)+'" target="_blank" rel="noopener">'+esc(name)+'</a>' : '';
-    }).filter(Boolean).join('');
-  }
-  const tags = (p.tags||[]).filter(isTopicTag).map(t=>'<span class="tag" data-clicktag="'+esc(t)+'">'+esc(t)+'</span>').join('');
-  const added = p.added ? '<span class="card-date">added '+p.added+'</span>' : '';
-  const jUrl = journalUrl(p.journal);
-  const journalHtml = p.journal ? (jUrl ? '<a class="journal-link" href="'+esc(jUrl)+'" target="_blank" rel="noopener">'+esc(p.journal)+'</a>' : esc(p.journal)) : '';
-  const venue = [journalHtml, p.year ? esc(p.year) : ''].filter(Boolean).join(' · ');
-  const pdfSlug = (p.doi ? p.doi.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'') : (p.title||'paper').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,60)) + '.pdf';
-  const pdfBtn = p.pdf_link ? '<a class="btn-pdf" href="'+esc(p.pdf_link)+'" target="_blank" rel="noopener">&#8595; PDF</a>'
-    : '<div class="btn-add-pdf" role="button" tabindex="0" data-addpdf="1" data-pdfslug="'+esc(pdfSlug)+'">＋ Add PDF'
-        +'<div class="pdf-popover" onclick="event.stopPropagation()">'
-          +'<div class="pdf-popover-title">Upload PDF for this paper</div>'
-          +'<label class="pdf-file-label" onclick="event.stopPropagation()">'
-            +'<input type="file" accept=".pdf" class="pdf-file-input">'
-            +'&#128194; Choose file…'
-          +'</label>'
-          +'<div class="pdf-selected-name"></div>'
-          +'<button class="pdf-upload-btn" onclick="handlePdfUpload(this,event)">&#8593; Upload</button>'
-          +'<div class="pdf-upload-status"></div>'
-        +'</div>'
-      +'</div>';
-  const existingNote = getNote(p);
-  const hasNote = existingNote.trim().length > 0;
-  const nk = noteKey(p);
-  const noteId = 'note-' + Math.random().toString(36).slice(2);
-  const starHtml = isTopPick(p) ? '<div class="top-pick-star" title="Top pick · recommended for printing">⭐</div>' : '';
-  const preprintBadge = p.preprint ? '<span class="badge badge-preprint">preprint</span>' : '';
-  const collabBadge = p.vip_author ? '<span class="badge badge-collab" title="Paper by collaborator '+esc(p.vip_author)+'">&#128101; '+esc(p.vip_author)+'</span>' : '';
-  const ruBadge = p.ru_pick ? '<span class="ru-badge">&#10024; Ru\\'s Picks</span>' : '';
-  return '<div class="card">'
-    +'<div class="card-meta"><span class="badge '+badgeClass+'">'+esc(type)+'</span>'+preprintBadge+collabBadge+ruBadge+added+'</div>'
-    +'<div class="card-title">'+titleHtml+'</div>'
-    +(authorHtml ? '<div class="card-authors">'+authorHtml+'</div>' : '')
-    +(venue ? '<div class="card-venue">'+venue+'</div>' : '')
-    +(p.summary ? '<div class="card-summary">'+esc(p.summary)+'</div>' : '')
-    +(p.relevance ? '<div class="card-relevance"><div class="card-relevance-label">Cell Science relevance</div><div class="card-relevance-text">'+esc(p.relevance)+'</div></div>' : '')
-    +(tags ? '<div class="card-tags">'+tags+'</div>' : '')
-    +'<div class="card-actions">'+pdfBtn+'</div>'
-    +'<div class="notes-section">'
-      +'<button class="notes-toggle'+(hasNote?' has-notes':'')+'" data-noteid="'+noteId+'">'
-        +(hasNote ? '&#128221; Notes' : '+ Add note')
-      +'</button>'
-      +'<div class="notes-area'+(hasNote?' open':'')+'" id="'+noteId+'" data-nk="'+esc(nk)+'">'
-        +'<textarea class="notes-textarea" rows="3" placeholder="Your notes…">'+esc(existingNote)+'</textarea>'
-        +'<div class="notes-saved"></div>'
-      +'</div>'
-    +'</div>'
-    +starHtml
-    +'</div>';
-}
-
-/* ── Notes interaction ──────────────────────────────────────────────────── */
-let _papersByNoteId = {};
-function bindNotes(paper, noteId) {
-  _papersByNoteId[noteId] = paper;
-}
-document.getElementById('grid').addEventListener('change', e => {
-  const input = e.target.closest('.pdf-file-input');
-  if (!input) return;
-  const file = input.files[0];
-  const popover = input.closest('.pdf-popover');
-  if (!popover) return;
-  const nameEl = popover.querySelector('.pdf-selected-name');
-  const status = popover.querySelector('.pdf-upload-status');
-  if (nameEl) nameEl.textContent = file ? file.name : '';
-  if (status) { status.textContent = file ? 'Ready to upload.' : ''; status.style.color = ''; }
-});
-
-async function handlePdfUpload(btn, event) {
-  event.stopPropagation();
-  const popover = btn.closest('.pdf-popover');
-  const status = popover ? popover.querySelector('.pdf-upload-status') : null;
-  const fileInput = popover ? popover.querySelector('.pdf-file-input') : null;
-  const file = fileInput && fileInput.files[0];
-  if (!file) {
-    if (status) { status.textContent = 'Please choose a PDF file first.'; status.style.color = '#b91c1c'; }
-    return;
-  }
-  const addBtn = btn.closest('[data-addpdf]');
-  const slug = addBtn ? addBtn.dataset.pdfslug : null;
-  if (!slug) return;
-  const token = getToken();
-  if (!token) {
-    if (addBtn) addBtn.classList.remove('open');
-    addModal.classList.add('open');
-    showTokenScreen();
-    return;
-  }
-  btn.disabled = true;
-  if (status) { status.textContent = 'Uploading…'; status.style.color = ''; }
-  const reader = new FileReader();
-  reader.onload = async () => {
-    const b64 = reader.result.split(',')[1];
-    try {
-      const resp = await fetch(
-        'https://api.github.com/repos/ismi-ops/literature-rg/contents/pdfs/' + encodeURIComponent(slug),
-        {
-          method: 'PUT',
-          headers: {
-            'Authorization': 'Bearer ' + token,
-            'Accept': 'application/vnd.github+json',
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ message: 'chore: upload PDF via site', content: b64 }),
-        }
-      );
-      if (resp.ok) {
-        if (status) { status.textContent = '✓ Uploaded!'; status.style.color = '#16a34a'; }
-        if (addBtn) addBtn.classList.remove('open');
-        showToast('PDF uploaded — button will appear on this card in ~1 min.', 'success', 10000);
-      } else {
-        const err = await resp.json().catch(() => ({}));
-        let msg;
-        if (resp.status === 401) msg = 'Invalid token — click "Change token" in the ＋ Add Paper modal to update it.';
-        else if (resp.status === 403) msg = 'Token lacks Contents permission — regenerate your PAT and enable Contents (R&W). Click "Change token" in the ＋ Add Paper modal.';
-        else if (resp.status === 422) msg = (err.message || '').includes('sha') ? 'This PDF was already uploaded. Reload the page — the PDF button should appear.' : 'Upload error 422: ' + (err.message || 'invalid request.');
-        else msg = 'Upload error ' + resp.status + ': ' + (err.message || 'unknown.');
-        if (status) status.textContent = msg;
-        showToast(msg, 'error', 12000);
-        btn.disabled = false;
-      }
-    } catch (err) {
-      const msg = 'Upload failed: ' + err.message;
-      if (status) status.textContent = msg;
-      showToast(msg, 'error', 12000);
-      btn.disabled = false;
-    }
-  };
-  reader.readAsDataURL(file);
-}
-
-document.getElementById('grid').addEventListener('click', e => {
-  const addBtn = e.target.closest('[data-addpdf]');
-  if (addBtn) {
-    e.stopPropagation();
-    const wasOpen = addBtn.classList.contains('open');
-    document.querySelectorAll('.btn-add-pdf.open').forEach(b => b.classList.remove('open'));
-    if (!wasOpen) addBtn.classList.add('open');
-    return;
-  }
-  const btn = e.target.closest('.notes-toggle');
-  if (!btn) return;
-  const id = btn.dataset.noteid;
-  const area = document.getElementById(id);
-  if (!area) return;
-  area.classList.toggle('open');
-  if (area.classList.contains('open')) {
-    area.querySelector('textarea').focus();
-  }
-});
-document.addEventListener('click', () => {
-  document.querySelectorAll('.btn-add-pdf.open').forEach(b => b.classList.remove('open'));
-});
-document.getElementById('grid').addEventListener('input', e => {
-  if (!e.target.classList.contains('notes-textarea')) return;
-  const area = e.target.closest('.notes-area');
-  if (!area) return;
-  const k = area.dataset.nk;
-  if (!k) return;
-  saveNoteByKey(k, e.target.value);
-  const saved = area.querySelector('.notes-saved');
-  if (saved) saved.textContent = 'Saved';
-  const noteId = area.id;
-  const toggle = document.querySelector('[data-noteid="'+noteId+'"]');
-  if (toggle) {
-    const hasNote = e.target.value.trim().length > 0;
-    toggle.classList.toggle('has-notes', hasNote);
-    toggle.textContent = hasNote ? '📑 Notes' : '+ Add note';
-  }
-});
-
-/* ── Render ─────────────────────────────────────────────────────────────── */
-function render() {
-  const q = searchText;
-  const addedCutoff = activeAdded === 'all' ? '' : activeAdded === 'year' ? String(today.getFullYear())+'-01-01' : daysAgo(parseInt(activeAdded));
-  const filtered = PAPERS.filter(p => {
-    if (activeType !== 'all' && (p.type||'research') !== activeType) return false;
-    if (activePreprint && !p.preprint) return false;
-    if (activeRuPick && !p.ru_pick) return false;
-    if (activeCollab) { if (p.vip_author !== activeCollab) return false; }
-    else { if (p.vip_only) return false; }
-    if (activeTags.size > 0 && ![...(p.tags||[])].some(t => activeTags.has(t))) return false;
-    if (activeYear !== 'all' && String(p.year||'').trim() !== activeYear) return false;
-    if (addedCutoff && (p.added||'') < addedCutoff) return false;
-    if (q) { const hay = [p.title, p.authors, p.journal, p.summary,...(p.tags||[])].join(' ').toLowerCase(); if (!hay.includes(q)) return false; }
-    return true;
-  });
-  _papersByNoteId = {};
-  const grid = document.getElementById('grid');
-  if (filtered.length) {
-    const cards = filtered.map(p => {
-      const html = fmt(p);
-      // extract the noteId we just generated so we can register it
-      const m = html.match(/data-noteid="(note-[^"]+)"/);
-      if (m) _papersByNoteId[m[1]] = p;
-      return html;
-    });
-    grid.innerHTML = cards.join('');
-  } else {
-    grid.innerHTML = '<div class="empty">No papers match your filters.</div>';
-  }
-  document.getElementById('result-count').textContent = filtered.length+' paper'+(filtered.length===1?'':'s');
-}
-render();
-
-/* ── Add Paper modal ────────────────────────────────────────────────────── */
-const GH_TOKEN_KEY = 'rg_gh_token';
-const addModal = document.getElementById('add-modal');
-const tokenScreen = document.getElementById('modal-token-screen');
-const paperScreen = document.getElementById('modal-paper-screen');
-
-function getToken() { try { return localStorage.getItem(GH_TOKEN_KEY) || ''; } catch(e) { return ''; } }
-function saveToken(t) { try { localStorage.setItem(GH_TOKEN_KEY, t); return true; } catch(e) { return false; } }
-
-function showTokenScreen() {
-  tokenScreen.style.display = '';
-  paperScreen.style.display = 'none';
-  document.getElementById('token-input').value = '';
-  document.getElementById('token-feedback').textContent = '';
-  document.getElementById('token-feedback').className = 'modal-feedback';
-  setTimeout(() => document.getElementById('token-input').focus(), 60);
-}
-function showPaperScreen() {
-  tokenScreen.style.display = 'none';
-  paperScreen.style.display = '';
-  document.getElementById('paper-input').value = '';
-  document.getElementById('paper-feedback').textContent = '';
-  document.getElementById('paper-feedback').className = 'modal-feedback';
-  setTimeout(() => document.getElementById('paper-input').focus(), 60);
-}
-
-function openAddModal() {
-  addModal.classList.add('open');
-  getToken() ? showPaperScreen() : showTokenScreen();
-}
-function closeAddModal() { addModal.classList.remove('open'); }
-
-document.getElementById('btn-add-paper').addEventListener('click', openAddModal);
-document.getElementById('modal-close').addEventListener('click', closeAddModal);
-addModal.addEventListener('click', e => { if (e.target === addModal) closeAddModal(); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape' && addModal.classList.contains('open')) closeAddModal(); });
-
-document.getElementById('token-save-btn').addEventListener('click', () => {
-  const val = document.getElementById('token-input').value.trim();
-  const fb = document.getElementById('token-feedback');
-  if (!val) { fb.className = 'modal-feedback err'; fb.textContent = 'Please enter a token.'; return; }
-  if (!saveToken(val)) { fb.className = 'modal-feedback err'; fb.textContent = 'Could not save token (browser storage may be blocked).'; return; }
-  showPaperScreen();
-});
-document.getElementById('token-input').addEventListener('keydown', e => { if (e.key === 'Enter') document.getElementById('token-save-btn').click(); });
-
-document.getElementById('change-token-btn').addEventListener('click', showTokenScreen);
-
-document.getElementById('paper-submit-btn').addEventListener('click', async () => {
-  const raw = document.getElementById('paper-input').value.trim();
-  const fb = document.getElementById('paper-feedback');
-  const btn = document.getElementById('paper-submit-btn');
-  if (!raw) { fb.className = 'modal-feedback err'; fb.textContent = 'Please enter a URL or DOI.'; return; }
-
-  const token = getToken();
-  if (!token) { showTokenScreen(); return; }
-
-  const isDOI = /^10\.\d{4,}\//.test(raw);
-  const ruPick = document.getElementById('ru-pick-check').checked;
-  const inputs = isDOI ? { doi: raw, url: '', ru_pick: ruPick ? 'true' : 'false' } : { url: raw, doi: '', ru_pick: ruPick ? 'true' : 'false' };
-
-  btn.disabled = true;
-  fb.className = 'modal-feedback';
-  fb.textContent = 'Submitting…';
-
-  try {
-    const resp = await fetch(
-      'https://api.github.com/repos/ismi-ops/literature-rg/actions/workflows/add_paper.yml/dispatches',
-      {
-        method: 'POST',
-        headers: {
-          'Authorization': 'Bearer ' + token,
-          'Accept': 'application/vnd.github+json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ ref: 'main', inputs }),
-      }
-    );
-    if (resp.status === 204) {
-      fb.className = 'modal-feedback ok';
-      fb.textContent = '✓ Submitted! The paper will appear in ~2 minutes after the workflow finishes.';
-      document.getElementById('paper-input').value = '';
-      document.getElementById('ru-pick-check').checked = false;
-    } else if (resp.status === 401) {
-      fb.className = 'modal-feedback err';
-      fb.textContent = 'Invalid token (401). Please update your GitHub PAT.';
-    } else if (resp.status === 403) {
-      fb.className = 'modal-feedback err';
-      fb.textContent = 'Permission denied (403). Make sure the token has "workflow" scope.';
-    } else if (resp.status === 422) {
-      fb.className = 'modal-feedback err';
-      fb.textContent = 'Workflow not found (422). Check that the branch "main" exists.';
-    } else {
-      const body = await resp.text().catch(() => '');
-      fb.className = 'modal-feedback err';
-      fb.textContent = 'GitHub error ' + resp.status + (body ? ': ' + body.slice(0, 120) : '');
-    }
-  } catch(err) {
-    fb.className = 'modal-feedback err';
-    fb.textContent = 'Network error: ' + err.message;
-  }
-  btn.disabled = false;
-});
-document.getElementById('paper-input').addEventListener('keydown', e => { if (e.key === 'Enter') document.getElementById('paper-submit-btn').click(); });
 </script>
+<script src="app.js?v=__APP_V__" data-filters="filters.json?v=__FILTERS_V__" data-papers="papers_data.json?v=__DATA_V__" defer></script>
 </body>
 </html>"""
 
@@ -908,12 +391,18 @@ def main():
     if not PAPERS_PATH.exists():
         print("papers.json not found")
         return
+    if not APP_JS_PATH.exists():
+        print("app.js not found")
+        return
     with open(PAPERS_PATH) as f:
         papers = json.load(f)
-    papers = [p for p in papers if not p.get("rejected")]
-    html = build_html(papers)
-    OUTPUT_PATH.write_text(html, encoding="utf-8")
-    print(f"Generated {OUTPUT_PATH} ({len(papers)} papers)")
+    papers = sort_papers([p for p in papers if not p.get("rejected")])
+    filters_json = _dumps(build_filters(papers))
+    data_json = _dumps(papers)
+    FILTERS_PATH.write_text(filters_json, encoding="utf-8")
+    DATA_PATH.write_text(data_json, encoding="utf-8")
+    INDEX_PATH.write_text(build_index(APP_JS_PATH.read_bytes(), filters_json, data_json), encoding="utf-8")
+    print(f"Generated {INDEX_PATH}, {FILTERS_PATH}, {DATA_PATH} ({len(papers)} papers)")
 
 
 if __name__ == "__main__":
