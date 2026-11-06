@@ -21,14 +21,15 @@ const state = {
   pageSize: (() => { const n = parseInt(prefGet('rg_page_size', ''), 10); return PAGE_SIZES.includes(n) ? n : DEFAULT_PAGE_SIZE; })(),
 };
 
-/* ── Top picks (highest-scored 4 from the past 7 days) ──────────────────── */
+/* ── Top picks: the agent's 4 highest-scored papers from the past 7 days, starred as "recommended
+   for printing". Papers Ru sent are already being printed, so they are never starred or counted. */
 let TOP_PICK_IDS = new Set();
-function isTopPick(p) { return TOP_PICK_IDS.size > 0 && TOP_PICK_IDS.has(p.doi || p.title || ''); }
+function isTopPick(p) { return !p.ru_pick && TOP_PICK_IDS.size > 0 && TOP_PICK_IDS.has(p.doi || p.title || ''); }
 function computeTopPicks(papers) {
   const latest = papers.reduce((max, p) => (p.added || '') > max ? (p.added || '') : max, '');
   const d = new Date(latest || new Date()); d.setDate(d.getDate() - 7);
   const cutoff = d.toISOString().slice(0, 10);
-  const recent = papers.filter(p => (p.added || '') >= cutoff).sort((a, b) => (b.score || 0) - (a.score || 0));
+  const recent = papers.filter(p => !p.ru_pick && (p.added || '') >= cutoff).sort((a, b) => (b.score || 0) - (a.score || 0));
   TOP_PICK_IDS = new Set(recent.slice(0, 4).map(p => p.doi || p.title || ''));
 }
 
@@ -75,8 +76,8 @@ const DIMS = {
             passes: p => !sel.added.size || (p.added || '') >= ADDED_CUTOFF[[...sel.added][0]],
             keys:   p => ADDED_RANGES.filter(r => r.key === 'all' || (p.added || '') >= ADDED_CUTOFF[r.key]).map(r => r.key) },
   pdf:    { label: 'PDF', admin: true,      // only shown when a GitHub token is saved (the site owner)
-            passes: p => !sel.pdf.size || !p.pdf_link,
-            keys:   p => p.pdf_link ? [] : ['missing'] },
+            passes: p => !sel.pdf.size || !hasPdf(p),
+            keys:   p => hasPdf(p) ? [] : ['missing'] },
 };
 const DIM_NAMES = Object.keys(DIMS);
 const sel = Object.fromEntries(DIM_NAMES.map(d => [d, new Set()]));
@@ -325,8 +326,28 @@ const JOURNAL_URLS = {
 };
 function journalUrl(name) {
   if (!name) return '';
-  return JOURNAL_URLS[name.toLowerCase().trim()] || '';
+  const k = name.toLowerCase().trim();
+  if (JOURNAL_URLS[k]) return JOURNAL_URLS[k];
+  // "Science (New York, N.Y.)" -> "science", "Nature reviews. Genetics" -> "nature reviews genetics"
+  const n = k.replace(/\s*\([^)]*\)/g, '').replace(/\.\s+/g, ' ').replace(/\.$/, '').replace(/\s+/g, ' ').trim();
+  return JOURNAL_URLS[n] || '';
 }
+
+/* ── Link helpers ───────────────────────────────────────────────────────── */
+// Only http(s) links or our own uploaded pdfs/*.pdf ever reach an href; http is upgraded to https.
+function safeUrl(u) {
+  u = String(u || '').trim().replace(/[>,;]+$/, '');
+  if (/^pdfs\/[^?#]+\.pdf$/i.test(u)) return u;
+  if (!/^https?:\/\//i.test(u)) return '';
+  return u.replace(/^http:\/\//i, 'https://').replace(/^(https:\/\/)dx\.doi\.org\//i, '$1doi.org/');
+}
+// A "real" PDF: one we hold, or a URL that points straight at a PDF file (not an article/landing page).
+function isDirectPdf(u) {
+  if (!/^https?:\/\//i.test(u)) return true;
+  const path = u.split(/[?#]/)[0].toLowerCase();
+  return /\.pdf$/.test(path) || /\/(pdf|epdf|pdfdirect|pdfft|articlepdf)(\/|$)/.test(path) || /[?&]type=printable\b/i.test(u);
+}
+function hasPdf(p) { const u = safeUrl(p.pdf_link); return !!u && isDirectPdf(u); }
 
 /* ── Card rendering ─────────────────────────────────────────────────────── */
 function authorLink(name) { return 'https://scholar.google.com/scholar?q=' + encodeURIComponent(name); }
@@ -334,7 +355,7 @@ function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;'
 function fmt(p) {
   const type = (p.type||'research').toLowerCase();
   const badgeClass = 'badge-'+(type==='review'?'review':type==='perspective'?'perspective':type==='article'?'article':'research');
-  const paperUrl = (p.doi ? 'https://doi.org/'+p.doi : p.link) || '';
+  const paperUrl = safeUrl(p.doi ? 'https://doi.org/'+p.doi : p.link);
   const titleHtml = paperUrl ? '<a href="'+esc(paperUrl)+'" target="_blank" rel="noopener">'+esc(p.title)+'</a>' : esc(p.title);
   let authorHtml;
   if (p.author_data && p.author_data.length) {
@@ -359,8 +380,10 @@ function fmt(p) {
   const jUrl = journalUrl(p.journal);
   const journalHtml = p.journal ? (jUrl ? '<a class="journal-link" href="'+esc(jUrl)+'" target="_blank" rel="noopener">'+esc(p.journal)+'</a>' : esc(p.journal)) : '';
   const venue = [journalHtml, p.year ? esc(p.year) : ''].filter(Boolean).join(' · ');
-  const pdfSlug = (p.doi ? p.doi.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'') : (p.title||'paper').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,60)) + '.pdf';
-  const pdfBtn = p.pdf_link ? '<a class="btn-pdf" href="'+esc(p.pdf_link)+'" target="_blank" rel="noopener">&#8595; PDF</a>'
+  const pdfSlug = (p.doi ? p.doi.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'') : (p.title||'paper').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,60).replace(/-+$/,'')) + '.pdf';
+  const pdfHref = safeUrl(p.pdf_link);
+  const fullTextBtn = pdfHref && !hasPdf(p) ? '<a class="btn-fulltext" href="'+esc(pdfHref)+'" target="_blank" rel="noopener" title="Opens the article page (not a PDF file)">Full text &#8599;</a>' : '';
+  const pdfBtn = hasPdf(p) ? '<a class="btn-pdf" href="'+esc(pdfHref)+'" target="_blank" rel="noopener">&#8595; PDF</a>'
     : '<div class="btn-add-pdf" role="button" tabindex="0" data-addpdf="1" data-pdfslug="'+esc(pdfSlug)+'">＋ Add PDF'
         +'<div class="pdf-popover" onclick="event.stopPropagation()">'
           +'<div class="pdf-popover-title">Upload PDF for this paper</div>'
@@ -389,7 +412,7 @@ function fmt(p) {
     +(p.summary ? '<div class="card-summary">'+esc(p.summary)+'</div>' : '')
     +(p.relevance ? '<div class="card-relevance"><div class="card-relevance-label">Cell Science relevance</div><div class="card-relevance-text">'+esc(p.relevance)+'</div></div>' : '')
     +(tags ? '<div class="card-tags">'+tags+'</div>' : '')
-    +'<div class="card-actions">'+pdfBtn+'</div>'
+    +'<div class="card-actions">'+fullTextBtn+pdfBtn+'</div>'
     +'<div class="notes-section">'
       +'<button class="notes-toggle'+(hasNote?' has-notes':'')+'" data-noteid="'+noteId+'">'
         +(hasNote ? '&#128221; Notes' : '+ Add note')

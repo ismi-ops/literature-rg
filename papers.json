@@ -12581,7 +12581,8 @@
     "added": "2026-10-15",
     "pdf_link": "",
     "source": "author_tracker",
-    "reasoning": "keyword match (no Anthropic API key)"
+    "reasoning": "keyword match (no Anthropic API key)",
+    "rejected": true
   },
   {
     "title": "Deep Speech Synthesis from Articulatory Features",
@@ -12598,7 +12599,8 @@
     "added": "2026-10-15",
     "pdf_link": "",
     "source": "author_tracker",
-    "reasoning": "keyword match (no Anthropic API key)"
+    "reasoning": "keyword match (no Anthropic API key)",
+    "rejected": true
   },
   {
     "title": "Correction for Colen et al., Machine learning active-nematic hydrodynamics",
@@ -17532,7 +17534,8 @@
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "vip_author": "Prisca Liberali",
-    "vip_only": true
+    "vip_only": true,
+    "rejected": true
   },
   {
     "title": "Adaptive differentiation for fast barrier restoration.",
@@ -24431,7 +24434,8 @@
     "added": "2026-10-15",
     "pdf_link": "",
     "source": "author_tracker",
-    "reasoning": "keyword match (no Anthropic API key)"
+    "reasoning": "keyword match (no Anthropic API key)",
+    "rejected": true
   },
   {
     "title": "Mechano-metabolic control of multicellular morphogenesis.",

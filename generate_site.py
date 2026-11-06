@@ -221,6 +221,8 @@ HTML_TEMPLATE = r"""<!doctype html>
   .card-actions { display: flex; gap: 8px; margin-top: 2px; align-items: center; }
   .btn-pdf { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 7px; background: #CD0F55; color: #fff; text-decoration: none; border: 1px solid #CD0F55; transition: opacity .12s; }
   .btn-pdf:hover { opacity: .85; }
+  .btn-fulltext { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 500; padding: 4px 10px; border-radius: 7px; color: var(--muted); text-decoration: none; border: 1px solid var(--border); transition: border-color .12s, color .12s; }
+  .btn-fulltext:hover { border-color: var(--accent); color: var(--accent); }
   .btn-add-pdf { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 500; padding: 4px 10px; border-radius: 7px; background: transparent; color: var(--muted); border: 1px dashed var(--muted); cursor: pointer; opacity: .6; transition: opacity .12s; position: relative; user-select: none; }
   .btn-add-pdf:hover { opacity: 1; }
   .pdf-popover { display: none; position: absolute; bottom: calc(100% + 8px); left: 0; z-index: 200; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; width: 290px; box-shadow: 0 4px 20px rgba(0,0,0,.22); text-align: left; cursor: default; }
