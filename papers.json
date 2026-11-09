@@ -24994,7 +24994,7 @@
     "link": "https://doi.org/10.1038/s41586-021-04267-8",
     "score": 3,
     "added": "2026-11-03",
-    "pdf_link": "",
+    "pdf_link": "https://www.nature.com/articles/s41586-021-04267-8.pdf",
     "source": "semantic_scholar",
     "reasoning": "keyword match (no Anthropic API key)",
     "curated": true,
@@ -25215,6 +25215,60 @@
       },
       {
         "name": "Carl-Philipp Heisenberg"
+      }
+    ]
+  },
+  {
+    "title": "Functional Mammary Gland Organoids From Human Induced Pluripotent Stem Cells",
+    "authors": "Roshni R. Nair, Maarten Ganne, Larissa Mourão, Sylvia E. Le Dévédec, Colinda L.G.J. Scheele, Peter Bouwman, Bob van de Water",
+    "year": "2026",
+    "journal": "bioRxiv",
+    "type": "research",
+    "summary": "The human mammary gland arises through sequential lineage restrictions from surface ectoderm to hormone-responsive bilayered epithelium, yet a tractable in vitro model that captures these events has remained elusive. Here, we established a stepwise differentiation protocol that directs human induced pluripotent stem cells (hiPSCs) into mammary organoids (MGOs) by sequential induction of non-neural ectoderm, mammary placodes, and lineage maturation in a defined medium. The resulting MGOs reproducibly formed polarized basal (KRT14+, TP63+) and luminal (KRT8+, GATA3+) layers, with ∼25% of luminal cells expressing oestrogen receptor (ERα).",
+    "relevance": "Relevant to lumen morphogenesis, lumenoid self-organization, organoid systems, and live imaging of three-dimensional culture morphodynamics. Relevant to Cell Science's core work on hiPSC biology, pluripotent stem cell engineering, and stem cell-derived model systems.",
+    "tags": [
+      "stem cells",
+      "development",
+      "single-cell",
+      "organoid",
+      "iPSC"
+    ],
+    "doi": "10.64898/2026.10.28.762519",
+    "link": "https://doi.org/10.64898/2026.10.28.762519",
+    "score": 6,
+    "added": "2026-11-09",
+    "pdf_link": "https://www.biorxiv.org/content/biorxiv/early/2026/10/30/2026.10.28.762519.full.pdf",
+    "source": "semantic_scholar",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "curated": true,
+    "author_data": [
+      {
+        "name": "Roshni R. Nair",
+        "orcid": "0000-0002-3277-3265"
+      },
+      {
+        "name": "Maarten Ganne",
+        "orcid": "0009-0007-9048-7957"
+      },
+      {
+        "name": "Larissa Mourão",
+        "orcid": "0000-0001-8046-5366"
+      },
+      {
+        "name": "Sylvia E. Le Dévédec",
+        "orcid": "0000-0002-0615-9616"
+      },
+      {
+        "name": "Colinda L.G.J. Scheele",
+        "orcid": "0000-0001-8999-5451"
+      },
+      {
+        "name": "Peter Bouwman",
+        "orcid": "0000-0002-9252-5896"
+      },
+      {
+        "name": "Bob van de Water",
+        "orcid": "0000-0002-5839-2380"
       }
     ]
   }
