@@ -10,6 +10,7 @@ import re
 import time
 
 from src.people_of_interest import same_person
+from src.preprint_tag import is_biorxiv_preprint
 from pathlib import Path
 
 import requests
@@ -137,7 +138,7 @@ def _normalize_paper(raw: dict, vip_author_name: str) -> dict | None:
     if oa.get("url"):
         pdf_link = oa["url"]
 
-    preprint = bool(arxiv_id) or any(h in doi for h in ("10.1101/", "10.48550/"))
+    preprint = bool(arxiv_id) or "10.48550/" in doi or is_biorxiv_preprint({"doi": doi, "journal": journal, "link": link})
 
     content_type = "research"
     pub_types = raw.get("publicationTypes") or []

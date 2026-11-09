@@ -17,6 +17,7 @@ import requests
 from dotenv import load_dotenv
 
 from src import storage
+from src.preprint_tag import is_biorxiv_preprint
 from src.relevance import score_and_summarize
 from src.sources.pdf_finder import get_pdf_link
 from src.sources.semantic_scholar import FIELDS, _normalize
@@ -284,9 +285,11 @@ def run(url: str | None = None, doi: str | None = None, title: str | None = None
         print(f"  Attached uploaded PDF: {attached}")
     result["source"] = paper.get("source", "manual")
 
-    _preprint_hosts = ("biorxiv.org", "medrxiv.org", "arxiv.org", "preprints.org", "10.1101/", "10.48550/")
+    # "10.1101/" alone also matches Cold Spring Harbor journals, so bioRxiv/medRxiv go through the stricter check
+    _preprint_hosts = ("arxiv.org", "preprints.org", "10.48550/")
     link_or_doi = (url or "") + (doi or "") + (result.get("doi") or "")
-    if any(h in link_or_doi for h in _preprint_hosts):
+    if any(h in link_or_doi for h in _preprint_hosts) or is_biorxiv_preprint(
+            {"doi": result.get("doi") or doi or _doi_from_url(url or ""), "journal": result.get("journal"), "link": url or result.get("link")}):
         result["preprint"] = True
 
     score = result.get("score", 0)
