@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "pdfs/**"
+  workflow_dispatch:   # run by hand to relink PDFs that are already in pdfs/
 
 permissions:
   contents: write
