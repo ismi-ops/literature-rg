@@ -1171,6 +1171,10 @@
         "name": "Anne Grapin-Botton",
         "orcid": "0000-0002-1202-5235"
       }
+    ],
+    "vip_author": "Anne Grapin-Botton",
+    "previous_dois": [
+      "10.1101/2024.05.29.596462"
     ]
   },
   {
@@ -2075,7 +2079,8 @@
         "name": "Lucas Pelkmans"
       }
     ],
-    "preprint": true
+    "preprint": true,
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Biophysical forces in tissue formation.",
@@ -2509,7 +2514,8 @@
       }
     ],
     "curated": true,
-    "preprint": true
+    "preprint": true,
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Dual-mode SOX2 regulation by miR-150 via mRNA suppression and autophagy controls stem cell fate",
@@ -2907,7 +2913,11 @@
         "orcid": "0000-0003-0695-6081"
       }
     ],
-    "curated": true
+    "curated": true,
+    "vip_author": "Prisca Liberali",
+    "previous_dois": [
+      "10.1101/2025.01.14.632683"
+    ]
   },
   {
     "title": "Pathway to Independence: a forecast for the future of developmental biology.",
@@ -3268,7 +3278,8 @@
         "name": "Elisabeth Fischer-Friedrich",
         "orcid": "0000-0002-2433-916X"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Multilineage coordination mechanisms in craniofacial organ development",
@@ -3460,7 +3471,8 @@
         "name": "Weike Pei"
       }
     ],
-    "preprint": true
+    "preprint": true,
+    "preprint_checked": "2026-11-09"
   },
   {
     "doi": "10.1093/stmcls/sxag041",
@@ -3667,7 +3679,8 @@
         "name": "Atefeh Lafzi"
       }
     ],
-    "preprint": true
+    "preprint": true,
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "An extraordinary exploration of the extracellular environment.",
@@ -3843,7 +3856,8 @@
         "orcid": "0000-0002-9286-920X"
       }
     ],
-    "preprint": true
+    "preprint": true,
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Multiscale biophysical control of epithelial shape transitions during animal development.",
@@ -4069,7 +4083,8 @@
       {
         "name": "Catherine P. Lu"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Predicting organoid morphology through a phase field model: Insights into cell division and lumenal pressure",
@@ -4656,7 +4671,8 @@
         "name": "Miki Ebisuya",
         "orcid": "0000-0003-1854-7496"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "The actin crosslinker Fimbrin is required for force sensing at tricellular junctions.",
@@ -4693,6 +4709,10 @@
       {
         "name": "Jennifer A. Zallen"
       }
+    ],
+    "vip_author": "Jen Zallen",
+    "previous_dois": [
+      "10.1101/2025.02.21.639590"
     ]
   },
   {
@@ -5196,6 +5216,9 @@
       {
         "name": "Zev J. Gartner"
       }
+    ],
+    "previous_dois": [
+      "10.1101/2023.06.25.546328"
     ]
   },
   {
@@ -5301,7 +5324,10 @@
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "vip_author": "Zev Gartner",
-    "vip_only": true
+    "vip_only": true,
+    "previous_dois": [
+      "10.1101/2023.04.11.536275"
+    ]
   },
   {
     "title": "Modeling collective cell behavior in cancer: Perspectives from an interdisciplinary conversation",
@@ -5504,7 +5530,8 @@
       {
         "name": "Zev J. Gartner"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "deMULTIplex2: robust sample demultiplexing for scRNA-seq",
@@ -5527,13 +5554,16 @@
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
     "vip_author": "Zev Gartner",
-    "vip_only": true
+    "vip_only": true,
+    "rejected": true,
+    "superseded_by": "10.1186/s13059-024-03177-y",
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "D-SPIN constructs gene regulatory network models from multiplexed scRNA-seq data revealing organizing principles of cellular perturbation response",
     "authors": "Jialong Jiang, Sisi Chen, Tiffany Tsou, Christopher S. McGinnis, Tahmineh Khazaei, Qin Zhu, Jong H. Park, Inna-Marie Strazhnik et al.",
-    "year": "2023",
-    "journal": "bioRxiv",
+    "year": "2026",
+    "journal": "Cell",
     "type": "research",
     "summary": "Gene regulatory networks within cells modulate the expression of the genome in response to signals and changing environmental conditions. Reconstructions of gene regulatory networks can reveal the information processing and control principles used by cells to maintain homeostasis and execute cell-state transitions. Here, we introduce a computational framework, D-SPIN, that generates quantitative models of gene regulatory networks from single-cell mRNA-seq datasets collected across thousands of distinct perturbation conditions.",
     "relevance": "Directly addresses the top-priority question of how cells make decisions — bistability, signal integration, and stochastic switching are central to understanding cell identity and fate. Directly relevant to Cell Science's foundational interest in how cells acquire and maintain identity — gene regulatory networks, lineage specification, and embryonic patterning are central to understanding cell decision-making and fate in developmental contexts.",
@@ -5542,14 +5572,13 @@
       "cell state",
       "single-cell"
     ],
-    "doi": "10.1101/2023.04.19.537364",
-    "link": "https://doi.org/10.1101/2023.04.19.537364",
+    "doi": "10.1016/j.cell.2026.04.028",
+    "link": "https://doi.org/10.1016/j.cell.2026.04.028",
     "score": 9,
     "added": "2026-10-15",
-    "pdf_link": "https://www.biorxiv.org/content/biorxiv/early/2023/05/20/2023.04.19.537364.full.pdf",
+    "pdf_link": "https://doi.org/10.1016/j.cell.2026.04.028",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "preprint": true,
     "vip_author": "Zev Gartner",
     "vip_only": true,
     "author_data": [
@@ -5598,7 +5627,12 @@
       {
         "name": "Matt Thomson"
       }
-    ]
+    ],
+    "previous_dois": [
+      "10.1101/2023.04.19.537364"
+    ],
+    "published_on": "2026-11-09",
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Patterning and folding of intestinal villi by active mesenchymal dewetting",
@@ -5673,7 +5707,10 @@
       {
         "name": "Zev J. Gartner"
       }
-    ]
+    ],
+    "rejected": true,
+    "superseded_by": "10.1016/j.cell.2024.04.039",
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Loss of PPARγ activity characterizes early protumorigenic stromal reprogramming and dictates the therapeutic window of opportunity",
@@ -5849,7 +5886,8 @@
         "name": "Zev J. Gartner",
         "orcid": "0000-0001-7803-1219"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Bisphenol A replacement chemicals, BPF and BPS, induce protumorigenic changes in human mammary gland organoid morphology and proteome",
@@ -6130,7 +6168,8 @@
         "name": "Zena Werb",
         "orcid": "0000-0002-6525-3872"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Enabling high-plex spectral imaging via DNA-barcoded signal tuning and panel optimization",
@@ -6194,7 +6233,8 @@
         "orcid": "0000-0002-5017-379X"
       }
     ],
-    "preprint": true
+    "preprint": true,
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "From Pixels to Discovery: Microscopy Image Analysis in the Age of Artificial Intelligence.",
@@ -6374,7 +6414,8 @@
         "orcid": "0000-0001-8462-2883"
       }
     ],
-    "preprint": true
+    "preprint": true,
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Unsupervised Source-Free Ranking of Biomedical Segmentation Models Under Distribution Shift",
@@ -6766,7 +6807,8 @@
       {
         "name": "Anna Kreshuk"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Multiplex Microscopy Assay for Assessment of Therapeutic and Serum Antibodies against Emerging Pathogens",
@@ -7016,7 +7058,8 @@
         "name": "Antje Keppler",
         "orcid": "0000-0003-4358-2269"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Spherical harmonics texture extraction for versatile analysis of biological objects",
@@ -7077,21 +7120,20 @@
     "title": "A deep learning-based toolkit for 3D nuclei segmentation and quantitative analysis in cellular and tissue context",
     "authors": "Athul Vijayan, Tejasvinee Atul Mody, Qin Yu, Adrian Wolny, Lorenzo Cerrone, Soeren Strauss, Miltos Tsiantis, Richard S. Smith et al.",
     "year": "2024",
-    "journal": "Development (Cambridge, England)",
+    "journal": "Development",
     "type": "research",
     "summary": "We present a new set of computational tools that enable accurate and widely applicable 3D segmentation of nuclei in various 3D digital organs. We developed a novel approach for ground truth generation and iterative training of 3D nuclear segmentation models, which we applied to popular CellPose, PlantSeg, and StarDist algorithms. We provide two high-quality models trained on plant nuclei that enable 3D segmentation of nuclei in datasets obtained from fixed or live samples, acquired from different plant and animal tissues, and stained with various nuclear stains or fluorescent protein-based nuclear reporters.",
     "relevance": "Relevant to Cell Science's AI agenda for cell segmentation, morphology modeling, and predicting cell state from multi-modal imaging data. Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs.",
     "tags": [
       "development"
     ],
-    "doi": "10.1101/2024.02.19.580954",
-    "link": "https://doi.org/10.1101/2024.02.19.580954",
+    "doi": "10.1242/dev.202800",
+    "link": "https://doi.org/10.1242/dev.202800",
     "score": 2,
     "added": "2026-10-15",
     "pdf_link": "https://doi.org/10.1101/2024.02.19.580954",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "preprint": true,
     "vip_author": "Anna Kreshuk",
     "vip_only": true,
     "author_data": [
@@ -7138,7 +7180,12 @@
         "name": "Kay Schneitz",
         "orcid": "0000-0001-6688-0539"
       }
-    ]
+    ],
+    "previous_dois": [
+      "10.1101/2024.02.19.580954"
+    ],
+    "published_on": "2026-11-09",
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Fractal: Towards FAIR bioimage analysis at scale with OME-Zarr-native workflows",
@@ -7216,7 +7263,8 @@
         "orcid": "0000-0002-2859-9241"
       }
     ],
-    "preprint": true
+    "preprint": true,
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "In the same cell, the proteome defines cellular state and the transcriptome marks transitions",
@@ -7291,7 +7339,8 @@
         "orcid": "0000-0003-1292-4799"
       }
     ],
-    "preprint": true
+    "preprint": true,
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "The G1/S transition in mammalian stem cells in vivo is autonomously regulated by cell size",
@@ -7631,7 +7680,10 @@
         "name": "P. Liberali",
         "orcid": "0000-0003-0695-6081"
       }
-    ]
+    ],
+    "rejected": true,
+    "superseded_by": "10.1016/j.cell.2026.06.009",
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Growth of the maternal intestine during reproduction",
@@ -8088,7 +8140,8 @@
         "name": "Jan M. Skotheim",
         "orcid": "0000-0001-8420-6820"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "The evolution of developmental biology through conceptual and technological revolutions.",
@@ -8544,7 +8597,8 @@
         "name": "P. Liberali",
         "orcid": "0000-0003-0695-6081"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "An integrated transcriptomic cell atlas of human endoderm-derived organoids",
@@ -8751,7 +8805,8 @@
         "orcid": "0000-0003-4204-3642"
       }
     ],
-    "preprint": true
+    "preprint": true,
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Benchmarking in vivo and in vitro gene co-expression networks enables efficient β-like cell differentiation.",
@@ -8925,7 +8980,8 @@
         "name": "André Nadler",
         "orcid": "0000-0001-6329-3910"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Correlation Clustering of Organoid Images",
@@ -8947,7 +9003,8 @@
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
     "vip_author": "Anne Grapin-Botton",
-    "vip_only": true
+    "vip_only": true,
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Editorial overview: Regaining architecture and cell cross-talk upon regeneration.",
@@ -9032,7 +9089,10 @@
         "name": "Anne Grapin-Botton",
         "orcid": "0000-0002-1202-5235"
       }
-    ]
+    ],
+    "rejected": true,
+    "superseded_by": "10.1038/s41556-025-01832-5",
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "The interplay between lumen pressure and cell proliferation determines organoid morphology in a multicellular phase field model",
@@ -9095,7 +9155,8 @@
       {
         "name": "Masaki Sano"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Towards a better understanding of diabetes mellitus using organoid models",
@@ -9181,6 +9242,9 @@
         "name": "Anne Grapin-Botton",
         "orcid": "0000-0002-1202-5235"
       }
+    ],
+    "previous_dois": [
+      "10.1101/2021.12.15.472220"
     ]
   },
   {
@@ -9356,8 +9420,8 @@
   {
     "title": "Emergent chirality in active solid rotation of pancreas spheres",
     "authors": "Tzer Han Tan, Aboutaleb Amiri, Irene Seijo-Barandiarán, Michael F. Staddon, Anne Materne, Sandra Tomas, Charlie Duclut, Marko Popović et al.",
-    "year": "2022",
-    "journal": "bioRxiv",
+    "year": "2024",
+    "journal": "PRX Life",
     "type": "research",
     "summary": "Collective cell dynamics play a crucial role in many developmental and physiological contexts. While two-dimensional (2D) cell migration has been widely studied, how three-dimensional (3D) geometry and topology interplay with collective cell behavior to determine dynamics and functions remains an open question. In this work, we elucidate the biophysical mechanism underlying rotation in spherical tissues, a phenomenon widely reported both in vivo and in vitro.",
     "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis.",
@@ -9365,14 +9429,13 @@
       "development",
       "organoid"
     ],
-    "doi": "10.1101/2022.09.29.510101",
-    "link": "https://doi.org/10.1101/2022.09.29.510101",
+    "doi": "10.1103/prxlife.2.033006",
+    "link": "https://doi.org/10.1103/prxlife.2.033006",
     "score": 5,
     "added": "2026-10-15",
-    "pdf_link": "https://www.biorxiv.org/content/biorxiv/early/2022/09/30/2022.09.29.510101.full.pdf",
+    "pdf_link": "https://doi.org/10.1103/prxlife.2.033006",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "preprint": true,
     "vip_author": "Anne Grapin-Botton",
     "vip_only": true,
     "author_data": [
@@ -9409,7 +9472,12 @@
         "name": "Frank Jülicher",
         "orcid": "0000-0003-4731-9185"
       }
-    ]
+    ],
+    "previous_dois": [
+      "10.1101/2022.09.29.510101"
+    ],
+    "published_on": "2026-11-09",
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Deep-enhanced detection of nanoparticles and molecules in flow",
@@ -9591,7 +9659,8 @@
         "name": "Sadao Ota",
         "orcid": "0000-0001-6004-488X"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Computational Design of Synthetic Optical Barcodes in Microdroplets",
@@ -9642,7 +9711,7 @@
     "title": "Droplet array-based platform for parallel optical analysis of dynamic extracellular vesicle secretion from single cells",
     "authors": "Kazuki Hattori, Yuki Goda, Minato Yamashita, Yusuke Yoshioka, Ryosuke Kojima, Sadao Ota",
     "year": "2022",
-    "journal": "bioRxiv",
+    "journal": "Analytical Chemistry",
     "type": "research",
     "summary": "Extracellular vesicles (EVs) are essential intercellular communication tools, but the regulatory mechanisms governing heterogeneous EV secretion are still unclear due to the lack of methods for precise analysis. Monitoring the dynamics of secretion from individually isolated cells is crucial because, in bulk analysis, secretion activity can be perturbed by cell–cell interactions, and a cell population rarely performs secretion in a magnitude- or duration-synchronized manner. Although various microfluidic techniques have been adopted to evaluate the abundance of single-cell-derived EVs, none can track their secretion dynamics continually for extended periods.",
     "relevance": "Relevant to Cell Science's multimodal view of cell state, where single-cell molecular data is integrated with structural and morphological measurements.",
@@ -9650,14 +9719,13 @@
       "single-cell",
       "methods"
     ],
-    "doi": "10.1101/2022.04.07.487410",
-    "link": "https://doi.org/10.1101/2022.04.07.487410",
+    "doi": "10.1021/acs.analchem.2c01609",
+    "link": "https://doi.org/10.1021/acs.analchem.2c01609",
     "score": 1,
     "added": "2026-10-15",
     "pdf_link": "https://www.biorxiv.org/content/biorxiv/early/2022/04/10/2022.04.07.487410.full.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "preprint": true,
     "vip_author": "Sadao Ota",
     "vip_only": true,
     "author_data": [
@@ -9683,7 +9751,12 @@
         "name": "Sadao Ota",
         "orcid": "0000-0001-6004-488X"
       }
-    ]
+    ],
+    "previous_dois": [
+      "10.1101/2022.04.07.487410"
+    ],
+    "published_on": "2026-11-09",
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "High‐Throughput Parallel Optofluidic 3D‐Imaging Flow Cytometry",
@@ -9856,7 +9929,7 @@
     "title": "Transgene directed induction of a stem cell-derived human embryo model",
     "authors": "Bailey AT Weatherbee, Carlos W Gantner, Riza M Daza, Nobuhiko Hamazaki, Lisa K. Iwamoto-Stohl, Jay Shendure, Magdalena Zernicka-Goetz",
     "year": "2023",
-    "journal": "bioRxiv",
+    "journal": "Nature",
     "type": "research",
     "summary": "The human embryo undergoes morphogenetic transformations following implantation into the uterus, yet our knowledge of this crucial stage is limited by the inability to observe the embryo in vivo. Stem cell-derived models of the embryo are important tools to interrogate developmental events and tissue-tissue crosstalk during these stages1. Here, we establish a human post-implantation embryo model comprised of embryonic and extraembryonic tissues.",
     "relevance": "Directly relevant to Cell Science's foundational interest in how cells acquire and maintain identity — gene regulatory networks, lineage specification, and embryonic patterning are central to understanding cell decision-making and fate in developmental contexts. Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures.",
@@ -9865,14 +9938,13 @@
       "development",
       "self-organization"
     ],
-    "doi": "10.1101/2023.06.15.545082",
-    "link": "https://doi.org/10.1101/2023.06.15.545082",
+    "doi": "10.1038/s41586-023-06368-y",
+    "link": "https://doi.org/10.1038/s41586-023-06368-y",
     "score": 9,
     "added": "2026-10-15",
-    "pdf_link": "https://www.biorxiv.org/content/biorxiv/early/2023/06/15/2023.06.15.545082.full.pdf",
+    "pdf_link": "https://doi.org/10.1038/s41586-023-06368-y",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "preprint": true,
     "author_data": [
       {
         "name": "Bailey AT Weatherbee",
@@ -9902,7 +9974,12 @@
         "name": "Magdalena Zernicka-Goetz",
         "orcid": "0000-0002-7004-2471"
       }
-    ]
+    ],
+    "previous_dois": [
+      "10.1101/2023.06.15.545082"
+    ],
+    "published_on": "2026-11-09",
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Progress and challenges in stem cell biology",
@@ -10337,7 +10414,8 @@
       {
         "name": "Magdalena Zernicka-Goetz"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Mouse embryo model derived exclusively from embryonic stem cells undergoes neurulation and heart development",
@@ -10382,7 +10460,8 @@
       {
         "name": "Magdalena Zernicka-Goetz"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Lima1 mediates the pluripotency control of membrane dynamics and cellular metabolism",
@@ -10495,7 +10574,10 @@
         "name": "Clare E Buckley",
         "orcid": "0000-0003-3329-3973"
       }
-    ]
+    ],
+    "rejected": true,
+    "superseded_by": "10.15252/embj.2022111021",
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "E‐cadherin mediates apical membrane initiation site localisation during de novo polarisation of epithelial cavities",
@@ -10537,6 +10619,9 @@
         "name": "Clare E Buckley",
         "orcid": "0000-0003-3329-3973"
       }
+    ],
+    "previous_dois": [
+      "10.1101/2021.11.30.470571"
     ]
   },
   {
@@ -10618,6 +10703,9 @@
         "name": "Sara A. Wickström",
         "orcid": "0000-0001-6383-6292"
       }
+    ],
+    "previous_dois": [
+      "10.1101/2024.09.07.611779"
     ]
   },
   {
@@ -10692,13 +10780,16 @@
       {
         "name": "Sara A. Wickstrom"
       }
-    ]
+    ],
+    "rejected": true,
+    "superseded_by": "10.1038/s41556-025-01767-x",
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Mechanical loading is required for initiation of extracellular matrix deposition at the developing murine myotendinous junction",
     "authors": "Sarah N. Lipp, Kathryn R. Jacobson, Haley A. Colling, Tyler G. Tuttle, Dalton T. Miles, Kaitlin P. McCreery, Sarah Calve",
-    "year": "2022",
-    "journal": "Matrix biology : journal of the International Society for Matrix Biology",
+    "year": "2023",
+    "journal": "Matrix Biology",
     "type": "research",
     "summary": "The myotendinous junction (MTJ) contributes to the generation of motion by connecting muscle to tendon. At the adult MTJ, a specialized extracellular matrix (ECM) is thought to contribute to the mechanical integrity of the muscle-tendon interface, but the factors that influence MTJ formation during mammalian development are unclear. Here, we combined 3D imaging and proteomics with murine models in which muscle contractility and patterning are disrupted to resolve morphological and compositional changes in the ECM during MTJ development.",
     "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Relevant to Cell Science's interest in how spatial patterns emerge during development from molecular and cellular interactions.",
@@ -10706,14 +10797,13 @@
       "development",
       "morphology"
     ],
-    "doi": "10.1101/2022.06.28.497966",
-    "link": "https://doi.org/10.1101/2022.06.28.497966",
+    "doi": "10.1016/j.matbio.2023.01.003",
+    "link": "https://doi.org/10.1016/j.matbio.2023.01.003",
     "score": 2,
     "added": "2026-10-15",
-    "pdf_link": "https://www.biorxiv.org/content/biorxiv/early/2022/06/29/2022.06.28.497966.full.pdf",
+    "pdf_link": "https://doi.org/10.1016/j.matbio.2023.01.003",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "preprint": true,
     "author_data": [
       {
         "name": "Sarah N. Lipp",
@@ -10743,7 +10833,12 @@
         "name": "Sarah Calve",
         "orcid": "0000-0002-7887-6307"
       }
-    ]
+    ],
+    "previous_dois": [
+      "10.1101/2022.06.28.497966"
+    ],
+    "published_on": "2026-11-09",
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "The Role of Mechanobiology in Cancer Metastasis",
@@ -10878,6 +10973,9 @@
         "name": "Yusuke Hirabayashi",
         "orcid": "0000-0003-3950-6781"
       }
+    ],
+    "previous_dois": [
+      "10.1101/2023.08.22.554218"
     ]
   },
   {
@@ -10987,7 +11085,8 @@
         "name": "David Holcman",
         "orcid": "0000-0001-9854-5014"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Publisher Correction: ER proteins decipher the tubulin code to regulate organelle distribution",
@@ -11208,7 +11307,8 @@
     "pdf_link": "https://doi.org/10.64898/2026.03.30.715222",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "preprint": true
+    "preprint": true,
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "In preprints: robust segmentation clock outputs via cell cycle and synthetic coupling.",
@@ -11305,22 +11405,21 @@
   {
     "title": "Systematic differences in protein stability underlie species-specific developmental tempo",
     "authors": "Mitsuhiro Matsuda, Henrik M. Hammarén, Jorge Lázaro, Mikhail M. Savitski, Miki Ebisuya",
-    "year": "2025",
-    "journal": "bioRxiv",
+    "year": "2026",
+    "journal": "Developmental Cell",
     "type": "research",
     "summary": "Human embryonic development proceeds more slowly than in mice. The segmentation clock offers a tractable model to study interspecies differences in developmental tempo, as its oscillation period in human induced presomitic mesoderm (iPSM) cells is approximately twice that of mouse. While the core clock gene HES7 exhibits slower protein degradation in human cells, it remains unclear whether such cross-species differences in protein stability reflect a general principle.",
     "relevance": "Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs.",
     "tags": [
       "development"
     ],
-    "doi": "10.1101/2024.06.07.597977",
-    "link": "https://doi.org/10.1101/2024.06.07.597977",
+    "doi": "10.1016/j.devcel.2026.07.012",
+    "link": "https://doi.org/10.1016/j.devcel.2026.07.012",
     "score": 2,
     "added": "2026-10-15",
     "pdf_link": "https://doi.org/10.1101/2024.06.07.597977",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "preprint": true,
     "author_data": [
       {
         "name": "Mitsuhiro Matsuda"
@@ -11341,7 +11440,12 @@
         "name": "Miki Ebisuya",
         "orcid": "0000-0003-1854-7496"
       }
-    ]
+    ],
+    "previous_dois": [
+      "10.1101/2024.06.07.597977"
+    ],
+    "published_on": "2026-11-09",
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Metabolic activities are selective modulators for individual segmentation clock processes",
@@ -11374,6 +11478,9 @@
         "name": "Miki Ebisuya",
         "orcid": "0000-0003-1854-7496"
       }
+    ],
+    "previous_dois": [
+      "10.1101/2024.06.04.597451"
     ]
   },
   {
@@ -11456,7 +11563,8 @@
     "pdf_link": "https://www.biorxiv.org/content/biorxiv/early/2024/03/25/2024.03.22.586252.full.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "preprint": true
+    "preprint": true,
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "The stem cell zoo for comparative studies of developmental tempo",
@@ -11540,7 +11648,10 @@
         "name": "Miki Ebisuya",
         "orcid": "0000-0003-1854-7496"
       }
-    ]
+    ],
+    "rejected": true,
+    "superseded_by": "10.1038/s41467-025-56120-5",
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Understanding how cells and organisms keep time during development.",
@@ -11620,7 +11731,7 @@
   {
     "title": "A stem cell zoo uncovers intracellular scaling of developmental tempo across mammals",
     "authors": "Jorge Lázaro, Maria Costanzo, Marina Sanaki-Matsumiya, Charles Girardot, Masafumi Hayashi, Katsuhiko Hayashi, Sebastian Diecke, Thomas B. Hildebrandt et al.",
-    "year": "2022",
+    "year": "2023",
     "journal": "Cell Stem Cell",
     "type": "research",
     "summary": "Differential speeds in biochemical reactions have been proposed to be responsible for the differences in developmental tempo between mice and humans. However, the underlying mechanism controlling the species-specific kinetics remains to be determined. Using in vitro differentiation of pluripotent stem cells, we recapitulated the segmentation clocks of diverse mammalian species varying in body weight and taxa: marmoset, rabbit, cattle and rhinoceros.",
@@ -11629,14 +11740,13 @@
       "stem cells",
       "development"
     ],
-    "doi": "10.1101/2022.10.13.512072",
-    "link": "https://doi.org/10.1101/2022.10.13.512072",
+    "doi": "10.1016/j.stem.2023.05.014",
+    "link": "https://doi.org/10.1016/j.stem.2023.05.014",
     "score": 5,
     "added": "2026-10-15",
     "pdf_link": "https://doi.org/10.1016/j.stem.2023.05.014",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "preprint": true,
     "author_data": [
       {
         "name": "Jorge Lázaro",
@@ -11691,7 +11801,12 @@
         "name": "Miki Ebisuya",
         "orcid": "0000-0003-1854-7496"
       }
-    ]
+    ],
+    "previous_dois": [
+      "10.1101/2022.10.13.512072"
+    ],
+    "published_on": "2026-11-09",
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Periodic formation of epithelial somites from human pluripotent stem cells",
@@ -12580,7 +12695,8 @@
     "pdf_link": "",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "preprint": true
+    "preprint": true,
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Towards Unsupervised Speech-to-Speech Translation",
@@ -12698,7 +12814,8 @@
     "pdf_link": "",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "preprint": true
+    "preprint": true,
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Mechanochemical control systems regulating animal cell size.",
@@ -12848,6 +12965,9 @@
         "name": "Margaret L. Gardel",
         "orcid": "0000-0003-1846-9854"
       }
+    ],
+    "previous_dois": [
+      "10.1101/2023.06.07.544121"
     ]
   },
   {
@@ -12889,7 +13009,10 @@
       {
         "name": "Margaret L. Gardel"
       }
-    ]
+    ],
+    "rejected": true,
+    "superseded_by": "10.1016/j.bpj.2023.12.004",
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Learning to learn by using nonequilibrium training protocols for adaptable materials",
@@ -13072,22 +13195,21 @@
   {
     "title": "Integrative spatiotemporal modeling of biomolecular processes: application to the assembly of the Nuclear Pore Complex",
     "authors": "Andrew P. Latham, Jeremy O. B. Tempkin, Shotaro Otsuka, Wanlu Zhang, Jan Ellenberg, Andrej Sali",
-    "year": "2024",
-    "journal": "bioRxiv",
+    "year": "2025",
+    "journal": "Proceedings of the National Academy of Sciences",
     "type": "research",
     "summary": "Dynamic processes involving biomolecules are essential for the function of the cell. Here, we introduce an integrative method for computing models of these processes based on multiple heterogeneous sources of information, including time-resolved experimental data and physical models of dynamic processes. We first compute integrative structure models at fixed time points and then optimally select and connect these snapshots into a series of trajectories that optimize the likelihood of both the snapshots and transitions between them.",
     "relevance": "Directly relevant to Cell Science's live-cell imaging platforms for morphodynamic phenotyping and organelle dynamics at scale.",
     "tags": [
       "live imaging"
     ],
-    "doi": "10.1101/2024.08.06.606842",
-    "link": "https://doi.org/10.1101/2024.08.06.606842",
+    "doi": "10.1073/pnas.2415674122",
+    "link": "https://doi.org/10.1073/pnas.2415674122",
     "score": 2,
     "added": "2026-10-15",
     "pdf_link": "https://doi.org/10.1101/2024.08.06.606842",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "preprint": true,
     "author_data": [
       {
         "name": "Andrew P. Latham",
@@ -13113,27 +13235,31 @@
         "name": "Andrej Sali",
         "orcid": "0000-0003-0435-6197"
       }
-    ]
+    ],
+    "previous_dois": [
+      "10.1101/2024.08.06.606842"
+    ],
+    "published_on": "2026-11-09",
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Nanoscale 3D DNA tracing reveals the mechanism of self-organization of mitotic chromosomes",
     "authors": "Kai Sandvold Beckwith, Andreas Brunner, Natalia Rosalia Morero, Ralf Jungmann, Jan Ellenberg",
-    "year": "2024",
-    "journal": "bioRxiv",
+    "year": "2025",
+    "journal": "Cell",
     "type": "research",
     "summary": "How genomic DNA is folded during cell division to form the characteristic rod-shaped mitotic chromosomes essential for faithful genome inheritance is a long-standing open question in biology. Here, we use nanoscale DNA-tracing in single dividing cells to directly visualize how the 3D fold of genomic DNA changes during mitosis, at scales from single loops to entire chromosomes. Our structural analysis reveals a characteristic genome scaling minimum at 6-8 Mbp in mitosis.",
     "relevance": "Relevant to Cell Science's interest in emergent tissue organization and how multicellular systems self-pattern without external instruction.",
     "tags": [
       "self-organization"
     ],
-    "doi": "10.1101/2024.10.28.620625",
-    "link": "https://doi.org/10.1101/2024.10.28.620625",
+    "doi": "10.1016/j.cell.2025.02.028",
+    "link": "https://doi.org/10.1016/j.cell.2025.02.028",
     "score": 2,
     "added": "2026-10-15",
     "pdf_link": "https://doi.org/10.1101/2024.10.28.620625",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "preprint": true,
     "author_data": [
       {
         "name": "Kai Sandvold Beckwith",
@@ -13155,7 +13281,12 @@
         "name": "Jan Ellenberg",
         "orcid": "0000-0001-5909-701X"
       }
-    ]
+    ],
+    "previous_dois": [
+      "10.1101/2024.10.28.620625"
+    ],
+    "published_on": "2026-11-09",
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Rapid generation of homozygous fluorescent knock-in human cells using CRISPR–Cas9 genome editing and validation by automated imaging and digital PCR screening",
@@ -13234,7 +13365,8 @@
         "name": "Florian Jug",
         "orcid": "0000-0002-8499-5812"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Genetically encoded multimeric tags for subcellular protein localization in cryo-EM",
@@ -13353,7 +13485,8 @@
         "name": "J. Ellenberg",
         "orcid": "0000-0001-5909-701X"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Embryo‐uterine interaction coordinates mouse embryogenesis during implantation",
@@ -13435,27 +13568,29 @@
         "name": "Takashi Hiiragi",
         "orcid": "0000-0003-4964-7203"
       }
+    ],
+    "previous_dois": [
+      "10.1101/2022.06.13.495767"
     ]
   },
   {
     "title": "A liquid-like coat mediates chromosome clustering during mitotic exit",
     "authors": "Alberto Hernandez-Armendariz, Valerio Sorichetti, Yuki Hayashi, Andreas Brunner, Jan Ellenberg, Anđela Šarić, Sara Cuylen-Haering",
-    "year": "2023",
-    "journal": "bioRxiv",
+    "year": "2024",
+    "journal": "Molecular Cell",
     "type": "research",
     "summary": "The individualization of chromosomes during early mitosis and their clustering upon exit from cell division are two key transitions that ensure efficient segregation of eukaryotic chromosomes. Both processes are regulated by the surfactant-like protein Ki-67, but how Ki-67 achieves these diametric functions has remained unknown. Here, we report that Ki-67 radically switches from a chromosome repellent to a chromosome attractant during anaphase.",
     "relevance": "Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis. Relevant to understanding how biomolecular condensates and polymer organization contribute to intracellular structure — a core Cell Science research interest.",
     "tags": [
       "phase separation"
     ],
-    "doi": "10.1101/2023.11.23.568026",
-    "link": "https://doi.org/10.1101/2023.11.23.568026",
+    "doi": "10.1016/j.molcel.2024.07.022",
+    "link": "https://doi.org/10.1016/j.molcel.2024.07.022",
     "score": 4,
     "added": "2026-10-15",
-    "pdf_link": "https://www.biorxiv.org/content/biorxiv/early/2023/11/23/2023.11.23.568026.full.pdf",
+    "pdf_link": "https://doi.org/10.1016/j.molcel.2024.07.022",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "preprint": true,
     "author_data": [
       {
         "name": "Alberto Hernandez-Armendariz",
@@ -13485,7 +13620,12 @@
         "name": "Sara Cuylen-Haering",
         "orcid": "0000-0002-1193-4648"
       }
-    ]
+    ],
+    "previous_dois": [
+      "10.1101/2023.11.23.568026"
+    ],
+    "published_on": "2026-11-09",
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Pulsed stimulated Brillouin microscopy enables high-sensitivity mechanical imaging of live and fragile biological specimens",
@@ -13753,7 +13893,10 @@
         "name": "T. Hiiragi",
         "orcid": "0000-0003-4964-7203"
       }
-    ]
+    ],
+    "rejected": true,
+    "superseded_by": "10.15252/embj.2022113280",
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "O-040 Investigating why early embryonic mitoses are highly error prone by real time imaging",
@@ -13832,6 +13975,9 @@
         "name": "Jennifer A Zallen",
         "orcid": "0000-0003-3975-1568"
       }
+    ],
+    "previous_dois": [
+      "10.1101/2024.08.25.609458"
     ]
   },
   {
@@ -13871,7 +14017,10 @@
       {
         "name": "Jennifer A. Zallen"
       }
-    ]
+    ],
+    "rejected": true,
+    "superseded_by": "10.1016/j.devcel.2026.07.001",
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Three-dimensional rosettes in epithelial formation.",
@@ -13952,7 +14101,8 @@
         "orcid": "0000-0003-3975-1568"
       }
     ],
-    "preprint": true
+    "preprint": true,
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "A single-cell atlas of spatial and temporal gene expression in the mouse cranial neural plate",
@@ -14007,7 +14157,10 @@
       {
         "name": "Jennifer A. Zallen"
       }
-    ]
+    ],
+    "rejected": true,
+    "superseded_by": "10.7554/elife.102819",
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Multicellular rosettes link mesenchymal-epithelial transition to radial intercalation in the mouse axial mesoderm",
@@ -14089,7 +14242,8 @@
         "name": "Olivier Harismendy",
         "orcid": "0000-0002-8098-9888"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Single-cell profiling of environmental enteropathy reveals signatures of epithelial remodeling and immune activation",
@@ -15300,6 +15454,10 @@
         "name": "Lena Maier-Hein",
         "orcid": "0000-0003-4910-9368"
       }
+    ],
+    "preprint_checked": "2026-11-09",
+    "previous_dois": [
+      "10.48550/arXiv.2302.01790"
     ]
   },
   {
@@ -15405,7 +15563,10 @@
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
     "vip_author": "Anna Kreshuk",
-    "vip_only": true
+    "vip_only": true,
+    "rejected": true,
+    "superseded_by": "10.1038/s41592-023-02150-0",
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "CebraEM: A practical workflow to segment cellular organelles in volume SEM datasets using a transferable CNN-based membrane prediction",
@@ -15455,7 +15616,8 @@
         "name": "Yannick Schwab",
         "orcid": "0000-0001-8027-1836"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "MorphoFeatures for unsupervised exploration of cell types, tissues, and organs in volume electron microscopy",
@@ -15497,6 +15659,9 @@
         "name": "Anna Kreshuk",
         "orcid": "0000-0003-1334-6388"
       }
+    ],
+    "previous_dois": [
+      "10.1101/2022.05.07.490949"
     ]
   },
   {
@@ -15721,7 +15886,8 @@
         "name": "Matthew Hartley",
         "orcid": "0000-0001-6178-2884"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Deep intravital brain tumor imaging enabled by tailored three-photon microscopy and analysis",
@@ -16417,6 +16583,10 @@
         "name": "Paul F. Jäger",
         "orcid": "0000-0002-6243-2568"
       }
+    ],
+    "preprint_checked": "2026-11-09",
+    "previous_dois": [
+      "10.48550/arXiv.2206.01653"
     ]
   },
   {
@@ -16462,7 +16632,10 @@
         "name": "Anna Kreshuk",
         "orcid": "0000-0003-1334-6388"
       }
-    ]
+    ],
+    "rejected": true,
+    "superseded_by": "10.7554/elife.80918",
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "BioImage Model Zoo: A Community-Driven Resource for Accessible Deep Learning in BioImage Analysis",
@@ -16556,7 +16729,8 @@
         "name": "Anna Kreshuk",
         "orcid": "0000-0003-1334-6388"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "MoBIE: a Fiji plugin for sharing and exploration of multi-modal cloud-hosted big image data",
@@ -16769,6 +16943,9 @@
         "name": "Tomas Valenta",
         "orcid": "0000-0002-3043-1835"
       }
+    ],
+    "previous_dois": [
+      "10.1101/2022.11.11.516138"
     ]
   },
   {
@@ -16831,7 +17008,8 @@
         "name": "Prisca Liberali",
         "orcid": "0000-0003-0695-6081"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "ISSCR standards for the use of human stem cells in basic research",
@@ -17072,7 +17250,10 @@
         "name": "Tomas Valenta",
         "orcid": "0000-0002-3043-1835"
       }
-    ]
+    ],
+    "rejected": true,
+    "superseded_by": "10.15252/embr.202256454",
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Organoids as tools for fundamental discovery and translation—a Keystone Symposia report",
@@ -17217,7 +17398,8 @@
         "name": "F. Gisou van der Goot",
         "orcid": "0000-0002-8522-274X"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Tissue geometry drives deterministic organoid patterning",
@@ -17801,7 +17983,10 @@
         "name": "Anne Grapin-Botton",
         "orcid": "0000-0002-1202-5235"
       }
-    ]
+    ],
+    "rejected": true,
+    "superseded_by": "10.1016/j.devcel.2023.07.019",
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Accessible and cost-effective methods for patterning cell monolayers on compliant substrates",
@@ -17888,7 +18073,8 @@
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
     "vip_author": "Sebastian Streichan",
-    "vip_only": true
+    "vip_only": true,
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "DynamicAtlas: a morphodynamic atlas for Drosophila development",
@@ -18194,7 +18380,8 @@
       {
         "name": "Sebastian Streichan"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Learning a conserved mechanism for early neuroectoderm morphogenesis.",
@@ -18326,7 +18513,8 @@
         "name": "Beth L. Pruitt",
         "orcid": "0000-0002-4861-2124"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Active cell divisions generate fourfold orientationally ordered phase in living tissue",
@@ -18433,7 +18621,8 @@
         "name": "Stefano Di Talia",
         "orcid": "0000-0001-9758-7925"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Maintaining symmetry during body axis elongation.",
@@ -18568,7 +18757,8 @@
         "name": "Sebastian J Streichan",
         "orcid": "0000-0002-6105-9087"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Septins regulate border cell shape and surface geometry downstream of Rho",
@@ -18614,12 +18804,13 @@
       {
         "name": "Denise J. Montell"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Geometric control of myosin II orientation during axis elongation",
     "authors": "M.F. Lefebvre, N.H. Claussen, N.P. Mitchell, H.J. Gustafson, S.J. Streichan",
-    "year": "2022",
+    "year": "2023",
     "journal": "eLife",
     "type": "research",
     "summary": "The actomyosin cytoskeleton is a crucial driver of morphogenesis. Yet how the behavior of large-scale cytoskeletal patterns in deforming tissues emerges from the interplay of geometry, genetics, and mechanics remains incompletely understood. Convergent extension flow in D.",
@@ -18628,14 +18819,13 @@
       "morphogenesis",
       "live imaging"
     ],
-    "doi": "10.1101/2022.01.12.476069",
-    "link": "https://doi.org/10.1101/2022.01.12.476069",
+    "doi": "10.7554/elife.78787",
+    "link": "https://doi.org/10.7554/elife.78787",
     "score": 8,
     "added": "2026-10-15",
     "pdf_link": "https://doi.org/10.7554/elife.78787",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "preprint": true,
     "vip_author": "Sebastian Streichan",
     "vip_only": true,
     "author_data": [
@@ -18658,7 +18848,12 @@
         "name": "S.J. Streichan",
         "orcid": "0000-0002-6105-9087"
       }
-    ]
+    ],
+    "previous_dois": [
+      "10.1101/2022.01.12.476069"
+    ],
+    "published_on": "2026-11-09",
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Morphodynamic Atlas for Drosophila Development",
@@ -18710,7 +18905,8 @@
         "name": "Sebastian J Streichan",
         "orcid": "0000-0002-6105-9087"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Visceral organ morphogenesis via calcium-patterned muscle constrictions",
@@ -18755,6 +18951,9 @@
         "name": "Sebastian J Streichan",
         "orcid": "0000-0002-6105-9087"
       }
+    ],
+    "previous_dois": [
+      "10.1101/2021.11.07.467658"
     ]
   },
   {
@@ -18800,7 +18999,8 @@
       {
         "name": "Siddharth S. Dey"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Patterned mechanical feedback establishes a global myosin gradient",
@@ -18890,7 +19090,10 @@
         "name": "Sebastian J. Streichan",
         "orcid": "0000-0002-6105-9087"
       }
-    ]
+    ],
+    "rejected": true,
+    "superseded_by": "10.7554/elife.77355",
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Erratum for: Contextual computation by competitive protein dimerization networks",
@@ -19046,7 +19249,8 @@
         "orcid": "0000-0002-1221-0967"
       }
     ],
-    "preprint": true
+    "preprint": true,
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Protein engineering: status report",
@@ -19466,7 +19670,8 @@
         "orcid": "0000-0002-1221-0967"
       }
     ],
-    "preprint": true
+    "preprint": true,
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Programmable pathway profiles reveal signaling principles of TGF-β superfamily receptors",
@@ -19520,7 +19725,8 @@
         "name": "Michael B. Elowitz",
         "orcid": "0000-0002-1221-0967"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Engineered protein circuits for cancer therapy",
@@ -19613,7 +19819,8 @@
         "name": "Michael B. Elowitz",
         "orcid": "0000-0002-1221-0967"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Engineered cells as programmable mRNA delivery vehicles",
@@ -19711,7 +19918,8 @@
         "orcid": "0000-0002-1221-0967"
       }
     ],
-    "preprint": true
+    "preprint": true,
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Adenylyl cyclases combinatorially integrate opposing dopamine receptor signals",
@@ -19740,7 +19948,8 @@
         "orcid": "0000-0002-1221-0967"
       }
     ],
-    "preprint": true
+    "preprint": true,
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Decoding molecular distributional codes through collective instabilities",
@@ -19873,7 +20082,8 @@
         "orcid": "0000-0001-7896-6217"
       }
     ],
-    "preprint": true
+    "preprint": true,
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Synaptic MEMOIR: mapping individual synapses of neurons with protein barcodes",
@@ -19939,7 +20149,8 @@
         "name": "Long Cai",
         "orcid": "0000-0002-7154-5361"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Engineering Synthetic Phase Variation for Control of Microbial consortium",
@@ -19973,7 +20184,8 @@
         "name": "Michael B. Elowitz",
         "orcid": "0000-0002-1221-0967"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Diversity in Notch ligand-receptor signaling interactions",
@@ -20052,7 +20264,8 @@
         "orcid": "0000-0001-5464-917X"
       }
     ],
-    "preprint": true
+    "preprint": true,
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Contextual Computation by Competitive Protein Dimerization Networks",
@@ -20123,6 +20336,9 @@
         "name": "Michael B. Elowitz",
         "orcid": "0000-0002-1221-0967"
       }
+    ],
+    "previous_dois": [
+      "10.1101/2023.06.06.543925"
     ]
   },
   {
@@ -20158,6 +20374,9 @@
         "name": "Michael B. Elowitz",
         "orcid": "0000-0002-1221-0967"
       }
+    ],
+    "previous_dois": [
+      "10.1101/2022.08.21.504714"
     ]
   },
   {
@@ -20401,7 +20620,8 @@
         "name": "Michael B. Elowitz",
         "orcid": "0000-0002-1221-0967"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Cellular and molecular networks of intercellular signaling in bone marrow hematopoiesis",
@@ -20450,25 +20670,25 @@
       {
         "name": "Rong Lu"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "miRNA circuit modules for precise, tunable control of gene expression",
     "authors": "Rongrong Du, Michael J. Flynn, Karan Mahe, Monique Honsa, Bo Gu, Dongyang Li, Sean E. McGeary, Viviana Gradinaru et al.",
-    "year": "2024",
-    "journal": "bioRxiv",
+    "year": "2025",
+    "journal": "Molecular Cell",
     "type": "research",
     "summary": "Accurate control of transgene expression is important for research and therapy but challenging to achieve in most settings. miRNA-based regulatory circuits can be incorporated within transgenes for improved control. However, the design principles, performance limits, and applications of these circuits in research and biotechnology have not been systematically determined.",
     "relevance": "",
     "tags": [],
-    "doi": "10.1101/2024.03.12.583048",
-    "link": "https://doi.org/10.1101/2024.03.12.583048",
+    "doi": "10.1016/j.molcel.2025.11.028",
+    "link": "https://doi.org/10.1016/j.molcel.2025.11.028",
     "score": 2,
     "added": "2026-10-15",
     "pdf_link": "https://www.biorxiv.org/content/biorxiv/early/2024/03/12/2024.03.12.583048.full.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "preprint": true,
     "vip_author": "Michael Elowitz",
     "vip_only": true,
     "author_data": [
@@ -20511,7 +20731,12 @@
         "name": "Michael B. Elowitz",
         "orcid": "0000-0002-1221-0967"
       }
-    ]
+    ],
+    "previous_dois": [
+      "10.1101/2024.03.12.583048"
+    ],
+    "published_on": "2026-11-09",
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Temporal BMP4 effects on mouse embryonic and extraembryonic development",
@@ -20634,7 +20859,8 @@
         "name": "Michael B Elowitz",
         "orcid": "0000-0002-1221-0967"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Simultaneous Protein and RNA Analysis in Single Extracellular Vesicles, Including Viruses",
@@ -20847,7 +21073,8 @@
         "name": "Michael B. Elowitz",
         "orcid": "0000-0002-1221-0967"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Reconstitution of morphogen shuttling circuits",
@@ -21039,25 +21266,27 @@
         "name": "Michael B. Elowitz",
         "orcid": "0000-0002-1221-0967"
       }
-    ]
+    ],
+    "rejected": true,
+    "superseded_by": "10.1016/j.devcel.2024.01.017",
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Diversity in Notch ligand-receptor signaling interactions",
     "authors": "Rachael Kuintzle, Leah A. Santat, Michael B. Elowitz",
-    "year": "2023",
-    "journal": "bioRxiv",
+    "year": "2025",
+    "journal": "eLife",
     "type": "research",
     "summary": "The Notch signaling pathway uses families of ligands and receptors to transmit signals to nearby cells. These components are expressed in diverse combinations in different cell types, interact in a many-to-many fashion, both within the same cell (in cis) and between cells (in trans), and their interactions are modulated by Fringe glycosyltransferases. A fundamental question is how the strength of Notch signaling depends on which pathway components are expressed, at what levels, and in which cells.",
     "relevance": "Directly relevant to understanding how cells send and receive signals from neighbors — foundational for collective cell decision-making and multicellular coordination, both core Cell Science themes.",
     "tags": [],
-    "doi": "10.1101/2023.08.24.554677",
-    "link": "https://doi.org/10.1101/2023.08.24.554677",
+    "doi": "10.7554/elife.91422.3",
+    "link": "https://doi.org/10.7554/elife.91422.3",
     "score": 4,
     "added": "2026-10-15",
-    "pdf_link": "https://www.biorxiv.org/content/biorxiv/early/2023/08/25/2023.08.24.554677.full.pdf",
+    "pdf_link": "https://doi.org/10.7554/elife.91422.3",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "preprint": true,
     "vip_author": "Michael Elowitz",
     "vip_only": true,
     "author_data": [
@@ -21073,7 +21302,12 @@
         "name": "Michael B. Elowitz",
         "orcid": "0000-0002-1221-0967"
       }
-    ]
+    ],
+    "previous_dois": [
+      "10.1101/2023.08.24.554677"
+    ],
+    "published_on": "2026-11-09",
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "A synthetic protein-level neural network in mammalian cells",
@@ -21109,13 +21343,14 @@
         "name": "Michael B. Elowitz",
         "orcid": "0000-0002-1221-0967"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Periodic spatial patterning with a single morphogen",
     "authors": "Sheng Wang, Jordi Garcia-Ojalvo, Michael B. Elowitz",
     "year": "2022",
-    "journal": "bioRxiv",
+    "journal": "Cell Systems",
     "type": "research",
     "summary": "Multicellular development employs periodic spatial patterning to generate repetitive structures such as digits, vertebrae, and teeth. Turing patterning has long provided a key paradigm for understanding such systems. The simplest Turing systems are believed to require at least two signals, or morphogens, that diffuse and react to spontaneously generate periodic patterns.",
     "relevance": "Directly relevant to Cell Science's foundational interest in how cells acquire and maintain identity — gene regulatory networks, lineage specification, and embryonic patterning are central to understanding cell decision-making and fate in developmental contexts. Aligned with Cell Science's synthetic biology program — engineering gene circuits to program cell community behavior and synthetic multicellular systems.",
@@ -21125,14 +21360,13 @@
       "Turing patterning",
       "developmental biology"
     ],
-    "doi": "10.1101/2022.03.21.484932",
-    "link": "https://doi.org/10.1101/2022.03.21.484932",
+    "doi": "10.1016/j.cels.2022.11.001",
+    "link": "https://doi.org/10.1016/j.cels.2022.11.001",
     "score": 10,
     "added": "2026-10-15",
     "pdf_link": "http://www.cell.com/article/S2405471222004367/pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "preprint": true,
     "vip_author": "Michael Elowitz",
     "vip_only": true,
     "author_data": [
@@ -21148,7 +21382,12 @@
         "name": "Michael B. Elowitz",
         "orcid": "0000-0002-1221-0967"
       }
-    ]
+    ],
+    "previous_dois": [
+      "10.1101/2022.03.21.484932"
+    ],
+    "published_on": "2026-11-09",
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "The sound of silence: transgene silencing in mammalian cell engineering",
@@ -21289,7 +21528,10 @@
         "name": "Michael B. Elowitz",
         "orcid": "0000-0002-1221-0967"
       }
-    ]
+    ],
+    "rejected": true,
+    "superseded_by": "10.1016/j.xgen.2023.100463",
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Measuring response functions of active materials from data",
@@ -21335,7 +21577,8 @@
         "name": "Margaret L. Gardel",
         "orcid": "0000-0003-1846-9854"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Reconstitution of the transition from a lamellipodia- to filopodia-like actin network with purified proteins",
@@ -21396,7 +21639,8 @@
     "pdf_link": "http://arxiv.org/pdf/2303.00176",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "preprint": true
+    "preprint": true,
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Tissue confinement regulates cell growth and size in epithelia",
@@ -21437,7 +21681,8 @@
         "name": "Margaret L Gardel",
         "orcid": "0000-0003-1846-9854"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Force-dependent intercellular adhesion strengthening underlies asymmetric adherens junction contraction.",
@@ -21636,7 +21881,8 @@
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
     "vip_author": "Zev Gartner",
-    "vip_only": true
+    "vip_only": true,
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Automated cryo-volume EM for high-resolution 3D imaging and in situ structural analysis of cells and tissues",
@@ -21701,7 +21947,8 @@
         "orcid": "0000-0003-4013-3898"
       }
     ],
-    "preprint": true
+    "preprint": true,
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "A stable cryogenic fluorescence microscope for correlative super-resolution light and electron microscopy",
@@ -21741,7 +21988,8 @@
         "name": "Jonas Ries"
       }
     ],
-    "preprint": true
+    "preprint": true,
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "IConE: Batch Independent Collapse Prevention for Self-Supervised Representation Learning",
@@ -21761,7 +22009,8 @@
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
     "vip_author": "Anna Kreshuk",
-    "vip_only": true
+    "vip_only": true,
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Dataset-Level Regularization for Joint-Embedding Self-Supervised Learning",
@@ -21829,7 +22078,8 @@
         "name": "Judith B. Zaugg",
         "orcid": "0000-0001-8324-4040"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Metrics reloaded: Pitfalls and recommendations for image analysis validation",
@@ -21849,7 +22099,10 @@
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
     "vip_author": "Anna Kreshuk",
-    "vip_only": true
+    "vip_only": true,
+    "rejected": true,
+    "superseded_by": "10.1038/s41592-023-02151-z",
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Framework for pediatric robotic surgery program development.",
@@ -22536,7 +22789,8 @@
         "name": "Isabelle Scheers"
       }
     ],
-    "preprint": true
+    "preprint": true,
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Label‐free cell detection of acute leukemia using ghost cytometry",
@@ -22658,7 +22912,8 @@
         "name": "Tomoiku Takaku",
         "orcid": "0000-0002-6493-6225"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Pooled CRISPR screening of high-content cellular phenotypes by ghost cytometry",
@@ -22715,7 +22970,8 @@
         "name": "Sadao Ota",
         "orcid": "0000-0001-6004-488X"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "High-throughput parallel 3D imaging flow cytometry",
@@ -23014,7 +23270,8 @@
         "orcid": "0000-0002-8256-5683"
       }
     ],
-    "preprint": true
+    "preprint": true,
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Integrative cartilage repair using acellular allografts for engineered structure and surface lubrication in vivo",
@@ -23176,7 +23433,8 @@
         "name": "Corey P. Neu",
         "orcid": "0000-0002-8256-5683"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Particulate ECM biomaterial ink is 3D printed and naturally crosslinked to form structurally-layered and lubricated cartilage tissue mimics",
@@ -23272,25 +23530,25 @@
         "orcid": "0000-0003-1028-6076"
       }
     ],
-    "preprint": true
+    "preprint": true,
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Pearling Drives Mitochondrial DNA Nucleoid Distribution",
     "authors": "Juan C. Landoni, Matthew D. Lycas, Josefa Macuada, Willi Stepp, Roméo Jaccard, Christopher J. Obara, Andrew S. Moore, David Hoffman et al.",
-    "year": "2025",
-    "journal": "bioRxiv",
+    "year": "2026",
+    "journal": "Science",
     "type": "research",
     "summary": "The mitochondria of most eukaryotes carry an indispensable second genome (mtDNA), encoding genes engaged in oxidative phosphorylation1. The regular positioning and segregation of mtDNA-containing nucleoids is essential for mitochondrial function and inheritance, as well as cellular health2–5. However, the underlying mechanism driving nucleoid distribution and disaggregation remains unknown6,7.",
     "relevance": "Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis.",
     "tags": [],
-    "doi": "10.1101/2024.12.21.629917",
-    "link": "https://doi.org/10.1101/2024.12.21.629917",
+    "doi": "10.1126/science.adu5646",
+    "link": "https://doi.org/10.1126/science.adu5646",
     "score": 0,
     "added": "2026-10-15",
     "pdf_link": "https://infoscience.epfl.ch/handle/20.500.14299/262323",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "preprint": true,
     "author_data": [
       {
         "name": "Juan C. Landoni",
@@ -23339,7 +23597,12 @@
         "name": "Suliana Manley",
         "orcid": "0000-0002-4755-4778"
       }
-    ]
+    ],
+    "previous_dois": [
+      "10.1101/2024.12.21.629917"
+    ],
+    "published_on": "2026-11-09",
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "PDZD8-FKBP8 tethering complex at ER-mitochondria contact sites regulates mitochondrial complexity",
@@ -23436,7 +23699,10 @@
         "name": "Yusuke Hirabayashi",
         "orcid": "0000-0003-3950-6781"
       }
-    ]
+    ],
+    "rejected": true,
+    "superseded_by": "10.1038/s41467-025-58538-3",
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Structural Diversity within the Endoplasmic Reticulum-From the Microscale to the Nanoscale.",
@@ -23577,7 +23843,8 @@
         "name": "Jennifer Lippincott-Schwartz",
         "orcid": "0000-0002-8601-3501"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Unraveling Single-Particle Trajectories Confined in Tubular Networks",
@@ -23871,7 +24138,8 @@
         "name": "Margaret Lise Gardel",
         "orcid": "0000-0003-1846-9854"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Highly flexible PEG-LifeAct constructs act as tunable biomimetic actin crosslinkers",
@@ -23947,20 +24215,19 @@
   {
     "title": "Cracked actin filaments as mechanosensitive receptors",
     "authors": "Vilmos Zsolnay, Margaret L. Gardel, David R. Kovar, Gregory A. Voth",
-    "year": "2023",
-    "journal": "bioRxiv",
+    "year": "2024",
+    "journal": "Biophysical Journal",
     "type": "research",
     "summary": "Actin filament networks are exposed to mechanical stimuli, but the effect of strain on actin filament structure has not been well-established in molecular detail. This is a critical gap in understanding because the activity of a variety of actin-binding proteins have recently been determined to be altered by actin filament strain. We therefore used all-atom molecular dynamics simulations to apply tensile strains to actin filaments and find that changes in actin subunit organization are minimal in mechanically strained, but intact, actin filaments.",
     "relevance": "",
     "tags": [],
-    "doi": "10.1101/2023.06.26.546553",
-    "link": "https://doi.org/10.1101/2023.06.26.546553",
+    "doi": "10.1016/j.bpj.2024.06.014",
+    "link": "https://doi.org/10.1016/j.bpj.2024.06.014",
     "score": 0,
     "added": "2026-10-15",
     "pdf_link": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10327158",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "preprint": true,
     "author_data": [
       {
         "name": "Vilmos Zsolnay"
@@ -23974,7 +24241,12 @@
       {
         "name": "Gregory A. Voth"
       }
-    ]
+    ],
+    "previous_dois": [
+      "10.1101/2023.06.26.546553"
+    ],
+    "published_on": "2026-11-09",
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Author Correction: Membrane tension induces F-actin reorganization and flow in a biomimetic model cortex",
@@ -24085,7 +24357,8 @@
         "name": "Margaret L. Gardel",
         "orcid": "0000-0003-1846-9854"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Direct detection of deformation modes on varying length scales in active biopolymer networks",
@@ -24114,7 +24387,8 @@
       {
         "name": "Kimberly L. Weirich"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Editorial: PRX Life, Where Physics and Life Sciences Converge",
@@ -24245,7 +24519,8 @@
         "name": "Margaret L. Gardel",
         "orcid": "0000-0003-1846-9854"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Simulating structurally variable nuclear pore complexes for microscopy",
@@ -24399,7 +24674,8 @@
         "name": "Julia Mahamid",
         "orcid": "0000-0001-6968-041X"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Assessment of 3D MINFLUX data for quantitative structural biology in cells revisited",
@@ -24459,7 +24735,8 @@
         "name": "Stefan W. Hell",
         "orcid": "0000-0002-9638-5077"
       }
-    ]
+    ],
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Title : 3 D super-resolution fluorescence microscopy maps the variable molecular architecture of the Nuclear Pore Complex Running Title : The variable architecture of the NPC",
@@ -24596,7 +24873,8 @@
         "orcid": "0000-0002-7004-2471"
       }
     ],
-    "preprint": true
+    "preprint": true,
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Self-organization and symmetry breaking in intestinal organoid development",
@@ -25295,7 +25573,8 @@
         "orcid": "0000-0002-5839-2380"
       }
     ],
-    "preprint": true
+    "preprint": true,
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Species-specific WNT requirements shape somite morphogenesis in mammalian embryo models",
@@ -25338,7 +25617,8 @@
         "orcid": "0000-0001-6560-3919"
       }
     ],
-    "preprint": true
+    "preprint": true,
+    "preprint_checked": "2026-11-09"
   },
   {
     "title": "Tubulin polyglutamylation modulates Golgi morphodynamics and neurite branching during neuronal morphogenesis.",
