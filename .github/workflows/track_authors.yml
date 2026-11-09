@@ -38,7 +38,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Fetch VIP author papers
+      - name: Fetch VIP author papers, regenerate site, push
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
@@ -49,21 +49,32 @@ jobs:
           ARGS=(--lookback-days "$LOOKBACK" --vip-threshold "$THRESHOLD")
           [ "$DRY_RUN" = "true" ] && ARGS+=(--dry-run)
 
-          python track_authors.py "${ARGS[@]}"
+          if [ "$DRY_RUN" = "true" ]; then
+            python track_authors.py "${ARGS[@]}"
+            exit 0
+          fi
 
-      - name: Regenerate site
-        if: ${{ inputs.dry_run != 'true' }}
-        run: python generate_site.py
-
-      - name: Commit and push
-        if: ${{ inputs.dry_run != 'true' }}
-        run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add papers.json authors.json index.html filters.json papers_data.json
-          if git diff --cached --quiet; then
-            echo "No changes to commit."
-          else
+          # Uploads and site edits push to main at any time: redo the work on the latest main and retry
+          # instead of failing on a rejected push.
+          for attempt in 1 2 3 4 5 6; do
+            git fetch origin main
+            git reset --hard origin/main
+            python track_authors.py "${ARGS[@]}"
+            python generate_site.py
+            git add papers.json authors.json index.html filters.json papers_data.json
+            if git diff --cached --quiet; then
+              echo "No changes to commit."
+              exit 0
+            fi
             git commit -m "chore: add VIP author papers ($(date -u +%Y-%m-%d))"
-            git push origin main
-          fi
+            if git push origin main; then
+              echo "Pushed on attempt $attempt."
+              exit 0
+            fi
+            echo "Push rejected on attempt $attempt - retrying in $((attempt * 4))s..."
+            sleep $((attempt * 4))
+          done
+          echo "All push attempts failed."
+          exit 1
