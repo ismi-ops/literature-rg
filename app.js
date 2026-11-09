@@ -205,7 +205,7 @@ function buildFilters(F) {
   F.types.filter(t => t !== 'all').forEach(t => addOption('type', t, cap(t), F.typeCounts[t]));
   if (F.hasPreprint) addOption('status', 'preprint', 'Preprint'); else hideDropdown('status');
   addOption('picks', 'ru', "✨ Ru's Picks");
-  addOption('picks', 'agent', 'Agent picks');
+  addOption('picks', 'agent', '🤖 Agent picks');
   if (F.authors.length) F.authors.forEach(a => addOption('collab', a.name, a.name, a.count)); else hideDropdown('collab');
   if (F.tags.length) F.tags.forEach(t => addOption('tags', t.name, t.name, t.count)); else hideDropdown('tags');
   F.years.forEach(y => addOption('year', y.name, y.name, y.count));

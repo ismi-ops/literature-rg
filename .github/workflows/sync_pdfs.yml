@@ -22,17 +22,28 @@ jobs:
 
       - run: pip install -r requirements.txt
 
-      - name: Match PDFs to papers and regenerate site
-        run: python sync_pdfs.py
-
-      - name: Commit and push
+      - name: Match PDFs to papers, regenerate site, push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add papers.json index.html filters.json papers_data.json
-          if git diff --cached --quiet; then
-            echo "No changes to commit."
-          else
+          # Several uploads in a row, or other bots, can move main while this runs: redo the work on the
+          # latest main and retry instead of failing on a rejected push.
+          for attempt in 1 2 3 4 5 6; do
+            git fetch origin main
+            git reset --hard origin/main
+            python sync_pdfs.py
+            git add papers.json index.html filters.json papers_data.json
+            if git diff --cached --quiet; then
+              echo "No changes to commit."
+              exit 0
+            fi
             git commit -m "chore: attach uploaded PDFs to papers"
-            git push
-          fi
+            if git push; then
+              echo "Pushed on attempt $attempt."
+              exit 0
+            fi
+            echo "Push rejected on attempt $attempt - retrying in $((attempt * 4))s..."
+            sleep $((attempt * 4))
+          done
+          echo "All push attempts failed."
+          exit 1
