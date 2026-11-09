@@ -12620,7 +12620,7 @@
   },
   {
     "title": "Correction for Colen et al., Machine learning active-nematic hydrodynamics",
-    "authors": "Ming Han, Rui Zhang, Steven A. Redford, Linnea M. Lemma, Link Morgan, Paul V. Ruijgrok et al.",
+    "authors": "Ming Han, Rui Zhang, Steven A. Redford, Linnea M. Lemma, Link Morgan, Paul V. Ruijgrok, Raymond Adkins, Z. Bryant et al.",
     "year": "2025",
     "journal": "Proceedings of the National Academy of Sciences of the United States of America",
     "type": "research",
@@ -25296,5 +25296,69 @@
       }
     ],
     "preprint": true
+  },
+  {
+    "title": "Species-specific WNT requirements shape somite morphogenesis in mammalian embryo models",
+    "authors": "Charlotte Knight, Luke Simpson, Cinzia Allegrucci, Catherine L.R. Merry, Ramiro Alberio",
+    "year": "2026",
+    "journal": "bioRxiv",
+    "type": "research",
+    "summary": "Somitogenesis establishes the metameric body plan of the vertebrate embryo and can be recapitulated in vitro using stem cell-based embryo models. Although these systems are well established in individual species, they have rarely been compared across species, leaving unresolved how conserved developmental programmes generate species-specific tissue organisation. Here, we compare somitogenesis in embryo models derived from human, pig, sheep and cow pluripotent stem cells and investigate how WNT signalling and the extracellular matrix regulate axis segmentation.",
+    "relevance": "Directly relevant to Cell Science's foundational interest in how cells acquire and maintain identity — gene regulatory networks, lineage specification, and embryonic patterning are central to understanding cell decision-making and fate in developmental contexts. Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures.",
+    "tags": [
+      "stem cells",
+      "development",
+      "morphogenesis",
+      "morphology"
+    ],
+    "doi": "10.64898/2026.11.03.763751",
+    "link": "https://doi.org/10.64898/2026.11.03.763751",
+    "score": 8,
+    "added": "2026-11-09",
+    "pdf_link": "https://doi.org/10.64898/2026.11.03.763751",
+    "source": "ss_recommendations",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "author_data": [
+      {
+        "name": "Charlotte Knight"
+      },
+      {
+        "name": "Luke Simpson"
+      },
+      {
+        "name": "Cinzia Allegrucci",
+        "orcid": "0000-0001-8517-2423"
+      },
+      {
+        "name": "Catherine L.R. Merry",
+        "orcid": "0000-0002-3490-2809"
+      },
+      {
+        "name": "Ramiro Alberio",
+        "orcid": "0000-0001-6560-3919"
+      }
+    ],
+    "preprint": true
+  },
+  {
+    "title": "Tubulin polyglutamylation modulates Golgi morphodynamics and neurite branching during neuronal morphogenesis.",
+    "authors": "Chih-Hsuan Hsu, Alexander Josiah Kinrade, Sarah Cohen",
+    "year": "2026",
+    "journal": "Journal of cell science",
+    "type": "research",
+    "summary": "Neurons establish functional networks through morphological remodeling during neuronal differentiation. Microtubule polyglutamylation is a key microtubule post-translational modification that is highly enriched during this process and plays an important role in differentiation. However, how remodeling of organelle features such as morphology, distribution and interactions depends on tubulin polyglutamylation during neuronal differentiation remains unclear.",
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Relevant to Cell Science's core work on hiPSC biology, pluripotent stem cell engineering, and stem cell-derived model systems.",
+    "tags": [
+      "morphogenesis",
+      "morphology",
+      "morphodynamics"
+    ],
+    "doi": "10.1242/jcs.264960",
+    "link": "https://doi.org/10.1242/jcs.264960",
+    "score": 7,
+    "added": "2026-11-09",
+    "pdf_link": "https://doi.org/10.1242/jcs.264960",
+    "source": "pubmed",
+    "reasoning": "keyword match (no Anthropic API key)"
   }
 ]
