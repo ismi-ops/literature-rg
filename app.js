@@ -729,6 +729,10 @@ async function handlePdfUpload(btn, event) {
     if (r.ok) {
       if (status) { status.textContent = '✓ Uploaded!'; status.style.color = '#16a34a'; }
       closeMenus();
+      // Point the tile at the file ourselves. Sync PDFs only runs when pdfs/ changes, so re-uploading a
+      // file that is already in the repo (e.g. after "Remove link") would otherwise never relink the tile.
+      const paper = PAPER_BY_KEY.get(card.dataset.key);
+      if (paper) queueEdit(paper, { pdf_link: 'pdfs/' + slug });
       showToast('PDF uploaded — button will appear on this card in ~1 min.', 'success', 10000);
     } else {
       if (status) status.textContent = r.msg;

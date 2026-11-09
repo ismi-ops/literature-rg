@@ -1260,7 +1260,8 @@
     "link": "https://www.biorxiv.org/content/10.1101/2024.12.11.627621v1",
     "added": "2026-08-19",
     "pdf_link": "https://www.biorxiv.org/content/10.1101/2024.12.11.627621v1.full.pdf",
-    "relevance": "Aligned with Cell Science's synthetic biology program use of engineered gene circuits to program synthetic cell communities toward controlled tissue-level behaviors."
+    "relevance": "Aligned with Cell Science's synthetic biology program use of engineered gene circuits to program synthetic cell communities toward controlled tissue-level behaviors.",
+    "preprint": true
   },
   {
     "title": "Scaling up complexity in synthetic developmental biology",
@@ -1642,7 +1643,8 @@
     "link": "https://www.biorxiv.org/content/10.64898/2026.02.04.703804v1.full",
     "added": "2026-08-19",
     "pdf_link": "https://www.biorxiv.org/content/10.64898/2026.02.04.703804v1.full.pdf",
-    "relevance": "Supports Cell Science's virtual cell and generative modeling agenda for integrating multi-modal cell biology data into predictive computational models."
+    "relevance": "Supports Cell Science's virtual cell and generative modeling agenda for integrating multi-modal cell biology data into predictive computational models.",
+    "preprint": true
   },
   {
     "title": "Visions of the future of molecular cell biology",
@@ -2072,7 +2074,8 @@
       {
         "name": "Lucas Pelkmans"
       }
-    ]
+    ],
+    "preprint": true
   },
   {
     "title": "Biophysical forces in tissue formation.",
@@ -2505,7 +2508,8 @@
         "orcid": "0009-0003-0676-7392"
       }
     ],
-    "curated": true
+    "curated": true,
+    "preprint": true
   },
   {
     "title": "Dual-mode SOX2 regulation by miR-150 via mRNA suppression and autophagy controls stem cell fate",
@@ -3455,7 +3459,8 @@
       {
         "name": "Weike Pei"
       }
-    ]
+    ],
+    "preprint": true
   },
   {
     "doi": "10.1093/stmcls/sxag041",
@@ -3661,7 +3666,8 @@
       {
         "name": "Atefeh Lafzi"
       }
-    ]
+    ],
+    "preprint": true
   },
   {
     "title": "An extraordinary exploration of the extracellular environment.",
@@ -3836,7 +3842,8 @@
         "name": "Guillaume Jacquemet",
         "orcid": "0000-0002-9286-920X"
       }
-    ]
+    ],
+    "preprint": true
   },
   {
     "title": "Multiscale biophysical control of epithelial shape transitions during animal development.",
@@ -4068,7 +4075,7 @@
     "title": "Predicting organoid morphology through a phase field model: Insights into cell division and lumenal pressure",
     "authors": "Sakurako Tanida, Kana Fuji, Linjie Lu, Tristan Guyomar, Byung Ho Lee, Alf Honigmann, Anne Grapin-Botton, Daniel Riveline et al.",
     "year": "2025",
-    "journal": "bioRxiv",
+    "journal": "PLOS Computational Biology",
     "type": "research",
     "summary": "Organoids are ideal systems to predict the phenotypes of organs. However, there is currently a lack of understanding regarding the generalized rules that enable use of simple cellular principles to make morphological predictions of entire organoids. Therefore, we employed a phase field model with the following basic components: the minimum conditions for the timing and volume of cell division, lumen nucleation rules, and lumenal pressure.",
     "relevance": "Directly relevant to lumen morphogenesis and lumenoid systems — a top priority covering how pressure, osmotic forces, and shape mechanics drive lumen formation across tissue types. Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures.",
@@ -4998,7 +5005,6 @@
     "pdf_link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12424552/",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "preprint": true,
     "vip_author": "Zev Gartner",
     "vip_only": true
   },
@@ -6187,7 +6193,8 @@
         "name": "Sinem K. Saka",
         "orcid": "0000-0002-5017-379X"
       }
-    ]
+    ],
+    "preprint": true
   },
   {
     "title": "From Pixels to Discovery: Microscopy Image Analysis in the Age of Artificial Intelligence.",
@@ -6366,7 +6373,8 @@
         "name": "Joran Deschamps",
         "orcid": "0000-0001-8462-2883"
       }
-    ]
+    ],
+    "preprint": true
   },
   {
     "title": "Unsupervised Source-Free Ranking of Biomedical Segmentation Models Under Distribution Shift",
@@ -7207,7 +7215,8 @@
         "name": "Virginie Uhlmann",
         "orcid": "0000-0002-2859-9241"
       }
-    ]
+    ],
+    "preprint": true
   },
   {
     "title": "In the same cell, the proteome defines cellular state and the transcriptome marks transitions",
@@ -7281,7 +7290,8 @@
         "name": "Matthias Mann",
         "orcid": "0000-0003-1292-4799"
       }
-    ]
+    ],
+    "preprint": true
   },
   {
     "title": "The G1/S transition in mammalian stem cells in vivo is autonomously regulated by cell size",
@@ -8740,7 +8750,8 @@
         "name": "Adele Doyle",
         "orcid": "0000-0003-4204-3642"
       }
-    ]
+    ],
+    "preprint": true
   },
   {
     "title": "Benchmarking in vivo and in vitro gene co-expression networks enables efficient β-like cell differentiation.",
@@ -11196,7 +11207,8 @@
     "added": "2026-10-15",
     "pdf_link": "https://doi.org/10.64898/2026.03.30.715222",
     "source": "author_tracker",
-    "reasoning": "keyword match (no Anthropic API key)"
+    "reasoning": "keyword match (no Anthropic API key)",
+    "preprint": true
   },
   {
     "title": "In preprints: robust segmentation clock outputs via cell cycle and synthetic coupling.",
@@ -13939,7 +13951,8 @@
         "name": "Jennifer A. Zallen",
         "orcid": "0000-0003-3975-1568"
       }
-    ]
+    ],
+    "preprint": true
   },
   {
     "title": "A single-cell atlas of spatial and temporal gene expression in the mouse cranial neural plate",
@@ -14898,7 +14911,7 @@
     "title": "Spotiflow: accurate and efficient spot detection for fluorescence microscopy with deep stereographic flow regression",
     "authors": "Albert Dominguez Mantes, Antonio Herrera, Irina Khven, Anjalie Schlaeppi, Eftychia Kyriacou, Georgios Tsissios, Evangelia Skoufa, Luca Santangeli et al.",
     "year": "2024",
-    "journal": "bioRxiv",
+    "journal": "Nature Methods",
     "type": "research",
     "summary": "Identifying spot-like structures in large and noisy microscopy images is a crucial step to produce high quality results in various life-science applications. Imaging-based spatial transcriptomics (iST) methods, in particular, critically depend on the precise detection of millions of transcripts in images with low signal-to-noise ratio. Despite advances in computer vision that have revolutionized many biological imaging tasks, currently adopted spot detection techniques are mostly still based on classical signal processing methods that often lack robustness to changing imaging conditions and thus require tedious manual tuning per dataset.",
     "relevance": "Supports the multimodal view of cell state central to Cell Science, connecting tissue organization and spatial context with molecular identity. Directly relevant to Cell Science's live-cell imaging platforms for morphodynamic phenotyping and organelle dynamics at scale.",
@@ -15293,7 +15306,7 @@
     "title": "Temporal variability and cell mechanics control robustness in mammalian embryogenesis",
     "authors": "Dimitri Fabrèges, Bernat Corominas-Murtra, Prachiti Moghe, Alison Kickuth, Takafumi Ichikawa, Chizuru Iwatani, Tomoyuki Tsukiyama, Nathalie Daniel et al.",
     "year": "2023",
-    "journal": "bioRxiv",
+    "journal": "Science",
     "type": "research",
     "summary": "How living systems achieve precision in form and function despite their intrinsic stochasticity is a fundamental yet open question in biology. Here, we establish a quantitative morphomap of pre-implantation embryogenesis in mouse, rabbit and monkey embryos, which reveals that although blastomere divisions desynchronise passively without compensation, 8-cell embryos still display robust 3D structure. Using topological analysis and genetic perturbations in mouse, we show that embryos progressively change their cellular connectivity to a preferred topology, which can be predicted by a simple physical model where noise and actomyosin-driven compaction facilitate topological transitions lowering surface energy.",
     "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Relevant to Cell Science's interest in how spatial patterns emerge during development from molecular and cellular interactions.",
@@ -19032,7 +19045,8 @@
         "name": "Michael B. Elowitz",
         "orcid": "0000-0002-1221-0967"
       }
-    ]
+    ],
+    "preprint": true
   },
   {
     "title": "Protein engineering: status report",
@@ -19451,7 +19465,8 @@
         "name": "Michael B. Elowitz",
         "orcid": "0000-0002-1221-0967"
       }
-    ]
+    ],
+    "preprint": true
   },
   {
     "title": "Programmable pathway profiles reveal signaling principles of TGF-β superfamily receptors",
@@ -19695,7 +19710,8 @@
         "name": "Michael B. Elowitz",
         "orcid": "0000-0002-1221-0967"
       }
-    ]
+    ],
+    "preprint": true
   },
   {
     "title": "Adenylyl cyclases combinatorially integrate opposing dopamine receptor signals",
@@ -19723,7 +19739,8 @@
         "name": "Michael B. Elowitz",
         "orcid": "0000-0002-1221-0967"
       }
-    ]
+    ],
+    "preprint": true
   },
   {
     "title": "Decoding molecular distributional codes through collective instabilities",
@@ -19855,7 +19872,8 @@
         "name": "David Baker",
         "orcid": "0000-0001-7896-6217"
       }
-    ]
+    ],
+    "preprint": true
   },
   {
     "title": "Synaptic MEMOIR: mapping individual synapses of neurons with protein barcodes",
@@ -20033,7 +20051,8 @@
         "name": "Arvind Murugan",
         "orcid": "0000-0001-5464-917X"
       }
-    ]
+    ],
+    "preprint": true
   },
   {
     "title": "Contextual Computation by Competitive Protein Dimerization Networks",
@@ -21681,7 +21700,8 @@
         "name": "Jiří Nováček",
         "orcid": "0000-0003-4013-3898"
       }
-    ]
+    ],
+    "preprint": true
   },
   {
     "title": "A stable cryogenic fluorescence microscope for correlative super-resolution light and electron microscopy",
@@ -21720,7 +21740,8 @@
       {
         "name": "Jonas Ries"
       }
-    ]
+    ],
+    "preprint": true
   },
   {
     "title": "IConE: Batch Independent Collapse Prevention for Self-Supervised Representation Learning",
@@ -22514,7 +22535,8 @@
       {
         "name": "Isabelle Scheers"
       }
-    ]
+    ],
+    "preprint": true
   },
   {
     "title": "Label‐free cell detection of acute leukemia using ghost cytometry",
@@ -22991,7 +23013,8 @@
         "name": "Corey P. Neu",
         "orcid": "0000-0002-8256-5683"
       }
-    ]
+    ],
+    "preprint": true
   },
   {
     "title": "Integrative cartilage repair using acellular allografts for engineered structure and surface lubrication in vivo",
@@ -23248,7 +23271,8 @@
         "name": "Christopher Obara",
         "orcid": "0000-0003-1028-6076"
       }
-    ]
+    ],
+    "preprint": true
   },
   {
     "title": "Pearling Drives Mitochondrial DNA Nucleoid Distribution",
@@ -23430,7 +23454,6 @@
     "pdf_link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10394098/pdf/cshperspect-ERT-a041259.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "preprint": true,
     "author_data": [
       {
         "name": "Christopher J. Obara"
@@ -24572,7 +24595,8 @@
         "name": "Magdalena Zernicka-Goetz",
         "orcid": "0000-0002-7004-2471"
       }
-    ]
+    ],
+    "preprint": true
   },
   {
     "title": "Self-organization and symmetry breaking in intestinal organoid development",
@@ -24994,7 +25018,7 @@
     "link": "https://doi.org/10.1038/s41586-021-04267-8",
     "score": 3,
     "added": "2026-11-03",
-    "pdf_link": "https://www.nature.com/articles/s41586-021-04267-8.pdf",
+    "pdf_link": "pdfs/10-1038-s41586-021-04267-8.pdf",
     "source": "semantic_scholar",
     "reasoning": "keyword match (no Anthropic API key)",
     "curated": true,
@@ -25270,7 +25294,8 @@
         "name": "Bob van de Water",
         "orcid": "0000-0002-5839-2380"
       }
-    ]
+    ],
+    "preprint": true
   },
   {
     "title": "Species-specific WNT requirements shape somite morphogenesis in mammalian embryo models",
@@ -25312,7 +25337,8 @@
         "name": "Ramiro Alberio",
         "orcid": "0000-0001-6560-3919"
       }
-    ]
+    ],
+    "preprint": true
   },
   {
     "title": "Tubulin polyglutamylation modulates Golgi morphodynamics and neurite branching during neuronal morphogenesis.",

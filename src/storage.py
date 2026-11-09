@@ -3,6 +3,8 @@ import json
 import os
 from pathlib import Path
 
+from src.preprint_tag import is_biorxiv_preprint
+
 _PAPERS_PATH = Path(__file__).parent.parent / "papers.json"
 
 
@@ -72,8 +74,8 @@ def add_papers(new_papers: list[dict]) -> int:
             paper_entry["curated"] = paper["curated"]
         if paper.get("author_data"):
             paper_entry["author_data"] = paper["author_data"]
-        if paper.get("preprint"):
-            paper_entry["preprint"] = paper["preprint"]
+        if paper.get("preprint") or is_biorxiv_preprint(paper_entry):
+            paper_entry["preprint"] = True
         if paper.get("vip_author"):
             paper_entry["vip_author"] = paper["vip_author"]
         if paper.get("vip_only"):

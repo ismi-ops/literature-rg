@@ -30,31 +30,34 @@ jobs:
 
       - run: pip install -r requirements.txt
 
-      - name: Backfill authors
-        if: ${{ github.event.inputs.step == 'all' || github.event.inputs.step == 'authors' }}
-        run: python backfill_authors.py
-
-      - name: Backfill summaries and relevance
-        if: ${{ github.event.inputs.step == 'all' || github.event.inputs.step == 'summaries' }}
+      - name: Backfill, regenerate site, push
         env:
+          STEP: ${{ github.event.inputs.step }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python backfill_summaries.py
-
-      - name: Backfill PDF links
-        if: ${{ github.event.inputs.step == 'all' || github.event.inputs.step == 'pdfs' }}
-        run: python backfill_pdfs.py
-
-      - name: Regenerate site
-        run: python generate_site.py
-
-      - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add papers.json index.html filters.json papers_data.json
-          if git diff --cached --quiet; then
-            echo "Nothing to commit."
-          else
+          # Uploads and site edits push to main at any time: redo the work on the latest main and retry
+          # instead of failing on a rejected push.
+          for attempt in 1 2 3 4 5 6; do
+            git fetch origin main
+            git reset --hard origin/main
+            if [ "$STEP" = "all" ] || [ "$STEP" = "authors" ];   then python backfill_authors.py;   fi
+            if [ "$STEP" = "all" ] || [ "$STEP" = "summaries" ]; then python backfill_summaries.py; fi
+            if [ "$STEP" = "all" ] || [ "$STEP" = "pdfs" ];      then python backfill_pdfs.py;      fi
+            python generate_site.py
+            git add papers.json index.html filters.json papers_data.json
+            if git diff --cached --quiet; then
+              echo "Nothing to commit."
+              exit 0
+            fi
             git commit -m "chore: backfill authors, summaries, and pdf links"
-            git push
-          fi
+            if git push; then
+              echo "Pushed on attempt $attempt."
+              exit 0
+            fi
+            echo "Push rejected on attempt $attempt - retrying in $((attempt * 4))s..."
+            sleep $((attempt * 4))
+          done
+          echo "All push attempts failed."
+          exit 1
