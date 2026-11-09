@@ -25640,5 +25640,44 @@
     "pdf_link": "https://doi.org/10.1242/jcs.264960",
     "source": "pubmed",
     "reasoning": "keyword match (no Anthropic API key)"
+  },
+  {
+    "title": "Synthetic reaction-diffusion patterning in mammalian cells",
+    "authors": "Sheng Wang, Rongrong Du, James M. Linton, Michael B. Elowitz",
+    "year": "2026",
+    "journal": "bioRxiv",
+    "type": "research",
+    "summary": "During development, periodic patterns arise through reaction–diffusion (RD) circuits involving local activation and long-range inhibition (LALI). Natural systems are complex, typically entangling regulation and transport in the same morphogens. It remains unclear what minimal circuits are sufficient for LALI patterning in mammalian cells, and whether they can be implemented in a modular fashion, allowing independent control of regulation and transport.",
+    "relevance": "Relevant to Cell Science's interest in self-organizing systems and the reaction-diffusion dynamics underlying biological patterning. Relevant to Cell Science's interest in how spatial patterns emerge during development from molecular and cellular interactions.",
+    "tags": [
+      "development"
+    ],
+    "doi": "10.64898/2026.11.01.763437",
+    "link": "https://doi.org/10.64898/2026.11.01.763437",
+    "score": 5,
+    "added": "2026-11-09",
+    "pdf_link": "https://www.biorxiv.org/content/biorxiv/early/2026/11/03/2026.11.01.763437.full.pdf",
+    "source": "semantic_scholar",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "curated": true,
+    "preprint": true,
+    "author_data": [
+      {
+        "name": "Sheng Wang",
+        "orcid": "0000-0002-4070-7313"
+      },
+      {
+        "name": "Rongrong Du",
+        "orcid": "0009-0003-4942-3020"
+      },
+      {
+        "name": "James M. Linton",
+        "orcid": "0009-0008-2626-1803"
+      },
+      {
+        "name": "Michael B. Elowitz",
+        "orcid": "0000-0002-1221-0967"
+      }
+    ]
   }
 ]
