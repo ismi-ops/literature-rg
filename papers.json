@@ -25204,7 +25204,7 @@
     "link": "https://doi.org/10.1016/j.cell.2019.05.052",
     "score": 7,
     "added": "2026-11-05",
-    "pdf_link": "http://www.cell.com/article/S0092867419306233/pdf",
+    "pdf_link": "",
     "source": "semantic_scholar",
     "reasoning": "keyword match (no Anthropic API key)",
     "curated": true,
