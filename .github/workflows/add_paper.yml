@@ -50,12 +50,14 @@ jobs:
       - name: Add paper
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Typed text goes in through the environment, never pasted into the script: a title with a quote,
+          # backtick or $( ) would otherwise break the run (or run as code).
+          URL: ${{ github.event.inputs.url }}
+          DOI: ${{ github.event.inputs.doi }}
+          TITLE: ${{ github.event.inputs.title }}
+          CTYPE: ${{ github.event.inputs.content_type }}
+          RU: ${{ github.event.inputs.ru_pick }}
         run: |
-          URL="${{ github.event.inputs.url }}"
-          DOI="${{ github.event.inputs.doi }}"
-          TITLE="${{ github.event.inputs.title }}"
-          CTYPE="${{ github.event.inputs.content_type }}"
-          RU="${{ github.event.inputs.ru_pick }}"
           ARGS=()
           if [ -n "$URL" ];   then ARGS+=(--url "$URL");     fi
           if [ -n "$DOI" ];   then ARGS+=(--doi "$DOI");     fi
