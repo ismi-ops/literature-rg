@@ -211,7 +211,6 @@ HTML_TEMPLATE = r"""<!doctype html>
   .badge-perspective { background: #e0faf9; color: #007d75; }
   .badge-article { background: #fef6d9; color: #DE9C00; }
   .badge-preprint { background: #f3fad0; color: #6a7a04; }
-  .badge-published { background: #dcfce7; color: #15803d; }
   .badge-collab { background: #fff0e8; color: #b05000; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 12px; }
   @media (prefers-color-scheme: dark) {
     .badge-research { background: #1a1a3d; color: #a0a0ff; }
@@ -219,7 +218,6 @@ HTML_TEMPLATE = r"""<!doctype html>
     .badge-perspective { background: #003630; color: #4dd9d3; }
     .badge-article { background: #2a1f00; color: #DE9C00; }
     .badge-preprint { background: #1e2500; color: #CCE805; }
-    .badge-published { background: #052e16; color: #86efac; }
     .badge-collab { background: #2a1400; color: #ff9955; }
     .card-relevance { border-color: #00A59B; background: transparent; }
     .card-relevance-label { color: #4dd9d3; }

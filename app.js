@@ -468,11 +468,9 @@ function fmt(p) {
   const adminTools = !!getToken();
   const starHtml = isTopPick(p) ? '<div class="top-pick-star" title="Top pick · recommended for printing">⭐</div>' : '';
   const preprintBadge = p.preprint ? '<span class="badge badge-preprint">preprint</span>' : '';
-  const publishedBadge = p.published_on && p.published_on >= daysAgo(30)
-    ? '<span class="badge badge-published" title="Formerly a preprint (' + esc((p.previous_dois || []).slice(-1)[0] || '') + '), now published">&#10003; Published</span>' : '';
   const collabBadge = p.vip_author ? '<span class="badge badge-collab" title="Paper by collaborator '+esc(p.vip_author)+'">&#128101; '+esc(p.vip_author)+'</span>' : '';
   return '<div class="card" data-key="'+esc(paperKey(p))+'" data-pdfslug="'+esc(pdfSlug)+'">'
-    +'<div class="card-meta"><span class="badge '+badgeClass+'">'+esc(type)+'</span>'+preprintBadge+publishedBadge+collabBadge+added+'</div>'
+    +'<div class="card-meta"><span class="badge '+badgeClass+'">'+esc(type)+'</span>'+preprintBadge+collabBadge+added+'</div>'
     +'<div class="card-title">'+titleHtml+'</div>'
     +authorHtml
     +(venue ? '<div class="card-venue">'+venue+'</div>' : '')
@@ -666,9 +664,22 @@ function ghHeaders(token) {
   return { 'Authorization': 'Bearer ' + token, 'Accept': 'application/vnd.github+json', 'Content-Type': 'application/json' };
 }
 function putPdf(slug, token, b64, sha) {
-  const body = { message: sha ? 'chore: replace PDF via site' : 'chore: upload PDF via site', content: b64 };
+  const body = { message: sha ? 'chore: replace PDF via site' : 'chore: upload PDF via site', content: b64, branch: 'main' };
   if (sha) body.sha = sha;
   return fetch(PDF_API + encodeURIComponent(slug), { method: 'PUT', headers: ghHeaders(token), body: JSON.stringify(body) });
+}
+// sha of the existing pdfs/<slug>. The Contents API refuses files over 1 MB (most PDFs), so fall back to
+// the Git tree listing of pdfs/, which has no size limit.
+async function getPdfSha(slug, token) {
+  try {
+    const r = await fetch(PDF_API + encodeURIComponent(slug) + '?ref=main', { headers: ghHeaders(token), cache: 'no-store' });
+    if (r.ok) { const m = await r.json().catch(() => ({})); if (m.sha) return m.sha; }
+  } catch (e) {}
+  try {
+    const r = await fetch('https://api.github.com/repos/ismi-ops/literature-rg/git/trees/main:pdfs', { headers: ghHeaders(token), cache: 'no-store' });
+    if (r.ok) { const t = await r.json().catch(() => ({})); const hit = (t.tree || []).find(x => x.path === slug); if (hit) return hit.sha; }
+  } catch (e) {}
+  return null;
 }
 
 function readBase64(file) {
@@ -683,17 +694,16 @@ function readBase64(file) {
 async function uploadPdfFile(slug, file, token) {
   const b64 = await readBase64(file);
   let resp = await putPdf(slug, token, b64, null);
-  if (resp.status === 422) {   // a file with this name exists (replacing a PDF): GitHub wants its sha
-    const cur = await fetch(PDF_API + encodeURIComponent(slug), { headers: ghHeaders(token) });
-    const meta = cur.ok ? await cur.json().catch(() => ({})) : {};
-    if (meta.sha) resp = await putPdf(slug, token, b64, meta.sha);
+  if (resp.status === 422 || resp.status === 409) {   // a file with this name exists (replacing a PDF): GitHub wants its sha
+    const sha = await getPdfSha(slug, token);
+    if (sha) resp = await putPdf(slug, token, b64, sha);
   }
   if (resp.ok) return { ok: true };
   const err = await resp.json().catch(() => ({}));
   let msg;
   if (resp.status === 401) msg = 'Invalid token — click "Change token" in the ＋ Add Paper modal to update it.';
   else if (resp.status === 403) msg = 'Token lacks Contents permission — regenerate your PAT and enable Contents (R&W). Click "Change token" in the ＋ Add Paper modal.';
-  else if (resp.status === 422) msg = (err.message || '').includes('sha') ? 'This PDF was already uploaded. Reload the page — the PDF button should appear.' : 'Upload error 422: ' + (err.message || 'invalid request.');
+  else if (resp.status === 422) msg = 'Upload error 422: ' + String(err.message || 'invalid request.').replace(/\s+/g, ' ').trim();
   else msg = 'Upload error ' + resp.status + ': ' + (err.message || 'unknown.');
   return { ok: false, msg };
 }
