@@ -15,6 +15,8 @@ import xml.etree.ElementTree as ET
 
 import requests
 
+from src.title_clean import clean_title
+
 HEADERS = {"User-Agent": "literature-rg/1.0 (preprint status check)"}
 TIMEOUT = 20
 BIORXIV_PREFIXES = ("10.1101/", "10.64898/")
@@ -93,20 +95,24 @@ def from_crossref(doi: str) -> dict | None:
 
 
 def crossref_details(doi: str) -> dict:
-    """Journal and year of a published DOI (empty strings when Crossref has nothing)."""
+    """Title, journal and year of a DOI (empty strings when Crossref has nothing)."""
+    empty = {"title": "", "journal": "", "year": ""}
     try:
         status, r = _get(f"https://api.crossref.org/works/{doi}")
     except ServiceError:
-        return {"journal": "", "year": ""}
+        return dict(empty)
     if status == 404:
-        return {"journal": "", "year": ""}
+        return dict(empty)
     msg = r.json().get("message") or {}
-    journal = (msg.get("container-title") or [""])[0]
+    out = dict(empty)
+    out["title"] = clean_title((msg.get("title") or [""])[0])
+    out["journal"] = (msg.get("container-title") or [""])[0]
     for field in ("published", "issued", "published-online", "published-print"):
         parts = ((msg.get(field) or {}).get("date-parts") or [[None]])[0]
         if parts and parts[0]:
-            return {"journal": journal, "year": str(parts[0])}
-    return {"journal": journal, "year": ""}
+            out["year"] = str(parts[0])
+            break
+    return out
 
 
 def lookup_published(preprint_doi: str):

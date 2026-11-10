@@ -1,0 +1,58 @@
+name: Audit Titles
+
+# Compares every tile's title/link with Crossref and tidies title formatting.
+# "Report only" lists findings in the run summary; "Fix" applies the safe fixes and pushes.
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Report only, or apply the safe fixes"
+        default: "report"
+        type: choice
+        options: ["report", "fix"]
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Report
+        if: github.event.inputs.mode != 'fix'
+        run: python audit_titles.py
+
+      - name: Fix, regenerate, push
+        if: github.event.inputs.mode == 'fix'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            python audit_titles.py --fix
+            python generate_site.py
+            git add papers.json index.html filters.json papers_data.json
+            if git diff --cached --quiet; then
+              echo "Nothing changed."
+              exit 0
+            fi
+            git commit -m "chore: fix tile titles and links"
+            if git push; then
+              echo "Pushed on attempt $attempt."
+              exit 0
+            fi
+            echo "Push rejected on attempt $attempt — retrying..."
+            sleep $((attempt * 4))
+          done
+          echo "All push attempts failed."
+          exit 1
