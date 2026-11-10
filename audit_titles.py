@@ -3,11 +3,11 @@
 For each live tile with a DOI the Crossref title is fetched and compared (letters/digits only):
   same       title matches
   partial    one title contains the other (subtitle / truncation)  -> reported
-  different  the tile's title is not the paper's title            -> reported; with --fix it is
-             replaced when the tile is a converted preprint (previous_dois set) or the tile title is ALL CAPS
+  different  the tile's title is not the paper's title            -> reported; with --fix it is replaced
+             by the Crossref title (Crossref is authoritative for the DOI the tile links to)
   missing    DOI not found in Crossref                            -> reported
 Also reported: DOI tiles whose link is a doi.org URL for a different DOI (fixed with --fix),
-bioRxiv-DOI tiles that link to a journal site (stale DOI), and tiles with no DOI/title/link.
+bioRxiv-DOI tiles that link to a journal site (stale DOI; --fix looks up the published version and converts the tile), and tiles with no DOI/title/link.
 --fix always applies the shared formatting rules (src/title_clean.py): markup, extra spaces, trailing full stop.
 
 Usage:
@@ -18,7 +18,9 @@ import argparse
 import os
 import re
 import time
+from datetime import date
 
+from check_preprints import apply_publication
 from src import storage
 from src.sources import preprint_status as ps
 from src.title_clean import clean_title, norm
@@ -75,7 +77,17 @@ def main():
                 p["link"] = f"https://doi.org/{doi}"
                 fixed += 1
         if doi.lower().startswith(ps.BIORXIV_PREFIXES) and link and not re.search(r"biorxiv|medrxiv|doi\.org", link, re.I):
-            note("stale-doi", p, f"bioRxiv DOI but links to {link[:70]} (published? run Check Preprints --force)")
+            detail = f"bioRxiv DOI but links to {link[:70]}"
+            if args.fix:
+                info, _ = ps.lookup_published(doi)
+                if info:
+                    outcome = apply_publication(papers, p, info, date.today())
+                    detail += f"  [{outcome} -> {info['doi']}]"
+                    fixed += 1
+                    title = p.get("title") or ""
+                    doi = (p.get("doi") or "").strip()
+                    link = p.get("link") or ""
+            note("stale-doi", p, detail)
         if doi.lower().startswith("10.48550/"):
             continue   # arXiv: DataCite, not Crossref
         ref = ps.crossref_details(doi)
@@ -83,9 +95,8 @@ def main():
         if kind == "missing":
             note("not-in-crossref", p, "")
         elif kind != "same":
-            auto = kind == "different" and (p.get("previous_dois") or (title.isupper() and not ref["title"].isupper()))
-            auto = auto or (kind == "partial" and title.isupper() and not ref["title"].isupper())
-            note(kind, p, f"crossref: {ref['title'][:90]}" + ("  [fixed]" if (auto and args.fix) else ""))
+            auto = kind == "different" or (kind == "partial" and title.isupper() and not ref["title"].isupper())
+            note(kind, p, f"crossref: {ref['title']}" + ("  [fixed]" if (auto and args.fix) else ""))
             if auto and args.fix:
                 p["title"] = ref["title"]
                 fixed += 1

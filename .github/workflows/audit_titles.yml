@@ -3,9 +3,6 @@ name: Audit Titles
 # Compares every tile's title/link with Crossref and tidies title formatting.
 # "Report only" lists findings in the run summary; "Fix" applies the safe fixes and pushes.
 on:
-  push:   # TEMPORARY: lets the report run from the branch before merge; removed before merging
-    branches: [claude/research-paper-agent-jwd3km]
-    paths: [.github/workflows/audit_titles.yml]
   workflow_dispatch:
     inputs:
       mode:
