@@ -96,7 +96,7 @@ def from_crossref(doi: str) -> dict | None:
 
 def crossref_details(doi: str) -> dict:
     """Title, journal and year of a DOI (empty strings when Crossref has nothing)."""
-    empty = {"title": "", "journal": "", "year": ""}
+    empty = {"title": "", "journal": "", "year": "", "type": ""}
     try:
         status, r = _get(f"https://api.crossref.org/works/{doi}")
     except ServiceError:
@@ -106,6 +106,7 @@ def crossref_details(doi: str) -> dict:
     msg = r.json().get("message") or {}
     out = dict(empty)
     out["title"] = clean_title((msg.get("title") or [""])[0])
+    out["type"] = msg.get("type") or ""
     out["journal"] = (msg.get("container-title") or [""])[0]
     for field in ("published", "issued", "published-online", "published-print"):
         parts = ((msg.get(field) or {}).get("date-parts") or [[None]])[0]

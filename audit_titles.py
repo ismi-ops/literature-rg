@@ -22,6 +22,7 @@ from datetime import date
 
 from check_preprints import apply_publication
 from src import storage
+from src.dedupe import find_duplicates, retire
 from src.sources import preprint_status as ps
 from src.title_clean import clean_title, norm
 
@@ -104,7 +105,24 @@ def main():
         if i % 50 == 0:
             print(f"  ...{i}/{len(live)}")
 
-    order = ["different", "partial", "stale-doi", "link-doi", "not-in-crossref", "no-title", "no-link", "format"]
+    # duplicate tiles (after the title fixes, so near-identical titles line up)
+    for d in find_duplicates(papers):
+        keep, drop, others = d["keep"], d["drop"], d.get("others", [])
+        if d["kind"] in ("same-title", "possible-twin"):
+            group = [keep] + others
+            bits = []
+            for q in group:
+                typ = ps.crossref_details(q["doi"])["type"] if (q.get("doi") and not q["doi"].startswith("10.48550/")) else ""
+                bits.append(f"{q.get('doi') or 'no DOI'} ({q.get('journal') or '?'} {q.get('year') or ''}; crossref type: {typ or '?'})")
+            note("duplicate?", keep, d["kind"] + ": " + "  vs  ".join(bits))
+            time.sleep(0.15)
+        else:
+            note("duplicate", keep, f"{d['kind']}: retire {drop.get('doi') or 'no-DOI tile'} ({(drop.get('journal') or '')} {drop.get('year') or ''}) in favour of {keep.get('doi')}" + ("  [fixed]" if args.fix else ""))
+            if args.fix:
+                retire(papers, keep, drop, date.today().isoformat())
+                fixed += 1
+
+    order = ["duplicate", "duplicate?", "different", "partial", "stale-doi", "link-doi", "not-in-crossref", "no-title", "no-link", "format"]
     lines = []
     for kind in order:
         rows = [r for r in report if r[0] == kind]
