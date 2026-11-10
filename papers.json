@@ -10165,7 +10165,7 @@
     "link": "https://doi.org/10.1016/bs.ctdb.2023.02.006",
     "score": 9,
     "added": "2026-10-15",
-    "pdf_link": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10291876",
+    "pdf_link": "pdfs/10-1016-bs-ctdb-2023-02-006.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)"
   },
@@ -10640,7 +10640,7 @@
     "link": "https://doi.org/10.1038/s41556-025-01767-x",
     "score": 9,
     "added": "2026-10-15",
-    "pdf_link": "https://doi.org/10.1038/s41556-025-01767-x",
+    "pdf_link": "pdfs/10-1038-s41556-025-01767-x.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "author_data": [
