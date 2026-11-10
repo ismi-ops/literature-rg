@@ -12811,7 +12811,7 @@
     "link": "https://doi.org/10.48550/arXiv.2510.19090",
     "score": 7,
     "added": "2026-10-15",
-    "pdf_link": "",
+    "pdf_link": "https://arxiv.org/pdf/2510.19090",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
