@@ -25049,7 +25049,7 @@
     "link": "https://doi.org/10.1038/s41586-020-2352-3",
     "score": 2,
     "added": "2026-11-02",
-    "pdf_link": "https://www.ncbi.nlm.nih.gov/pmc/articles/7593871",
+    "pdf_link": "pdfs/10-1038-s41586-020-2352-3.pdf",
     "source": "manual",
     "reasoning": "keyword match (no Anthropic API key)",
     "curated": true,
