@@ -1314,10 +1314,10 @@
       "AI / ML",
       "single-cell"
     ],
-    "doi": "10.1101/2024.01.18.576248",
-    "link": "https://www.cell.com/cell-systems/fulltext/S2405-4712(26)00049-9",
+    "doi": "10.1016/j.cels.2026.101567",
+    "link": "https://doi.org/10.1016/j.cels.2026.101567",
     "added": "2026-08-19",
-    "pdf_link": "https://www.biorxiv.org/content/biorxiv/early/2024/01/20/2024.01.18.576248.full.pdf",
+    "pdf_link": "https://doi.org/10.1016/j.cels.2026.101567",
     "relevance": "Relevant to Cell Science's multimodal view of cell state, where single-cell molecular data is integrated with structural and morphological measurements. Relevant to Cell Science's holistic cell state program, which integrates molecular, structural, and morphological data to define cell identity.",
     "author_data": [
       {
@@ -1356,7 +1356,12 @@
         "name": "Laura M. Heiser",
         "orcid": "0000-0003-3330-0950"
       }
-    ]
+    ],
+    "previous_dois": [
+      "10.1101/2024.01.18.576248"
+    ],
+    "published_on": "2026-11-12",
+    "preprint_checked": "2026-11-12"
   },
   {
     "title": "Spatial architecture of development and disease",
@@ -1810,7 +1815,7 @@
     ]
   },
   {
-    "title": "Spatial Control of Light-Responsive Proteins and Optogenetics Within Hydrogels via Volumetric Bioprinting.",
+    "title": "Spatial Control of Light-Responsive Proteins and Optogenetics Within Hydrogels via Volumetric Bioprinting",
     "authors": "Davide Ribezzi, Pere Català, Gabriel Größbacher, Paulina Nuñez Bernal, Olaf Nijssen, Sammy Florczak, Wilco Nijenhuis, Nuria Crusellas‐Villorbina et al.",
     "year": "2026",
     "journal": "Advanced materials (Deerfield Beach, Fla.)",
@@ -1885,7 +1890,7 @@
     ]
   },
   {
-    "title": "Bioelectrical regionalization of multicellular aggregates by microRNAs.",
+    "title": "Bioelectrical regionalization of multicellular aggregates by microRNAs",
     "authors": "Josu Egea-Carro, Salvador Mafe, Michael Levin, Javier Cervera",
     "year": "2026",
     "journal": "Journal of Chemical Physics",
@@ -2083,7 +2088,7 @@
     "preprint_checked": "2026-11-09"
   },
   {
-    "title": "Biophysical forces in tissue formation.",
+    "title": "Biophysical forces in tissue formation",
     "authors": "Lei Xia, Anish Ashok Adpaikar, Liling Wen, Yuval Rinkevich",
     "year": "2026",
     "journal": "Seminars in Cell and Developmental Biology",
@@ -2118,7 +2123,7 @@
     ]
   },
   {
-    "title": "Mechanics of compression-driven morphogenesis.",
+    "title": "Mechanics of compression-driven morphogenesis",
     "authors": "Jue Yu Kelly Tan, Chii Jou Chan",
     "year": "2026",
     "journal": "Development (Cambridge, England)",
@@ -2167,7 +2172,7 @@
     ]
   },
   {
-    "title": "Synthetic developmental engineering of human liver organogenesis.",
+    "title": "Synthetic developmental engineering of human liver organogenesis",
     "authors": "Mohammad N. Taheri, Yuda Xiang, Mo R. Ebrahimkhani",
     "year": "2026",
     "journal": "Development",
@@ -2280,7 +2285,7 @@
     "relevance": "Relevant to Cell Science's core work on hiPSC biology, pluripotent stem cell engineering, and stem cell-derived model systems."
   },
   {
-    "title": "Robust identification of cell-cell communication heterogeneity in single cells.",
+    "title": "Robust identification of cell-cell communication heterogeneity in single cells",
     "authors": "Federico Bocci, Yunlong Jia, Scott Atwood, Qing Nie",
     "year": "2026",
     "journal": "Cell Systems",
@@ -2313,7 +2318,7 @@
     ]
   },
   {
-    "title": "Biophysics of lumen morphogenesis.",
+    "title": "Biophysics of lumen morphogenesis",
     "authors": "Byung Ho Lee, Markus Mukenhirn, Tristan Guyomar, Yann Maggipinto, Sakurako Tanida, Kana Fuji, Linjie Lu, Felix Romer et al.",
     "year": "2026",
     "journal": "Development (Cambridge, England)",
@@ -2397,7 +2402,7 @@
     "pdf_link": "https://www.sciopen.com/local/article_pdf/10.26599/CO.2026.9410025.pdf"
   },
   {
-    "title": "3D bioprinting modalities for tissue engineering and regenerative medicine.",
+    "title": "3D bioprinting modalities for tissue engineering and regenerative medicine",
     "authors": "Kannan Badri Narayanan, Sung Soo Han",
     "year": "2026",
     "journal": "Advances in colloid and interface science",
@@ -2562,7 +2567,7 @@
     "curated": true
   },
   {
-    "title": "A developmental biologist's guide to mechanics.",
+    "title": "A developmental biologist's guide to mechanics",
     "authors": "Jialing Cao, Alessandro Chiappori, Sylvain Landiech, Raphaël Clément, Pierre-François Lenne",
     "year": "2026",
     "journal": "Development",
@@ -2604,7 +2609,7 @@
     "pdf_link": "https://hal.science/hal-05788163"
   },
   {
-    "title": "Epithelial convergent extension as a tuning process.",
+    "title": "Epithelial convergent extension as a tuning process",
     "authors": "Sadjad Arzash, Andrea J Liu, M Lisa Manning",
     "year": "2026",
     "journal": "Proceedings of the National Academy of Sciences of the United States of America",
@@ -2625,7 +2630,7 @@
     "curated": true
   },
   {
-    "title": "Multiscale Modeling of Embryonic Morphogenesis from Fertilization to Organogenesis.",
+    "title": "Multiscale Modeling of Embryonic Morphogenesis from Fertilization to Organogenesis",
     "authors": "Debanik Deb, Orishma Parida, Laasya Naduthota, Bandan Chakrabortty",
     "year": "2026",
     "journal": "npj Systems Biology and Applications",
@@ -2694,7 +2699,7 @@
     "curated": true
   },
   {
-    "title": "Machines all the way up and cognition all the way down: Updating the machine metaphor in biology.",
+    "title": "Machines all the way up and cognition all the way down: Updating the machine metaphor in biology",
     "authors": "Michael Levin, Richard Watson",
     "year": "2026",
     "journal": "Seminars in Cell and Developmental Biology",
@@ -2920,7 +2925,7 @@
     ]
   },
   {
-    "title": "Pathway to Independence: a forecast for the future of developmental biology.",
+    "title": "Pathway to Independence: a forecast for the future of developmental biology",
     "authors": "Chee Kiang Ewe, Max S. Farnworth, Anzy Miller, Joaquín Navajas Acedo, Marlies E. Oomen, Giulia Paci, Sonya A. Widen, Toshimichi Yamada",
     "year": "2025",
     "journal": "Development",
@@ -3019,7 +3024,7 @@
     "pdf_link": "https://doi.org/10.1126/science.aaw7709"
   },
   {
-    "title": "Translational cell fate reprogramming and regenerative medicine enabled by microphysiological systems.",
+    "title": "Translational cell fate reprogramming and regenerative medicine enabled by microphysiological systems",
     "authors": "Hrithiha Sriramulu, Hyunsung Woo, Anavi Kaul, Samira Musah",
     "year": "2026",
     "journal": "Current Opinion in Genetics and Development",
@@ -3103,7 +3108,7 @@
     "pdf_link": "https://www.frontiersin.org/journals/cell-and-developmental-biology/articles/10.3389/fcell.2026.1809181/pdf"
   },
   {
-    "title": "Synthetic tissue ecology: Ecological control of developmental self-organization across scales.",
+    "title": "Synthetic tissue ecology: Ecological control of developmental self-organization across scales",
     "authors": "Kamyar Keshavarz, Mohammed Ebrahimkhani",
     "year": "2026",
     "journal": "Cell Systems",
@@ -3122,7 +3127,7 @@
     "pdf_link": "pdfs/10-1016-j-cels-2026-101699.pdf"
   },
   {
-    "title": "Meeting report - CellExIt#1, the first international symposium on cell extrusion.",
+    "title": "Meeting report - CellExIt#1, the first international symposium on cell extrusion",
     "authors": "Naoka Shiratsuchi, Yasuyuki Fujita, Simon de Beco, Cécile Daubech, Benoit Ladoux, Aline Grata, Romain Levayer, Emile Magny et al.",
     "year": "2026",
     "journal": "Journal of Cell Science",
@@ -3211,7 +3216,7 @@
     ]
   },
   {
-    "title": "Editorial overview: At the edge of plasticity: Decoding cell fate in regeneration and repair.",
+    "title": "Editorial overview: At the edge of plasticity: Decoding cell fate in regeneration and repair",
     "authors": "Dongwei Li, Joo-Hyeon Lee",
     "year": "2026",
     "journal": "Current Opinion in Genetics and Development",
@@ -3229,7 +3234,7 @@
     "source": "manual"
   },
   {
-    "title": "Metabolic regulation of stem cell plasticity.",
+    "title": "Metabolic regulation of stem cell plasticity",
     "authors": "Emilia Kuuluvainen, Swetha Gopalakrishnan, Pekka Katajisto",
     "year": "2026",
     "journal": "Current Opinion in Genetics and Development",
@@ -3303,7 +3308,7 @@
     "reasoning": "keyword match (no Anthropic API key)"
   },
   {
-    "title": "A metabolic view of gastrulation: Coordinating signalling, epigenetics and morphogenesis.",
+    "title": "A metabolic view of gastrulation: Coordinating signalling, epigenetics and morphogenesis",
     "authors": "Tatiana Firfa, Tamara Civetta, Eunice HoYee Chan, Kristina S. Stapornwongkul",
     "year": "2026",
     "journal": "Seminars in Cell and Developmental Biology",
@@ -3683,7 +3688,7 @@
     "preprint_checked": "2026-11-09"
   },
   {
-    "title": "An extraordinary exploration of the extracellular environment.",
+    "title": "An extraordinary exploration of the extracellular environment",
     "authors": "Alex Eve, Alex Hughes, Rashmi Priya",
     "year": "2026",
     "journal": "Development",
@@ -3860,7 +3865,7 @@
     "preprint_checked": "2026-11-09"
   },
   {
-    "title": "Multiscale biophysical control of epithelial shape transitions during animal development.",
+    "title": "Multiscale biophysical control of epithelial shape transitions during animal development",
     "authors": "Jianyi Mai, Abhirami Anil Gayathry, David M. Richards, Stefan Harmansa",
     "year": "2026",
     "journal": "Seminars in Cell and Developmental Biology",
@@ -3960,7 +3965,7 @@
     ]
   },
   {
-    "title": "Engineering Pluripotent Stem Cells-Derived Inner Ear Organoids With Enhanced Maturation and Reproducibility by Micro-Topographical Cues.",
+    "title": "Engineering Pluripotent Stem Cells-Derived Inner Ear Organoids With Enhanced Maturation and Reproducibility by Micro-Topographical Cues",
     "authors": "Harshita Sharma, Jungeun Lim, Woochan Kim, Yeon Ju Kim, Dream Kim, Shinyull Lee, Chaeyeon Park, Stephen Rhee et al.",
     "year": "2026",
     "journal": "Advances in Materials",
@@ -4224,7 +4229,7 @@
     ]
   },
   {
-    "title": "Bioelectric regulation of stem cell fate: From the plasma membrane to organelles.",
+    "title": "Bioelectric regulation of stem cell fate: From the plasma membrane to organelles",
     "authors": "Alessandra G. Jester, Bernice C. Lin, Beverly J. Piggott",
     "year": "2026",
     "journal": "Current Opinion in Cell Biology",
@@ -4403,7 +4408,7 @@
     ]
   },
   {
-    "title": "Emergence of the Endoderm in the Mammalian Embryo: From Cell Fate Specification to Gut Tube Formation.",
+    "title": "Emergence of the Endoderm in the Mammalian Embryo: From Cell Fate Specification to Gut Tube Formation",
     "authors": "Sonja Nowotschin, Anna-Katerina Hadjantonakis",
     "year": "2026",
     "journal": "Annual review of cell and developmental biology",
@@ -4484,7 +4489,7 @@
     ]
   },
   {
-    "title": "A mini-review of the molecular mechanisms, mutational landscape, and therapeutic opportunities of TWIST1 in oncology.",
+    "title": "A mini-review of the molecular mechanisms, mutational landscape, and therapeutic opportunities of TWIST1 in oncology",
     "authors": "Bruno Ricardo Barreto Pires, Gerson Moura Ferreira, Eliana Abdelhay",
     "year": "2026",
     "journal": "Biochimica et biophysica acta. Molecular cell research",
@@ -4675,7 +4680,7 @@
     "preprint_checked": "2026-11-09"
   },
   {
-    "title": "The actin crosslinker Fimbrin is required for force sensing at tricellular junctions.",
+    "title": "The actin crosslinker Fimbrin is required for force sensing at tricellular junctions",
     "authors": "Nilay Taneja, Claire A. Looney, Michael F. Moubarak, Meriel J. McGovern, Kenji Yeoh, Jennifer A. Zallen",
     "year": "2026",
     "journal": "Developmental cell",
@@ -4870,7 +4875,7 @@
     ]
   },
   {
-    "title": "A fluctuation test for gastruloid heterogeneity.",
+    "title": "A fluctuation test for gastruloid heterogeneity",
     "authors": "Samuel G. Regalado, Chengxiang Qiu, Sanjay Kottapalli, Chau Huynh, Riza M. Daza, Aidan Keith, Jihye Park, Beth K. Martin et al.",
     "year": "2026",
     "journal": "Cell",
@@ -4947,7 +4952,7 @@
     ]
   },
   {
-    "title": "The regulatory logic of a dose-dependent developmental fate decision.",
+    "title": "The regulatory logic of a dose-dependent developmental fate decision",
     "authors": "Alison H. Araten, Emily K. Ho, Jared E. Toettcher",
     "year": "2026",
     "journal": "Developmental Biology",
@@ -4967,7 +4972,7 @@
     "curated": true
   },
   {
-    "title": "Future Directions in Stem Cells, Cell Therapy, and Bioengineering in Lung Biology and Diseases.",
+    "title": "Future Directions in Stem Cells, Cell Therapy, and Bioengineering in Lung Biology and Diseases",
     "authors": "Lei Wang, Sarah Shin, Jaime L Hook, Darcy E Wagner, Laure-Emmanuelle Zaragosi, Robert E Hynds",
     "year": "2026",
     "journal": "American Journal of Respiratory Cell and Molecular Biology",
@@ -5008,7 +5013,7 @@
     ]
   },
   {
-    "title": "Four-Dimensional Bioprinting: Harnessing Active Mechanics to Build with Living Inks.",
+    "title": "Four-Dimensional Bioprinting: Harnessing Active Mechanics to Build with Living Inks",
     "authors": "Honesty Kim, Grace Hu, Austin J. Graham, Grace X. Gu, Zev J. Gartner",
     "year": "2024",
     "journal": "Cold Spring Harbor perspectives in biology",
@@ -5560,7 +5565,7 @@
     "preprint_checked": "2026-11-09"
   },
   {
-    "title": "D-SPIN constructs gene regulatory network models from multiplexed scRNA-seq data revealing organizing principles of cellular perturbation response",
+    "title": "D-SPIN constructs regulatory network models from scRNA-seq that reveal organizing principles of perturbation response",
     "authors": "Jialong Jiang, Sisi Chen, Tiffany Tsou, Christopher S. McGinnis, Tahmineh Khazaei, Qin Zhu, Jong H. Park, Inna-Marie Strazhnik et al.",
     "year": "2026",
     "journal": "Cell",
@@ -6237,7 +6242,7 @@
     "preprint_checked": "2026-11-09"
   },
   {
-    "title": "From Pixels to Discovery: Microscopy Image Analysis in the Age of Artificial Intelligence.",
+    "title": "From Pixels to Discovery: Microscopy Image Analysis in the Age of Artificial Intelligence",
     "authors": "Virginie Uhlmann, Florian Jug, Anna Kreshuk",
     "year": "2026",
     "journal": "Annual review of cell and developmental biology",
@@ -6440,7 +6445,7 @@
     "vip_only": true
   },
   {
-    "title": "Screening for Tumor Microtube-Targeting Drugs Identifies PKC Modulators as Multipotent Inhibitors of Glioblastoma Progression.",
+    "title": "Screening for Tumor Microtube-Targeting Drugs Identifies PKC Modulators as Multipotent Inhibitors of Glioblastoma Progression",
     "authors": "Daniel D. Azorín, Dirk C. Hoffmann, Nils R. Hebach, Erik Jung, David Hausmann, Miriam Ratliff, Ling Hai, Sandra Horschitz et al.",
     "year": "2025",
     "journal": "Cancer discovery",
@@ -7381,10 +7386,13 @@
       {
         "name": "Jan M. Skotheim"
       }
+    ],
+    "previous_dois": [
+      "10.1101/2024.04.09.588781"
     ]
   },
   {
-    "title": "Growth of the maternal intestine during reproduction.",
+    "title": "Growth of the maternal intestine during reproduction",
     "authors": "Tomotsune Ameku, Anna Laddach, Hannah Beckwith, Alexandra Milona, Loranzie S. Rogers, Cornelia Schwayer, Emma Nye, Iain R. Tough et al.",
     "year": "2025",
     "journal": "Cell",
@@ -7909,10 +7917,13 @@
         "name": "Prisca Liberali",
         "orcid": "0000-0003-0695-6081"
       }
+    ],
+    "previous_dois": [
+      "10.1101/2023.09.28.559925"
     ]
   },
   {
-    "title": "NIBR-LTSi is a selective LATS kinase inhibitor activating YAP signaling and expanding tissue stem cells in vitro and in vivo.",
+    "title": "NIBR-LTSi is a selective LATS kinase inhibitor activating YAP signaling and expanding tissue stem cells in vitro and in vivo",
     "authors": "Kenji Namoto, Clara Baader, Vanessa Orsini, Alexandro Landshammer, Eva Breuer, Kieu Trinh Dinh, Rosemarie Ungricht, Monika Pikiolek et al.",
     "year": "2024",
     "journal": "Cell stem cell",
@@ -8141,10 +8152,12 @@
         "orcid": "0000-0001-8420-6820"
       }
     ],
-    "preprint_checked": "2026-11-09"
+    "preprint_checked": "2026-11-12",
+    "rejected": true,
+    "superseded_by": "10.1038/s41467-025-64150-2"
   },
   {
-    "title": "The evolution of developmental biology through conceptual and technological revolutions.",
+    "title": "The evolution of developmental biology through conceptual and technological revolutions",
     "authors": "Prisca Liberali, Alexander F. Schier",
     "year": "2024",
     "journal": "Cell",
@@ -8598,7 +8611,9 @@
         "orcid": "0000-0003-0695-6081"
       }
     ],
-    "preprint_checked": "2026-11-09"
+    "preprint_checked": "2026-11-12",
+    "rejected": true,
+    "superseded_by": "10.1038/s41592-024-02213-w"
   },
   {
     "title": "An integrated transcriptomic cell atlas of human endoderm-derived organoids",
@@ -8809,7 +8824,7 @@
     "preprint_checked": "2026-11-09"
   },
   {
-    "title": "Benchmarking in vivo and in vitro gene co-expression networks enables efficient β-like cell differentiation.",
+    "title": "Benchmarking in vivo and in vitro gene co-expression networks enables efficient β-like cell differentiation",
     "authors": "Jifeng Liu, Anne Grapin-Botton",
     "year": "2026",
     "journal": "Developmental cell",
@@ -8866,7 +8881,7 @@
     "vip_only": true
   },
   {
-    "title": "High-content screening of organoids reveals the mechanisms of human pancreas acinar specification.",
+    "title": "High-content screening of organoids reveals the mechanisms of human pancreas acinar specification",
     "authors": "Rashmiparvathi Keshara, Karolina Kuodyte, Antje Janosch, Cordula Andree, Marc Bickle, Martin Stöter, Rico Barsacchi, Yung Hae Kim et al.",
     "year": "2026",
     "journal": "Cell stem cell",
@@ -9007,7 +9022,7 @@
     "preprint_checked": "2026-11-09"
   },
   {
-    "title": "Editorial overview: Regaining architecture and cell cross-talk upon regeneration.",
+    "title": "Editorial overview: Regaining architecture and cell cross-talk upon regeneration",
     "authors": "Anne Grapin-Botton, Jonathan Y-H Loh",
     "year": "2024",
     "journal": "Current opinion in genetics & development",
@@ -9195,7 +9210,7 @@
     ]
   },
   {
-    "title": "Integrating single-cell imaging and RNA sequencing datasets links differentiation and morphogenetic dynamics of human pancreatic endocrine progenitors.",
+    "title": "Integrating single-cell imaging and RNA sequencing datasets links differentiation and morphogenetic dynamics of human pancreatic endocrine progenitors",
     "authors": "Belin Selcen Beydag-Tasöz, Joyson Verner D’Costa, Lena Hersemann, Byung Ho Lee, Federica Luppino, Yung Hae Kim, Christoph Zechner, Anne Grapin-Botton",
     "year": "2023",
     "journal": "Developmental cell",
@@ -9320,7 +9335,7 @@
     ]
   },
   {
-    "title": "Mapping and exploring the organoid state space using synthetic biology.",
+    "title": "Mapping and exploring the organoid state space using synthetic biology",
     "authors": "Tzer Han Tan, Jifeng Liu, Anne Grapin-Botton",
     "year": "2022",
     "journal": "Seminars in cell & developmental biology",
@@ -9569,7 +9584,7 @@
     ]
   },
   {
-    "title": "Identification of In-droplet Multicellular Communities by Light-induced Combinatorial DNA Barcoding.",
+    "title": "Identification of In-droplet Multicellular Communities by Light-induced Combinatorial DNA Barcoding",
     "authors": "Fumiko Kawasaki, Yuka Mori, Takahiro Mimori, Issei Sato., Sadao Ota",
     "year": "2023",
     "journal": "Chemistry",
@@ -9926,7 +9941,7 @@
     ]
   },
   {
-    "title": "Transgene directed induction of a stem cell-derived human embryo model",
+    "title": "Pluripotent stem cell-derived model of the post-implantation human embryo",
     "authors": "Bailey AT Weatherbee, Carlos W Gantner, Riza M Daza, Nobuhiko Hamazaki, Lisa K. Iwamoto-Stohl, Jay Shendure, Magdalena Zernicka-Goetz",
     "year": "2023",
     "journal": "Nature",
@@ -10418,7 +10433,7 @@
     "preprint_checked": "2026-11-09"
   },
   {
-    "title": "Mouse embryo model derived exclusively from embryonic stem cells undergoes neurulation and heart development",
+    "title": "Mouse-embryo model derived exclusively from embryonic stem cells undergo neurulation and heart development",
     "authors": "Kasey Y.C. Lau, Hernan Rubinstein, Carlos W. Gantner, Gianluca Amadei, Yonatan Stelzer, Magdalena Zernicka-Goetz",
     "year": "2022",
     "journal": "Cell stem cell",
@@ -10580,7 +10595,7 @@
     "preprint_checked": "2026-11-09"
   },
   {
-    "title": "E‐cadherin mediates apical membrane initiation site localisation during de novo polarisation of epithelial cavities",
+    "title": "E‐cadherin mediates apical membrane initiation site localisation during de novo polarisation of epithelial cavities",
     "authors": "Xuan Liang, Antonia Weberling, Chun Yuan Hii, Magdalena Zernicka‐Goetz, Clare E Buckley",
     "year": "2022",
     "journal": "The EMBO Journal",
@@ -11047,6 +11062,9 @@
         "name": "Jennifer Lippincott-Schwartz",
         "orcid": "0000-0002-8601-3501"
       }
+    ],
+    "previous_dois": [
+      "10.1101/2022.09.03.505525"
     ]
   },
   {
@@ -11311,7 +11329,7 @@
     "preprint_checked": "2026-11-09"
   },
   {
-    "title": "In preprints: robust segmentation clock outputs via cell cycle and synthetic coupling.",
+    "title": "In preprints: robust segmentation clock outputs via cell cycle and synthetic coupling",
     "authors": "Jorge Lázaro, Miki Ebisuya",
     "year": "2025",
     "journal": "Development",
@@ -11338,7 +11356,7 @@
     ]
   },
   {
-    "title": "Glycolytic activity instructs germ layer proportions through regulation of Nodal and Wnt signalling",
+    "title": "Glycolytic activity instructs germ layer proportions through regulation of Nodal and Wnt signaling",
     "authors": "Kristina S. Stapornwongkul, Elisa Hahn, Patryk Poliński, Laura Salamó Palau, Krisztina Arató, LiAng Yao, Kate Williamson, Nicola Gritti et al.",
     "year": "2025",
     "journal": "Cell stem cell",
@@ -11599,7 +11617,7 @@
     ]
   },
   {
-    "title": "Timing and Tempo in Development.",
+    "title": "Timing and Tempo in Development",
     "authors": "Miki Ebisuya, James Briscoe",
     "year": "2024",
     "journal": "Current opinion in genetics & development",
@@ -11654,7 +11672,7 @@
     "preprint_checked": "2026-11-09"
   },
   {
-    "title": "Understanding how cells and organisms keep time during development.",
+    "title": "Understanding how cells and organisms keep time during development",
     "authors": "Miki Ebisuya, Teresa Rayon, Margarete Diaz-Cuadros, Kevin J. Chalut, Gang Wu, Antony N. Dodd, Maria-Elena Torres-Padilla, Michael Levine et al.",
     "year": "2024",
     "journal": "Developmental cell",
@@ -11859,7 +11877,7 @@
     ]
   },
   {
-    "title": "20 years of Developmental Cell: Looking forward.",
+    "title": "20 years of Developmental Cell: Looking forward",
     "authors": "Takashi Hiiragi, Amy S. Gladfelter, Irene Miguel-Aliaga, Hilary A. Coller, On Sun Lau, Heidi M. McBride, Kazuhiro Aoki, Andreas Linkermann et al.",
     "year": "2021",
     "journal": "Developmental cell",
@@ -12818,7 +12836,7 @@
     "preprint_checked": "2026-11-09"
   },
   {
-    "title": "Mechanochemical control systems regulating animal cell size.",
+    "title": "Mechanochemical control systems regulating animal cell size",
     "authors": "Heather E. Rizzo, Andy L. Zhang, Margaret L. Gardel",
     "year": "2024",
     "journal": "Current opinion in cell biology",
@@ -12930,7 +12948,7 @@
     ]
   },
   {
-    "title": "Limiting Pool and Actin Architecture Controls Myosin Cluster Sizes in Adherent Cells.",
+    "title": "Limiting Pool and Actin Architecture Controls Myosin Cluster Sizes in Adherent Cells",
     "authors": "Wen-Hung Chou, Mehdi Molaei, Huini Wu, Patrick W. Oakes, Jordan R. Beach, Margaret L. Gardel",
     "year": "2023",
     "journal": "Biophysical journal",
@@ -13243,7 +13261,7 @@
     "preprint_checked": "2026-11-09"
   },
   {
-    "title": "Nanoscale 3D DNA tracing reveals the mechanism of self-organization of mitotic chromosomes",
+    "title": "Nanoscale DNA tracing reveals the self-organization mechanism of mitotic chromosomes",
     "authors": "Kai Sandvold Beckwith, Andreas Brunner, Natalia Rosalia Morero, Ralf Jungmann, Jan Ellenberg",
     "year": "2025",
     "journal": "Cell",
@@ -13422,6 +13440,9 @@
         "name": "Julia Mahamid",
         "orcid": "0000-0001-6968-041X"
       }
+    ],
+    "previous_dois": [
+      "10.1101/2022.12.10.519870"
     ]
   },
   {
@@ -14023,7 +14044,7 @@
     "preprint_checked": "2026-11-09"
   },
   {
-    "title": "Three-dimensional rosettes in epithelial formation.",
+    "title": "Three-dimensional rosettes in epithelial formation",
     "authors": "Lila Neahring, Jennifer A. Zallen",
     "year": "2025",
     "journal": "Cells & development",
@@ -14692,7 +14713,7 @@
     "vip_only": true
   },
   {
-    "title": "Adherens junctions organize size-selective proteolytic hotspots critical for Notch signaling",
+    "title": "Adherens junctions organize size-selective proteolytic hotspots critical for Notch signalling",
     "authors": "Minsuk Kwak, Kaden M. Southard, Woon Ryoung Kim, Annie Lin, Nam Hyeong Kim, Ramu Gopalappa, Hyun Jung Lee, Minji An et al.",
     "year": "2022",
     "journal": "Nature cell biology",
@@ -17666,7 +17687,7 @@
     ]
   },
   {
-    "title": "ER-Golgi-localized proteins TMED2 and TMED10 control the formation of plasma membrane lipid nanodomains.",
+    "title": "ER-Golgi-localized proteins TMED2 and TMED10 control the formation of plasma membrane lipid nanodomains",
     "authors": "Muhammad U. Anwar, Oksana A. Sergeeva, Laurence Abrami, Francisco S. Mesquita, Ilya Lukonin, Triana Amen, Audrey Chuat, Laura Capolupo et al.",
     "year": "2022",
     "journal": "Developmental cell",
@@ -17740,7 +17761,7 @@
     "rejected": true
   },
   {
-    "title": "Adaptive differentiation for fast barrier restoration.",
+    "title": "Adaptive differentiation for fast barrier restoration",
     "authors": "Qiutan Yang, Prisca Liberali",
     "year": "2022",
     "journal": "Developmental cell",
@@ -17770,7 +17791,7 @@
     ]
   },
   {
-    "title": "Organoid Imaging: Seeing Development and Function.",
+    "title": "Organoid Imaging: Seeing Development and Function",
     "authors": "Rashmiparvathi Keshara, Yung Hae Kim, Anne Grapin-Botton",
     "year": "2022",
     "journal": "Annual review of cell and developmental biology",
@@ -17806,7 +17827,7 @@
     ]
   },
   {
-    "title": "Pancreas organoid models of development and regeneration.",
+    "title": "Pancreas organoid models of development and regeneration",
     "authors": "Anne Grapin-Botton, Yung Hae Kim",
     "year": "2022",
     "journal": "Development",
@@ -17903,7 +17924,7 @@
     ]
   },
   {
-    "title": "Stem cell-derived β cells go in monkeys.",
+    "title": "Stem cell-derived β cells go in monkeys",
     "authors": "Anne Grapin-Botton, Barbara Ludwig",
     "year": "2022",
     "journal": "Cell stem cell",
@@ -18132,10 +18153,13 @@
         "name": "Sebastian J. Streichan",
         "orcid": "0000-0002-6105-9087"
       }
+    ],
+    "previous_dois": [
+      "10.1101/2022.05.26.493584"
     ]
   },
   {
-    "title": "Controlled-environment platform for electrophysiology recordings on organoids with Neuropixels 2.0.",
+    "title": "Controlled-environment platform for electrophysiology recordings on organoids with Neuropixels 2.0",
     "authors": "Zongren Zhang, Tjitse van der Molen, Carolina Maciel Camargo, Markus W. Merk, Mookwang Kwon, Julia Sala-Jarque, Niketh Keshavan, Sergey Sokolovskiy et al.",
     "year": "2025",
     "journal": "The Review of scientific instruments",
@@ -18339,6 +18363,9 @@
         "name": "Stefano Di Talia",
         "orcid": "0000-0001-9758-7925"
       }
+    ],
+    "previous_dois": [
+      "10.1101/2023.10.11.561879"
     ]
   },
   {
@@ -18384,7 +18411,7 @@
     "preprint_checked": "2026-11-09"
   },
   {
-    "title": "Learning a conserved mechanism for early neuroectoderm morphogenesis.",
+    "title": "Learning a conserved mechanism for early neuroectoderm morphogenesis",
     "authors": "M. Lefebvre, Jonathan Colen, Nikolas H. Claussen, F. Brauns, Marion K. Raich, Noah P. Mitchell et al.",
     "year": "2024",
     "journal": "ArXiv",
@@ -18405,7 +18432,10 @@
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
     "vip_author": "Sebastian Streichan",
-    "vip_only": true
+    "vip_only": true,
+    "rejected": true,
+    "superseded_by": "10.1101/2023.12.22.573058",
+    "preprint_checked": "2026-11-12"
   },
   {
     "title": "YAP dysregulation triggers hypertrophy by CCN2 secretion and TGFβ uptake in human pluripotent stem cell-derived cardiomyocytes",
@@ -18622,10 +18652,12 @@
         "orcid": "0000-0001-9758-7925"
       }
     ],
-    "preprint_checked": "2026-11-09"
+    "preprint_checked": "2026-11-12",
+    "rejected": true,
+    "superseded_by": "10.1038/s41567-025-02796-x"
   },
   {
-    "title": "Maintaining symmetry during body axis elongation.",
+    "title": "Maintaining symmetry during body axis elongation",
     "authors": "Celia M. Smits, Sayantan Dutta, Vishank Jain-Sharma, Sebastian J. Streichan, Stanislav Y. Shvartsman",
     "year": "2023",
     "journal": "Current biology : CB",
@@ -18704,6 +18736,9 @@
         "name": "Denise J. Montell",
         "orcid": "0000-0001-8924-5925"
       }
+    ],
+    "previous_dois": [
+      "10.1101/2021.04.08.439079"
     ]
   },
   {
@@ -18805,7 +18840,9 @@
         "name": "Denise J. Montell"
       }
     ],
-    "preprint_checked": "2026-11-09"
+    "preprint_checked": "2026-11-12",
+    "rejected": true,
+    "superseded_by": "10.1016/j.devcel.2023.05.017"
   },
   {
     "title": "Geometric control of myosin II orientation during axis elongation",
@@ -18906,7 +18943,9 @@
         "orcid": "0000-0002-6105-9087"
       }
     ],
-    "preprint_checked": "2026-11-09"
+    "preprint_checked": "2026-11-12",
+    "rejected": true,
+    "superseded_by": "10.1038/s41592-025-02897-8"
   },
   {
     "title": "Visceral organ morphogenesis via calcium-patterned muscle constrictions",
@@ -20153,7 +20192,7 @@
     "preprint_checked": "2026-11-09"
   },
   {
-    "title": "Engineering Synthetic Phase Variation for Control of Microbial consortium",
+    "title": "Synthetic Phase Variation for Engineered Microbial Consortia",
     "authors": "Matthieu F. Kratz, Richard M. Murray, Michael B. Elowitz",
     "year": "2025",
     "journal": "bioRxiv",
@@ -20218,6 +20257,10 @@
         "name": "Michael B Elowitz",
         "orcid": "0000-0002-1221-0967"
       }
+    ],
+    "previous_dois": [
+      "10.1101/2023.08.24.554677",
+      "10.7554/elife.91422.3"
     ]
   },
   {
@@ -20301,10 +20344,13 @@
       {
         "name": "Michael B. Elowitz"
       }
+    ],
+    "previous_dois": [
+      "10.1101/2023.10.30.564854"
     ]
   },
   {
-    "title": "Lineage motifs as developmental modules for control of cell type proportions.",
+    "title": "Lineage motifs as developmental modules for control of cell type proportions",
     "authors": "Martin Tran, Amjad Askary, Michael B. Elowitz",
     "year": "2024",
     "journal": "Developmental cell",
@@ -20429,6 +20475,9 @@
         "name": "Michael B. Elowitz",
         "orcid": "0000-0002-1221-0967"
       }
+    ],
+    "previous_dois": [
+      "10.1101/2022.07.10.499405"
     ]
   },
   {
@@ -20674,7 +20723,7 @@
     "preprint_checked": "2026-11-09"
   },
   {
-    "title": "miRNA circuit modules for precise, tunable control of gene expression",
+    "title": "miRNA modules for precise, tunable control of gene expression",
     "authors": "Rongrong Du, Michael J. Flynn, Karan Mahe, Monique Honsa, Bo Gu, Dongyang Li, Sean E. McGeary, Viviana Gradinaru et al.",
     "year": "2025",
     "journal": "Molecular Cell",
@@ -20818,7 +20867,7 @@
     ]
   },
   {
-    "title": "Synthetic dosage-compensating miRNA circuits allow precision gene therapy for Rett syndrome",
+    "title": "Synthetic dosage-compensating miRNA circuits for quantitative gene therapy",
     "authors": "Michael James Flynn, Acacia M. Mayfield, Rongrong Du, Viviana Gradinaru, Michael B Elowitz",
     "year": "2024",
     "journal": "bioRxiv",
@@ -21074,7 +21123,9 @@
         "orcid": "0000-0002-1221-0967"
       }
     ],
-    "preprint_checked": "2026-11-09"
+    "preprint_checked": "2026-11-12",
+    "rejected": true,
+    "superseded_by": "10.1016/j.cell.2025.01.036"
   },
   {
     "title": "Reconstitution of morphogen shuttling circuits",
@@ -21307,7 +21358,9 @@
       "10.1101/2023.08.24.554677"
     ],
     "published_on": "2026-11-09",
-    "preprint_checked": "2026-11-09"
+    "preprint_checked": "2026-11-12",
+    "rejected": true,
+    "superseded_by": "10.7554/eLife.91422"
   },
   {
     "title": "A synthetic protein-level neural network in mammalian cells",
@@ -21344,7 +21397,9 @@
         "orcid": "0000-0002-1221-0967"
       }
     ],
-    "preprint_checked": "2026-11-09"
+    "preprint_checked": "2026-11-12",
+    "rejected": true,
+    "superseded_by": "10.1126/science.add8468"
   },
   {
     "title": "Periodic spatial patterning with a single morphogen",
@@ -21685,7 +21740,7 @@
     "preprint_checked": "2026-11-09"
   },
   {
-    "title": "Force-dependent intercellular adhesion strengthening underlies asymmetric adherens junction contraction.",
+    "title": "Force-dependent intercellular adhesion strengthening underlies asymmetric adherens junction contraction",
     "authors": "Kate E. Cavanaugh, Michael F. Staddon, Theresa A. Chmiel, Robert Harmon, Srikanth Budnar, Alpha S. Yap, Shiladitya Banerjee, Margaret L. Gardel",
     "year": "2022",
     "journal": "Current biology : CB",
@@ -23113,7 +23168,7 @@
     ]
   },
   {
-    "title": "High-speed 3D imaging flow cytometry with optofluidic spatial transformation.",
+    "title": "High-speed 3D imaging flow cytometry with optofluidic spatial transformation",
     "authors": "Masashi Ugawa, Sadao Ota",
     "year": "2022",
     "journal": "Biomedical optics express",
@@ -23141,7 +23196,7 @@
     ]
   },
   {
-    "title": "Reduced acoustic resonator dimensions improve focusing efficiency of bacteria and submicron particles.",
+    "title": "Reduced acoustic resonator dimensions improve focusing efficiency of bacteria and submicron particles",
     "authors": "Masashi Ugawa, Hoyeon Lee, Thierry Baasch, Minho Lee, Soyun Kim, OkChan Jeong, Yong-Hoon Choi, Daewon Sohn et al.",
     "year": "2021",
     "journal": "The Analyst",
@@ -23705,7 +23760,7 @@
     "preprint_checked": "2026-11-09"
   },
   {
-    "title": "Structural Diversity within the Endoplasmic Reticulum-From the Microscale to the Nanoscale.",
+    "title": "Structural Diversity within the Endoplasmic Reticulum-From the Microscale to the Nanoscale",
     "authors": "Christopher J. Obara, Andrew S. Moore, Jennifer Lippincott-Schwartz",
     "year": "2022",
     "journal": "Cold Spring Harbor perspectives in biology",
@@ -23844,7 +23899,9 @@
         "orcid": "0000-0002-8601-3501"
       }
     ],
-    "preprint_checked": "2026-11-09"
+    "preprint_checked": "2026-11-12",
+    "rejected": true,
+    "superseded_by": "10.1038/s41586-023-06956-y"
   },
   {
     "title": "Unraveling Single-Particle Trajectories Confined in Tubular Networks",
@@ -23986,6 +24043,9 @@
         "name": "Margaret L Gardel",
         "orcid": "0000-0003-1846-9854"
       }
+    ],
+    "previous_dois": [
+      "10.1101/2024.06.16.599227"
     ]
   },
   {
@@ -24139,7 +24199,9 @@
         "orcid": "0000-0003-1846-9854"
       }
     ],
-    "preprint_checked": "2026-11-09"
+    "preprint_checked": "2026-11-12",
+    "rejected": true,
+    "superseded_by": "10.1038/s44318-026-00807-y"
   },
   {
     "title": "Highly flexible PEG-LifeAct constructs act as tunable biomimetic actin crosslinkers",
@@ -24182,7 +24244,7 @@
     ]
   },
   {
-    "title": "Quantifying Strain-Sensing Protein Recruitment During Stress Fiber Repair.",
+    "title": "Quantifying Strain-Sensing Protein Recruitment During Stress Fiber Repair",
     "authors": "Shailaja Seetharaman, Stefano Sala, Margaret L. Gardel, Patrick W. Oakes",
     "year": "2023",
     "journal": "Methods in molecular biology",
@@ -24480,10 +24542,13 @@
     "pdf_link": "",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
-    "preprint": true
+    "preprint": true,
+    "rejected": true,
+    "superseded_by": "10.1073/pnas.2219558120",
+    "preprint_checked": "2026-11-12"
   },
   {
-    "title": "Catapulting of topological defects through elasticity bands in active nematics.",
+    "title": "Catapulting of topological defects through elasticity bands in active nematics",
     "authors": "Nitin Kumar, Rui Zhang, Steven A. Redford, Juan J. de Pablo, Margaret L. Gardel",
     "year": "2022",
     "journal": "Soft matter",
@@ -24675,7 +24740,9 @@
         "orcid": "0000-0001-6968-041X"
       }
     ],
-    "preprint_checked": "2026-11-09"
+    "preprint_checked": "2026-11-12",
+    "rejected": true,
+    "superseded_by": "10.1038/s41592-023-02053-0"
   },
   {
     "title": "Assessment of 3D MINFLUX data for quantitative structural biology in cells revisited",
@@ -24757,7 +24824,7 @@
     "rejected": true
   },
   {
-    "title": "Mechano-metabolic control of multicellular morphogenesis.",
+    "title": "Mechano-metabolic control of multicellular morphogenesis",
     "authors": "Clément Bodineau, Matyas Bubna-Litic, Alexandra K Eicher, Olivier Pourquié, Alessandro Mongera",
     "year": "2026",
     "journal": "Development (Cambridge, England)",
@@ -25440,7 +25507,7 @@
     ]
   },
   {
-    "title": "The cell in the age of the genomic revolution: Cell Regulatory Networks.",
+    "title": "The cell in the age of the genomic revolution: Cell Regulatory Networks",
     "authors": "Nicole Gorfinkiel, Alfonso Martinez Arias",
     "year": "2021",
     "journal": "Cells and Development",
@@ -25491,7 +25558,7 @@
     "ru_pick": true
   },
   {
-    "title": "Mechanochemical Feedback Loops in Development and Disease.",
+    "title": "Mechanochemical Feedback Loops in Development and Disease",
     "authors": "Edouard Hannezo, Carl-Philipp Heisenberg",
     "year": "2019",
     "journal": "Cell",
@@ -25621,7 +25688,7 @@
     "preprint_checked": "2026-11-09"
   },
   {
-    "title": "Tubulin polyglutamylation modulates Golgi morphodynamics and neurite branching during neuronal morphogenesis.",
+    "title": "Tubulin polyglutamylation modulates Golgi morphodynamics and neurite branching during neuronal morphogenesis",
     "authors": "Chih-Hsuan Hsu, Alexander Josiah Kinrade, Sarah Cohen",
     "year": "2026",
     "journal": "Journal of cell science",
