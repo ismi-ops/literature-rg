@@ -2,7 +2,7 @@
 
 For each preprint not checked in the last RECHECK_DAYS days, look up its published version
 (bioRxiv/medRxiv, arXiv, Crossref). When found, the tile is updated in place:
-  doi / link / journal / year  -> the published article
+  doi / link / title / journal / year -> the published article
   preprint flag                -> removed
   previous_dois                -> keeps the preprint DOI (notes and history follow the tile)
   published_on                 -> today (the site shows a "Published" badge for a month)
@@ -55,11 +55,13 @@ def apply_publication(papers: list[dict], p: dict, info: dict, today: date) -> s
         twin["previous_dois"] = sorted(set((twin.get("previous_dois") or []) + [old_doi]))
         return "merged"
 
-    details = ps.crossref_details(new_doi) if not (info.get("journal") and info.get("year")) else {"journal": "", "year": ""}
+    details = ps.crossref_details(new_doi)   # the published title often differs from the preprint's
     journal = info.get("journal") or details["journal"]
     year = info.get("year") or details["year"]
     p["previous_dois"] = sorted(set((p.get("previous_dois") or []) + [old_doi]))
     p["doi"] = new_doi
+    if details["title"]:
+        p["title"] = details["title"]
     p["link"] = f"https://doi.org/{new_doi}"
     if journal:
         p["journal"] = journal

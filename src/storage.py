@@ -4,6 +4,7 @@ import os
 from pathlib import Path
 
 from src.preprint_tag import is_biorxiv_preprint
+from src.title_clean import clean_title
 
 _PAPERS_PATH = Path(__file__).parent.parent / "papers.json"
 
@@ -54,7 +55,7 @@ def add_papers(new_papers: list[dict]) -> int:
         if isinstance(tags, str):
             tags = [t.strip() for t in tags.split(",") if t.strip()]
         paper_entry = {
-            "title": paper.get("title", ""),
+            "title": clean_title(paper.get("title", "")),
             "authors": paper.get("authors", ""),
             "year": str(paper.get("year", "")) if paper.get("year") else "",
             "journal": paper.get("journal", ""),
