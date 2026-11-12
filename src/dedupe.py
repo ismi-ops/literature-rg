@@ -15,6 +15,8 @@ from src.title_clean import norm
 
 NOT_THE_PAPER = re.compile(r"^\s*(reply to|correction|erratum|corrigendum|retraction)\b", re.I)
 SIMILAR = 0.85
+# Preprint tiles a person confirmed are the same paper as their published tile, though the titles differ too much to match automatically.
+CONFIRMED_PREPRINTS = {"10.1101/2021.04.08.439079", "10.1101/2022.09.03.505525", "10.1101/2024.06.16.599227"}
 POSSIBLE = 0.65   # similar title + same first author: reported for a human, never retired automatically
 BIORXIV_PREFIXES = ("10.1101/", "10.64898/")
 
@@ -79,6 +81,8 @@ def find_duplicates(papers: list[dict]) -> list[dict]:
             if r > best_r:
                 best, best_r = b, r
         if best is not None and best_r >= SIMILAR:
+            add("preprint-twin", best, a)
+        elif best is not None and (a.get("doi") or "").strip().lower() in CONFIRMED_PREPRINTS and best_r >= POSSIBLE:
             add("preprint-twin", best, a)
         elif best is not None and best_r >= POSSIBLE and _first_surname(a) and _first_surname(a) == _first_surname(best):
             found.append({"kind": "possible-twin", "keep": best, "drop": None, "others": [a]})
