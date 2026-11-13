@@ -3,6 +3,7 @@ import json
 import os
 from pathlib import Path
 
+from src.abstract_tag import is_conference_abstract
 from src.preprint_tag import is_biorxiv_preprint
 from src.title_clean import clean_title
 
@@ -77,6 +78,8 @@ def add_papers(new_papers: list[dict]) -> int:
             paper_entry["author_data"] = paper["author_data"]
         if paper.get("preprint") or is_biorxiv_preprint(paper_entry):
             paper_entry["preprint"] = True
+        if paper.get("conference_abstract") or is_conference_abstract(paper_entry):
+            paper_entry["conference_abstract"] = True
         if paper.get("vip_author"):
             paper_entry["vip_author"] = paper["vip_author"]
         if paper.get("vip_only"):

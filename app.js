@@ -468,9 +468,10 @@ function fmt(p) {
   const adminTools = !!getToken();
   const starHtml = isTopPick(p) ? '<div class="top-pick-star" title="Top pick · recommended for printing">⭐</div>' : '';
   const preprintBadge = p.preprint ? '<span class="badge badge-preprint">preprint</span>' : '';
+  const abstractBadge = p.conference_abstract ? '<span class="badge badge-abstract" title="Conference abstract: a short meeting submission, not a full paper">abstract</span>' : '';
   const collabBadge = p.vip_author ? '<span class="badge badge-collab" title="Paper by collaborator '+esc(p.vip_author)+'">&#128101; '+esc(p.vip_author)+'</span>' : '';
   return '<div class="card" data-key="'+esc(paperKey(p))+'" data-pdfslug="'+esc(pdfSlug)+'">'
-    +'<div class="card-meta"><span class="badge '+badgeClass+'">'+esc(type)+'</span>'+preprintBadge+collabBadge+added+'</div>'
+    +'<div class="card-meta"><span class="badge '+badgeClass+'">'+esc(type)+'</span>'+preprintBadge+abstractBadge+collabBadge+added+'</div>'
     +'<div class="card-title">'+titleHtml+'</div>'
     +authorHtml
     +(venue ? '<div class="card-venue">'+venue+'</div>' : '')

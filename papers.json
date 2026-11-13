@@ -10354,14 +10354,20 @@
     ]
   },
   {
-    "title": "BASEMENT MEMBRANE HETEROGENEITY INFORMS AXIS DETERMINATION IN PREGASTULATING HUMAN EMBRYO",
+    "title": "Abstract O-243: Basement membrane heterogeneity informs axis determination in pre-gastrulating human embryo",
     "authors": "Dong-Yuan Chen, Shiny Titus, Bailey A.T. Weatherbee, Rachel S. Mandelbaum, Richard T. Scott, Emre Seli, Magdalena Zernicka-Goetz",
     "year": "2022",
     "journal": "Fertility and Sterility",
     "type": "research",
-    "summary": "",
-    "relevance": "",
-    "tags": [],
+    "summary": "ASRM 2022 oral abstract. Human blastocysts cultured to 7–11 days post-fertilization show a LAMININ-positive basement membrane between the epiblast and the hypoblast that is spatially heterogeneous before any sign of anterior–posterior axis formation. Spatially manipulating the basement membrane in pre-gastrulating mouse embryos showed this heterogeneity shapes the collective migration of anterior-specifying cells that sets the axis, by tuning tissue fluidity.",
+    "relevance": "Early conference report of the work later published as the Nature Communications paper \"Basement membrane perforations guide anterior–posterior axis formation\" (10.1038/s41467-025-61441-6). Relevant to Cell Science's interest in stem cell-derived and embryo model systems, extracellular mechanics in tissue patterning, and quantitative 3D live imaging of morphogenesis.",
+    "tags": [
+      "development",
+      "embryo models",
+      "morphogenesis",
+      "mechanobiology",
+      "live imaging"
+    ],
     "doi": "10.1016/j.fertnstert.2022.08.302",
     "link": "https://doi.org/10.1016/j.fertnstert.2022.08.302",
     "score": 2,
@@ -10391,7 +10397,11 @@
       {
         "name": "Magdalena Zernicka-Goetz"
       }
-    ]
+    ],
+    "conference_abstract": true,
+    "rejected": true,
+    "superseded_by": "10.1038/s41467-025-61441-6",
+    "preprint_checked": "2026-11-13"
   },
   {
     "title": "Stem cell-derived mouse embryos develop within an extra-embryonic yolk sac to form anterior brain regions and a beating heart",
@@ -14925,7 +14935,8 @@
       {
         "name": "Olivier Harismendy"
       }
-    ]
+    ],
+    "conference_abstract": true
   },
   {
     "title": "The crucial role of bioimage analysts in scientific research and publication",
@@ -15776,7 +15787,8 @@
       {
         "name": "Varun Venkataramani"
       }
-    ]
+    ],
+    "conference_abstract": true
   },
   {
     "title": "MIFA: Metadata, Incentives, Formats and Accessibility guidelines to improve the reuse of AI datasets for bioimage analysis",
@@ -18304,6 +18316,9 @@
         "name": "Magdalena Zernicka-Goetz",
         "orcid": "0000-0002-7004-2471"
       }
+    ],
+    "previous_dois": [
+      "10.1016/j.fertnstert.2022.08.302"
     ]
   },
   {
