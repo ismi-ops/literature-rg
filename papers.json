@@ -10354,19 +10354,25 @@
     ]
   },
   {
-    "title": "BASEMENT MEMBRANE HETEROGENEITY INFORMS AXIS DETERMINATION IN PREGASTULATING HUMAN EMBRYO",
+    "title": "Abstract O-243: Basement membrane heterogeneity informs axis determination in pre-gastrulating human embryo",
     "authors": "Dong-Yuan Chen, Shiny Titus, Bailey A.T. Weatherbee, Rachel S. Mandelbaum, Richard T. Scott, Emre Seli, Magdalena Zernicka-Goetz",
     "year": "2022",
     "journal": "Fertility and Sterility",
     "type": "research",
-    "summary": "",
-    "relevance": "",
-    "tags": [],
+    "summary": "ASRM 2022 oral abstract. Human blastocysts cultured to 7–11 days post-fertilization show a LAMININ-positive basement membrane between the epiblast and the hypoblast that is spatially heterogeneous before any sign of anterior–posterior axis formation. Spatially manipulating the basement membrane in pre-gastrulating mouse embryos showed this heterogeneity shapes the collective migration of anterior-specifying cells that sets the axis, by tuning tissue fluidity.",
+    "relevance": "Early conference report of the work later published as the Nature Communications paper \"Basement membrane perforations guide anterior–posterior axis formation\" (10.1038/s41467-025-61441-6). Relevant to Cell Science's interest in stem cell-derived and embryo model systems, extracellular mechanics in tissue patterning, and quantitative 3D live imaging of morphogenesis.",
+    "tags": [
+      "development",
+      "embryo models",
+      "morphogenesis",
+      "mechanobiology",
+      "live imaging"
+    ],
     "doi": "10.1016/j.fertnstert.2022.08.302",
     "link": "https://doi.org/10.1016/j.fertnstert.2022.08.302",
     "score": 2,
     "added": "2026-10-15",
-    "pdf_link": "https://doi.org/10.1016/j.fertnstert.2022.08.302",
+    "pdf_link": "pdfs/10-1016-j-fertnstert-2022-08-302.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "author_data": [
