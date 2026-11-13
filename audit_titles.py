@@ -6,7 +6,7 @@ For each live tile with a DOI the Crossref title is fetched and compared (letter
   different  the tile's title is not the paper's title            -> reported; with --fix it is replaced
              by the Crossref title (Crossref is authoritative for the DOI the tile links to)
   missing    DOI not found in Crossref                            -> reported
-Also reported: DOI tiles whose link is a doi.org URL for a different DOI (fixed with --fix),
+Also: unflagged conference abstracts are flagged (conference_abstract) with --fix. Also reported: DOI tiles whose link is a doi.org URL for a different DOI (fixed with --fix),
 bioRxiv-DOI tiles that link to a journal site (stale DOI; --fix looks up the published version and converts the tile), and tiles with no DOI/title/link.
 --fix always applies the shared formatting rules (src/title_clean.py): markup, extra spaces, trailing full stop.
 
@@ -22,6 +22,7 @@ from datetime import date
 
 from check_preprints import apply_publication
 from src import storage
+from src.abstract_tag import is_conference_abstract
 from src.dedupe import find_duplicates, retire
 from src.sources import preprint_status as ps
 from src.title_clean import clean_title, norm
@@ -60,6 +61,11 @@ def main():
             note("format", p, f"-> {tidy[:90]}")
             if args.fix:
                 p["title"] = title = tidy
+                fixed += 1
+        if is_conference_abstract(p) and not p.get("conference_abstract"):
+            note("conference-abstract", p, p.get("journal") or "")
+            if args.fix:
+                p["conference_abstract"] = True
                 fixed += 1
         doi = (p.get("doi") or "").strip()
         link = (p.get("link") or "").strip()
@@ -122,7 +128,7 @@ def main():
                 retire(papers, keep, drop, date.today().isoformat())
                 fixed += 1
 
-    order = ["duplicate", "duplicate?", "different", "partial", "stale-doi", "link-doi", "not-in-crossref", "no-title", "no-link", "format"]
+    order = ["conference-abstract", "duplicate", "duplicate?", "different", "partial", "stale-doi", "link-doi", "not-in-crossref", "no-title", "no-link", "format"]
     lines = []
     for kind in order:
         rows = [r for r in report if r[0] == kind]

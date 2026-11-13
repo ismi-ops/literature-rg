@@ -10397,7 +10397,11 @@
       {
         "name": "Magdalena Zernicka-Goetz"
       }
-    ]
+    ],
+    "conference_abstract": true,
+    "rejected": true,
+    "superseded_by": "10.1038/s41467-025-61441-6",
+    "preprint_checked": "2026-11-13"
   },
   {
     "title": "Stem cell-derived mouse embryos develop within an extra-embryonic yolk sac to form anterior brain regions and a beating heart",
@@ -14931,7 +14935,8 @@
       {
         "name": "Olivier Harismendy"
       }
-    ]
+    ],
+    "conference_abstract": true
   },
   {
     "title": "The crucial role of bioimage analysts in scientific research and publication",
@@ -15782,7 +15787,8 @@
       {
         "name": "Varun Venkataramani"
       }
-    ]
+    ],
+    "conference_abstract": true
   },
   {
     "title": "MIFA: Metadata, Incentives, Formats and Accessibility guidelines to improve the reuse of AI datasets for bioimage analysis",
@@ -18310,6 +18316,9 @@
         "name": "Magdalena Zernicka-Goetz",
         "orcid": "0000-0002-7004-2471"
       }
+    ],
+    "previous_dois": [
+      "10.1016/j.fertnstert.2022.08.302"
     ]
   },
   {

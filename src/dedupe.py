@@ -2,7 +2,7 @@
 
 Kinds:
   version-doi    same eLife article under its versioned DOI (10.7554/elife.91422.3 vs 10.7554/eLife.91422)
-  preprint-twin  a preprint tile and its published article (same/near-identical title, preprint no later than the article)
+  preprint-twin  a preprint (or conference abstract) tile and its published article (same/near-identical title, preprint no later than the article)
   preprint-pair  the same preprint listed twice (e.g. a bioRxiv DOI tile and an arXiv tile without a DOI)
   possible-twin  a looser title match with the same first author — report only
   same-title     identical title, different DOIs, neither a preprint (a correction? two editions?) — report only
@@ -15,8 +15,14 @@ from src.title_clean import norm
 
 NOT_THE_PAPER = re.compile(r"^\s*(reply to|correction|erratum|corrigendum|retraction)\b", re.I)
 SIMILAR = 0.85
-# Preprint tiles a person confirmed are the same paper as their published tile, though the titles differ too much to match automatically.
-CONFIRMED_PREPRINTS = {"10.1101/2021.04.08.439079", "10.1101/2022.09.03.505525", "10.1101/2024.06.16.599227"}
+# Tiles a person confirmed are the same work as a published tile, though the titles differ too much to match
+# automatically: {retired tile's DOI: surviving tile's DOI}. Preprints, plus one conference abstract.
+CONFIRMED_TWINS = {
+    "10.1101/2021.04.08.439079": "10.1016/j.devcel.2023.05.017",
+    "10.1101/2022.09.03.505525": "10.1038/s41586-023-06956-y",
+    "10.1101/2024.06.16.599227": "10.1038/s44318-026-00807-y",
+    "10.1016/j.fertnstert.2022.08.302": "10.1038/s41467-025-61441-6",
+}
 POSSIBLE = 0.65   # similar title + same first author: reported for a human, never retired automatically
 BIORXIV_PREFIXES = ("10.1101/", "10.64898/")
 
@@ -67,8 +73,14 @@ def find_duplicates(papers: list[dict]) -> list[dict]:
             for drop in group[1:]:
                 add("version-doi", group[0], drop)
 
-    pre = [p for p in live if p.get("preprint") and id(p) not in claimed]
-    pub = [p for p in live if not p.get("preprint")]
+    early = lambda p: p.get("preprint") or p.get("conference_abstract")   # versions that precede / stand in for the full paper
+    by_doi = {(p.get("doi") or "").strip().lower(): p for p in live}
+    for drop_doi, keep_doi in CONFIRMED_TWINS.items():
+        drop, keep = by_doi.get(drop_doi.lower()), by_doi.get(keep_doi.lower())
+        if drop is not None and keep is not None and drop is not keep:
+            add("preprint-twin", keep, drop)
+    pre = [p for p in live if early(p) and id(p) not in claimed]
+    pub = [p for p in live if not early(p) and id(p) not in claimed]
     # 2. preprint tile vs published tile
     for a in pre:
         if NOT_THE_PAPER.match(a.get("title") or ""):
@@ -81,8 +93,6 @@ def find_duplicates(papers: list[dict]) -> list[dict]:
             if r > best_r:
                 best, best_r = b, r
         if best is not None and best_r >= SIMILAR:
-            add("preprint-twin", best, a)
-        elif best is not None and (a.get("doi") or "").strip().lower() in CONFIRMED_PREPRINTS and best_r >= POSSIBLE:
             add("preprint-twin", best, a)
         elif best is not None and best_r >= POSSIBLE and _first_surname(a) and _first_surname(a) == _first_surname(best):
             found.append({"kind": "possible-twin", "keep": best, "drop": None, "others": [a]})
@@ -121,7 +131,9 @@ def retire(papers: list[dict], keep: dict, drop: dict, today: str) -> None:
     keep["previous_dois"] = sorted(set((keep.get("previous_dois") or []) + (drop.get("previous_dois") or []) + ([old] if old else [])) - {(keep.get("doi") or "").strip()})
     if not keep["previous_dois"]:
         keep.pop("previous_dois")
-    for field in ("ru_pick", "vip_author", "pdf_link", "summary", "relevance"):
+    # a conference abstract's PDF, summary and relevance note describe the abstract, not the full paper
+    fields = ("ru_pick", "vip_author") if drop.get("conference_abstract") else ("ru_pick", "vip_author", "pdf_link", "summary", "relevance")
+    for field in fields:
         if drop.get(field) and not keep.get(field):
             keep[field] = drop[field]
     drop["rejected"] = True
