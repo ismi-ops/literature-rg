@@ -16772,7 +16772,7 @@
     "journal": "Nature Methods",
     "type": "research",
     "summary": "Facing the challenge of exploring and sharing multi-terabyte, multi-modal and multi-scale image data of heterogeneous dimensionality, we developed MoBIE, a Fiji plugin that provides rich visualization features to enable browsing data from numerous biomedical applications on a standard laptop computer. MoBIE also supports segmentations, associated measurements and annotations. Users can configure complex views of datasets, share them with collaborators, and use them for interactive figure panels.",
-    "relevance": "",
+    "relevance": "Directly relevant to Cell Science's foundational interest in how cells acquire and maintain identity — gene regulatory networks, lineage specification, and embryonic patterning are central to understanding cell decision-making and fate in developmental contexts. Supports the multimodal view of cell state central to Cell Science, connecting tissue organization and spatial context with molecular identity.",
     "tags": [],
     "doi": "10.1038/s41592-023-01776-4",
     "link": "https://doi.org/10.1038/s41592-023-01776-4",
@@ -25762,5 +25762,276 @@
       }
     ],
     "preprint_checked": "2026-11-11"
+  },
+  {
+    "title": "Dynamic mechanical sorting biases niche occupancy and lineage outcome during development of bilayered glandular epithelia",
+    "authors": "Robin P. Journot, Tom Deshayes, Louise Harari, Alexandre Barthelemy, Vasudha Srivastava, Candice Merle, Claudia Carabana, Marisa M. Faraldo et al.",
+    "year": "2026",
+    "journal": "bioRxiv",
+    "type": "research",
+    "summary": "Tissue compartmentalization into basal and luminal domains is a hallmark of glandular epithelia, yet how fate boundaries are established and stabilized during dynamic morphogenesis remains a major unresolved question. Here, using mouse embryonic explants, organoids, quantitative live imaging and genetic perturbations, we show that basal-luminal compartmentalization is not maintained by fixed boundaries, but through continuous positional corrections. We show that differences in cellular adhesion and actomyosin contractility drive these positional corrections by promoting active cell sorting.",
+    "relevance": "Directly relevant to Cell Science's foundational interest in how cells acquire and maintain identity — gene regulatory networks, lineage specification, and embryonic patterning are central to understanding cell decision-making and fate in developmental contexts. Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures.",
+    "tags": [
+      "development",
+      "morphogenesis",
+      "cell fate",
+      "organoid",
+      "live imaging"
+    ],
+    "doi": "10.64898/2026.11.05.761865",
+    "link": "https://doi.org/10.64898/2026.11.05.761865",
+    "score": 10,
+    "added": "2026-11-16",
+    "pdf_link": "https://www.biorxiv.org/content/biorxiv/early/2026/11/09/2026.11.05.761865.full.pdf",
+    "source": "ss_recommendations",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "preprint": true,
+    "author_data": [
+      {
+        "name": "Robin P. Journot",
+        "orcid": "0000-0002-1967-2400"
+      },
+      {
+        "name": "Tom Deshayes",
+        "orcid": "0009-0006-8316-3017"
+      },
+      {
+        "name": "Louise Harari",
+        "orcid": "0009-0003-1543-918X"
+      },
+      {
+        "name": "Alexandre Barthelemy"
+      },
+      {
+        "name": "Vasudha Srivastava",
+        "orcid": "0000-0001-8845-9518"
+      },
+      {
+        "name": "Candice Merle",
+        "orcid": "0000-0001-9103-6671"
+      },
+      {
+        "name": "Claudia Carabana"
+      },
+      {
+        "name": "Marisa M. Faraldo",
+        "orcid": "0000-0001-9497-1171"
+      },
+      {
+        "name": "Philip Allan Seymour",
+        "orcid": "0000-0001-5782-6020"
+      },
+      {
+        "name": "Martti Maimets",
+        "orcid": "0000-0001-7343-2769"
+      },
+      {
+        "name": "Zev J. Gartner",
+        "orcid": "0000-0001-7803-1219"
+      },
+      {
+        "name": "Jean-Léon Maître",
+        "orcid": "0000-0002-3688-1474"
+      },
+      {
+        "name": "Kim B. Jensen",
+        "orcid": "0000-0001-6569-1664"
+      },
+      {
+        "name": "Silvia Fre",
+        "orcid": "0000-0002-7209-7636"
+      }
+    ]
+  },
+  {
+    "title": "Controlled activin A signaling enables liver organoid generation from human pluripotent stem cells",
+    "authors": "João P. Cotovio, Alice C. Borges, Diogo E. S. Nogueira, Carlos A. V. Rodrigues, Joaquim M. S. Cabral, Tiago G. Fernandes",
+    "year": "2026",
+    "journal": "iScience",
+    "type": "research",
+    "summary": "Morphogen gradients critically regulate the coordinated emergence of endodermal and mesodermal lineages during liver bud formation, yet current human hepatic organoid models inadequately replicate these spatial cues. Here, we examine how modulation of activin A signaling within a 3D vertical-wheel bioreactor culture system shapes early morphogenetic organization in human pluripotent stem cell aggregates. We observe that defined activin A conditions promote the spatial organization of human pluripotent stem cells during hepatic differentiation.",
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Relevant to lumen morphogenesis, lumenoid self-organization, organoid systems, and live imaging of three-dimensional culture morphodynamics.",
+    "tags": [
+      "stem cells",
+      "morphogenesis",
+      "organoid"
+    ],
+    "doi": "10.1016/j.isci.2026.118054",
+    "link": "https://doi.org/10.1016/j.isci.2026.118054",
+    "score": 8,
+    "added": "2026-11-16",
+    "pdf_link": "https://www.cell.com/iscience/pdf/S2589-0042(26)03437-1.pdf",
+    "source": "ss_recommendations",
+    "reasoning": "keyword match (no Anthropic API key)"
+  },
+  {
+    "title": "Transcriptional coupling of metabolism and cell mechanics controls human neuroepithelium morphogenesis",
+    "authors": "Camil Mirdass, Lucas Denis, Hugo Lachuer, Mikaëlle Bocel, Anis Bourou, Kamal Bouhali, Nicolas Valentin, Sandrine Adiba et al.",
+    "year": "2026",
+    "journal": "bioRxiv",
+    "type": "research",
+    "summary": "Tissue morphogenesis integrates developmental programs with cell mechanics, yet the mechanisms coupling these processes remain poorly understood. We investigated this link during neuroepithelial morphogenesis in human iPSC-derived dorsal spinal organoids. We found that PAX3, a transcription factor whose loss causes neural tube defects, promotes force-bearing adherens junction assembly.",
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Relevant to lumen morphogenesis, lumenoid self-organization, organoid systems, and live imaging of three-dimensional culture morphodynamics.",
+    "tags": [
+      "development",
+      "morphogenesis",
+      "organoid",
+      "iPSC"
+    ],
+    "doi": "10.64898/2026.09.22.753382",
+    "link": "https://doi.org/10.64898/2026.09.22.753382",
+    "score": 8,
+    "added": "2026-11-16",
+    "pdf_link": "https://www.biorxiv.org/content/biorxiv/early/2026/09/24/2026.09.22.753382.full.pdf",
+    "source": "ss_recommendations",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "preprint": true,
+    "author_data": [
+      {
+        "name": "Camil Mirdass"
+      },
+      {
+        "name": "Lucas Denis"
+      },
+      {
+        "name": "Hugo Lachuer"
+      },
+      {
+        "name": "Mikaëlle Bocel"
+      },
+      {
+        "name": "Anis Bourou"
+      },
+      {
+        "name": "Kamal Bouhali"
+      },
+      {
+        "name": "Nicolas Valentin"
+      },
+      {
+        "name": "Sandrine Adiba",
+        "orcid": "0000-0003-4308-2870"
+      },
+      {
+        "name": "Alice Marteil"
+      },
+      {
+        "name": "Céline Chollet"
+      },
+      {
+        "name": "Emeline Chu-Van"
+      },
+      {
+        "name": "Xavier Baudin"
+      },
+      {
+        "name": "Catherine Pioche-Durieu"
+      },
+      {
+        "name": "Sarah Chebouti"
+      },
+      {
+        "name": "Bruno Estebe"
+      },
+      {
+        "name": "Frédéric Relaix",
+        "orcid": "0000-0003-1270-1472"
+      },
+      {
+        "name": "Florence Castelli"
+      },
+      {
+        "name": "Valérie Dupe"
+      },
+      {
+        "name": "Sébastien Léon",
+        "orcid": "0000-0002-2536-8595"
+      },
+      {
+        "name": "Stéphane Nedelec"
+      },
+      {
+        "name": "Nicolas Borghi"
+      },
+      {
+        "name": "Vanessa Ribes",
+        "orcid": "0000-0001-7016-9192"
+      }
+    ]
+  },
+  {
+    "title": "A regenerative fibroblast competence field supports multiple cell fates in adult skin regeneration",
+    "authors": "Chih-Han Huang, Chih-Kuan Chen, Chen Yuan Kam, Ben Van Handel, Arijita Sarkar, Yen-Chun Ho, Denis Evseenko, Cheng-Ming Chuong et al.",
+    "year": "2026",
+    "journal": "bioRxiv",
+    "type": "research",
+    "summary": "Adult mammalian wounds typically restore tissue integrity through fibrotic repair rather than regeneration of the original architecture. Here, we compared small non-regenerative and large regenerative skin wounds to investigate how fibroblasts acquire regenerative competence and enter alternative cell-fate programs. Integrated single-cell RNA sequencing identified a transient signaling and extracellular-matrix-remodeling niche enriched in large wounds, together with NCAM1-associated competent fibroblast states.",
+    "relevance": "Directly relevant to understanding how cells send and receive signals from neighbors — foundational for collective cell decision-making and multicellular coordination, both core Cell Science themes. Relevant to Cell Science's interest in how cells make identity decisions, with implications for stem cell differentiation and iPSC-based model systems.",
+    "tags": [
+      "cell fate",
+      "single-cell",
+      "cell-cell communication"
+    ],
+    "doi": "10.64898/2026.10.01.756129",
+    "link": "https://doi.org/10.64898/2026.10.01.756129",
+    "score": 8,
+    "added": "2026-11-16",
+    "pdf_link": "https://www.biorxiv.org/content/biorxiv/early/2026/10/05/2026.10.01.756129.full.pdf",
+    "source": "ss_recommendations",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "preprint": true,
+    "author_data": [
+      {
+        "name": "Chih-Han Huang"
+      },
+      {
+        "name": "Chih-Kuan Chen"
+      },
+      {
+        "name": "Chen Yuan Kam"
+      },
+      {
+        "name": "Ben Van Handel"
+      },
+      {
+        "name": "Arijita Sarkar"
+      },
+      {
+        "name": "Yen-Chun Ho"
+      },
+      {
+        "name": "Denis Evseenko"
+      },
+      {
+        "name": "Cheng-Ming Chuong"
+      },
+      {
+        "name": "Hans I-Chen Harn"
+      }
+    ]
+  },
+  {
+    "title": "Engineering synthetic plant microbiome symbioses for drought and salinity resilience",
+    "authors": "Vikas",
+    "year": "2026",
+    "journal": "Discover Plants",
+    "type": "review",
+    "summary": "Climate change-induced abiotic stresses, particularly drought and salinity, severely constrain global agricultural productivity. While natural plant-microbe interactions enhance stress tolerance, their efficacy is often inconsistent under extreme conditions. Synthetic symbiosis—engineering rhizosphere microbiomes and plant-microbe interfaces—presents a theoretical framework and future approach to bypass these limitations.",
+    "relevance": "Introduces a novel experimental method or platform — very high priority given strong interest in how experiments are designed and what new biological questions they make tractable. Aligned with Cell Science's synthetic biology program — engineering gene circuits to program cell community behavior and synthetic multicellular systems.",
+    "tags": [
+      "synthetic biology"
+    ],
+    "doi": "10.1007/s44372-026-00998-y",
+    "link": "https://doi.org/10.1007/s44372-026-00998-y",
+    "score": 7,
+    "added": "2026-11-16",
+    "pdf_link": "https://link.springer.com/content/pdf/10.1007/s44372-026-00998-y.pdf",
+    "source": "semantic_scholar",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "author_data": [
+      {
+        "name": "Vikas"
+      }
+    ]
   }
 ]
