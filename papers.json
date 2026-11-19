@@ -16996,7 +16996,7 @@
     "link": "https://doi.org/10.1101/2023.12.18.572103",
     "score": 3,
     "added": "2026-10-15",
-    "pdf_link": "",
+    "pdf_link": "https://doi.org/10.1101/2023.12.18.572103",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
@@ -22784,7 +22784,7 @@
     "link": "https://doi.org/10.64898/2026.01.27.701983",
     "score": 0,
     "added": "2026-10-15",
-    "pdf_link": "",
+    "pdf_link": "https://doi.org/10.64898/2026.01.27.701983",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "vip_author": "Anne Grapin-Botton",
@@ -26034,6 +26034,54 @@
     "author_data": [
       {
         "name": "Vikas"
+      }
+    ]
+  },
+  {
+    "title": "Beads, springs and fields: particle-based vs continuum models in cell biophysics",
+    "authors": "Valerio Sorichetti, J. Májek, I. Palaia, Fernanda Pérez-Verdugo, C. Vanhille-Campos, É. Hannezo et al.",
+    "year": "2026",
+    "journal": "",
+    "type": "review",
+    "summary": "Quantitative modeling has become an essential tool in modern biophysics, driven by advances in both experimental techniques and theoretical frameworks. Powerful high-resolution techniques now provide detailed datasets spanning molecular to tissue scales, allowing to visualize cellular structures with unprecedented detail. In parallel, developments in soft and active matter physics have established a robust theoretical basis for describing biological systems.",
+    "relevance": "Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis. Relevant to understanding how biomolecular condensates and polymer organization contribute to intracellular structure — a core Cell Science research interest.",
+    "tags": [
+      "development"
+    ],
+    "doi": "10.48550/arXiv.2604.13827",
+    "link": "https://www.semanticscholar.org/paper/2198c1a1d2a1980575a50e6d90c72f72f243fc89",
+    "score": 4,
+    "added": "2026-11-19",
+    "pdf_link": "",
+    "source": "semantic_scholar",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "curated": true,
+    "preprint": true
+  },
+  {
+    "title": "Cellular dynamics of EMT: lessons from live in vivo imaging of embryonic development",
+    "authors": "Jeffrey D. Amack",
+    "year": "2021",
+    "journal": "Cell Communication and Signaling",
+    "type": "review",
+    "summary": "Epithelial-mesenchymal transition (EMT) refers to a process in which epithelial cells lose apical-basal polarity and loosen cell–cell junctions to take on mesenchymal cell morphologies and invasive properties that facilitate migration through extracellular matrix. EMT—and the reverse mesenchymal-epithelial transition (MET)—are evolutionarily conserved processes that are used throughout embryonic development to drive tissue morphogenesis. During adult life, EMT is activated to close wounds after injury, but also can be used by cancers to promote metastasis.",
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Relevant to Cell Science's holistic cell state program, which integrates molecular, structural, and morphological data to define cell identity.",
+    "tags": [
+      "development",
+      "morphogenesis"
+    ],
+    "doi": "10.1186/s12964-021-00761-8",
+    "link": "https://doi.org/10.1186/s12964-021-00761-8",
+    "score": 4,
+    "added": "2026-11-19",
+    "pdf_link": "https://biosignaling.biomedcentral.com/counter/pdf/10.1186/s12964-021-00761-8",
+    "source": "semantic_scholar",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "curated": true,
+    "author_data": [
+      {
+        "name": "Jeffrey D. Amack",
+        "orcid": "0000-0002-5465-9754"
       }
     ]
   }
