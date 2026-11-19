@@ -896,7 +896,13 @@ const tokenScreen = document.getElementById('modal-token-screen');
 const paperScreen = document.getElementById('modal-paper-screen');
 
 function getToken() { try { return localStorage.getItem(GH_TOKEN_KEY) || ''; } catch(e) { return ''; } }
-function saveToken(t) { try { localStorage.setItem(GH_TOKEN_KEY, t); return true; } catch(e) { return false; } }
+function saveToken(t) { try { localStorage.setItem(GH_TOKEN_KEY, t); requestPersistentStorage(); return true; } catch(e) { return false; } }
+// Ask the browser not to evict this site's storage (token, notes, unsent edits) when it cleans up.
+// Chromium browsers (Edge, Chrome) decide silently; Safari/Firefox may ignore or prompt. Failing is harmless.
+function requestPersistentStorage() {
+  try { if (navigator.storage && navigator.storage.persist) navigator.storage.persist().catch(() => {}); } catch (e) {}
+}
+if (getToken()) requestPersistentStorage();
 
 function showTokenScreen() {
   tokenScreen.style.display = '';
