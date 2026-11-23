@@ -435,7 +435,7 @@
     "doi": "",
     "link": "https://www.nature.com/articles/s41467-024-53078-8",
     "added": "2026-08-19",
-    "pdf_link": "",
+    "pdf_link": "pdfs/control-of-spatio-temporal-patterning-via-cell-growth-in-a-m.pdf",
     "relevance": "Aligned with Cell Science's synthetic biology program use of engineered gene circuits to program synthetic cell communities toward controlled tissue-level behaviors. Relevant to Cell Science's synthetic biology program and Cell Science's broader interest in how cells cooperate and self-organize to form tissues with emergent properties."
   },
   {
@@ -3704,7 +3704,7 @@
     "link": "https://doi.org/10.1242/dev.206043",
     "score": 5,
     "added": "2026-09-14",
-    "pdf_link": "",
+    "pdf_link": "pdfs/10-1242-dev-206043.pdf",
     "source": "semantic_scholar",
     "reasoning": "keyword match (no Anthropic API key)",
     "curated": true,
