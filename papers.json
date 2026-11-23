@@ -1559,7 +1559,7 @@
     "doi": "10.1038/s41556-026-01954-4",
     "link": "https://www.nature.com/articles/s41556-026-01954-4",
     "added": "2026-08-19",
-    "pdf_link": "https://doi.org/10.1038/s41556-026-01954-4",
+    "pdf_link": "pdfs/10-1038-s41556-026-01954-4.pdf",
     "relevance": "Relevant to Cell Science's interest in tissue mechanics and phase-like transitions that govern how tissues flow or stiffen during morphogenesis."
   },
   {
@@ -1579,7 +1579,7 @@
     "doi": "10.1038/s41586-025-08710-y",
     "link": "https://www.nature.com/articles/s41586-025-08710-y",
     "added": "2026-08-19",
-    "pdf_link": "https://dash.harvard.edu/bitstreams/60dc22c5-5b11-4eab-a6d5-6da5bdc5d887/download",
+    "pdf_link": "pdfs/10-1038-s41586-025-08710-y.pdf",
     "relevance": "Relevant to Cell Science's AI and computational agenda for modeling cell biology and building virtual cell frameworks.",
     "author_data": [
       {
@@ -1632,7 +1632,7 @@
     "doi": "",
     "link": "https://www.nature.com/articles/nrm3120",
     "added": "2026-08-19",
-    "pdf_link": "",
+    "pdf_link": "pdfs/turing-s-next-steps-the-mechanochemical-basis-of-morphogenes.pdf",
     "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures."
   },
   {
