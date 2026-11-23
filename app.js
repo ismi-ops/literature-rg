@@ -691,13 +691,60 @@ function readBase64(file) {
     r.readAsDataURL(file);
   });
 }
+// GitHub's Contents API refuses big files ("file is too large to be processed"); the Git Data API takes up to
+// 100 MB. It commits the file by hand: blob -> tree -> commit -> move main forward (retrying if main moved).
+const GH_REPO_API = 'https://api.github.com/repos/ismi-ops/literature-rg';
+const MAX_UPLOAD_BYTES = 95 * 1024 * 1024;   // GitHub rejects files of 100 MB or more
+async function ghJson(token, method, path, body) {
+  const resp = await fetch(GH_REPO_API + path, { method, headers: ghHeaders(token), body: body ? JSON.stringify(body) : undefined, cache: 'no-store' });
+  const data = await resp.json().catch(() => ({}));
+  return { resp, data };
+}
+async function putPdfViaGitData(slug, token, b64) {
+  let r = await ghJson(token, 'POST', '/git/blobs', { content: b64, encoding: 'base64' });
+  if (!r.resp.ok) return r;
+  const blobSha = r.data.sha;
+  for (let attempt = 0; attempt < 4; attempt++) {
+    r = await ghJson(token, 'GET', '/git/ref/heads/main');
+    if (!r.resp.ok) return r;
+    const headSha = r.data.object.sha;
+    r = await ghJson(token, 'GET', '/git/commits/' + headSha);
+    if (!r.resp.ok) return r;
+    const baseTree = r.data.tree.sha;
+    r = await ghJson(token, 'POST', '/git/trees', { base_tree: baseTree, tree: [{ path: 'pdfs/' + slug, mode: '100644', type: 'blob', sha: blobSha }] });
+    if (!r.resp.ok) return r;
+    r = await ghJson(token, 'POST', '/git/commits', { message: 'chore: upload PDF via site', tree: r.data.sha, parents: [headSha] });
+    if (!r.resp.ok) return r;
+    r = await ghJson(token, 'PATCH', '/git/refs/heads/main', { sha: r.data.sha, force: false });
+    if (r.resp.ok) return r;
+    if (r.resp.status !== 422 && r.resp.status !== 409) return r;   // not "main moved": give up
+  }
+  return r;
+}
+
 // Upload (or replace) pdfs/<slug> in the repo. Resolves to { ok: true } or { ok: false, msg }.
 async function uploadPdfFile(slug, file, token) {
+  if (file.size > MAX_UPLOAD_BYTES) {
+    const mb = Math.round(file.size / 1048576);
+    return { ok: false, msg: 'This PDF is ' + mb + ' MB — GitHub only accepts files under 100 MB. Shrink it, or paste a link to an online copy in the tile\'s ⚙ menu instead.' };
+  }
   const b64 = await readBase64(file);
   let resp = await putPdf(slug, token, b64, null);
   if (resp.status === 422 || resp.status === 409) {   // a file with this name exists (replacing a PDF): GitHub wants its sha
-    const sha = await getPdfSha(slug, token);
-    if (sha) resp = await putPdf(slug, token, b64, sha);
+    const probe = await resp.clone().json().catch(() => ({}));
+    if (!/too large/i.test(probe.message || '')) {
+      const sha = await getPdfSha(slug, token);
+      if (sha) resp = await putPdf(slug, token, b64, sha);
+    }
+  }
+  if (!resp.ok) {
+    const probe = await resp.clone().json().catch(() => ({}));
+    if (resp.status === 422 && /too large/i.test(probe.message || '')) {
+      const r = await putPdfViaGitData(slug, token, b64);
+      if (r.resp.ok) return { ok: true };
+      resp = r.resp;
+      resp.json = async () => r.data;
+    }
   }
   if (resp.ok) return { ok: true };
   const err = await resp.json().catch(() => ({}));
@@ -967,7 +1014,6 @@ function showChosenPdf() {
 paperPdfInput.addEventListener('change', showChosenPdf);
 paperPdfClear.addEventListener('click', () => { paperPdfInput.value = ''; showChosenPdf(); });
 
-const MAX_PDF_BYTES = 30 * 1024 * 1024;
 document.getElementById('paper-submit-btn').addEventListener('click', async () => {
   const raw = document.getElementById('paper-input').value.trim();
   const fb = document.getElementById('paper-feedback');
@@ -987,7 +1033,7 @@ document.getElementById('paper-submit-btn').addEventListener('click', async () =
   let slug = '';
   if (file) {
     if (!/\.pdf$/i.test(file.name) && file.type !== 'application/pdf') { fail('Please choose a PDF file.'); return; }
-    if (file.size > MAX_PDF_BYTES) { fail('That PDF is over 30 MB — too large to upload here.'); return; }
+    if (file.size > MAX_UPLOAD_BYTES) { fail('That PDF is over 95 MB — GitHub will not take it. Shrink it, or add the paper without a PDF and paste a link to an online copy in its ⚙ menu.'); return; }
     const doi = doiFromInput(raw);
     if (!doi) { fail('To attach a PDF I need the paper\'s DOI, and I can\'t find one in that link. Paste the DOI itself (10.xxxx/…), or add the paper first and upload the PDF from its tile.'); return; }
     slug = doiSlug(doi);
