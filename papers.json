@@ -2714,7 +2714,7 @@
     "link": "https://doi.org/10.1016/j.semcdb.2026.103668",
     "score": 6,
     "added": "2026-09-01",
-    "pdf_link": "https://doi.org/10.1016/j.semcdb.2026.103668",
+    "pdf_link": "pdfs/10-1016-j-semcdb-2026-103668.pdf",
     "author_data": [
       {
         "name": "Michael Levin",
@@ -3213,7 +3213,8 @@
       {
         "name": "Alpha S. Yap"
       }
-    ]
+    ],
+    "pdf_link": "pdfs/10-1242-jcs-265128.pdf"
   },
   {
     "title": "Editorial overview: At the edge of plasticity: Decoding cell fate in regeneration and repair",
@@ -3249,7 +3250,7 @@
     "link": "https://doi.org/10.1016/j.gde.2026.102530",
     "score": 5,
     "added": "2026-09-08",
-    "pdf_link": "https://doi.org/10.1016/j.gde.2026.102530",
+    "pdf_link": "pdfs/10-1016-j-gde-2026-102530.pdf",
     "curated": true,
     "source": "manual"
   },
