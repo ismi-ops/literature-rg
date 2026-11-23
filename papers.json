@@ -4109,7 +4109,7 @@
     "link": "https://doi.org/10.1371/journal.pcbi.1012090",
     "score": 10,
     "added": "2026-09-28",
-    "pdf_link": "https://doi.org/10.1371/journal.pcbi.1012090",
+    "pdf_link": "pdfs/10-1371-journal-pcbi-1012090.pdf",
     "source": "semantic_scholar",
     "reasoning": "keyword match (no Anthropic API key)",
     "curated": true,
@@ -4467,7 +4467,7 @@
     "link": "https://doi.org/10.3390/cells15171591",
     "score": 8,
     "added": "2026-10-05",
-    "pdf_link": "https://doi.org/10.3390/cells15171591",
+    "pdf_link": "pdfs/10-3390-cells15171591.pdf",
     "source": "ss_recommendations",
     "reasoning": "keyword match (no Anthropic API key)",
     "author_data": [
