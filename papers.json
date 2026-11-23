@@ -1235,7 +1235,7 @@
     "doi": "10.1038/s41580-020-00318-6",
     "link": "https://www.nature.com/articles/s41580-020-00318-6",
     "added": "2026-08-19",
-    "pdf_link": "https://hal.science/hal-03445395v1/document",
+    "pdf_link": "pdfs/10-1038-s41580-020-00318-6.pdf",
     "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Relevant to Cell Science's interest in emergent tissue organization and how multicellular systems self-pattern without external instruction.",
     "author_data": [
       {
@@ -1281,7 +1281,7 @@
     "doi": "",
     "link": "https://www.science.org/doi/10.1126/science.add9666",
     "added": "2026-08-19",
-    "pdf_link": "",
+    "pdf_link": "pdfs/scaling-up-complexity-in-synthetic-developmental-biology.pdf",
     "relevance": "Aligned with the Cell Science's synthetic biology program program and Cell Science's engagement with synthetic developmental biology — engineering gene circuits to program cell community behavior. Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs."
   },
   {
