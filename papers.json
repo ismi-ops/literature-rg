@@ -4987,7 +4987,7 @@
     "link": "https://doi.org/10.1093/ajrcmb/aanag138",
     "score": 3,
     "added": "2026-10-12",
-    "pdf_link": "https://doi.org/10.1093/ajrcmb/aanag138",
+    "pdf_link": "pdfs/10-1093-ajrcmb-aanag138.pdf",
     "source": "semantic_scholar",
     "reasoning": "keyword match (no Anthropic API key)",
     "curated": true,
