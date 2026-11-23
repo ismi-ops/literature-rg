@@ -13785,7 +13785,8 @@
         "name": "Stefan W. Hell",
         "orcid": "0000-0002-9638-5077"
       }
-    ]
+    ],
+    "rejected": true
   },
   {
     "title": "High-resolution line-scan Brillouin microscopy for live imaging of mechanical properties during embryo development",
