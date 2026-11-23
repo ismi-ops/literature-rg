@@ -26087,5 +26087,23 @@
         "orcid": "0000-0002-5465-9754"
       }
     ]
+  },
+  {
+    "title": "Tissue organization and morphogen gradients dynamically tune one another",
+    "authors": "",
+    "year": "2026",
+    "journal": "Nature Cell Biology",
+    "type": "research",
+    "summary": "",
+    "relevance": "",
+    "tags": [],
+    "doi": "10.1038/s41556-026-01987-9",
+    "link": "https://doi.org/10.1038/s41556-026-01987-9",
+    "score": 1,
+    "added": "2026-11-23",
+    "pdf_link": "pdfs/10-1038-s41556-026-01987-9.pdf",
+    "source": "semantic_scholar",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "curated": true
   }
 ]
