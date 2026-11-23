@@ -26106,5 +26106,161 @@
     "source": "semantic_scholar",
     "reasoning": "keyword match (no Anthropic API key)",
     "curated": true
+  },
+  {
+    "title": "Reconstructing Mammalian Embryogenesis InVitro Through Lineage Specification, Morphogenetic Self-Organization and Programmable Stem Cell-Based Embryo Models",
+    "authors": "Biswa Bhusan Sarangi, Omm Bhusan Sarangi, Seyam Sundar, Mohammed Mundhir, Maha Jayan Chandrakumar",
+    "year": "2026",
+    "journal": "International Journal of Innovative Science and Research Technology",
+    "type": "review",
+    "summary": "Stem-cell-based embryo models (SCBEMs) have emerged as powerful experimental systems for investigating how mammalian embryos acquire cellular identity, establish spatial organization and undergo coordinated morphogenesis. This review traces the development of SCBEMs from embryoid bodies and gastruloids to ETS, ETX and ETiX/EiTiX models, highlighting how the progressive incorporation and engineering of embryonic and extraembryonic lineages has improved the reconstruction of early developmental events.",
+    "relevance": "Directly relevant to Cell Science's foundational interest in how cells acquire and maintain identity — gene regulatory networks, lineage specification, and embryonic patterning are central to understanding cell decision-making and fate in developmental contexts. Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures.",
+    "tags": [
+      "development",
+      "morphogenesis",
+      "self-organization"
+    ],
+    "doi": "10.38124/ijisrt/26oct1180",
+    "link": "https://doi.org/10.38124/ijisrt/26oct1180",
+    "score": 10,
+    "added": "2026-11-23",
+    "pdf_link": "https://www.ijisrt.com/assets/upload/files/IJISRT26OCT1180.pdf",
+    "source": "ss_recommendations",
+    "reasoning": "keyword match (no Anthropic API key)"
+  },
+  {
+    "title": "Co-aggregation of pre-conditioned cell populations drives controlled lineage bias and formation of gut tube-like structures in human stem cell-based embryo models",
+    "authors": "Igor Meszka, Almira Ibragimova, Max Lycke, Natalia Smirnova, Sergey Ponomartsev, Rui Zhang, Tharvesh Moideen Liyakat Ali, Yuliia Boichuk et al.",
+    "year": "2026",
+    "journal": "bioRxiv",
+    "type": "research",
+    "summary": "Human stem cell-based embryo models (hSCBEMs) provide a powerful platform for investigating post-implantation human embryo development but are frequently hindered by variability in growth and morphogenesis as well as incomplete lineage representations. Here, we present a modular hSCBEM aggregation approach based on co-aggregation of differentially pre-conditioned, human pluripotent stem cell derived cells pools. Using this strategy, we generated hSCBEM with consistent morphotypes that targets robust morphogenesis of gut tube-like structures in combination with mesodermal lineages.",
+    "relevance": "Directly relevant to Cell Science's foundational interest in how cells acquire and maintain identity — gene regulatory networks, lineage specification, and embryonic patterning are central to understanding cell decision-making and fate in developmental contexts. Directly addresses Cell Science's core question of why genetically identical cells differ structurally and how variation encodes functional information.",
+    "tags": [
+      "development",
+      "morphogenesis",
+      "self-organization"
+    ],
+    "doi": "10.64898/2026.11.09.765272",
+    "link": "https://doi.org/10.64898/2026.11.09.765272",
+    "score": 10,
+    "added": "2026-11-23",
+    "pdf_link": "https://www.biorxiv.org/content/biorxiv/early/2026/11/12/2026.11.09.765272.full.pdf",
+    "source": "ss_recommendations",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "preprint": true,
+    "author_data": [
+      {
+        "name": "Igor Meszka"
+      },
+      {
+        "name": "Almira Ibragimova"
+      },
+      {
+        "name": "Max Lycke"
+      },
+      {
+        "name": "Natalia Smirnova"
+      },
+      {
+        "name": "Sergey Ponomartsev"
+      },
+      {
+        "name": "Rui Zhang"
+      },
+      {
+        "name": "Tharvesh Moideen Liyakat Ali"
+      },
+      {
+        "name": "Yuliia Boichuk"
+      },
+      {
+        "name": "Brian K. Chung"
+      },
+      {
+        "name": "Jonas Øgaard"
+      },
+      {
+        "name": "Espen Melum"
+      },
+      {
+        "name": "Nikolaj Gadegaard"
+      },
+      {
+        "name": "Stefan Krauss"
+      }
+    ]
+  },
+  {
+    "title": "YAP dosage controls anteroposterior axis elongation in human 3D gastruloids",
+    "authors": "Elizabeth Abraham, Thomas Roule, Olivia Mae Pericak, Emily Megill, Aidan Douglas, Mikel Zubillaga, Seonhee Kim, Naiara Akizu et al.",
+    "year": "2026",
+    "journal": "iScience",
+    "type": "research",
+    "summary": "Human embryonic stem cell (hESC)-derived three-dimensional gastruloids (h3D-gastruloids) recapitulate key features of early human embryogenesis, including germ layer formation, symmetry breaking, and establishment of the body plan. Here, we investigate the role of the Hippo pathway effector YAP in human gastruloid morphogenesis. Using complementary genetic and pharmacological approaches, we demonstrate that elevated nuclear YAP activity impairs symmetry breaking and inhibits gastruloid elongation, whereas YAP inhibition enhances axial elongation compared with control conditions.",
+    "relevance": "Directly relevant to Cell Science's foundational interest in how cells acquire and maintain identity — gene regulatory networks, lineage specification, and embryonic patterning are central to understanding cell decision-making and fate in developmental contexts. Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures.",
+    "tags": [
+      "development",
+      "morphogenesis",
+      "single-cell"
+    ],
+    "doi": "10.1016/j.isci.2026.118149",
+    "link": "https://doi.org/10.1016/j.isci.2026.118149",
+    "score": 9,
+    "added": "2026-11-23",
+    "pdf_link": "https://doi.org/10.1016/j.isci.2026.118149",
+    "source": "ss_recommendations",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "author_data": [
+      {
+        "name": "Elizabeth Abraham"
+      },
+      {
+        "name": "Thomas Roule"
+      },
+      {
+        "name": "Olivia Mae Pericak"
+      },
+      {
+        "name": "Emily Megill"
+      },
+      {
+        "name": "Aidan Douglas"
+      },
+      {
+        "name": "Mikel Zubillaga"
+      },
+      {
+        "name": "Seonhee Kim"
+      },
+      {
+        "name": "Naiara Akizu"
+      },
+      {
+        "name": "Conchi Estaras",
+        "orcid": "0000-0002-2600-5841"
+      }
+    ]
+  },
+  {
+    "title": "AMOTL2: A key regulator of mechanotransduction in development, vascular disease and cancer",
+    "authors": "Pedro Fonseca, Yuanyuan Zhang, Lars Holmgren",
+    "year": "2026",
+    "journal": "Cells & development",
+    "type": "research",
+    "summary": "Mechanical forces play a fundamental role in regulating cell behavior during development, tissue homeostasis, and disease. The angiomotin family protein AmotL2 has emerged as a central integrator of mechanotransduction, linking cell-cell adhesion, cytoskeletal tension, and nuclear architecture to transcriptional control. Through its ability to connect cadherin-based junctions to radial actin filaments and the nuclear lamina, AmotL2 establishes a continuous mechanical axis that enables cells to sense and respond to extracellular forces.",
+    "relevance": "Relevant to Cell Science's interest in tissue self-organization, emergent patterning, and the physical principles shaping biological structures. Supports Cell Science's interest in tissue mechanics and how physical forces govern cell behavior, tissue organization, and morphogenesis.",
+    "tags": [
+      "development",
+      "morphogenesis"
+    ],
+    "doi": "10.1016/j.cdev.2026.204119",
+    "link": "https://doi.org/10.1016/j.cdev.2026.204119",
+    "score": 7,
+    "added": "2026-11-23",
+    "pdf_link": "https://www.sciencedirect.com/science/article/pii/S2667290126000495/pdf",
+    "source": "pubmed",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "conference_abstract": true
   }
 ]
