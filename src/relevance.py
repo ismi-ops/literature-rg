@@ -13,6 +13,15 @@ from src.summary_text import clean_summary, summarize_abstract
 _client = None
 
 
+def _author_list(value) -> list[str]:
+    """Authors as a list of names. Sources hand us either a list or one comma-joined string
+    ("A, B, C et al."); iterating the string would split it into single letters."""
+    if isinstance(value, str):
+        value = re.sub(r"\s+et al\.?\s*$", "", value.strip())
+        return [n.strip() for n in value.split(",") if n.strip()]
+    return [str(a.get("name", "")) if isinstance(a, dict) else str(a) for a in (value or [])]
+
+
 def _get_client():
     global _client
     if _client is None:
@@ -181,7 +190,7 @@ _RELEVANCE_NOTES = [
 def _keyword_score(paper: dict) -> dict:
     """Simple keyword + author heuristic used when no Anthropic key is available."""
     text = ((paper.get("title") or "") + " " + (paper.get("abstract") or "")).lower()
-    authors = " ".join(str(a) for a in (paper.get("authors") or []))
+    authors = " ".join(_author_list(paper.get("authors")))
     journal = paper.get("journal", "") or ""
     abstract = (paper.get("abstract") or "").strip()
 
@@ -236,8 +245,8 @@ def _keyword_score(paper: dict) -> dict:
 
     pub_type = paper.get("pub_type", "research")
 
-    author_list = paper.get("authors", [])
-    author_str = ", ".join(str(a) for a in author_list[:6])
+    author_list = _author_list(paper.get("authors"))
+    author_str = ", ".join(author_list[:6])
     if len(author_list) > 6:
         author_str += " et al."
 
@@ -300,7 +309,7 @@ def score_and_summarize(paper: dict) -> dict:
 
     title = paper.get("title", "")
     abstract = (paper.get("abstract", "") or "")[:2500]
-    authors = paper.get("authors", [])
+    authors = _author_list(paper.get("authors"))
     venue = paper.get("journal", "")
     year = paper.get("year", "")
     pub_type = paper.get("pub_type", "research")

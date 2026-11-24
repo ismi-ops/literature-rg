@@ -3225,10 +3225,12 @@
     "year": "2026",
     "journal": "Current Opinion in Genetics and Development",
     "type": "review",
-    "summary": "",
-    "relevance": "Relevant to Cell Science's interest in how cells make identity decisions, with implications for stem cell differentiation and iPSC-based model systems.",
+    "summary": "Editorial for the themed issue \"Cell Reprogramming, Regeneration and Repair\" in Current Opinion in Genetics & Development. Cell fate is increasingly seen as dynamic: injury, stress and ageing recruit stem and progenitor cells and push differentiated cells into transient plastic states. The issue's reviews span embryonic and pluripotent systems, adult organs (lung, pancreas, heart, muscle, epithelia) and plants, and argue that regeneration is a continuum of plastic responses whose success depends on precisely timed, context-dependent fate decisions set by transcriptional, chromatin, metabolic and niche cues.",
+    "relevance": "Relevant to Cell Science's interest in cell state and cell fate decisions: surveys how cell identity is destabilised and re-specified during regeneration across tissues and organisms.",
     "tags": [
-      "cell fate"
+      "cell fate",
+      "stem cells",
+      "development"
     ],
     "doi": "10.1016/j.gde.2026.102531",
     "link": "https://doi.org/10.1016/j.gde.2026.102531",
@@ -7409,7 +7411,7 @@
     "link": "https://doi.org/10.1016/j.cell.2025.04.023",
     "score": 2,
     "added": "2026-10-15",
-    "pdf_link": "pdfs/10-1016-j-cell-2025-04-023.pdf",
+    "pdf_link": "",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "vip_author": "Prisca Liberali",
@@ -7523,7 +7525,9 @@
       {
         "name": "Irene Miguel-Aliaga"
       }
-    ]
+    ],
+    "rejected": true,
+    "superseded_by": "10.1016/j.cell.2025.02.015"
   },
   {
     "title": "ez-zarr: A Python package for easy access and visualisation of OME-Zarr filesets",
@@ -7531,9 +7535,11 @@
     "year": "2025",
     "journal": "J. Open Source Softw.",
     "type": "research",
-    "summary": "",
+    "summary": "ez-zarr (\"easy zarr\") is a Python package giving high-level, read-only programmatic access to OME-Zarr bioimaging files. It hides the complex nested on-disk layout behind a standard class for metadata extraction, image subsetting and visualisation, supports files of any dimensionality, and handles collections such as plate-based high-content screens. Image data can be pulled out as numpy arrays for downstream analysis, and an R wrapper (ezzarr) is provided.",
     "relevance": "Relevant to Cell Science's quantitative imaging and image-analysis platforms: a Python package for accessing and visualising OME-Zarr bioimaging files.",
-    "tags": [],
+    "tags": [
+      "methods"
+    ],
     "doi": "10.21105/joss.07882",
     "link": "https://doi.org/10.21105/joss.07882",
     "score": 2,
@@ -7711,7 +7717,7 @@
     "link": "https://doi.org/10.1016/j.cell.2025.02.015",
     "score": 2,
     "added": "2026-10-15",
-    "pdf_link": "https://doi.org/10.1016/j.cell.2025.02.015",
+    "pdf_link": "pdfs/10-1016-j-cell-2025-02-015.pdf",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "vip_author": "Prisca Liberali",
@@ -7826,6 +7832,9 @@
         "name": "Irene Miguel-Aliaga",
         "orcid": "0000-0002-1082-5108"
       }
+    ],
+    "previous_dois": [
+      "10.1016/j.cell.2025.04.023"
     ]
   },
   {
@@ -7833,10 +7842,14 @@
     "authors": "Maurice Kahnwald, Marius Mählen, Koen C. Oost, Prisca Liberali",
     "year": "2024",
     "journal": "Nature Biotechnology",
-    "type": "research",
-    "summary": "",
+    "type": "perspective",
+    "summary": "News & views on two Nature Biotechnology papers that make optical pooled screening (OPS) more robust and cheaper. OPS combines pooled CRISPR perturbations with image-based phenotyping while keeping spatial context. PerturbView (Kudo et al.) uses T7 RNA polymerase to amplify barcodes independently of the cell's own transcription, and CRISPRmap (Gu et al.) reads barcodes by combinatorial oligonucleotide hybridisation, broadening OPS to more cell types and questions.",
     "relevance": "Relevant to Cell Science's image-based profiling and phenomics interests: optical pooled screening links genetic perturbations to imaged cell phenotypes at scale.",
-    "tags": [],
+    "tags": [
+      "image-based profiling",
+      "phenomics",
+      "methods"
+    ],
     "doi": "10.1038/s41587-024-02434-6",
     "link": "https://doi.org/10.1038/s41587-024-02434-6",
     "score": 2,
@@ -9031,10 +9044,14 @@
     "authors": "Anne Grapin-Botton, Jonathan Y-H Loh",
     "year": "2024",
     "journal": "Current opinion in genetics & development",
-    "type": "research",
-    "summary": "",
-    "relevance": "Relevant to Cell Science's interest in how tissues rebuild their organization during regeneration, covering architecture and cell cross-talk.",
-    "tags": [],
+    "type": "review",
+    "summary": "Editorial for the 2024 \"Cell Reprogramming, Regeneration and Repair\" issue of Current Opinion in Genetics & Development. Regaining missing cells is not enough for repair: new cells must integrate while the tissue's architecture is restored. The issue focuses on the cell communication and signalling that let regenerating tissues regrow, differentiate and reorganise, using model organisms, organoids and other reductionist systems, and on single-cell, spatial and metabolic profiling and mathematical modelling that compare repair across tissues and species.",
+    "relevance": "Relevant to Cell Science's interest in self-organization and cell-cell communication: how regenerating tissues rebuild architecture, with organoids and quantitative modelling as key tools.",
+    "tags": [
+      "organoid",
+      "cell-cell communication",
+      "morphogenesis"
+    ],
     "doi": "10.1016/j.gde.2024.102302",
     "link": "https://doi.org/10.1016/j.gde.2024.102302",
     "score": 1,
@@ -19208,10 +19225,15 @@
     "authors": "Dino Di Carlo, Leonardo Morsut, Megan L. McCain, Heather J. Wright, Mohamad Abedi, Sean A. Yamada-Hunter, Jason Z. Zhang, Keriann Backus et al.",
     "year": "2026",
     "journal": "Nature Biotechnology",
-    "type": "research",
-    "summary": "",
+    "type": "perspective",
+    "summary": "Perspective proposing an initiative to map and engineer the human cell–cell interactome, a functional atlas of how all major human cell types communicate. Single-cell and spatial profiling measure molecular states but not how cells influence each other, so the authors propose starting from defined two-cell dyads, with a first \"Billion Cell×Cell Project\" characterising dyad outcomes across cell types and conditions, to build the tools, datasets and models that decode intercellular signalling.",
     "relevance": "Relevant to Cell Science's synthetic biology program: mapping and engineering cell–cell interactions that underlie multicellular behavior.",
-    "tags": [],
+    "tags": [
+      "cell-cell communication",
+      "intercellular signaling",
+      "synthetic biology",
+      "multicellular"
+    ],
     "doi": "10.1038/s41587-026-03177-2",
     "link": "https://doi.org/10.1038/s41587-026-03177-2",
     "score": 2,
@@ -19898,10 +19920,13 @@
     "authors": "Felix Horns, Victoria Tobin, Michael B. Elowitz",
     "year": "2026",
     "journal": "Nature Reviews Bioengineering",
-    "type": "research",
-    "summary": "",
+    "type": "perspective",
+    "summary": "Comment proposing engineered \"delivery cells\" as programmable mRNA delivery vehicles. Cells could home to disease sites using synthetic receptors, then produce and secrete therapeutic mRNA in virus-like particles or extracellular vesicles for local, sustained, cell-type-specific delivery, with proliferation or kill switches for control. Applications include gene editing, reprogramming (e.g. alpha to beta cells) and selective killing of diseased cells; the authors outline the engineering challenges.",
     "relevance": "Relevant to Cell Science's synthetic biology program: engineered cells as programmable delivery vehicles.",
-    "tags": [],
+    "tags": [
+      "synthetic biology",
+      "intercellular signaling"
+    ],
     "doi": "10.1038/s44222-026-00438-2",
     "link": "https://doi.org/10.1038/s44222-026-00438-2",
     "score": 2,
@@ -23088,9 +23113,11 @@
     "year": "2022",
     "journal": "Sensors and Actuators B: Chemical",
     "type": "research",
-    "summary": "",
+    "summary": "Reports an acoustofluidic device that focuses submicron particles, bacteria and extracellular vesicles. 50 µm × 50 µm square channels act as acoustic resonators driven at 14.9 MHz to form a two-dimensional standing wave, giving a strong radiation force toward the channel centre and a single vortex that does not oppose it. Polystyrene beads of 50–500 nm were focused to a stream under 5 µm wide (100 nm beads at 3 µL/min), and bacteria were focused at 40 µL/min.",
     "relevance": "Peripheral to Cell Science's core areas; a microfluidic particle-focusing method from a tracked collaborator in imaging flow cytometry.",
-    "tags": [],
+    "tags": [
+      "methods"
+    ],
     "doi": "10.1016/j.snb.2022.132918",
     "link": "https://doi.org/10.1016/j.snb.2022.132918",
     "score": 0,
@@ -24710,7 +24737,8 @@
       {
         "name": "M. de Ruijter Villani"
       }
-    ]
+    ],
+    "rejected": true
   },
   {
     "title": "Genetically encoded multimeric tags for intracellular protein localisation in cryo-EM",
@@ -26302,18 +26330,21 @@
   },
   {
     "title": "Accounts on Synthetic Cells",
-    "authors": "T, h, e,  , F, r et al.",
+    "authors": "",
     "year": "2026",
-    "journal": "arXiv",
+    "journal": "ArXiv",
     "type": "research",
     "summary": "Frontiers of Life is a research network of the University of Bordeaux focused on the re-engineering of living systems, starting from the construction of a synthetic cell. In this article, we present our motivation to build a cell from scratch and the elementary building blocks we worked on over the past four years.",
     "relevance": "Aligned with Cell Science's synthetic biology program — engineering gene circuits to program cell community behavior and synthetic multicellular systems.",
-    "tags": [],
+    "tags": [
+      "synthetic biology",
+      "self-organization"
+    ],
     "doi": "10.48550/arXiv.2611.22371",
     "link": "https://arxiv.org/abs/2611.22371",
     "score": 0,
     "added": "2026-11-24",
-    "pdf_link": "",
+    "pdf_link": "https://arxiv.org/pdf/2611.22371",
     "source": "manual",
     "reasoning": "keyword match (no Anthropic API key)",
     "curated": true,
