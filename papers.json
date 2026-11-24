@@ -26281,5 +26281,47 @@
     "reasoning": "keyword match (no Anthropic API key)",
     "curated": true,
     "preprint": true
+  },
+  {
+    "title": "Organoids and organs-on-a-chip as new approach methodologies at the convergence of cell biology and bioengineering",
+    "authors": "Daniel Naveed Tavakol, Danielle Mendonca, Ilaria Baldassarri, Mirjana Maletic-Savatic, Gordana Vunjak-Novakovic",
+    "year": "2026",
+    "journal": "Cell Stem Cell",
+    "type": "review",
+    "summary": "The rapid growth of new approach methodologies (NAMs), including organoids and organs-on-a-chip (OOCs), has revealed a need for interdisciplinary dialogue between cell biologists and bioengineers to develop human models that can best complement therapeutic development. Stem cell-derived and bioengineered human tissue models are redefining how we understand human physiology and pathophysiology, offering control that traditional preclinical models cannot provide. By recapitulating complex tissue microenvironments, multi-organ interactions, and patient-specific biology, these systems are bridging long-standing gaps in the drug development and clinical application pipelines.",
+    "relevance": "Aligned with Cell Science's synthetic biology program — engineering gene circuits to program cell community behavior and synthetic multicellular systems. Relevant to lumen morphogenesis, lumenoid self-organization, organoid systems, and live imaging of three-dimensional culture morphodynamics.",
+    "tags": [
+      "development",
+      "synthetic biology",
+      "organoid"
+    ],
+    "doi": "10.1016/j.stem.2026.10.003",
+    "link": "https://doi.org/10.1016/j.stem.2026.10.003",
+    "score": 9,
+    "added": "2026-11-24",
+    "pdf_link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13726884/pdf/nihms-2218955.pdf",
+    "source": "semantic_scholar",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "curated": true,
+    "author_data": [
+      {
+        "name": "Daniel Naveed Tavakol",
+        "orcid": "0000-0003-0451-0617"
+      },
+      {
+        "name": "Danielle Mendonca"
+      },
+      {
+        "name": "Ilaria Baldassarri"
+      },
+      {
+        "name": "Mirjana Maletic-Savatic",
+        "orcid": "0000-0002-6548-4662"
+      },
+      {
+        "name": "Gordana Vunjak-Novakovic",
+        "orcid": "0000-0002-9382-1574"
+      }
+    ]
   }
 ]
