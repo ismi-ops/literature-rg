@@ -26262,5 +26262,24 @@
     "source": "pubmed",
     "reasoning": "keyword match (no Anthropic API key)",
     "conference_abstract": true
+  },
+  {
+    "title": "Accounts on Synthetic Cells",
+    "authors": "T, h, e,  , F, r et al.",
+    "year": "2026",
+    "journal": "arXiv",
+    "type": "research",
+    "summary": "Frontiers of Life is a research network of the University of Bordeaux focused on the re-engineering of living systems, starting from the construction of a synthetic cell. In this article, we present our motivation to build a cell from scratch and the elementary building blocks we worked on over the past four years.",
+    "relevance": "Aligned with Cell Science's synthetic biology program — engineering gene circuits to program cell community behavior and synthetic multicellular systems.",
+    "tags": [],
+    "doi": "10.48550/arXiv.2611.22371",
+    "link": "https://arxiv.org/abs/2611.22371",
+    "score": 0,
+    "added": "2026-11-24",
+    "pdf_link": "",
+    "source": "manual",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "curated": true,
+    "preprint": true
   }
 ]
