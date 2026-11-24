@@ -26323,5 +26323,119 @@
         "orcid": "0000-0002-9382-1574"
       }
     ]
+  },
+  {
+    "title": "Multi-immersion oblique plane microscope (miOPM): a reconfigurable platform for high-resolution light-sheet fluorescence microscopy",
+    "authors": "Bingying Chen, Alfred Millett-Sikking, Bo-Jui Chang, Seweryn Gałecki, Stephan Daetwyler, Jenny Jiou, Jim Monistrol, Qionghua Shen et al.",
+    "year": "2026",
+    "journal": "Nature Methods",
+    "type": "research",
+    "summary": "Light-sheet fluorescence microscopy (LSFM) enables gentle, rapid and efficient volumetric imaging of biological specimens. Despite its potential, LSFM has fragmented into multiple variants, each narrowly optimized for specific samples or imaging regimes, limiting its broad applicability. Here we introduce the multi-immersion oblique plane microscope (miOPM), an adaptable LSFM platform for high-resolution imaging ranging from subcellular dynamics to whole organisms and cleared tissues.",
+    "relevance": "",
+    "tags": [],
+    "doi": "10.1038/s41592-026-03245-0",
+    "link": "https://doi.org/10.1038/s41592-026-03245-0",
+    "score": 1,
+    "added": "2026-11-24",
+    "pdf_link": "pdfs/10-1038-s41592-026-03245-0.pdf",
+    "source": "semantic_scholar",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "curated": true,
+    "author_data": [
+      {
+        "name": "Bingying Chen"
+      },
+      {
+        "name": "Alfred Millett-Sikking"
+      },
+      {
+        "name": "Bo-Jui Chang",
+        "orcid": "0000-0002-5513-7106"
+      },
+      {
+        "name": "Seweryn Gałecki",
+        "orcid": "0000-0002-7020-0804"
+      },
+      {
+        "name": "Stephan Daetwyler",
+        "orcid": "0000-0002-7444-4734"
+      },
+      {
+        "name": "Jenny Jiou"
+      },
+      {
+        "name": "Jim Monistrol"
+      },
+      {
+        "name": "Qionghua Shen",
+        "orcid": "0000-0002-2808-4408"
+      },
+      {
+        "name": "Felix Zhou",
+        "orcid": "0000-0003-4463-1165"
+      },
+      {
+        "name": "Hsin-Yu Lin"
+      },
+      {
+        "name": "Edward Jenkins",
+        "orcid": "0000-0003-3789-6421"
+      },
+      {
+        "name": "Miriam C. Stein"
+      },
+      {
+        "name": "Madeleine Marlar-Pavey"
+      },
+      {
+        "name": "Gabriel Sturm"
+      },
+      {
+        "name": "Alexander L. Li",
+        "orcid": "0000-0002-1233-0950"
+      },
+      {
+        "name": "Qiaosi Tang"
+      },
+      {
+        "name": "Brian Y. Feng",
+        "orcid": "0000-0002-4208-8624"
+      },
+      {
+        "name": "Ulises Diaz"
+      },
+      {
+        "name": "Yannan Chen",
+        "orcid": "0000-0002-2959-2885"
+      },
+      {
+        "name": "Aryaman Shalizi"
+      },
+      {
+        "name": "Astrid Gillich"
+      },
+      {
+        "name": "Jonathan R. Friedman",
+        "orcid": "0000-0001-8155-2429"
+      },
+      {
+        "name": "Raju Tomer",
+        "orcid": "0000-0002-4229-2860"
+      },
+      {
+        "name": "Wallace F. Marshall"
+      },
+      {
+        "name": "Sarah Shahmoradian"
+      },
+      {
+        "name": "Kevin M. Dean",
+        "orcid": "0000-0003-0839-2320"
+      },
+      {
+        "name": "Reto Fiolka",
+        "orcid": "0000-0002-4636-5000"
+      }
+    ]
   }
 ]
