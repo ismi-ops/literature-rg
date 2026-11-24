@@ -1634,7 +1634,7 @@
   },
   {
     "title": "Virtual cells need context, not just scale",
-    "authors": "Payam Dibaeinia, Sudarshan Babu, Mei Knudson, Ali ElSheikh, Yi-Bo Wen, Han Liu, J. Perera, A. Khan",
+    "authors": "Payam Dibaeinia, Sudarshan Babu, Mei Knudson, Ali ElSheikh, Yibo Wen, Han Liu, Jason Perera, Aly A. Khan",
     "year": "2026",
     "journal": "bioRxiv",
     "type": "perspective",
@@ -1650,7 +1650,33 @@
     "added": "2026-08-19",
     "pdf_link": "https://www.biorxiv.org/content/10.64898/2026.02.04.703804v1.full.pdf",
     "relevance": "Supports Cell Science's virtual cell and generative modeling agenda for integrating multi-modal cell biology data into predictive computational models.",
-    "preprint": true
+    "preprint": true,
+    "author_data": [
+      {
+        "name": "Payam Dibaeinia"
+      },
+      {
+        "name": "Sudarshan Babu"
+      },
+      {
+        "name": "Mei Knudson"
+      },
+      {
+        "name": "Ali ElSheikh"
+      },
+      {
+        "name": "Yibo Wen"
+      },
+      {
+        "name": "Han Liu"
+      },
+      {
+        "name": "Jason Perera"
+      },
+      {
+        "name": "Aly A. Khan"
+      }
+    ]
   },
   {
     "title": "Visions of the future of molecular cell biology",
@@ -7411,7 +7437,7 @@
     "link": "https://doi.org/10.1016/j.cell.2025.04.023",
     "score": 2,
     "added": "2026-10-15",
-    "pdf_link": "",
+    "pdf_link": "https://doi.org/10.1016/j.cell.2025.04.023",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "vip_author": "Prisca Liberali",
@@ -7535,7 +7561,7 @@
     "year": "2025",
     "journal": "J. Open Source Softw.",
     "type": "research",
-    "summary": "ez-zarr (\"easy zarr\") is a Python package giving high-level, read-only programmatic access to OME-Zarr bioimaging files. It hides the complex nested on-disk layout behind a standard class for metadata extraction, image subsetting and visualisation, supports files of any dimensionality, and handles collections such as plate-based high-content screens. Image data can be pulled out as numpy arrays for downstream analysis, and an R wrapper (ezzarr) is provided.",
+    "summary": "Ez-zarr (\"easy zarr\") is a Python package giving high-level, read-only programmatic access to OME-Zarr bioimaging files. It hides the complex nested on-disk layout behind a standard class for metadata extraction, image subsetting and visualisation, supports files of any dimensionality, and handles collections such as plate-based high-content screens. Image data can be pulled out as numpy arrays for downstream analysis, and an R wrapper (ezzarr) is provided.",
     "relevance": "Relevant to Cell Science's quantitative imaging and image-analysis platforms: a Python package for accessing and visualising OME-Zarr bioimaging files.",
     "tags": [
       "methods"
