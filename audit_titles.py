@@ -6,7 +6,7 @@ For each live tile with a DOI the Crossref title is fetched and compared (letter
   different  the tile's title is not the paper's title            -> reported; with --fix it is replaced
              by the Crossref title (Crossref is authoritative for the DOI the tile links to)
   missing    DOI not found in Crossref                            -> reported
-Also: unflagged conference abstracts are flagged (conference_abstract) with --fix. Also reported: DOI tiles whose link is a doi.org URL for a different DOI (fixed with --fix),
+Also reported: tiles missing authors/summary/relevance/journal/year (fill them with Backfill, or by hand from an uploaded PDF). Also: unflagged conference abstracts are flagged (conference_abstract) with --fix. Also reported: DOI tiles whose link is a doi.org URL for a different DOI (fixed with --fix),
 bioRxiv-DOI tiles that link to a journal site (stale DOI; --fix looks up the published version and converts the tile), and tiles with no DOI/title/link.
 --fix always applies the shared formatting rules (src/title_clean.py): markup, extra spaces, trailing full stop.
 
@@ -67,6 +67,9 @@ def main():
             if args.fix:
                 p["conference_abstract"] = True
                 fixed += 1
+        gaps = [k for k in ("authors", "summary", "relevance", "journal", "year") if not str(p.get(k) or "").strip()]
+        if gaps:
+            note("missing-fields", p, ", ".join(gaps))
         doi = (p.get("doi") or "").strip()
         link = (p.get("link") or "").strip()
         if not tidy:
@@ -128,7 +131,7 @@ def main():
                 retire(papers, keep, drop, date.today().isoformat())
                 fixed += 1
 
-    order = ["conference-abstract", "duplicate", "duplicate?", "different", "partial", "stale-doi", "link-doi", "not-in-crossref", "no-title", "no-link", "format"]
+    order = ["missing-fields", "conference-abstract", "duplicate", "duplicate?", "different", "partial", "stale-doi", "link-doi", "not-in-crossref", "no-title", "no-link", "format"]
     lines = []
     for kind in order:
         rows = [r for r in report if r[0] == kind]
