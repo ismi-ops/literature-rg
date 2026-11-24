@@ -26437,5 +26437,60 @@
         "orcid": "0000-0002-4636-5000"
       }
     ]
+  },
+  {
+    "title": "Pathway to Independence: the next generation of developmental biology",
+    "authors": "Maëlle Bellec, Swarnabh Bhattacharya, Evan Healy, Josep Mercadal, Nikhil Mishra, Jessica Perochon, Yamini Ravichandran, Margherita Zamboni",
+    "year": "2026",
+    "journal": "Development",
+    "type": "research",
+    "summary": "Launched in 2022, Development's Pathway to Independence (PI) programme, aims to support talented postdocs from around the world as they transition to their first independent position. 2026 welcomes our fourth cohort of eight PI fellows, and here we hear how their research plans will shape the future of their fields as the next generation of the developmental biology community.",
+    "relevance": "Directly relevant to Cell Science's foundational interest in how cells acquire and maintain identity — gene regulatory networks, lineage specification, and embryonic patterning are central to understanding cell decision-making and fate in developmental contexts. Relevant to Cell Science's foundational interest in how cells and tissues build organisms through coordinated developmental programs.",
+    "tags": [
+      "development",
+      "developmental biology"
+    ],
+    "doi": "10.1242/dev.206128",
+    "link": "https://doi.org/10.1242/dev.206128",
+    "score": 4,
+    "added": "2026-11-24",
+    "pdf_link": "pdfs/10-1242-dev-206128.pdf",
+    "source": "semantic_scholar",
+    "reasoning": "keyword match (no Anthropic API key)",
+    "curated": true,
+    "author_data": [
+      {
+        "name": "Maëlle Bellec",
+        "orcid": "0000-0002-9029-0042"
+      },
+      {
+        "name": "Swarnabh Bhattacharya",
+        "orcid": "0000-0003-0354-2350"
+      },
+      {
+        "name": "Evan Healy",
+        "orcid": "0000-0001-7956-7242"
+      },
+      {
+        "name": "Josep Mercadal",
+        "orcid": "0000-0003-3207-2810"
+      },
+      {
+        "name": "Nikhil Mishra",
+        "orcid": "0000-0002-6425-5788"
+      },
+      {
+        "name": "Jessica Perochon",
+        "orcid": "0000-0002-3596-2416"
+      },
+      {
+        "name": "Yamini Ravichandran",
+        "orcid": "0000-0003-3123-1242"
+      },
+      {
+        "name": "Margherita Zamboni",
+        "orcid": "0000-0003-0664-4707"
+      }
+    ]
   }
 ]
