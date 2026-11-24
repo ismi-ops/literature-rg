@@ -1325,36 +1325,28 @@
         "orcid": "0000-0002-5202-0690"
       },
       {
-        "name": "Ian C. Mclean",
-        "orcid": "0000-0003-2741-7941"
+        "name": "Ian C. Mclean"
       },
       {
-        "name": "Sean M. Gross",
-        "orcid": "0000-0002-9621-8551"
+        "name": "Sean M. Gross"
       },
       {
-        "name": "Jalim Singh",
-        "orcid": "0000-0001-8027-6653"
+        "name": "Jalim Singh"
       },
       {
-        "name": "Vaibhav Murthy",
-        "orcid": "0000-0002-4171-2296"
+        "name": "Vaibhav Murthy"
       },
       {
-        "name": "Young Hwan Chang",
-        "orcid": "0000-0001-8764-1959"
+        "name": "Young Hwan Chang"
       },
       {
-        "name": "Alexander E. Davies",
-        "orcid": "0000-0002-1917-8816"
+        "name": "Alexander E. Davies"
       },
       {
-        "name": "Daniel M. Zuckerman",
-        "orcid": "0000-0001-7662-2031"
+        "name": "Daniel M. Zuckerman"
       },
       {
-        "name": "Laura M. Heiser",
-        "orcid": "0000-0003-3330-0950"
+        "name": "Laura M. Heiser"
       }
     ],
     "previous_dois": [
@@ -1637,7 +1629,7 @@
   },
   {
     "title": "Virtual cells need context, not just scale",
-    "authors": "Multiple authors",
+    "authors": "Payam Dibaeinia, Sudarshan Babu, Mei Knudson, Ali ElSheikh, Yi-Bo Wen, Han Liu, J. Perera, A. Khan",
     "year": "2026",
     "journal": "bioRxiv",
     "type": "perspective",
@@ -1648,7 +1640,7 @@
       "cell state",
       "single-cell"
     ],
-    "doi": "",
+    "doi": "10.64898/2026.02.04.703804",
     "link": "https://www.biorxiv.org/content/10.64898/2026.02.04.703804v1.full",
     "added": "2026-08-19",
     "pdf_link": "https://www.biorxiv.org/content/10.64898/2026.02.04.703804v1.full.pdf",
@@ -7613,7 +7605,7 @@
     "link": "https://doi.org/10.1101/2025.01.14.632683",
     "score": 5,
     "added": "2026-10-15",
-    "pdf_link": "",
+    "pdf_link": "https://doi.org/10.1101/2025.01.14.632683",
     "source": "author_tracker",
     "reasoning": "keyword match (no Anthropic API key)",
     "preprint": true,
@@ -9435,7 +9427,7 @@
   },
   {
     "title": "Emergent chirality in active solid rotation of pancreas spheres",
-    "authors": "Tzer Han Tan, Aboutaleb Amiri, Irene Seijo-Barandiarán, Michael F. Staddon, Anne Materne, Sandra Tomas, Charlie Duclut, Marko Popović et al.",
+    "authors": "Tzer Han Tan, Aboutaleb Amiri, Irene Seijo-Barandiaran, Michael F. Staddon, Anne Materne, Sandra Tomas, Charlie Duclut, Marko Popović et al.",
     "year": "2024",
     "journal": "PRX Life",
     "type": "research",
@@ -9459,26 +9451,28 @@
         "name": "Tzer Han Tan"
       },
       {
-        "name": "Aboutaleb Amiri",
-        "orcid": "0000-0001-7874-5123"
+        "name": "Aboutaleb Amiri"
       },
       {
-        "name": "Irene Seijo-Barandiarán"
+        "name": "Irene Seijo-Barandiaran"
       },
       {
         "name": "Michael F. Staddon"
       },
       {
-        "name": "Anne Materne"
+        "name": "Anne Materne",
+        "orcid": "0000-0003-1745-7499"
       },
       {
         "name": "Sandra Tomas"
       },
       {
-        "name": "Charlie Duclut"
+        "name": "Charlie Duclut",
+        "orcid": "0000-0002-8595-6815"
       },
       {
-        "name": "Marko Popović"
+        "name": "Marko Popović",
+        "orcid": "0000-0003-2360-3982"
       },
       {
         "name": "Anne Grapin-Botton",
@@ -11778,24 +11772,19 @@
     "reasoning": "keyword match (no Anthropic API key)",
     "author_data": [
       {
-        "name": "Jorge Lázaro",
-        "orcid": "0000-0002-9901-356X"
+        "name": "Jorge Lázaro"
       },
       {
-        "name": "Maria Costanzo",
-        "orcid": "0000-0002-4881-8018"
+        "name": "Maria Costanzo"
       },
       {
-        "name": "Marina Sanaki-Matsumiya",
-        "orcid": "0000-0002-4824-304X"
+        "name": "Marina Sanaki-Matsumiya"
       },
       {
-        "name": "Charles Girardot",
-        "orcid": "0000-0003-4301-3920"
+        "name": "Charles Girardot"
       },
       {
-        "name": "Masafumi Hayashi",
-        "orcid": "0000-0003-3286-9029"
+        "name": "Masafumi Hayashi"
       },
       {
         "name": "Katsuhiko Hayashi"
@@ -11804,8 +11793,7 @@
         "name": "Sebastian Diecke"
       },
       {
-        "name": "Thomas B. Hildebrandt",
-        "orcid": "0000-0001-8685-4733"
+        "name": "Thomas B. Hildebrandt"
       },
       {
         "name": "Giovanna Lazzari"
@@ -11820,8 +11808,7 @@
         "name": "Rüdiger Behr"
       },
       {
-        "name": "Vikas Trivedi",
-        "orcid": "0000-0003-0953-0553"
+        "name": "Vikas Trivedi"
       },
       {
         "name": "Mitsuhiro Matsuda"
@@ -12824,7 +12811,7 @@
   },
   {
     "title": "Learning noisy tissue dynamics across time scales",
-    "authors": "Ming Han, J. Devany, Michel Fruchart, M. Gardel, Vincenzo Vitelli",
+    "authors": "Ming Han, J. Devany, Michel Fruchart, M. Gardel, V. Vitelli",
     "year": "2025",
     "journal": "ArXiv",
     "type": "research",
@@ -15582,7 +15569,7 @@
   },
   {
     "title": "Understanding metric-related pitfalls in image analysis validation",
-    "authors": "A. Reinke, M. Tizabi, M. Baumgartner, M. Eisenmann, Doreen Heckmann-Nötzel, A. E. Kavur, T. Radsch, C. Sudre et al.",
+    "authors": "A. Reinke, M. Tizabi, M. Baumgartner, M. Eisenmann, Doreen Heckmann-Nötzel, A. E. Kavur, T. Rädsch, C. Sudre et al.",
     "year": "2023",
     "journal": "ArXiv",
     "type": "research",
@@ -17757,7 +17744,7 @@
   },
   {
     "title": "Terminal differentiation of villus-tip enterocytes is governed by 1 distinct members of Tgf  superfamily 2",
-    "authors": "L. Berková, Hassan Fazilaty, Qiu-Tan Yang, M. Stastna, 5. Dusan, Hrckulak et al.",
+    "authors": "L. Berková, H. Fazilaty, Qiu-Tan Yang, Monika Stastna, 5. Dusan, Hrckulak, Martina Vojtěchová, M. Brügger et al.",
     "year": "2022",
     "journal": "",
     "type": "research",
@@ -20760,43 +20747,34 @@
     "vip_only": true,
     "author_data": [
       {
-        "name": "Rongrong Du",
-        "orcid": "0009-0003-4942-3020"
+        "name": "Rongrong Du"
       },
       {
-        "name": "Michael J. Flynn",
-        "orcid": "0009-0003-1186-957X"
+        "name": "Michael J. Flynn"
       },
       {
         "name": "Karan Mahe"
       },
       {
-        "name": "Monique Honsa",
-        "orcid": "0009-0005-5937-9646"
+        "name": "Monique Honsa"
       },
       {
-        "name": "Bo Gu",
-        "orcid": "0000-0002-6711-4139"
+        "name": "Bo Gu"
       },
       {
-        "name": "Dongyang Li",
-        "orcid": "0000-0003-2728-4843"
+        "name": "Dongyang Li"
       },
       {
-        "name": "Sean E. McGeary",
-        "orcid": "0000-0001-5343-6447"
+        "name": "Sean E. McGeary"
       },
       {
-        "name": "Viviana Gradinaru",
-        "orcid": "0000-0001-5868-348X"
+        "name": "Viviana Gradinaru"
       },
       {
-        "name": "Ralf Jungmann",
-        "orcid": "0000-0003-4607-3312"
+        "name": "Ralf Jungmann"
       },
       {
-        "name": "Michael B. Elowitz",
-        "orcid": "0000-0002-1221-0967"
+        "name": "Michael B. Elowitz"
       }
     ],
     "previous_dois": [
@@ -23637,11 +23615,11 @@
         "orcid": "0000-0001-7310-2233"
       },
       {
-        "name": "Willi Stepp",
-        "orcid": "0000-0001-9818-0377"
+        "name": "Willi Stepp"
       },
       {
-        "name": "Roméo Jaccard"
+        "name": "Roméo Jaccard",
+        "orcid": "0009-0005-8029-0312"
       },
       {
         "name": "Christopher J. Obara",
@@ -23649,7 +23627,7 @@
       },
       {
         "name": "Andrew S. Moore",
-        "orcid": "0000-0001-8062-1779"
+        "orcid": "0009-0008-7037-6640"
       },
       {
         "name": "David Hoffman",
