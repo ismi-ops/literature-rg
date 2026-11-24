@@ -20709,7 +20709,7 @@
     "year": "2024",
     "journal": "bioRxiv",
     "type": "research",
-    "summary": "",
+    "summary": "Hematopoietic stem and progenitor cells (HSPCs) rely on intercellular signaling to maintain and adjust their production of blood and immune cells. This process occurs in the semi-fluidic bone marrow, hosting dozens of cell types that constantly migrate and interact. To elucidate the dynamic network of cell-cell interaction and signaling transduction underlying hematopoiesis, we developed an algorithm to measure Cell-cell Spatial Interaction Probability (CellSIP) by integrating data on ligand and receptor expression, cell type abundance, and cellular spatial positioning.",
     "relevance": "Directly relevant to understanding how cells send and receive signals from neighbors — foundational for collective cell decision-making and multicellular coordination, both core Cell Science themes.",
     "tags": [
       "intercellular signaling"
@@ -23141,7 +23141,7 @@
     "year": "2022",
     "journal": "SSRN Electronic Journal",
     "type": "research",
-    "summary": "",
+    "summary": "The manipulation and focusing of submicron/nanometre-scale objects are becoming increasingly important in the fields of biology, chemistry, and materials science. Acoustofluidics provides for the high throughput and precise manipulation of cells and particles with simple equipment. However, application to submicron/nanoparticles is challenging due to the particle volume dependence of the acoustic radiation force and relatively larger effect of the viscous drag force on small objects.",
     "relevance": "Peripheral to Cell Science's core areas; the preprint version of an acoustic microfluidic particle-focusing method from a tracked collaborator.",
     "tags": [],
     "doi": "10.2139/ssrn.4170673",
