@@ -1,4 +1,4 @@
-"""Fetch a paper's abstract by DOI (OpenAlex first, Semantic Scholar as a fallback)."""
+"""Fetch a paper's abstract by DOI (OpenAlex, then Semantic Scholar, Europe PMC and Crossref as fallbacks)."""
 import re
 import time
 
@@ -45,12 +45,24 @@ def from_semantic_scholar(doi: str) -> str:
     return ((data or {}).get("abstract") or "").strip()
 
 
+def from_europepmc(doi: str) -> str:
+    data = _get("https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+                {"query": f'DOI:"{doi}"', "resultType": "core", "format": "json", "pageSize": 1})
+    results = ((data or {}).get("resultList") or {}).get("result") or []
+    return (results[0].get("abstractText") or "").strip() if results else ""
+
+
+def from_crossref(doi: str) -> str:
+    data = _get(f"https://api.crossref.org/works/{doi}")
+    return (((data or {}).get("message") or {}).get("abstract") or "").strip()
+
+
 def fetch_abstract(doi: str) -> str:
     """Best abstract found for the DOI, or '' (too-short results are treated as 'not found')."""
     doi = re.sub(r"^https?://(dx\.)?doi\.org/", "", (doi or "").strip())
     if not doi:
         return ""
-    for fn in (from_openalex, from_semantic_scholar):
+    for fn in (from_openalex, from_semantic_scholar, from_europepmc, from_crossref):
         text = fn(doi)
         if len(text.split()) >= 25:
             return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", text)).strip()
